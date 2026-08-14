@@ -125,21 +125,21 @@
     }
   ],
   "summary": {
-    "totalCommands": 932,
-    "both": 568,
-    "wpfOnly": 118,
-    "avaloniaOnly": 246,
-    "missingWpf": 246,
-    "missingAvalonia": 118,
+    "totalCommands": 925,
+    "both": 575,
+    "wpfOnly": 111,
+    "avaloniaOnly": 239,
+    "missingWpf": 239,
+    "missingAvalonia": 111,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 568,
+    "sharedProfile": 575,
     "profileShapeOnly": 324,
-    "commandIdAliases": 35,
+    "commandIdAliases": 21,
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 460
+    "behaviorEvidenceRows": 459
   },
   "commands": [
     {
@@ -3697,236 +3697,6 @@
       }
     },
     {
-      "commandId": "freew.chart-color-colorful1",
-      "label": "Colorful Palette 1",
-      "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "command-id-alias",
-      "gapClassificationRule": "command-id-alias",
-      "notes": "Other profile exposes the same or closest command intent under a different generated command id.",
-      "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "chart-design",
-          "tab": "Chart Design",
-          "groupId": "chart-colors",
-          "group": "Change Colors",
-          "label": "Colorful Palette 1",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": false,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.chart-color-colorful2",
-      "label": "Colorful Palette 2",
-      "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "command-id-alias",
-      "gapClassificationRule": "command-id-alias",
-      "notes": "Other profile exposes the same or closest command intent under a different generated command id.",
-      "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "chart-design",
-          "tab": "Chart Design",
-          "groupId": "chart-colors",
-          "group": "Change Colors",
-          "label": "Colorful Palette 2",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": false,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.chart-color-colorful3",
-      "label": "Colorful Palette 3",
-      "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "command-id-alias",
-      "gapClassificationRule": "command-id-alias",
-      "notes": "Other profile exposes the same or closest command intent under a different generated command id.",
-      "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "chart-design",
-          "tab": "Chart Design",
-          "groupId": "chart-colors",
-          "group": "Change Colors",
-          "label": "Colorful Palette 3",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": false,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.chart-color-colorful4",
-      "label": "Colorful Palette 4",
-      "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "command-id-alias",
-      "gapClassificationRule": "command-id-alias",
-      "notes": "Other profile exposes the same or closest command intent under a different generated command id.",
-      "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "chart-design",
-          "tab": "Chart Design",
-          "groupId": "chart-colors",
-          "group": "Change Colors",
-          "label": "Colorful Palette 4",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": false,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.chart-color-mono-blue",
-      "label": "Monochromatic Blue",
-      "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "command-id-alias",
-      "gapClassificationRule": "command-id-alias",
-      "notes": "Other profile exposes the same or closest command intent under a different generated command id.",
-      "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "chart-design",
-          "tab": "Chart Design",
-          "groupId": "chart-colors",
-          "group": "Change Colors",
-          "label": "Monochromatic Blue",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": false,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": false
-      },
-      "behaviorEvidence": {
-        "evidenceId": "freew.chart.shared-behavior",
-        "slice": "Chart command behavior",
-        "summary": "Applies the monochromatic blue chart color palette through the WPF chart-color command and the Avalonia chart-colors alias, keeping the change undoable in both shells.",
-        "wpfEvidence": {
-          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
-          "test": "FreeWRibbonParityTests.ChartDesign_ColorSchemeRibbonCommandMutatesSelectedChartAndUndoRestoresIt"
-        },
-        "avaloniaEvidence": {
-          "path": "freew/FreeW.App.Avalonia.Tests/ChartSmartArtContextualTabTests.cs",
-          "test": "ChartSmartArtContextualTabTests.SetChartColorScheme_command_changes_scheme_and_reverts_on_undo"
-        }
-      }
-    },
-    {
-      "commandId": "freew.chart-color-mono-grey",
-      "label": "Monochromatic Grey",
-      "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "command-id-alias",
-      "gapClassificationRule": "command-id-alias",
-      "notes": "Other profile exposes the same or closest command intent under a different generated command id.",
-      "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "chart-design",
-          "tab": "Chart Design",
-          "groupId": "chart-colors",
-          "group": "Change Colors",
-          "label": "Monochromatic Grey",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": false,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.chart-color-mono-orange",
-      "label": "Monochromatic Orange",
-      "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "command-id-alias",
-      "gapClassificationRule": "command-id-alias",
-      "notes": "Other profile exposes the same or closest command intent under a different generated command id.",
-      "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "chart-design",
-          "tab": "Chart Design",
-          "groupId": "chart-colors",
-          "group": "Change Colors",
-          "label": "Monochromatic Orange",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": false,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
       "commandId": "freew.chart-colors",
       "label": "Change Colors",
       "wpfPresent": false,
@@ -3960,15 +3730,26 @@
     {
       "commandId": "freew.chart-colors-colorful1",
       "label": "Colorful Palette 1",
-      "wpfPresent": false,
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "command-id-alias",
-      "gapClassificationRule": "command-id-alias",
-      "notes": "Other profile exposes the same or closest command intent under a different generated command id.",
-      "wpfLocations": [],
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "chart-design",
+          "tab": "Chart Design",
+          "groupId": "chart-colors",
+          "group": "Change Colors",
+          "label": "Colorful Palette 1",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -3991,15 +3772,26 @@
     {
       "commandId": "freew.chart-colors-colorful2",
       "label": "Colorful Palette 2",
-      "wpfPresent": false,
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "command-id-alias",
-      "gapClassificationRule": "command-id-alias",
-      "notes": "Other profile exposes the same or closest command intent under a different generated command id.",
-      "wpfLocations": [],
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "chart-design",
+          "tab": "Chart Design",
+          "groupId": "chart-colors",
+          "group": "Change Colors",
+          "label": "Colorful Palette 2",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -4022,15 +3814,26 @@
     {
       "commandId": "freew.chart-colors-colorful3",
       "label": "Colorful Palette 3",
-      "wpfPresent": false,
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "command-id-alias",
-      "gapClassificationRule": "command-id-alias",
-      "notes": "Other profile exposes the same or closest command intent under a different generated command id.",
-      "wpfLocations": [],
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "chart-design",
+          "tab": "Chart Design",
+          "groupId": "chart-colors",
+          "group": "Change Colors",
+          "label": "Colorful Palette 3",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -4053,15 +3856,26 @@
     {
       "commandId": "freew.chart-colors-colorful4",
       "label": "Colorful Palette 4",
-      "wpfPresent": false,
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "command-id-alias",
-      "gapClassificationRule": "command-id-alias",
-      "notes": "Other profile exposes the same or closest command intent under a different generated command id.",
-      "wpfLocations": [],
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "chart-design",
+          "tab": "Chart Design",
+          "groupId": "chart-colors",
+          "group": "Change Colors",
+          "label": "Colorful Palette 4",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -4084,15 +3898,26 @@
     {
       "commandId": "freew.chart-colors-mono-blue",
       "label": "Monochromatic Blue",
-      "wpfPresent": false,
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "command-id-alias",
-      "gapClassificationRule": "command-id-alias",
-      "notes": "Other profile exposes the same or closest command intent under a different generated command id.",
-      "wpfLocations": [],
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "chart-design",
+          "tab": "Chart Design",
+          "groupId": "chart-colors",
+          "group": "Change Colors",
+          "label": "Monochromatic Blue",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -4128,15 +3953,26 @@
     {
       "commandId": "freew.chart-colors-mono-grey",
       "label": "Monochromatic Grey",
-      "wpfPresent": false,
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "command-id-alias",
-      "gapClassificationRule": "command-id-alias",
-      "notes": "Other profile exposes the same or closest command intent under a different generated command id.",
-      "wpfLocations": [],
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "chart-design",
+          "tab": "Chart Design",
+          "groupId": "chart-colors",
+          "group": "Change Colors",
+          "label": "Monochromatic Grey",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -4159,15 +3995,26 @@
     {
       "commandId": "freew.chart-colors-mono-orange",
       "label": "Monochromatic Orange",
-      "wpfPresent": false,
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "command-id-alias",
-      "gapClassificationRule": "command-id-alias",
-      "notes": "Other profile exposes the same or closest command intent under a different generated command id.",
-      "wpfLocations": [],
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "chart-design",
+          "tab": "Chart Design",
+          "groupId": "chart-colors",
+          "group": "Change Colors",
+          "label": "Monochromatic Orange",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
