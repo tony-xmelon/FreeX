@@ -146,7 +146,7 @@ Make Backstage Options and Info safety actions honest in both shells. Classify e
 
 Avoid fake Microsoft account, cloud location, or online service placeholders.
 
-Status 2026-07-03: Backstage Options and Info safety are implemented through shared planners and thin Avalonia callbacks. The Info safety rows now read live document state from the shared model, including Mark as Final, protection mode, inspector metadata counts, and accessibility issue counts. The remaining Backstage print gap is direct native printer selection in Avalonia, not Options/Info safety.
+Status 2026-08-14: Backstage Options and Info safety are implemented through shared planners and thin Avalonia callbacks. The Info safety rows read live document state from the shared model, including Mark as Final, protection mode, inspector metadata counts, and accessibility issue counts. Direct printer selection is also closed: Avalonia selects the Windows or CUPS platform print service, discovers queues, collects a shared `PrintSelection`, renders a page-settings-aware PDF through `FreeWPortablePrintWorkflow`, and submits it to the selected queue. A native operating-system print panel is still platform-specific polish, not a missing direct-print workflow.
 
 ### 3. Print Preview and Print Planning
 
