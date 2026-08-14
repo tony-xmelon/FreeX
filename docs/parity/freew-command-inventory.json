@@ -107,6 +107,11 @@
       "id": "insertEditingWorkflowSource",
       "label": "Shared Insert editing registry source",
       "path": "freew/FreeW.App.Presentation/Ribbon/InsertEditingRibbonWorkflow.cs"
+    },
+    {
+      "id": "formattingGalleryWorkflowSource",
+      "label": "Shared formatting gallery registry source",
+      "path": "freew/FreeW.App.Presentation/Ribbon/FormattingGalleryRibbonWorkflow.cs"
     }
   ],
   "summary": {
@@ -124,7 +129,7 @@
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 325
+    "behaviorEvidenceRows": 405
   },
   "commands": [
     {
@@ -2258,6 +2263,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -2289,6 +2307,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -2320,6 +2351,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -2351,6 +2395,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -2382,6 +2439,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -2413,6 +2483,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -2444,6 +2527,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -2475,6 +2571,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -2506,6 +2615,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -2537,6 +2659,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -2568,6 +2703,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -2599,6 +2747,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -2630,6 +2791,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -2703,6 +2877,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -2734,6 +2921,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -2765,6 +2965,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -2796,6 +3009,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -2827,6 +3053,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -2858,6 +3097,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -2889,6 +3141,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -2920,6 +3185,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -2951,6 +3229,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -2982,6 +3273,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -3013,6 +3317,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -3044,6 +3361,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -3075,6 +3405,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -9547,6 +9890,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -9578,6 +9934,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -9609,6 +9978,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -9640,6 +10022,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -9671,6 +10066,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -9702,6 +10110,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -9733,6 +10154,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -9764,6 +10198,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -9795,6 +10242,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -9826,6 +10286,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -9857,6 +10330,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -11481,6 +11967,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -11512,6 +12011,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -11543,6 +12055,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -11574,6 +12099,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -11605,6 +12143,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -11636,6 +12187,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -11667,6 +12231,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -11698,6 +12275,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -11729,6 +12319,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -11760,6 +12363,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -11791,6 +12407,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -11822,6 +12451,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -11853,6 +12495,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -11884,6 +12539,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -11915,6 +12583,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -22695,6 +23376,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -22726,6 +23420,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -22757,6 +23464,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -22788,6 +23508,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -22819,6 +23552,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -22850,6 +23596,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -22881,6 +23640,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -22912,6 +23684,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -22943,6 +23728,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -22974,6 +23772,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -23005,6 +23816,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -23036,6 +23860,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -23067,6 +23904,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same catalog-backed formatting payload through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -33083,6 +33933,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same built-in style through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -33113,7 +33976,20 @@
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same built-in style through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -33145,6 +34021,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same built-in style through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -33176,6 +34065,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same built-in style through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -33207,6 +34109,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same built-in style through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -33238,6 +34153,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same built-in style through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -33269,6 +34197,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same built-in style through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -33300,6 +34241,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same built-in style through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -33331,6 +34285,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same built-in style through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -33362,6 +34329,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same built-in style through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -33393,6 +34373,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same built-in style through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -33424,6 +34417,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same built-in style through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -33455,6 +34461,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same built-in style through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -33486,6 +34505,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same built-in style through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
@@ -33517,6 +34549,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.formatting-gallery.shared-workflow",
+        "slice": "Formatting gallery command behavior",
+        "summary": "Both renderers apply the same built-in style through the shared gallery workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FormattingGalleryRibbonWorkflowTests.cs",
+          "test": "FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation"
+        }
       }
     },
     {
