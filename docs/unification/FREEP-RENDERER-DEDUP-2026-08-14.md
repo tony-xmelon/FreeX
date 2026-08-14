@@ -86,7 +86,7 @@ The synchronized exhaustion checkpoint reports:
 | Repository exact duplicate lines | 8,516 | 6,549 | -1,967 |
 | Repository exact coverage | 3.393694% | 2.629012% | -0.764682 points |
 
-Renderer-root exact coverage is 15.276625% for the WPF app, 13.745981% for the Avalonia app, 8.397790% for
+Renderer-root exact coverage is 15.408022% for the WPF app, 13.860896% for the Avalonia app, 8.397790% for
 WPF rendering, and 7.011476% for Avalonia rendering. The final synchronization incorporated upstream shared
 table-edit transaction work, adding paired native table-cell editor realization after the earlier exhaustion
 checkpoint. The campaign also removed duplicated visual-evidence,

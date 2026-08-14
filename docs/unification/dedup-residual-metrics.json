@@ -29,23 +29,23 @@
                    },
     "repository":  {
                        "analysisRevision":  "HEAD",
-                       "analysisCommit":  "0232ce3d1250bb91142ba42e9e68d1479e0ce387",
+                       "analysisCommit":  "40aa6e41db1932467a3d6ab8de3b7bdcea455bba",
                        "upstreamRevision":  "origin/main",
-                       "upstreamCommit":  "7e3e2fa5ad08fad1d8f1f58df808924858e785a8",
-                       "mergeBaseCommit":  "2e903b1a8724c4124e571d3a44084ae201469442",
-                       "inputTreeSha256":  "17a850cfe4a6788d3b6c79d29d257c0a02286a8d2bd2cd721eee2e7e966c6c81",
+                       "upstreamCommit":  "ac7fa4e155ed151a4f5fa6fa52442007716c4ab6",
+                       "mergeBaseCommit":  "ac7fa4e155ed151a4f5fa6fa52442007716c4ab6",
+                       "inputTreeSha256":  "5db8f0f6193eb72784dfee94f7d94bde80e862f41e4f24468f2faec717fbb8ce",
                        "campaignLocDelta":  {
                                                 "allCSharp":  {
-                                                                  "filesChanged":  205,
-                                                                  "addedLines":  10889,
-                                                                  "deletedLines":  6201,
-                                                                  "netLines":  4688
+                                                                  "filesChanged":  207,
+                                                                  "addedLines":  10891,
+                                                                  "deletedLines":  6346,
+                                                                  "netLines":  4545
                                                               },
                                                 "rendererCSharp":  {
                                                                        "filesChanged":  50,
-                                                                       "addedLines":  2543,
-                                                                       "deletedLines":  4621,
-                                                                       "netLines":  -2078
+                                                                       "addedLines":  2541,
+                                                                       "deletedLines":  4591,
+                                                                       "netLines":  -2050
                                                                    }
                                             }
                    },
@@ -5643,7 +5643,7 @@
                                        "physicalLines":  62,
                                        "nonBlankLines":  55,
                                        "codeLines":  55,
-                                       "sha256":  "8ee8332589602a41fa40b21e69ac3b39e484c2c08cf8525f8ba5f39c1561a5da",
+                                       "sha256":  "fab6b04ca4cf704f4b26973a2904f9b501da96a3e87014ff54e626f07f84d1b9",
                                        "normalizedSha256":  "858d768994c82ea02df701691709b73aad1d9e8bb7b426dff90c5e0257097bf2"
                                    },
                                    {
@@ -6102,7 +6102,7 @@
                                        "physicalLines":  63,
                                        "nonBlankLines":  56,
                                        "codeLines":  56,
-                                       "sha256":  "438cd8c422fb644251271d1913ee2828681e42d41ba0cf84e8e541117e0565ff",
+                                       "sha256":  "f6df41ef87af823633bd103a252fb95f71d8011d900783f805f589c381a139f6",
                                        "normalizedSha256":  "6f0b3319092fca93f11c97c02f5385e9411181c4b6d4a600200acc090966e9b0"
                                    },
                                    {
