@@ -84,7 +84,7 @@
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 106
+    "behaviorEvidenceRows": 113
   },
   "commands": [
     {
@@ -18611,6 +18611,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.multilevel-list.shared-workflow",
+        "slice": "Multilevel List shared workflow",
+        "summary": "The shared workflow fails closed without a renderer definition-dialog endpoint instead of applying defaults.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MultilevelListRibbonWorkflowTests.cs",
+          "test": "MultilevelListRibbonWorkflowTests.MissingDefineDialogFailsClosedInsteadOfApplyingDefaults"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MultilevelListRibbonWorkflowTests.cs",
+          "test": "MultilevelListRibbonWorkflowTests.MissingDefineDialogFailsClosedInsteadOfApplyingDefaults"
+        }
       }
     },
     {
@@ -18653,6 +18666,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.multilevel-list.shared-workflow",
+        "slice": "Multilevel List shared workflow",
+        "summary": "The shared workflow routes Increase List Level as a +1 level delta in both renderers.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MultilevelListRibbonWorkflowTests.cs",
+          "test": "MultilevelListRibbonWorkflowTests.SharedWorkflowOwnsDefaultPresetsLevelsAndDefineDialog"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MultilevelListRibbonWorkflowTests.cs",
+          "test": "MultilevelListRibbonWorkflowTests.SharedWorkflowOwnsDefaultPresetsLevelsAndDefineDialog"
+        }
       }
     },
     {
@@ -18693,8 +18719,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.multilevel-list.shared-workflow",
+        "slice": "Multilevel List shared workflow",
+        "summary": "The shared workflow applies the canonical decimal multilevel definition in both renderers.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MultilevelListRibbonWorkflowTests.cs",
+          "test": "MultilevelListRibbonWorkflowTests.SharedWorkflowOwnsDefaultPresetsLevelsAndDefineDialog"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MultilevelListRibbonWorkflowTests.cs",
+          "test": "MultilevelListRibbonWorkflowTests.SharedWorkflowOwnsDefaultPresetsLevelsAndDefineDialog"
+        }
       }
     },
     {
@@ -18737,6 +18776,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.multilevel-list.shared-workflow",
+        "slice": "Multilevel List shared workflow",
+        "summary": "The shared workflow applies the canonical decimal outline preset in both renderers.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MultilevelListRibbonWorkflowTests.cs",
+          "test": "MultilevelListRibbonWorkflowTests.SharedWorkflowOwnsDefaultPresetsLevelsAndDefineDialog"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MultilevelListRibbonWorkflowTests.cs",
+          "test": "MultilevelListRibbonWorkflowTests.SharedWorkflowOwnsDefaultPresetsLevelsAndDefineDialog"
+        }
       }
     },
     {
@@ -18779,6 +18831,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.multilevel-list.shared-workflow",
+        "slice": "Multilevel List shared workflow",
+        "summary": "The shared workflow applies the decimal/letter/Roman outline preset in both renderers.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MultilevelListRibbonWorkflowTests.cs",
+          "test": "MultilevelListRibbonWorkflowTests.SharedWorkflowOwnsDefaultPresetsLevelsAndDefineDialog"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MultilevelListRibbonWorkflowTests.cs",
+          "test": "MultilevelListRibbonWorkflowTests.SharedWorkflowOwnsDefaultPresetsLevelsAndDefineDialog"
+        }
       }
     },
     {
@@ -18821,6 +18886,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.multilevel-list.shared-workflow",
+        "slice": "Multilevel List shared workflow",
+        "summary": "The shared workflow applies the heading-linked outline preset in both renderers.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MultilevelListRibbonWorkflowTests.cs",
+          "test": "MultilevelListRibbonWorkflowTests.SharedWorkflowOwnsDefaultPresetsLevelsAndDefineDialog"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MultilevelListRibbonWorkflowTests.cs",
+          "test": "MultilevelListRibbonWorkflowTests.SharedWorkflowOwnsDefaultPresetsLevelsAndDefineDialog"
+        }
       }
     },
     {
@@ -18863,6 +18941,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.multilevel-list.shared-workflow",
+        "slice": "Multilevel List shared workflow",
+        "summary": "The shared workflow routes Decrease List Level as a -1 level delta in both renderers.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MultilevelListRibbonWorkflowTests.cs",
+          "test": "MultilevelListRibbonWorkflowTests.SharedWorkflowOwnsDefaultPresetsLevelsAndDefineDialog"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MultilevelListRibbonWorkflowTests.cs",
+          "test": "MultilevelListRibbonWorkflowTests.SharedWorkflowOwnsDefaultPresetsLevelsAndDefineDialog"
+        }
       }
     },
     {
