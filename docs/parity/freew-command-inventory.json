@@ -99,7 +99,7 @@
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 168
+    "behaviorEvidenceRows": 169
   },
   "commands": [
     {
@@ -5226,6 +5226,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.citation.shared-workflow",
+        "slice": "Citation and bibliography workflow",
+        "summary": "Both renderers expose live citation-style state and parse selected style names through one shared choice command.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/CitationRibbonWorkflowTests.cs",
+          "test": "CitationRibbonWorkflowTests.CitationStyleChoiceTracksLiveStateParsesValuesAndPublishesChanges"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/CitationRibbonWorkflowTests.cs",
+          "test": "CitationRibbonWorkflowTests.BothRenderersDelegateCitationPolicyToSharedPresentation"
+        }
       }
     },
     {
