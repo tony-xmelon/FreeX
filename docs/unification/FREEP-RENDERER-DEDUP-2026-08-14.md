@@ -1,0 +1,119 @@
+# FreeP Renderer Dedup Campaign - 2026-08-14
+
+> **Status: PRACTICAL SCOPE EXHAUSTED; CERTIFICATION IN PROGRESS.** This campaign reopened the FreeP renderer
+> boundary after later shared-shell and presentation-policy work made additional WPF/Avalonia extraction
+> practical. The campaign baseline is `d30813abf43b3700a559cf2775e2512b2d135957` on `origin/main`.
+
+## Objective
+
+Reduce FreeP's remaining WPF/Avalonia renderer duplication while preserving behavior and visual parity. Move
+portable state, workflow, projection, geometry, validation, and accessibility decisions into
+`FreeP.App.Presentation` or an appropriate shared project. Keep native control construction, framework event
+translation, drawing APIs, accessibility attachment, window lifetime, and platform effects in thin renderers.
+
+The working target is 9-11% exact duplicate coverage across the four measured FreeP renderer roots. A lower
+number is welcome only where the resulting contract remains simpler than the duplicated native realization.
+
+## Baseline
+
+The deterministic residual measurement at the campaign baseline reports:
+
+| Root | Renderer code lines | Exact duplicate lines | Exact coverage |
+|---|---:|---:|---:|
+| FreeP WPF app | 15,036 | 2,982 | 19.832402% |
+| FreeP WPF rendering | 5,621 | 698 | 12.417719% |
+| FreeP Avalonia app | 16,789 | 2,997 | 17.850974% |
+| FreeP Avalonia rendering | 6,747 | 714 | 10.582481% |
+| **FreeP combined** | **44,193** | **7,391** | **16.724368%** |
+| All measured renderer roots | 250,936 | 8,516 | 3.393694% |
+
+The generated [residual metrics](dedup-residual-metrics.md) are the source of truth. They are regenerated after
+each integrated wave and at final certification.
+
+## Initial work lanes
+
+| Lane | Baseline matched lines | Intended portable owner | Status |
+|---|---:|---|---|
+| Main window pane, state, command, and accessibility projection | 1,204 | FreeP presentation workarea/frame policies | Exhausted |
+| Slideshow, Presenter View, and media orchestration | 891 | FreeP slideshow/presenter sessions and plans | Exhausted |
+| Dialog and pane families | about 850 | FreeP dialog schemas, sessions, and projection plans | Exhausted |
+| Canvas, chart execution, gesture, selection, and automation projection | 743 | FreeP rendering-neutral plans and sessions | Exhausted |
+| Cross-product startup/localization normalized matches | Whole-file normalized matches only | Shared shell where a useful contract exists | Intentional thin composition |
+
+## First integrated checkpoint
+
+The first integrated checkpoint through `498856d2af` contains nine focused commits. It centralizes dialog and
+pane adapters, canvas orchestration, media-pane projection, visual-evidence host policy, slideshow/presenter
+actions, paired render-comparison tooling, palette and Avalonia geometry adapters, rich-text edit transactions,
+and MainWindow pane accessibility state.
+
+| Measure | Baseline `d30813abf4` | First checkpoint | Delta |
+|---|---:|---:|---:|
+| FreeP renderer code lines | 44,193 | 43,695 | -498 |
+| FreeP exact duplicate lines | 7,391 | 6,635 | -756 |
+| FreeP exact coverage | 16.724368% | 15.184804% | -1.539564 points |
+| FreeP normalized duplicate lines | 7,789 | 7,287 | -502 |
+| FreeP normalized coverage | 17.624963% | 16.676965% | -0.947998 points |
+| Repository exact duplicate lines | 8,516 | 7,760 | -756 |
+| Repository exact coverage | 3.393694% | 3.099413% | -0.294281 points |
+
+The first checkpoint is not the target. A second extraction wave is addressing the remaining large MainWindow,
+SlideCanvas, slideshow/presenter, and dialog/pane block families.
+
+## Intentional thin composition
+
+The normalized whole-file matches in FreeP/FreeW Avalonia `Program.cs` and WPF `AppLocalization.cs` remain
+product-owned. Each entry point is already an eight-line adapter over `SisterAvaloniaStandardDesktopFactory`,
+and each localization facade is an eight-line binding from product resources and culture resolution to
+`WpfAppLocalizationBootstrap`. Moving either into another wrapper would hide product composition without
+removing policy or behavior.
+
+Native rich-text document realization, native visual-capture primitives, OLE/clipboard/print/media backends,
+window lifetime, and framework accessibility attachment also remain renderer responsibilities. Their portable
+transactions, orchestration, state, and metadata are campaign scope; their native effects are not.
+
+## Final measured result
+
+The synchronized exhaustion checkpoint reports:
+
+| Measure | Baseline `d30813abf4` | Exhaustion checkpoint | Delta |
+|---|---:|---:|---:|
+| FreeP renderer code lines | 44,193 | 42,299 | -1,894 |
+| FreeP exact duplicate lines | 7,391 | 5,294 | -2,097 |
+| FreeP exact coverage | 16.724368% | 12.515662% | -4.208706 points |
+| FreeP normalized duplicate lines | 7,789 | 5,872 | -1,917 |
+| FreeP normalized coverage | 17.624963% | 13.882125% | -3.742838 points |
+| Repository exact duplicate lines | 8,516 | 6,419 | -2,097 |
+| Repository exact coverage | 3.393694% | 2.577870% | -0.815824 points |
+
+Renderer-root exact coverage is 15.304143% for the WPF app, 13.745981% for the Avalonia app, 8.177044% for
+WPF rendering, and 6.697060% for Avalonia rendering. The campaign also removed duplicated visual-evidence,
+render-comparison, ownership-test, and MSBuild variant plumbing outside the measured renderer roots.
+
+The original 9-11% working target was not reached. Repeated implementation attempts established that reaching
+it would require a generalized WPF/Avalonia control-tree or rendering schema, source-linked/generated native
+window APIs, or compatibility-surface removal. Those mechanisms would add more indirection and risk than the
+remaining lexical duplication warrants.
+
+## Residual ownership
+
+| Residual family | Approximate paired matched lines | Classification |
+|---|---:|---|
+| MainWindow | 860 | Native control inventory/construction, media chrome, recursive menu realization, platform event/focus/UIA wiring, and ribbon endpoint composition around shared policies. |
+| SlideShowWindow | 453 | Public compatibility facade, native transitions/storyboards, framework timers, ink/media overlays, monitor and window lifetime. |
+| SlideCanvas plus chart/gesture/adorner files | 446 | Native text/drawing artifacts, chart clipping/geometry, automation inheritance/events, cursors and coordinate conversion around shared render sequences. |
+| PresenterViewWindow and media controllers | 323 | Native Grid/control/preview construction, window chrome/events, monitor and media backend realization. |
+| Dialog and pane pairs | about 544 | Native control trees, styling, event wiring, focus and modal lifetime around shared schemas, sessions, validation and action routing. |
+| Small normalized startup/localization pairs | Whole-file matches | Intentional product composition over existing shared factories/bootstrap. |
+
+The final MainWindow tail audit also rejected a layout-picker adapter, domain context-menu adapter, and ribbon
+profile facade: each replaced direct native loops or endpoint binding with delegate plumbing without moving any
+additional policy.
+
+## Completion rule
+
+The campaign is complete when repeated residual audits find no remaining stable renderer-neutral contract with
+meaningful duplication reduction, all accepted slices pass focused and repository-wide verification, and FreeP
+WPF/Avalonia visual evidence remains equivalent to the baseline within documented native rendering tolerances.
+Residual native matches will be listed with their ownership reason and estimated cost so the final percentage is
+not mistaken for unexamined scope.
