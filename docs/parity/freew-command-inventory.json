@@ -99,7 +99,7 @@
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 163
+    "behaviorEvidenceRows": 168
   },
   "commands": [
     {
@@ -2975,6 +2975,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.insert-media.shared-workflow",
+        "slice": "Insert media command behavior",
+        "summary": "Both renderers preserve their native chart picker and insertion adapter behind one shared route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertMediaRibbonWorkflowTests.cs",
+          "test": "InsertMediaRibbonWorkflowTests.SharedWorkflowRegistersEveryNativeAdapterWithoutWrappingIt"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertMediaRibbonWorkflowTests.cs",
+          "test": "InsertMediaRibbonWorkflowTests.BothRenderersDelegateInsertMediaPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -16673,6 +16686,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.insert-media.shared-workflow",
+        "slice": "Insert media command behavior",
+        "summary": "Both renderers preserve their native icon picker and insertion adapter behind one shared route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertMediaRibbonWorkflowTests.cs",
+          "test": "InsertMediaRibbonWorkflowTests.SharedWorkflowRegistersEveryNativeAdapterWithoutWrappingIt"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertMediaRibbonWorkflowTests.cs",
+          "test": "InsertMediaRibbonWorkflowTests.BothRenderersDelegateInsertMediaPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -19877,6 +19903,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.insert-media.shared-workflow",
+        "slice": "Insert media command behavior",
+        "summary": "Both renderers preserve their native embedded-object adapter behind one shared route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertMediaRibbonWorkflowTests.cs",
+          "test": "InsertMediaRibbonWorkflowTests.SharedWorkflowRegistersEveryNativeAdapterWithoutWrappingIt"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertMediaRibbonWorkflowTests.cs",
+          "test": "InsertMediaRibbonWorkflowTests.BothRenderersDelegateInsertMediaPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -28994,6 +29033,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.insert-media.shared-workflow",
+        "slice": "Insert media command behavior",
+        "summary": "Both renderers preserve their native SmartArt picker and insertion adapter behind one shared route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertMediaRibbonWorkflowTests.cs",
+          "test": "InsertMediaRibbonWorkflowTests.SharedWorkflowRegistersEveryNativeAdapterWithoutWrappingIt"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertMediaRibbonWorkflowTests.cs",
+          "test": "InsertMediaRibbonWorkflowTests.BothRenderersDelegateInsertMediaPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -36143,6 +36195,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.insert-media.shared-workflow",
+        "slice": "Insert media command behavior",
+        "summary": "Both renderers route WordArt insertion through the same shared action identity.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertMediaRibbonWorkflowTests.cs",
+          "test": "InsertMediaRibbonWorkflowTests.SharedWorkflowRegistersEveryNativeAdapterWithoutWrappingIt"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertMediaRibbonWorkflowTests.cs",
+          "test": "InsertMediaRibbonWorkflowTests.BothRenderersDelegateInsertMediaPolicyToSharedPresentation"
+        }
       }
     },
     {
