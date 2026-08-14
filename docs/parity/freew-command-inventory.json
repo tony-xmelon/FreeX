@@ -71,15 +71,15 @@
   ],
   "summary": {
     "totalCommands": 919,
-    "both": 509,
-    "wpfOnly": 136,
+    "both": 514,
+    "wpfOnly": 131,
     "avaloniaOnly": 274,
     "missingWpf": 274,
-    "missingAvalonia": 136,
+    "missingAvalonia": 131,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 509,
-    "profileShapeOnly": 362,
+    "sharedProfile": 514,
+    "profileShapeOnly": 357,
     "commandIdAliases": 43,
     "platformOnly": 5,
     "deferred": 0,
@@ -34401,13 +34401,13 @@
       "commandId": "freew.toc-add-text",
       "label": "Add Text",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -34420,11 +34420,22 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "references",
+          "tab": "References",
+          "groupId": "toc",
+          "group": "Table of Contents",
+          "label": "Add Text",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
     },
@@ -34432,13 +34443,13 @@
       "commandId": "freew.toc-addtext-level1",
       "label": "Level 1",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -34451,11 +34462,22 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "references",
+          "tab": "References",
+          "groupId": "toc",
+          "group": "Table of Contents",
+          "label": "Level 1",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
     },
@@ -34463,13 +34485,13 @@
       "commandId": "freew.toc-addtext-level2",
       "label": "Level 2",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -34482,11 +34504,22 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "references",
+          "tab": "References",
+          "groupId": "toc",
+          "group": "Table of Contents",
+          "label": "Level 2",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
     },
@@ -34494,13 +34527,13 @@
       "commandId": "freew.toc-addtext-level3",
       "label": "Level 3",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -34513,11 +34546,22 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "references",
+          "tab": "References",
+          "groupId": "toc",
+          "group": "Table of Contents",
+          "label": "Level 3",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
     },
@@ -34525,13 +34569,13 @@
       "commandId": "freew.toc-addtext-none",
       "label": "Do Not Show in Table of Contents",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -34544,11 +34588,22 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "references",
+          "tab": "References",
+          "groupId": "toc",
+          "group": "Table of Contents",
+          "label": "Do Not Show in Table of Contents",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
     },
