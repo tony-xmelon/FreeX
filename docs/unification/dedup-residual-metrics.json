@@ -29,17 +29,17 @@
                    },
     "repository":  {
                        "analysisRevision":  "HEAD",
-                       "analysisCommit":  "5b31251fbd8ab1b31762808b8c3fa21fb7667f3e",
+                       "analysisCommit":  "b1acae8b09e81dd128359944f98eee63f424a035",
                        "upstreamRevision":  "origin/main",
-                       "upstreamCommit":  "b6e9073085a79e893ba7f6158233f1b5f35d3d7e",
-                       "mergeBaseCommit":  "b6e9073085a79e893ba7f6158233f1b5f35d3d7e",
+                       "upstreamCommit":  "2f8140715bca53273db7af85f7c994387e6aae32",
+                       "mergeBaseCommit":  "2f8140715bca53273db7af85f7c994387e6aae32",
                        "inputTreeSha256":  "83e9f3d74c4e3853d6b6cd4d7c5c34d03e0c6fd0b1b8de701ecb1e44cc8199d2",
                        "campaignLocDelta":  {
                                                 "allCSharp":  {
-                                                                  "filesChanged":  5,
-                                                                  "addedLines":  80,
-                                                                  "deletedLines":  0,
-                                                                  "netLines":  80
+                                                                  "filesChanged":  4,
+                                                                  "addedLines":  14,
+                                                                  "deletedLines":  1,
+                                                                  "netLines":  13
                                                               },
                                                 "rendererCSharp":  {
                                                                        "filesChanged":  0,
