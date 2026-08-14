@@ -77,6 +77,11 @@
       "id": "tableInsertionWorkflowSource",
       "label": "Shared Table insertion registry source",
       "path": "freew/FreeW.App.Presentation/Ribbon/TableInsertionRibbonWorkflow.cs"
+    },
+    {
+      "id": "paragraphEditingWorkflowSource",
+      "label": "Shared Paragraph editing registry source",
+      "path": "freew/FreeW.App.Presentation/Ribbon/ParagraphEditingRibbonWorkflow.cs"
     }
   ],
   "summary": {
@@ -94,7 +99,7 @@
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 118
+    "behaviorEvidenceRows": 133
   },
   "commands": [
     {
@@ -354,6 +359,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.paragraph-editing.shared-workflow",
+        "slice": "Paragraph editing command behavior",
+        "summary": "Both renderers map centered paragraph alignment through the shared command family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.NativeCommandsPreserveStateAndAllExecutionsPrepareFirst"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.BothRenderersDelegateParagraphPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -396,6 +414,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.paragraph-editing.shared-workflow",
+        "slice": "Paragraph editing command behavior",
+        "summary": "Both renderers map justified paragraph alignment through the shared command family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.NativeCommandsPreserveStateAndAllExecutionsPrepareFirst"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.BothRenderersDelegateParagraphPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -438,6 +469,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.paragraph-editing.shared-workflow",
+        "slice": "Paragraph editing command behavior",
+        "summary": "Both renderers map left paragraph alignment through the shared command family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.NativeCommandsPreserveStateAndAllExecutionsPrepareFirst"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.BothRenderersDelegateParagraphPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -480,6 +524,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.paragraph-editing.shared-workflow",
+        "slice": "Paragraph editing command behavior",
+        "summary": "Both renderers map right paragraph alignment through the shared command family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.NativeCommandsPreserveStateAndAllExecutionsPrepareFirst"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.BothRenderersDelegateParagraphPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -1045,6 +1102,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.paragraph-editing.shared-workflow",
+        "slice": "Paragraph editing command behavior",
+        "summary": "Both renderers route bullet-list toggling through the shared paragraph command family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.NativeCommandsPreserveStateAndAllExecutionsPrepareFirst"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.BothRenderersDelegateParagraphPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -15734,6 +15804,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.paragraph-editing.shared-workflow",
+        "slice": "Paragraph editing command behavior",
+        "summary": "Both renderers decrease paragraph indentation through one prepared shared action.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.NativeCommandsPreserveStateAndAllExecutionsPrepareFirst"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.BothRenderersDelegateParagraphPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -15796,6 +15879,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.paragraph-editing.shared-workflow",
+        "slice": "Paragraph editing command behavior",
+        "summary": "Both renderers increase paragraph indentation through one prepared shared action.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.NativeCommandsPreserveStateAndAllExecutionsPrepareFirst"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.BothRenderersDelegateParagraphPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -16490,6 +16586,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.paragraph-editing.shared-workflow",
+        "slice": "Paragraph editing command behavior",
+        "summary": "Both renderers toggle keep-lines-together through one prepared shared action.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.NativeCommandsPreserveStateAndAllExecutionsPrepareFirst"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.BothRenderersDelegateParagraphPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -16532,6 +16641,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.paragraph-editing.shared-workflow",
+        "slice": "Paragraph editing command behavior",
+        "summary": "Both renderers toggle keep-with-next through one prepared shared action.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.NativeCommandsPreserveStateAndAllExecutionsPrepareFirst"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.BothRenderersDelegateParagraphPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -19388,6 +19510,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.paragraph-editing.shared-workflow",
+        "slice": "Paragraph editing command behavior",
+        "summary": "Both renderers route numbered-list toggling through the shared paragraph command family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.NativeCommandsPreserveStateAndAllExecutionsPrepareFirst"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.BothRenderersDelegateParagraphPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -20642,6 +20777,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.paragraph-editing.shared-workflow",
+        "slice": "Paragraph editing command behavior",
+        "summary": "Both renderers toggle paragraph borders through one prepared shared action.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.NativeCommandsPreserveStateAndAllExecutionsPrepareFirst"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.BothRenderersDelegateParagraphPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -29785,6 +29933,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.paragraph-editing.shared-workflow",
+        "slice": "Paragraph editing command behavior",
+        "summary": "Both renderers preserve native sort adapters behind one shared semantic route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.NativeCommandsPreserveStateAndAllExecutionsPrepareFirst"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.BothRenderersDelegateParagraphPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -29889,6 +30050,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.paragraph-editing.shared-workflow",
+        "slice": "Paragraph editing command behavior",
+        "summary": "Both renderers toggle paragraph space-after through one prepared shared action.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.NativeCommandsPreserveStateAndAllExecutionsPrepareFirst"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.BothRenderersDelegateParagraphPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -29993,6 +30167,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.paragraph-editing.shared-workflow",
+        "slice": "Paragraph editing command behavior",
+        "summary": "Both renderers toggle paragraph space-before through one prepared shared action.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.NativeCommandsPreserveStateAndAllExecutionsPrepareFirst"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.BothRenderersDelegateParagraphPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -35511,6 +35698,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.paragraph-editing.shared-workflow",
+        "slice": "Paragraph editing command behavior",
+        "summary": "Both renderers toggle widow/orphan control through one prepared shared action.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.NativeCommandsPreserveStateAndAllExecutionsPrepareFirst"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/ParagraphEditingRibbonWorkflowTests.cs",
+          "test": "ParagraphEditingRibbonWorkflowTests.BothRenderersDelegateParagraphPolicyToSharedPresentation"
+        }
       }
     },
     {
