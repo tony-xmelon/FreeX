@@ -70,16 +70,16 @@
     }
   ],
   "summary": {
-    "totalCommands": 927,
-    "both": 503,
-    "wpfOnly": 142,
-    "avaloniaOnly": 282,
-    "missingWpf": 282,
-    "missingAvalonia": 142,
+    "totalCommands": 919,
+    "both": 509,
+    "wpfOnly": 136,
+    "avaloniaOnly": 274,
+    "missingWpf": 274,
+    "missingAvalonia": 136,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 503,
-    "profileShapeOnly": 376,
+    "sharedProfile": 509,
+    "profileShapeOnly": 362,
     "commandIdAliases": 43,
     "platformOnly": 5,
     "deferred": 0,
@@ -7351,13 +7351,13 @@
       "commandId": "freew.docprop-author",
       "label": "Document Property: Author",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -7370,10 +7370,21 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "text",
+          "group": "Text",
+          "label": "Document Property: Author",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
@@ -7382,13 +7393,13 @@
       "commandId": "freew.docprop-comments",
       "label": "Document Property: Comments",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -7401,10 +7412,21 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "text",
+          "group": "Text",
+          "label": "Document Property: Comments",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
@@ -7413,13 +7435,13 @@
       "commandId": "freew.docprop-keywords",
       "label": "Document Property: Keywords",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -7432,10 +7454,21 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "text",
+          "group": "Text",
+          "label": "Document Property: Keywords",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
@@ -7444,13 +7477,13 @@
       "commandId": "freew.docprop-subject",
       "label": "Document Property: Subject",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -7463,10 +7496,21 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "text",
+          "group": "Text",
+          "label": "Document Property: Subject",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
@@ -7475,13 +7519,13 @@
       "commandId": "freew.docprop-title",
       "label": "Document Property: Title",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -7494,10 +7538,21 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "text",
+          "group": "Text",
+          "label": "Document Property: Title",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
@@ -16279,13 +16334,13 @@
       "commandId": "freew.insert-quickpart",
       "label": "Quick Parts",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -16298,12 +16353,23 @@
           "layout": "Small"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "text",
+          "group": "Text",
+          "label": "Quick Parts",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -21851,254 +21917,6 @@
           "path": "freew/FreeW.App.Avalonia.Tests/ViewTabDepthTests.cs",
           "test": "ViewTabDepthTests.Print_preview_command_invokes_host_callback"
         }
-      }
-    },
-    {
-      "commandId": "freew.quick-parts",
-      "label": "Quick Parts",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "text",
-          "group": "Text",
-          "label": "Quick Parts",
-          "controlType": "RibbonDropdown",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
-      "commandId": "freew.quick-parts.author",
-      "label": "Document Property — Author",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "text",
-          "group": "Text",
-          "label": "Document Property — Author",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
-      "commandId": "freew.quick-parts.comments",
-      "label": "Document Property — Comments",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "text",
-          "group": "Text",
-          "label": "Document Property — Comments",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
-      "commandId": "freew.quick-parts.date",
-      "label": "Field — Date",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "text",
-          "group": "Text",
-          "label": "Field — Date",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
-      "commandId": "freew.quick-parts.keywords",
-      "label": "Document Property — Keywords",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "text",
-          "group": "Text",
-          "label": "Document Property — Keywords",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
-      "commandId": "freew.quick-parts.snippet",
-      "label": "Insert Snippet…",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "text",
-          "group": "Text",
-          "label": "Insert Snippet…",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
-      "commandId": "freew.quick-parts.subject",
-      "label": "Document Property — Subject",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "text",
-          "group": "Text",
-          "label": "Document Property — Subject",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
-      "commandId": "freew.quick-parts.title",
-      "label": "Document Property — Title",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "text",
-          "group": "Text",
-          "label": "Document Property — Title",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
       }
     },
     {
