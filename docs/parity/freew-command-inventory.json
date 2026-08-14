@@ -102,6 +102,11 @@
       "id": "designWorkflowSource",
       "label": "Shared Design registry source",
       "path": "freew/FreeW.App.Presentation/Ribbon/DesignRibbonWorkflow.cs"
+    },
+    {
+      "id": "insertEditingWorkflowSource",
+      "label": "Shared Insert editing registry source",
+      "path": "freew/FreeW.App.Presentation/Ribbon/InsertEditingRibbonWorkflow.cs"
     }
   ],
   "summary": {
@@ -119,7 +124,7 @@
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 309
+    "behaviorEvidenceRows": 325
   },
   "commands": [
     {
@@ -905,6 +910,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.insert-editing.shared-workflow",
+        "slice": "Insert editing command behavior",
+        "summary": "Both renderers route bookmark insertion through one shared command identity.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.ContentControlsPrepareBeforeMutationWhileFieldActionsPreserveDirectExecution"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.BothRenderersDelegateInsertEditingIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -947,6 +965,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.insert-editing.shared-workflow",
+        "slice": "Insert editing command behavior",
+        "summary": "Both renderers preserve their native bookmark manager behind one shared route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.ContentControlsPrepareBeforeMutationWhileFieldActionsPreserveDirectExecution"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.BothRenderersDelegateInsertEditingIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -1258,6 +1289,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.insert-editing.shared-workflow",
+        "slice": "Insert editing command behavior",
+        "summary": "Check-box content-control insertion uses shared preparation and mutation ordering.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.ContentControlsPrepareBeforeMutationWhileFieldActionsPreserveDirectExecution"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.BothRenderersDelegateInsertEditingIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -1300,6 +1344,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.insert-editing.shared-workflow",
+        "slice": "Insert editing command behavior",
+        "summary": "Combo-box content-control insertion uses shared preparation and mutation ordering.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.ContentControlsPrepareBeforeMutationWhileFieldActionsPreserveDirectExecution"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.BothRenderersDelegateInsertEditingIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -1342,6 +1399,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.insert-editing.shared-workflow",
+        "slice": "Insert editing command behavior",
+        "summary": "Date-picker content-control insertion uses shared preparation and mutation ordering.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.ContentControlsPrepareBeforeMutationWhileFieldActionsPreserveDirectExecution"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.BothRenderersDelegateInsertEditingIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -1384,6 +1454,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.insert-editing.shared-workflow",
+        "slice": "Insert editing command behavior",
+        "summary": "Drop-down content-control insertion uses shared preparation and mutation ordering.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.ContentControlsPrepareBeforeMutationWhileFieldActionsPreserveDirectExecution"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.BothRenderersDelegateInsertEditingIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -1426,6 +1509,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.insert-editing.shared-workflow",
+        "slice": "Insert editing command behavior",
+        "summary": "Rich-text content-control insertion uses shared preparation and mutation ordering.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.ContentControlsPrepareBeforeMutationWhileFieldActionsPreserveDirectExecution"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.BothRenderersDelegateInsertEditingIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -1468,6 +1564,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.insert-editing.shared-workflow",
+        "slice": "Insert editing command behavior",
+        "summary": "Plain-text content-control insertion uses shared preparation and mutation ordering.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.ContentControlsPrepareBeforeMutationWhileFieldActionsPreserveDirectExecution"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.BothRenderersDelegateInsertEditingIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -8269,6 +8378,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.insert-editing.shared-workflow",
+        "slice": "Insert editing command behavior",
+        "summary": "Both renderers preserve native hyperlink editing behind one shared route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.ContentControlsPrepareBeforeMutationWhileFieldActionsPreserveDirectExecution"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.BothRenderersDelegateInsertEditingIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -11877,6 +11999,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.insert-editing.shared-workflow",
+        "slice": "Insert editing command behavior",
+        "summary": "Both renderers route hyperlink insertion through one shared command identity.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.ContentControlsPrepareBeforeMutationWhileFieldActionsPreserveDirectExecution"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.BothRenderersDelegateInsertEditingIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -11919,6 +12054,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.insert-editing.shared-workflow",
+        "slice": "Insert editing command behavior",
+        "summary": "Both renderers preserve native hyperlink ScreenTip editing behind one shared route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.ContentControlsPrepareBeforeMutationWhileFieldActionsPreserveDirectExecution"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.BothRenderersDelegateInsertEditingIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -17009,8 +17157,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.insert-editing.shared-workflow",
+        "slice": "Insert editing command behavior",
+        "summary": "The compatibility bookmark alias resolves to the same shared native command.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.ContentControlsPrepareBeforeMutationWhileFieldActionsPreserveDirectExecution"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.BothRenderersDelegateInsertEditingIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -17247,8 +17408,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.insert-editing.shared-workflow",
+        "slice": "Insert editing command behavior",
+        "summary": "The compatibility hyperlink alias resolves to the same shared native command.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.ContentControlsPrepareBeforeMutationWhileFieldActionsPreserveDirectExecution"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.BothRenderersDelegateInsertEditingIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -18060,6 +18234,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.insert-editing.shared-workflow",
+        "slice": "Insert editing command behavior",
+        "summary": "Both renderers link selections to bookmarks through one shared route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.ContentControlsPrepareBeforeMutationWhileFieldActionsPreserveDirectExecution"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.BothRenderersDelegateInsertEditingIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -24421,6 +24608,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.insert-editing.shared-workflow",
+        "slice": "Insert editing command behavior",
+        "summary": "Both renderers remove hyperlinks through one shared route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.ContentControlsPrepareBeforeMutationWhileFieldActionsPreserveDirectExecution"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.BothRenderersDelegateInsertEditingIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -37328,6 +37528,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.insert-editing.shared-workflow",
+        "slice": "Insert editing command behavior",
+        "summary": "Both renderers toggle field-code display through one shared route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.ContentControlsPrepareBeforeMutationWhileFieldActionsPreserveDirectExecution"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
+          "test": "InsertEditingRibbonWorkflowTests.BothRenderersDelegateInsertEditingIdentityToSharedPresentation"
+        }
       }
     },
     {
