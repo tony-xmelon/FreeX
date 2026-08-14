@@ -112,24 +112,34 @@
       "id": "formattingGalleryWorkflowSource",
       "label": "Shared formatting gallery registry source",
       "path": "freew/FreeW.App.Presentation/Ribbon/FormattingGalleryRibbonWorkflow.cs"
+    },
+    {
+      "id": "symbolWorkflowSource",
+      "label": "Shared symbol registry source",
+      "path": "freew/FreeW.App.Presentation/Ribbon/SymbolRibbonWorkflow.cs"
+    },
+    {
+      "id": "tableEditingWorkflowSource",
+      "label": "Shared table editing registry source",
+      "path": "freew/FreeW.App.Presentation/Ribbon/TableEditingRibbonWorkflow.cs"
     }
   ],
   "summary": {
-    "totalCommands": 914,
-    "both": 525,
+    "totalCommands": 934,
+    "both": 545,
     "wpfOnly": 120,
     "avaloniaOnly": 269,
     "missingWpf": 269,
     "missingAvalonia": 120,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 525,
+    "sharedProfile": 545,
     "profileShapeOnly": 345,
     "commandIdAliases": 39,
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 405
+    "behaviorEvidenceRows": 460
   },
   "commands": [
     {
@@ -1624,6 +1634,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -1666,6 +1689,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -1708,6 +1744,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -1750,6 +1799,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -1792,6 +1854,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -1834,6 +1909,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -1876,6 +1964,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -1918,6 +2019,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -1960,6 +2074,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -2064,6 +2191,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -2106,6 +2246,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -2148,6 +2301,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -33203,6 +33369,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -34724,7 +34903,7 @@
           "groupId": "symbols",
           "group": "Symbols",
           "label": "Symbol",
-          "controlType": "RibbonButton",
+          "controlType": "RibbonSplitButton",
           "layout": "Medium"
         }
       ],
@@ -34736,7 +34915,7 @@
           "groupId": "symbols",
           "group": "Symbols",
           "label": "Symbol",
-          "controlType": "RibbonButton",
+          "controlType": "RibbonSplitButton",
           "layout": "Medium"
         }
       ],
@@ -34745,6 +34924,1106 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.symbol.arrow-left",
+      "label": "←   Left Arrow",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "←   Left Arrow",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "←   Left Arrow",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.symbol.shared-workflow",
+        "slice": "Symbol palette command behavior",
+        "summary": "Both renderers insert the same catalog-backed glyph through the shared symbol workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.SharedMappingsPrepareThenInsertExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateSymbolIdentityToPresentation"
+        }
+      }
+    },
+    {
+      "commandId": "freew.symbol.arrow-right",
+      "label": "→   Right Arrow",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "→   Right Arrow",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "→   Right Arrow",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.symbol.shared-workflow",
+        "slice": "Symbol palette command behavior",
+        "summary": "Both renderers insert the same catalog-backed glyph through the shared symbol workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.SharedMappingsPrepareThenInsertExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateSymbolIdentityToPresentation"
+        }
+      }
+    },
+    {
+      "commandId": "freew.symbol.bullet",
+      "label": "•   Bullet",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "•   Bullet",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "•   Bullet",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.symbol.shared-workflow",
+        "slice": "Symbol palette command behavior",
+        "summary": "Both renderers insert the same catalog-backed glyph through the shared symbol workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.SharedMappingsPrepareThenInsertExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateSymbolIdentityToPresentation"
+        }
+      }
+    },
+    {
+      "commandId": "freew.symbol.cent",
+      "label": "¢   Cent Sign",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "¢   Cent Sign",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "¢   Cent Sign",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.symbol.shared-workflow",
+        "slice": "Symbol palette command behavior",
+        "summary": "Both renderers insert the same catalog-backed glyph through the shared symbol workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.SharedMappingsPrepareThenInsertExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateSymbolIdentityToPresentation"
+        }
+      }
+    },
+    {
+      "commandId": "freew.symbol.copyright",
+      "label": "©   Copyright",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "©   Copyright",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "©   Copyright",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.symbol.shared-workflow",
+        "slice": "Symbol palette command behavior",
+        "summary": "Both renderers insert the same catalog-backed glyph through the shared symbol workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.SharedMappingsPrepareThenInsertExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateSymbolIdentityToPresentation"
+        }
+      }
+    },
+    {
+      "commandId": "freew.symbol.degree",
+      "label": "°   Degree Sign",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "°   Degree Sign",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "°   Degree Sign",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.symbol.shared-workflow",
+        "slice": "Symbol palette command behavior",
+        "summary": "Both renderers insert the same catalog-backed glyph through the shared symbol workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.SharedMappingsPrepareThenInsertExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateSymbolIdentityToPresentation"
+        }
+      }
+    },
+    {
+      "commandId": "freew.symbol.divide",
+      "label": "÷   Division",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "÷   Division",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "÷   Division",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.symbol.shared-workflow",
+        "slice": "Symbol palette command behavior",
+        "summary": "Both renderers insert the same catalog-backed glyph through the shared symbol workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.SharedMappingsPrepareThenInsertExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateSymbolIdentityToPresentation"
+        }
+      }
+    },
+    {
+      "commandId": "freew.symbol.ellipsis",
+      "label": "…   Ellipsis",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "…   Ellipsis",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "…   Ellipsis",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.symbol.shared-workflow",
+        "slice": "Symbol palette command behavior",
+        "summary": "Both renderers insert the same catalog-backed glyph through the shared symbol workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.SharedMappingsPrepareThenInsertExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateSymbolIdentityToPresentation"
+        }
+      }
+    },
+    {
+      "commandId": "freew.symbol.emdash",
+      "label": "—   Em Dash",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "—   Em Dash",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "—   Em Dash",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.symbol.shared-workflow",
+        "slice": "Symbol palette command behavior",
+        "summary": "Both renderers insert the same catalog-backed glyph through the shared symbol workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.SharedMappingsPrepareThenInsertExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateSymbolIdentityToPresentation"
+        }
+      }
+    },
+    {
+      "commandId": "freew.symbol.endash",
+      "label": "–   En Dash",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "–   En Dash",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "–   En Dash",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.symbol.shared-workflow",
+        "slice": "Symbol palette command behavior",
+        "summary": "Both renderers insert the same catalog-backed glyph through the shared symbol workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.SharedMappingsPrepareThenInsertExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateSymbolIdentityToPresentation"
+        }
+      }
+    },
+    {
+      "commandId": "freew.symbol.euro",
+      "label": "€   Euro Sign",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "€   Euro Sign",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "€   Euro Sign",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.symbol.shared-workflow",
+        "slice": "Symbol palette command behavior",
+        "summary": "Both renderers insert the same catalog-backed glyph through the shared symbol workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.SharedMappingsPrepareThenInsertExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateSymbolIdentityToPresentation"
+        }
+      }
+    },
+    {
+      "commandId": "freew.symbol.greaterequal",
+      "label": "≥   Greater-Or-Equal",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "≥   Greater-Or-Equal",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "≥   Greater-Or-Equal",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.symbol.shared-workflow",
+        "slice": "Symbol palette command behavior",
+        "summary": "Both renderers insert the same catalog-backed glyph through the shared symbol workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.SharedMappingsPrepareThenInsertExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateSymbolIdentityToPresentation"
+        }
+      }
+    },
+    {
+      "commandId": "freew.symbol.lessequal",
+      "label": "≤   Less-Or-Equal",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "≤   Less-Or-Equal",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "≤   Less-Or-Equal",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.symbol.shared-workflow",
+        "slice": "Symbol palette command behavior",
+        "summary": "Both renderers insert the same catalog-backed glyph through the shared symbol workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.SharedMappingsPrepareThenInsertExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateSymbolIdentityToPresentation"
+        }
+      }
+    },
+    {
+      "commandId": "freew.symbol.multiply",
+      "label": "×   Multiplication",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "×   Multiplication",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "×   Multiplication",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.symbol.shared-workflow",
+        "slice": "Symbol palette command behavior",
+        "summary": "Both renderers insert the same catalog-backed glyph through the shared symbol workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.SharedMappingsPrepareThenInsertExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateSymbolIdentityToPresentation"
+        }
+      }
+    },
+    {
+      "commandId": "freew.symbol.notequal",
+      "label": "≠   Not Equal",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "≠   Not Equal",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "≠   Not Equal",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.symbol.shared-workflow",
+        "slice": "Symbol palette command behavior",
+        "summary": "Both renderers insert the same catalog-backed glyph through the shared symbol workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.SharedMappingsPrepareThenInsertExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateSymbolIdentityToPresentation"
+        }
+      }
+    },
+    {
+      "commandId": "freew.symbol.plusminus",
+      "label": "±   Plus-Minus",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "±   Plus-Minus",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "±   Plus-Minus",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.symbol.shared-workflow",
+        "slice": "Symbol palette command behavior",
+        "summary": "Both renderers insert the same catalog-backed glyph through the shared symbol workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.SharedMappingsPrepareThenInsertExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateSymbolIdentityToPresentation"
+        }
+      }
+    },
+    {
+      "commandId": "freew.symbol.pound",
+      "label": "£   Pound Sign",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "£   Pound Sign",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "£   Pound Sign",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.symbol.shared-workflow",
+        "slice": "Symbol palette command behavior",
+        "summary": "Both renderers insert the same catalog-backed glyph through the shared symbol workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.SharedMappingsPrepareThenInsertExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateSymbolIdentityToPresentation"
+        }
+      }
+    },
+    {
+      "commandId": "freew.symbol.registered",
+      "label": "®   Registered",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "®   Registered",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "®   Registered",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.symbol.shared-workflow",
+        "slice": "Symbol palette command behavior",
+        "summary": "Both renderers insert the same catalog-backed glyph through the shared symbol workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.SharedMappingsPrepareThenInsertExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateSymbolIdentityToPresentation"
+        }
+      }
+    },
+    {
+      "commandId": "freew.symbol.trademark",
+      "label": "™   Trademark",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "™   Trademark",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "™   Trademark",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.symbol.shared-workflow",
+        "slice": "Symbol palette command behavior",
+        "summary": "Both renderers insert the same catalog-backed glyph through the shared symbol workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.SharedMappingsPrepareThenInsertExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateSymbolIdentityToPresentation"
+        }
+      }
+    },
+    {
+      "commandId": "freew.symbol.yen",
+      "label": "¥   Yen Sign",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "¥   Yen Sign",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "¥   Yen Sign",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.symbol.shared-workflow",
+        "slice": "Symbol palette command behavior",
+        "summary": "Both renderers insert the same catalog-backed glyph through the shared symbol workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.SharedMappingsPrepareThenInsertExactCatalogPayloads"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/SymbolRibbonWorkflowTests.cs",
+          "test": "SymbolRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateSymbolIdentityToPresentation"
+        }
       }
     },
     {
@@ -35005,6 +36284,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -35047,6 +36339,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -35089,6 +36394,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -35131,6 +36449,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -35173,6 +36504,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -35578,6 +36922,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -35620,6 +36977,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -35662,6 +37032,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -35704,6 +37087,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -35746,6 +37142,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -35788,6 +37197,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -35872,6 +37294,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -35914,6 +37349,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -36018,6 +37466,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -36122,6 +37583,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -36164,6 +37638,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -36389,6 +37876,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -36473,6 +37973,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -36515,6 +38028,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -36557,6 +38083,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -36599,6 +38138,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -36809,6 +38361,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
