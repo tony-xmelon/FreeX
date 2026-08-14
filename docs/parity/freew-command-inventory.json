@@ -117,6 +117,11 @@
       "id": "symbolWorkflowSource",
       "label": "Shared symbol registry source",
       "path": "freew/FreeW.App.Presentation/Ribbon/SymbolRibbonWorkflow.cs"
+    },
+    {
+      "id": "tableEditingWorkflowSource",
+      "label": "Shared table editing registry source",
+      "path": "freew/FreeW.App.Presentation/Ribbon/TableEditingRibbonWorkflow.cs"
     }
   ],
   "summary": {
@@ -134,7 +139,7 @@
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 425
+    "behaviorEvidenceRows": 460
   },
   "commands": [
     {
@@ -1629,6 +1634,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -1671,6 +1689,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -1713,6 +1744,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -1755,6 +1799,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -1797,6 +1854,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -1839,6 +1909,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -1881,6 +1964,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -1923,6 +2019,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -1965,6 +2074,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -2069,6 +2191,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -2111,6 +2246,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -2153,6 +2301,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -33208,6 +33369,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -36110,6 +36284,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -36152,6 +36339,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -36194,6 +36394,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -36236,6 +36449,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -36278,6 +36504,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -36683,6 +36922,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -36725,6 +36977,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -36767,6 +37032,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -36809,6 +37087,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -36851,6 +37142,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -36893,6 +37197,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -36977,6 +37294,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -37019,6 +37349,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -37123,6 +37466,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -37227,6 +37583,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -37269,6 +37638,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -37494,6 +37876,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -37578,6 +37973,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -37620,6 +38028,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -37662,6 +38083,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -37704,6 +38138,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -37914,6 +38361,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-editing.shared-workflow",
+        "slice": "Table editing command behavior",
+        "summary": "Both renderers prepare and execute the same table option, selection, structure, sizing, alignment, and text-direction mappings through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableEditingRibbonWorkflowTests.cs",
+          "test": "TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation"
+        }
       }
     },
     {
