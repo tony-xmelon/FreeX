@@ -29,23 +29,23 @@
                    },
     "repository":  {
                        "analysisRevision":  "HEAD",
-                       "analysisCommit":  "6e9b8f13f9ce1bf2b2b56802a544f27279cba4e2",
+                       "analysisCommit":  "2873b1c408d204b9fad516b98affbd3a95819d4f",
                        "upstreamRevision":  "origin/main",
-                       "upstreamCommit":  "946b8d21716bf1899330e1f91b7a78031577c31f",
-                       "mergeBaseCommit":  "946b8d21716bf1899330e1f91b7a78031577c31f",
-                       "inputTreeSha256":  "20e3622ca2586bac99d8c735fcf73ebdb1e9598069b991be52cc3648de040f2f",
+                       "upstreamCommit":  "26e121b4a9d73d0c1c834db43ec95e643fa0ea0d",
+                       "mergeBaseCommit":  "26e121b4a9d73d0c1c834db43ec95e643fa0ea0d",
+                       "inputTreeSha256":  "83e9f3d74c4e3853d6b6cd4d7c5c34d03e0c6fd0b1b8de701ecb1e44cc8199d2",
                        "campaignLocDelta":  {
                                                 "allCSharp":  {
-                                                                  "filesChanged":  3,
-                                                                  "addedLines":  137,
-                                                                  "deletedLines":  0,
-                                                                  "netLines":  137
+                                                                  "filesChanged":  5,
+                                                                  "addedLines":  20,
+                                                                  "deletedLines":  2,
+                                                                  "netLines":  18
                                                               },
                                                 "rendererCSharp":  {
-                                                                       "filesChanged":  1,
-                                                                       "addedLines":  6,
+                                                                       "filesChanged":  0,
+                                                                       "addedLines":  0,
                                                                        "deletedLines":  0,
-                                                                       "netLines":  6
+                                                                       "netLines":  0
                                                                    }
                                             }
                    },
@@ -7393,7 +7393,7 @@
                                        "physicalLines":  470,
                                        "nonBlankLines":  393,
                                        "codeLines":  304,
-                                       "sha256":  "3f8969a86018bb882f1d7f94054109c1272dd8c12694001327545e8730e885a2",
+                                       "sha256":  "b0652a5090934395d8ed7234fb3a82058595834b118c25e053b224793e93ba6c",
                                        "normalizedSha256":  "614d58bf9f2ba390cb00f6f426e566b79f3022a32829c01ff4f9051b10869a24"
                                    },
                                    {
