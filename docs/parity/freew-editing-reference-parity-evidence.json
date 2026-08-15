@@ -82,6 +82,7 @@
                           "sharedPolicy":  "TableTextConversionDialogPlanner; TextTableConvert",
                           "wpfSources":  [
                                              "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs",
+                                             "freew/FreeW.App.Host/TableTextConversionDialog.cs",
                                              "freew/FreeW.App.Host/Editing/DocumentView.cs"
                                          ],
                           "avaloniaSources":  [
