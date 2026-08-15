@@ -139,7 +139,7 @@
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 461
+    "behaviorEvidenceRows": 463
   },
   "commands": [
     {
@@ -8291,7 +8291,7 @@
           "groupId": "views",
           "group": "Views",
           "label": "Draft",
-          "controlType": "RibbonButton",
+          "controlType": "RibbonToggleButton",
           "layout": "Medium"
         }
       ],
@@ -8300,6 +8300,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.print-family-view.shared-behavior",
+        "slice": "Print-family view behavior",
+        "summary": "Routes Draft through the shared stateful view workflow so WPF and Avalonia expose the same mutually-exclusive live checked state.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/WebLayoutDraftCommandTests.cs",
+          "test": "WebLayoutDraftCommandTests.ViewToggles_AreMutuallyExclusive_InCheckedState"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/ViewTabDepthTests.cs",
+          "test": "ViewTabDepthTests.View_mode_commands_report_one_live_checked_state_and_keep_legacy_aliases"
+        }
       }
     },
     {
@@ -24583,7 +24596,7 @@
           "groupId": "views",
           "group": "Views",
           "label": "Print Layout",
-          "controlType": "RibbonButton",
+          "controlType": "RibbonToggleButton",
           "layout": "Medium"
         }
       ],
@@ -24603,7 +24616,7 @@
         },
         "avaloniaEvidence": {
           "path": "freew/FreeW.App.Avalonia.Tests/ViewTabDepthTests.cs",
-          "test": "ViewTabDepthTests.Print_layout_command_invokes_host_callback"
+          "test": "ViewTabDepthTests.View_mode_commands_report_one_live_checked_state_and_keep_legacy_aliases"
         }
       }
     },
@@ -40576,7 +40589,7 @@
           "groupId": "views",
           "group": "Views",
           "label": "Web Layout",
-          "controlType": "RibbonButton",
+          "controlType": "RibbonToggleButton",
           "layout": "Medium"
         }
       ],
@@ -40585,6 +40598,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.print-family-view.shared-behavior",
+        "slice": "Print-family view behavior",
+        "summary": "Routes Web Layout through the shared stateful view workflow so WPF and Avalonia expose the same mutually-exclusive live checked state.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/WebLayoutDraftCommandTests.cs",
+          "test": "WebLayoutDraftCommandTests.ViewToggles_AreMutuallyExclusive_InCheckedState"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/ViewTabDepthTests.cs",
+          "test": "ViewTabDepthTests.View_mode_commands_report_one_live_checked_state_and_keep_legacy_aliases"
+        }
       }
     },
     {
