@@ -155,3 +155,41 @@ Do not convert a row to passed without evidence from the final synchronized impl
 
 All identified practical extraction scope and certification gates are complete. Remaining lexical matches are
 documented native control, input, drawing, accessibility, animation, lifetime, and capture realizations.
+
+## Repo-wide region classification - 2026-08-15
+
+The certification above rested on per-campaign audits. This section closes the last measurement gap by
+classifying *every* remaining renderer-to-renderer duplicated region in all three apps at once, so the
+"remaining lexical matches are native realization" claim is enumerated rather than asserted.
+
+Method note, because it changes the numbers: raw sliding-window counts overstate duplication by roughly 8x,
+since one duplicated region is recounted at every window offset. Overlapping windows are merged into
+contiguous *regions* before counting. A normalized or structural matcher is also unusable here - C#
+declaration shapes repeat everywhere, so it reports FreeP enum members as "matching" FreeW record parameters.
+Only exact post-comment, post-brace matches are counted.
+
+| App | Regions | Backed by a shared type named inside the region | Native-only |
+|---|---|---|---|
+| FreeP | 76 | ~47% (remainder is interface impls, ribbon-profile delegate table, parameter forwarding) | - |
+| FreeW | 21 | 17 | 4 |
+| FreeX | 2 | 1 | 1 |
+
+All five native-only FreeW/FreeX regions fall into categories this document already reserves as native, and
+each was checked individually rather than pattern-matched:
+
+- **Input translation** - `DocumentView.ToEditorInputKey` and `FormulaBarWpfInputAdapter`/`FormulaBarAvaloniaInputAdapter`.
+  These look identical because WPF and Avalonia both spell their enum members `Key.Enter`, `Key.Tab`, and so on,
+  but the parameter is `System.Windows.Input.Key` in one and `Avalonia.Input.Key` in the other - two unrelated
+  CLR types. The *target* enums (`DocumentEditorInputKey`, `FormulaEditorKey`) are already neutral and already
+  shared, so the portable half is extracted; only the type-to-type translation is mirrored, and it cannot be
+  shared without generics or reflection that would cost more than the duplication.
+- **Control field declarations** - `PageSetupDialog` and `TablePropertiesDialog` backing fields. `TextBox` and
+  `ComboBox` are likewise different types per framework; this is control construction.
+- **Neutral-enum-to-control lookup** - `PageSetupDialog`'s switch from `PageSetupDialogControlKind` to a field.
+  The enum and the focus plan driving it are shared; the switch returns a native control by definition.
+
+Conclusion: 99 regions repo-wide, none of them an unextracted portable decision. Cross-app neutral-to-neutral
+exact duplication is zero. The neutral and shared tiers are now measured roots in `Measure-DedupResiduals.ps1`,
+so neutral-to-neutral duplication and portable logic leaking back into a shell both regress visibly instead of
+being assumed absent - that check did not exist when the campaign closed, and it is what caught the two
+thin-renderer leaks fixed after certification.
