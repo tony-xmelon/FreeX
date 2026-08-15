@@ -1,0 +1,301 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-14T20:35:33.8130551\u002B03:00",
+  "options": {
+    "thresholdPercent": 25,
+    "failOnDimensionMismatch": false,
+    "pixelTolerance": 8,
+    "strictPixelThresholdPercent": null
+  },
+  "summary": {
+    "rows": 10,
+    "comparedRows": 10,
+    "failedRows": 0,
+    "dimensionMismatches": 0,
+    "maxMeanDiffPercent": 15.81247385620915,
+    "maxExactMeanDiffPercent": 17.23067291559516,
+    "maxChangedPixelPercent": 74.48579331154136
+  },
+  "rows": [
+    {
+      "nn": 1,
+      "sheetName": "pvt1 - pvt [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 7.79737037037037,
+      "excelPng": "excel_01_pvt1_pvt.png",
+      "freeXPng": "freex_01_pvt1_pvt.png",
+      "excelDimensions": {
+        "width": 578,
+        "height": 234,
+        "text": "578x234"
+      },
+      "freeXDimensions": {
+        "width": 578,
+        "height": 234,
+        "text": "578x234"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 14.553206805055641,
+        "changedPixelPercent": 52.11900748232928,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": ""
+    },
+    {
+      "nn": 2,
+      "sheetName": "pvt2 - pvt [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 11.265792755991285,
+      "excelPng": "excel_02_pvt2_pvt.png",
+      "freeXPng": "freex_02_pvt2_pvt.png",
+      "excelDimensions": {
+        "width": 674,
+        "height": 408,
+        "text": "674x408"
+      },
+      "freeXDimensions": {
+        "width": 674,
+        "height": 408,
+        "text": "674x408"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 14.015253586937385,
+        "changedPixelPercent": 43.71218071798452,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": ""
+    },
+    {
+      "nn": 3,
+      "sheetName": "pvt3 - pvt [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 3.0266462418300653,
+      "excelPng": "excel_03_pvt3_pvt.png",
+      "freeXPng": "freex_03_pvt3_pvt.png",
+      "excelDimensions": {
+        "width": 1538,
+        "height": 263,
+        "text": "1538x263"
+      },
+      "freeXDimensions": {
+        "width": 1538,
+        "height": 263,
+        "text": "1538x263"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 13.40155380444497,
+        "changedPixelPercent": 55.6584275662927,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": ""
+    },
+    {
+      "nn": 4,
+      "sheetName": "pvtNoColumnLabels - pvtNoColumnLabels [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 3.306760620915033,
+      "excelPng": "excel_04_pvtNoColumnLabels_pvtNoColumnLabels.png",
+      "freeXPng": "freex_04_pvtNoColumnLabels_pvtNoColumnLabels.png",
+      "excelDimensions": {
+        "width": 290,
+        "height": 698,
+        "text": "290x698"
+      },
+      "freeXDimensions": {
+        "width": 290,
+        "height": 698,
+        "text": "290x698"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 10.728306446248755,
+        "changedPixelPercent": 28.5722754668511,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": ""
+    },
+    {
+      "nn": 5,
+      "sheetName": "pvtCollapsedFields - pvtCollapsedFields [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 15.81247385620915,
+      "excelPng": "excel_05_pvtCollapsedFields_pvtCollapsedFields.png",
+      "freeXPng": "freex_05_pvtCollapsedFields_pvtCollapsedFields.png",
+      "excelDimensions": {
+        "width": 290,
+        "height": 234,
+        "text": "290x234"
+      },
+      "freeXDimensions": {
+        "width": 290,
+        "height": 234,
+        "text": "290x234"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 17.23067291559516,
+        "changedPixelPercent": 54.06719717064544,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": ""
+    },
+    {
+      "nn": 6,
+      "sheetName": "pvtFieldAsValueAndLabel - pvtFieldAsValueAndLabel [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 1.9404030501089324,
+      "excelPng": "excel_06_pvtFieldAsValueAndLabel_pvtFieldAsValueAndLabel.png",
+      "freeXPng": "freex_06_pvtFieldAsValueAndLabel_pvtFieldAsValueAndLabel.png",
+      "excelDimensions": {
+        "width": 194,
+        "height": 669,
+        "text": "194x669"
+      },
+      "freeXDimensions": {
+        "width": 194,
+        "height": 669,
+        "text": "194x669"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 8.882031950232001,
+        "changedPixelPercent": 24.171328186399148,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": ""
+    },
+    {
+      "nn": 7,
+      "sheetName": "pvtHideSubTotals - pvtHidesubTotals [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 1.5794057734204794,
+      "excelPng": "excel_07_pvtHideSubTotals_pvtHidesubTotals.png",
+      "freeXPng": "freex_07_pvtHideSubTotals_pvtHidesubTotals.png",
+      "excelDimensions": {
+        "width": 1730,
+        "height": 147,
+        "text": "1730x147"
+      },
+      "freeXDimensions": {
+        "width": 1730,
+        "height": 147,
+        "text": "1730x147"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 14.326466360468402,
+        "changedPixelPercent": 69.74047422437182,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": ""
+    },
+    {
+      "nn": 8,
+      "sheetName": "pvtFilter - pvtFilter [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 10.852783496732025,
+      "excelPng": "excel_08_pvtFilter_pvtFilter.png",
+      "freeXPng": "freex_08_pvtFilter_pvtFilter.png",
+      "excelDimensions": {
+        "width": 194,
+        "height": 205,
+        "text": "194x205"
+      },
+      "freeXDimensions": {
+        "width": 194,
+        "height": 205,
+        "text": "194x205"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 15.524635937687453,
+        "changedPixelPercent": 74.48579331154136,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": ""
+    },
+    {
+      "nn": 9,
+      "sheetName": "pvtSort - pvtSort [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 3.309244008714597,
+      "excelPng": "excel_09_pvtSort_pvtSort.png",
+      "freeXPng": "freex_09_pvtSort_pvtSort.png",
+      "excelDimensions": {
+        "width": 290,
+        "height": 698,
+        "text": "290x698"
+      },
+      "freeXDimensions": {
+        "width": 290,
+        "height": 698,
+        "text": "290x698"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 10.736935369609425,
+        "changedPixelPercent": 28.57276948918091,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": ""
+    },
+    {
+      "nn": 10,
+      "sheetName": "pvtInteger - pvtInteger [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 5.686918845315904,
+      "excelPng": "excel_10_pvtInteger_pvtInteger.png",
+      "freeXPng": "freex_10_pvtInteger_pvtInteger.png",
+      "excelDimensions": {
+        "width": 1058,
+        "height": 901,
+        "text": "1058x901"
+      },
+      "freeXDimensions": {
+        "width": 1058,
+        "height": 901,
+        "text": "1058x901"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 6.525411983398606,
+        "changedPixelPercent": 24.815842091018382,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": ""
+    }
+  ]
+}
