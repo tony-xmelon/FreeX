@@ -18,6 +18,22 @@ the native SmartArt cached-drawing work already merged on `main`.
 - Added the colorful scatter marker sequence used by Word: diamond, square,
   triangle, and X, with no connecting polyline.
 
+### Imported scatter marker palette
+
+The live Word baseline for `chart-smartart-complex.docx` is a marker-only
+scatter chart. Although its package contains the `colorful1` color-scheme
+extension and blue, orange, grey, and yellow `c:dPt` fills, Word does not use
+those per-point fills when the series has no explicit `c:marker` shape
+properties. FreeW retains the authored fills for package round-tripping, but
+its visual plan follows the observed Word style-4 `colorful1` blue/grey point
+palette: `#234075`, `#2B4E8C`, `#7180AA`, and `#B0B7CB`.
+
+The regression test
+`ChartPlan_ImportedNativeScatterStyle_UsesWordBlueGrayPointPalette` locks this
+palette. `ChartScene_LineAreaAndScatter_UseSharedPointAndMarkerPrimitives`
+separately locks the Word marker cycle (diamond, square, triangle, cross) and
+the absence of a connecting line.
+
 ## Verification
 
 Focused tests passed:
