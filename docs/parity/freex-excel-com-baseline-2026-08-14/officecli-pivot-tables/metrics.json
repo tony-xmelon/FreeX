@@ -1,0 +1,497 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-14T20:35:26.9042060\u002B03:00",
+  "options": {
+    "thresholdPercent": 25,
+    "failOnDimensionMismatch": false,
+    "pixelTolerance": 8,
+    "strictPixelThresholdPercent": null
+  },
+  "summary": {
+    "rows": 17,
+    "comparedRows": 17,
+    "failedRows": 0,
+    "dimensionMismatches": 0,
+    "maxMeanDiffPercent": 19.88574183006536,
+    "maxExactMeanDiffPercent": 31.687556696265514,
+    "maxChangedPixelPercent": 98.61049253867493
+  },
+  "rows": [
+    {
+      "nn": 1,
+      "sheetName": "1-Sales Overview - SalesOverview [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 10.063764433551198,
+      "excelPng": "excel_01_1-Sales_Overview_SalesOverview.png",
+      "freeXPng": "freex_01_1-Sales_Overview_SalesOverview.png",
+      "excelDimensions": {
+        "width": 1634,
+        "height": 669,
+        "text": "1634x669"
+      },
+      "freeXDimensions": {
+        "width": 1634,
+        "height": 669,
+        "text": "1634x669"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 19.29710051108829,
+        "changedPixelPercent": 87.45025824546767,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": "Page:M1:Channel; Page:M2:Priority; Row:L6:Region*; Row:M6:Category*; Column:N4:Quarter"
+    },
+    {
+      "nn": 2,
+      "sheetName": "2-Market Share - MarketShare [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 10.756765522875817,
+      "excelPng": "excel_02_2-Market_Share_MarketShare.png",
+      "freeXPng": "freex_02_2-Market_Share_MarketShare.png",
+      "excelDimensions": {
+        "width": 482,
+        "height": 263,
+        "text": "482x263"
+      },
+      "freeXDimensions": {
+        "width": 482,
+        "height": 263,
+        "text": "482x263"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 15.769526044539479,
+        "changedPixelPercent": 40.74041935534765,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": "Page:M1:Channel; Row:L4:Region; Column:M3:Category"
+    },
+    {
+      "nn": 3,
+      "sheetName": "3-Product Deep Dive - ProductDeepDive [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 11.583253267973856,
+      "excelPng": "excel_03_3-Product_Deep_Dive_ProductDeepDive.png",
+      "freeXPng": "freex_03_3-Product_Deep_Dive_ProductDeepDive.png",
+      "excelDimensions": {
+        "width": 674,
+        "height": 495,
+        "text": "674x495"
+      },
+      "freeXDimensions": {
+        "width": 674,
+        "height": 495,
+        "text": "674x495"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 12.474655987543635,
+        "changedPixelPercent": 43.86565956298894,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": "Page:M1:Region; Row:L4:Category*; Row:M4:Product*"
+    },
+    {
+      "nn": 4,
+      "sheetName": "4-Channel Analysis - ChannelTrend [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 1.8505988562091502,
+      "excelPng": "excel_04_4-Channel_Analysis_ChannelTrend.png",
+      "freeXPng": "freex_04_4-Channel_Analysis_ChannelTrend.png",
+      "excelDimensions": {
+        "width": 1058,
+        "height": 176,
+        "text": "1058x176"
+      },
+      "freeXDimensions": {
+        "width": 1058,
+        "height": 176,
+        "text": "1058x176"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 8.834514386610461,
+        "changedPixelPercent": 32.27412356074927,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": "Row:L3:Channel; Column:M1:Quarter"
+    },
+    {
+      "nn": 5,
+      "sheetName": "5-Priority Matrix - PriorityMatrix [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 19.88574183006536,
+      "excelPng": "excel_05_5-Priority_Matrix_PriorityMatrix.png",
+      "freeXPng": "freex_05_5-Priority_Matrix_PriorityMatrix.png",
+      "excelDimensions": {
+        "width": 962,
+        "height": 698,
+        "text": "962x698"
+      },
+      "freeXDimensions": {
+        "width": 962,
+        "height": 698,
+        "text": "962x698"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 21.420217881535933,
+        "changedPixelPercent": 91.94535620037053,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": "Page:M1:Channel; Row:L5:Priority*; Row:M5:Region*; Column:N3:Category"
+    },
+    {
+      "nn": 6,
+      "sheetName": "6-Compact 3-Level - Compact3Level [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 1.6123491285403049,
+      "excelPng": "excel_06_6-Compact_3-Level_Compact3Level.png",
+      "freeXPng": "freex_06_6-Compact_3-Level_Compact3Level.png",
+      "excelDimensions": {
+        "width": 290,
+        "height": 1655,
+        "text": "290x1655"
+      },
+      "freeXDimensions": {
+        "width": 290,
+        "height": 1655,
+        "text": "290x1655"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 12.722210851212035,
+        "changedPixelPercent": 36.89967704969268,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": "Page:M1:Priority; Row:L4:Region*"
+    },
+    {
+      "nn": 7,
+      "sheetName": "7-No Subtotals - FlatView [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 8.698170751633986,
+      "excelPng": "excel_07_7-No_Subtotals_FlatView.png",
+      "freeXPng": "freex_07_7-No_Subtotals_FlatView.png",
+      "excelDimensions": {
+        "width": 674,
+        "height": 408,
+        "text": "674x408"
+      },
+      "freeXDimensions": {
+        "width": 674,
+        "height": 408,
+        "text": "674x408"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 11.476852469813977,
+        "changedPixelPercent": 49.402891720486416,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": "Row:L2:Region*; Row:M2:Category*; Column:N1:Quarter"
+    },
+    {
+      "nn": 8,
+      "sheetName": "8-Date Grouping - DateGrouping [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 8.218161220043573,
+      "excelPng": "excel_08_8-Date_Grouping_DateGrouping.png",
+      "freeXPng": "freex_08_8-Date_Grouping_DateGrouping.png",
+      "excelDimensions": {
+        "width": 386,
+        "height": 437,
+        "text": "386x437"
+      },
+      "freeXDimensions": {
+        "width": 386,
+        "height": 437,
+        "text": "386x437"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 13.094971680866339,
+        "changedPixelPercent": 37.34008370780522,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": "Page:M1:Region; Row:L4:Date (Year); Row:M4:Date (Quarter)"
+    },
+    {
+      "nn": 9,
+      "sheetName": "9-Top 5 Products - Top5Products [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 18.05410239651416,
+      "excelPng": "excel_09_9-Top_5_Products_Top5Products.png",
+      "freeXPng": "freex_09_9-Top_5_Products_Top5Products.png",
+      "excelDimensions": {
+        "width": 386,
+        "height": 205,
+        "text": "386x205"
+      },
+      "freeXDimensions": {
+        "width": 386,
+        "height": 205,
+        "text": "386x205"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 26.703972696538912,
+        "changedPixelPercent": 97.65828383672438,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": "Row:L2:Product*"
+    },
+    {
+      "nn": 10,
+      "sheetName": "10-Ultimate - UltimatePivot [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 8.82209586056645,
+      "excelPng": "excel_10_10-Ultimate_UltimatePivot.png",
+      "freeXPng": "freex_10_10-Ultimate_UltimatePivot.png",
+      "excelDimensions": {
+        "width": 1346,
+        "height": 785,
+        "text": "1346x785"
+      },
+      "freeXDimensions": {
+        "width": 1346,
+        "height": 785,
+        "text": "1346x785"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 12.238304237630606,
+        "changedPixelPercent": 70.52375048504177,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": "Page:M1:Channel; Page:M2:Priority; Row:L6:Region*; Row:M6:Category*; Column:N4:Quarter"
+    },
+    {
+      "nn": 11,
+      "sheetName": "11-Chinese Locale - ChineseLocale [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 7.634189542483661,
+      "excelPng": "excel_11_11-Chinese_Locale_ChineseLocale.png",
+      "freeXPng": "freex_11_11-Chinese_Locale_ChineseLocale.png",
+      "excelDimensions": {
+        "width": 290,
+        "height": 524,
+        "text": "290x524"
+      },
+      "freeXDimensions": {
+        "width": 290,
+        "height": 524,
+        "text": "290x524"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 19.35108138192541,
+        "changedPixelPercent": 64.724269544617,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": "Row:E1:\u5730\u533A*; Row:F1:\u54C1\u7C7B*"
+    },
+    {
+      "nn": 12,
+      "sheetName": "12-Position \u002B Aggregates - PositionAggs [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 6.374348311546842,
+      "excelPng": "excel_12_12-Position__Aggregates_PositionAggs.png",
+      "freeXPng": "freex_12_12-Position__Aggregates_PositionAggs.png",
+      "excelDimensions": {
+        "width": 482,
+        "height": 176,
+        "text": "482x176"
+      },
+      "freeXDimensions": {
+        "width": 482,
+        "height": 176,
+        "text": "482x176"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 13.709329073009815,
+        "changedPixelPercent": 60.30625235760091,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": "Row:D3:Category"
+    },
+    {
+      "nn": 13,
+      "sheetName": "13-Calculated Field - CalcField [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 9.732478213507626,
+      "excelPng": "excel_13_13-Calculated_Field_CalcField.png",
+      "freeXPng": "freex_13_13-Calculated_Field_CalcField.png",
+      "excelDimensions": {
+        "width": 498,
+        "height": 118,
+        "text": "498x118"
+      },
+      "freeXDimensions": {
+        "width": 498,
+        "height": 118,
+        "text": "498x118"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 31.687556696265514,
+        "changedPixelPercent": 79.63549111701042,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": "Row:L1:Region*"
+    },
+    {
+      "nn": 14,
+      "sheetName": "14-Statistical - Statistical [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 3.265976307189542,
+      "excelPng": "excel_14_14-Statistical_Statistical.png",
+      "freeXPng": "freex_14_14-Statistical_Statistical.png",
+      "excelDimensions": {
+        "width": 1538,
+        "height": 234,
+        "text": "1538x234"
+      },
+      "freeXDimensions": {
+        "width": 1538,
+        "height": 234,
+        "text": "1538x234"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 17.48239468209381,
+        "changedPixelPercent": 65.34210263078923,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": "Row:L3:Region; Column:M1:Quarter"
+    },
+    {
+      "nn": 15,
+      "sheetName": "15-Independent Totals - IndepTotals [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 6.8277257625272325,
+      "excelPng": "excel_15_15-Independent_Totals_IndepTotals.png",
+      "freeXPng": "freex_15_15-Independent_Totals_IndepTotals.png",
+      "excelDimensions": {
+        "width": 386,
+        "height": 205,
+        "text": "386x205"
+      },
+      "freeXDimensions": {
+        "width": 386,
+        "height": 205,
+        "text": "386x205"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 10.431582346911553,
+        "changedPixelPercent": 31.627701251105776,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": "Row:E2:\u5730\u533A*; Column:F1:\u54C1\u7C7B"
+    },
+    {
+      "nn": 16,
+      "sheetName": "16-Style Flags - StyleFlags [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 19.58270125272331,
+      "excelPng": "excel_16_16-Style_Flags_StyleFlags.png",
+      "freeXPng": "freex_16_16-Style_Flags_StyleFlags.png",
+      "excelDimensions": {
+        "width": 674,
+        "height": 553,
+        "text": "674x553"
+      },
+      "freeXDimensions": {
+        "width": 674,
+        "height": 553,
+        "text": "674x553"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 22.42532440989768,
+        "changedPixelPercent": 98.61049253867493,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": "Row:L2:Region; Row:M2:Category; Column:N1:Quarter"
+    },
+    {
+      "nn": 17,
+      "sheetName": "17-Display Toggles - DisplayToggles [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 3.3611138344226577,
+      "excelPng": "excel_17_17-Display_Toggles_DisplayToggles.png",
+      "freeXPng": "freex_17_17-Display_Toggles_DisplayToggles.png",
+      "excelDimensions": {
+        "width": 290,
+        "height": 524,
+        "text": "290x524"
+      },
+      "freeXDimensions": {
+        "width": 290,
+        "height": 524,
+        "text": "290x524"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 8.588818522934313,
+        "changedPixelPercent": 37.93037641484601,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": ""
+    }
+  ]
+}

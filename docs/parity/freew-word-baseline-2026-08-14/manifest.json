@@ -1,0 +1,20 @@
+{
+  "schema": "freew.office-baseline.v1",
+  "product": "Microsoft Word",
+  "available": true,
+  "status": "available-needs-review",
+  "artifactCount": 61,
+  "captureDate": "2026-08-14",
+  "captureMode": "Visible Microsoft Word publish to PDF followed by deterministic page rasterization",
+  "limitation": "Word reference PNGs are available for triage, but this capture cohort has 87 failed and 3 skipped comparisons; it is not a Word visual-parity claim.",
+  "comparison": {
+    "rows": 92,
+    "comparableRows": 89,
+    "passedRows": 2,
+    "failedRows": 87,
+    "skippedRows": 3,
+    "missingReferenceRows": 0,
+    "authority": "word-baseline-needs-review"
+  },
+  "provenance": "This immutable bundle contains only the authoritative Word reference PNGs. Generated DOCX fixtures, intermediate PDFs, and WPF/Avalonia diagnostic renders remain local. Capture cohort was created from commit 25499a5432 before later upstream integration."
+}

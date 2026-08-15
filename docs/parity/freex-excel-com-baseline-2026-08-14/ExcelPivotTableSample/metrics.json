@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-14T20:35:17.0543897\u002B03:00",
+  "options": {
+    "thresholdPercent": 25,
+    "failOnDimensionMismatch": false,
+    "pixelTolerance": 8,
+    "strictPixelThresholdPercent": null
+  },
+  "summary": {
+    "rows": 2,
+    "comparedRows": 2,
+    "failedRows": 0,
+    "dimensionMismatches": 0,
+    "maxMeanDiffPercent": 3.5155593681917208,
+    "maxExactMeanDiffPercent": 10.196086665118722,
+    "maxChangedPixelPercent": 60.561314472879104
+  },
+  "rows": [
+    {
+      "nn": 1,
+      "sheetName": "Tabelle2 - PivotTable1 [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 2.5141059368191723,
+      "excelPng": "excel_01_Tabelle2_PivotTable1.png",
+      "freeXPng": "freex_01_Tabelle2_PivotTable1.png",
+      "excelDimensions": {
+        "width": 756,
+        "height": 147,
+        "text": "756x147"
+      },
+      "freeXDimensions": {
+        "width": 756,
+        "height": 147,
+        "text": "756x147"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 10.196086665118722,
+        "changedPixelPercent": 60.561314472879104,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": "Row:A4:Field1; Column:B3:Field3"
+    },
+    {
+      "nn": 2,
+      "sheetName": "Tabelle3 - PivotTable1 [ExcelTableRange2]",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 3.5155593681917208,
+      "excelPng": "excel_02_Tabelle3_PivotTable1.png",
+      "freeXPng": "freex_02_Tabelle3_PivotTable1.png",
+      "excelDimensions": {
+        "width": 486,
+        "height": 176,
+        "text": "486x176"
+      },
+      "freeXDimensions": {
+        "width": 486,
+        "height": 176,
+        "text": "486x176"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 7.75850828546907,
+        "changedPixelPercent": 51.365506921062476,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": "Page:B1:Field3; Row:A3:Field1"
+    }
+  ]
+}

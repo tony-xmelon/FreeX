@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-14T20:34:45.7823202\u002B03:00",
+  "options": {
+    "thresholdPercent": 25,
+    "failOnDimensionMismatch": false,
+    "pixelTolerance": 8,
+    "strictPixelThresholdPercent": null
+  },
+  "summary": {
+    "rows": 2,
+    "comparedRows": 1,
+    "failedRows": 0,
+    "dimensionMismatches": 0,
+    "maxMeanDiffPercent": 3.0391756535947714,
+    "maxExactMeanDiffPercent": 4.99525095029029,
+    "maxChangedPixelPercent": 14.561489465948066
+  },
+  "rows": [
+    {
+      "nn": 1,
+      "sheetName": "Chart1",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 3.0391756535947714,
+      "excelPng": "excel_01_Sheet1.png",
+      "freeXPng": "freex_01_Chart1.png",
+      "excelDimensions": {
+        "width": 130,
+        "height": 157,
+        "text": "130x157"
+      },
+      "freeXDimensions": {
+        "width": 130,
+        "height": 157,
+        "text": "130x157"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 4.99525095029029,
+        "changedPixelPercent": 14.561489465948066,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": ""
+    },
+    {
+      "nn": 2,
+      "sheetName": "Sheet1",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": null,
+      "excelPng": null,
+      "freeXPng": "freex_02_Sheet1.png",
+      "excelDimensions": null,
+      "freeXDimensions": null,
+      "dimensionMismatch": false,
+      "exactPixelMetrics": null,
+      "error": "No matching Excel PNG",
+      "pivotDropdowns": ""
+    }
+  ]
+}
