@@ -36330,7 +36330,7 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
       }
     },
@@ -36361,7 +36361,7 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
       }
     },
@@ -36392,7 +36392,7 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
       }
     },
@@ -36423,7 +36423,7 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
       }
     },
@@ -36454,7 +36454,7 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
       }
     },
@@ -36485,7 +36485,7 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
       }
     },
@@ -36516,7 +36516,7 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
       }
     },
@@ -36547,7 +36547,7 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
       }
     },
