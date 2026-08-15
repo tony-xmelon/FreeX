@@ -148,3 +148,46 @@ meaningful duplication reduction, all accepted slices pass focused and repositor
 WPF/Avalonia visual evidence remains equivalent to the baseline within documented native rendering tolerances.
 Residual native matches will be listed with their ownership reason and estimated cost so the final percentage is
 not mistaken for unexamined scope.
+
+## Independent re-verification - 2026-08-15
+
+Re-checked from outside the campaign, at `origin/main` after the campaign closed, using a method the campaign
+did not use: duplicated **regions** (overlapping sliding windows merged into contiguous spans) rather than raw
+window counts, plus cross-tier measurement that includes the neutral and shared tiers.
+
+**Drift since certification is noise, not regression.**
+
+| Measure | Certified checkpoint | 2026-08-15 | Drift |
+|---|---:|---:|---:|
+| FreeP renderer code lines | 42,426 | 42,377 | -49 |
+| FreeP exact duplicate lines | 5,372 | 5,389 | +17 |
+| FreeP exact coverage | 12.662047% | 12.716800% | +0.055 points |
+
+Per root: WPF app +0.036, Avalonia app +0.021, WPF rendering +0.008, Avalonia rendering +0.236 points. The
+movement tracks upstream work merged after the exhaustion checkpoint; no lane reopened.
+
+**The residual classification holds.** Measured as distinct regions, FreeP's renderer duplication is 76 regions
+covering 1,526 lines. Sampling every region and matching it against the shared tiers:
+
+- Roughly half reference a shared model by name in the duplicated span itself -- `SlideShowWindowLaunchPlan`,
+  `PresentationPresenterViewVisualMetrics`, `SlideShowPresenterViewField`, `PresentationAltTextPaneHostCoordinator`,
+  `SlideShowPresenterToolPlan`. These are two frameworks realizing one shared decision.
+- Of the regions that name no shared type, the surviving cases are explicit `ISlideShowDisplayRenderer`
+  implementations wrapping per-framework timers (the interface *is* the sharing mechanism), the ribbon-profile
+  delegate table binding shared command slots to per-shell dialog openers, and parameter forwarding into shared
+  records. All three are the categories the extraction rule keeps native.
+
+**A caution for anyone re-opening this on the numbers alone.** A normalized/structural matcher (identifiers and
+literals folded to placeholders) reports far more FreeP "duplication" than exists: C# declaration shapes repeat
+everywhere, so FreeP enum members match FreeW record parameters, and two Backstage text catalogs match because
+both are lists of `const string` with necessarily app-specific values. The exact column is the signal; treat the
+normalized column as a lead, not a finding. Likewise, raw window counts overstate by roughly 8x on this codebase
+because one region is recounted at every sliding offset.
+
+**Coverage gap that existed during the campaign is now closed.** `Measure-DedupResiduals.ps1` only compared
+renderer roots against each other, so neither neutral<->neutral nor neutral<->renderer duplication was visible to
+it. The neutral tiers and `shared/` are now measured roots. `FreeP.Presentation` reports 0.013% exact coverage,
+so FreeP's portable tier is tracked from here on rather than assumed.
+
+**Verdict: closed.** The certified conclusion is independently reproducible, the stated reason for stopping above
+the 9-11% target is sound, and the remaining lexical duplication is native realization of shared decisions.
