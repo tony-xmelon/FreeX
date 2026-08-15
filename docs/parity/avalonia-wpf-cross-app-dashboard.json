@@ -335,7 +335,7 @@
                                                                                        },
                                               "claimBoundary":  "Route/scenario coverage, committed PNG manifests, and local WPF/Avalonia comparison results only; no PowerPoint visual-parity claim is made."
                                           },
-                     "nextSlice":  "The tracked PowerPoint corpus has 43 COM-exported reference slides across 26 ready decks; 15-smartart-grouped-list still lacks ten Office references. Current-source recalibration averages 0.9756% for WPF and 0.9644% for Avalonia over the 43 paired Office slides, with SmartArt maxima above 21%. Prioritize shared SmartArt geometry and text placement, then text/autofit and 3-D chart projection."
+                     "nextSlice":  "The tracked PowerPoint corpus has 43 COM-exported reference slides across 26 ready decks; the grouped-list SmartArt deck still lacks ten Office references. Current-source recalibration averages 0.9756% for WPF and 0.9644% for Avalonia over the 43 paired Office slides, with current maxima of 3.0587% for WPF and 3.1232% for Avalonia. Prioritize bullets/text-autofit and 3-D charts."
                  }
              ]
 }
