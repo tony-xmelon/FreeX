@@ -125,21 +125,21 @@
     }
   ],
   "summary": {
-    "totalCommands": 912,
-    "both": 583,
+    "totalCommands": 931,
+    "both": 592,
     "wpfOnly": 103,
-    "avaloniaOnly": 226,
-    "missingWpf": 226,
+    "avaloniaOnly": 236,
+    "missingWpf": 236,
     "missingAvalonia": 103,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 583,
-    "profileShapeOnly": 324,
+    "sharedProfile": 592,
+    "profileShapeOnly": 334,
     "commandIdAliases": 0,
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 463
+    "behaviorEvidenceRows": 506
   },
   "commands": [
     {
@@ -3705,6 +3705,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.chart-design-preview.shared-workflow",
+        "slice": "Chart Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Chart_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_chart_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -3747,6 +3760,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.chart-design-preview.shared-workflow",
+        "slice": "Chart Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Chart_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_chart_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -3789,6 +3815,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.chart-design-preview.shared-workflow",
+        "slice": "Chart Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Chart_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_chart_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -3831,6 +3870,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.chart-design-preview.shared-workflow",
+        "slice": "Chart Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Chart_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_chart_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -3928,6 +3980,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.chart-design-preview.shared-workflow",
+        "slice": "Chart Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Chart_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_chart_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -3970,6 +4035,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.chart-design-preview.shared-workflow",
+        "slice": "Chart Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Chart_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_chart_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -4703,6 +4781,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.chart-design-preview.shared-workflow",
+        "slice": "Chart Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Chart_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_chart_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -4745,6 +4836,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.chart-design-preview.shared-workflow",
+        "slice": "Chart Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Chart_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_chart_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -4787,6 +4891,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.chart-design-preview.shared-workflow",
+        "slice": "Chart Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Chart_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_chart_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -4829,6 +4946,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.chart-design-preview.shared-workflow",
+        "slice": "Chart Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Chart_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_chart_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -4926,6 +5056,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.chart-design-preview.shared-workflow",
+        "slice": "Chart Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Chart_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_chart_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -4968,6 +5111,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.chart-design-preview.shared-workflow",
+        "slice": "Chart Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Chart_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_chart_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -5010,6 +5166,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.chart-design-preview.shared-workflow",
+        "slice": "Chart Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Chart_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_chart_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -31364,7 +31533,7 @@
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Styles",
-          "controlType": "RibbonComboBox",
+          "controlType": "RibbonDropdown",
           "layout": "Medium"
         }
       ],
@@ -31376,7 +31545,7 @@
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Styles",
-          "controlType": "RibbonComboBox",
+          "controlType": "RibbonDropdown",
           "layout": "Medium"
         }
       ],
@@ -31482,6 +31651,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -31524,6 +31706,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -31566,6 +31761,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -31608,6 +31816,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -31650,6 +31871,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -31692,6 +31926,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -31734,6 +31981,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -31776,6 +32036,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -31970,6 +32243,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -32012,6 +32298,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -32054,6 +32353,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -32096,6 +32408,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -32138,6 +32463,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -32180,6 +32518,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -32222,6 +32573,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -32264,6 +32628,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -32306,6 +32683,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -32348,6 +32738,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -32390,6 +32793,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -32432,6 +32848,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -32474,6 +32903,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
       }
     },
     {
@@ -32693,6 +33135,501 @@
         "avaloniaEvidence": {
           "path": "freew/FreeW.App.Avalonia.Tests/ChartSmartArtContextualTabTests.cs",
           "test": "ChartSmartArtContextualTabTests.SmartArt_structure_commands_mutate_preserve_selection_and_support_undo_redo"
+        }
+      }
+    },
+    {
+      "commandId": "freew.smartart-style-3d1",
+      "label": "Cartoon",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Cartoon",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Cartoon",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
+      }
+    },
+    {
+      "commandId": "freew.smartart-style-3d2",
+      "label": "Powder",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Powder",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Powder",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
+      }
+    },
+    {
+      "commandId": "freew.smartart-style-flat1",
+      "label": "Flat",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Flat",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Flat",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
+      }
+    },
+    {
+      "commandId": "freew.smartart-style-intense1",
+      "label": "Intense Effect",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Intense Effect",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Intense Effect",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
+      }
+    },
+    {
+      "commandId": "freew.smartart-style-intense2",
+      "label": "Insert",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Insert",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Insert",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
+      }
+    },
+    {
+      "commandId": "freew.smartart-style-moderate1",
+      "label": "Moderate Effect",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Moderate Effect",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Moderate Effect",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
+      }
+    },
+    {
+      "commandId": "freew.smartart-style-outline1",
+      "label": "Outline",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Outline",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Outline",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
+      }
+    },
+    {
+      "commandId": "freew.smartart-style-subtle1",
+      "label": "Simple Fill",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Simple Fill",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Simple Fill",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
+        }
+      }
+    },
+    {
+      "commandId": "freew.smartart-style-subtle2",
+      "label": "Soft Edge",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Soft Edge",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Soft Edge",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.smartart-design-preview.shared-workflow",
+        "slice": "SmartArt Design gallery preview",
+        "summary": "The shared command owns preview, cancellation, preparation, and single-commit behavior while both renderers only adapt native gallery interaction.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.SmartArt_gallery_commands_share_preview_cancel_and_single_commit_lifecycle"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FreeWRibbonCommandWorkflowTests.cs",
+          "test": "FreeWRibbonCommandWorkflowTests.Both_renderers_adapt_SmartArt_galleries_to_the_shared_preview_transaction"
         }
       }
     },
@@ -33759,7 +34696,7 @@
           "groupId": "document-formatting",
           "group": "Document Formatting",
           "label": "Style Sets",
-          "controlType": "RibbonComboBox",
+          "controlType": "RibbonDropdown",
           "layout": "Medium"
         }
       ],
@@ -33781,6 +34718,316 @@
           "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
           "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
         }
+      }
+    },
+    {
+      "commandId": "freew.style-set.elegant",
+      "label": "Elegant",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "document-formatting",
+          "group": "Document Formatting",
+          "label": "Elegant",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.style-set.formal",
+      "label": "Formal",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "document-formatting",
+          "group": "Document Formatting",
+          "label": "Formal",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.style-set.lines-(simple)",
+      "label": "Lines (Simple)",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "document-formatting",
+          "group": "Document Formatting",
+          "label": "Lines (Simple)",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.style-set.minimalist",
+      "label": "Minimalist",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "document-formatting",
+          "group": "Document Formatting",
+          "label": "Minimalist",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.style-set.office",
+      "label": "Office",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "document-formatting",
+          "group": "Document Formatting",
+          "label": "Office",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.style-set.shaded",
+      "label": "Shaded",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "document-formatting",
+          "group": "Document Formatting",
+          "label": "Shaded",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.style-set.shadow",
+      "label": "Shadow",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "document-formatting",
+          "group": "Document Formatting",
+          "label": "Shadow",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.style-set.simple",
+      "label": "Simple",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "document-formatting",
+          "group": "Document Formatting",
+          "label": "Simple",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.style-set.word-2003",
+      "label": "Word 2003",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "document-formatting",
+          "group": "Document Formatting",
+          "label": "Word 2003",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.style-set.word-2010",
+      "label": "Word 2010",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "document-formatting",
+          "group": "Document Formatting",
+          "label": "Word 2010",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -38067,7 +39314,7 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
