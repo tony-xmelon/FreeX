@@ -1,7 +1,7 @@
 ﻿{
     "schema":  "freep.powerpoint-recalibration.v1",
-    "generatedAt":  "2026-08-15T20:43:19.3344972+03:00",
-    "sourceRevision":  "206e9d466f41c3e9a40e7775b2d8c86e836e7d91",
+    "generatedAt":  "2026-08-15T23:47:10.5292783+03:00",
+    "sourceRevision":  "783d29ce659fd4ace80e25e0bc300fd6e147630e",
     "canvas":  "1280x720",
     "officeBaseline":  "docs/parity/freep-powerpoint-baseline-2026-08-14.json",
     "summary":  {
@@ -14,13 +14,13 @@
                                               ],
                     "officeComparisons":  86,
                     "officeComparisonFailures":  0,
-                    "wpfAverageMeanPercent":  1.5866,
-                    "wpfMaximumMeanPercent":  21.552,
-                    "avaloniaAverageMeanPercent":  1.5738,
-                    "avaloniaMaximumMeanPercent":  21.5431,
+                    "wpfAverageMeanPercent":  0.9756,
+                    "wpfMaximumMeanPercent":  3.0587,
+                    "avaloniaAverageMeanPercent":  0.9644,
+                    "avaloniaMaximumMeanPercent":  3.1232,
                     "rendererPairComparisons":  53,
                     "rendererPairFailures":  0,
-                    "rendererPairAverageMeanPercent":  1.5982,
+                    "rendererPairAverageMeanPercent":  1.6303,
                     "rendererPairMaximumMeanPercent":  13.7186
                 },
     "limitation":  "Mean channel differences include native text antialiasing. The grouped-list SmartArt deck has no tracked Office references. PowerPoint COM is unavailable on the recalibration host, so the run used the committed Office PNGs.",
@@ -245,7 +245,7 @@
                                   "kind":  "avalonia",
                                   "deck":  "11-bevel3d",
                                   "slide":  "slide-01.png",
-                                  "meanPercent":  0.9536,
+                                  "meanPercent":  0.9537,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -261,7 +261,7 @@
                                   "kind":  "avalonia",
                                   "deck":  "12-fills",
                                   "slide":  "slide-01.png",
-                                  "meanPercent":  1.0806,
+                                  "meanPercent":  1.0807,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -301,7 +301,7 @@
                                   "kind":  "wpf",
                                   "deck":  "14-smartart-live",
                                   "slide":  "slide-02.png",
-                                  "meanPercent":  21.552,
+                                  "meanPercent":  1.5158,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -309,7 +309,7 @@
                                   "kind":  "avalonia",
                                   "deck":  "14-smartart-live",
                                   "slide":  "slide-02.png",
-                                  "meanPercent":  21.5431,
+                                  "meanPercent":  1.5689,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -317,7 +317,7 @@
                                   "kind":  "wpf",
                                   "deck":  "14-smartart-live",
                                   "slide":  "slide-03.png",
-                                  "meanPercent":  6.9464,
+                                  "meanPercent":  0.7149,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -325,7 +325,7 @@
                                   "kind":  "avalonia",
                                   "deck":  "14-smartart-live",
                                   "slide":  "slide-03.png",
-                                  "meanPercent":  6.9228,
+                                  "meanPercent":  0.7043,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -701,7 +701,7 @@
                                   "kind":  "wpf",
                                   "deck":  "26-chart-surface3d-default-tall-frame",
                                   "slide":  "slide-01.png",
-                                  "meanPercent":  2.4811,
+                                  "meanPercent":  2.4757,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -709,7 +709,7 @@
                                   "kind":  "avalonia",
                                   "deck":  "26-chart-surface3d-default-tall-frame",
                                   "slide":  "slide-01.png",
-                                  "meanPercent":  2.3087,
+                                  "meanPercent":  2.2991,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               }
@@ -730,7 +730,7 @@
                                 {
                                     "deck":  "03-mixed-text",
                                     "slide":  "slide-01.png",
-                                    "meanPercent":  1.2259,
+                                    "meanPercent":  1.2258,
                                     "exitCode":  0
                                 },
                                 {
@@ -742,7 +742,7 @@
                                 {
                                     "deck":  "05-table",
                                     "slide":  "slide-01.png",
-                                    "meanPercent":  0.355,
+                                    "meanPercent":  0.3551,
                                     "exitCode":  0
                                 },
                                 {
@@ -820,13 +820,13 @@
                                 {
                                     "deck":  "14-smartart-live",
                                     "slide":  "slide-02.png",
-                                    "meanPercent":  0.3053,
+                                    "meanPercent":  1.0093,
                                     "exitCode":  0
                                 },
                                 {
                                     "deck":  "14-smartart-live",
                                     "slide":  "slide-03.png",
-                                    "meanPercent":  0.176,
+                                    "meanPercent":  0.2878,
                                     "exitCode":  0
                                 },
                                 {
@@ -862,13 +862,13 @@
                                 {
                                     "deck":  "15-smartart-grouped-list",
                                     "slide":  "slide-02.png",
-                                    "meanPercent":  5.382,
+                                    "meanPercent":  5.3819,
                                     "exitCode":  0
                                 },
                                 {
                                     "deck":  "15-smartart-grouped-list",
                                     "slide":  "slide-03.png",
-                                    "meanPercent":  4.5147,
+                                    "meanPercent":  5.3949,
                                     "exitCode":  0
                                 },
                                 {
@@ -904,7 +904,7 @@
                                 {
                                     "deck":  "15-smartart-grouped-list",
                                     "slide":  "slide-09.png",
-                                    "meanPercent":  4.9,
+                                    "meanPercent":  4.8999,
                                     "exitCode":  0
                                 },
                                 {
@@ -928,7 +928,7 @@
                                 {
                                     "deck":  "16-bg-tabs-vtext",
                                     "slide":  "slide-03.png",
-                                    "meanPercent":  0.2925,
+                                    "meanPercent":  0.2924,
                                     "exitCode":  0
                                 },
                                 {
@@ -940,7 +940,7 @@
                                 {
                                     "deck":  "17-bullets-autofit",
                                     "slide":  "slide-02.png",
-                                    "meanPercent":  3.1323,
+                                    "meanPercent":  3.1324,
                                     "exitCode":  0
                                 },
                                 {
@@ -952,7 +952,7 @@
                                 {
                                     "deck":  "18-chart-types",
                                     "slide":  "slide-02.png",
-                                    "meanPercent":  0.2203,
+                                    "meanPercent":  0.2204,
                                     "exitCode":  0
                                 },
                                 {
@@ -1006,7 +1006,7 @@
                                 {
                                     "deck":  "22-chart-baseline-depth",
                                     "slide":  "slide-01.png",
-                                    "meanPercent":  1.2166,
+                                    "meanPercent":  1.2167,
                                     "exitCode":  0
                                 },
                                 {
@@ -1030,7 +1030,7 @@
                                 {
                                     "deck":  "26-chart-surface3d-default-tall-frame",
                                     "slide":  "slide-01.png",
-                                    "meanPercent":  1.1282,
+                                    "meanPercent":  1.1341,
                                     "exitCode":  0
                                 }
                             ]
