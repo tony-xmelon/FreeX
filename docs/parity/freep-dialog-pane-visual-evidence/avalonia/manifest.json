@@ -5,7 +5,7 @@
   "targetDpi": 96,
   "logicalShellWidth": 1280,
   "logicalShellHeight": 760,
-  "generatedAtUtc": "2026-07-20T06:20:04.1768020\u002B00:00",
+  "generatedAtUtc": "2026-08-16T08:13:43.7633193\u002B00:00",
   "captures": [
     {
       "scenarioId": "design.slide-size.initial",
@@ -14,25 +14,25 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/design.slide-size.initial.png",
-      "logicalWidth": 365.3333333333333,
-      "logicalHeight": 222.66666666666666,
-      "pixelWidth": 366,
+      "logicalWidth": 364.8,
+      "logicalHeight": 222.4,
+      "pixelWidth": 365,
       "pixelHeight": 223,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 19030,
+      "nonBackgroundPixelCount": 10773,
       "focusedRole": "combobox",
-      "focusedLabel": "",
+      "focusedLabel": "Slide size preset",
       "buttons": [
         {
-          "actionId": "ok",
+          "actionId": "FreeP.SlideSize.Accept",
           "label": "OK",
           "isEnabled": true,
           "isDefault": true,
           "isCancel": false
         },
         {
-          "actionId": "cancel",
+          "actionId": "FreeP.SlideSize.Cancel",
           "label": "Cancel",
           "isEnabled": true,
           "isDefault": false,
@@ -40,6 +40,13 @@
         }
       ],
       "controls": [
+        {
+          "role": "combobox",
+          "label": "Slide size preset",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": true
+        },
         {
           "role": "radio",
           "label": "Inches",
@@ -55,15 +62,29 @@
           "isSelected": null
         },
         {
-          "role": "button",
-          "label": "ok",
+          "role": "textbox",
+          "label": "Slide width",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "textbox",
+          "label": "Slide height",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "cancel",
+          "label": "FreeP.SlideSize.Accept",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.SlideSize.Cancel",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
@@ -96,8 +117,8 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/design.slide-size.initial.png",
-      "pixelComparisonLogicalWidth": 365.3333333333333,
-      "pixelComparisonLogicalHeight": 222.66666666666666
+      "pixelComparisonLogicalWidth": 364.8,
+      "pixelComparisonLogicalHeight": 222.4
     },
     {
       "scenarioId": "design.slide-size.invalid",
@@ -106,25 +127,25 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/design.slide-size.invalid.png",
-      "logicalWidth": 365.3333333333333,
-      "logicalHeight": 222.66666666666666,
-      "pixelWidth": 366,
+      "logicalWidth": 364.8,
+      "logicalHeight": 222.4,
+      "pixelWidth": 365,
       "pixelHeight": 223,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 19036,
+      "nonBackgroundPixelCount": 10646,
       "focusedRole": "textbox",
-      "focusedLabel": "",
+      "focusedLabel": "Slide width",
       "buttons": [
         {
-          "actionId": "ok",
+          "actionId": "FreeP.SlideSize.Accept",
           "label": "OK",
           "isEnabled": true,
           "isDefault": true,
           "isCancel": false
         },
         {
-          "actionId": "cancel",
+          "actionId": "FreeP.SlideSize.Cancel",
           "label": "Cancel",
           "isEnabled": true,
           "isDefault": false,
@@ -132,6 +153,13 @@
         }
       ],
       "controls": [
+        {
+          "role": "combobox",
+          "label": "Slide size preset",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": true
+        },
         {
           "role": "radio",
           "label": "Inches",
@@ -147,15 +175,29 @@
           "isSelected": null
         },
         {
-          "role": "button",
-          "label": "ok",
+          "role": "textbox",
+          "label": "Slide width",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "textbox",
+          "label": "Slide height",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "cancel",
+          "label": "FreeP.SlideSize.Accept",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.SlideSize.Cancel",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
@@ -193,8 +235,8 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/design.slide-size.invalid.png",
-      "pixelComparisonLogicalWidth": 365.3333333333333,
-      "pixelComparisonLogicalHeight": 222.66666666666666
+      "pixelComparisonLogicalWidth": 364.8,
+      "pixelComparisonLogicalHeight": 222.4
     },
     {
       "scenarioId": "insert.header-footer.date-time",
@@ -203,32 +245,32 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/insert.header-footer.date-time.png",
-      "logicalWidth": 345.3333333333333,
-      "logicalHeight": 260.6666666666667,
-      "pixelWidth": 346,
-      "pixelHeight": 261,
+      "logicalWidth": 344.8,
+      "logicalHeight": 260,
+      "pixelWidth": 345,
+      "pixelHeight": 260,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 8258,
+      "nonBackgroundPixelCount": 12079,
       "focusedRole": "checkbox",
       "focusedLabel": "Date and time",
       "buttons": [
         {
-          "actionId": "apply",
+          "actionId": "FreeP.HeaderFooter.Apply",
           "label": "Apply",
           "isEnabled": true,
           "isDefault": true,
           "isCancel": false
         },
         {
-          "actionId": "apply-to-all",
+          "actionId": "FreeP.HeaderFooter.ApplyToAll",
           "label": "Apply to All",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "cancel",
+          "actionId": "FreeP.HeaderFooter.Cancel",
           "label": "Cancel",
           "isEnabled": true,
           "isDefault": false,
@@ -244,6 +286,13 @@
           "isSelected": null
         },
         {
+          "role": "combobox",
+          "label": "Date and time format",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": true
+        },
+        {
           "role": "checkbox",
           "label": "Fixed",
           "isEnabled": true,
@@ -251,10 +300,24 @@
           "isSelected": null
         },
         {
+          "role": "textbox",
+          "label": "Fixed date and time text",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
           "role": "checkbox",
           "label": "Footer",
           "isEnabled": true,
           "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "textbox",
+          "label": "Footer text",
+          "isEnabled": false,
+          "isChecked": null,
           "isSelected": null
         },
         {
@@ -273,21 +336,21 @@
         },
         {
           "role": "button",
-          "label": "apply",
+          "label": "FreeP.HeaderFooter.Apply",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "apply-to-all",
+          "label": "FreeP.HeaderFooter.ApplyToAll",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "cancel",
+          "label": "FreeP.HeaderFooter.Cancel",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
@@ -320,8 +383,8 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/insert.header-footer.date-time.png",
-      "pixelComparisonLogicalWidth": 345.3333333333333,
-      "pixelComparisonLogicalHeight": 260.6666666666667
+      "pixelComparisonLogicalWidth": 344.8,
+      "pixelComparisonLogicalHeight": 260
     },
     {
       "scenarioId": "insert.header-footer.apply-to-all",
@@ -330,32 +393,32 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/insert.header-footer.apply-to-all.png",
-      "logicalWidth": 345.3333333333333,
-      "logicalHeight": 260.6666666666667,
-      "pixelWidth": 346,
-      "pixelHeight": 261,
+      "logicalWidth": 344.8,
+      "logicalHeight": 260,
+      "pixelWidth": 345,
+      "pixelHeight": 260,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 9800,
+      "nonBackgroundPixelCount": 13837,
       "focusedRole": "textbox",
-      "focusedLabel": "",
+      "focusedLabel": "Footer text",
       "buttons": [
         {
-          "actionId": "apply",
+          "actionId": "FreeP.HeaderFooter.Apply",
           "label": "Apply",
           "isEnabled": true,
           "isDefault": true,
           "isCancel": false
         },
         {
-          "actionId": "apply-to-all",
+          "actionId": "FreeP.HeaderFooter.ApplyToAll",
           "label": "Apply to All",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "cancel",
+          "actionId": "FreeP.HeaderFooter.Cancel",
           "label": "Cancel",
           "isEnabled": true,
           "isDefault": false,
@@ -371,6 +434,13 @@
           "isSelected": null
         },
         {
+          "role": "combobox",
+          "label": "Date and time format",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": true
+        },
+        {
           "role": "checkbox",
           "label": "Fixed",
           "isEnabled": true,
@@ -378,10 +448,24 @@
           "isSelected": null
         },
         {
+          "role": "textbox",
+          "label": "Fixed date and time text",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
           "role": "checkbox",
           "label": "Footer",
           "isEnabled": true,
           "isChecked": true,
+          "isSelected": null
+        },
+        {
+          "role": "textbox",
+          "label": "Footer text",
+          "isEnabled": true,
+          "isChecked": null,
           "isSelected": null
         },
         {
@@ -400,21 +484,21 @@
         },
         {
           "role": "button",
-          "label": "apply",
+          "label": "FreeP.HeaderFooter.Apply",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "apply-to-all",
+          "label": "FreeP.HeaderFooter.ApplyToAll",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "cancel",
+          "label": "FreeP.HeaderFooter.Cancel",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
@@ -447,8 +531,8 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/insert.header-footer.apply-to-all.png",
-      "pixelComparisonLogicalWidth": 345.3333333333333,
-      "pixelComparisonLogicalHeight": 260.6666666666667
+      "pixelComparisonLogicalWidth": 344.8,
+      "pixelComparisonLogicalHeight": 260
     },
     {
       "scenarioId": "home.find-replace.find",
@@ -457,46 +541,46 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/home.find-replace.find.png",
-      "logicalWidth": 425.3333333333333,
-      "logicalHeight": 134,
-      "pixelWidth": 426,
-      "pixelHeight": 134,
+      "logicalWidth": 424.8,
+      "logicalHeight": 134.4,
+      "pixelWidth": 425,
+      "pixelHeight": 135,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 5187,
+      "nonBackgroundPixelCount": 4893,
       "focusedRole": "textbox",
-      "focusedLabel": "",
+      "focusedLabel": "Find text",
       "buttons": [
         {
-          "actionId": "replace",
+          "actionId": "FreeP.FindReplace.ReplaceCurrent",
           "label": "Replace",
           "isEnabled": false,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "replace-all",
+          "actionId": "FreeP.FindReplace.ReplaceAll",
           "label": "Replace All",
           "isEnabled": false,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "find-next",
+          "actionId": "FreeP.FindReplace.FindNext",
           "label": "Find Next",
           "isEnabled": true,
           "isDefault": true,
           "isCancel": false
         },
         {
-          "actionId": "find-previous",
+          "actionId": "FreeP.FindReplace.FindPrevious",
           "label": "Find Previous",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "close",
+          "actionId": "FreeP.FindReplace.Close",
           "label": "Close",
           "isEnabled": true,
           "isDefault": false,
@@ -504,6 +588,20 @@
         }
       ],
       "controls": [
+        {
+          "role": "textbox",
+          "label": "Find text",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "textbox",
+          "label": "Replacement text",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
         {
           "role": "checkbox",
           "label": "Match case",
@@ -520,35 +618,35 @@
         },
         {
           "role": "button",
-          "label": "replace",
+          "label": "FreeP.FindReplace.ReplaceCurrent",
           "isEnabled": false,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "replace-all",
+          "label": "FreeP.FindReplace.ReplaceAll",
           "isEnabled": false,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "find-next",
+          "label": "FreeP.FindReplace.FindNext",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "find-previous",
+          "label": "FreeP.FindReplace.FindPrevious",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "close",
+          "label": "FreeP.FindReplace.Close",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
@@ -581,8 +679,8 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/home.find-replace.find.png",
-      "pixelComparisonLogicalWidth": 425.3333333333333,
-      "pixelComparisonLogicalHeight": 134
+      "pixelComparisonLogicalWidth": 424.8,
+      "pixelComparisonLogicalHeight": 134.4
     },
     {
       "scenarioId": "home.find-replace.replace",
@@ -591,46 +689,46 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/home.find-replace.replace.png",
-      "logicalWidth": 425.3333333333333,
-      "logicalHeight": 198.66666666666666,
-      "pixelWidth": 426,
-      "pixelHeight": 199,
+      "logicalWidth": 424.8,
+      "logicalHeight": 199.2,
+      "pixelWidth": 425,
+      "pixelHeight": 200,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 10188,
+      "nonBackgroundPixelCount": 8843,
       "focusedRole": "textbox",
-      "focusedLabel": "",
+      "focusedLabel": "Find text",
       "buttons": [
         {
-          "actionId": "replace",
+          "actionId": "FreeP.FindReplace.ReplaceCurrent",
           "label": "Replace",
           "isEnabled": false,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "replace-all",
+          "actionId": "FreeP.FindReplace.ReplaceAll",
           "label": "Replace All",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "find-next",
+          "actionId": "FreeP.FindReplace.FindNext",
           "label": "Find Next",
           "isEnabled": true,
           "isDefault": true,
           "isCancel": false
         },
         {
-          "actionId": "find-previous",
+          "actionId": "FreeP.FindReplace.FindPrevious",
           "label": "Find Previous",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "close",
+          "actionId": "FreeP.FindReplace.Close",
           "label": "Close",
           "isEnabled": true,
           "isDefault": false,
@@ -638,6 +736,20 @@
         }
       ],
       "controls": [
+        {
+          "role": "textbox",
+          "label": "Find text",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "textbox",
+          "label": "Replacement text",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
         {
           "role": "checkbox",
           "label": "Match case",
@@ -654,35 +766,35 @@
         },
         {
           "role": "button",
-          "label": "replace",
+          "label": "FreeP.FindReplace.ReplaceCurrent",
           "isEnabled": false,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "replace-all",
+          "label": "FreeP.FindReplace.ReplaceAll",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "find-next",
+          "label": "FreeP.FindReplace.FindNext",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "find-previous",
+          "label": "FreeP.FindReplace.FindPrevious",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "close",
+          "label": "FreeP.FindReplace.Close",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
@@ -715,8 +827,8 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/home.find-replace.replace.png",
-      "pixelComparisonLogicalWidth": 425.3333333333333,
-      "pixelComparisonLogicalHeight": 198.66666666666666
+      "pixelComparisonLogicalWidth": 424.8,
+      "pixelComparisonLogicalHeight": 199.2
     },
     {
       "scenarioId": "insert.hyperlink.initial",
@@ -725,25 +837,25 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/insert.hyperlink.initial.png",
-      "logicalWidth": 405.3333333333333,
+      "logicalWidth": 404.8,
       "logicalHeight": 216,
-      "pixelWidth": 406,
+      "pixelWidth": 405,
       "pixelHeight": 216,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 12914,
+      "nonBackgroundPixelCount": 12156,
       "focusedRole": "textbox",
-      "focusedLabel": "",
+      "focusedLabel": "Hyperlink URL",
       "buttons": [
         {
-          "actionId": "ok",
+          "actionId": "FreeP.Hyperlink.Accept",
           "label": "OK",
           "isEnabled": true,
           "isDefault": true,
           "isCancel": false
         },
         {
-          "actionId": "cancel",
+          "actionId": "FreeP.Hyperlink.Cancel",
           "label": "Cancel",
           "isEnabled": true,
           "isDefault": false,
@@ -766,15 +878,36 @@
           "isSelected": null
         },
         {
-          "role": "button",
-          "label": "ok",
+          "role": "textbox",
+          "label": "Hyperlink URL",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "combobox",
+          "label": "Hyperlink target slide",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": true
+        },
+        {
+          "role": "textbox",
+          "label": "Hyperlink tooltip",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "cancel",
+          "label": "FreeP.Hyperlink.Accept",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.Hyperlink.Cancel",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
@@ -807,7 +940,7 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/insert.hyperlink.initial.png",
-      "pixelComparisonLogicalWidth": 405.3333333333333,
+      "pixelComparisonLogicalWidth": 404.8,
       "pixelComparisonLogicalHeight": 216
     },
     {
@@ -817,25 +950,25 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/insert.hyperlink.validation.png",
-      "logicalWidth": 405.3333333333333,
+      "logicalWidth": 404.8,
       "logicalHeight": 216,
-      "pixelWidth": 406,
+      "pixelWidth": 405,
       "pixelHeight": 216,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 13199,
+      "nonBackgroundPixelCount": 14177,
       "focusedRole": "textbox",
-      "focusedLabel": "",
+      "focusedLabel": "Hyperlink URL",
       "buttons": [
         {
-          "actionId": "ok",
+          "actionId": "FreeP.Hyperlink.Accept",
           "label": "OK",
           "isEnabled": true,
           "isDefault": true,
           "isCancel": false
         },
         {
-          "actionId": "cancel",
+          "actionId": "FreeP.Hyperlink.Cancel",
           "label": "Cancel",
           "isEnabled": true,
           "isDefault": false,
@@ -858,15 +991,36 @@
           "isSelected": null
         },
         {
-          "role": "button",
-          "label": "ok",
+          "role": "textbox",
+          "label": "Hyperlink URL",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "combobox",
+          "label": "Hyperlink target slide",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": true
+        },
+        {
+          "role": "textbox",
+          "label": "Hyperlink tooltip",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "cancel",
+          "label": "FreeP.Hyperlink.Accept",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.Hyperlink.Cancel",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
@@ -904,7 +1058,7 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/insert.hyperlink.validation.png",
-      "pixelComparisonLogicalWidth": 405.3333333333333,
+      "pixelComparisonLogicalWidth": 404.8,
       "pixelComparisonLogicalHeight": 216
     },
     {
@@ -914,25 +1068,25 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/insert.hyperlink.populated.png",
-      "logicalWidth": 405.3333333333333,
+      "logicalWidth": 404.8,
       "logicalHeight": 216,
-      "pixelWidth": 406,
+      "pixelWidth": 405,
       "pixelHeight": 216,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 13440,
+      "nonBackgroundPixelCount": 13150,
       "focusedRole": "textbox",
-      "focusedLabel": "",
+      "focusedLabel": "Hyperlink URL",
       "buttons": [
         {
-          "actionId": "ok",
+          "actionId": "FreeP.Hyperlink.Accept",
           "label": "OK",
           "isEnabled": true,
           "isDefault": true,
           "isCancel": false
         },
         {
-          "actionId": "cancel",
+          "actionId": "FreeP.Hyperlink.Cancel",
           "label": "Cancel",
           "isEnabled": true,
           "isDefault": false,
@@ -955,15 +1109,36 @@
           "isSelected": null
         },
         {
-          "role": "button",
-          "label": "ok",
+          "role": "textbox",
+          "label": "Hyperlink URL",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "combobox",
+          "label": "Hyperlink target slide",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": true
+        },
+        {
+          "role": "textbox",
+          "label": "Hyperlink tooltip",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "cancel",
+          "label": "FreeP.Hyperlink.Accept",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.Hyperlink.Cancel",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
@@ -996,7 +1171,7 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/insert.hyperlink.populated.png",
-      "pixelComparisonLogicalWidth": 405.3333333333333,
+      "pixelComparisonLogicalWidth": 404.8,
       "pixelComparisonLogicalHeight": 216
     },
     {
@@ -1006,53 +1181,88 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/chart.edit-data.initial.png",
-      "logicalWidth": 625.3333333333334,
-      "logicalHeight": 402.6666666666667,
-      "pixelWidth": 626,
-      "pixelHeight": 403,
+      "logicalWidth": 640,
+      "logicalHeight": 440,
+      "pixelWidth": 640,
+      "pixelHeight": 440,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 27046,
-      "focusedRole": "textbox",
-      "focusedLabel": "",
+      "nonBackgroundPixelCount": 179034,
+      "focusedRole": "combobox",
+      "focusedLabel": "Chart type",
       "buttons": [
         {
-          "actionId": "add-series",
+          "actionId": "FreeP.ChartData.AddSeries",
           "label": "\u002B Series",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "remove-series",
+          "actionId": "FreeP.ChartData.RemoveSeries",
           "label": "- Series",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "add-category",
+          "actionId": "FreeP.ChartData.MoveSeriesUp",
+          "label": "Move Series Up",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.ChartData.MoveSeriesDown",
+          "label": "Move Series Down",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.ChartData.AddCategory",
           "label": "\u002B Category",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "remove-category",
+          "actionId": "FreeP.ChartData.RemoveCategory",
           "label": "- Category",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "ok",
+          "actionId": "FreeP.ChartData.MoveCategoryLeft",
+          "label": "Move Category Left",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.ChartData.MoveCategoryRight",
+          "label": "Move Category Right",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.ChartData.SwitchRowsAndColumns",
+          "label": "Switch Row/Column",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.ChartData.Accept",
           "label": "OK",
           "isEnabled": true,
           "isDefault": true,
           "isCancel": false
         },
         {
-          "actionId": "cancel",
+          "actionId": "FreeP.ChartData.Cancel",
           "label": "Cancel",
           "isEnabled": true,
           "isDefault": false,
@@ -1062,42 +1272,84 @@
       "controls": [
         {
           "role": "button",
-          "label": "add-series",
+          "label": "FreeP.ChartData.AddSeries",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "remove-series",
+          "label": "FreeP.ChartData.RemoveSeries",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "add-category",
+          "label": "FreeP.ChartData.MoveSeriesUp",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "remove-category",
+          "label": "FreeP.ChartData.MoveSeriesDown",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "ok",
+          "label": "FreeP.ChartData.AddCategory",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "cancel",
+          "label": "FreeP.ChartData.RemoveCategory",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.ChartData.MoveCategoryLeft",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.ChartData.MoveCategoryRight",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.ChartData.SwitchRowsAndColumns",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "combobox",
+          "label": "Chart type",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": true
+        },
+        {
+          "role": "button",
+          "label": "FreeP.ChartData.Accept",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.ChartData.Cancel",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
@@ -1130,8 +1382,8 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/chart.edit-data.initial.png",
-      "pixelComparisonLogicalWidth": 625.3333333333334,
-      "pixelComparisonLogicalHeight": 402.6666666666667
+      "pixelComparisonLogicalWidth": 640,
+      "pixelComparisonLogicalHeight": 440
     },
     {
       "scenarioId": "chart.edit-data.validation",
@@ -1140,53 +1392,88 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/chart.edit-data.validation.png",
-      "logicalWidth": 625.3333333333334,
-      "logicalHeight": 402.6666666666667,
-      "pixelWidth": 626,
-      "pixelHeight": 403,
+      "logicalWidth": 640,
+      "logicalHeight": 440,
+      "pixelWidth": 640,
+      "pixelHeight": 440,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 28829,
+      "nonBackgroundPixelCount": 180331,
       "focusedRole": "textbox",
       "focusedLabel": "",
       "buttons": [
         {
-          "actionId": "add-series",
+          "actionId": "FreeP.ChartData.AddSeries",
           "label": "\u002B Series",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "remove-series",
+          "actionId": "FreeP.ChartData.RemoveSeries",
           "label": "- Series",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "add-category",
+          "actionId": "FreeP.ChartData.MoveSeriesUp",
+          "label": "Move Series Up",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.ChartData.MoveSeriesDown",
+          "label": "Move Series Down",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.ChartData.AddCategory",
           "label": "\u002B Category",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "remove-category",
+          "actionId": "FreeP.ChartData.RemoveCategory",
           "label": "- Category",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "ok",
+          "actionId": "FreeP.ChartData.MoveCategoryLeft",
+          "label": "Move Category Left",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.ChartData.MoveCategoryRight",
+          "label": "Move Category Right",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.ChartData.SwitchRowsAndColumns",
+          "label": "Switch Row/Column",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.ChartData.Accept",
           "label": "OK",
           "isEnabled": true,
           "isDefault": true,
           "isCancel": false
         },
         {
-          "actionId": "cancel",
+          "actionId": "FreeP.ChartData.Cancel",
           "label": "Cancel",
           "isEnabled": true,
           "isDefault": false,
@@ -1196,42 +1483,84 @@
       "controls": [
         {
           "role": "button",
-          "label": "add-series",
+          "label": "FreeP.ChartData.AddSeries",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "remove-series",
+          "label": "FreeP.ChartData.RemoveSeries",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "add-category",
+          "label": "FreeP.ChartData.MoveSeriesUp",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "remove-category",
+          "label": "FreeP.ChartData.MoveSeriesDown",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "ok",
+          "label": "FreeP.ChartData.AddCategory",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "cancel",
+          "label": "FreeP.ChartData.RemoveCategory",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.ChartData.MoveCategoryLeft",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.ChartData.MoveCategoryRight",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.ChartData.SwitchRowsAndColumns",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "combobox",
+          "label": "Chart type",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": true
+        },
+        {
+          "role": "button",
+          "label": "FreeP.ChartData.Accept",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.ChartData.Cancel",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
@@ -1269,8 +1598,8 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/chart.edit-data.validation.png",
-      "pixelComparisonLogicalWidth": 625.3333333333334,
-      "pixelComparisonLogicalHeight": 402.6666666666667
+      "pixelComparisonLogicalWidth": 640,
+      "pixelComparisonLogicalHeight": 440
     },
     {
       "scenarioId": "chart.edit-data.populated",
@@ -1279,53 +1608,88 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/chart.edit-data.populated.png",
-      "logicalWidth": 625.3333333333334,
-      "logicalHeight": 402.6666666666667,
-      "pixelWidth": 626,
-      "pixelHeight": 403,
+      "logicalWidth": 640,
+      "logicalHeight": 440,
+      "pixelWidth": 640,
+      "pixelHeight": 440,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 27046,
-      "focusedRole": "textbox",
-      "focusedLabel": "",
+      "nonBackgroundPixelCount": 179034,
+      "focusedRole": "combobox",
+      "focusedLabel": "Chart type",
       "buttons": [
         {
-          "actionId": "add-series",
+          "actionId": "FreeP.ChartData.AddSeries",
           "label": "\u002B Series",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "remove-series",
+          "actionId": "FreeP.ChartData.RemoveSeries",
           "label": "- Series",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "add-category",
+          "actionId": "FreeP.ChartData.MoveSeriesUp",
+          "label": "Move Series Up",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.ChartData.MoveSeriesDown",
+          "label": "Move Series Down",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.ChartData.AddCategory",
           "label": "\u002B Category",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "remove-category",
+          "actionId": "FreeP.ChartData.RemoveCategory",
           "label": "- Category",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "ok",
+          "actionId": "FreeP.ChartData.MoveCategoryLeft",
+          "label": "Move Category Left",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.ChartData.MoveCategoryRight",
+          "label": "Move Category Right",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.ChartData.SwitchRowsAndColumns",
+          "label": "Switch Row/Column",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.ChartData.Accept",
           "label": "OK",
           "isEnabled": true,
           "isDefault": true,
           "isCancel": false
         },
         {
-          "actionId": "cancel",
+          "actionId": "FreeP.ChartData.Cancel",
           "label": "Cancel",
           "isEnabled": true,
           "isDefault": false,
@@ -1335,42 +1699,84 @@
       "controls": [
         {
           "role": "button",
-          "label": "add-series",
+          "label": "FreeP.ChartData.AddSeries",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "remove-series",
+          "label": "FreeP.ChartData.RemoveSeries",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "add-category",
+          "label": "FreeP.ChartData.MoveSeriesUp",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "remove-category",
+          "label": "FreeP.ChartData.MoveSeriesDown",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "ok",
+          "label": "FreeP.ChartData.AddCategory",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "cancel",
+          "label": "FreeP.ChartData.RemoveCategory",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.ChartData.MoveCategoryLeft",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.ChartData.MoveCategoryRight",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.ChartData.SwitchRowsAndColumns",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "combobox",
+          "label": "Chart type",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": true
+        },
+        {
+          "role": "button",
+          "label": "FreeP.ChartData.Accept",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.ChartData.Cancel",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
@@ -1403,8 +1809,8 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/chart.edit-data.populated.png",
-      "pixelComparisonLogicalWidth": 625.3333333333334,
-      "pixelComparisonLogicalHeight": 402.6666666666667
+      "pixelComparisonLogicalWidth": 640,
+      "pixelComparisonLogicalHeight": 440
     },
     {
       "scenarioId": "slideshow.custom-shows.initial",
@@ -1413,67 +1819,95 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/slideshow.custom-shows.initial.png",
-      "logicalWidth": 625.3333333333334,
-      "logicalHeight": 402.6666666666667,
-      "pixelWidth": 626,
+      "logicalWidth": 624.8,
+      "logicalHeight": 402.4,
+      "pixelWidth": 625,
       "pixelHeight": 403,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 142271,
+      "nonBackgroundPixelCount": 24928,
       "focusedRole": "textbox",
-      "focusedLabel": "",
+      "focusedLabel": "Custom show name",
       "buttons": [
         {
-          "actionId": "move-up",
+          "actionId": "FreeP.CustomShows.MoveUp",
           "label": "Move Up",
           "isEnabled": false,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "move-down",
+          "actionId": "FreeP.CustomShows.MoveDown",
           "label": "Move Down",
           "isEnabled": false,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "create",
+          "actionId": "FreeP.CustomShows.Remove",
+          "label": "Remove",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.CustomShows.AddSlide.visual-evidence-slide-1",
+          "label": "Add",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.CustomShows.AddSlide.visual-evidence-slide-2",
+          "label": "Add",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.CustomShows.AddSlide.visual-evidence-slide-3",
+          "label": "Add",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.CustomShows.Create",
           "label": "Create",
           "isEnabled": true,
           "isDefault": true,
           "isCancel": false
         },
         {
-          "actionId": "rename",
+          "actionId": "FreeP.CustomShows.Rename",
           "label": "Rename",
           "isEnabled": false,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "update-slides",
+          "actionId": "FreeP.CustomShows.UpdateSlides",
           "label": "Update Slides",
           "isEnabled": false,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "delete",
+          "actionId": "FreeP.CustomShows.Delete",
           "label": "Delete",
           "isEnabled": false,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "start-show",
+          "actionId": "FreeP.CustomShows.StartShow",
           "label": "Start Show",
           "isEnabled": false,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "close",
+          "actionId": "FreeP.CustomShows.Close",
           "label": "Close",
           "isEnabled": true,
           "isDefault": false,
@@ -1482,16 +1916,37 @@
       ],
       "controls": [
         {
+          "role": "textbox",
+          "label": "Custom show name",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
           "role": "button",
-          "label": "move-up",
+          "label": "FreeP.CustomShows.MoveUp",
           "isEnabled": false,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "move-down",
+          "label": "FreeP.CustomShows.MoveDown",
           "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.CustomShows.Remove",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.CustomShows.AddSlide.visual-evidence-slide-1",
+          "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
@@ -1503,10 +1958,24 @@
           "isSelected": null
         },
         {
+          "role": "button",
+          "label": "FreeP.CustomShows.AddSlide.visual-evidence-slide-2",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
           "role": "checkbox",
           "label": "Slide 2: Next Steps",
           "isEnabled": true,
           "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.CustomShows.AddSlide.visual-evidence-slide-3",
+          "isEnabled": true,
+          "isChecked": null,
           "isSelected": null
         },
         {
@@ -1518,42 +1987,42 @@
         },
         {
           "role": "button",
-          "label": "create",
+          "label": "FreeP.CustomShows.Create",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "rename",
+          "label": "FreeP.CustomShows.Rename",
           "isEnabled": false,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "update-slides",
+          "label": "FreeP.CustomShows.UpdateSlides",
           "isEnabled": false,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "delete",
+          "label": "FreeP.CustomShows.Delete",
           "isEnabled": false,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "start-show",
+          "label": "FreeP.CustomShows.StartShow",
           "isEnabled": false,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "close",
+          "label": "FreeP.CustomShows.Close",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
@@ -1586,8 +2055,8 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/slideshow.custom-shows.initial.png",
-      "pixelComparisonLogicalWidth": 625.3333333333334,
-      "pixelComparisonLogicalHeight": 402.6666666666667
+      "pixelComparisonLogicalWidth": 624.8,
+      "pixelComparisonLogicalHeight": 402.4
     },
     {
       "scenarioId": "slideshow.custom-shows.validation",
@@ -1596,67 +2065,95 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/slideshow.custom-shows.validation.png",
-      "logicalWidth": 625.3333333333334,
-      "logicalHeight": 402.6666666666667,
-      "pixelWidth": 626,
+      "logicalWidth": 624.8,
+      "logicalHeight": 402.4,
+      "pixelWidth": 625,
       "pixelHeight": 403,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 143395,
+      "nonBackgroundPixelCount": 25663,
       "focusedRole": "textbox",
-      "focusedLabel": "",
+      "focusedLabel": "Custom show name",
       "buttons": [
         {
-          "actionId": "move-up",
+          "actionId": "FreeP.CustomShows.MoveUp",
           "label": "Move Up",
           "isEnabled": false,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "move-down",
+          "actionId": "FreeP.CustomShows.MoveDown",
           "label": "Move Down",
           "isEnabled": false,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "create",
+          "actionId": "FreeP.CustomShows.Remove",
+          "label": "Remove",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.CustomShows.AddSlide.visual-evidence-slide-1",
+          "label": "Add",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.CustomShows.AddSlide.visual-evidence-slide-2",
+          "label": "Add",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.CustomShows.AddSlide.visual-evidence-slide-3",
+          "label": "Add",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.CustomShows.Create",
           "label": "Create",
           "isEnabled": true,
           "isDefault": true,
           "isCancel": false
         },
         {
-          "actionId": "rename",
+          "actionId": "FreeP.CustomShows.Rename",
           "label": "Rename",
           "isEnabled": false,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "update-slides",
+          "actionId": "FreeP.CustomShows.UpdateSlides",
           "label": "Update Slides",
           "isEnabled": false,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "delete",
+          "actionId": "FreeP.CustomShows.Delete",
           "label": "Delete",
           "isEnabled": false,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "start-show",
+          "actionId": "FreeP.CustomShows.StartShow",
           "label": "Start Show",
           "isEnabled": false,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "close",
+          "actionId": "FreeP.CustomShows.Close",
           "label": "Close",
           "isEnabled": true,
           "isDefault": false,
@@ -1665,16 +2162,37 @@
       ],
       "controls": [
         {
+          "role": "textbox",
+          "label": "Custom show name",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
           "role": "button",
-          "label": "move-up",
+          "label": "FreeP.CustomShows.MoveUp",
           "isEnabled": false,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "move-down",
+          "label": "FreeP.CustomShows.MoveDown",
           "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.CustomShows.Remove",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.CustomShows.AddSlide.visual-evidence-slide-1",
+          "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
@@ -1686,10 +2204,24 @@
           "isSelected": null
         },
         {
+          "role": "button",
+          "label": "FreeP.CustomShows.AddSlide.visual-evidence-slide-2",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
           "role": "checkbox",
           "label": "Slide 2: Next Steps",
           "isEnabled": true,
           "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.CustomShows.AddSlide.visual-evidence-slide-3",
+          "isEnabled": true,
+          "isChecked": null,
           "isSelected": null
         },
         {
@@ -1701,42 +2233,42 @@
         },
         {
           "role": "button",
-          "label": "create",
+          "label": "FreeP.CustomShows.Create",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "rename",
+          "label": "FreeP.CustomShows.Rename",
           "isEnabled": false,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "update-slides",
+          "label": "FreeP.CustomShows.UpdateSlides",
           "isEnabled": false,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "delete",
+          "label": "FreeP.CustomShows.Delete",
           "isEnabled": false,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "start-show",
+          "label": "FreeP.CustomShows.StartShow",
           "isEnabled": false,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "close",
+          "label": "FreeP.CustomShows.Close",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
@@ -1769,8 +2301,8 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/slideshow.custom-shows.validation.png",
-      "pixelComparisonLogicalWidth": 625.3333333333334,
-      "pixelComparisonLogicalHeight": 402.6666666666667
+      "pixelComparisonLogicalWidth": 624.8,
+      "pixelComparisonLogicalHeight": 402.4
     },
     {
       "scenarioId": "slideshow.custom-shows.populated",
@@ -1779,67 +2311,95 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/slideshow.custom-shows.populated.png",
-      "logicalWidth": 625.3333333333334,
-      "logicalHeight": 402.6666666666667,
-      "pixelWidth": 626,
+      "logicalWidth": 624.8,
+      "logicalHeight": 402.4,
+      "pixelWidth": 625,
       "pixelHeight": 403,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 143237,
+      "nonBackgroundPixelCount": 28513,
       "focusedRole": "textbox",
-      "focusedLabel": "",
+      "focusedLabel": "Custom show name",
       "buttons": [
         {
-          "actionId": "move-up",
+          "actionId": "FreeP.CustomShows.MoveUp",
           "label": "Move Up",
           "isEnabled": false,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "move-down",
+          "actionId": "FreeP.CustomShows.MoveDown",
           "label": "Move Down",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "create",
+          "actionId": "FreeP.CustomShows.Remove",
+          "label": "Remove",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.CustomShows.AddSlide.visual-evidence-slide-1",
+          "label": "Add",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.CustomShows.AddSlide.visual-evidence-slide-2",
+          "label": "Add",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.CustomShows.AddSlide.visual-evidence-slide-3",
+          "label": "Add",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreeP.CustomShows.Create",
           "label": "Create",
           "isEnabled": true,
           "isDefault": true,
           "isCancel": false
         },
         {
-          "actionId": "rename",
+          "actionId": "FreeP.CustomShows.Rename",
           "label": "Rename",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "update-slides",
+          "actionId": "FreeP.CustomShows.UpdateSlides",
           "label": "Update Slides",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "delete",
+          "actionId": "FreeP.CustomShows.Delete",
           "label": "Delete",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "start-show",
+          "actionId": "FreeP.CustomShows.StartShow",
           "label": "Start Show",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "close",
+          "actionId": "FreeP.CustomShows.Close",
           "label": "Close",
           "isEnabled": true,
           "isDefault": false,
@@ -1848,15 +2408,36 @@
       ],
       "controls": [
         {
+          "role": "textbox",
+          "label": "Custom show name",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
           "role": "button",
-          "label": "move-up",
+          "label": "FreeP.CustomShows.MoveUp",
           "isEnabled": false,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "move-down",
+          "label": "FreeP.CustomShows.MoveDown",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.CustomShows.Remove",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.CustomShows.AddSlide.visual-evidence-slide-1",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
@@ -1869,10 +2450,24 @@
           "isSelected": null
         },
         {
+          "role": "button",
+          "label": "FreeP.CustomShows.AddSlide.visual-evidence-slide-2",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
           "role": "checkbox",
           "label": "Slide 2: Next Steps",
           "isEnabled": true,
           "isChecked": true,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreeP.CustomShows.AddSlide.visual-evidence-slide-3",
+          "isEnabled": true,
+          "isChecked": null,
           "isSelected": null
         },
         {
@@ -1884,42 +2479,42 @@
         },
         {
           "role": "button",
-          "label": "create",
+          "label": "FreeP.CustomShows.Create",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "rename",
+          "label": "FreeP.CustomShows.Rename",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "update-slides",
+          "label": "FreeP.CustomShows.UpdateSlides",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "delete",
+          "label": "FreeP.CustomShows.Delete",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "start-show",
+          "label": "FreeP.CustomShows.StartShow",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "close",
+          "label": "FreeP.CustomShows.Close",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
@@ -1952,8 +2547,8 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/slideshow.custom-shows.populated.png",
-      "pixelComparisonLogicalWidth": 625.3333333333334,
-      "pixelComparisonLogicalHeight": 402.6666666666667
+      "pixelComparisonLogicalWidth": 624.8,
+      "pixelComparisonLogicalHeight": 402.4
     },
     {
       "scenarioId": "startup.slide-pane.seeded",
@@ -1968,7 +2563,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 947995,
+      "nonBackgroundPixelCount": 893791,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -2032,11 +2627,19 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 947995,
+      "nonBackgroundPixelCount": 893791,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [],
-      "controls": [],
+      "controls": [
+        {
+          "role": "textbox",
+          "label": "Notes",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
       "assertions": [
         {
           "id": "seeded-presentation",
@@ -2080,7 +2683,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 947544,
+      "nonBackgroundPixelCount": 893710,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -2099,22 +2702,64 @@
           "isCancel": false
         },
         {
-          "actionId": "alex-morgan",
-          "label": "@Alex.Morgan",
+          "actionId": "show-comments",
+          "label": "Show Comments",
           "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "new-comment",
+          "label": "New Comment",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "edit-comment",
+          "label": "Edit Comment",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "delete-comment",
+          "label": "Delete Comment",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "previous-comment",
+          "label": "Previous Comment",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "next-comment",
+          "label": "Next Comment",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "resolve-comment",
+          "label": "Resolve Comment",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "reopen-comment",
+          "label": "Reopen Comment",
+          "isEnabled": false,
           "isDefault": false,
           "isCancel": false
         },
         {
           "actionId": "save",
           "label": "Save",
-          "isEnabled": true,
-          "isDefault": false,
-          "isCancel": false
-        },
-        {
-          "actionId": "alex-morgan",
-          "label": "@Alex.Morgan",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
@@ -2144,21 +2789,63 @@
         },
         {
           "role": "button",
-          "label": "alex-morgan",
+          "label": "show-comments",
           "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "new-comment",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "edit-comment",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "delete-comment",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "previous-comment",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "next-comment",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "resolve-comment",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "reopen-comment",
+          "isEnabled": false,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
           "label": "save",
-          "isEnabled": true,
-          "isChecked": null,
-          "isSelected": null
-        },
-        {
-          "role": "button",
-          "label": "alex-morgan",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
@@ -2214,7 +2901,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 893439,
+      "nonBackgroundPixelCount": 893648,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -2306,7 +2993,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 948091,
+      "nonBackgroundPixelCount": 893711,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -2391,7 +3078,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 860257,
+      "nonBackgroundPixelCount": 893650,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -2408,6 +3095,41 @@
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
+        },
+        {
+          "actionId": "FreePReadingOrderPaneItemShape1",
+          "label": "Title 1",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreePReadingOrderPaneItemShape10",
+          "label": "Review summary",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreePReadingOrderPaneItemShape20",
+          "label": "Revenue chart",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreePReadingOrderPaneItemShape30",
+          "label": "Review video",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "FreePReadingOrderPaneItemShape40",
+          "label": "Delivery process",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
         }
       ],
       "controls": [
@@ -2421,6 +3143,41 @@
         {
           "role": "button",
           "label": "move-later",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreePReadingOrderPaneItemShape1",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreePReadingOrderPaneItemShape10",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreePReadingOrderPaneItemShape20",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreePReadingOrderPaneItemShape30",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "FreePReadingOrderPaneItemShape40",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
@@ -2469,7 +3226,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 948791,
+      "nonBackgroundPixelCount": 893710,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [],
@@ -2517,7 +3274,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 948786,
+      "nonBackgroundPixelCount": 894539,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -2543,6 +3300,48 @@
           "isCancel": false
         },
         {
+          "actionId": "apply-volume",
+          "label": "Apply volume",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "apply-playback",
+          "label": "Apply playback",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "apply-timing",
+          "label": "Apply timing",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "add-bookmark",
+          "label": "Add bookmark",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "replace-bookmark",
+          "label": "Replace bookmark",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "delete-bookmark",
+          "label": "Delete bookmark",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
           "actionId": "close",
           "label": "Close",
           "isEnabled": true,
@@ -2551,6 +3350,34 @@
         }
       ],
       "controls": [
+        {
+          "role": "checkbox",
+          "label": "Loop until stopped",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "Show when stopped",
+          "isEnabled": true,
+          "isChecked": true,
+          "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "Rewind after playing",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "Play full screen",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
         {
           "role": "button",
           "label": "create",
@@ -2569,6 +3396,48 @@
           "role": "button",
           "label": "delete",
           "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "apply-volume",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "apply-playback",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "apply-timing",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "add-bookmark",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "replace-bookmark",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "delete-bookmark",
+          "isEnabled": false,
           "isChecked": null,
           "isSelected": null
         },
@@ -2623,10 +3492,87 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 948807,
+      "nonBackgroundPixelCount": 893371,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
+        {
+          "actionId": "add-sibling",
+          "label": "Add sibling",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "add-child",
+          "label": "Add child",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "remove",
+          "label": "Remove",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "move-up",
+          "label": "Move up",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "move-down",
+          "label": "Move down",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "promote",
+          "label": "Promote",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "demote",
+          "label": "Demote",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "add-assistant",
+          "label": "Add assistant",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "toggle-assistant",
+          "label": "Toggle Assistant",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "replace-picture",
+          "label": "Replace picture",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "remove-picture",
+          "label": "Remove picture",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
         {
           "actionId": "apply",
           "label": "Apply",
@@ -2645,6 +3591,83 @@
       "controls": [
         {
           "role": "button",
+          "label": "add-sibling",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "add-child",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "remove",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "move-up",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "move-down",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "promote",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "demote",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "add-assistant",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "toggle-assistant",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "replace-picture",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "remove-picture",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
           "label": "apply",
           "isEnabled": true,
           "isChecked": null,
@@ -2653,6 +3676,27 @@
         {
           "role": "button",
           "label": "close",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "textbox",
+          "label": "Discover",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "textbox",
+          "label": "Design",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "textbox",
+          "label": "Deliver",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
@@ -2701,7 +3745,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 943200,
+      "nonBackgroundPixelCount": 889648,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -2762,6 +3806,20 @@
           "isEnabled": false,
           "isChecked": null,
           "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
         }
       ],
       "assertions": [
@@ -2807,11 +3865,41 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 948842,
+      "nonBackgroundPixelCount": 896523,
       "focusedRole": "",
       "focusedLabel": "",
-      "buttons": [],
-      "controls": [],
+      "buttons": [
+        {
+          "actionId": "FreePPrintCustomRangeApply",
+          "label": "Apply range",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "print",
+          "label": "Print",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        }
+      ],
+      "controls": [
+        {
+          "role": "button",
+          "label": "FreePPrintCustomRangeApply",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "print",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
       "assertions": [
         {
           "id": "seeded-presentation",
@@ -2855,7 +3943,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 949386,
+      "nonBackgroundPixelCount": 892995,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -3260,7 +4348,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 948573,
+      "nonBackgroundPixelCount": 893409,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [

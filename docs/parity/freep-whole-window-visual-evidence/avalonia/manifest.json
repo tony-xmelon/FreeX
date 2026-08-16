@@ -5,7 +5,7 @@
   "targetDpi": 96,
   "logicalClientWidth": 1280,
   "logicalClientHeight": 760,
-  "generatedAtUtc": "2026-08-14T10:51:35.5463034\u002B00:00",
+  "generatedAtUtc": "2026-08-16T08:17:14.5323332\u002B00:00",
   "captures": [
     {
       "scenarioId": "startup.slide",
@@ -21,9 +21,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892178,
-      "fullImageSha256": "75fb30752dc642de92e56f41b74872362dfc7ef4cf796eb7e6aeb2c7ee297f6c",
-      "clientImageSha256": "75fb30752dc642de92e56f41b74872362dfc7ef4cf796eb7e6aeb2c7ee297f6c",
+      "nonBackgroundPixelCount": 892454,
+      "fullImageSha256": "9ddc5815abedebab0897dbfbd69e612b5ff04e93c5f2caa87288089e9fbbc417",
+      "clientImageSha256": "9ddc5815abedebab0897dbfbd69e612b5ff04e93c5f2caa87288089e9fbbc417",
       "semanticState": {
         "scenarioId": "startup.slide",
         "host": "avalonia",
@@ -62,42 +62,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -153,9 +153,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892206,
-      "fullImageSha256": "ba280a6d4ff238fa14eb07eb60bb6dbf63e3f3042f6a22559a19cbc52c58ea06",
-      "clientImageSha256": "ba280a6d4ff238fa14eb07eb60bb6dbf63e3f3042f6a22559a19cbc52c58ea06",
+      "nonBackgroundPixelCount": 892638,
+      "fullImageSha256": "f72393096b5b505e73824e0808a758f82141f40cee2b5cbd337580de33d9ca4a",
+      "clientImageSha256": "f72393096b5b505e73824e0808a758f82141f40cee2b5cbd337580de33d9ca4a",
       "semanticState": {
         "scenarioId": "startup.notes",
         "host": "avalonia",
@@ -194,42 +194,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -285,9 +285,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892194,
-      "fullImageSha256": "c82f46e526a187314d9a35809445ec8d4c606d1d3328c13bec90d19b47af6005",
-      "clientImageSha256": "c82f46e526a187314d9a35809445ec8d4c606d1d3328c13bec90d19b47af6005",
+      "nonBackgroundPixelCount": 892626,
+      "fullImageSha256": "9a9c12509e70f053defb4e730c664b65a0e18e2bfe7df8cbcd6e80f07e72797b",
+      "clientImageSha256": "9a9c12509e70f053defb4e730c664b65a0e18e2bfe7df8cbcd6e80f07e72797b",
       "semanticState": {
         "scenarioId": "ribbon.home",
         "host": "avalonia",
@@ -326,42 +326,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -417,9 +417,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892197,
-      "fullImageSha256": "0b07446b38889b69bfa5b0dd66028f6d9be2d7b491059bd680a045053d377764",
-      "clientImageSha256": "0b07446b38889b69bfa5b0dd66028f6d9be2d7b491059bd680a045053d377764",
+      "nonBackgroundPixelCount": 892626,
+      "fullImageSha256": "78e9beca0a4d8ac8ae9cec814be1409cfe41000b26c3b7d166088fc5232d2f33",
+      "clientImageSha256": "78e9beca0a4d8ac8ae9cec814be1409cfe41000b26c3b7d166088fc5232d2f33",
       "semanticState": {
         "scenarioId": "ribbon.insert",
         "host": "avalonia",
@@ -458,42 +458,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -549,9 +549,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892182,
-      "fullImageSha256": "cfac30b56065a5e23fe2c6ba4210e9ffd0e9bca82e966ecab99cb63364639908",
-      "clientImageSha256": "cfac30b56065a5e23fe2c6ba4210e9ffd0e9bca82e966ecab99cb63364639908",
+      "nonBackgroundPixelCount": 892618,
+      "fullImageSha256": "faa2fac9e3a1a790c999630f10c48648f3bf9f9beb838007f0f4dd30d4049419",
+      "clientImageSha256": "faa2fac9e3a1a790c999630f10c48648f3bf9f9beb838007f0f4dd30d4049419",
       "semanticState": {
         "scenarioId": "ribbon.design",
         "host": "avalonia",
@@ -590,42 +590,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -681,9 +681,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892125,
-      "fullImageSha256": "541a1c66f6500e2202f17f2e6682b390ff98bfb9b847ef79392b2358db8ac794",
-      "clientImageSha256": "541a1c66f6500e2202f17f2e6682b390ff98bfb9b847ef79392b2358db8ac794",
+      "nonBackgroundPixelCount": 892580,
+      "fullImageSha256": "5f686106b2d4efed1323c935480d1aa5be03e93415871036199136293a835946",
+      "clientImageSha256": "5f686106b2d4efed1323c935480d1aa5be03e93415871036199136293a835946",
       "semanticState": {
         "scenarioId": "ribbon.transitions",
         "host": "avalonia",
@@ -722,42 +722,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -813,9 +813,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892116,
-      "fullImageSha256": "3a4cfdd6b618e096a87df69ea0758a2fe48435d1b4e373f4336295c126ae0bd9",
-      "clientImageSha256": "3a4cfdd6b618e096a87df69ea0758a2fe48435d1b4e373f4336295c126ae0bd9",
+      "nonBackgroundPixelCount": 892574,
+      "fullImageSha256": "1c7698fef12d9b87b68cb47839cf34e4fe904f05c7931f80023286a909f95f36",
+      "clientImageSha256": "1c7698fef12d9b87b68cb47839cf34e4fe904f05c7931f80023286a909f95f36",
       "semanticState": {
         "scenarioId": "ribbon.animations",
         "host": "avalonia",
@@ -854,42 +854,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -945,9 +945,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 891985,
-      "fullImageSha256": "6eb9abf1cfa441eded6b630663aab13d2b65ac01a3d112747fd417874097ac97",
-      "clientImageSha256": "6eb9abf1cfa441eded6b630663aab13d2b65ac01a3d112747fd417874097ac97",
+      "nonBackgroundPixelCount": 892624,
+      "fullImageSha256": "8ed834149edda8d6a5ca9c602a91096c97a50ba01d795e1f724788d4d2c3aebb",
+      "clientImageSha256": "8ed834149edda8d6a5ca9c602a91096c97a50ba01d795e1f724788d4d2c3aebb",
       "semanticState": {
         "scenarioId": "ribbon.view",
         "host": "avalonia",
@@ -986,42 +986,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -1077,9 +1077,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 805060,
-      "fullImageSha256": "9a0a2b83d9be6115a76e0519b30a3bf54fea949a11cf1b9f3e9a3e15af146cad",
-      "clientImageSha256": "9a0a2b83d9be6115a76e0519b30a3bf54fea949a11cf1b9f3e9a3e15af146cad",
+      "nonBackgroundPixelCount": 805085,
+      "fullImageSha256": "961203f7cb50434552d6e0d01fe1aee58f60cdaf595e95cbc5830bbdebe22d06",
+      "clientImageSha256": "961203f7cb50434552d6e0d01fe1aee58f60cdaf595e95cbc5830bbdebe22d06",
       "semanticState": {
         "scenarioId": "backstage.info",
         "host": "avalonia",
@@ -1120,42 +1120,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -1211,9 +1211,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 804915,
-      "fullImageSha256": "2aa4cfd50a3b11c25c4bfed7cdf86cd973f0ebeaa98ebc355a8a0167257df4ac",
-      "clientImageSha256": "2aa4cfd50a3b11c25c4bfed7cdf86cd973f0ebeaa98ebc355a8a0167257df4ac",
+      "nonBackgroundPixelCount": 804944,
+      "fullImageSha256": "51fe28ec93fc6cee313234b1b331c97d2c9cbda3c07fa8cfde925eb288906152",
+      "clientImageSha256": "51fe28ec93fc6cee313234b1b331c97d2c9cbda3c07fa8cfde925eb288906152",
       "semanticState": {
         "scenarioId": "backstage.recent",
         "host": "avalonia",
@@ -1254,42 +1254,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -1345,9 +1345,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 804399,
-      "fullImageSha256": "0c940c9e7f225d8dc76f316751260412cafea8db7985c8ffa8667ea4520be0f9",
-      "clientImageSha256": "0c940c9e7f225d8dc76f316751260412cafea8db7985c8ffa8667ea4520be0f9",
+      "nonBackgroundPixelCount": 804437,
+      "fullImageSha256": "cddd4be7ed26ce243389b13ecdc96aefc2e69e54ebbf82ec20b5fd052c39e50e",
+      "clientImageSha256": "cddd4be7ed26ce243389b13ecdc96aefc2e69e54ebbf82ec20b5fd052c39e50e",
       "semanticState": {
         "scenarioId": "backstage.new-from-template",
         "host": "avalonia",
@@ -1388,42 +1388,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -1479,9 +1479,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 805028,
-      "fullImageSha256": "e2c2e42ddf8082fc8616d952efa1801d73d8f268231f12f10b0e23245b66e925",
-      "clientImageSha256": "e2c2e42ddf8082fc8616d952efa1801d73d8f268231f12f10b0e23245b66e925",
+      "nonBackgroundPixelCount": 805043,
+      "fullImageSha256": "bce476087b8aa6785be2052ce3c645510f2a439b4c32cc26c85d65e121cf44b4",
+      "clientImageSha256": "bce476087b8aa6785be2052ce3c645510f2a439b4c32cc26c85d65e121cf44b4",
       "semanticState": {
         "scenarioId": "backstage.print",
         "host": "avalonia",
@@ -1522,42 +1522,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -1613,9 +1613,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 804866,
-      "fullImageSha256": "97441c3c3bf92b9abd99b9e8569dd8facfb134f9f60db1efa7f1c837f2075b8f",
-      "clientImageSha256": "97441c3c3bf92b9abd99b9e8569dd8facfb134f9f60db1efa7f1c837f2075b8f",
+      "nonBackgroundPixelCount": 805094,
+      "fullImageSha256": "20c99248946dc5eda7ca0252857cbb5cea127978f3a1acdd36413cae63f49b37",
+      "clientImageSha256": "20c99248946dc5eda7ca0252857cbb5cea127978f3a1acdd36413cae63f49b37",
       "semanticState": {
         "scenarioId": "backstage.export",
         "host": "avalonia",
@@ -1656,42 +1656,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -1747,9 +1747,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 804741,
-      "fullImageSha256": "cdf08ea675c2f2fc87ef6ef4d0fe4145bf8f3190ca725a74ff490e1e459b5cb8",
-      "clientImageSha256": "cdf08ea675c2f2fc87ef6ef4d0fe4145bf8f3190ca725a74ff490e1e459b5cb8",
+      "nonBackgroundPixelCount": 804949,
+      "fullImageSha256": "5c4293d724d52fd8905b2a6990b851ae7cc587f9e139eb3e211ceff542b37b0b",
+      "clientImageSha256": "5c4293d724d52fd8905b2a6990b851ae7cc587f9e139eb3e211ceff542b37b0b",
       "semanticState": {
         "scenarioId": "backstage.options",
         "host": "avalonia",
@@ -1790,42 +1790,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -1881,9 +1881,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 804917,
-      "fullImageSha256": "06a4fdb923e619816867c189e2823fcf93887a79df44858625b6f1d4afac3e44",
-      "clientImageSha256": "06a4fdb923e619816867c189e2823fcf93887a79df44858625b6f1d4afac3e44",
+      "nonBackgroundPixelCount": 804946,
+      "fullImageSha256": "1f3c709c8f35aa2cf65a56a3a482abaea429104fa70d7631722fb4ddc0863c74",
+      "clientImageSha256": "1f3c709c8f35aa2cf65a56a3a482abaea429104fa70d7631722fb4ddc0863c74",
       "semanticState": {
         "scenarioId": "backstage.account",
         "host": "avalonia",
@@ -1924,42 +1924,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -2015,9 +2015,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892206,
-      "fullImageSha256": "c165e2a937fca8faec14e1c1e6d13ca947469edc092c9b3c5b22692db13b1593",
-      "clientImageSha256": "c165e2a937fca8faec14e1c1e6d13ca947469edc092c9b3c5b22692db13b1593",
+      "nonBackgroundPixelCount": 892638,
+      "fullImageSha256": "789992e1980825c2f6094ec7e828f6f8a64c05c3b0b03fd85401d54dcfb42eb7",
+      "clientImageSha256": "789992e1980825c2f6094ec7e828f6f8a64c05c3b0b03fd85401d54dcfb42eb7",
       "semanticState": {
         "scenarioId": "status.slide-2",
         "host": "avalonia",
@@ -2056,42 +2056,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -2147,9 +2147,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 891985,
-      "fullImageSha256": "ac4e342bcb05224e84f7a77a134541bb576f7d56ac701db031606ca14b48af30",
-      "clientImageSha256": "ac4e342bcb05224e84f7a77a134541bb576f7d56ac701db031606ca14b48af30",
+      "nonBackgroundPixelCount": 892624,
+      "fullImageSha256": "5e538c75cfcfa0e11d812583d11fb369025b379a89079ce64b83e1c65caca353",
+      "clientImageSha256": "5e538c75cfcfa0e11d812583d11fb369025b379a89079ce64b83e1c65caca353",
       "semanticState": {
         "scenarioId": "view.gridlines-guides",
         "host": "avalonia",
@@ -2190,42 +2190,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -2286,9 +2286,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892197,
-      "fullImageSha256": "34994f73ddd2826115e8f5608ed5007f7b9ab59dc6e9a7798e6ca4d460942548",
-      "clientImageSha256": "34994f73ddd2826115e8f5608ed5007f7b9ab59dc6e9a7798e6ca4d460942548",
+      "nonBackgroundPixelCount": 892624,
+      "fullImageSha256": "02d64f67309742064e00712fa022da6cc2900cb2763c6c6ba82ec4e7fc860826",
+      "clientImageSha256": "02d64f67309742064e00712fa022da6cc2900cb2763c6c6ba82ec4e7fc860826",
       "semanticState": {
         "scenarioId": "view.clean-canvas",
         "host": "avalonia",
@@ -2329,42 +2329,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -2425,9 +2425,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 891985,
-      "fullImageSha256": "7f6d9e66a00bd43720ecc4ffb7297a74c9d14ef7c110fc81de7867b0b715991c",
-      "clientImageSha256": "7f6d9e66a00bd43720ecc4ffb7297a74c9d14ef7c110fc81de7867b0b715991c",
+      "nonBackgroundPixelCount": 892624,
+      "fullImageSha256": "e3632fe98a5c0333460767c4a69a0fc7aa52a8b68daa21a9170d9ef399712c17",
+      "clientImageSha256": "e3632fe98a5c0333460767c4a69a0fc7aa52a8b68daa21a9170d9ef399712c17",
       "semanticState": {
         "scenarioId": "view.zoom-fit",
         "host": "avalonia",
@@ -2468,42 +2468,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -2564,9 +2564,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 891985,
-      "fullImageSha256": "03db61ba81bfa8a8efcd93859948f835480bbd158a69c7c9b66452829d2d8e91",
-      "clientImageSha256": "03db61ba81bfa8a8efcd93859948f835480bbd158a69c7c9b66452829d2d8e91",
+      "nonBackgroundPixelCount": 892624,
+      "fullImageSha256": "95803bb32e3e88052b2bcd360100f50b871767587934e715e8d6fe201c4486d3",
+      "clientImageSha256": "95803bb32e3e88052b2bcd360100f50b871767587934e715e8d6fe201c4486d3",
       "semanticState": {
         "scenarioId": "view.zoom-200",
         "host": "avalonia",
@@ -2607,42 +2607,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -2703,9 +2703,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892209,
-      "fullImageSha256": "12bb6882509cb17a85a5a586db7fc49efe71ca178b690fd97e1be673faa1d7c0",
-      "clientImageSha256": "12bb6882509cb17a85a5a586db7fc49efe71ca178b690fd97e1be673faa1d7c0",
+      "nonBackgroundPixelCount": 892638,
+      "fullImageSha256": "1dbd32907785e373f7f90673c02989c7903c02c07279c7db7ba91717e508d044",
+      "clientImageSha256": "1dbd32907785e373f7f90673c02989c7903c02c07279c7db7ba91717e508d044",
       "semanticState": {
         "scenarioId": "workspace.slide-pane",
         "host": "avalonia",
@@ -2744,42 +2744,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -2835,9 +2835,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 891997,
-      "fullImageSha256": "113a8cad515959600ebcd783b7b5b797d4b1c3283ce10b806ac790182b310246",
-      "clientImageSha256": "113a8cad515959600ebcd783b7b5b797d4b1c3283ce10b806ac790182b310246",
+      "nonBackgroundPixelCount": 892636,
+      "fullImageSha256": "4daa5bff06f2bb8144c0143039e254061865c6e6e6f1aa02509217002c3866a0",
+      "clientImageSha256": "4daa5bff06f2bb8144c0143039e254061865c6e6e6f1aa02509217002c3866a0",
       "semanticState": {
         "scenarioId": "workspace.notes-pane",
         "host": "avalonia",
@@ -2876,42 +2876,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -2967,9 +2967,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892182,
-      "fullImageSha256": "fa0ec9664bc79060f288ca1d96c2b3210d6faf0621fece0cdf75293680c157cf",
-      "clientImageSha256": "fa0ec9664bc79060f288ca1d96c2b3210d6faf0621fece0cdf75293680c157cf",
+      "nonBackgroundPixelCount": 892618,
+      "fullImageSha256": "294e9d198ea9cdb7e3d8fdfb5b245deaa0ba9b0d6aff7dfc1df66d8086ac40e5",
+      "clientImageSha256": "294e9d198ea9cdb7e3d8fdfb5b245deaa0ba9b0d6aff7dfc1df66d8086ac40e5",
       "semanticState": {
         "scenarioId": "workspace.canvas",
         "host": "avalonia",
@@ -3010,42 +3010,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -3101,9 +3101,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892194,
-      "fullImageSha256": "78c668b82d25cd7a7730b4237711118711583f5057db1d841311f410e44db70c",
-      "clientImageSha256": "78c668b82d25cd7a7730b4237711118711583f5057db1d841311f410e44db70c",
+      "nonBackgroundPixelCount": 892626,
+      "fullImageSha256": "7b32f470208feafb3dd61437be2291978f3e4d6c447f52be3fbdbf0ad7816a8d",
+      "clientImageSha256": "7b32f470208feafb3dd61437be2291978f3e4d6c447f52be3fbdbf0ad7816a8d",
       "semanticState": {
         "scenarioId": "editor.rich-text-selection",
         "host": "avalonia",
@@ -3144,42 +3144,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -3231,10 +3231,10 @@
           "selectionEnd": 35,
           "selectedText": "revenue review highlights",
           "bounds": {
-            "x": 359.75,
-            "y": 252.66666666666666,
-            "width": 261.3333333333333,
-            "height": 76.66666666666667,
+            "x": 360.55,
+            "y": 252.8,
+            "width": 260.8,
+            "height": 76.8,
             "isVisible": true
           }
         }
@@ -3255,9 +3255,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892194,
-      "fullImageSha256": "e8425776994599b0efcd8dfe7ca9a298a0b136af32da5eaca36468ac0cc3d468",
-      "clientImageSha256": "e8425776994599b0efcd8dfe7ca9a298a0b136af32da5eaca36468ac0cc3d468",
+      "nonBackgroundPixelCount": 892626,
+      "fullImageSha256": "262d5f84157a1b8c634d3386e98775c8c3c01cdd32fa7d8d0c7cbf1fec75d5a1",
+      "clientImageSha256": "262d5f84157a1b8c634d3386e98775c8c3c01cdd32fa7d8d0c7cbf1fec75d5a1",
       "semanticState": {
         "scenarioId": "editor.rich-text-caret",
         "host": "avalonia",
@@ -3298,42 +3298,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
@@ -3409,9 +3409,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 889523,
-      "fullImageSha256": "f287ff6e60858b02574753d017666637f27416c410b48dcba72c50a1ccf56b1b",
-      "clientImageSha256": "f287ff6e60858b02574753d017666637f27416c410b48dcba72c50a1ccf56b1b",
+      "nonBackgroundPixelCount": 891126,
+      "fullImageSha256": "96041556b3188ae109be8063ae5998003e709b9e2d269ef8bd47b40a652ae828",
+      "clientImageSha256": "96041556b3188ae109be8063ae5998003e709b9e2d269ef8bd47b40a652ae828",
       "semanticState": {
         "scenarioId": "review.comments-pane",
         "host": "avalonia",
@@ -3452,42 +3452,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 416.6666666666667,
+          "height": 416,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [
@@ -3545,9 +3545,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 891741,
-      "fullImageSha256": "1d8f6380535b0d7c9be973e92b687419f6484b8254e9cbdd224b787cd4f5f0a6",
-      "clientImageSha256": "1d8f6380535b0d7c9be973e92b687419f6484b8254e9cbdd224b787cd4f5f0a6",
+      "nonBackgroundPixelCount": 892483,
+      "fullImageSha256": "4254e519997cb052c56d7e96a68a0fb818c167e95f5e05c601ed92349feab5ad",
+      "clientImageSha256": "4254e519997cb052c56d7e96a68a0fb818c167e95f5e05c601ed92349feab5ad",
       "semanticState": {
         "scenarioId": "review.accessibility-pane",
         "host": "avalonia",
@@ -3588,42 +3588,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 780,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 780,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [
@@ -3681,9 +3681,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892194,
-      "fullImageSha256": "52617ff108f1e475b2ed0efd44956dd1556a14422046f5f3cf13ac893e359730",
-      "clientImageSha256": "52617ff108f1e475b2ed0efd44956dd1556a14422046f5f3cf13ac893e359730",
+      "nonBackgroundPixelCount": 892546,
+      "fullImageSha256": "470e4cd1fcd772e7bf41b7d10e9a48d8b7fccae936e91c8a6676aa228ed2cc03",
+      "clientImageSha256": "470e4cd1fcd772e7bf41b7d10e9a48d8b7fccae936e91c8a6676aa228ed2cc03",
       "semanticState": {
         "scenarioId": "review.alt-text-pane",
         "host": "avalonia",
@@ -3724,42 +3724,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 808,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 808,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [
@@ -3817,9 +3817,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892018,
-      "fullImageSha256": "cab2cb1f6c6c746ca63797d134a26a2cf976d1157d158fe789df113a43241beb",
-      "clientImageSha256": "cab2cb1f6c6c746ca63797d134a26a2cf976d1157d158fe789df113a43241beb",
+      "nonBackgroundPixelCount": 892485,
+      "fullImageSha256": "9095c762970f0cd57028c8ee1f01db9377c05d206857e24da24219ea74cd758a",
+      "clientImageSha256": "9095c762970f0cd57028c8ee1f01db9377c05d206857e24da24219ea74cd758a",
       "semanticState": {
         "scenarioId": "review.reading-order-pane",
         "host": "avalonia",
@@ -3860,42 +3860,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 780,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 780,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [
@@ -3953,9 +3953,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892194,
-      "fullImageSha256": "d036b04be37036fa6e824a9bfc56816f9f938737c7835b8b48eee04e651cfe33",
-      "clientImageSha256": "d036b04be37036fa6e824a9bfc56816f9f938737c7835b8b48eee04e651cfe33",
+      "nonBackgroundPixelCount": 892545,
+      "fullImageSha256": "ff57fecb83b31ff76b8de5ba909aaae6da2b2066137c2ee3cc8eb1ec95fc7457",
+      "clientImageSha256": "ff57fecb83b31ff76b8de5ba909aaae6da2b2066137c2ee3cc8eb1ec95fc7457",
       "semanticState": {
         "scenarioId": "review.proofing-pane",
         "host": "avalonia",
@@ -3996,42 +3996,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 780,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 780,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [
@@ -4089,9 +4089,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892992,
-      "fullImageSha256": "43a69a858a54b303d526693e96be5b1b79214df6c86d8c1dd9278b00cf017e60",
-      "clientImageSha256": "43a69a858a54b303d526693e96be5b1b79214df6c86d8c1dd9278b00cf017e60",
+      "nonBackgroundPixelCount": 893374,
+      "fullImageSha256": "6dc6b9b18b0e73db062daed43a277cfdbfd108737576214e615466ffdca49ac6",
+      "clientImageSha256": "6dc6b9b18b0e73db062daed43a277cfdbfd108737576214e615466ffdca49ac6",
       "semanticState": {
         "scenarioId": "accessibility.media-caption-pane",
         "host": "avalonia",
@@ -4132,42 +4132,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 780,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 780,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [
@@ -4225,9 +4225,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 891259,
-      "fullImageSha256": "0043fc145beaa1e936a9a7063cc17fcf2ebc79115c50a7f73c702dc0d8874ead",
-      "clientImageSha256": "0043fc145beaa1e936a9a7063cc17fcf2ebc79115c50a7f73c702dc0d8874ead",
+      "nonBackgroundPixelCount": 892206,
+      "fullImageSha256": "cdbc50aab95982f42dbae14cde41a29c1bd026be27683ee77d1407b8c293126d",
+      "clientImageSha256": "cdbc50aab95982f42dbae14cde41a29c1bd026be27683ee77d1407b8c293126d",
       "semanticState": {
         "scenarioId": "context.smartart-text-pane",
         "host": "avalonia",
@@ -4268,42 +4268,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 780,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 780,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [
@@ -4361,9 +4361,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 888311,
-      "fullImageSha256": "51a5f405aaaeaf0eeb4e067854ab90a71e7591ae39e7215e91f98f4bd65a572e",
-      "clientImageSha256": "51a5f405aaaeaf0eeb4e067854ab90a71e7591ae39e7215e91f98f4bd65a572e",
+      "nonBackgroundPixelCount": 888431,
+      "fullImageSha256": "98d33c9bc960e0d5638219c91b095959aac118a57d5100979710b8fe5d275700",
+      "clientImageSha256": "98d33c9bc960e0d5638219c91b095959aac118a57d5100979710b8fe5d275700",
       "semanticState": {
         "scenarioId": "animations.animation-pane",
         "host": "avalonia",
@@ -4404,42 +4404,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 860,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 860,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [
