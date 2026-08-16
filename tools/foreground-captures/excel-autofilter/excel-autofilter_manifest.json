@@ -3,41 +3,41 @@
   "Subject": "excel",
   "CaptureStatus": "complete",
   "CaptureMode": "foreground-guarded-uia-win32",
-  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-foreground-harness-20260610\\tools\\foreground-captures\\excel-autofilter\\excel-autofilter_20260610_151710.png",
+  "ScreenshotPath": "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\foreground-captures\\excel-autofilter\\excel-autofilter_20260816_074657.png",
   "Window": {
-    "Handle": 3084776,
-    "ProcessId": 86788,
+    "Handle": 2295466,
+    "ProcessId": 6156,
     "Title": "",
     "ClassName": "Net UI Tool Window",
     "Bounds": {
       "Location": {
         "IsEmpty": false,
         "X": 0,
-        "Y": 382
+        "Y": 317
       },
       "Size": {
         "IsEmpty": false,
-        "Width": 401,
-        "Height": 818
+        "Width": 333,
+        "Height": 578
       },
       "X": 0,
-      "Y": 382,
-      "Width": 401,
-      "Height": 818,
+      "Y": 317,
+      "Width": 333,
+      "Height": 578,
       "Left": 0,
-      "Top": 382,
-      "Right": 401,
-      "Bottom": 1200,
+      "Top": 317,
+      "Right": 333,
+      "Bottom": 895,
       "IsEmpty": false
     }
   },
   "ForegroundGuard": {
     "Success": true,
-    "ExpectedProcessId": 86788,
-    "ExpectedHandle": 4656930,
+    "ExpectedProcessId": 6156,
+    "ExpectedHandle": 2295362,
     "ForegroundWindow": {
-      "Handle": 4656930,
-      "ProcessId": 86788,
+      "Handle": 2295362,
+      "ProcessId": 6156,
       "Title": "Book1 - Excel",
       "ClassName": "XLMAIN",
       "Bounds": {
@@ -48,21 +48,56 @@
         },
         "Size": {
           "IsEmpty": false,
-          "Width": 1800,
-          "Height": 1440
+          "Width": 1500,
+          "Height": 1032
         },
         "X": 0,
         "Y": 0,
-        "Width": 1800,
-        "Height": 1440,
+        "Width": 1500,
+        "Height": 1032,
         "Left": 0,
         "Top": 0,
-        "Right": 1800,
-        "Bottom": 1440,
+        "Right": 1500,
+        "Bottom": 1032,
         "IsEmpty": false
       }
     }
   },
-  "CapturedAtUtc": "2026-06-10T15:17:10.4878093+00:00",
-  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-foreground-harness-20260610\\tools\\foreground-captures\\excel-autofilter\\excel-autofilter_manifest.json"
+  "CapturedAtUtc": "2026-08-16T07:46:57.990207+00:00",
+  "EnvironmentSnapshot": {
+    "OperatingSystem": "Microsoft Windows 10.0.26200",
+    "IsWindows": true,
+    "UserInteractive": true,
+    "SessionId": 1,
+    "ProcessId": 11728,
+    "ProcessArchitecture": "X64",
+    "ForegroundWindowAtCapture": {
+      "Handle": 2295466,
+      "ProcessId": 6156,
+      "Title": "",
+      "ClassName": "Net UI Tool Window",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 0,
+          "Y": 317
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 333,
+          "Height": 578
+        },
+        "X": 0,
+        "Y": 317,
+        "Width": 333,
+        "Height": 578,
+        "Left": 0,
+        "Top": 317,
+        "Right": 333,
+        "Bottom": 895,
+        "IsEmpty": false
+      }
+    }
+  },
+  "ManifestPath": "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\foreground-captures\\excel-autofilter\\excel-autofilter_manifest.json"
 }

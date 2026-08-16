@@ -3,7 +3,7 @@
     "EvidenceFamily":  "ribbon",
     "EvidenceSubject":  "excel",
     "EvidenceApp":  "Microsoft Excel",
-    "OutputDirectory":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel",
+    "OutputDirectory":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel",
     "OutputNaming":  "excel_\u003cWidthLabel\u003e_\u003cRibbonTab\u003e.png",
     "CatalogEvidenceTarget":  "docs/testing/ui-test-catalog.md",
     "WidthSource":  "RibbonScreenshotTourPlanner.DefaultWidths",
@@ -13,7 +13,7 @@
     "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
     "ForegroundGuard":  {
                             "Required":  true,
-                            "ExpectedProcessId":  89520,
+                            "ExpectedProcessId":  11708,
                             "ExpectedWindowTitle":  "Excel",
                             "Policy":  "Abort and clear current PNG/manifest evidence unless the expected process and window title own the foreground window immediately before global input and screen capture."
                         },
@@ -26,13 +26,13 @@
     "WindowBounds":  {
                          "Left":  0,
                          "Top":  0,
-                         "Right":  1125,
-                         "Bottom":  1152,
-                         "Width":  1125,
-                         "Height":  1152
+                         "Right":  938,
+                         "Bottom":  960,
+                         "Width":  938,
+                         "Height":  960
                      },
     "CaptureLogicalHeight":  300,
-    "CapturePhysicalHeight":  450,
+    "CapturePhysicalHeight":  375,
     "Widths":  [
                    {
                        "Label":  "max",
@@ -244,16 +244,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_max_Home.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_max_Home.png",
-                         "Width":  1800,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_max_Home.png",
+                         "Width":  1440,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1800,
-                                              "Bottom":  1440,
-                                              "Width":  1800,
-                                              "Height":  1440
+                                              "Right":  1440,
+                                              "Bottom":  740,
+                                              "Width":  1440,
+                                              "Height":  740
                                           }
                      },
                      {
@@ -271,16 +271,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_max_Insert.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_max_Insert.png",
-                         "Width":  1800,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_max_Insert.png",
+                         "Width":  1440,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1800,
-                                              "Bottom":  1440,
-                                              "Width":  1800,
-                                              "Height":  1440
+                                              "Right":  1440,
+                                              "Bottom":  740,
+                                              "Width":  1440,
+                                              "Height":  740
                                           }
                      },
                      {
@@ -298,16 +298,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_max_Page_Layout.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_max_Page_Layout.png",
-                         "Width":  1800,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_max_Page_Layout.png",
+                         "Width":  1440,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1800,
-                                              "Bottom":  1440,
-                                              "Width":  1800,
-                                              "Height":  1440
+                                              "Right":  1440,
+                                              "Bottom":  740,
+                                              "Width":  1440,
+                                              "Height":  740
                                           }
                      },
                      {
@@ -325,16 +325,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_max_Formulas.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_max_Formulas.png",
-                         "Width":  1800,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_max_Formulas.png",
+                         "Width":  1440,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1800,
-                                              "Bottom":  1440,
-                                              "Width":  1800,
-                                              "Height":  1440
+                                              "Right":  1440,
+                                              "Bottom":  740,
+                                              "Width":  1440,
+                                              "Height":  740
                                           }
                      },
                      {
@@ -352,16 +352,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_max_Data.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_max_Data.png",
-                         "Width":  1800,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_max_Data.png",
+                         "Width":  1440,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1800,
-                                              "Bottom":  1440,
-                                              "Width":  1800,
-                                              "Height":  1440
+                                              "Right":  1440,
+                                              "Bottom":  740,
+                                              "Width":  1440,
+                                              "Height":  740
                                           }
                      },
                      {
@@ -379,16 +379,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_max_Review.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_max_Review.png",
-                         "Width":  1800,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_max_Review.png",
+                         "Width":  1440,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1800,
-                                              "Bottom":  1440,
-                                              "Width":  1800,
-                                              "Height":  1440
+                                              "Right":  1440,
+                                              "Bottom":  740,
+                                              "Width":  1440,
+                                              "Height":  740
                                           }
                      },
                      {
@@ -406,16 +406,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_max_View.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_max_View.png",
-                         "Width":  1800,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_max_View.png",
+                         "Width":  1440,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1800,
-                                              "Bottom":  1440,
-                                              "Width":  1800,
-                                              "Height":  1440
+                                              "Right":  1440,
+                                              "Bottom":  740,
+                                              "Width":  1440,
+                                              "Height":  740
                                           }
                      },
                      {
@@ -433,16 +433,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_max_Help.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_max_Help.png",
-                         "Width":  1800,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_max_Help.png",
+                         "Width":  1440,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1800,
-                                              "Bottom":  1440,
-                                              "Width":  1800,
-                                              "Height":  1440
+                                              "Right":  1440,
+                                              "Bottom":  740,
+                                              "Width":  1440,
+                                              "Height":  740
                                           }
                      },
                      {
@@ -460,16 +460,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_1100_Home.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_1100_Home.png",
-                         "Width":  1650,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_1100_Home.png",
+                         "Width":  1375,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1650,
-                                              "Bottom":  1152,
-                                              "Width":  1650,
-                                              "Height":  1152
+                                              "Right":  1375,
+                                              "Bottom":  960,
+                                              "Width":  1375,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -487,16 +487,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_1100_Insert.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_1100_Insert.png",
-                         "Width":  1650,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_1100_Insert.png",
+                         "Width":  1375,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1650,
-                                              "Bottom":  1152,
-                                              "Width":  1650,
-                                              "Height":  1152
+                                              "Right":  1375,
+                                              "Bottom":  960,
+                                              "Width":  1375,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -514,16 +514,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_1100_Page_Layout.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_1100_Page_Layout.png",
-                         "Width":  1650,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_1100_Page_Layout.png",
+                         "Width":  1375,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1650,
-                                              "Bottom":  1152,
-                                              "Width":  1650,
-                                              "Height":  1152
+                                              "Right":  1375,
+                                              "Bottom":  960,
+                                              "Width":  1375,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -541,16 +541,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_1100_Formulas.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_1100_Formulas.png",
-                         "Width":  1650,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_1100_Formulas.png",
+                         "Width":  1375,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1650,
-                                              "Bottom":  1152,
-                                              "Width":  1650,
-                                              "Height":  1152
+                                              "Right":  1375,
+                                              "Bottom":  960,
+                                              "Width":  1375,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -568,16 +568,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_1100_Data.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_1100_Data.png",
-                         "Width":  1650,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_1100_Data.png",
+                         "Width":  1375,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1650,
-                                              "Bottom":  1152,
-                                              "Width":  1650,
-                                              "Height":  1152
+                                              "Right":  1375,
+                                              "Bottom":  960,
+                                              "Width":  1375,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -595,16 +595,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_1100_Review.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_1100_Review.png",
-                         "Width":  1650,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_1100_Review.png",
+                         "Width":  1375,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1650,
-                                              "Bottom":  1152,
-                                              "Width":  1650,
-                                              "Height":  1152
+                                              "Right":  1375,
+                                              "Bottom":  960,
+                                              "Width":  1375,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -622,16 +622,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_1100_View.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_1100_View.png",
-                         "Width":  1650,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_1100_View.png",
+                         "Width":  1375,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1650,
-                                              "Bottom":  1152,
-                                              "Width":  1650,
-                                              "Height":  1152
+                                              "Right":  1375,
+                                              "Bottom":  960,
+                                              "Width":  1375,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -649,16 +649,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_1100_Help.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_1100_Help.png",
-                         "Width":  1650,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_1100_Help.png",
+                         "Width":  1375,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1650,
-                                              "Bottom":  1152,
-                                              "Width":  1650,
-                                              "Height":  1152
+                                              "Right":  1375,
+                                              "Bottom":  960,
+                                              "Width":  1375,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -676,16 +676,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_900_Home.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_900_Home.png",
-                         "Width":  1350,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_900_Home.png",
+                         "Width":  1125,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1350,
-                                              "Bottom":  1152,
-                                              "Width":  1350,
-                                              "Height":  1152
+                                              "Right":  1125,
+                                              "Bottom":  960,
+                                              "Width":  1125,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -703,16 +703,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_900_Insert.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_900_Insert.png",
-                         "Width":  1350,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_900_Insert.png",
+                         "Width":  1125,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1350,
-                                              "Bottom":  1152,
-                                              "Width":  1350,
-                                              "Height":  1152
+                                              "Right":  1125,
+                                              "Bottom":  960,
+                                              "Width":  1125,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -730,16 +730,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_900_Page_Layout.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_900_Page_Layout.png",
-                         "Width":  1350,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_900_Page_Layout.png",
+                         "Width":  1125,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1350,
-                                              "Bottom":  1152,
-                                              "Width":  1350,
-                                              "Height":  1152
+                                              "Right":  1125,
+                                              "Bottom":  960,
+                                              "Width":  1125,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -757,16 +757,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_900_Formulas.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_900_Formulas.png",
-                         "Width":  1350,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_900_Formulas.png",
+                         "Width":  1125,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1350,
-                                              "Bottom":  1152,
-                                              "Width":  1350,
-                                              "Height":  1152
+                                              "Right":  1125,
+                                              "Bottom":  960,
+                                              "Width":  1125,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -784,16 +784,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_900_Data.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_900_Data.png",
-                         "Width":  1350,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_900_Data.png",
+                         "Width":  1125,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1350,
-                                              "Bottom":  1152,
-                                              "Width":  1350,
-                                              "Height":  1152
+                                              "Right":  1125,
+                                              "Bottom":  960,
+                                              "Width":  1125,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -811,16 +811,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_900_Review.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_900_Review.png",
-                         "Width":  1350,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_900_Review.png",
+                         "Width":  1125,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1350,
-                                              "Bottom":  1152,
-                                              "Width":  1350,
-                                              "Height":  1152
+                                              "Right":  1125,
+                                              "Bottom":  960,
+                                              "Width":  1125,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -838,16 +838,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_900_View.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_900_View.png",
-                         "Width":  1350,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_900_View.png",
+                         "Width":  1125,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1350,
-                                              "Bottom":  1152,
-                                              "Width":  1350,
-                                              "Height":  1152
+                                              "Right":  1125,
+                                              "Bottom":  960,
+                                              "Width":  1125,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -865,16 +865,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_900_Help.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_900_Help.png",
-                         "Width":  1350,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_900_Help.png",
+                         "Width":  1125,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1350,
-                                              "Bottom":  1152,
-                                              "Width":  1350,
-                                              "Height":  1152
+                                              "Right":  1125,
+                                              "Bottom":  960,
+                                              "Width":  1125,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -892,16 +892,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_750_Home.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_750_Home.png",
-                         "Width":  1125,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_750_Home.png",
+                         "Width":  938,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1125,
-                                              "Bottom":  1152,
-                                              "Width":  1125,
-                                              "Height":  1152
+                                              "Right":  938,
+                                              "Bottom":  960,
+                                              "Width":  938,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -919,16 +919,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_750_Insert.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_750_Insert.png",
-                         "Width":  1125,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_750_Insert.png",
+                         "Width":  938,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1125,
-                                              "Bottom":  1152,
-                                              "Width":  1125,
-                                              "Height":  1152
+                                              "Right":  938,
+                                              "Bottom":  960,
+                                              "Width":  938,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -946,16 +946,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_750_Page_Layout.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_750_Page_Layout.png",
-                         "Width":  1125,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_750_Page_Layout.png",
+                         "Width":  938,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1125,
-                                              "Bottom":  1152,
-                                              "Width":  1125,
-                                              "Height":  1152
+                                              "Right":  938,
+                                              "Bottom":  960,
+                                              "Width":  938,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -973,16 +973,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_750_Formulas.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_750_Formulas.png",
-                         "Width":  1125,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_750_Formulas.png",
+                         "Width":  938,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1125,
-                                              "Bottom":  1152,
-                                              "Width":  1125,
-                                              "Height":  1152
+                                              "Right":  938,
+                                              "Bottom":  960,
+                                              "Width":  938,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -1000,16 +1000,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_750_Data.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_750_Data.png",
-                         "Width":  1125,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_750_Data.png",
+                         "Width":  938,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1125,
-                                              "Bottom":  1152,
-                                              "Width":  1125,
-                                              "Height":  1152
+                                              "Right":  938,
+                                              "Bottom":  960,
+                                              "Width":  938,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -1027,16 +1027,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_750_Review.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_750_Review.png",
-                         "Width":  1125,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_750_Review.png",
+                         "Width":  938,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1125,
-                                              "Bottom":  1152,
-                                              "Width":  1125,
-                                              "Height":  1152
+                                              "Right":  938,
+                                              "Bottom":  960,
+                                              "Width":  938,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -1054,16 +1054,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_750_View.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_750_View.png",
-                         "Width":  1125,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_750_View.png",
+                         "Width":  938,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1125,
-                                              "Bottom":  1152,
-                                              "Width":  1125,
-                                              "Height":  1152
+                                              "Right":  938,
+                                              "Bottom":  960,
+                                              "Width":  938,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -1081,16 +1081,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "excel_750_Help.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots_excel\\excel_750_Help.png",
-                         "Width":  1125,
-                         "Height":  450,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\excel_750_Help.png",
+                         "Width":  938,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1125,
-                                              "Bottom":  1152,
-                                              "Width":  1125,
-                                              "Height":  1152
+                                              "Right":  938,
+                                              "Bottom":  960,
+                                              "Width":  938,
+                                              "Height":  960
                                           }
                      }
                  ]

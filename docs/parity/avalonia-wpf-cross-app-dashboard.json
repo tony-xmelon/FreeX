@@ -122,15 +122,15 @@
                                                                        "noComStatus":  "not-present-in-inputs",
                                                                        "limitations":  [
                                                                                            "The consumed FreeX inputs contain app-owned WPF/Avalonia render evidence only; no physical-device capture manifest is included.",
-                                                                                           "The committed references cover nine chart ranges and 29 pivot-table ranges; they do not cover foreground Excel ribbon or dialog chrome. The guarded foreground ribbon/dialog capture harness requires an interactive foreground desktop, which was unavailable during the 2026-08-16 refresh."
+                                                                                           "The committed references cover nine chart ranges, seven native cell-style ranges, and 29 pivot-table ranges; they do not cover foreground Excel ribbon or dialog chrome. The guarded foreground ribbon/dialog capture harness requires an interactive foreground desktop, which was unavailable during the 2026-08-16 refresh."
                                                                                        ]
                                                                    },
                                               "authoritativeMicrosoftOfficeBaseline":  {
                                                                                            "product":  "Microsoft Excel",
                                                                                            "available":  true,
                                                                                            "status":  "available-with-known-deltas",
-                                                                                           "artifactCount":  38,
-                                                                                           "limitation":  "The committed references cover nine chart ranges and 29 pivot-table ranges; they do not cover foreground Excel ribbon or dialog chrome. The guarded foreground ribbon/dialog capture harness requires an interactive foreground desktop, which was unavailable during the 2026-08-16 refresh.",
+                                                                                           "artifactCount":  45,
+                                                                                           "limitation":  "The committed references cover nine chart ranges, seven native cell-style ranges, and 29 pivot-table ranges; they do not cover foreground Excel ribbon or dialog chrome. The guarded foreground ribbon/dialog capture harness requires an interactive foreground desktop, which was unavailable during the 2026-08-16 refresh.",
                                                                                            "captureMode":  "Excel COM range export paired with FreeX SheetGridImageCompare"
                                                                                        },
                                               "claimBoundary":  "Coverage, manifest pairing, and DPI-normalized size comparability only; do not read these fields as visual parity."
@@ -325,17 +325,17 @@
                                                                                            "captureMode":  "PowerPoint COM corpus export",
                                                                                            "referenceReadyDecks":  27,
                                                                                            "missingReferenceDecks":  0,
-                                                                                           "currentSourceRevision":  "783d29ce659fd4ace80e25e0bc300fd6e147630e",
-                                                                                           "wpfAverageMeanPercent":  0.9756,
-                                                                                           "wpfMaximumMeanPercent":  3.0587,
-                                                                                           "avaloniaAverageMeanPercent":  0.9644,
-                                                                                           "avaloniaMaximumMeanPercent":  3.1232,
-                                                                                           "rendererPairAverageMeanPercent":  1.6303,
+                                                                                           "currentSourceRevision":  "d86a812a44aa228d559581735bc1991f71761967",
+                                                                                           "wpfAverageMeanPercent":  3.8646,
+                                                                                           "wpfMaximumMeanPercent":  23.9325,
+                                                                                           "avaloniaAverageMeanPercent":  3.1123,
+                                                                                           "avaloniaMaximumMeanPercent":  18.0735,
+                                                                                           "rendererPairAverageMeanPercent":  1.6137,
                                                                                            "rendererPairMaximumMeanPercent":  13.7186
                                                                                        },
                                               "claimBoundary":  "Route/scenario coverage, committed PNG manifests, and local WPF/Avalonia comparison results only; no PowerPoint visual-parity claim is made."
                                           },
-                     "nextSlice":  "The tracked PowerPoint corpus now has 53 COM-exported reference slides across 27 ready decks, with 0 deck missing references. The last current-source recalibration covers 43 paired Office slides and averages 0.9756% for WPF and 0.9644% for Avalonia, with maxima of 3.0587% / 3.1232%. Recalibrate against all tracked references, then prioritize bullets/text-autofit and 3-D charts."
+                     "nextSlice":  "The tracked PowerPoint corpus now has 53 COM-exported reference slides across 27 ready decks, with 0 deck missing references. The last current-source recalibration covers 53 paired Office slides and averages 3.8646% for WPF and 3.1123% for Avalonia, with maxima of 23.9325% / 18.0735%. Recalibrate against all tracked references, then prioritize bullets/text-autofit and 3-D charts."
                  }
              ]
 }

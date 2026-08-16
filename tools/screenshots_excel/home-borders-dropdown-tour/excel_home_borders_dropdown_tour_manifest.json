@@ -1,0 +1,56 @@
+﻿{
+    "Tool":  "FREEX_EXCEL_HOME_BORDERS_DROPDOWN_TOUR",
+    "EvidenceFamily":  "dropdown",
+    "EvidenceSubject":  "excel",
+    "EvidenceApp":  "Microsoft Excel",
+    "OutputDirectory":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\home-borders-dropdown-tour",
+    "OutputNaming":  "interactive_home_borders_opened.png",
+    "CatalogEvidenceTarget":  "docs/testing/ui-test-catalog.md",
+    "ScenarioId":  "dropdown:home-borders",
+    "EntryPath":  "Alt,H,B",
+    "CaptureStatus":  "complete",
+    "CaptureMethod":  "popup-window-rectangle",
+    "ForegroundGuard":  {
+                            "Required":  true,
+                            "ExpectedProcessId":  1264,
+                            "ExpectedWindowTitle":  "Book1 - Excel",
+                            "Policy":  "Seed a blank Excel workbook, then abort and clear Home Borders dropdown evidence unless Excel owns foreground immediately before Alt,H,B and before screen capture."
+                        },
+    "Pairing":  {
+                    "PairKeyPattern":  "interactive:home-borders:\u003cState\u003e",
+                    "PairKey":  "interactive:home-borders:opened",
+                    "CounterpartSubject":  "freex",
+                    "CounterpartTool":  "FREEX_HOME_BORDERS_DROPDOWN_TOUR",
+                    "CounterpartFileName":  "freex_dropdown_home_borders_opened.png"
+                },
+    "Scenario":  {
+                     "ScenarioId":  "dropdown:home-borders",
+                     "ScenarioFileName":  "home_borders",
+                     "State":  "opened",
+                     "Trigger":  "Excel COM starts a blank workbook and foreground-guarded Alt,H,B opens the Home Borders dropdown."
+                 },
+    "WindowBounds":  {
+                         "Left":  284,
+                         "Top":  180,
+                         "Right":  573,
+                         "Bottom":  952,
+                         "Width":  289,
+                         "Height":  772
+                     },
+    "Captures":  [
+                     {
+                         "CaptureSequence":  1,
+                         "CaptureKey":  "interactive:home-borders:opened",
+                         "PairKey":  "interactive:home-borders:opened",
+                         "EvidenceSubject":  "excel",
+                         "CounterpartSubject":  "freex",
+                         "CounterpartFileName":  "freex_dropdown_home_borders_opened.png",
+                         "FileName":  "interactive_home_borders_opened.png",
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\home-borders-dropdown-tour\\interactive_home_borders_opened.png",
+                         "Width":  289,
+                         "Height":  772,
+                         "CaptureMethod":  "popup-window-rectangle",
+                         "CaptureStatus":  "complete"
+                     }
+                 ]
+}

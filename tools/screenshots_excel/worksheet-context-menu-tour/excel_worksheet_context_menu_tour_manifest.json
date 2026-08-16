@@ -3,7 +3,7 @@
     "EvidenceFamily":  "context-menu",
     "EvidenceSubject":  "excel",
     "EvidenceApp":  "Microsoft Excel",
-    "OutputDirectory":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-popup-excel-capture-20260608\\tools\\screenshots_excel\\worksheet-context-menu-tour",
+    "OutputDirectory":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\worksheet-context-menu-tour",
     "OutputNaming":  "interactive_worksheet_cell_context_menu_opened.png",
     "CatalogEvidenceTarget":  "docs/testing/ui-test-catalog.md",
     "SelectedCell":  "B2",
@@ -12,7 +12,7 @@
     "CaptureMethod":  "popup-window-rectangle",
     "ForegroundGuard":  {
                             "Required":  true,
-                            "ExpectedProcessId":  41932,
+                            "ExpectedProcessId":  3132,
                             "ExpectedWindowTitle":  "Book1 - Excel",
                             "Policy":  "Seed through Excel automation, then abort and clear worksheet context-menu evidence unless Excel owns foreground immediately before Shift+F10 and before screen capture."
                         },
@@ -32,23 +32,23 @@
                      "Trigger":  "Excel COM seeds B2 and a foreground-guarded Shift+F10 opens the worksheet-cell context menu."
                  },
     "WindowBounds":  {
-                         "Left":  205,
-                         "Top":  411,
-                         "Right":  526,
-                         "Bottom":  1275,
-                         "Width":  321,
-                         "Height":  864
+                         "Left":  172,
+                         "Top":  222,
+                         "Right":  451,
+                         "Bottom":  1016,
+                         "Width":  279,
+                         "Height":  794
                      },
     "PopupBounds":  {
-                        "Handle":  "8718518",
+                        "Handle":  "1771402",
                         "ClassName":  "Net UI Tool Window",
                         "Title":  "",
-                        "Left":  205,
-                        "Top":  411,
-                        "Right":  526,
-                        "Bottom":  1275,
-                        "Width":  321,
-                        "Height":  864
+                        "Left":  172,
+                        "Top":  222,
+                        "Right":  451,
+                        "Bottom":  1016,
+                        "Width":  279,
+                        "Height":  794
                     },
     "Captures":  [
                      {
@@ -59,9 +59,9 @@
                          "CounterpartSubject":  "freex",
                          "CounterpartFileName":  "freex_context_menu_worksheet_cell_opened.png",
                          "FileName":  "interactive_worksheet_cell_context_menu_opened.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-popup-excel-capture-20260608\\tools\\screenshots_excel\\worksheet-context-menu-tour\\interactive_worksheet_cell_context_menu_opened.png",
-                         "Width":  321,
-                         "Height":  864,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\interactive-visual-captures-20260816\\tools\\screenshots_excel\\worksheet-context-menu-tour\\interactive_worksheet_cell_context_menu_opened.png",
+                         "Width":  279,
+                         "Height":  794,
                          "CaptureMethod":  "popup-window-rectangle",
                          "CaptureStatus":  "complete"
                      }
