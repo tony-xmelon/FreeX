@@ -16,6 +16,34 @@ Six failures surfaced. Two are fixed:
   `Runs.Count > 1 || HasMixedFormatting` misses the single-formatted-run shape, which
   still loses formatting on a plain-text round trip. Fixed in `TableCellEditPlanner`.
 
+**All six are now fixed.** The suite passes 275/275.
+
+Four were defects in shipping code, not test drift:
+
+- **Wrapped-line caret X.** Every caret X came from `Layout.HitTestTextPosition`, but at a wrap
+  boundary that position belongs to both lines and the paragraph layout resolves it to the next
+  one -- so a wrapped line's last caret reported the *following* line's left edge. Vertical
+  navigation carried that X downward and landed back on the same position. Measured: preferred X
+  4 (identical to position 0) instead of 72.5.
+- **`BuildSelectionRects` threw out of `Render`.** `GetTextBounds` rejects ranges its runs cannot
+  cover; a drag past the document end reaches one. In production that tears down the visual tree
+  over a selection highlight.
+- **Drag past the end never selected to the end.** The endpoint is hit-tested from the pointer,
+  which has nothing to resolve toward once scrolling is exhausted, so it stopped 16 characters
+  short. Now clamps -- guarded on the content being scrollable, since a document that fits the
+  viewport also stops advancing and must keep ordinary drag behaviour.
+- **`HasRichFormatting`** reported false for a cell holding one bold Consolas run;
+  `Runs.Count > 1 || HasMixedFormatting` structurally cannot see that shape.
+
+Two were test drift: `CaretRect` read before focus and drain (making an inline-image comparison
+0 - 0), and an appended inline-table row asserted on the source table before the pending set was
+committed. Two more assumed fixed geometry -- a hard-coded click pixel and a fixed auto-scroll
+iteration count -- and now derive both from the actual layout.
+
+---
+
+## Original notes
+
 Two more were fixed after the first pass:
 
 - **`HasRichFormatting`** reported false for a cell holding one bold Consolas run;
