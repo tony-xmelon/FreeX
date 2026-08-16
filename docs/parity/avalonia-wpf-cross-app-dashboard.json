@@ -197,18 +197,18 @@
                                                                     "inventoryRouteCount":  102,
                                                                     "comparisonScenarioCount":  291,
                                                                     "comparedRouteCount":  102,
-                                                                    "pairedRouteCount":  74,
-                                                                    "avaloniaOnlyRouteCount":  22,
+                                                                    "pairedRouteCount":  78,
+                                                                    "avaloniaOnlyRouteCount":  24,
                                                                     "stateNotApplicableRouteCount":  0
                                                                 },
                                               "artifactCoverage":  {
                                                                        "evidenceRowCount":  291,
-                                                                       "pairedComparisonRowCount":  206,
-                                                                       "pairedWpfArtifactRowCount":  206,
-                                                                       "pairedAvaloniaArtifactRowCount":  206,
-                                                                       "avaloniaOnlyArtifactRowCount":  64,
+                                                                       "pairedComparisonRowCount":  221,
+                                                                       "pairedWpfArtifactRowCount":  221,
+                                                                       "pairedAvaloniaArtifactRowCount":  221,
+                                                                       "avaloniaOnlyArtifactRowCount":  70,
                                                                        "stateNotApplicableRowCount":  0,
-                                                                       "otherComparisonRowCount":  21,
+                                                                       "otherComparisonRowCount":  0,
                                                                        "artifactManifestAvailable":  false,
                                                                        "artifactKind":  "embedded comparison-row content metrics and classifications"
                                                                    },
@@ -221,11 +221,11 @@
                                                                   "evidenceClassification":  "paired static and contextual WPF/Avalonia shell captures plus native Word ribbon references; cross-host pixels remain review-only"
                                                               },
                                               "pairedEvidence":  {
-                                                                     "pairedScenarioCount":  206,
-                                                                     "passCount":  56,
-                                                                     "mismatchCount":  135,
+                                                                     "pairedScenarioCount":  221,
+                                                                     "passCount":  64,
+                                                                     "mismatchCount":  142,
                                                                      "limitationCount":  0,
-                                                                     "avaloniaOnlyScenarioCount":  64,
+                                                                     "avaloniaOnlyScenarioCount":  70,
                                                                      "evidenceClassification":  "paired WPF/Avalonia dialog comparison rows; mismatch classifications remain unresolved visual evidence, not a parity pass/fail"
                                                                  },
                                               "physicalEvidence":  {

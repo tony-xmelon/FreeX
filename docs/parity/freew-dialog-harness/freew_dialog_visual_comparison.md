@@ -4,7 +4,7 @@
 
 **Evidence scope:** `canonical-inputs-only`. Rows and counts cover only the inventory and WPF/Avalonia capture manifests supplied to this compare invocation. Route-local evidence remains outside this aggregate until it is merged with --baseline and --refresh-route.
 
-Inventory scenarios: **512**. Captured WPF: **206**. Captured Avalonia: **276**.
+Inventory scenarios: **512**. Captured WPF: **221**. Captured Avalonia: **291**.
 
 | Scenario | Capture | Classification | WPF content | Avalonia content | Changed ratio | Mean channel delta | Semantic diff | Heatmap |
 | --- | --- | --- | --- | --- | ---: | ---: | --- | --- |
@@ -33,9 +33,9 @@ Inventory scenarios: **512**. Captured WPF: **206**. Captured Avalonia: **276**.
 | `building-blocks-organizer.initial` | captured/captured | **genuine-visual-mismatch** | pass (2.6% painted) | pass (2.7% painted) | 4.56 % | 4.01 |  | heatmaps/building-blocks-organizer.initial.png |
 | `building-blocks-organizer.populated` | captured/captured | **genuine-visual-mismatch** | pass (2.7% painted) | pass (2.7% painted) | 4.59 % | 4.04 |  | heatmaps/building-blocks-organizer.populated.png |
 | `building-blocks-organizer.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (2.7% painted) | pass (2.8% painted) | 4.74 % | 4.18 |  | heatmaps/building-blocks-organizer.validation-error.png |
-| `cell-borders.initial` | unsupported/unsupported | **pending-wpf-factory** |  |  |  |  |  |  |
-| `cell-borders.populated` | unsupported/unsupported | **pending-wpf-factory** |  |  |  |  |  |  |
-| `cell-borders.validation-error` | unsupported/unsupported | **pending-wpf-factory** |  |  |  |  |  |  |
+| `cell-borders.initial` | captured/captured | **genuine-visual-mismatch** | pass (6.6% painted) | pass (7.2% painted) | 7.65 % | 4.78 | focus,action-button-order | heatmaps/cell-borders.initial.png |
+| `cell-borders.populated` | captured/captured | **genuine-visual-mismatch** | pass (6.6% painted) | pass (7.2% painted) | 7.65 % | 4.78 | focus,action-button-order | heatmaps/cell-borders.populated.png |
+| `cell-borders.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (6.6% painted) | pass (7.2% painted) | 7.71 % | 4.85 | focus,action-button-order | heatmaps/cell-borders.validation-error.png |
 | `cell-shading.initial` | captured/captured | **pass** | pass (1.9% painted) | pass (1.7% painted) | 2.08 % | 1.48 |  | heatmaps/cell-shading.initial.png |
 | `chart-axis-titles.initial` | captured/captured | **semantic-mismatch** | pass (0.9% painted) | pass (0.9% painted) | 1.68 % | 1.69 | focus | heatmaps/chart-axis-titles.initial.png |
 | `chart-axis-titles.populated` | captured/captured | **semantic-mismatch** | pass (1.1% painted) | pass (1.3% painted) | 2.13 % | 2.26 | focus | heatmaps/chart-axis-titles.populated.png |
@@ -55,10 +55,10 @@ Inventory scenarios: **512**. Captured WPF: **206**. Captured Avalonia: **276**.
 | `comment-reply.initial` | captured/captured | **pass** | pass (0.5% painted) | pass (0.5% painted) | 0.90 % | 1.07 |  | heatmaps/comment-reply.initial.png |
 | `comment-reply.populated` | captured/captured | **pass** | pass (0.6% painted) | pass (0.6% painted) | 0.92 % | 1.09 |  | heatmaps/comment-reply.populated.png |
 | `comment-reply.validation-error` | captured/captured | **pass** | pass (0.6% painted) | pass (0.6% painted) | 1.01 % | 1.17 |  | heatmaps/comment-reply.validation-error.png |
-| `compare-documents.initial` | unsupported/captured | **pending-wpf-factory** |  |  |  |  |  |  |
-| `compare-documents.populated` | captured/captured | **pass** | pass (1.1% painted) | pass (1.9% painted) | 2.28 % | 2.31 |  | heatmaps/compare-documents.populated.png |
-| `compare-documents.tab-more` | unsupported/captured | **pending-wpf-factory** |  |  |  |  |  |  |
-| `compare-documents.validation-error` | unsupported/captured | **pending-wpf-factory** |  |  |  |  |  |  |
+| `compare-documents.initial` | captured/captured | **pass** | pass (1.3% painted) | pass (1.9% painted) | 2.42 % | 2.48 |  | heatmaps/compare-documents.initial.png |
+| `compare-documents.populated` | captured/captured | **pass** | pass (1.3% painted) | pass (1.9% painted) | 2.42 % | 2.48 |  | heatmaps/compare-documents.populated.png |
+| `compare-documents.tab-more` | captured/captured | **genuine-visual-mismatch** | pass (2.5% painted) | pass (3.7% painted) | 5.17 % | 5.64 |  | heatmaps/compare-documents.tab-more.png |
+| `compare-documents.validation-error` | captured/captured | **pass** | pass (1.2% painted) | pass (1.9% painted) | 2.42 % | 2.44 |  | heatmaps/compare-documents.validation-error.png |
 | `cross-reference.initial` | captured/captured | **genuine-visual-mismatch** | pass (4.1% painted) | pass (4.6% painted) | 5.06 % | 3.93 | focus | heatmaps/cross-reference.initial.png |
 | `cross-reference.populated` | captured/captured | **genuine-visual-mismatch** | pass (4.1% painted) | pass (4.6% painted) | 5.06 % | 3.93 | focus | heatmaps/cross-reference.populated.png |
 | `cross-reference.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (4.1% painted) | pass (4.6% painted) | 5.06 % | 3.93 | focus | heatmaps/cross-reference.validation-error.png |
@@ -122,9 +122,9 @@ Inventory scenarios: **512**. Captured WPF: **206**. Captured Avalonia: **276**.
 | `insert-chart.initial` | captured/captured | **genuine-visual-mismatch** | pass (22.2% painted) | pass (20.1% painted) | 7.47 % | 4.75 | focus | heatmaps/insert-chart.initial.png |
 | `insert-chart.populated` | captured/captured | **genuine-visual-mismatch** | pass (22.2% painted) | pass (20.1% painted) | 7.47 % | 4.75 | focus | heatmaps/insert-chart.populated.png |
 | `insert-chart.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (22.2% painted) | pass (20.1% painted) | 7.45 % | 4.72 | focus | heatmaps/insert-chart.validation-error.png |
-| `insert-index.initial` | unsupported/unsupported | **pending-wpf-factory** |  |  |  |  |  |  |
-| `insert-index.populated` | unsupported/unsupported | **pending-wpf-factory** |  |  |  |  |  |  |
-| `insert-index.validation-error` | unsupported/unsupported | **pending-wpf-factory** |  |  |  |  |  |  |
+| `insert-index.initial` | captured/captured | **pass** | pass (1.0% painted) | pass (1.0% painted) | 1.81 % | 1.99 |  | heatmaps/insert-index.initial.png |
+| `insert-index.populated` | captured/captured | **pass** | pass (1.0% painted) | pass (1.3% painted) | 2.10 % | 2.37 |  | heatmaps/insert-index.populated.png |
+| `insert-index.validation-error` | captured/captured | **pass** | pass (1.1% painted) | pass (1.1% painted) | 1.95 % | 2.14 |  | heatmaps/insert-index.validation-error.png |
 | `insert-smart-art.initial` | captured/captured | **genuine-visual-mismatch** | pass (8.4% painted) | pass (10.3% painted) | 10.12 % | 5.13 |  | heatmaps/insert-smart-art.initial.png |
 | `insert-smart-art.populated` | captured/captured | **genuine-visual-mismatch** | pass (8.4% painted) | pass (10.3% painted) | 10.12 % | 5.13 |  | heatmaps/insert-smart-art.populated.png |
 | `insert-smart-art.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (5.6% painted) | pass (7.1% painted) | 6.08 % | 4.35 |  | heatmaps/insert-smart-art.validation-error.png |
@@ -149,9 +149,9 @@ Inventory scenarios: **512**. Captured WPF: **206**. Captured Avalonia: **276**.
 | `mark-citation.initial` | captured/captured | **genuine-visual-mismatch** | pass (5.0% painted) | pass (5.0% painted) | 3.24 % | 2.40 |  | heatmaps/mark-citation.initial.png |
 | `mark-citation.populated` | captured/captured | **genuine-visual-mismatch** | pass (5.0% painted) | pass (5.3% painted) | 3.56 % | 2.84 |  | heatmaps/mark-citation.populated.png |
 | `mark-citation.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (5.1% painted) | pass (5.1% painted) | 3.37 % | 2.54 |  | heatmaps/mark-citation.validation-error.png |
-| `mark-index-entry.initial` | unsupported/unsupported | **pending-wpf-factory** |  |  |  |  |  |  |
-| `mark-index-entry.populated` | unsupported/unsupported | **pending-wpf-factory** |  |  |  |  |  |  |
-| `mark-index-entry.validation-error` | unsupported/unsupported | **pending-wpf-factory** |  |  |  |  |  |  |
+| `mark-index-entry.initial` | captured/captured | **genuine-visual-mismatch** | pass (4.8% painted) | pass (7.1% painted) | 10.54 % | 4.99 |  | heatmaps/mark-index-entry.initial.png |
+| `mark-index-entry.populated` | captured/captured | **genuine-visual-mismatch** | pass (4.8% painted) | pass (6.9% painted) | 10.36 % | 5.20 |  | heatmaps/mark-index-entry.populated.png |
+| `mark-index-entry.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (4.8% painted) | pass (7.2% painted) | 10.65 % | 5.09 |  | heatmaps/mark-index-entry.validation-error.png |
 | `multilevel-list.initial` | captured/captured | **genuine-visual-mismatch** | pass (23.3% painted) | pass (21.8% painted) | 25.44 % | 11.05 |  | heatmaps/multilevel-list.initial.png |
 | `multilevel-list.populated` | captured/captured | **genuine-visual-mismatch** | pass (23.3% painted) | pass (21.8% painted) | 25.44 % | 11.05 |  | heatmaps/multilevel-list.populated.png |
 | `multilevel-list.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (23.3% painted) | pass (21.9% painted) | 25.53 % | 11.14 |  | heatmaps/multilevel-list.validation-error.png |
@@ -187,9 +187,9 @@ Inventory scenarios: **512**. Captured WPF: **206**. Captured Avalonia: **276**.
 | `restrict-editing.initial` | captured/captured | **genuine-visual-mismatch** | pass (4.0% painted) | pass (4.0% painted) | 5.61 % | 4.21 |  | heatmaps/restrict-editing.initial.png |
 | `restrict-editing.populated` | captured/captured | **genuine-visual-mismatch** | pass (4.0% painted) | pass (4.1% painted) | 5.62 % | 4.22 |  | heatmaps/restrict-editing.populated.png |
 | `restrict-editing.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (4.0% painted) | pass (4.1% painted) | 5.66 % | 4.25 |  | heatmaps/restrict-editing.validation-error.png |
-| `save-compatibility-warning.initial` | unsupported/captured | **pending-wpf-factory** |  |  |  |  |  |  |
-| `save-compatibility-warning.populated` | unsupported/captured | **pending-wpf-factory** |  |  |  |  |  |  |
-| `save-compatibility-warning.validation-error` | unsupported/captured | **pending-wpf-factory** |  |  |  |  |  |  |
+| `save-compatibility-warning.initial` | captured/captured | **pass** | pass (0.8% painted) | pass (0.9% painted) | 1.33 % | 1.48 |  | heatmaps/save-compatibility-warning.initial.png |
+| `save-compatibility-warning.populated` | captured/captured | **pass** | pass (0.8% painted) | pass (0.9% painted) | 1.33 % | 1.48 |  | heatmaps/save-compatibility-warning.populated.png |
+| `save-compatibility-warning.validation-error` | captured/captured | **pass** | pass (0.8% painted) | pass (0.9% painted) | 1.33 % | 1.48 |  | heatmaps/save-compatibility-warning.validation-error.png |
 | `screen-clip-overlay.open` | captured/captured | **pass** | pass (17.5% painted) | pass (17.5% painted) | 0.00 % | 0.06 |  | heatmaps/screen-clip-overlay.open.png |
 | `screen-tip.initial` | captured/captured | **pass** | pass (0.6% painted) | pass (0.6% painted) | 1.29 % | 1.26 |  | heatmaps/screen-tip.initial.png |
 | `screen-tip.populated` | captured/captured | **pass** | pass (0.6% painted) | pass (0.7% painted) | 1.34 % | 1.34 |  | heatmaps/screen-tip.populated.png |
@@ -235,18 +235,18 @@ Inventory scenarios: **512**. Captured WPF: **206**. Captured Avalonia: **276**.
 | `caption.initial` | avalonia-extension | **avalonia-extension** |  | pass (4.3% painted) |  |  |  |  |
 | `caption.populated` | avalonia-extension | **avalonia-extension** |  | pass (4.3% painted) |  |  |  |  |
 | `caption.validation-error` | avalonia-extension | **avalonia-extension** |  | pass (4.4% painted) |  |  |  |  |
-| `change-case.initial` | invalid-content | **invalid-capture-content** |  |  |  |  |  |  |
-| `change-case.populated` | invalid-content | **invalid-capture-content** |  |  |  |  |  |  |
-| `change-case.validation-error` | invalid-content | **invalid-capture-content** |  |  |  |  |  |  |
+| `change-case.initial` | avalonia-extension | **avalonia-extension** |  | pass (2.1% painted) |  |  |  |  |
+| `change-case.populated` | avalonia-extension | **avalonia-extension** |  | pass (2.1% painted) |  |  |  |  |
+| `change-case.validation-error` | avalonia-extension | **avalonia-extension** |  | pass (2.1% painted) |  |  |  |  |
 | `character-formatting-picker.initial` | avalonia-extension | **avalonia-extension** |  | pass (1.9% painted) |  |  |  |  |
 | `character-formatting-picker.populated` | avalonia-extension | **avalonia-extension** |  | pass (1.7% painted) |  |  |  |  |
 | `character-formatting-picker.validation-error` | avalonia-extension | **avalonia-extension** |  | pass (1.9% painted) |  |  |  |  |
 | `citation-source-picker.initial` | avalonia-extension | **avalonia-extension** |  | pass (0.9% painted) |  |  |  |  |
 | `citation-source-picker.populated` | avalonia-extension | **avalonia-extension** |  | pass (0.9% painted) |  |  |  |  |
 | `citation-source-picker.validation-error` | avalonia-extension | **avalonia-extension** |  | pass (0.9% painted) |  |  |  |  |
-| `cups-print.initial` | invalid-content | **invalid-capture-content** |  | fail: near-uniform output (100.00% dominant color); insufficient color variation (1 colors); insufficient luminance range (0.00); no meaningful painted content bounds |  |  |  |  |
-| `cups-print.populated` | invalid-content | **invalid-capture-content** |  | fail: near-uniform output (100.00% dominant color); insufficient color variation (1 colors); insufficient luminance range (0.00); no meaningful painted content bounds |  |  |  |  |
-| `cups-print.validation-error` | invalid-content | **invalid-capture-content** |  | fail: near-uniform output (100.00% dominant color); insufficient color variation (1 colors); insufficient luminance range (0.00); no meaningful painted content bounds |  |  |  |  |
+| `cups-print.initial` | avalonia-extension | **avalonia-extension** |  | pass (6.0% painted) |  |  |  |  |
+| `cups-print.populated` | avalonia-extension | **avalonia-extension** |  | pass (6.0% painted) |  |  |  |  |
+| `cups-print.validation-error` | avalonia-extension | **avalonia-extension** |  | pass (6.1% painted) |  |  |  |  |
 | `header-footer-text.initial` | avalonia-extension | **avalonia-extension** |  | pass (0.5% painted) |  |  |  |  |
 | `header-footer-text.populated` | avalonia-extension | **avalonia-extension** |  | pass (0.8% painted) |  |  |  |  |
 | `header-footer-text.validation-error` | avalonia-extension | **avalonia-extension** |  | pass (0.6% painted) |  |  |  |  |
