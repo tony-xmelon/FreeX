@@ -14,6 +14,7 @@
                     "tools/screenshots/screenshot_manifest.json",
                     "tools/screenshots_avalonia_ribbon/screenshot_manifest.json",
                     "docs/parity/freex-excel-com-baseline-2026-08-14/manifest.json",
+                    "docs/parity/freex-avalonia-grid-corpus-2026-08-16/manifest.json",
                     "docs/parity/freew-command-inventory.json",
                     "docs/parity/freew-dialog-harness/freew_dialog_route_inventory.json",
                     "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json",
@@ -30,7 +31,9 @@
                     "docs/parity/freep-powerpoint-baseline-2026-08-14.json",
                     "docs/parity/freep-powerpoint-recalibration-2026-08-15.json",
                     "docs/parity/freep-powerpoint-chrome-2026-08-16/README.md",
-                    "docs/parity/freep-powerpoint-chrome-2026-08-16/manifest.json"
+                    "docs/parity/freep-powerpoint-chrome-2026-08-16/manifest.json",
+                    "docs/parity/freep-responsive-chrome-2026-08-16/README.md",
+                    "docs/parity/freep-responsive-chrome-2026-08-16/manifest.json"
                 ],
     "apps":  [
                  {
@@ -105,7 +108,8 @@
                                                                   "docs/parity/freex-excel-chrome-comparison.md",
                                                                   "tools/screenshots/screenshot_manifest.json",
                                                                   "tools/screenshots_avalonia_ribbon/screenshot_manifest.json",
-                                                                  "docs/parity/freex-excel-com-baseline-2026-08-14/manifest.json"
+                                                                  "docs/parity/freex-excel-com-baseline-2026-08-14/manifest.json",
+                                                                  "docs/parity/freex-avalonia-grid-corpus-2026-08-16/manifest.json"
                                                               ],
                                               "routeCoverage":  {
                                                                     "inventoryRouteCount":  57,
@@ -138,6 +142,14 @@
                                                                     "avaloniaMeanPixelDiffPercent":  15.639134449147328,
                                                                     "evidenceClassification":  "complete foreground Excel/WPF/Avalonia ribbon matrices; fixed-width deltas are triage only"
                                                                 },
+                                              "gridCorpus":  {
+                                                                 "captureStatus":  "complete",
+                                                                 "chartCaptureCount":  8,
+                                                                 "cellStyleCaptureCount":  7,
+                                                                 "pivotCaptureCount":  20,
+                                                                 "totalAvaloniaCaptureCount":  35,
+                                                                 "evidenceClassification":  "Coverage and renderer-state evidence only. The Avalonia grid renderer has a different native pixel geometry from the existing WPF/Excel SheetGridImageCompare lane, so these captures are not raw-pixel acceptance comparisons."
+                                                             },
                                               "physicalEvidence":  {
                                                                        "status":  "available-interactive-foreground",
                                                                        "captureMode":  "foreground-owned Excel ribbon/dialog capture plus generated WPF/Avalonia dialog render manifests",
@@ -146,6 +158,7 @@
                                                                                            "The 2026-08-16 interactive run captured 36 foreground ribbon states for each of Excel, WPF, and Avalonia, including Draw at all four widths, plus six guarded Excel popup/dialog surfaces. The 27 fixed-viewport triage rows average 13.937% RGB delta for WPF and 15.639% for Avalonia versus Excel; nine maximized rows are coverage-only, not an acceptance threshold.",
                                                                                            "The ribbon harness creates a blank workbook before tab discovery so the enabled Draw tab is materialized; the current manifest records no unavailable-tab skips.",
                                                                                            "WPF captured 116/116 app-host surfaces and Avalonia captured 180/181; popup.nameBoxDropdown remains intentionally diagnostic-only.",
+                                                                                           "The current-source range corpus retains 35 Avalonia grid captures: eight charts, seven cell styles, and 20 native PivotTable surfaces. These are renderer coverage evidence, not raw-pixel Office acceptance rows.",
                                                                                            "The committed COM range references cover nine chart ranges, seven native cell-style ranges, and 29 pivot-table ranges; they are distinct from the 2026-08-16 interactive foreground evidence (36 Excel ribbon states including Draw and six popup/dialog tours). The associated current-session ribbon comparison has 27 provisional fixed-viewport rows for each host: WPF averages 13.937% RGB delta and Avalonia averages 15.639% versus Excel. These are triage metrics, not visual-parity acceptance results."
                                                                                        ]
                                                                    },
@@ -197,18 +210,18 @@
                                                                     "inventoryRouteCount":  102,
                                                                     "comparisonScenarioCount":  291,
                                                                     "comparedRouteCount":  102,
-                                                                    "pairedRouteCount":  74,
-                                                                    "avaloniaOnlyRouteCount":  22,
+                                                                    "pairedRouteCount":  78,
+                                                                    "avaloniaOnlyRouteCount":  24,
                                                                     "stateNotApplicableRouteCount":  0
                                                                 },
                                               "artifactCoverage":  {
                                                                        "evidenceRowCount":  291,
-                                                                       "pairedComparisonRowCount":  206,
-                                                                       "pairedWpfArtifactRowCount":  206,
-                                                                       "pairedAvaloniaArtifactRowCount":  206,
-                                                                       "avaloniaOnlyArtifactRowCount":  64,
+                                                                       "pairedComparisonRowCount":  221,
+                                                                       "pairedWpfArtifactRowCount":  221,
+                                                                       "pairedAvaloniaArtifactRowCount":  221,
+                                                                       "avaloniaOnlyArtifactRowCount":  70,
                                                                        "stateNotApplicableRowCount":  0,
-                                                                       "otherComparisonRowCount":  21,
+                                                                       "otherComparisonRowCount":  0,
                                                                        "artifactManifestAvailable":  false,
                                                                        "artifactKind":  "embedded comparison-row content metrics and classifications"
                                                                    },
@@ -221,11 +234,11 @@
                                                                   "evidenceClassification":  "paired static and contextual WPF/Avalonia shell captures plus native Word ribbon references; cross-host pixels remain review-only"
                                                               },
                                               "pairedEvidence":  {
-                                                                     "pairedScenarioCount":  206,
-                                                                     "passCount":  56,
-                                                                     "mismatchCount":  135,
+                                                                     "pairedScenarioCount":  221,
+                                                                     "passCount":  64,
+                                                                     "mismatchCount":  142,
                                                                      "limitationCount":  0,
-                                                                     "avaloniaOnlyScenarioCount":  64,
+                                                                     "avaloniaOnlyScenarioCount":  70,
                                                                      "evidenceClassification":  "paired WPF/Avalonia dialog comparison rows; mismatch classifications remain unresolved visual evidence, not a parity pass/fail"
                                                                  },
                                               "physicalEvidence":  {
@@ -277,7 +290,9 @@
                                                                   "docs/parity/freep-powerpoint-baseline-2026-08-14.json",
                                                                   "docs/parity/freep-powerpoint-recalibration-2026-08-15.json",
                                                                   "docs/parity/freep-powerpoint-chrome-2026-08-16/README.md",
-                                                                  "docs/parity/freep-powerpoint-chrome-2026-08-16/manifest.json"
+                                                                  "docs/parity/freep-powerpoint-chrome-2026-08-16/manifest.json",
+                                                                  "docs/parity/freep-responsive-chrome-2026-08-16/README.md",
+                                                                  "docs/parity/freep-responsive-chrome-2026-08-16/manifest.json"
                                                               ],
                                               "routeCoverage":  {
                                                                     "laneEntries":  [
@@ -350,6 +365,16 @@
                                                                          "comparisonBoundary":  "This is an authoritative native-PowerPoint visual reference capture. It is mapped to FreeP\u0027s shared ribbon tabs, but is not a raw WPF/Avalonia pixel-equivalence comparison because the hosts deliberately have different shell and ribbon implementations.",
                                                                          "evidenceClassification":  "guarded native PowerPoint ribbon reference lane; complete foreground capture is semantic review evidence, not raw pixel equivalence"
                                                                      },
+                                              "responsiveAppChrome":  {
+                                                                          "expectedCaptureCount":  48,
+                                                                          "captureStatus":  "complete",
+                                                                          "capturedPairCount":  24,
+                                                                          "wpfCaptureCount":  24,
+                                                                          "avaloniaCaptureCount":  24,
+                                                                          "tabCount":  6,
+                                                                          "widthCount":  4,
+                                                                          "evidenceClassification":  "complete responsive app-owned WPF/Avalonia ribbon/chrome capture matrix; paired state coverage, not a pixel-equivalence claim"
+                                                                      },
                                               "physicalEvidence":  {
                                                                        "status":  "available-app-and-native-office-chrome",
                                                                        "captureMode":  "visible app-owned render targets with scenario-isolated processes plus guarded native PowerPoint ribbon capture",
@@ -357,6 +382,7 @@
                                                                        "limitations":  [
                                                                                            "The tracked tree contains 53 PowerPoint reference slides across all 27 corpus decks. This completes corpus coverage, not full PowerPoint UI or feature parity. Current-source recalibration metrics are recorded separately and are not a visual-parity claim.",
                                                                                            "Native PowerPoint ribbon capture status is \u0027complete\u0027 with 28/28 mapped tab/width references.",
+                                                                                           "Responsive FreeP app chrome is \u0027complete\u0027 with 48/48 WPF/Avalonia tab/width captures (6 tabs at 4 widths).",
                                                                                            "Live microphone/camera capture, permission prompts, and encoded camera payloads require real devices.",
                                                                                            "No hardware capture artifacts are generated by this tool.",
                                                                                            "WPF uses native Windows dialogs and Avalonia uses the platform storage provider. OS-owned picker chrome is not an app-owned cross-host pixel-parity surface."

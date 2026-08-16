@@ -3,8 +3,8 @@
   "generatedFromSha256": "a04d2a6fc305e11249af46d4708f2334790a97091abe02ce467795327a3db402",
   "targetDpi": 96,
   "inventoryScenarioCount": 512,
-  "wpfCaptureCount": 206,
-  "avaloniaCaptureCount": 276,
+  "wpfCaptureCount": 221,
+  "avaloniaCaptureCount": 291,
   "rows": [
     {
       "scenarioId": "about.initial",
@@ -1433,36 +1433,174 @@
     },
     {
       "scenarioId": "cell-borders.initial",
-      "captureStatus": "unsupported/unsupported",
-      "classification": "pending-wpf-factory",
-      "metrics": null,
-      "semanticDifference": null,
-      "heatmapPath": null,
-      "note": "No constructible app-owned WPF route adapter was available for this source family.",
-      "wpfContent": null,
-      "avaloniaContent": null
+      "captureStatus": "captured/captured",
+      "classification": "genuine-visual-mismatch",
+      "metrics": {
+        "comparedPixels": 336000,
+        "changedPixels": 25710,
+        "changedRatio": 0.07651785714285714,
+        "meanAbsoluteChannelDelta": 4.784340277777848,
+        "p95AbsoluteChannelDelta": 15,
+        "luminanceSimilarity": 0.9003247534176123,
+        "perceptualHashDistance": 1
+      },
+      "semanticDifference": "focus,action-button-order",
+      "heatmapPath": "heatmaps/cell-borders.initial.png",
+      "note": null,
+      "wpfContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.91325,
+        "nearTransparentRatio": 0.08675,
+        "nearBlackRatio": 0.0008342784143495887,
+        "dominantColorRatio": 0.9272874219493437,
+        "distinctColorCount": 419,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.06596130952380952,
+        "contentBounds": {
+          "x": 10,
+          "y": 13,
+          "width": 525,
+          "height": 277
+        }
+      },
+      "avaloniaContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.9214763921691097,
+        "distinctColorCount": 215,
+        "luminanceRange": 223.99999999999997,
+        "contentPixelRatio": 0.07182142857142858,
+        "contentBounds": {
+          "x": 10,
+          "y": 14,
+          "width": 526,
+          "height": 302
+        }
+      }
     },
     {
       "scenarioId": "cell-borders.populated",
-      "captureStatus": "unsupported/unsupported",
-      "classification": "pending-wpf-factory",
-      "metrics": null,
-      "semanticDifference": null,
-      "heatmapPath": null,
-      "note": "No constructible app-owned WPF route adapter was available for this source family.",
-      "wpfContent": null,
-      "avaloniaContent": null
+      "captureStatus": "captured/captured",
+      "classification": "genuine-visual-mismatch",
+      "metrics": {
+        "comparedPixels": 336000,
+        "changedPixels": 25710,
+        "changedRatio": 0.07651785714285714,
+        "meanAbsoluteChannelDelta": 4.784340277777848,
+        "p95AbsoluteChannelDelta": 15,
+        "luminanceSimilarity": 0.9003247534176123,
+        "perceptualHashDistance": 1
+      },
+      "semanticDifference": "focus,action-button-order",
+      "heatmapPath": "heatmaps/cell-borders.populated.png",
+      "note": null,
+      "wpfContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.91325,
+        "nearTransparentRatio": 0.08675,
+        "nearBlackRatio": 0.0008342784143495887,
+        "dominantColorRatio": 0.9272874219493437,
+        "distinctColorCount": 419,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.06596130952380952,
+        "contentBounds": {
+          "x": 10,
+          "y": 13,
+          "width": 525,
+          "height": 277
+        }
+      },
+      "avaloniaContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.9214763921691097,
+        "distinctColorCount": 215,
+        "luminanceRange": 223.99999999999997,
+        "contentPixelRatio": 0.07182142857142858,
+        "contentBounds": {
+          "x": 10,
+          "y": 14,
+          "width": 526,
+          "height": 302
+        }
+      }
     },
     {
       "scenarioId": "cell-borders.validation-error",
-      "captureStatus": "unsupported/unsupported",
-      "classification": "pending-wpf-factory",
-      "metrics": null,
-      "semanticDifference": null,
-      "heatmapPath": null,
-      "note": "No constructible app-owned WPF route adapter was available for this source family.",
-      "wpfContent": null,
-      "avaloniaContent": null
+      "captureStatus": "captured/captured",
+      "classification": "genuine-visual-mismatch",
+      "metrics": {
+        "comparedPixels": 336000,
+        "changedPixels": 25909,
+        "changedRatio": 0.07711011904761905,
+        "meanAbsoluteChannelDelta": 4.849476190476259,
+        "p95AbsoluteChannelDelta": 15,
+        "luminanceSimilarity": 0.8995385009869612,
+        "perceptualHashDistance": 1
+      },
+      "semanticDifference": "focus,action-button-order",
+      "heatmapPath": "heatmaps/cell-borders.validation-error.png",
+      "note": null,
+      "wpfContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.91325,
+        "nearTransparentRatio": 0.08675,
+        "nearBlackRatio": 0.0008342784143495887,
+        "dominantColorRatio": 0.9269093895428415,
+        "distinctColorCount": 429,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.06628273809523809,
+        "contentBounds": {
+          "x": 10,
+          "y": 13,
+          "width": 525,
+          "height": 277
+        }
+      },
+      "avaloniaContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.921056740772549,
+        "distinctColorCount": 217,
+        "luminanceRange": 223.99999999999997,
+        "contentPixelRatio": 0.07220535714285714,
+        "contentBounds": {
+          "x": 10,
+          "y": 14,
+          "width": 526,
+          "height": 302
+        }
+      }
     },
     {
       "scenarioId": "cell-shading.initial",
@@ -2549,14 +2687,60 @@
     },
     {
       "scenarioId": "compare-documents.initial",
-      "captureStatus": "unsupported/captured",
-      "classification": "pending-wpf-factory",
-      "metrics": null,
+      "captureStatus": "captured/captured",
+      "classification": "pass",
+      "metrics": {
+        "comparedPixels": 336000,
+        "changedPixels": 8122,
+        "changedRatio": 0.024172619047619047,
+        "meanAbsoluteChannelDelta": 2.483515873015803,
+        "p95AbsoluteChannelDelta": 0,
+        "luminanceSimilarity": 0.9261838404545976,
+        "perceptualHashDistance": 6
+      },
       "semanticDifference": null,
-      "heatmapPath": null,
-      "note": "No constructible app-owned WPF route adapter was available for this source family.",
-      "wpfContent": null,
-      "avaloniaContent": null
+      "heatmapPath": "heatmaps/compare-documents.initial.png",
+      "note": null,
+      "wpfContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.91325,
+        "nearTransparentRatio": 0.08675,
+        "nearBlackRatio": 3.258900056053081E-05,
+        "dominantColorRatio": 0.9849145516405303,
+        "distinctColorCount": 429,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.012931547619047619,
+        "contentBounds": {
+          "x": 14,
+          "y": 26,
+          "width": 518,
+          "height": 168
+        }
+      },
+      "avaloniaContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.9792679197652555,
+        "distinctColorCount": 135,
+        "luminanceRange": 227.61419999999998,
+        "contentPixelRatio": 0.018967261904761903,
+        "contentBounds": {
+          "x": 14,
+          "y": 18,
+          "width": 518,
+          "height": 203
+        }
+      }
     },
     {
       "scenarioId": "compare-documents.populated",
@@ -2564,11 +2748,11 @@
       "classification": "pass",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 7659,
-        "changedRatio": 0.022794642857142857,
-        "meanAbsoluteChannelDelta": 2.3096101190475746,
+        "changedPixels": 8122,
+        "changedRatio": 0.024172619047619047,
+        "meanAbsoluteChannelDelta": 2.483515873015803,
         "p95AbsoluteChannelDelta": 0,
-        "luminanceSimilarity": 0.929109514379896,
+        "luminanceSimilarity": 0.9261838404545976,
         "perceptualHashDistance": 6
       },
       "semanticDifference": null,
@@ -2583,10 +2767,10 @@
         "opaqueRatio": 0.91325,
         "nearTransparentRatio": 0.08675,
         "nearBlackRatio": 3.258900056053081E-05,
-        "dominantColorRatio": 0.987293548681449,
-        "distinctColorCount": 362,
+        "dominantColorRatio": 0.9849145516405303,
+        "distinctColorCount": 429,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.011089285714285715,
+        "contentPixelRatio": 0.012931547619047619,
         "contentBounds": {
           "x": 14,
           "y": 26,
@@ -2617,25 +2801,117 @@
     },
     {
       "scenarioId": "compare-documents.tab-more",
-      "captureStatus": "unsupported/captured",
-      "classification": "pending-wpf-factory",
-      "metrics": null,
+      "captureStatus": "captured/captured",
+      "classification": "genuine-visual-mismatch",
+      "metrics": {
+        "comparedPixels": 403200,
+        "changedPixels": 20831,
+        "changedRatio": 0.051664186507936506,
+        "meanAbsoluteChannelDelta": 5.644468419311869,
+        "p95AbsoluteChannelDelta": 16.333333333333332,
+        "luminanceSimilarity": 0.8869967559014668,
+        "perceptualHashDistance": 3
+      },
       "semanticDifference": null,
-      "heatmapPath": null,
-      "note": "No constructible app-owned WPF route adapter was available for this source family.",
-      "wpfContent": null,
-      "avaloniaContent": null
+      "heatmapPath": "heatmaps/compare-documents.tab-more.png",
+      "note": null,
+      "wpfContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 720,
+        "pixelCount": 403200,
+        "opaqueRatio": 0.9235416666666667,
+        "nearTransparentRatio": 0.07645833333333334,
+        "nearBlackRatio": 2.6854865564542984E-05,
+        "dominantColorRatio": 0.9712572373862697,
+        "distinctColorCount": 463,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.025124007936507937,
+        "contentBounds": {
+          "x": 14,
+          "y": 26,
+          "width": 518,
+          "height": 397
+        }
+      },
+      "avaloniaContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 720,
+        "pixelCount": 403200,
+        "opaqueRatio": 0.9248958333333334,
+        "nearTransparentRatio": 0.07510416666666667,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.9599161209702938,
+        "distinctColorCount": 532,
+        "luminanceRange": 227.61419999999998,
+        "contentPixelRatio": 0.0369593253968254,
+        "contentBounds": {
+          "x": 14,
+          "y": 18,
+          "width": 518,
+          "height": 582
+        }
+      }
     },
     {
       "scenarioId": "compare-documents.validation-error",
-      "captureStatus": "unsupported/captured",
-      "classification": "pending-wpf-factory",
-      "metrics": null,
+      "captureStatus": "captured/captured",
+      "classification": "pass",
+      "metrics": {
+        "comparedPixels": 336000,
+        "changedPixels": 8143,
+        "changedRatio": 0.024235119047619047,
+        "meanAbsoluteChannelDelta": 2.4406875000000183,
+        "p95AbsoluteChannelDelta": 0,
+        "luminanceSimilarity": 0.9263101830585707,
+        "perceptualHashDistance": 6
+      },
       "semanticDifference": null,
-      "heatmapPath": null,
-      "note": "No constructible app-owned WPF route adapter was available for this source family.",
-      "wpfContent": null,
-      "avaloniaContent": null
+      "heatmapPath": "heatmaps/compare-documents.validation-error.png",
+      "note": null,
+      "wpfContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.91325,
+        "nearTransparentRatio": 0.08675,
+        "nearBlackRatio": 3.258900056053081E-05,
+        "dominantColorRatio": 0.9860193187595323,
+        "distinctColorCount": 423,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.012068452380952381,
+        "contentBounds": {
+          "x": 14,
+          "y": 26,
+          "width": 518,
+          "height": 168
+        }
+      },
+      "avaloniaContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.9788710401499033,
+        "distinctColorCount": 148,
+        "luminanceRange": 227.78719999999998,
+        "contentPixelRatio": 0.019330357142857142,
+        "contentBounds": {
+          "x": 14,
+          "y": 18,
+          "width": 518,
+          "height": 218
+        }
+      }
     },
     {
       "scenarioId": "cross-reference.initial",
@@ -6230,36 +6506,174 @@
     },
     {
       "scenarioId": "insert-index.initial",
-      "captureStatus": "unsupported/unsupported",
-      "classification": "pending-wpf-factory",
-      "metrics": null,
+      "captureStatus": "captured/captured",
+      "classification": "pass",
+      "metrics": {
+        "comparedPixels": 336000,
+        "changedPixels": 6081,
+        "changedRatio": 0.018098214285714287,
+        "meanAbsoluteChannelDelta": 1.990053571428611,
+        "p95AbsoluteChannelDelta": 0,
+        "luminanceSimilarity": 0.9316588436367502,
+        "perceptualHashDistance": 1
+      },
       "semanticDifference": null,
-      "heatmapPath": null,
-      "note": "No constructible app-owned WPF route adapter was available for this source family.",
-      "wpfContent": null,
-      "avaloniaContent": null
+      "heatmapPath": "heatmaps/insert-index.initial.png",
+      "note": null,
+      "wpfContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.91325,
+        "nearTransparentRatio": 0.08675,
+        "nearBlackRatio": 4.888350084079622E-05,
+        "dominantColorRatio": 0.9888773741086908,
+        "distinctColorCount": 241,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.00968452380952381,
+        "contentBounds": {
+          "x": 16,
+          "y": 18,
+          "width": 514,
+          "height": 102
+        }
+      },
+      "avaloniaContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
+        "nearBlackRatio": 4.554356241745229E-05,
+        "dominantColorRatio": 0.9888938769933441,
+        "distinctColorCount": 95,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.010160714285714285,
+        "contentBounds": {
+          "x": 16,
+          "y": 18,
+          "width": 514,
+          "height": 103
+        }
+      }
     },
     {
       "scenarioId": "insert-index.populated",
-      "captureStatus": "unsupported/unsupported",
-      "classification": "pending-wpf-factory",
-      "metrics": null,
+      "captureStatus": "captured/captured",
+      "classification": "pass",
+      "metrics": {
+        "comparedPixels": 336000,
+        "changedPixels": 7058,
+        "changedRatio": 0.021005952380952382,
+        "meanAbsoluteChannelDelta": 2.374936507936462,
+        "p95AbsoluteChannelDelta": 0,
+        "luminanceSimilarity": 0.9254641547881673,
+        "perceptualHashDistance": 1
+      },
       "semanticDifference": null,
-      "heatmapPath": null,
-      "note": "No constructible app-owned WPF route adapter was available for this source family.",
-      "wpfContent": null,
-      "avaloniaContent": null
+      "heatmapPath": "heatmaps/insert-index.populated.png",
+      "note": null,
+      "wpfContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.91325,
+        "nearTransparentRatio": 0.08675,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.9879355519924915,
+        "distinctColorCount": 334,
+        "luminanceRange": 223.99999999999997,
+        "contentPixelRatio": 0.010470238095238095,
+        "contentBounds": {
+          "x": 16,
+          "y": 18,
+          "width": 514,
+          "height": 102
+        }
+      },
+      "avaloniaContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.9856667902849076,
+        "distinctColorCount": 126,
+        "luminanceRange": 227.61419999999998,
+        "contentPixelRatio": 0.013113095238095238,
+        "contentBounds": {
+          "x": 16,
+          "y": 18,
+          "width": 514,
+          "height": 103
+        }
+      }
     },
     {
       "scenarioId": "insert-index.validation-error",
-      "captureStatus": "unsupported/unsupported",
-      "classification": "pending-wpf-factory",
-      "metrics": null,
+      "captureStatus": "captured/captured",
+      "classification": "pass",
+      "metrics": {
+        "comparedPixels": 336000,
+        "changedPixels": 6544,
+        "changedRatio": 0.019476190476190477,
+        "meanAbsoluteChannelDelta": 2.1366418650793673,
+        "p95AbsoluteChannelDelta": 0,
+        "luminanceSimilarity": 0.929343273628165,
+        "perceptualHashDistance": 1
+      },
       "semanticDifference": null,
-      "heatmapPath": null,
-      "note": "No constructible app-owned WPF route adapter was available for this source family.",
-      "wpfContent": null,
-      "avaloniaContent": null
+      "heatmapPath": "heatmaps/insert-index.validation-error.png",
+      "note": null,
+      "wpfContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.91325,
+        "nearTransparentRatio": 0.08675,
+        "nearBlackRatio": 4.888350084079622E-05,
+        "dominantColorRatio": 0.9878768917914825,
+        "distinctColorCount": 328,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.010532738095238095,
+        "contentBounds": {
+          "x": 16,
+          "y": 18,
+          "width": 514,
+          "height": 102
+        }
+      },
+      "avaloniaContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
+        "nearBlackRatio": 4.554356241745229E-05,
+        "dominantColorRatio": 0.9878919186201602,
+        "distinctColorCount": 99,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.011077380952380953,
+        "contentBounds": {
+          "x": 16,
+          "y": 18,
+          "width": 514,
+          "height": 103
+        }
+      }
     },
     {
       "scenarioId": "insert-smart-art.initial",
@@ -7631,36 +8045,174 @@
     },
     {
       "scenarioId": "mark-index-entry.initial",
-      "captureStatus": "unsupported/unsupported",
-      "classification": "pending-wpf-factory",
-      "metrics": null,
+      "captureStatus": "captured/captured",
+      "classification": "genuine-visual-mismatch",
+      "metrics": {
+        "comparedPixels": 336000,
+        "changedPixels": 35403,
+        "changedRatio": 0.10536607142857143,
+        "meanAbsoluteChannelDelta": 4.985507936507821,
+        "p95AbsoluteChannelDelta": 16,
+        "luminanceSimilarity": 0.9080031424608941,
+        "perceptualHashDistance": 5
+      },
       "semanticDifference": null,
-      "heatmapPath": null,
-      "note": "No constructible app-owned WPF route adapter was available for this source family.",
-      "wpfContent": null,
-      "avaloniaContent": null
+      "heatmapPath": "heatmaps/mark-index-entry.initial.png",
+      "note": null,
+      "wpfContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.91325,
+        "nearTransparentRatio": 0.08675,
+        "nearBlackRatio": 4.562460078474313E-05,
+        "dominantColorRatio": 0.9471243465905388,
+        "distinctColorCount": 405,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.04755952380952381,
+        "contentBounds": {
+          "x": 16,
+          "y": 20,
+          "width": 514,
+          "height": 364
+        }
+      },
+      "avaloniaContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
+        "nearBlackRatio": 4.554356241745229E-05,
+        "dominantColorRatio": 0.9226442592339573,
+        "distinctColorCount": 203,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.07071726190476191,
+        "contentBounds": {
+          "x": 16,
+          "y": 20,
+          "width": 514,
+          "height": 458
+        }
+      }
     },
     {
       "scenarioId": "mark-index-entry.populated",
-      "captureStatus": "unsupported/unsupported",
-      "classification": "pending-wpf-factory",
-      "metrics": null,
+      "captureStatus": "captured/captured",
+      "classification": "genuine-visual-mismatch",
+      "metrics": {
+        "comparedPixels": 336000,
+        "changedPixels": 34808,
+        "changedRatio": 0.1035952380952381,
+        "meanAbsoluteChannelDelta": 5.196239087301578,
+        "p95AbsoluteChannelDelta": 15,
+        "luminanceSimilarity": 0.9028747858572186,
+        "perceptualHashDistance": 5
+      },
       "semanticDifference": null,
-      "heatmapPath": null,
-      "note": "No constructible app-owned WPF route adapter was available for this source family.",
-      "wpfContent": null,
-      "avaloniaContent": null
+      "heatmapPath": "heatmaps/mark-index-entry.populated.png",
+      "note": null,
+      "wpfContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.91325,
+        "nearTransparentRatio": 0.08675,
+        "nearBlackRatio": 4.562460078474313E-05,
+        "dominantColorRatio": 0.9464725665793281,
+        "distinctColorCount": 440,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.04814285714285714,
+        "contentBounds": {
+          "x": 16,
+          "y": 20,
+          "width": 514,
+          "height": 364
+        }
+      },
+      "avaloniaContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.924566848190294,
+        "distinctColorCount": 191,
+        "luminanceRange": 227.61419999999998,
+        "contentPixelRatio": 0.06895833333333333,
+        "contentBounds": {
+          "x": 16,
+          "y": 20,
+          "width": 514,
+          "height": 458
+        }
+      }
     },
     {
       "scenarioId": "mark-index-entry.validation-error",
-      "captureStatus": "unsupported/unsupported",
-      "classification": "pending-wpf-factory",
-      "metrics": null,
+      "captureStatus": "captured/captured",
+      "classification": "genuine-visual-mismatch",
+      "metrics": {
+        "comparedPixels": 336000,
+        "changedPixels": 35780,
+        "changedRatio": 0.10648809523809524,
+        "meanAbsoluteChannelDelta": 5.086604166666545,
+        "p95AbsoluteChannelDelta": 16,
+        "luminanceSimilarity": 0.9070685703719693,
+        "perceptualHashDistance": 5
+      },
       "semanticDifference": null,
-      "heatmapPath": null,
-      "note": "No constructible app-owned WPF route adapter was available for this source family.",
-      "wpfContent": null,
-      "avaloniaContent": null
+      "heatmapPath": "heatmaps/mark-index-entry.validation-error.png",
+      "note": null,
+      "wpfContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.91325,
+        "nearTransparentRatio": 0.08675,
+        "nearBlackRatio": 4.562460078474313E-05,
+        "dominantColorRatio": 0.9461238642733305,
+        "distinctColorCount": 469,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.048407738095238094,
+        "contentBounds": {
+          "x": 16,
+          "y": 20,
+          "width": 514,
+          "height": 364
+        }
+      },
+      "avaloniaContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
+        "nearBlackRatio": 4.554356241745229E-05,
+        "dominantColorRatio": 0.9216423008607734,
+        "distinctColorCount": 204,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.07163392857142857,
+        "contentBounds": {
+          "x": 16,
+          "y": 20,
+          "width": 514,
+          "height": 458
+        }
+      }
     },
     {
       "scenarioId": "multilevel-list.initial",
@@ -9659,36 +10211,174 @@
     },
     {
       "scenarioId": "save-compatibility-warning.initial",
-      "captureStatus": "unsupported/captured",
-      "classification": "pending-wpf-factory",
-      "metrics": null,
+      "captureStatus": "captured/captured",
+      "classification": "pass",
+      "metrics": {
+        "comparedPixels": 336000,
+        "changedPixels": 4477,
+        "changedRatio": 0.013324404761904761,
+        "meanAbsoluteChannelDelta": 1.4760664682539748,
+        "p95AbsoluteChannelDelta": 0,
+        "luminanceSimilarity": 0.9385295195852759,
+        "perceptualHashDistance": 0
+      },
       "semanticDifference": null,
-      "heatmapPath": null,
-      "note": "No constructible app-owned WPF route adapter was available for this source family.",
-      "wpfContent": null,
-      "avaloniaContent": null
+      "heatmapPath": "heatmaps/save-compatibility-warning.initial.png",
+      "note": null,
+      "wpfContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.91325,
+        "nearTransparentRatio": 0.08675,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.9904123160350918,
+        "distinctColorCount": 237,
+        "luminanceRange": 223.99999999999997,
+        "contentPixelRatio": 0.00836904761904762,
+        "contentBounds": {
+          "x": 16,
+          "y": 18,
+          "width": 514,
+          "height": 528
+        }
+      },
+      "avaloniaContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.990660316592821,
+        "distinctColorCount": 66,
+        "luminanceRange": 223.99999999999997,
+        "contentPixelRatio": 0.008544642857142857,
+        "contentBounds": {
+          "x": 16,
+          "y": 18,
+          "width": 514,
+          "height": 529
+        }
+      }
     },
     {
       "scenarioId": "save-compatibility-warning.populated",
-      "captureStatus": "unsupported/captured",
-      "classification": "pending-wpf-factory",
-      "metrics": null,
+      "captureStatus": "captured/captured",
+      "classification": "pass",
+      "metrics": {
+        "comparedPixels": 336000,
+        "changedPixels": 4477,
+        "changedRatio": 0.013324404761904761,
+        "meanAbsoluteChannelDelta": 1.4760664682539748,
+        "p95AbsoluteChannelDelta": 0,
+        "luminanceSimilarity": 0.9385295195852759,
+        "perceptualHashDistance": 0
+      },
       "semanticDifference": null,
-      "heatmapPath": null,
-      "note": "No constructible app-owned WPF route adapter was available for this source family.",
-      "wpfContent": null,
-      "avaloniaContent": null
+      "heatmapPath": "heatmaps/save-compatibility-warning.populated.png",
+      "note": null,
+      "wpfContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.91325,
+        "nearTransparentRatio": 0.08675,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.9904123160350918,
+        "distinctColorCount": 237,
+        "luminanceRange": 223.99999999999997,
+        "contentPixelRatio": 0.00836904761904762,
+        "contentBounds": {
+          "x": 16,
+          "y": 18,
+          "width": 514,
+          "height": 528
+        }
+      },
+      "avaloniaContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.990660316592821,
+        "distinctColorCount": 66,
+        "luminanceRange": 223.99999999999997,
+        "contentPixelRatio": 0.008544642857142857,
+        "contentBounds": {
+          "x": 16,
+          "y": 18,
+          "width": 514,
+          "height": 529
+        }
+      }
     },
     {
       "scenarioId": "save-compatibility-warning.validation-error",
-      "captureStatus": "unsupported/captured",
-      "classification": "pending-wpf-factory",
-      "metrics": null,
+      "captureStatus": "captured/captured",
+      "classification": "pass",
+      "metrics": {
+        "comparedPixels": 336000,
+        "changedPixels": 4477,
+        "changedRatio": 0.013324404761904761,
+        "meanAbsoluteChannelDelta": 1.4760664682539748,
+        "p95AbsoluteChannelDelta": 0,
+        "luminanceSimilarity": 0.9385295195852759,
+        "perceptualHashDistance": 0
+      },
       "semanticDifference": null,
-      "heatmapPath": null,
-      "note": "No constructible app-owned WPF route adapter was available for this source family.",
-      "wpfContent": null,
-      "avaloniaContent": null
+      "heatmapPath": "heatmaps/save-compatibility-warning.validation-error.png",
+      "note": null,
+      "wpfContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.91325,
+        "nearTransparentRatio": 0.08675,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.9904123160350918,
+        "distinctColorCount": 237,
+        "luminanceRange": 223.99999999999997,
+        "contentPixelRatio": 0.00836904761904762,
+        "contentBounds": {
+          "x": 16,
+          "y": 18,
+          "width": 514,
+          "height": 528
+        }
+      },
+      "avaloniaContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.990660316592821,
+        "distinctColorCount": 66,
+        "luminanceRange": 223.99999999999997,
+        "contentPixelRatio": 0.008544642857142857,
+        "contentBounds": {
+          "x": 16,
+          "y": 18,
+          "width": 514,
+          "height": 529
+        }
+      }
     },
     {
       "scenarioId": "screen-clip-overlay.open",
@@ -12095,36 +12785,93 @@
     },
     {
       "scenarioId": "change-case.initial",
-      "captureStatus": "invalid-content",
-      "classification": "invalid-capture-content",
+      "captureStatus": "avalonia-extension",
+      "classification": "avalonia-extension",
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "Avalonia extension failed capture content validation: The Avalonia adapter requires an app-owned route constructor or a temporary capture hook for this family.",
+      "note": "Avalonia-owned route/state; outside the WPF-authority pairing set.",
       "wpfContent": null,
-      "avaloniaContent": null
+      "avaloniaContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.9765645840246195,
+        "distinctColorCount": 62,
+        "luminanceRange": 223.99999999999997,
+        "contentPixelRatio": 0.02144047619047619,
+        "contentBounds": {
+          "x": 16,
+          "y": 16,
+          "width": 514,
+          "height": 146
+        }
+      }
     },
     {
       "scenarioId": "change-case.populated",
-      "captureStatus": "invalid-content",
-      "classification": "invalid-capture-content",
+      "captureStatus": "avalonia-extension",
+      "classification": "avalonia-extension",
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "Avalonia extension failed capture content validation: The Avalonia adapter requires an app-owned route constructor or a temporary capture hook for this family.",
+      "note": "Avalonia-owned route/state; outside the WPF-authority pairing set.",
       "wpfContent": null,
-      "avaloniaContent": null
+      "avaloniaContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.9765645840246195,
+        "distinctColorCount": 62,
+        "luminanceRange": 223.99999999999997,
+        "contentPixelRatio": 0.02144047619047619,
+        "contentBounds": {
+          "x": 16,
+          "y": 16,
+          "width": 514,
+          "height": 146
+        }
+      }
     },
     {
       "scenarioId": "change-case.validation-error",
-      "captureStatus": "invalid-content",
-      "classification": "invalid-capture-content",
+      "captureStatus": "avalonia-extension",
+      "classification": "avalonia-extension",
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "Avalonia extension failed capture content validation: The Avalonia adapter requires an app-owned route constructor or a temporary capture hook for this family.",
+      "note": "Avalonia-owned route/state; outside the WPF-authority pairing set.",
       "wpfContent": null,
-      "avaloniaContent": null
+      "avaloniaContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.9765645840246195,
+        "distinctColorCount": 62,
+        "luminanceRange": 223.99999999999997,
+        "contentPixelRatio": 0.02144047619047619,
+        "contentBounds": {
+          "x": 16,
+          "y": 16,
+          "width": 514,
+          "height": 146
+        }
+      }
     },
     {
       "scenarioId": "character-formatting-picker.initial",
@@ -12308,91 +13055,91 @@
     },
     {
       "scenarioId": "cups-print.initial",
-      "captureStatus": "invalid-content",
-      "classification": "invalid-capture-content",
+      "captureStatus": "avalonia-extension",
+      "classification": "avalonia-extension",
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "Avalonia extension failed capture content validation: near-uniform output (100.00% dominant color); insufficient color variation (1 colors); insufficient luminance range (0.00); no meaningful painted content bounds",
+      "note": "Avalonia-owned route/state; outside the WPF-authority pairing set.",
       "wpfContent": null,
       "avaloniaContent": {
-        "passesContentGate": false,
-        "failure": "near-uniform output (100.00% dominant color); insufficient color variation (1 colors); insufficient luminance range (0.00); no meaningful painted content bounds",
+        "passesContentGate": true,
+        "failure": null,
         "width": 560,
         "height": 600,
         "pixelCount": 336000,
         "opaqueRatio": 0.914875,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0,
-        "dominantColorRatio": 1,
-        "distinctColorCount": 1,
-        "luminanceRange": 0,
-        "contentPixelRatio": 0,
+        "dominantColorRatio": 0.9348011372878158,
+        "distinctColorCount": 131,
+        "luminanceRange": 223.99999999999997,
+        "contentPixelRatio": 0.05964880952380952,
         "contentBounds": {
-          "x": 0,
-          "y": 0,
-          "width": 0,
-          "height": 0
+          "x": 16,
+          "y": 16,
+          "width": 514,
+          "height": 178
         }
       }
     },
     {
       "scenarioId": "cups-print.populated",
-      "captureStatus": "invalid-content",
-      "classification": "invalid-capture-content",
+      "captureStatus": "avalonia-extension",
+      "classification": "avalonia-extension",
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "Avalonia extension failed capture content validation: near-uniform output (100.00% dominant color); insufficient color variation (1 colors); insufficient luminance range (0.00); no meaningful painted content bounds",
+      "note": "Avalonia-owned route/state; outside the WPF-authority pairing set.",
       "wpfContent": null,
       "avaloniaContent": {
-        "passesContentGate": false,
-        "failure": "near-uniform output (100.00% dominant color); insufficient color variation (1 colors); insufficient luminance range (0.00); no meaningful painted content bounds",
+        "passesContentGate": true,
+        "failure": null,
         "width": 560,
         "height": 600,
         "pixelCount": 336000,
         "opaqueRatio": 0.914875,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0,
-        "dominantColorRatio": 1,
-        "distinctColorCount": 1,
-        "luminanceRange": 0,
-        "contentPixelRatio": 0,
+        "dominantColorRatio": 0.9348011372878158,
+        "distinctColorCount": 131,
+        "luminanceRange": 223.99999999999997,
+        "contentPixelRatio": 0.05964880952380952,
         "contentBounds": {
-          "x": 0,
-          "y": 0,
-          "width": 0,
-          "height": 0
+          "x": 16,
+          "y": 16,
+          "width": 514,
+          "height": 178
         }
       }
     },
     {
       "scenarioId": "cups-print.validation-error",
-      "captureStatus": "invalid-content",
-      "classification": "invalid-capture-content",
+      "captureStatus": "avalonia-extension",
+      "classification": "avalonia-extension",
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "Avalonia extension failed capture content validation: near-uniform output (100.00% dominant color); insufficient color variation (1 colors); insufficient luminance range (0.00); no meaningful painted content bounds",
+      "note": "Avalonia-owned route/state; outside the WPF-authority pairing set.",
       "wpfContent": null,
       "avaloniaContent": {
-        "passesContentGate": false,
-        "failure": "near-uniform output (100.00% dominant color); insufficient color variation (1 colors); insufficient luminance range (0.00); no meaningful painted content bounds",
+        "passesContentGate": true,
+        "failure": null,
         "width": 560,
         "height": 600,
         "pixelCount": 336000,
         "opaqueRatio": 0.914875,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0,
-        "dominantColorRatio": 1,
-        "distinctColorCount": 1,
-        "luminanceRange": 0,
-        "contentPixelRatio": 0,
+        "dominantColorRatio": 0.9338479755886505,
+        "distinctColorCount": 133,
+        "luminanceRange": 223.99999999999997,
+        "contentPixelRatio": 0.060520833333333336,
         "contentBounds": {
-          "x": 0,
-          "y": 0,
-          "width": 0,
-          "height": 0
+          "x": 16,
+          "y": 16,
+          "width": 514,
+          "height": 178
         }
       }
     },
@@ -13958,12 +14705,10 @@
     }
   ],
   "counts": {
-    "genuine-visual-mismatch": 135,
-    "pass": 56,
-    "pending-wpf-factory": 15,
+    "genuine-visual-mismatch": 142,
+    "pass": 64,
     "semantic-mismatch": 15,
-    "avalonia-extension": 64,
-    "invalid-capture-content": 6
+    "avalonia-extension": 70
   },
   "scope": {
     "kind": "canonical-inputs-only",

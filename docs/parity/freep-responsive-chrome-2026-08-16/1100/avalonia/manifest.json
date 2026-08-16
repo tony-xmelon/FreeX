@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "host": "avalonia",
+  "captureMode": "visible-app-owned-full-client-render-target; native-non-client-excluded; scenario-isolated-process",
+  "targetDpi": 96,
+  "logicalClientWidth": 1100,
+  "logicalClientHeight": 760,
+  "generatedAtUtc": "2026-08-16T15:10:31.6414251\u002B00:00",
+  "captures": [
+    {
+      "scenarioId": "ribbon.view",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/ribbon.view.png",
+      "clientImagePath": "avalonia/client/ribbon.view.png",
+      "logicalWidth": 1100,
+      "logicalHeight": 760,
+      "pixelWidth": 1100,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 766544,
+      "fullImageSha256": "e33ab2001ee596dbdfabe6c3fa94317f6b3dc87d8d4df224cf1ad009bb349db7",
+      "clientImageSha256": "e33ab2001ee596dbdfabe6c3fa94317f6b3dc87d8d4df224cf1ad009bb349db7",
+      "semanticState": {
+        "scenarioId": "ribbon.view",
+        "host": "avalonia",
+        "activationId": "view",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [],
+        "selectedShapeKind": "",
+        "activeRibbonTabId": "view",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1100,
+          "height": 34.4,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34.4,
+          "width": 1100,
+          "height": 123.2,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 157.6,
+          "width": 180,
+          "height": 576,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 157.6,
+          "width": 920,
+          "height": 516,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 673.6,
+          "width": 920,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 733.6,
+          "width": 1100,
+          "height": 26.4,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: ."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
+          }
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
+      },
+      "limitations": []
+    }
+  ],
+  "limitations": []
+}
