@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T10:05:03.2070619\u002B03:00",
+  "options": {
+    "thresholdPercent": 25,
+    "failOnDimensionMismatch": false,
+    "pixelTolerance": 8,
+    "strictPixelThresholdPercent": null
+  },
+  "summary": {
+    "rows": 1,
+    "comparedRows": 1,
+    "failedRows": 0,
+    "dimensionMismatches": 0,
+    "maxMeanDiffPercent": 1.4467486383442265,
+    "maxExactMeanDiffPercent": 2.094830881045474,
+    "maxChangedPixelPercent": 10.022461989367855
+  },
+  "rows": [
+    {
+      "nn": 1,
+      "sheetName": "LineData",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 1.4467486383442265,
+      "excelPng": "excel_01_LineData.png",
+      "freeXPng": "freex_01_LineData.png",
+      "excelDimensions": {
+        "width": 1346,
+        "height": 727,
+        "text": "1346x727"
+      },
+      "freeXDimensions": {
+        "width": 1346,
+        "height": 727,
+        "text": "1346x727"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 2.094830881045474,
+        "changedPixelPercent": 10.022461989367855,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": ""
+    }
+  ]
+}

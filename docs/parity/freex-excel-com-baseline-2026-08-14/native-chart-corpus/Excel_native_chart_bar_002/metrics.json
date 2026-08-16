@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T10:04:20.6350352\u002B03:00",
+  "options": {
+    "thresholdPercent": 25,
+    "failOnDimensionMismatch": false,
+    "pixelTolerance": 8,
+    "strictPixelThresholdPercent": null
+  },
+  "summary": {
+    "rows": 1,
+    "comparedRows": 1,
+    "failedRows": 0,
+    "dimensionMismatches": 0,
+    "maxMeanDiffPercent": 4.316908496732026,
+    "maxExactMeanDiffPercent": 6.107300920672122,
+    "maxChangedPixelPercent": 15.901514702485944
+  },
+  "rows": [
+    {
+      "nn": 1,
+      "sheetName": "BarData",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 4.316908496732026,
+      "excelPng": "excel_01_BarData.png",
+      "freeXPng": "freex_01_BarData.png",
+      "excelDimensions": {
+        "width": 1346,
+        "height": 727,
+        "text": "1346x727"
+      },
+      "freeXDimensions": {
+        "width": 1346,
+        "height": 727,
+        "text": "1346x727"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 6.107300920672122,
+        "changedPixelPercent": 15.901514702485944,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": ""
+    }
+  ]
+}

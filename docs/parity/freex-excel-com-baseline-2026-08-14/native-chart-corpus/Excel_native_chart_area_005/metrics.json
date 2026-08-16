@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T10:04:15.7923880\u002B03:00",
+  "options": {
+    "thresholdPercent": 25,
+    "failOnDimensionMismatch": false,
+    "pixelTolerance": 8,
+    "strictPixelThresholdPercent": null
+  },
+  "summary": {
+    "rows": 1,
+    "comparedRows": 1,
+    "failedRows": 0,
+    "dimensionMismatches": 0,
+    "maxMeanDiffPercent": 4.175951797385621,
+    "maxExactMeanDiffPercent": 5.886353424061085,
+    "maxChangedPixelPercent": 15.991853185657845
+  },
+  "rows": [
+    {
+      "nn": 1,
+      "sheetName": "AreaData",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 4.175951797385621,
+      "excelPng": "excel_01_AreaData.png",
+      "freeXPng": "freex_01_AreaData.png",
+      "excelDimensions": {
+        "width": 1346,
+        "height": 727,
+        "text": "1346x727"
+      },
+      "freeXDimensions": {
+        "width": 1346,
+        "height": 727,
+        "text": "1346x727"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 5.886353424061085,
+        "changedPixelPercent": 15.991853185657845,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": ""
+    }
+  ]
+}

@@ -2,23 +2,21 @@
   "schema": "freep.office-baseline.v1",
   "product": "Microsoft PowerPoint",
   "available": true,
-  "status": "available-reference-partial",
-  "artifactCount": 43,
-  "captureDate": "2026-08-14",
+  "status": "available-reference-complete",
+  "artifactCount": 53,
+  "captureDate": "2026-08-16",
   "captureMode": "PowerPoint COM corpus export",
   "artifactPath": "tools/FreeP.RenderCompare/corpus/pptx-ref",
-  "limitation": "The tracked tree contains 43 PowerPoint reference slides across 26 of 27 corpus decks. The ten-slide 15-smartart-grouped-list deck has no tracked Office references. Current-source recalibration metrics are recorded separately and are not a visual-parity claim.",
+  "limitation": "The tracked tree contains 53 PowerPoint reference slides across all 27 corpus decks. This completes corpus coverage, not full PowerPoint UI or feature parity. Current-source recalibration metrics are recorded separately and are not a visual-parity claim.",
   "comparison": {
     "totalDecks": 27,
-    "referenceReadyDecks": 26,
+    "referenceReadyDecks": 27,
     "incompleteReferenceDecks": 0,
-    "missingReferenceDecks": 1,
-    "missingReferenceDeckIds": [
-      "15-smartart-grouped-list"
-    ],
-    "referenceSlides": 43,
-    "sha256MatchesLatestCapture": 43
+    "missingReferenceDecks": 0,
+    "missingReferenceDeckIds": [],
+    "referenceSlides": 53,
+    "sha256MatchesLatestCapture": 53
   },
   "currentSourceRecalibration": "docs/parity/freep-powerpoint-recalibration-2026-08-15.json",
-  "provenance": "The 43 tracked corpus/pptx-ref PNGs were verified against the 2026-08-14 PowerPoint COM capture. The capture cohort was created from commit 25499a5432 before later upstream integration. The original aggregate manifest overstated tracked coverage by including ten uncommitted references for 15-smartart-grouped-list; this manifest reports only artifacts present in the repository."
+  "provenance": "The original 43 tracked corpus/pptx-ref PNGs were verified against the 2026-08-14 PowerPoint COM capture. On 2026-08-16, PowerPoint COM exported the missing ten 15-smartart-grouped-list slides at 1280x720; an isolated worker validation then matched all 10/10 new PNGs with no missing references or hash differences. The capture cohort was created from commit 25499a5432 before later upstream integration."
 }
