@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T10:20:49.3447460\u002B03:00",
+  "options": {
+    "thresholdPercent": 25,
+    "failOnDimensionMismatch": false,
+    "pixelTolerance": 8,
+    "strictPixelThresholdPercent": null
+  },
+  "summary": {
+    "rows": 1,
+    "comparedRows": 1,
+    "failedRows": 0,
+    "dimensionMismatches": 0,
+    "maxMeanDiffPercent": 1.630213779956427,
+    "maxExactMeanDiffPercent": 2.5872765696686972,
+    "maxChangedPixelPercent": 11.424676995142928
+  },
+  "rows": [
+    {
+      "nn": 1,
+      "sheetName": "DiagBorders",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 1.630213779956427,
+      "excelPng": "excel_01_DiagBorders.png",
+      "freeXPng": "freex_01_DiagBorders.png",
+      "excelDimensions": {
+        "width": 537,
+        "height": 582,
+        "text": "537x582"
+      },
+      "freeXDimensions": {
+        "width": 537,
+        "height": 582,
+        "text": "537x582"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 2.5872765696686972,
+        "changedPixelPercent": 11.424676995142928,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": ""
+    }
+  ]
+}

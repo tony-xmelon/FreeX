@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T10:20:43.6050166\u002B03:00",
+  "options": {
+    "thresholdPercent": 25,
+    "failOnDimensionMismatch": false,
+    "pixelTolerance": 8,
+    "strictPixelThresholdPercent": null
+  },
+  "summary": {
+    "rows": 1,
+    "comparedRows": 1,
+    "failedRows": 0,
+    "dimensionMismatches": 0,
+    "maxMeanDiffPercent": 3.873968681917211,
+    "maxExactMeanDiffPercent": 6.375524138964654,
+    "maxChangedPixelPercent": 15.042560416863834
+  },
+  "rows": [
+    {
+      "nn": 1,
+      "sheetName": "AlignRotate",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 3.873968681917211,
+      "excelPng": "excel_01_AlignRotate.png",
+      "freeXPng": "freex_01_AlignRotate.png",
+      "excelDimensions": {
+        "width": 766,
+        "height": 938,
+        "text": "766x938"
+      },
+      "freeXDimensions": {
+        "width": 766,
+        "height": 938,
+        "text": "766x938"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 6.375524138964654,
+        "changedPixelPercent": 15.042560416863834,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": ""
+    }
+  ]
+}
