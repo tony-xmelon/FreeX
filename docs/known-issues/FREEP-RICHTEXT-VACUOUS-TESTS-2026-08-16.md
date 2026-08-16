@@ -16,25 +16,42 @@ Six failures surfaced. Two are fixed:
   `Runs.Count > 1 || HasMixedFormatting` misses the single-formatted-run shape, which
   still loses formatting on a plain-text round trip. Fixed in `TableCellEditPlanner`.
 
-Four remain, all layout/geometry, none diagnosed to root cause:
+Two more were fixed after the first pass:
+
+- **`HasRichFormatting`** reported false for a cell holding one bold Consolas run;
+  `Runs.Count > 1 || HasMixedFormatting` structurally cannot see that shape. Fixed in
+  `TableCellEditPlanner`.
+- **`InlineImageRun_ReservesAuthoredWidthForFollowingText`** read `CaretRect` with no
+  focus and no input drain, so both reads returned the same stale rect and their
+  difference was 0 - 0. The inline-image width machinery was never at fault.
+
+Three remain, all caret/hit-test geometry:
 
 | Test | Symptom |
 |---|---|
-| `InlineImageRun_ReservesAuthoredWidthForFollowingText` | Following text shifts 0dip; expected >20 |
 | `MixedSizeWrappedLines_DriveCaretSelectionAndVerticalNavigationGeometry` | `InvalidOperationException: Covered length must be greater than zero` from `Avalonia.Media.TextFormatting.TextLineImpl.GetTextBounds` |
 | `ShiftClickAndMultiClickSelectionModesRemainStable` | Double-click at `Point(32, 8)` selects "Alpha"; expected "beta" |
 | `PointerDragBeyondVisibleEditor_AutoScrollsAndClampsAtDocumentEnd` | Caret row 11 where a different value was expected |
 
 ## What is already ruled out
 
-The inline-image width machinery **exists and is wired**: `InlineImageTextRun : DrawableTextRun`
-returns `Size = new Size(image.WidthDip, image.HeightDip)`, `InlineImageWidthDip` honours
-`InlineImageWidthEmu`, and `TextSource.GetTextRun` returns that run at `offset == 0`. So this
-is not a missing feature. The remaining suspicion is that `CreateInlineImages` produces its
-layout list but those entries never reach the `_runs` collection `GetTextRun` consults --
-`CreateInlineImages` swallows decode failures silently, which would leave the run as a
-one-character text run and reserve no advance. That is the thread to pull first, and it is a
-hypothesis, not a finding.
+**Layout is running.** In `MixedSizeWrappedLines`, the assertion immediately before the failure
+(`caret.Height > 25`, sourced from the 28pt run) passes, so the editor has focus, input has
+drained, and the text layout reflects the real runs. The failure is not a missing measure pass.
 
-The two selection/caret failures hard-code pixel coordinates (`Point(32, 8)`), so they may be
-sensitive to headless font metrics rather than to editor logic -- also unverified.
+**Vertical navigation is reaching the boundary branch.** `InCanvasRichTextNavigationPlanner`
+returns the caret unchanged when `targetLine >= lines.Count`, which is exactly the observed
+`down == 11`. So `FindVerticalLine` is placing logical position 11 on the *last* visual line,
+even though `EvidenceBody` has a second paragraph ("Centered numbered paragraph") that must
+occupy a line below it. The next step is to instrument `BuildVisualLineGeometry()` and count the
+lines it produces: either it omits the second paragraph, or the per-line logical ranges put
+position 11 past the end. That is the thread to pull, and it is a hypothesis, not a finding.
+
+**The inline-image machinery is exonerated**, and the earlier suspicion about
+`CreateInlineImages` swallowing decode failures was wrong: `InlineImageTextRun : DrawableTextRun`
+returns the authored size, `InlineImageWidthDip` honours `InlineImageWidthEmu`, and
+`TextSource.GetTextRun` returns that run at `offset == 0`. The test was simply measuring before
+the caret had settled.
+
+The two selection failures hard-code pixel coordinates (`Point(32, 8)`), so they may be sensitive
+to headless font metrics rather than to editor logic -- unverified.
