@@ -45,3 +45,20 @@ directory.  WPF captured 116/116 surfaces.  Avalonia captured 180/181;
 `popup.nameBoxDropdown` remains intentionally diagnostic-only because its
 authoritative proof requires the separately scoped native popup selector.  All
 116 WPF surface identifiers are present in the Avalonia manifest.
+
+## Uniform app-chrome follow-up
+
+`tools/screenshot_ribbon.ps1` (WPF) and the new
+`tools/screenshot_ribbon_avalonia.ps1` (Avalonia Windows) now share one
+foreground app-chrome contract: the nine static tabs at `max`, `1100`, `900`,
+and `750` logical widths, a 300-logical-pixel top band, and
+`ribbon:<width>:<tab>` pair keys. Both commands retain only a full 36-state
+matrix and verify that their own process/window title owns foreground before
+input and screen capture.
+
+The first current-session WPF recapture attempt was correctly blocked before
+any tab selection when Windows Default Lock Screen owned foreground. The
+existing committed WPF matrix was restored unchanged, and Avalonia was not
+attempted under the same blocker. The WPF/Avalonia matrices remain runtime work
+for an unlocked interactive desktop; deterministic dialog images are not
+substitutes for this foreground-chrome lane.
