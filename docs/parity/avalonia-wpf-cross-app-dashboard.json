@@ -14,6 +14,7 @@
                     "tools/screenshots/screenshot_manifest.json",
                     "tools/screenshots_avalonia_ribbon/screenshot_manifest.json",
                     "docs/parity/freex-excel-com-baseline-2026-08-14/manifest.json",
+                    "docs/parity/freex-avalonia-grid-corpus-2026-08-16/manifest.json",
                     "docs/parity/freew-command-inventory.json",
                     "docs/parity/freew-dialog-harness/freew_dialog_route_inventory.json",
                     "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json",
@@ -105,7 +106,8 @@
                                                                   "docs/parity/freex-excel-chrome-comparison.md",
                                                                   "tools/screenshots/screenshot_manifest.json",
                                                                   "tools/screenshots_avalonia_ribbon/screenshot_manifest.json",
-                                                                  "docs/parity/freex-excel-com-baseline-2026-08-14/manifest.json"
+                                                                  "docs/parity/freex-excel-com-baseline-2026-08-14/manifest.json",
+                                                                  "docs/parity/freex-avalonia-grid-corpus-2026-08-16/manifest.json"
                                                               ],
                                               "routeCoverage":  {
                                                                     "inventoryRouteCount":  57,
@@ -138,6 +140,14 @@
                                                                     "avaloniaMeanPixelDiffPercent":  15.639134449147328,
                                                                     "evidenceClassification":  "complete foreground Excel/WPF/Avalonia ribbon matrices; fixed-width deltas are triage only"
                                                                 },
+                                              "gridCorpus":  {
+                                                                 "captureStatus":  "complete",
+                                                                 "chartCaptureCount":  8,
+                                                                 "cellStyleCaptureCount":  7,
+                                                                 "pivotCaptureCount":  20,
+                                                                 "totalAvaloniaCaptureCount":  35,
+                                                                 "evidenceClassification":  "Coverage and renderer-state evidence only. The Avalonia grid renderer has a different native pixel geometry from the existing WPF/Excel SheetGridImageCompare lane, so these captures are not raw-pixel acceptance comparisons."
+                                                             },
                                               "physicalEvidence":  {
                                                                        "status":  "available-interactive-foreground",
                                                                        "captureMode":  "foreground-owned Excel ribbon/dialog capture plus generated WPF/Avalonia dialog render manifests",
@@ -146,6 +156,7 @@
                                                                                            "The 2026-08-16 interactive run captured 36 foreground ribbon states for each of Excel, WPF, and Avalonia, including Draw at all four widths, plus six guarded Excel popup/dialog surfaces. The 27 fixed-viewport triage rows average 13.937% RGB delta for WPF and 15.639% for Avalonia versus Excel; nine maximized rows are coverage-only, not an acceptance threshold.",
                                                                                            "The ribbon harness creates a blank workbook before tab discovery so the enabled Draw tab is materialized; the current manifest records no unavailable-tab skips.",
                                                                                            "WPF captured 116/116 app-host surfaces and Avalonia captured 180/181; popup.nameBoxDropdown remains intentionally diagnostic-only.",
+                                                                                           "The current-source range corpus retains 35 Avalonia grid captures: eight charts, seven cell styles, and 20 native PivotTable surfaces. These are renderer coverage evidence, not raw-pixel Office acceptance rows.",
                                                                                            "The committed COM range references cover nine chart ranges, seven native cell-style ranges, and 29 pivot-table ranges; they are distinct from the 2026-08-16 interactive foreground evidence (36 Excel ribbon states including Draw and six popup/dialog tours). The associated current-session ribbon comparison has 27 provisional fixed-viewport rows for each host: WPF averages 13.937% RGB delta and Avalonia averages 15.639% versus Excel. These are triage metrics, not visual-parity acceptance results."
                                                                                        ]
                                                                    },
