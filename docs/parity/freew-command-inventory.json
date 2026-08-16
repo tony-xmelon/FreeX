@@ -1192,8 +1192,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": false
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
       },
       "behaviorEvidence": {
         "evidenceId": "freew.paragraph-editing.shared-workflow",
@@ -22449,8 +22449,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": false
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
       },
       "behaviorEvidence": {
         "evidenceId": "freew.paragraph-editing.shared-workflow",
