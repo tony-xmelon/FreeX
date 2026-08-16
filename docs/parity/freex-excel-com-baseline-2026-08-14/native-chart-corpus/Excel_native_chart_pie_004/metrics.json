@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T10:05:07.5790325\u002B03:00",
+  "options": {
+    "thresholdPercent": 25,
+    "failOnDimensionMismatch": false,
+    "pixelTolerance": 8,
+    "strictPixelThresholdPercent": null
+  },
+  "summary": {
+    "rows": 1,
+    "comparedRows": 1,
+    "failedRows": 0,
+    "dimensionMismatches": 0,
+    "maxMeanDiffPercent": 3.908276960784314,
+    "maxExactMeanDiffPercent": 5.526977891597908,
+    "maxChangedPixelPercent": 16.834739847650894
+  },
+  "rows": [
+    {
+      "nn": 1,
+      "sheetName": "PieData",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 3.908276960784314,
+      "excelPng": "excel_01_PieData.png",
+      "freeXPng": "freex_01_PieData.png",
+      "excelDimensions": {
+        "width": 1346,
+        "height": 727,
+        "text": "1346x727"
+      },
+      "freeXDimensions": {
+        "width": 1346,
+        "height": 727,
+        "text": "1346x727"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 5.526977891597908,
+        "changedPixelPercent": 16.834739847650894,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": ""
+    }
+  ]
+}

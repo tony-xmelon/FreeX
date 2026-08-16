@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T10:05:12.2290001\u002B03:00",
+  "options": {
+    "thresholdPercent": 25,
+    "failOnDimensionMismatch": false,
+    "pixelTolerance": 8,
+    "strictPixelThresholdPercent": null
+  },
+  "summary": {
+    "rows": 1,
+    "comparedRows": 1,
+    "failedRows": 0,
+    "dimensionMismatches": 0,
+    "maxMeanDiffPercent": 0.9340808823529412,
+    "maxExactMeanDiffPercent": 1.4134836030496645,
+    "maxChangedPixelPercent": 9.369960614873966
+  },
+  "rows": [
+    {
+      "nn": 1,
+      "sheetName": "ScatterData",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 0.9340808823529412,
+      "excelPng": "excel_01_ScatterData.png",
+      "freeXPng": "freex_01_ScatterData.png",
+      "excelDimensions": {
+        "width": 1346,
+        "height": 727,
+        "text": "1346x727"
+      },
+      "freeXDimensions": {
+        "width": 1346,
+        "height": 727,
+        "text": "1346x727"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 1.4134836030496645,
+        "changedPixelPercent": 9.369960614873966,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": ""
+    }
+  ]
+}

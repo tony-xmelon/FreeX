@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T10:04:11.3378066\u002B03:00",
+  "options": {
+    "thresholdPercent": 25,
+    "failOnDimensionMismatch": false,
+    "pixelTolerance": 8,
+    "strictPixelThresholdPercent": null
+  },
+  "summary": {
+    "rows": 1,
+    "comparedRows": 1,
+    "failedRows": 0,
+    "dimensionMismatches": 0,
+    "maxMeanDiffPercent": 5.619678376906318,
+    "maxExactMeanDiffPercent": 7.928021444950052,
+    "maxChangedPixelPercent": 19.619086355005713
+  },
+  "rows": [
+    {
+      "nn": 1,
+      "sheetName": "3DColumnData",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 5.619678376906318,
+      "excelPng": "excel_01_3DColumnData.png",
+      "freeXPng": "freex_01_3DColumnData.png",
+      "excelDimensions": {
+        "width": 1346,
+        "height": 727,
+        "text": "1346x727"
+      },
+      "freeXDimensions": {
+        "width": 1346,
+        "height": 727,
+        "text": "1346x727"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 7.928021444950052,
+        "changedPixelPercent": 19.619086355005713,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": ""
+    }
+  ]
+}
