@@ -28,7 +28,7 @@ not letterbox, crop, or silently compare unequal maximized windows.
 |---|---|---|---|---|
 | Ribbon, 1100/900/750 logical widths | 27 complete rows | Matching top-band rows | No foreground desktop/ribbon capture contract | Provisional WPF image triage only; Avalonia explicitly unmatched. |
 | Ribbon, maximized width | 9 complete rows | 9 complete rows at another maximized viewport | No foreground desktop/ribbon capture contract | Coverage-only; no metric because the viewports differ. |
-| Draw ribbon | Captured only if the installed Excel profile exposes Draw | Existing WPF Draw rows | No foreground desktop/ribbon capture contract | The report follows the manifest: available rows can be compared to WPF; source-skipped rows remain source-skipped. |
+| Draw ribbon | Captured at all four widths | Existing WPF Draw rows | No foreground desktop/ribbon capture contract | Included in the 27 fixed-viewport triage rows and nine maximized coverage-only rows. |
 | Office popups and native dialogs | Six retained Excel tours | Historical WPF tours | No same-viewport Avalonia foreground artifacts | Coverage evidence only. Element/window crops are not a common rectangle, so a full-image pixel delta would be misleading. |
 
 The canonical Avalonia visual manifests contain 94 deterministic dialog
@@ -45,13 +45,14 @@ equivalence; the currently retained WPF ribbon images predate the refreshed
 Excel run and must be recaptured before any acceptance threshold is set.
 
 `coverage-only` identifies a real pair whose images are not geometrically
-comparable, such as maximized windows. `source-skipped` preserves a known Excel
-tab that the current Office profile did not expose. Neither status is a pass.
+comparable, such as maximized windows. `source-skipped` is reserved for a
+future unavailable tab; the current 36-row run has no skipped tab. Neither
+status is a pass.
 
 ## Next evidence needed
 
-1. Recapture the WPF ribbon at the same foreground session and width matrix
-   after the Excel Draw lane completes, then rerun this report.
+1. Recapture the WPF ribbon at the same foreground session and width matrix,
+   then rerun this report to establish a same-session WPF comparison.
 2. Add an Avalonia Windows foreground capture mode that emits the same
    `ribbon:<width>:<tab>` pair keys and the same logical width/height metadata.
    Only then add an Excel-to-Avalonia pixel comparison.
