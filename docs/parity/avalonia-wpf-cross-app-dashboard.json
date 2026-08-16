@@ -11,12 +11,15 @@
                     "docs/parity/dialog-visual-assets/avalonia-capture/manifest.json",
                     "docs/parity/freex-excel-foreground-capture-2026-08-16.md",
                     "docs/parity/freex-excel-chrome-comparison.md",
+                    "tools/screenshots/screenshot_manifest.json",
+                    "tools/screenshots_avalonia_ribbon/screenshot_manifest.json",
                     "docs/parity/freex-excel-com-baseline-2026-08-14/manifest.json",
                     "docs/parity/freew-command-inventory.json",
                     "docs/parity/freew-dialog-harness/freew_dialog_route_inventory.json",
                     "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json",
                     "docs/parity/freew-word-baseline-2026-08-16/manifest.json",
                     "docs/parity/freew-shell-visual-2026-08-16/freew_shell_visual_evidence.json",
+                    "docs/parity/freew-word-chrome-2026-08-16/manifest.json",
                     "docs/parity/freep-command-parity-inventory.json",
                     "docs/parity/freep-dialog-pane-visual-evidence/summary.json",
                     "docs/parity/freep-dialog-pane-visual-evidence/artifact-manifest.json",
@@ -27,7 +30,7 @@
                     "docs/parity/freep-powerpoint-baseline-2026-08-14.json",
                     "docs/parity/freep-powerpoint-recalibration-2026-08-15.json",
                     "docs/parity/freep-powerpoint-chrome-2026-08-16/README.md",
-                    "docs/parity/freep-powerpoint-chrome-2026-08-16/blocker-manifest.json"
+                    "docs/parity/freep-powerpoint-chrome-2026-08-16/manifest.json"
                 ],
     "apps":  [
                  {
@@ -100,6 +103,8 @@
                                                                   "docs/parity/dialog-visual-assets/avalonia-capture/manifest.json",
                                                                   "docs/parity/freex-excel-foreground-capture-2026-08-16.md",
                                                                   "docs/parity/freex-excel-chrome-comparison.md",
+                                                                  "tools/screenshots/screenshot_manifest.json",
+                                                                  "tools/screenshots_avalonia_ribbon/screenshot_manifest.json",
                                                                   "docs/parity/freex-excel-com-baseline-2026-08-14/manifest.json"
                                                               ],
                                               "routeCoverage":  {
@@ -123,16 +128,25 @@
                                                                      "highestTriageScore":  0.100622,
                                                                      "evidenceClassification":  "paired WPF/Avalonia app-owned dialog screenshots and manifest metadata; not a visual-parity result"
                                                                  },
+                                              "chromeCapture":  {
+                                                                    "excelReferenceCount":  36,
+                                                                    "wpfCaptureCount":  36,
+                                                                    "avaloniaCaptureCount":  36,
+                                                                    "fixedViewportComparisonCount":  27,
+                                                                    "coverageOnlyComparisonCount":  9,
+                                                                    "wpfMeanPixelDiffPercent":  13.936596740910273,
+                                                                    "avaloniaMeanPixelDiffPercent":  15.639134449147328,
+                                                                    "evidenceClassification":  "complete foreground Excel/WPF/Avalonia ribbon matrices; fixed-width deltas are triage only"
+                                                                },
                                               "physicalEvidence":  {
                                                                        "status":  "available-interactive-foreground",
                                                                        "captureMode":  "foreground-owned Excel ribbon/dialog capture plus generated WPF/Avalonia dialog render manifests",
                                                                        "noComStatus":  "not-applicable",
                                                                        "limitations":  [
-                                                                                           "The 2026-08-16 interactive run captured 36 Excel ribbon states, including Draw at all four widths, and six guarded popup/dialog surfaces. Its reproducible Excel-to-WPF chrome report has 27 provisional fixed-viewport rows (17.059% mean RGB delta; 17.802% maximum) and nine maximized coverage-only rows; these are triage values, not an acceptance threshold.",
+                                                                                           "The 2026-08-16 interactive run captured 36 foreground ribbon states for each of Excel, WPF, and Avalonia, including Draw at all four widths, plus six guarded Excel popup/dialog surfaces. The 27 fixed-viewport triage rows average 13.937% RGB delta for WPF and 15.639% for Avalonia versus Excel; nine maximized rows are coverage-only, not an acceptance threshold.",
                                                                                            "The ribbon harness creates a blank workbook before tab discovery so the enabled Draw tab is materialized; the current manifest records no unavailable-tab skips.",
                                                                                            "WPF captured 116/116 app-host surfaces and Avalonia captured 180/181; popup.nameBoxDropdown remains intentionally diagnostic-only.",
-                                                                                           "Avalonia has no foreground desktop/ribbon capture contract, so the Office-to-Avalonia chrome comparison count is explicitly zero. ",
-                                                                                           "The committed COM range references cover nine chart ranges, seven native cell-style ranges, and 29 pivot-table ranges; they are distinct from the 2026-08-16 interactive foreground evidence (36 Excel ribbon states including Draw and six popup/dialog tours). The associated WPF ribbon comparison has 27 provisional fixed-viewport rows; Avalonia desktop chrome has no capture contract yet, so it has zero valid Office-to-Avalonia chrome comparisons."
+                                                                                           "The committed COM range references cover nine chart ranges, seven native cell-style ranges, and 29 pivot-table ranges; they are distinct from the 2026-08-16 interactive foreground evidence (36 Excel ribbon states including Draw and six popup/dialog tours). The associated current-session ribbon comparison has 27 provisional fixed-viewport rows for each host: WPF averages 13.937% RGB delta and Avalonia averages 15.639% versus Excel. These are triage metrics, not visual-parity acceptance results."
                                                                                        ]
                                                                    },
                                               "authoritativeMicrosoftOfficeBaseline":  {
@@ -140,7 +154,7 @@
                                                                                            "available":  true,
                                                                                            "status":  "available-with-known-deltas",
                                                                                            "artifactCount":  45,
-                                                                                           "limitation":  "The committed COM range references cover nine chart ranges, seven native cell-style ranges, and 29 pivot-table ranges; they are distinct from the 2026-08-16 interactive foreground evidence (36 Excel ribbon states including Draw and six popup/dialog tours). The associated WPF ribbon comparison has 27 provisional fixed-viewport rows; Avalonia desktop chrome has no capture contract yet, so it has zero valid Office-to-Avalonia chrome comparisons.",
+                                                                                           "limitation":  "The committed COM range references cover nine chart ranges, seven native cell-style ranges, and 29 pivot-table ranges; they are distinct from the 2026-08-16 interactive foreground evidence (36 Excel ribbon states including Draw and six popup/dialog tours). The associated current-session ribbon comparison has 27 provisional fixed-viewport rows for each host: WPF averages 13.937% RGB delta and Avalonia averages 15.639% versus Excel. These are triage metrics, not visual-parity acceptance results.",
                                                                                            "captureMode":  "Excel COM range export paired with FreeX SheetGridImageCompare"
                                                                                        },
                                               "claimBoundary":  "Coverage, manifest pairing, and DPI-normalized size comparability only; do not read these fields as visual parity."
@@ -170,7 +184,8 @@
                                                                   "docs/parity/freew-dialog-harness/freew_dialog_route_inventory.json",
                                                                   "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json",
                                                                   "docs/parity/freew-word-baseline-2026-08-16/manifest.json",
-                                                                  "docs/parity/freew-shell-visual-2026-08-16/freew_shell_visual_evidence.json"
+                                                                  "docs/parity/freew-shell-visual-2026-08-16/freew_shell_visual_evidence.json",
+                                                                  "docs/parity/freew-word-chrome-2026-08-16/manifest.json"
                                                               ],
                                               "canonicalComparison":  {
                                                                           "kind":  "canonical-inputs-only",
@@ -199,10 +214,11 @@
                                                                    },
                                               "shellChrome":  {
                                                                   "pairedStaticCaptureCount":  40,
-                                                                  "wpfContextualOnlyCaptureCount":  32,
-                                                                  "avaloniaContextualMissingCount":  32,
-                                                                  "wordOfficeChromeReferenceCount":  0,
-                                                                  "evidenceClassification":  "paired static WPF/Avalonia shell captures; contextual states and native Word chrome are explicit coverage gaps"
+                                                                  "pairedContextualCaptureCount":  32,
+                                                                  "avaloniaContextualMissingCount":  0,
+                                                                  "wordOfficeChromeReferenceCount":  36,
+                                                                  "wordOfficeChromeStatus":  "complete",
+                                                                  "evidenceClassification":  "paired static and contextual WPF/Avalonia shell captures plus native Word ribbon references; cross-host pixels remain review-only"
                                                               },
                                               "pairedEvidence":  {
                                                                      "pairedScenarioCount":  206,
@@ -217,8 +233,8 @@
                                                                        "captureMode":  "generated WPF/Avalonia dialog comparison rows plus committed full-window shell capture matrix",
                                                                        "noComStatus":  "not-present-in-inputs",
                                                                        "limitations":  [
-                                                                                           "The committed shell matrix contains 40 paired static WPF/Avalonia captures (10 tabs at four widths); 32 WPF contextual states remain explicitly unmatched because Avalonia contextual fixtures are not activated.",
-                                                                                           "Native Word chrome references are currently 0; no Office-to-FreeW chrome comparison is claimed.",
+                                                                                           "The committed shell matrix contains 40 paired static and 32 paired contextual WPF/Avalonia captures; no contextual Avalonia gap remains.",
+                                                                                           "Native Word chrome references are complete at 36 states; they are semantic review references, not raw Office-to-FreeW pixel-equivalence results.",
                                                                                            "Avalonia-only route/state rows are reported separately and are outside the WPF-authority pairing set.",
                                                                                            "Word reference PNGs are available for triage, but this current-source capture cohort has 94 failed and 3 skipped comparisons; it is not a Word visual-parity claim."
                                                                                        ]
@@ -261,7 +277,7 @@
                                                                   "docs/parity/freep-powerpoint-baseline-2026-08-14.json",
                                                                   "docs/parity/freep-powerpoint-recalibration-2026-08-15.json",
                                                                   "docs/parity/freep-powerpoint-chrome-2026-08-16/README.md",
-                                                                  "docs/parity/freep-powerpoint-chrome-2026-08-16/blocker-manifest.json"
+                                                                  "docs/parity/freep-powerpoint-chrome-2026-08-16/manifest.json"
                                                               ],
                                               "routeCoverage":  {
                                                                     "laneEntries":  [
@@ -329,18 +345,18 @@
                                                                  },
                                               "nativeOfficeChrome":  {
                                                                          "expectedCaptureCount":  28,
-                                                                         "captureStatus":  "blocked",
-                                                                         "capturedReferenceCount":  0,
-                                                                         "reason":  "Blocked: no foreground window before PowerPoint chrome capture setup.",
-                                                                         "evidenceClassification":  "guarded native PowerPoint ribbon reference lane; blocked capture is explicit and no partial artifacts are accepted"
+                                                                         "captureStatus":  "complete",
+                                                                         "capturedReferenceCount":  28,
+                                                                         "comparisonBoundary":  "This is an authoritative native-PowerPoint visual reference capture. It is mapped to FreeP\u0027s shared ribbon tabs, but is not a raw WPF/Avalonia pixel-equivalence comparison because the hosts deliberately have different shell and ribbon implementations.",
+                                                                         "evidenceClassification":  "guarded native PowerPoint ribbon reference lane; complete foreground capture is semantic review evidence, not raw pixel equivalence"
                                                                      },
                                               "physicalEvidence":  {
-                                                                       "status":  "app-owned-available-office-chrome-blocked",
+                                                                       "status":  "available-app-and-native-office-chrome",
                                                                        "captureMode":  "visible app-owned render targets with scenario-isolated processes plus guarded native PowerPoint ribbon capture",
                                                                        "noComStatus":  "PowerPoint COM corpus export",
                                                                        "limitations":  [
                                                                                            "The tracked tree contains 53 PowerPoint reference slides across all 27 corpus decks. This completes corpus coverage, not full PowerPoint UI or feature parity. Current-source recalibration metrics are recorded separately and are not a visual-parity claim.",
-                                                                                           "Native PowerPoint ribbon capture status is \u0027blocked\u0027 for 28 expected tab/width references: Blocked: no foreground window before PowerPoint chrome capture setup.",
+                                                                                           "Native PowerPoint ribbon capture status is \u0027complete\u0027 with 28/28 mapped tab/width references.",
                                                                                            "Live microphone/camera capture, permission prompts, and encoded camera payloads require real devices.",
                                                                                            "No hardware capture artifacts are generated by this tool.",
                                                                                            "WPF uses native Windows dialogs and Avalonia uses the platform storage provider. OS-owned picker chrome is not an app-owned cross-host pixel-parity surface."
