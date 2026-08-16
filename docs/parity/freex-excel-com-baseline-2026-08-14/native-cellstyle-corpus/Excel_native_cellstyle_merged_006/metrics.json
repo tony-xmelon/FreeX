@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T10:21:14.9224155\u002B03:00",
+  "options": {
+    "thresholdPercent": 25,
+    "failOnDimensionMismatch": false,
+    "pixelTolerance": 8,
+    "strictPixelThresholdPercent": null
+  },
+  "summary": {
+    "rows": 1,
+    "comparedRows": 1,
+    "failedRows": 0,
+    "dimensionMismatches": 0,
+    "maxMeanDiffPercent": 2.890593681917211,
+    "maxExactMeanDiffPercent": 3.7673473445225065,
+    "maxChangedPixelPercent": 12.243456256425125
+  },
+  "rows": [
+    {
+      "nn": 1,
+      "sheetName": "Merged",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 2.890593681917211,
+      "excelPng": "excel_01_Merged.png",
+      "freeXPng": "freex_01_Merged.png",
+      "excelDimensions": {
+        "width": 643,
+        "height": 590,
+        "text": "643x590"
+      },
+      "freeXDimensions": {
+        "width": 643,
+        "height": 590,
+        "text": "643x590"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 3.7673473445225065,
+        "changedPixelPercent": 12.243456256425125,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": ""
+    }
+  ]
+}

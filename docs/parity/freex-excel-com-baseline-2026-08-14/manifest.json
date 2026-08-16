@@ -3,13 +3,13 @@
   "product": "Microsoft Excel",
   "available": true,
   "status": "available-with-known-deltas",
-  "artifactCount": 38,
+  "artifactCount": 45,
   "captureDate": "2026-08-16",
   "captureMode": "Excel COM range export paired with FreeX SheetGridImageCompare",
-  "limitation": "The committed references cover nine chart ranges and 29 pivot-table ranges; they do not cover foreground Excel ribbon or dialog chrome. The guarded foreground ribbon/dialog capture harness requires an interactive foreground desktop, which was unavailable during the 2026-08-16 refresh.",
+  "limitation": "The committed references cover nine chart ranges, seven native cell-style ranges, and 29 pivot-table ranges; they do not cover foreground Excel ribbon or dialog chrome. The guarded foreground ribbon/dialog capture harness requires an interactive foreground desktop, which was unavailable during the 2026-08-16 refresh.",
   "comparison": {
-    "rows": 38,
-    "comparedRows": 38,
+    "rows": 45,
+    "comparedRows": 45,
     "failedRows": 0,
     "thresholdPercent": 25,
     "worstMeanDiffPercent": 19.88574183006536
@@ -17,6 +17,7 @@
   "fixtures": [
     { "id": "testchartsheet", "referenceCount": 1, "license": "repository fixture" },
     { "id": "excel-native-chart-corpus", "referenceCount": 8, "license": "repository fixture" },
+    { "id": "excel-native-cellstyle-corpus", "referenceCount": 7, "license": "repository fixture" },
     { "id": "ExcelPivotTableSample", "referenceCount": 2, "license": "Apache-2.0" },
     { "id": "officecli-pivot-tables", "referenceCount": 17, "license": "Apache-2.0" },
     { "id": "closedxml-pivot-tables", "referenceCount": 10, "license": "MIT" }
@@ -35,5 +36,20 @@
     "captureRange": "A1:N25",
     "chartTypes": ["clustered-column", "clustered-bar", "line-with-markers", "pie", "area", "xy-scatter", "3-d-column", "3-d-bar"]
   },
-  "provenance": "The source workbooks remain local-only under fidelity-corpus/files or are generated locally through FreeX.ExcelOpenSmoke; this bundle commits only the exported Excel reference PNGs and metrics. The 2026-08-14 cohort was created from commit 25499a5432 before later upstream integration. The eight current-source chart references were generated and COM-exported from sourceCommit on 2026-08-16."
+  "cellStyleExpansion": {
+    "captureDate": "2026-08-16",
+    "sourceCommit": "d86a812a44aa228d559581735bc1991f71761967",
+    "fixture": "excel-native-cellstyle-corpus",
+    "referenceCount": 7,
+    "comparedRows": 7,
+    "failedRows": 0,
+    "thresholdPercent": 25,
+    "meanDiffPercentAverage": 5.883057384064736,
+    "worstMeanDiffPercent": 16.826072984749455,
+    "worstExactMeanDiffPercent": 27.719826938251785,
+    "worstChangedPixelPercent": 34.33895139096833,
+    "captureRange": "A1:E20",
+    "surfaceFamilies": ["border-styles", "diagonal-borders", "pattern-fills", "gradient-fills", "alignment-and-rotation", "merged-cells", "fonts"]
+  },
+  "provenance": "The source workbooks remain local-only under fidelity-corpus/files or are generated locally through FreeX.ExcelOpenSmoke; this bundle commits only the exported Excel reference PNGs and metrics. The 2026-08-14 cohort was created from commit 25499a5432 before later upstream integration. The eight current-source chart references were generated and COM-exported from sourceCommit on 2026-08-16. The seven current-source cell-style references were generated and COM-exported from cellStyleExpansion.sourceCommit on 2026-08-16 using range A1:E20; this does not require foreground UI automation."
 }

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T10:20:58.6790071\u002B03:00",
+  "options": {
+    "thresholdPercent": 25,
+    "failOnDimensionMismatch": false,
+    "pixelTolerance": 8,
+    "strictPixelThresholdPercent": null
+  },
+  "summary": {
+    "rows": 1,
+    "comparedRows": 1,
+    "failedRows": 0,
+    "dimensionMismatches": 0,
+    "maxMeanDiffPercent": 16.826072984749455,
+    "maxExactMeanDiffPercent": 27.719826938251785,
+    "maxChangedPixelPercent": 34.33895139096833
+  },
+  "rows": [
+    {
+      "nn": 1,
+      "sheetName": "Gradient",
+      "status": "OK",
+      "effectiveStatus": "OK",
+      "meanDiffPercent": 16.826072984749455,
+      "excelPng": "excel_01_Gradient.png",
+      "freeXPng": "freex_01_Gradient.png",
+      "excelDimensions": {
+        "width": 482,
+        "height": 582,
+        "text": "482x582"
+      },
+      "freeXDimensions": {
+        "width": 482,
+        "height": 582,
+        "text": "482x582"
+      },
+      "dimensionMismatch": false,
+      "exactPixelMetrics": {
+        "meanDiffPercent": 27.719826938251785,
+        "changedPixelPercent": 34.33895139096833,
+        "maxChannelDelta": 255,
+        "pixelTolerance": 8
+      },
+      "error": null,
+      "pivotDropdowns": ""
+    }
+  ]
+}
