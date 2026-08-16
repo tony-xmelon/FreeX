@@ -1,6 +1,6 @@
 {
   "schema": "freew.dialog-route-inventory.v1",
-  "generatedFromSha256": "a2938d67f5f26181f0e8cb965a2a8047fec0b22072801eca47a0737b3d8c38a3",
+  "generatedFromSha256": "f799a88a368e9fdb678809d31273702ac8d11146bfd8a3ca3ebf1566f232b238",
   "scenarios": [
     {
       "id": "avalonia.about.initial",
@@ -313,12 +313,72 @@
       "surfaceKind": "dialog"
     },
     {
+      "id": "avalonia.cell-borders.initial",
+      "host": "avalonia",
+      "routeId": "cell-borders",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.cell-borders.populated",
+      "host": "avalonia",
+      "routeId": "cell-borders",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.cell-borders.validation-error",
+      "host": "avalonia",
+      "routeId": "cell-borders",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
       "id": "avalonia.cell-shading.initial",
       "host": "avalonia",
       "routeId": "cell-shading",
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.change-case.initial",
+      "host": "avalonia",
+      "routeId": "change-case",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.change-case.populated",
+      "host": "avalonia",
+      "routeId": "change-case",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.change-case.validation-error",
+      "host": "avalonia",
+      "routeId": "change-case",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
       "limitation": null,
       "surfaceKind": "dialog"
     },
@@ -963,26 +1023,6 @@
       "surfaceKind": "dialog"
     },
     {
-      "id": "avalonia.font.tab-font",
-      "host": "avalonia",
-      "routeId": "font",
-      "state": "relevant-tab",
-      "tab": "Font",
-      "description": "Selected tab: Font.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
-      "id": "avalonia.font.tab-advanced",
-      "host": "avalonia",
-      "routeId": "font",
-      "state": "relevant-tab",
-      "tab": "Advanced",
-      "description": "Selected tab: Advanced.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
       "id": "avalonia.footnote-endnote-options.initial",
       "host": "avalonia",
       "routeId": "footnote-endnote-options",
@@ -1343,22 +1383,32 @@
       "surfaceKind": "dialog"
     },
     {
-      "id": "avalonia.insert-chart.tab-add-row",
+      "id": "avalonia.insert-index.initial",
       "host": "avalonia",
-      "routeId": "insert-chart",
-      "state": "relevant-tab",
-      "tab": "Add Row",
-      "description": "Selected tab: Add Row.",
+      "routeId": "insert-index",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
       "limitation": null,
       "surfaceKind": "dialog"
     },
     {
-      "id": "avalonia.insert-chart.tab-remove-row",
+      "id": "avalonia.insert-index.populated",
       "host": "avalonia",
-      "routeId": "insert-chart",
-      "state": "relevant-tab",
-      "tab": "Remove Row",
-      "description": "Selected tab: Remove Row.",
+      "routeId": "insert-index",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.insert-index.validation-error",
+      "host": "avalonia",
+      "routeId": "insert-index",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
       "limitation": null,
       "surfaceKind": "dialog"
     },
@@ -1626,6 +1676,36 @@
       "id": "avalonia.mark-citation.validation-error",
       "host": "avalonia",
       "routeId": "mark-citation",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.mark-index-entry.initial",
+      "host": "avalonia",
+      "routeId": "mark-index-entry",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.mark-index-entry.populated",
+      "host": "avalonia",
+      "routeId": "mark-index-entry",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.mark-index-entry.validation-error",
+      "host": "avalonia",
+      "routeId": "mark-index-entry",
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
@@ -1939,26 +2019,6 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
-      "id": "avalonia.paragraph.tab-indents-and-spacing",
-      "host": "avalonia",
-      "routeId": "paragraph",
-      "state": "relevant-tab",
-      "tab": "Indents and Spacing",
-      "description": "Selected tab: Indents and Spacing.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
-      "id": "avalonia.paragraph.tab-line-and-page-breaks",
-      "host": "avalonia",
-      "routeId": "paragraph",
-      "state": "relevant-tab",
-      "tab": "Line and Page Breaks",
-      "description": "Selected tab: Line and Page Breaks.",
       "limitation": null,
       "surfaceKind": "dialog"
     },
@@ -3073,36 +3133,6 @@
       "surfaceKind": "dialog"
     },
     {
-      "id": "wpf.borders-and-shading.tab-borders",
-      "host": "wpf",
-      "routeId": "borders-and-shading",
-      "state": "relevant-tab",
-      "tab": "Borders",
-      "description": "Selected tab: Borders.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
-      "id": "wpf.borders-and-shading.tab-page-border",
-      "host": "wpf",
-      "routeId": "borders-and-shading",
-      "state": "relevant-tab",
-      "tab": "Page Border",
-      "description": "Selected tab: Page Border.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
-      "id": "wpf.borders-and-shading.tab-shading",
-      "host": "wpf",
-      "routeId": "borders-and-shading",
-      "state": "relevant-tab",
-      "tab": "Shading",
-      "description": "Selected tab: Shading.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
       "id": "wpf.building-blocks-organizer.initial",
       "host": "wpf",
       "routeId": "building-blocks-organizer",
@@ -3126,6 +3156,36 @@
       "id": "wpf.building-blocks-organizer.validation-error",
       "host": "wpf",
       "routeId": "building-blocks-organizer",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.cell-borders.initial",
+      "host": "wpf",
+      "routeId": "cell-borders",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.cell-borders.populated",
+      "host": "wpf",
+      "routeId": "cell-borders",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.cell-borders.validation-error",
+      "host": "wpf",
+      "routeId": "cell-borders",
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
@@ -3256,6 +3316,66 @@
       "id": "wpf.columns.validation-error",
       "host": "wpf",
       "routeId": "columns",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.comment-list.initial",
+      "host": "wpf",
+      "routeId": "comment-list",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.comment-list.populated",
+      "host": "wpf",
+      "routeId": "comment-list",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.comment-list.validation-error",
+      "host": "wpf",
+      "routeId": "comment-list",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.comment-reply.initial",
+      "host": "wpf",
+      "routeId": "comment-reply",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.comment-reply.populated",
+      "host": "wpf",
+      "routeId": "comment-reply",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.comment-reply.validation-error",
+      "host": "wpf",
+      "routeId": "comment-reply",
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
@@ -3483,6 +3603,36 @@
       "surfaceKind": "dialog"
     },
     {
+      "id": "wpf.draw-table-dimension.initial",
+      "host": "wpf",
+      "routeId": "draw-table-dimension",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.draw-table-dimension.populated",
+      "host": "wpf",
+      "routeId": "draw-table-dimension",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.draw-table-dimension.validation-error",
+      "host": "wpf",
+      "routeId": "draw-table-dimension",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
       "id": "wpf.drop-cap-options.initial",
       "host": "wpf",
       "routeId": "drop-cap-options",
@@ -3506,6 +3656,36 @@
       "id": "wpf.drop-cap-options.validation-error",
       "host": "wpf",
       "routeId": "drop-cap-options",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.field-picker.initial",
+      "host": "wpf",
+      "routeId": "field-picker",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.field-picker.populated",
+      "host": "wpf",
+      "routeId": "field-picker",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.field-picker.validation-error",
+      "host": "wpf",
+      "routeId": "field-picker",
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
@@ -3573,26 +3753,6 @@
       "surfaceKind": "dialog"
     },
     {
-      "id": "wpf.font.tab-font",
-      "host": "wpf",
-      "routeId": "font",
-      "state": "relevant-tab",
-      "tab": "Font",
-      "description": "Selected tab: Font.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
-      "id": "wpf.font.tab-advanced",
-      "host": "wpf",
-      "routeId": "font",
-      "state": "relevant-tab",
-      "tab": "Advanced",
-      "description": "Selected tab: Advanced.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
       "id": "wpf.footnote-endnote-options.initial",
       "host": "wpf",
       "routeId": "footnote-endnote-options",
@@ -3616,6 +3776,36 @@
       "id": "wpf.footnote-endnote-options.validation-error",
       "host": "wpf",
       "routeId": "footnote-endnote-options",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.hyperlink.initial",
+      "host": "wpf",
+      "routeId": "hyperlink",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.hyperlink.populated",
+      "host": "wpf",
+      "routeId": "hyperlink",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.hyperlink.validation-error",
+      "host": "wpf",
+      "routeId": "hyperlink",
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
@@ -3863,12 +4053,32 @@
       "surfaceKind": "dialog"
     },
     {
-      "id": "wpf.insert-chart.tab-category",
+      "id": "wpf.insert-index.initial",
       "host": "wpf",
-      "routeId": "insert-chart",
-      "state": "relevant-tab",
-      "tab": "Category",
-      "description": "Selected tab: Category.",
+      "routeId": "insert-index",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.insert-index.populated",
+      "host": "wpf",
+      "routeId": "insert-index",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.insert-index.validation-error",
+      "host": "wpf",
+      "routeId": "insert-index",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
       "limitation": null,
       "surfaceKind": "dialog"
     },
@@ -3993,6 +4203,36 @@
       "surfaceKind": "dialog"
     },
     {
+      "id": "wpf.link-bookmark.initial",
+      "host": "wpf",
+      "routeId": "link-bookmark",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.link-bookmark.populated",
+      "host": "wpf",
+      "routeId": "link-bookmark",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.link-bookmark.validation-error",
+      "host": "wpf",
+      "routeId": "link-bookmark",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
       "id": "wpf.manage-styles.initial",
       "host": "wpf",
       "routeId": "manage-styles",
@@ -4076,6 +4316,36 @@
       "id": "wpf.mark-citation.validation-error",
       "host": "wpf",
       "routeId": "mark-citation",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.mark-index-entry.initial",
+      "host": "wpf",
+      "routeId": "mark-index-entry",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.mark-index-entry.populated",
+      "host": "wpf",
+      "routeId": "mark-index-entry",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.mark-index-entry.validation-error",
+      "host": "wpf",
+      "routeId": "mark-index-entry",
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
@@ -4173,22 +4443,32 @@
       "surfaceKind": "dialog"
     },
     {
-      "id": "wpf.options.tab-replace",
+      "id": "wpf.page-number-format.initial",
       "host": "wpf",
-      "routeId": "options",
-      "state": "relevant-tab",
-      "tab": "Replace",
-      "description": "Selected tab: Replace.",
+      "routeId": "page-number-format",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
       "limitation": null,
       "surfaceKind": "dialog"
     },
     {
-      "id": "wpf.options.tab-with",
+      "id": "wpf.page-number-format.populated",
       "host": "wpf",
-      "routeId": "options",
-      "state": "relevant-tab",
-      "tab": "With",
-      "description": "Selected tab: With.",
+      "routeId": "page-number-format",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.page-number-format.validation-error",
+      "host": "wpf",
+      "routeId": "page-number-format",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
       "limitation": null,
       "surfaceKind": "dialog"
     },
@@ -4283,26 +4563,6 @@
       "surfaceKind": "dialog"
     },
     {
-      "id": "wpf.paragraph.tab-indents-and-spacing",
-      "host": "wpf",
-      "routeId": "paragraph",
-      "state": "relevant-tab",
-      "tab": "Indents and Spacing",
-      "description": "Selected tab: Indents and Spacing.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
-      "id": "wpf.paragraph.tab-line-and-page-breaks",
-      "host": "wpf",
-      "routeId": "paragraph",
-      "state": "relevant-tab",
-      "tab": "Line and Page Breaks",
-      "description": "Selected tab: Line and Page Breaks.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
       "id": "wpf.password-prompt.initial",
       "host": "wpf",
       "routeId": "password-prompt",
@@ -4346,6 +4606,36 @@
       "id": "wpf.paste-special.validation-error",
       "host": "wpf",
       "routeId": "paste-special",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.proofing-language.initial",
+      "host": "wpf",
+      "routeId": "proofing-language",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.proofing-language.populated",
+      "host": "wpf",
+      "routeId": "proofing-language",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.proofing-language.validation-error",
+      "host": "wpf",
+      "routeId": "proofing-language",
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
@@ -4413,6 +4703,36 @@
       "surfaceKind": "dialog"
     },
     {
+      "id": "wpf.save-compatibility-warning.initial",
+      "host": "wpf",
+      "routeId": "save-compatibility-warning",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.save-compatibility-warning.populated",
+      "host": "wpf",
+      "routeId": "save-compatibility-warning",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.save-compatibility-warning.validation-error",
+      "host": "wpf",
+      "routeId": "save-compatibility-warning",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
       "id": "wpf.screen-clip-overlay.open",
       "host": "wpf",
       "routeId": "screen-clip-overlay",
@@ -4421,6 +4741,36 @@
       "description": "Opened app-owned overlay or Backstage pane state.",
       "limitation": null,
       "surfaceKind": "overlay"
+    },
+    {
+      "id": "wpf.screen-tip.initial",
+      "host": "wpf",
+      "routeId": "screen-tip",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.screen-tip.populated",
+      "host": "wpf",
+      "routeId": "screen-tip",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.screen-tip.validation-error",
+      "host": "wpf",
+      "routeId": "screen-tip",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.sort.initial",
@@ -4623,6 +4973,36 @@
       "surfaceKind": "dialog"
     },
     {
+      "id": "wpf.table-text-conversion.initial",
+      "host": "wpf",
+      "routeId": "table-text-conversion",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.table-text-conversion.populated",
+      "host": "wpf",
+      "routeId": "table-text-conversion",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.table-text-conversion.validation-error",
+      "host": "wpf",
+      "routeId": "table-text-conversion",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
       "id": "wpf.tabs.initial",
       "host": "wpf",
       "routeId": "tabs",
@@ -4739,16 +5119,6 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
-      "id": "wpf.zoom.tab-zoom-to",
-      "host": "wpf",
-      "routeId": "zoom",
-      "state": "relevant-tab",
-      "tab": "Zoom to",
-      "description": "Selected tab: Zoom to.",
       "limitation": null,
       "surfaceKind": "dialog"
     }
