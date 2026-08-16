@@ -10,6 +10,7 @@
                     "docs/parity/dialog-visual-assets/wpf-capture/manifest.json",
                     "docs/parity/dialog-visual-assets/avalonia-capture/manifest.json",
                     "docs/parity/freex-excel-foreground-capture-2026-08-16.md",
+                    "docs/parity/freex-excel-chrome-comparison.md",
                     "docs/parity/freex-excel-com-baseline-2026-08-14/manifest.json",
                     "docs/parity/freew-command-inventory.json",
                     "docs/parity/freew-dialog-harness/freew_dialog_route_inventory.json",
@@ -95,6 +96,7 @@
                                                                   "docs/parity/dialog-visual-assets/wpf-capture/manifest.json",
                                                                   "docs/parity/dialog-visual-assets/avalonia-capture/manifest.json",
                                                                   "docs/parity/freex-excel-foreground-capture-2026-08-16.md",
+                                                                  "docs/parity/freex-excel-chrome-comparison.md",
                                                                   "docs/parity/freex-excel-com-baseline-2026-08-14/manifest.json"
                                                               ],
                                               "routeCoverage":  {
@@ -123,10 +125,11 @@
                                                                        "captureMode":  "foreground-owned Excel ribbon/dialog capture plus generated WPF/Avalonia dialog render manifests",
                                                                        "noComStatus":  "not-applicable",
                                                                        "limitations":  [
-                                                                                           "The 2026-08-16 interactive run captured 36 Excel ribbon states, including Draw at all four widths, and six guarded popup/dialog surfaces; it is Office UI coverage, not a pixel-level FreeX-versus-Excel chrome comparison.",
+                                                                                           "The 2026-08-16 interactive run captured 36 Excel ribbon states, including Draw at all four widths, and six guarded popup/dialog surfaces. Its reproducible Excel-to-WPF chrome report has 27 provisional fixed-viewport rows (17.059% mean RGB delta; 17.802% maximum) and nine maximized coverage-only rows; these are triage values, not an acceptance threshold.",
                                                                                            "The ribbon harness creates a blank workbook before tab discovery so the enabled Draw tab is materialized; the current manifest records no unavailable-tab skips.",
                                                                                            "WPF captured 116/116 app-host surfaces and Avalonia captured 180/181; popup.nameBoxDropdown remains intentionally diagnostic-only.",
-                                                                                           "The committed references cover nine chart ranges, seven native cell-style ranges, and 29 pivot-table ranges; they do not cover foreground Excel ribbon or dialog chrome. The guarded foreground ribbon/dialog capture harness requires an interactive foreground desktop, which was unavailable during the 2026-08-16 refresh."
+                                                                                           "Avalonia has no foreground desktop/ribbon capture contract, so the Office-to-Avalonia chrome comparison count is explicitly zero. ",
+                                                                                           "The committed COM range references cover nine chart ranges, seven native cell-style ranges, and 29 pivot-table ranges; they are distinct from the 2026-08-16 interactive foreground evidence (36 Excel ribbon states including Draw and six popup/dialog tours). The associated WPF ribbon comparison has 27 provisional fixed-viewport rows; Avalonia desktop chrome has no capture contract yet, so it has zero valid Office-to-Avalonia chrome comparisons."
                                                                                        ]
                                                                    },
                                               "authoritativeMicrosoftOfficeBaseline":  {
@@ -134,7 +137,7 @@
                                                                                            "available":  true,
                                                                                            "status":  "available-with-known-deltas",
                                                                                            "artifactCount":  45,
-                                                                                           "limitation":  "The committed references cover nine chart ranges, seven native cell-style ranges, and 29 pivot-table ranges; they do not cover foreground Excel ribbon or dialog chrome. The guarded foreground ribbon/dialog capture harness requires an interactive foreground desktop, which was unavailable during the 2026-08-16 refresh.",
+                                                                                           "limitation":  "The committed COM range references cover nine chart ranges, seven native cell-style ranges, and 29 pivot-table ranges; they are distinct from the 2026-08-16 interactive foreground evidence (36 Excel ribbon states including Draw and six popup/dialog tours). The associated WPF ribbon comparison has 27 provisional fixed-viewport rows; Avalonia desktop chrome has no capture contract yet, so it has zero valid Office-to-Avalonia chrome comparisons.",
                                                                                            "captureMode":  "Excel COM range export paired with FreeX SheetGridImageCompare"
                                                                                        },
                                               "claimBoundary":  "Coverage, manifest pairing, and DPI-normalized size comparability only; do not read these fields as visual parity."
