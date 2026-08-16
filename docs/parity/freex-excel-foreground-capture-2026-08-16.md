@@ -56,9 +56,13 @@ and `750` logical widths, a 300-logical-pixel top band, and
 matrix and verify that their own process/window title owns foreground before
 input and screen capture.
 
-The first current-session WPF recapture attempt was correctly blocked before
-any tab selection when Windows Default Lock Screen owned foreground. The
-existing committed WPF matrix was restored unchanged, and Avalonia was not
-attempted under the same blocker. The WPF/Avalonia matrices remain runtime work
-for an unlocked interactive desktop; deterministic dialog images are not
-substitutes for this foreground-chrome lane.
+The completed current-session run retained 36 WPF and 36 Avalonia foreground
+states, including all four Draw widths. The fixed-width comparison has 27
+valid WPF-to-Excel rows (13.937% mean / 14.399% maximum RGB delta) and 27
+Avalonia-to-Excel rows (15.639% mean / 16.048% maximum); nine maximized rows
+remain coverage-only. These are triage metrics, not parity acceptance.
+
+The initial lock-screen/apphost interruptions were resolved without accepting
+partial evidence. The WPF apphost now searches the installed global runtime
+rather than a stale user-local `DOTNET_ROOT`, and both capture scripts retain
+only a complete guarded matrix.

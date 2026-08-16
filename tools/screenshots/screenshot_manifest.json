@@ -3,7 +3,7 @@
     "EvidenceFamily":  "ribbon",
     "EvidenceSubject":  "freex",
     "EvidenceApp":  "FreeX",
-    "OutputDirectory":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots",
+    "OutputDirectory":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots",
     "OutputNaming":  "ribbon_\u003cWidthLabel\u003e_\u003cRibbonTab\u003e.png",
     "CatalogEvidenceTarget":  "docs/testing/ui-test-catalog.md",
     "WidthSource":  "RibbonScreenshotTourPlanner.DefaultWidths",
@@ -13,7 +13,7 @@
     "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
     "ForegroundGuard":  {
                             "Required":  true,
-                            "ExpectedProcessId":  66652,
+                            "ExpectedProcessId":  5516,
                             "ExpectedWindowTitle":  "Book1 - FreeX",
                             "Policy":  "Abort and clear current PNG/manifest evidence unless the expected process and window title own the foreground window immediately before global input and screen capture."
                         },
@@ -26,13 +26,13 @@
     "WindowBounds":  {
                          "Left":  0,
                          "Top":  0,
-                         "Right":  750,
-                         "Bottom":  768,
-                         "Width":  750,
-                         "Height":  768
+                         "Right":  938,
+                         "Bottom":  960,
+                         "Width":  938,
+                         "Height":  960
                      },
     "CaptureLogicalHeight":  300,
-    "CapturePhysicalHeight":  300,
+    "CapturePhysicalHeight":  375,
     "Widths":  [
                    {
                        "Label":  "max",
@@ -173,16 +173,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_max_Home.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_max_Home.png",
-                         "Width":  1920,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_max_Home.png",
+                         "Width":  1600,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1920,
-                                              "Bottom":  1080,
-                                              "Width":  1920,
-                                              "Height":  1080
+                                              "Right":  1600,
+                                              "Bottom":  900,
+                                              "Width":  1600,
+                                              "Height":  900
                                           }
                      },
                      {
@@ -200,16 +200,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_max_Insert.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_max_Insert.png",
-                         "Width":  1920,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_max_Insert.png",
+                         "Width":  1600,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1920,
-                                              "Bottom":  1080,
-                                              "Width":  1920,
-                                              "Height":  1080
+                                              "Right":  1600,
+                                              "Bottom":  900,
+                                              "Width":  1600,
+                                              "Height":  900
                                           }
                      },
                      {
@@ -227,16 +227,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_max_Draw.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_max_Draw.png",
-                         "Width":  1920,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_max_Draw.png",
+                         "Width":  1600,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1920,
-                                              "Bottom":  1080,
-                                              "Width":  1920,
-                                              "Height":  1080
+                                              "Right":  1600,
+                                              "Bottom":  900,
+                                              "Width":  1600,
+                                              "Height":  900
                                           }
                      },
                      {
@@ -254,16 +254,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_max_Page_Layout.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_max_Page_Layout.png",
-                         "Width":  1920,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_max_Page_Layout.png",
+                         "Width":  1600,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1920,
-                                              "Bottom":  1080,
-                                              "Width":  1920,
-                                              "Height":  1080
+                                              "Right":  1600,
+                                              "Bottom":  900,
+                                              "Width":  1600,
+                                              "Height":  900
                                           }
                      },
                      {
@@ -281,16 +281,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_max_Formulas.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_max_Formulas.png",
-                         "Width":  1920,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_max_Formulas.png",
+                         "Width":  1600,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1920,
-                                              "Bottom":  1080,
-                                              "Width":  1920,
-                                              "Height":  1080
+                                              "Right":  1600,
+                                              "Bottom":  900,
+                                              "Width":  1600,
+                                              "Height":  900
                                           }
                      },
                      {
@@ -308,16 +308,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_max_Data.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_max_Data.png",
-                         "Width":  1920,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_max_Data.png",
+                         "Width":  1600,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1920,
-                                              "Bottom":  1080,
-                                              "Width":  1920,
-                                              "Height":  1080
+                                              "Right":  1600,
+                                              "Bottom":  900,
+                                              "Width":  1600,
+                                              "Height":  900
                                           }
                      },
                      {
@@ -335,16 +335,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_max_Review.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_max_Review.png",
-                         "Width":  1920,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_max_Review.png",
+                         "Width":  1600,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1920,
-                                              "Bottom":  1080,
-                                              "Width":  1920,
-                                              "Height":  1080
+                                              "Right":  1600,
+                                              "Bottom":  900,
+                                              "Width":  1600,
+                                              "Height":  900
                                           }
                      },
                      {
@@ -362,16 +362,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_max_View.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_max_View.png",
-                         "Width":  1920,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_max_View.png",
+                         "Width":  1600,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1920,
-                                              "Bottom":  1080,
-                                              "Width":  1920,
-                                              "Height":  1080
+                                              "Right":  1600,
+                                              "Bottom":  900,
+                                              "Width":  1600,
+                                              "Height":  900
                                           }
                      },
                      {
@@ -389,16 +389,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_max_Help.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_max_Help.png",
-                         "Width":  1920,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_max_Help.png",
+                         "Width":  1600,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1920,
-                                              "Bottom":  1080,
-                                              "Width":  1920,
-                                              "Height":  1080
+                                              "Right":  1600,
+                                              "Bottom":  900,
+                                              "Width":  1600,
+                                              "Height":  900
                                           }
                      },
                      {
@@ -416,16 +416,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_1100_Home.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_1100_Home.png",
-                         "Width":  1100,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_1100_Home.png",
+                         "Width":  1375,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1100,
-                                              "Bottom":  768,
-                                              "Width":  1100,
-                                              "Height":  768
+                                              "Right":  1375,
+                                              "Bottom":  960,
+                                              "Width":  1375,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -443,16 +443,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_1100_Insert.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_1100_Insert.png",
-                         "Width":  1100,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_1100_Insert.png",
+                         "Width":  1375,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1100,
-                                              "Bottom":  768,
-                                              "Width":  1100,
-                                              "Height":  768
+                                              "Right":  1375,
+                                              "Bottom":  960,
+                                              "Width":  1375,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -470,16 +470,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_1100_Draw.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_1100_Draw.png",
-                         "Width":  1100,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_1100_Draw.png",
+                         "Width":  1375,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1100,
-                                              "Bottom":  768,
-                                              "Width":  1100,
-                                              "Height":  768
+                                              "Right":  1375,
+                                              "Bottom":  960,
+                                              "Width":  1375,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -497,16 +497,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_1100_Page_Layout.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_1100_Page_Layout.png",
-                         "Width":  1100,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_1100_Page_Layout.png",
+                         "Width":  1375,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1100,
-                                              "Bottom":  768,
-                                              "Width":  1100,
-                                              "Height":  768
+                                              "Right":  1375,
+                                              "Bottom":  960,
+                                              "Width":  1375,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -524,16 +524,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_1100_Formulas.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_1100_Formulas.png",
-                         "Width":  1100,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_1100_Formulas.png",
+                         "Width":  1375,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1100,
-                                              "Bottom":  768,
-                                              "Width":  1100,
-                                              "Height":  768
+                                              "Right":  1375,
+                                              "Bottom":  960,
+                                              "Width":  1375,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -551,16 +551,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_1100_Data.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_1100_Data.png",
-                         "Width":  1100,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_1100_Data.png",
+                         "Width":  1375,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1100,
-                                              "Bottom":  768,
-                                              "Width":  1100,
-                                              "Height":  768
+                                              "Right":  1375,
+                                              "Bottom":  960,
+                                              "Width":  1375,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -578,16 +578,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_1100_Review.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_1100_Review.png",
-                         "Width":  1100,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_1100_Review.png",
+                         "Width":  1375,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1100,
-                                              "Bottom":  768,
-                                              "Width":  1100,
-                                              "Height":  768
+                                              "Right":  1375,
+                                              "Bottom":  960,
+                                              "Width":  1375,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -605,16 +605,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_1100_View.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_1100_View.png",
-                         "Width":  1100,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_1100_View.png",
+                         "Width":  1375,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1100,
-                                              "Bottom":  768,
-                                              "Width":  1100,
-                                              "Height":  768
+                                              "Right":  1375,
+                                              "Bottom":  960,
+                                              "Width":  1375,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -632,16 +632,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_1100_Help.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_1100_Help.png",
-                         "Width":  1100,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_1100_Help.png",
+                         "Width":  1375,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  1100,
-                                              "Bottom":  768,
-                                              "Width":  1100,
-                                              "Height":  768
+                                              "Right":  1375,
+                                              "Bottom":  960,
+                                              "Width":  1375,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -659,16 +659,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_900_Home.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_900_Home.png",
-                         "Width":  900,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_900_Home.png",
+                         "Width":  1125,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  900,
-                                              "Bottom":  768,
-                                              "Width":  900,
-                                              "Height":  768
+                                              "Right":  1125,
+                                              "Bottom":  960,
+                                              "Width":  1125,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -686,16 +686,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_900_Insert.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_900_Insert.png",
-                         "Width":  900,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_900_Insert.png",
+                         "Width":  1125,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  900,
-                                              "Bottom":  768,
-                                              "Width":  900,
-                                              "Height":  768
+                                              "Right":  1125,
+                                              "Bottom":  960,
+                                              "Width":  1125,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -713,16 +713,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_900_Draw.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_900_Draw.png",
-                         "Width":  900,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_900_Draw.png",
+                         "Width":  1125,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  900,
-                                              "Bottom":  768,
-                                              "Width":  900,
-                                              "Height":  768
+                                              "Right":  1125,
+                                              "Bottom":  960,
+                                              "Width":  1125,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -740,16 +740,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_900_Page_Layout.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_900_Page_Layout.png",
-                         "Width":  900,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_900_Page_Layout.png",
+                         "Width":  1125,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  900,
-                                              "Bottom":  768,
-                                              "Width":  900,
-                                              "Height":  768
+                                              "Right":  1125,
+                                              "Bottom":  960,
+                                              "Width":  1125,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -767,16 +767,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_900_Formulas.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_900_Formulas.png",
-                         "Width":  900,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_900_Formulas.png",
+                         "Width":  1125,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  900,
-                                              "Bottom":  768,
-                                              "Width":  900,
-                                              "Height":  768
+                                              "Right":  1125,
+                                              "Bottom":  960,
+                                              "Width":  1125,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -794,16 +794,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_900_Data.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_900_Data.png",
-                         "Width":  900,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_900_Data.png",
+                         "Width":  1125,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  900,
-                                              "Bottom":  768,
-                                              "Width":  900,
-                                              "Height":  768
+                                              "Right":  1125,
+                                              "Bottom":  960,
+                                              "Width":  1125,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -821,16 +821,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_900_Review.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_900_Review.png",
-                         "Width":  900,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_900_Review.png",
+                         "Width":  1125,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  900,
-                                              "Bottom":  768,
-                                              "Width":  900,
-                                              "Height":  768
+                                              "Right":  1125,
+                                              "Bottom":  960,
+                                              "Width":  1125,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -848,16 +848,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_900_View.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_900_View.png",
-                         "Width":  900,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_900_View.png",
+                         "Width":  1125,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  900,
-                                              "Bottom":  768,
-                                              "Width":  900,
-                                              "Height":  768
+                                              "Right":  1125,
+                                              "Bottom":  960,
+                                              "Width":  1125,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -875,16 +875,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_900_Help.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_900_Help.png",
-                         "Width":  900,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_900_Help.png",
+                         "Width":  1125,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  900,
-                                              "Bottom":  768,
-                                              "Width":  900,
-                                              "Height":  768
+                                              "Right":  1125,
+                                              "Bottom":  960,
+                                              "Width":  1125,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -902,16 +902,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_750_Home.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_750_Home.png",
-                         "Width":  750,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_750_Home.png",
+                         "Width":  938,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  750,
-                                              "Bottom":  768,
-                                              "Width":  750,
-                                              "Height":  768
+                                              "Right":  938,
+                                              "Bottom":  960,
+                                              "Width":  938,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -929,16 +929,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_750_Insert.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_750_Insert.png",
-                         "Width":  750,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_750_Insert.png",
+                         "Width":  938,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  750,
-                                              "Bottom":  768,
-                                              "Width":  750,
-                                              "Height":  768
+                                              "Right":  938,
+                                              "Bottom":  960,
+                                              "Width":  938,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -956,16 +956,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_750_Draw.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_750_Draw.png",
-                         "Width":  750,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_750_Draw.png",
+                         "Width":  938,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  750,
-                                              "Bottom":  768,
-                                              "Width":  750,
-                                              "Height":  768
+                                              "Right":  938,
+                                              "Bottom":  960,
+                                              "Width":  938,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -983,16 +983,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_750_Page_Layout.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_750_Page_Layout.png",
-                         "Width":  750,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_750_Page_Layout.png",
+                         "Width":  938,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  750,
-                                              "Bottom":  768,
-                                              "Width":  750,
-                                              "Height":  768
+                                              "Right":  938,
+                                              "Bottom":  960,
+                                              "Width":  938,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -1010,16 +1010,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_750_Formulas.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_750_Formulas.png",
-                         "Width":  750,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_750_Formulas.png",
+                         "Width":  938,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  750,
-                                              "Bottom":  768,
-                                              "Width":  750,
-                                              "Height":  768
+                                              "Right":  938,
+                                              "Bottom":  960,
+                                              "Width":  938,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -1037,16 +1037,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_750_Data.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_750_Data.png",
-                         "Width":  750,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_750_Data.png",
+                         "Width":  938,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  750,
-                                              "Bottom":  768,
-                                              "Width":  750,
-                                              "Height":  768
+                                              "Right":  938,
+                                              "Bottom":  960,
+                                              "Width":  938,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -1064,16 +1064,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_750_Review.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_750_Review.png",
-                         "Width":  750,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_750_Review.png",
+                         "Width":  938,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  750,
-                                              "Bottom":  768,
-                                              "Width":  750,
-                                              "Height":  768
+                                              "Right":  938,
+                                              "Bottom":  960,
+                                              "Width":  938,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -1091,16 +1091,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_750_View.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_750_View.png",
-                         "Width":  750,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_750_View.png",
+                         "Width":  938,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  750,
-                                              "Bottom":  768,
-                                              "Width":  750,
-                                              "Height":  768
+                                              "Right":  938,
+                                              "Bottom":  960,
+                                              "Width":  938,
+                                              "Height":  960
                                           }
                      },
                      {
@@ -1118,16 +1118,16 @@
                          "CaptureMethod":  "CopyFromScreen-window-rectangle-top-band",
                          "CaptureStatus":  "complete",
                          "FileName":  "ribbon_750_Help.png",
-                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s1-ribbon-closeout-20260611\\tools\\screenshots\\ribbon_750_Help.png",
-                         "Width":  750,
-                         "Height":  300,
+                         "Path":  "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-interactive-completion-20260816\\tools\\screenshots\\ribbon_750_Help.png",
+                         "Width":  938,
+                         "Height":  375,
                          "WindowBounds":  {
                                               "Left":  0,
                                               "Top":  0,
-                                              "Right":  750,
-                                              "Bottom":  768,
-                                              "Width":  750,
-                                              "Height":  768
+                                              "Right":  938,
+                                              "Bottom":  960,
+                                              "Width":  938,
+                                              "Height":  960
                                           }
                      }
                  ]
