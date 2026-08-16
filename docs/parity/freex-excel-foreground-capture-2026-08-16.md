@@ -7,13 +7,15 @@ coverage and reference state; they do not establish pixel-level Excel parity.
 ## Ribbon matrix
 
 `tools/screenshot_excel.ps1 -Widths max,1100,900,750` completed with a
-foreground-owned Excel window at 120 DPI.  It retained 32 top-band captures:
-the eight tabs exposed by this Office profile (`Home`, `Insert`, `Page Layout`,
-`Formulas`, `Data`, `Review`, `View`, and `Help`) at each of the four widths.
+foreground-owned Excel window at 120 DPI. It retained 36 top-band captures:
+the nine tabs exposed by this Office profile (`Home`, `Insert`, `Draw`, `Page
+Layout`, `Formulas`, `Data`, `Review`, `View`, and `Help`) at each of the four
+widths.
 
-The `Draw` tab is not enabled in the installed Office profile.  The manifest
-records four deliberate `skipped-unavailable-excel-tab` entries rather than
-misrepresenting the matrix as a nine-tab Excel baseline.
+The capture harness now creates a `Blank workbook` before discovering tabs.
+The prior `/e` workbook-less launch did not materialize the enabled `Draw`
+tab, even though it is selected in Excel's Ribbon customization. The current
+manifest has no skipped tabs and includes four `Draw` captures.
 
 Artifacts and metadata: `tools/screenshots_excel/` and
 `tools/screenshots_excel/screenshot_manifest.json`.
