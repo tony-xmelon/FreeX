@@ -16,8 +16,14 @@ This slice turns the remaining PowerPoint-authoritative render baseline debt int
 dotnet run --project tools\FreeP.RenderCompare\FreeP.RenderCompare.csproj --configuration Release -- --corpus-summary tools\FreeP.RenderCompare\corpus --manifest artifacts\freep-powerpoint-baseline-manifest.json --require-complete-refs --allow-missing-powerpoint
 ```
 
-## Remaining Gaps
+## Current Status
 
-- Generate the missing `tools/FreeP.RenderCompare/corpus/pptx-ref/<deck>/slide-*.png` baselines on a machine with desktop Microsoft PowerPoint COM registered.
-- Re-run the verifier without relying on the missing-COM skip once references are complete.
-- Continue full WPF/Avalonia/PowerPoint diff runs after all corpus references are present.
+All 27 corpus decks now have tracked PowerPoint references: `53/53` slide PNGs.
+The former ten-slide `15-smartart-grouped-list` gap was captured at 1280x720
+through `PowerPoint.Application` COM on 2026-08-16 and then re-exported through
+the isolated validator with `10/10` matching reference hashes. The committed
+baseline metadata is `docs/parity/freep-powerpoint-baseline-2026-08-14.json`.
+
+The remaining work is visual comparison and renderer tuning against these
+references; complete corpus coverage alone is not a full PowerPoint visual-parity
+claim.

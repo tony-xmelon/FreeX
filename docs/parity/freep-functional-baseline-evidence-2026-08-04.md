@@ -9,7 +9,8 @@ PowerPoint parity.
 - The corpus contains 27 decks and 53 slides.
 - The complete reference inventory is now `27/27` decks and `53/53` slide PNGs.
 - `15-smartart-grouped-list.pptx` was missing references at the start of this
-  run; a fresh PowerPoint COM export produced all 10 slides successfully.
+  run; a fresh PowerPoint COM export on 2026-08-16 produced all 10 slides
+  successfully and an isolated re-export matched all `10/10` new PNG hashes.
 - The authoritative command used for the missing deck was:
   `dotnet run --project tools/FreeP.RenderCompare/FreeP.RenderCompare.csproj --configuration Release --no-restore -- --powerpoint-export tools/FreeP.RenderCompare/corpus/15-smartart-grouped-list.pptx tools/FreeP.RenderCompare/corpus/pptx-ref/15-smartart-grouped-list --width 1280 --height 720`
 
