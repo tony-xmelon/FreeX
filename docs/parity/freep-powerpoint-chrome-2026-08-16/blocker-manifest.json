@@ -1,8 +1,0 @@
-﻿{
-    "schemaVersion":  1,
-    "tool":  "tools/Capture-FreePPowerPointChrome.ps1",
-    "captureStatus":  "blocked",
-    "reason":  "Blocked: no foreground window before PowerPoint chrome capture setup.",
-    "generatedAtUtc":  "2026-08-16T13:05:57.9105658Z",
-    "policy":  "No partial evidence is retained when the expected PowerPoint-owned foreground window cannot be validated."
-}

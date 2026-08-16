@@ -1,7 +1,7 @@
 {
   "schema": "freex.freew.shell-visual-capture.v1",
   "renderer": "Avalonia headless Skia (UseHeadlessDrawing=false)",
-  "capturedUtc": "2026-08-16T13:11:09.802133+00:00",
+  "capturedUtc": "2026-08-16T14:29:00.9870079+00:00",
   "widths": [
     1500,
     1100,
@@ -15,280 +15,576 @@
       "height": 720,
       "tabName": "home",
       "tabId": "home",
-      "fileName": "shell-1500x720-home.png"
+      "fileName": "shell-1500x720-home.png",
+      "fixture": "static"
     },
     {
       "width": 1500,
       "height": 720,
       "tabName": "insert",
       "tabId": "insert",
-      "fileName": "shell-1500x720-insert.png"
+      "fileName": "shell-1500x720-insert.png",
+      "fixture": "static"
     },
     {
       "width": 1500,
       "height": 720,
       "tabName": "layout",
       "tabId": "layout",
-      "fileName": "shell-1500x720-layout.png"
+      "fileName": "shell-1500x720-layout.png",
+      "fixture": "static"
     },
     {
       "width": 1500,
       "height": 720,
       "tabName": "design",
       "tabId": "design",
-      "fileName": "shell-1500x720-design.png"
+      "fileName": "shell-1500x720-design.png",
+      "fixture": "static"
     },
     {
       "width": 1500,
       "height": 720,
       "tabName": "view",
       "tabId": "view",
-      "fileName": "shell-1500x720-view.png"
+      "fileName": "shell-1500x720-view.png",
+      "fixture": "static"
     },
     {
       "width": 1500,
       "height": 720,
       "tabName": "review",
       "tabId": "review",
-      "fileName": "shell-1500x720-review.png"
+      "fileName": "shell-1500x720-review.png",
+      "fixture": "static"
     },
     {
       "width": 1500,
       "height": 720,
       "tabName": "developer",
       "tabId": "developer",
-      "fileName": "shell-1500x720-developer.png"
+      "fileName": "shell-1500x720-developer.png",
+      "fixture": "static"
     },
     {
       "width": 1500,
       "height": 720,
       "tabName": "references",
       "tabId": "references",
-      "fileName": "shell-1500x720-references.png"
+      "fileName": "shell-1500x720-references.png",
+      "fixture": "static"
     },
     {
       "width": 1500,
       "height": 720,
       "tabName": "mailings",
       "tabId": "mailings",
-      "fileName": "shell-1500x720-mailings.png"
+      "fileName": "shell-1500x720-mailings.png",
+      "fixture": "static"
     },
     {
       "width": 1500,
       "height": 720,
       "tabName": "help",
       "tabId": "help",
-      "fileName": "shell-1500x720-help.png"
+      "fileName": "shell-1500x720-help.png",
+      "fixture": "static"
+    },
+    {
+      "width": 1500,
+      "height": 720,
+      "tabName": "drawing-format",
+      "tabId": "drawing-format",
+      "fileName": "shell-1500x720-context-drawing-format.png",
+      "fixture": "drawing"
+    },
+    {
+      "width": 1500,
+      "height": 720,
+      "tabName": "picture-format",
+      "tabId": "picture-format",
+      "fileName": "shell-1500x720-context-picture-format.png",
+      "fixture": "picture"
+    },
+    {
+      "width": 1500,
+      "height": 720,
+      "tabName": "chart-design",
+      "tabId": "chart-design",
+      "fileName": "shell-1500x720-context-chart-design.png",
+      "fixture": "chart"
+    },
+    {
+      "width": 1500,
+      "height": 720,
+      "tabName": "chart-format",
+      "tabId": "chart-format",
+      "fileName": "shell-1500x720-context-chart-format.png",
+      "fixture": "chart"
+    },
+    {
+      "width": 1500,
+      "height": 720,
+      "tabName": "smartart-design",
+      "tabId": "smartart-design",
+      "fileName": "shell-1500x720-context-smartart-design.png",
+      "fixture": "smartart"
+    },
+    {
+      "width": 1500,
+      "height": 720,
+      "tabName": "table-design",
+      "tabId": "table-design",
+      "fileName": "shell-1500x720-context-table-design.png",
+      "fixture": "table"
+    },
+    {
+      "width": 1500,
+      "height": 720,
+      "tabName": "table-layout",
+      "tabId": "table-layout",
+      "fileName": "shell-1500x720-context-table-layout.png",
+      "fixture": "table"
+    },
+    {
+      "width": 1500,
+      "height": 720,
+      "tabName": "header-footer-design",
+      "tabId": "header-footer-design",
+      "fileName": "shell-1500x720-context-header-footer-design.png",
+      "fixture": "header-footer"
     },
     {
       "width": 1100,
       "height": 720,
       "tabName": "home",
       "tabId": "home",
-      "fileName": "shell-1100x720-home.png"
+      "fileName": "shell-1100x720-home.png",
+      "fixture": "static"
     },
     {
       "width": 1100,
       "height": 720,
       "tabName": "insert",
       "tabId": "insert",
-      "fileName": "shell-1100x720-insert.png"
+      "fileName": "shell-1100x720-insert.png",
+      "fixture": "static"
     },
     {
       "width": 1100,
       "height": 720,
       "tabName": "layout",
       "tabId": "layout",
-      "fileName": "shell-1100x720-layout.png"
+      "fileName": "shell-1100x720-layout.png",
+      "fixture": "static"
     },
     {
       "width": 1100,
       "height": 720,
       "tabName": "design",
       "tabId": "design",
-      "fileName": "shell-1100x720-design.png"
+      "fileName": "shell-1100x720-design.png",
+      "fixture": "static"
     },
     {
       "width": 1100,
       "height": 720,
       "tabName": "view",
       "tabId": "view",
-      "fileName": "shell-1100x720-view.png"
+      "fileName": "shell-1100x720-view.png",
+      "fixture": "static"
     },
     {
       "width": 1100,
       "height": 720,
       "tabName": "review",
       "tabId": "review",
-      "fileName": "shell-1100x720-review.png"
+      "fileName": "shell-1100x720-review.png",
+      "fixture": "static"
     },
     {
       "width": 1100,
       "height": 720,
       "tabName": "developer",
       "tabId": "developer",
-      "fileName": "shell-1100x720-developer.png"
+      "fileName": "shell-1100x720-developer.png",
+      "fixture": "static"
     },
     {
       "width": 1100,
       "height": 720,
       "tabName": "references",
       "tabId": "references",
-      "fileName": "shell-1100x720-references.png"
+      "fileName": "shell-1100x720-references.png",
+      "fixture": "static"
     },
     {
       "width": 1100,
       "height": 720,
       "tabName": "mailings",
       "tabId": "mailings",
-      "fileName": "shell-1100x720-mailings.png"
+      "fileName": "shell-1100x720-mailings.png",
+      "fixture": "static"
     },
     {
       "width": 1100,
       "height": 720,
       "tabName": "help",
       "tabId": "help",
-      "fileName": "shell-1100x720-help.png"
+      "fileName": "shell-1100x720-help.png",
+      "fixture": "static"
+    },
+    {
+      "width": 1100,
+      "height": 720,
+      "tabName": "drawing-format",
+      "tabId": "drawing-format",
+      "fileName": "shell-1100x720-context-drawing-format.png",
+      "fixture": "drawing"
+    },
+    {
+      "width": 1100,
+      "height": 720,
+      "tabName": "picture-format",
+      "tabId": "picture-format",
+      "fileName": "shell-1100x720-context-picture-format.png",
+      "fixture": "picture"
+    },
+    {
+      "width": 1100,
+      "height": 720,
+      "tabName": "chart-design",
+      "tabId": "chart-design",
+      "fileName": "shell-1100x720-context-chart-design.png",
+      "fixture": "chart"
+    },
+    {
+      "width": 1100,
+      "height": 720,
+      "tabName": "chart-format",
+      "tabId": "chart-format",
+      "fileName": "shell-1100x720-context-chart-format.png",
+      "fixture": "chart"
+    },
+    {
+      "width": 1100,
+      "height": 720,
+      "tabName": "smartart-design",
+      "tabId": "smartart-design",
+      "fileName": "shell-1100x720-context-smartart-design.png",
+      "fixture": "smartart"
+    },
+    {
+      "width": 1100,
+      "height": 720,
+      "tabName": "table-design",
+      "tabId": "table-design",
+      "fileName": "shell-1100x720-context-table-design.png",
+      "fixture": "table"
+    },
+    {
+      "width": 1100,
+      "height": 720,
+      "tabName": "table-layout",
+      "tabId": "table-layout",
+      "fileName": "shell-1100x720-context-table-layout.png",
+      "fixture": "table"
+    },
+    {
+      "width": 1100,
+      "height": 720,
+      "tabName": "header-footer-design",
+      "tabId": "header-footer-design",
+      "fileName": "shell-1100x720-context-header-footer-design.png",
+      "fixture": "header-footer"
     },
     {
       "width": 900,
       "height": 720,
       "tabName": "home",
       "tabId": "home",
-      "fileName": "shell-900x720-home.png"
+      "fileName": "shell-900x720-home.png",
+      "fixture": "static"
     },
     {
       "width": 900,
       "height": 720,
       "tabName": "insert",
       "tabId": "insert",
-      "fileName": "shell-900x720-insert.png"
+      "fileName": "shell-900x720-insert.png",
+      "fixture": "static"
     },
     {
       "width": 900,
       "height": 720,
       "tabName": "layout",
       "tabId": "layout",
-      "fileName": "shell-900x720-layout.png"
+      "fileName": "shell-900x720-layout.png",
+      "fixture": "static"
     },
     {
       "width": 900,
       "height": 720,
       "tabName": "design",
       "tabId": "design",
-      "fileName": "shell-900x720-design.png"
+      "fileName": "shell-900x720-design.png",
+      "fixture": "static"
     },
     {
       "width": 900,
       "height": 720,
       "tabName": "view",
       "tabId": "view",
-      "fileName": "shell-900x720-view.png"
+      "fileName": "shell-900x720-view.png",
+      "fixture": "static"
     },
     {
       "width": 900,
       "height": 720,
       "tabName": "review",
       "tabId": "review",
-      "fileName": "shell-900x720-review.png"
+      "fileName": "shell-900x720-review.png",
+      "fixture": "static"
     },
     {
       "width": 900,
       "height": 720,
       "tabName": "developer",
       "tabId": "developer",
-      "fileName": "shell-900x720-developer.png"
+      "fileName": "shell-900x720-developer.png",
+      "fixture": "static"
     },
     {
       "width": 900,
       "height": 720,
       "tabName": "references",
       "tabId": "references",
-      "fileName": "shell-900x720-references.png"
+      "fileName": "shell-900x720-references.png",
+      "fixture": "static"
     },
     {
       "width": 900,
       "height": 720,
       "tabName": "mailings",
       "tabId": "mailings",
-      "fileName": "shell-900x720-mailings.png"
+      "fileName": "shell-900x720-mailings.png",
+      "fixture": "static"
     },
     {
       "width": 900,
       "height": 720,
       "tabName": "help",
       "tabId": "help",
-      "fileName": "shell-900x720-help.png"
+      "fileName": "shell-900x720-help.png",
+      "fixture": "static"
+    },
+    {
+      "width": 900,
+      "height": 720,
+      "tabName": "drawing-format",
+      "tabId": "drawing-format",
+      "fileName": "shell-900x720-context-drawing-format.png",
+      "fixture": "drawing"
+    },
+    {
+      "width": 900,
+      "height": 720,
+      "tabName": "picture-format",
+      "tabId": "picture-format",
+      "fileName": "shell-900x720-context-picture-format.png",
+      "fixture": "picture"
+    },
+    {
+      "width": 900,
+      "height": 720,
+      "tabName": "chart-design",
+      "tabId": "chart-design",
+      "fileName": "shell-900x720-context-chart-design.png",
+      "fixture": "chart"
+    },
+    {
+      "width": 900,
+      "height": 720,
+      "tabName": "chart-format",
+      "tabId": "chart-format",
+      "fileName": "shell-900x720-context-chart-format.png",
+      "fixture": "chart"
+    },
+    {
+      "width": 900,
+      "height": 720,
+      "tabName": "smartart-design",
+      "tabId": "smartart-design",
+      "fileName": "shell-900x720-context-smartart-design.png",
+      "fixture": "smartart"
+    },
+    {
+      "width": 900,
+      "height": 720,
+      "tabName": "table-design",
+      "tabId": "table-design",
+      "fileName": "shell-900x720-context-table-design.png",
+      "fixture": "table"
+    },
+    {
+      "width": 900,
+      "height": 720,
+      "tabName": "table-layout",
+      "tabId": "table-layout",
+      "fileName": "shell-900x720-context-table-layout.png",
+      "fixture": "table"
+    },
+    {
+      "width": 900,
+      "height": 720,
+      "tabName": "header-footer-design",
+      "tabId": "header-footer-design",
+      "fileName": "shell-900x720-context-header-footer-design.png",
+      "fixture": "header-footer"
     },
     {
       "width": 750,
       "height": 720,
       "tabName": "home",
       "tabId": "home",
-      "fileName": "shell-750x720-home.png"
+      "fileName": "shell-750x720-home.png",
+      "fixture": "static"
     },
     {
       "width": 750,
       "height": 720,
       "tabName": "insert",
       "tabId": "insert",
-      "fileName": "shell-750x720-insert.png"
+      "fileName": "shell-750x720-insert.png",
+      "fixture": "static"
     },
     {
       "width": 750,
       "height": 720,
       "tabName": "layout",
       "tabId": "layout",
-      "fileName": "shell-750x720-layout.png"
+      "fileName": "shell-750x720-layout.png",
+      "fixture": "static"
     },
     {
       "width": 750,
       "height": 720,
       "tabName": "design",
       "tabId": "design",
-      "fileName": "shell-750x720-design.png"
+      "fileName": "shell-750x720-design.png",
+      "fixture": "static"
     },
     {
       "width": 750,
       "height": 720,
       "tabName": "view",
       "tabId": "view",
-      "fileName": "shell-750x720-view.png"
+      "fileName": "shell-750x720-view.png",
+      "fixture": "static"
     },
     {
       "width": 750,
       "height": 720,
       "tabName": "review",
       "tabId": "review",
-      "fileName": "shell-750x720-review.png"
+      "fileName": "shell-750x720-review.png",
+      "fixture": "static"
     },
     {
       "width": 750,
       "height": 720,
       "tabName": "developer",
       "tabId": "developer",
-      "fileName": "shell-750x720-developer.png"
+      "fileName": "shell-750x720-developer.png",
+      "fixture": "static"
     },
     {
       "width": 750,
       "height": 720,
       "tabName": "references",
       "tabId": "references",
-      "fileName": "shell-750x720-references.png"
+      "fileName": "shell-750x720-references.png",
+      "fixture": "static"
     },
     {
       "width": 750,
       "height": 720,
       "tabName": "mailings",
       "tabId": "mailings",
-      "fileName": "shell-750x720-mailings.png"
+      "fileName": "shell-750x720-mailings.png",
+      "fixture": "static"
     },
     {
       "width": 750,
       "height": 720,
       "tabName": "help",
       "tabId": "help",
-      "fileName": "shell-750x720-help.png"
+      "fileName": "shell-750x720-help.png",
+      "fixture": "static"
+    },
+    {
+      "width": 750,
+      "height": 720,
+      "tabName": "drawing-format",
+      "tabId": "drawing-format",
+      "fileName": "shell-750x720-context-drawing-format.png",
+      "fixture": "drawing"
+    },
+    {
+      "width": 750,
+      "height": 720,
+      "tabName": "picture-format",
+      "tabId": "picture-format",
+      "fileName": "shell-750x720-context-picture-format.png",
+      "fixture": "picture"
+    },
+    {
+      "width": 750,
+      "height": 720,
+      "tabName": "chart-design",
+      "tabId": "chart-design",
+      "fileName": "shell-750x720-context-chart-design.png",
+      "fixture": "chart"
+    },
+    {
+      "width": 750,
+      "height": 720,
+      "tabName": "chart-format",
+      "tabId": "chart-format",
+      "fileName": "shell-750x720-context-chart-format.png",
+      "fixture": "chart"
+    },
+    {
+      "width": 750,
+      "height": 720,
+      "tabName": "smartart-design",
+      "tabId": "smartart-design",
+      "fileName": "shell-750x720-context-smartart-design.png",
+      "fixture": "smartart"
+    },
+    {
+      "width": 750,
+      "height": 720,
+      "tabName": "table-design",
+      "tabId": "table-design",
+      "fileName": "shell-750x720-context-table-design.png",
+      "fixture": "table"
+    },
+    {
+      "width": 750,
+      "height": 720,
+      "tabName": "table-layout",
+      "tabId": "table-layout",
+      "fileName": "shell-750x720-context-table-layout.png",
+      "fixture": "table"
+    },
+    {
+      "width": 750,
+      "height": 720,
+      "tabName": "header-footer-design",
+      "tabId": "header-footer-design",
+      "fileName": "shell-750x720-context-header-footer-design.png",
+      "fixture": "header-footer"
     }
   ]
 }

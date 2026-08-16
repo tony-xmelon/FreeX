@@ -48,12 +48,25 @@ It retains either a complete `manifest.json` with 28 PNGs or a
 
 ## Current Result
 
-The current execution environment exposed `PowerPoint.Application` COM but
-did not expose any foreground window (`GetForegroundWindow` returned zero).
-Consequently, this directory contains the explicit blocker manifest and no
-PNG baseline.  That is a capture-environment limitation, not a PowerPoint or
-FreeP parity result.  Re-run the command above from the active interactive
-Windows desktop after no other Office foreground capture is active.
+The active interactive Windows session completed the full matrix on
+2026-08-16.  `manifest.json` records all 28 expected PowerPoint-owned ribbon
+states (seven mapped tabs at four widths), including a SHA-256 digest and
+physical dimensions for each PNG.  The capture was made from a blank
+PowerPoint presentation and the process it created was closed after the
+capture.
+
+| Native PowerPoint ribbon reference | States | Result |
+| --- | ---: | --- |
+| Home, Insert, Design, Transitions, Animations, Slide Show, View at 1280, 1100, 900, and 750 logical widths | 28/28 | Complete foreground-guarded baseline |
+
+The guard was exercised during setup, resize, tab selection, and every screen
+copy.  The harness also attaches its transient input queue before requesting
+Windows activation, then checks the exact PowerPoint PID and title again; it
+does not treat a requested activation as proof of ownership.  Consequently,
+another app reclaiming foreground still discards the entire incomplete run.
+
+This is authoritative Office chrome evidence for semantic review, not a raw
+pixel-equivalence pass for FreeP's WPF or Avalonia shell implementations.
 
 The verifier accepts either honest outcome:
 
@@ -61,7 +74,7 @@ The verifier accepts either honest outcome:
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-FreePPowerPointChromeEvidence.ps1 -Check
 ```
 
-Once the full matrix exists, use it for semantic chrome review alongside the
-paired FreeP WPF/Avalonia whole-window report.  Do not use its pixels to
-declare a pass/fail threshold until a named region mapping and acceptance
-criteria are added.
+Use the complete matrix for semantic chrome review alongside the paired FreeP
+WPF/Avalonia whole-window report.  Do not use its pixels to declare a
+pass/fail threshold until a named region mapping and acceptance criteria are
+added.
