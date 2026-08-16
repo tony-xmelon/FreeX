@@ -1,0 +1,173 @@
+{
+  "Tool": "FreeW.RibbonShot",
+  "ManifestSchemaVersion": 1,
+  "GeneratedUtc": "2026-08-16T13:11:45.5514633+00:00",
+  "RequestedMode": "all",
+  "RenderWidth": 1100,
+  "RenderHeight": 720,
+  "CaptureCount": 18,
+  "Captures": [
+    {
+      "Kind": "ribbon-tab",
+      "Path": "ribbon-1-Home.png",
+      "PixelWidth": 1100,
+      "PixelHeight": 720,
+      "TabIndex": 1,
+      "TabName": "Home",
+      "BackstageEntry": null
+    },
+    {
+      "Kind": "ribbon-tab",
+      "Path": "ribbon-2-Insert.png",
+      "PixelWidth": 1100,
+      "PixelHeight": 720,
+      "TabIndex": 2,
+      "TabName": "Insert",
+      "BackstageEntry": null
+    },
+    {
+      "Kind": "ribbon-tab",
+      "Path": "ribbon-3-Design.png",
+      "PixelWidth": 1100,
+      "PixelHeight": 720,
+      "TabIndex": 3,
+      "TabName": "Design",
+      "BackstageEntry": null
+    },
+    {
+      "Kind": "ribbon-tab",
+      "Path": "ribbon-4-Layout.png",
+      "PixelWidth": 1100,
+      "PixelHeight": 720,
+      "TabIndex": 4,
+      "TabName": "Layout",
+      "BackstageEntry": null
+    },
+    {
+      "Kind": "ribbon-tab",
+      "Path": "ribbon-5-References.png",
+      "PixelWidth": 1100,
+      "PixelHeight": 720,
+      "TabIndex": 5,
+      "TabName": "References",
+      "BackstageEntry": null
+    },
+    {
+      "Kind": "ribbon-tab",
+      "Path": "ribbon-6-Mailings.png",
+      "PixelWidth": 1100,
+      "PixelHeight": 720,
+      "TabIndex": 6,
+      "TabName": "Mailings",
+      "BackstageEntry": null
+    },
+    {
+      "Kind": "ribbon-tab",
+      "Path": "ribbon-7-Review.png",
+      "PixelWidth": 1100,
+      "PixelHeight": 720,
+      "TabIndex": 7,
+      "TabName": "Review",
+      "BackstageEntry": null
+    },
+    {
+      "Kind": "ribbon-tab",
+      "Path": "ribbon-8-View.png",
+      "PixelWidth": 1100,
+      "PixelHeight": 720,
+      "TabIndex": 8,
+      "TabName": "View",
+      "BackstageEntry": null
+    },
+    {
+      "Kind": "ribbon-tab",
+      "Path": "ribbon-9-Help.png",
+      "PixelWidth": 1100,
+      "PixelHeight": 720,
+      "TabIndex": 9,
+      "TabName": "Help",
+      "BackstageEntry": null
+    },
+    {
+      "Kind": "ribbon-tab",
+      "Path": "ribbon-10-Developer.png",
+      "PixelWidth": 1100,
+      "PixelHeight": 720,
+      "TabIndex": 10,
+      "TabName": "Developer",
+      "BackstageEntry": null
+    },
+    {
+      "Kind": "ribbon-tab",
+      "Path": "ribbon-11-Drawing Format.png",
+      "PixelWidth": 1100,
+      "PixelHeight": 720,
+      "TabIndex": 11,
+      "TabName": "Drawing Format",
+      "BackstageEntry": null
+    },
+    {
+      "Kind": "ribbon-tab",
+      "Path": "ribbon-12-Picture Format.png",
+      "PixelWidth": 1100,
+      "PixelHeight": 720,
+      "TabIndex": 12,
+      "TabName": "Picture Format",
+      "BackstageEntry": null
+    },
+    {
+      "Kind": "ribbon-tab",
+      "Path": "ribbon-13-Chart Design.png",
+      "PixelWidth": 1100,
+      "PixelHeight": 720,
+      "TabIndex": 13,
+      "TabName": "Chart Design",
+      "BackstageEntry": null
+    },
+    {
+      "Kind": "ribbon-tab",
+      "Path": "ribbon-14-Chart Format.png",
+      "PixelWidth": 1100,
+      "PixelHeight": 720,
+      "TabIndex": 14,
+      "TabName": "Chart Format",
+      "BackstageEntry": null
+    },
+    {
+      "Kind": "ribbon-tab",
+      "Path": "ribbon-15-SmartArt Design.png",
+      "PixelWidth": 1100,
+      "PixelHeight": 720,
+      "TabIndex": 15,
+      "TabName": "SmartArt Design",
+      "BackstageEntry": null
+    },
+    {
+      "Kind": "ribbon-tab",
+      "Path": "ribbon-16-Table Design.png",
+      "PixelWidth": 1100,
+      "PixelHeight": 720,
+      "TabIndex": 16,
+      "TabName": "Table Design",
+      "BackstageEntry": null
+    },
+    {
+      "Kind": "ribbon-tab",
+      "Path": "ribbon-17-Table Layout.png",
+      "PixelWidth": 1100,
+      "PixelHeight": 720,
+      "TabIndex": 17,
+      "TabName": "Table Layout",
+      "BackstageEntry": null
+    },
+    {
+      "Kind": "ribbon-tab",
+      "Path": "ribbon-18-Design.png",
+      "PixelWidth": 1100,
+      "PixelHeight": 720,
+      "TabIndex": 18,
+      "TabName": "Design",
+      "BackstageEntry": null
+    }
+  ]
+}
