@@ -13,7 +13,7 @@
                     "docs/parity/freew-command-inventory.json",
                     "docs/parity/freew-dialog-harness/freew_dialog_route_inventory.json",
                     "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json",
-                    "docs/parity/freew-word-baseline-2026-08-14/manifest.json",
+                    "docs/parity/freew-word-baseline-2026-08-16/manifest.json",
                     "docs/parity/freep-command-parity-inventory.json",
                     "docs/parity/freep-dialog-pane-visual-evidence/summary.json",
                     "docs/parity/freep-dialog-pane-visual-evidence/artifact-manifest.json",
@@ -159,7 +159,7 @@
                                               "sourceFiles":  [
                                                                   "docs/parity/freew-dialog-harness/freew_dialog_route_inventory.json",
                                                                   "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json",
-                                                                  "docs/parity/freew-word-baseline-2026-08-14/manifest.json"
+                                                                  "docs/parity/freew-word-baseline-2026-08-16/manifest.json"
                                                               ],
                                               "canonicalComparison":  {
                                                                           "kind":  "canonical-inputs-only",
@@ -167,30 +167,31 @@
                                                                           "refreshInstruction":  "Route-local evidence remains outside this aggregate until it is merged with --baseline and --refresh-route."
                                                                       },
                                               "routeCoverage":  {
-                                                                    "inventoryScenarioCount":  475,
-                                                                    "inventoryRouteCount":  98,
-                                                                    "comparisonScenarioCount":  292,
-                                                                    "comparedRouteCount":  98,
-                                                                    "pairedRouteCount":  64,
-                                                                    "avaloniaOnlyRouteCount":  35,
-                                                                    "stateNotApplicableRouteCount":  4
+                                                                    "inventoryScenarioCount":  512,
+                                                                    "inventoryRouteCount":  102,
+                                                                    "comparisonScenarioCount":  291,
+                                                                    "comparedRouteCount":  102,
+                                                                    "pairedRouteCount":  74,
+                                                                    "avaloniaOnlyRouteCount":  22,
+                                                                    "stateNotApplicableRouteCount":  0
                                                                 },
                                               "artifactCoverage":  {
-                                                                       "evidenceRowCount":  292,
-                                                                       "pairedComparisonRowCount":  183,
-                                                                       "pairedWpfArtifactRowCount":  183,
-                                                                       "pairedAvaloniaArtifactRowCount":  183,
-                                                                       "avaloniaOnlyArtifactRowCount":  102,
-                                                                       "stateNotApplicableRowCount":  7,
+                                                                       "evidenceRowCount":  291,
+                                                                       "pairedComparisonRowCount":  206,
+                                                                       "pairedWpfArtifactRowCount":  206,
+                                                                       "pairedAvaloniaArtifactRowCount":  206,
+                                                                       "avaloniaOnlyArtifactRowCount":  64,
+                                                                       "stateNotApplicableRowCount":  0,
+                                                                       "otherComparisonRowCount":  21,
                                                                        "artifactManifestAvailable":  false,
                                                                        "artifactKind":  "embedded comparison-row content metrics and classifications"
                                                                    },
                                               "pairedEvidence":  {
-                                                                     "pairedScenarioCount":  183,
-                                                                     "passCount":  24,
-                                                                     "mismatchCount":  159,
+                                                                     "pairedScenarioCount":  206,
+                                                                     "passCount":  56,
+                                                                     "mismatchCount":  135,
                                                                      "limitationCount":  0,
-                                                                     "avaloniaOnlyScenarioCount":  102,
+                                                                     "avaloniaOnlyScenarioCount":  64,
                                                                      "evidenceClassification":  "paired WPF/Avalonia dialog comparison rows; mismatch classifications remain unresolved visual evidence, not a parity pass/fail"
                                                                  },
                                               "physicalEvidence":  {
@@ -200,20 +201,20 @@
                                                                        "limitations":  [
                                                                                            "The consumed FreeW JSON contains app-owned WPF/Avalonia comparison rows, not physical-device capture evidence.",
                                                                                            "Avalonia-only route/state rows are reported separately and are outside the WPF-authority pairing set.",
-                                                                                           "Word reference PNGs are available for triage, but this capture cohort has 87 failed and 3 skipped comparisons; it is not a Word visual-parity claim."
+                                                                                           "Word reference PNGs are available for triage, but this current-source capture cohort has 94 failed and 3 skipped comparisons; it is not a Word visual-parity claim."
                                                                                        ]
                                                                    },
                                               "authoritativeMicrosoftOfficeBaseline":  {
                                                                                            "product":  "Microsoft Word",
                                                                                            "available":  true,
                                                                                            "status":  "available-needs-review",
-                                                                                           "artifactCount":  61,
-                                                                                           "limitation":  "Word reference PNGs are available for triage, but this capture cohort has 87 failed and 3 skipped comparisons; it is not a Word visual-parity claim.",
+                                                                                           "artifactCount":  65,
+                                                                                           "limitation":  "Word reference PNGs are available for triage, but this current-source capture cohort has 94 failed and 3 skipped comparisons; it is not a Word visual-parity claim.",
                                                                                            "captureMode":  "Visible Microsoft Word publish to PDF followed by deterministic page rasterization"
                                                                                        },
                                               "claimBoundary":  "Route and evidence-row coverage only; paired comparison rows and mismatch classifications do not establish Word visual parity."
                                           },
-                     "nextSlice":  "A committed Word PNG baseline bundle is now available for 89 comparable rows, but 87 comparisons remain outside tolerance. Triage font metrics, pagination, drawing/object, chart, table, and WordArt deltas against the captured references before refreshing this cohort on the current source revision."
+                     "nextSlice":  "A committed current-source Word PNG baseline bundle is available for 99 comparable rows, but 94 comparisons remain outside tolerance. Triage font metrics, pagination, drawing/object, chart, table, and WordArt deltas against the captured references before the next Word baseline refresh."
                  },
                  {
                      "app":  "FreeP",

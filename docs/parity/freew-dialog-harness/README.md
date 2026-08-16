@@ -24,11 +24,11 @@ Paste Special, Style, and Manage Styles are content-sized WPF static prompts rat
 
 ## Current Run
 
-- Inventory: 162 routes and 475 host-specific scenarios represented by the current focused-merge evidence corpus.
-- WPF: 190 app-owned authority captures.
-- Avalonia: 285 app-owned Skia captures, with zero unsupported or invalid-content rows in the merged report.
+- Inventory: 180 routes and 512 host-specific scenarios represented by the current-source evidence corpus.
+- WPF: 206 app-owned authority captures and 15 explicitly unsupported factory rows.
+- Avalonia: 276 app-owned Skia captures and 15 explicitly unsupported factory rows.
 - Eight WPF-authority product routes: 25/25 Avalonia states captured across Cell Shading, Compare Documents, Legal Notices, Password Prompt, Screen Clip Overlay, Symbol Picker, Table Formula, and Table Properties.
-- Comparison: 159 genuine visual mismatches, 24 visual passes, 102 Avalonia extensions, and 7 state-not-applicable rows. These totals are checked against the canonical comparison JSON by `tools/Test-FreeWDialogVisualEvidence.ps1`; they are not maintained independently. There are zero semantic-only, invalid-capture-content, host-missing, or product-gap rows.
+- Comparison: 135 genuine visual mismatches, 56 visual passes, 64 Avalonia extensions, and 0 state-not-applicable rows. The current source also reports 15 semantic mismatches, 15 pending WPF-factory rows, and 6 invalid-capture-content rows; the three CUPS print states are blank-gated rather than treated as visual captures. These totals are checked against the canonical comparison JSON by `tools/Test-FreeWDialogVisualEvidence.ps1`; they are not maintained independently.
 - Canonical aggregate scope: the totals above cover only the inventory and WPF/Avalonia capture manifests supplied to the tracked comparison run. Fresh route-local evidence from Waves 154 and 155 is documented separately and remains outside this aggregate until it is merged with the harness `--baseline` and `--refresh-route` flow. Wave 156 has no FreeW dialog route capture; its FreeX and FreeP evidence is outside this FreeW report. See `docs/parity/avalonia-parity-wave157-freew-evidence-20260805.md` for the exact boundary.
 - Cell Shading is modeled with its single truthful `initial` state on both hosts. It is a palette action surface with no fields to populate and no validation path; `No Color` is an accepted clear action and Escape/window close is cancellation, so generic `populated` and `validation-error` states are intentionally not fabricated.
 - Cell Shading now uses app-owned WPF and Avalonia route constructors, shared planner geometry, and matching automation/action semantics. Its changed-pixel ratio fell from 10.10% to 1.97%, mean channel delta from 6.85 to 1.50, and pHash distance from 9 to 0; painted bounds are WPF 339x82 versus Avalonia 338x90.
