@@ -47,3 +47,27 @@ Reading the failure as an initial-focus problem sends you to the wrong assertion
 `FormatCells` alignment tab. These compare rendered pixels and could not run at all
 while the batches produced empty PNGs, so they have never been green under Skia. Expect
 genuine parity differences rather than harness faults.
+
+
+## contextual.PivotTableAnalyze renders as tab.Home — what is ruled out
+
+The capture writes a PNG byte-identical to `tab.Home.png`, so nothing changed visually
+at all, not even the tab-strip highlight. Four explanations have been tested and killed:
+
+1. **Dispatcher timing.** `LayoutWindow` pumps only `RunJobs(Render)`, which runs jobs
+   at Render and above, so content realized at Loaded/Background is still pending.
+   Draining Background and Loaded first changes nothing.
+2. **Context never applied.** The capture does call
+   `_ribbonContextSource.SetParityCaptureContext(activationKey)` and re-finds the tab
+   control afterwards, so the contextual tab is present when selection runs.
+3. **Selection reset by a rebuild.** Re-asserting `SelectedIndex` against the rebuilt
+   control after `LayoutWindow` changes nothing.
+4. **Tabs not identified by `Tag`.** They are: `AvaloniaRibbonRenderer` builds each
+   `TabItem` "tagged with the tab id", and its rebuild path diffs by that tag and
+   restores the previously selected id (`AvaloniaRibbonRenderer.cs` ~565 and ~1074).
+
+So the tab is present, correctly tagged, and selected, and the window still renders
+Home. The next thing to check is whether the *capture* reads the same visual the
+selection affected -- `CaptureWindowSurface` renders `this` (the shell window), while
+the ribbon may be hosted in a surface that the selection updates independently. Compare
+the captured bitmap against the ribbon control's own bounds rather than the window's.
