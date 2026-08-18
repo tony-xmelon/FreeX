@@ -53,13 +53,37 @@ instance the capture reads. The previously-recorded leads (dispatcher timing, co
 applied, selection reset by rebuild, tabs not tagged) are all confirmed dead — the state is
 correct and the render still does not reflect it.
 
-## Where to look next
+## Not a render-target or visual-tree bug either
 
-`RenderWindowWithCapturedTitleBarToPng` renders `this`. Since the strip highlight does not
-change between captures either, the ribbon region is almost certainly not being rasterized
-at all rather than being rasterized stale — check whether the ribbon host realizes its
-content under the headless/Skia render target, and compare the captured bitmap against the
-ribbon control's own bounds rather than the window's.
+Instrumenting `RenderWindowClientContentToBitmap` at the moment of render, after the
+`Measure`/`Arrange`/`UpdateLayout`/`RunJobs(Render)` sequence:
+
+```
+content=Grid|ribbon=TabControl|insideContent=True|ribBounds=0, 0, 1120, 122|selTag=FileTab
+content=Grid|ribbon=TabControl|insideContent=True|ribBounds=0, 0, 1120, 130|selTag=HomeTab
+content=Grid|ribbon=TabControl|insideContent=True|ribBounds=0, 0, 1120, 130|selTag=InsertTab
+content=Grid|ribbon=TabControl|insideContent=True|ribBounds=0, 0, 1120, 130|selTag=DrawTab
+...
+```
+
+The ribbon is a visual descendant of the exact `Grid` being rendered, it has real non-zero
+bounds, and the selection is correct and different on every pass. Nothing about the render
+call is looking at the wrong visual or a stale tree.
+
+## The likely explanation
+
+`tab.File` is the only surface that differs, and its ribbon measures **122px tall** where
+every other tab measures **130px**. That 8px delta shifts everything below it, which is
+sufficient on its own to change the image — no ribbon content needs to have been drawn.
+
+Read together with the strip highlight never changing, the ribbon region is most likely
+rasterizing **blank**: identical for every tab because nothing inside it is drawn, and
+different for File only because the empty band is a different height.
+
+Next step: count non-background pixels in rows 0..130 of any captured tab PNG. If that band
+is uniform, the question becomes why `AvaloniaRibbonRenderer`'s content produces no draw
+operations under the Skia headless render target, which is a rendering-path question rather
+than anything to do with tab selection or the capture harness.
 
 ## Consequence
 
