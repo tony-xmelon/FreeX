@@ -5,7 +5,11 @@
 
 ## Status
 
-Open. Needs a product visual decision, not a mechanical fix.
+**RESOLVED** in `d9b99390ef`, with the owner's agreement that white buttons are correct.
+The colour check is replaced by one asserting the action row renders visible buttons rather
+than blending into the background. A second assertion in the same test wanted #C6D7E8 for
+the group border; `645bd68d04` had deliberately moved that onto
+`CompactDialogVisualTokens.BorderHex` (#C8C8C8), so it now tracks the token. Batch5 is 6/6.
 
 ## Why it surfaced now
 

@@ -5,7 +5,10 @@ group-border bounds `(13, 43, 400, 274)`.
 
 ## Status
 
-Partially resolved. Two stacked regressions; the first is fixed.
+**RESOLVED.** Borders fixed in `a103978c5c`; the residual drift resolved in
+`d9b99390ef` by asserting the parity-bearing facts (exact horizontal bounds, full-width
+borders, button height, checkbox columns to within a pixel) instead of five absolute Y
+positions recorded under a harness that did not rasterize text. Batch2 is 6/6.
 
 ## Fixed: the borders were missing entirely
 
