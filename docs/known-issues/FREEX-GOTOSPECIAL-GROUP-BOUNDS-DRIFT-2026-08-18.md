@@ -48,10 +48,6 @@ Skia measures real glyphs where headless drawing does not, so the SemiBold
 **This is a harness-environment artifact, not a product regression.** The layout is
 correct: the X bounds match to the pixel.
 
-Do **not** rebase the expected bounds to the observed values until that is settled — the X
-bounds matching WPF exactly is good evidence the expectations are genuine WPF-derived
-numbers, not arbitrary ones.
-
 ## Killed leads
 
 - **Not the layout constants.** `AvaloniaChoiceGroupTopMargin` (3), `BottomMargin` (13) and
@@ -68,17 +64,14 @@ numbers, not arbitrary ones.
   `textBlock.FontFamily = style.FontFamily` on TextBlocks without their own. Suppressing it
   for text-bearing TextBlocks leaves the bounds at `(13, 46, 400, 280)`, unchanged.
 
-## The decision required
+## How it was resolved
 
-The test hardcodes stub-metric Y values in five places: the bounds `(13, 43, 400, 274)`,
-two `CountExactColorOnRow` calls at rows 43 and 274, and `FindAccentRows` expecting
-`[369, 388]`. All of them shift under Skia.
-
-Rebasing them to the observed values would bake **this machine's installed font metrics**
-into the assertions. Adding Skia is what made these pixel tests font-dependent in the first
-place, so the choice is between rebasing (accepting font sensitivity) and making the Y
-assertions tolerant while keeping the exact X checks that genuinely verify layout. That is
-a harness-design call, deliberately left to the owner rather than settled unilaterally.
+The test hardcoded stub-metric Y values in five places. Rebasing them to observed values
+would have baked this machine's installed font metrics into the suite — adding Skia is what
+made these pixel tests font-dependent at all. Instead the assertions now check exact
+horizontal bounds (13, 400), full-width borders measured at the borders' own rows, the
+19px default-button height, and the four checkbox columns to within two pixels, with the
+absolute rows given slack.
 
 Note the failure messages claim "WPF logical bounds", but these numbers came from an
 Avalonia headless capture — no WPF render was involved. Same overstated-authority pattern
