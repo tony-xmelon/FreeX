@@ -100,6 +100,21 @@ Also measured: `tab.File`'s ribbon lays out 122px tall against 130px for every o
 yet that 8px difference does not appear in the image — only row 0 differs. So layout state
 that is provably different at the moment of the call is not reaching the bitmap.
 
+## Why `tab.File` behaves as it does (settled)
+
+`AvaloniaRibbonRenderer` (~line 635) installs a `SelectionChanged` handler: selecting the
+File tab invokes `onFileTabSelected` and immediately restores `lastContentTabIndex`.
+
+So `SelectParityRibbonTab(tabControl, "FileTab")` sets the index, the handler bounces it
+straight back to the previous content tab, and `tab.File.png` therefore captures **that
+content tab**, not a File surface. This fully explains File resembling the others without
+any stale-rendering theory, and independently confirms the withdrawal above.
+
+It also means `tab.File` is a mis-specified surface: driving it through
+`tabControl.SelectedIndex` can never capture Backstage, because the product deliberately
+refuses that selection. Whatever `tab.File.png` is meant to show, this is not the way to
+get it.
+
 ## Tried and rejected
 
 Draining `Background` + `Loaded` + `Render` priorities and calling `InvalidateVisual()`
