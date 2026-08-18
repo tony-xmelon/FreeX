@@ -25,7 +25,30 @@ Checked on `origin/main` (worktree, no local commits): `WatchWindowDialog`,
 `TextToColumnsDialogContract` and `CaptureParitySurfaces_CapturesChartStyleCatalogDialog`
 all pass individually there too, so this predates the 2026-08-18 capture work.
 
-## Likely cause
+## Actual cause (found, fixed in `47b7247747`)
+
+`AvaloniaCaptureProcessLease` allows **3** concurrent capture processes via file locks, but
+waited only **75 seconds** to acquire one. A lease is held for an entire assembly run, and a
+capture assembly can take well over a minute. The gate starts every
+`CaptureTests.Batch*` assembly at once, so the later ones queue behind two full runs and
+time out:
+
+```
+System.TimeoutException : Could not acquire one of 3 Avalonia capture process slots
+within 75 seconds.
+```
+
+Timed-out assemblies fail every test in ~50ms, which is what produced a scatter of
+apparently-unrelated capture and dialog-contract failures. Raised to 10 minutes.
+
+Separately, `FreeX.App.Avalonia.CaptureTests` (the base project) was the only capture
+project without `Avalonia.Skia`, so its PNG-asserting test wrote nothing, the run hit the
+90s ceiling in `CaptureTests.runsettings` and **aborted after 3 of 5 tests**. With Skia it
+completes all five in 26s.
+
+Gate failures went from 23 to 4.
+
+## Original hypothesis
 
 Each `FreeX.App.Avalonia.CaptureTests.Batch*` assembly stands up its own Avalonia headless
 session, and the gate runs assemblies in parallel. These tests drive real windows, focus and
