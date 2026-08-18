@@ -1,5 +1,18 @@
 # FreeX capture batches: 12 dialog contract and pixel failures
 
+## Status
+
+**RESOLVED.** All twelve pass. Every capture batch is green (Batch2 6/6, Batch3 8/8,
+Batch4, Batch5 6/6, Batch6, Batch7 4/4), and all 34 tests excluded from the main assembly
+by its `VSTestTestCaseFilter` are selected by some batch filter, so coverage is complete.
+
+Resolved by: `f3ac016069` (inspection auto-close raced the contract probe),
+`a103978c5c` (chrome normalization erased explicit group-box borders),
+`bf6e939a9e` (the backstage overlay stayed open and covered every ribbon capture),
+and `d9b99390ef` (two assertions rebased onto what they were protecting).
+
+The notes below are kept for the diagnosis and the killed leads.
+
 These surfaced only after two fixes made the batches able to fail honestly:
 
 - the batches asserted PNG bytes while running under Avalonia's lightweight headless

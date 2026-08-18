@@ -1,5 +1,9 @@
 # FreeP rich-text editor: four failures uncovered by the async-void fix
 
+## Status
+
+**RESOLVED.** All six are fixed; `FreeP.App.Rendering.Avalonia.Tests` is 275/275.
+
 `87a7f11138` ("Fix async-void Dispatch lambdas that silently swallowed test failures")
 made `AvaloniaRichTextEditorTests` actually run. `HeadlessUnitTestSession` has no
 `Dispatch(Func<Task>)` overload, so a valueless `async` lambda bound to the `Action`
