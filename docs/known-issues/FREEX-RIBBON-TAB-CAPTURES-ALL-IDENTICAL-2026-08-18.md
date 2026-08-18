@@ -30,11 +30,11 @@ contextual.PivotTableDesign = E047079BF97D
 ```
 
 **Sixteen of the seventeen ribbon surfaces are byte-identical.** Only `tab.File` differs,
-and only because Backstage is a full-window overlay that replaces the whole client area.
+and it differs in a single row (see the correction below).
 
-So `PivotTableAnalyze` is not "falling back to Home". Nothing ribbon-related is being
-captured at all, and the test only noticed because one of its assertions happened to
-compare two of the sixteen identical files.
+So `PivotTableAnalyze` is not "falling back to Home". No ribbon tab body is reaching the
+capture at all, and the test only noticed because one of its assertions happened to compare
+two of the sixteen identical files.
 
 ## Not a selection bug
 
@@ -109,9 +109,16 @@ was still pending — changes nothing. Reverted.
 ## Where to look next
 
 `RenderVisualToBitmap` calls `bitmap.Render(visual)` where `visual` is `window.Content`.
-Worth checking whether rendering a *child* visual of a live window picks up that child's
-current subtree, or whether the capture should render the window itself (or the ribbon
-control's own bounds) instead.
+Rendering the `Window` itself instead of its `Content` was tried and changes nothing
+(reverted), so the child-visual theory is dead too.
+
+Both render-side fixes failing points back at the ribbon control rather than the capture:
+the next thing to check is whether `AvaloniaRibbonRenderer` actually swaps the
+`TabControl`'s presented content on selection under a headless session, or whether the
+body it draws is bound to something that never updates without a real input-driven
+selection change. Compare `SelectedContent` / the realized presenter child before and after
+`SelectParityRibbonTab`, rather than just `SelectedIndex` and `Tag` which are already known
+to be correct.
 
 ## Consequence
 
