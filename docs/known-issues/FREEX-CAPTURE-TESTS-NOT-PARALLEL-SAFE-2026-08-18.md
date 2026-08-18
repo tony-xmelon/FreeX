@@ -1,5 +1,42 @@
 # Capture and dialog-contract tests fail only under the parallel gate
 
+## Status
+
+**RESOLVED.** `dotnet test FreeX.DefaultTests.slnx` is green: 31 assemblies, 41,373 tests,
+0 failures, 0 aborted runs.
+
+Six distinct causes, none of them the tests being "flaky":
+
+1. **Lease starvation.** `AvaloniaCaptureProcessLease` allows 3 concurrent capture processes
+   but waited only 75s, while a lease is held for a whole assembly run. All seven capture
+   projects start together, so later ones queued behind two full runs and timed out, failing
+   every test in ~50ms. Raised to 10 minutes.
+2. **Session ceiling vs queueing.** `CaptureTests.runsettings` capped a test *session* at 90s,
+   and that clock includes lease queueing. Assemblies were aborted mid-flight. Raised to 300s
+   with the trade-off recorded in the file.
+3. **Missing Skia.** The base `FreeX.App.Avalonia.CaptureTests` project was the only capture
+   project without `Avalonia.Skia`, so its PNG-asserting test wrote nothing and the run hit
+   the ceiling and aborted after 3 of 5 tests.
+4. **Focus fallback too eager.** The harness focuses the first focusable control in any owned
+   dialog with no focus yet. It ran on the first check, beating dialogs that pick a specific
+   control, fail their first attempt and retry. Now skipped for one pass.
+5. **Fixed probe budgets.** A 5s PowerShell probe, an 8s dialog-open wait and a 20s hang guard
+   were each ample alone and too tight under load. All widened; each only bounds a pathological
+   case, so none of them weakens what it guards.
+6. **Tests that had never run.** Because of (2) and (3), Batch4 and the base project were
+   aborted after one test. Fixing the aborts exposed two genuine defects that had never
+   executed -- a Format Cells tab cycle and a drifted contract cohort list.
+
+## Guidance that still holds
+
+- A green main-assembly count says nothing about these tests: `FreeX.App.Avalonia.Tests.csproj`
+  carries a `VSTestTestCaseFilter` excluding 34 capture/contract tests, which run only via the
+  Batch projects. All 34 are selected by some batch filter, so coverage is complete.
+- If one of these fails again, re-run the single test against its own project before believing
+  it -- but the parallel-run failures documented below are now fixed, not merely characterised.
+
+## Original investigation
+
 ## Symptom
 
 `dotnet test FreeX.DefaultTests.slnx` reports a handful of failures that **cannot be
