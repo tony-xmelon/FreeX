@@ -1,151 +1,72 @@
 # Every ribbon tab capture renders the same image
 
-`CaptureParitySurfaces_ProducesGridAndDialogPngs` fails asserting that
+`CaptureParitySurfaces_ProducesGridAndDialogPngs` failed asserting that
 `contextual.PivotTableAnalyze.png` differs from `tab.Home.png`.
 
-That framing understates the problem.
+## Status
 
-## Measured
+**RESOLVED** in `bf6e939a9e`. Batch3 is 8/8 and every ribbon surface now hashes differently.
 
-Hashing every ribbon surface as it is captured (SHA-256, first 12 hex chars):
+## Root cause
 
-```
-tab.File                    = CD05112E75E2
-tab.Home                    = E047079BF97D
-tab.Insert                  = E047079BF97D
-tab.Draw                    = E047079BF97D
-tab.PageLayout              = E047079BF97D
-tab.Formulas                = E047079BF97D
-tab.Data                    = E047079BF97D
-tab.Review                  = E047079BF97D
-tab.View                    = E047079BF97D
-tab.Help                    = E047079BF97D
-contextual.ShapeFormat      = E047079BF97D
-contextual.PictureFormat    = E047079BF97D
-contextual.ChartDesign      = E047079BF97D
-contextual.ChartFormat      = E047079BF97D
-contextual.TableDesign      = E047079BF97D
-contextual.PivotTableAnalyze= E047079BF97D
-contextual.PivotTableDesign = E047079BF97D
-```
+`tab.File` is captured **first** in the ribbon loop. Selecting the File tab opens the
+backstage — `AvaloniaRibbonRenderer` invokes `onFileTabSelected` from its `SelectionChanged`
+handler and then restores the previous content tab — but the overlay stays open.
 
-**Sixteen of the seventeen ribbon surfaces are byte-identical.** Only `tab.File` differs,
-and it differs in a single row (see the correction below).
+`AvaloniaBackstageFrame` is a sibling of the shell `DockPanel` and covers the whole client
+area, so every capture taken after `tab.File` photographed the backstage rather than the
+ribbon. Sixteen of the seventeen PNGs were therefore byte-identical, and only one assertion
+happened to compare two of them.
 
-So `PivotTableAnalyze` is not "falling back to Home". No ribbon tab body is reaching the
-capture at all, and the test only noticed because one of its assertions happened to compare
-two of the sixteen identical files.
+The fix closes any open backstage immediately before rendering a ribbon tab.
 
-## Not a selection bug
+## How it was found
 
-Instrumenting `CaptureRibbonTab` immediately before the render shows the ribbon state is
-exactly right every time:
+Bisecting the render up the visual tree, hashing each ancestor rendered in isolation:
 
 ```
-contextual.PivotTableAnalyze|want=PivotTableAnalyzeTab|sameControl=True
-  |selIdx=10|selTag=PivotTableAnalyzeTab
-  |tags=FileTab,FileTab,HomeTab,InsertTab,DrawTab,PageLayoutTab,FormulasTab,
-        DataTab,ReviewTab,ViewTab,PivotTableAnalyzeTab,PivotTableDesignTab,HelpTab
+TabControl[1120x130] : distinct per tab   OK
+DockPanel[1120x686]  : distinct per tab   OK
+Grid[1120x686]       : IDENTICAL          <-- breaks here
 ```
 
-The contextual tab is present, correctly tagged, selected, and on the same `TabControl`
-instance the capture reads. The previously-recorded leads (dispatcher timing, context never
-applied, selection reset by rebuild, tabs not tagged) are all confirmed dead — the state is
-correct and the render still does not reflect it.
-
-## Not a render-target or visual-tree bug either
-
-Instrumenting `RenderWindowClientContentToBitmap` at the moment of render, after the
-`Measure`/`Arrange`/`UpdateLayout`/`RunJobs(Render)` sequence:
+Listing that Grid's children gave it away immediately:
 
 ```
-content=Grid|ribbon=TabControl|insideContent=True|ribBounds=0, 0, 1120, 122|selTag=FileTab
-content=Grid|ribbon=TabControl|insideContent=True|ribBounds=0, 0, 1120, 130|selTag=HomeTab
-content=Grid|ribbon=TabControl|insideContent=True|ribBounds=0, 0, 1120, 130|selTag=InsertTab
-content=Grid|ribbon=TabControl|insideContent=True|ribBounds=0, 0, 1120, 130|selTag=DrawTab
-...
+DockPanel[0,0,1120,686]            vis=True
+AvaloniaBackstageFrame[0,0,1120,658] vis=True, op=1
 ```
 
-The ribbon is a visual descendant of the exact `Grid` being rendered, it has real non-zero
-bounds, and the selection is correct and different on every pass. Nothing about the render
-call is looking at the wrong visual or a stale tree.
+## Leads killed on the way
 
-## Correction to an earlier reading in this file
+Each of these was measured, not reasoned about, and none was the cause:
 
-An earlier revision concluded "every capture rasterizes the same stale scene" from
-`tab.File` differing from `tab.Home` in only one row, reasoning that Backstage replaces the
-whole client area so two different states could not be near-identical.
+- **Tab selection.** The contextual tab is present, correctly tagged, selected, and on the
+  same `TabControl` the capture reads.
+- **Content realization.** Each tab's body is a distinct instance, fully laid out — Home 232
+  visual descendants, Insert 128, Draw 108 — and each rendered *distinctly in isolation*.
+- **Visual attachment.** The body is a visual child of `PART_SelectedContentHost`, attached,
+  and inside the window tree.
+- **Clipping.** Disabling `ClipToBounds` on the TabControl and every ancestor changes nothing.
+- **Stale-scene rendering.** Withdrawn earlier; rendering the `Window` instead of
+  `window.Content`, and draining all dispatcher priorities plus `InvalidateVisual()`, both
+  change nothing.
+- **Geometry does reach the bitmap.** `tab.File`'s ribbon lays out 122px against 130px and
+  that difference *did* show up, which is what separated "content dropped" from "frame stale".
 
-**That inference was wrong.** `tab.File` selects the File `TabItem` in the strip; it does
-not open Backstage. Backstage is captured separately as its own `backstage.*` surfaces. So
-File and Home being near-identical is not evidence of stale rendering — the File tab body
-may legitimately be near-empty.
+## Guard added
 
-The stale-scene conclusion is withdrawn. What survives is below, and it is still a real
-defect.
+The test now hashes every ribbon surface and requires them all to differ, rather than
+comparing the single pair that happened to catch this. Sixteen blank parity PNGs should not
+be able to pass again silently.
 
-## What is certain
+## Remaining wrinkle (not a failure)
 
-The ribbon band is **not** blank. Sampling rows 0..130 of `tab.Home.png` finds 15,002
-non-white pixels across 413 distinct colours — the ribbon draws fine. It just draws the
-same thing every time.
-
-The hard fact is the SHA table above: **`tab.Home` and `tab.Insert` are byte-identical**,
-as are fourteen other tabs. Those tabs have entirely different ribbon bodies — different
-groups, different buttons — inside a 130px band that demonstrably rasterizes content. They
-cannot legitimately produce the same bytes. Something between "the correct tab is selected"
-and "pixels land in the PNG" is dropping the tab body.
-
-Also measured: `tab.File`'s ribbon lays out 122px tall against 130px for every other tab,
-yet that 8px difference does not appear in the image — only row 0 differs. So layout state
-that is provably different at the moment of the call is not reaching the bitmap.
-
-## Why `tab.File` behaves as it does (settled)
-
-`AvaloniaRibbonRenderer` (~line 635) installs a `SelectionChanged` handler: selecting the
-File tab invokes `onFileTabSelected` and immediately restores `lastContentTabIndex`.
-
-So `SelectParityRibbonTab(tabControl, "FileTab")` sets the index, the handler bounces it
-straight back to the previous content tab, and `tab.File.png` therefore captures **that
-content tab**, not a File surface. This fully explains File resembling the others without
-any stale-rendering theory, and independently confirms the withdrawal above.
-
-It also means `tab.File` is a mis-specified surface: driving it through
-`tabControl.SelectedIndex` can never capture Backstage, because the product deliberately
-refuses that selection. Whatever `tab.File.png` is meant to show, this is not the way to
-get it.
-
-## Tried and rejected
-
-Draining `Background` + `Loaded` + `Render` priorities and calling `InvalidateVisual()`
-before `bitmap.Render(visual)` — on the theory that content realized at lower priorities
-was still pending — changes nothing. Reverted.
-
-## Where to look next
-
-`RenderVisualToBitmap` calls `bitmap.Render(visual)` where `visual` is `window.Content`.
-Rendering the `Window` itself instead of its `Content` was tried and changes nothing
-(reverted), so the child-visual theory is dead too.
-
-Both render-side fixes failing points back at the ribbon control rather than the capture:
-the next thing to check is whether `AvaloniaRibbonRenderer` actually swaps the
-`TabControl`'s presented content on selection under a headless session, or whether the
-body it draws is bound to something that never updates without a real input-driven
-selection change. Compare `SelectedContent` / the realized presenter child before and after
-`SelectParityRibbonTab`, rather than just `SelectedIndex` and `Tag` which are already known
-to be correct.
-
-## Consequence
-
-Sixteen ribbon PNGs are byte-identical and carry no information. Any parity review that
-consumed them compared identical images.
-
-Whether the blast radius extends past the ribbon is unknown — that claim rested on the
-withdrawn stale-scene reading. Grid and dialog captures have not been checked.
-
-A cheap guard — assert the tab captures are pairwise distinct — would stop this recurring
-silently, and would have caught it at the point it was introduced.
+`tab.File` is still mis-specified. Driving it through `tabControl.SelectedIndex` can never
+capture backstage, because the renderer deliberately bounces that selection back to the last
+content tab. Whatever `tab.File.png` is meant to show, this is not the way to get it — the
+`backstage.*` surfaces are captured separately and correctly.
 
 ## Incidental
 
-The tag list shows `FileTab` twice. Unexamined, but it looks wrong.
+The tab tag list shows `FileTab` twice. Unexamined, but it looks wrong.
