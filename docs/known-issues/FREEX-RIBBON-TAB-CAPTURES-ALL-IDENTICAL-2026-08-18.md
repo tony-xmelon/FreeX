@@ -70,44 +70,56 @@ The ribbon is a visual descendant of the exact `Grid` being rendered, it has rea
 bounds, and the selection is correct and different on every pass. Nothing about the render
 call is looking at the wrong visual or a stale tree.
 
-## Root cause: every capture rasterizes the same stale scene
+## Correction to an earlier reading in this file
+
+An earlier revision concluded "every capture rasterizes the same stale scene" from
+`tab.File` differing from `tab.Home` in only one row, reasoning that Backstage replaces the
+whole client area so two different states could not be near-identical.
+
+**That inference was wrong.** `tab.File` selects the File `TabItem` in the strip; it does
+not open Backstage. Backstage is captured separately as its own `backstage.*` surfaces. So
+File and Home being near-identical is not evidence of stale rendering — the File tab body
+may legitimately be near-empty.
+
+The stale-scene conclusion is withdrawn. What survives is below, and it is still a real
+defect.
+
+## What is certain
 
 The ribbon band is **not** blank. Sampling rows 0..130 of `tab.Home.png` finds 15,002
 non-white pixels across 413 distinct colours — the ribbon draws fine. It just draws the
 same thing every time.
 
-The decisive measurement is `tab.File` against `tab.Home`, compared row by row:
+The hard fact is the SHA table above: **`tab.Home` and `tab.Insert` are byte-identical**,
+as are fourteen other tabs. Those tabs have entirely different ribbon bodies — different
+groups, different buttons — inside a 130px band that demonstrably rasterizes content. They
+cannot legitimately produce the same bytes. Something between "the correct tab is selected"
+and "pixels land in the PNG" is dropping the tab body.
 
-```
-Home vs File: firstDiffRow=0  totalDiffRows=1
-```
+Also measured: `tab.File`'s ribbon lays out 122px tall against 130px for every other tab,
+yet that 8px difference does not appear in the image — only row 0 differs. So layout state
+that is provably different at the moment of the call is not reaching the bitmap.
 
-They differ in **exactly one row, row 0**. Backstage replaces the entire client area, so two
-captures of genuinely different application states cannot be pixel-identical over the other
-719 rows. Every surface is rasterizing the same scene, and the single varying row is the
-only thing that reaches the bitmap.
+## Tried and rejected
 
-That also corrects the earlier reading: `tab.File`'s hash differs not because Backstage
-rendered, but because of that one row. The 122px-vs-130px ribbon height measured at layout
-time never made it into the image either.
+Draining `Background` + `Loaded` + `Render` priorities and calling `InvalidateVisual()`
+before `bitmap.Render(visual)` — on the theory that content realized at lower priorities
+was still pending — changes nothing. Reverted.
 
-So the fault is in the render step, not in tab selection, the visual tree, or the ribbon's
-drawing. Layout and selection are demonstrably correct at the moment of the call
-(see above); the rasterization does not observe them.
+## Where to look next
 
-Next step: `RenderVisualToBitmap` / `RenderTargetBitmap.Render` in the headless+Skia session
-is the suspect — check whether the composition tree is flushed before each render, and
-whether a fresh `RenderTargetBitmap` per call actually picks up composition updates or
-replays the first committed frame.
+`RenderVisualToBitmap` calls `bitmap.Render(visual)` where `visual` is `window.Content`.
+Worth checking whether rendering a *child* visual of a live window picks up that child's
+current subtree, or whether the capture should render the window itself (or the ribbon
+control's own bounds) instead.
 
 ## Consequence
 
-**All seventeen** ribbon PNGs carry no information — not sixteen, since `tab.File` differs
-only by a single row. Any parity review that consumed them compared identical images.
+Sixteen ribbon PNGs are byte-identical and carry no information. Any parity review that
+consumed them compared identical images.
 
-The blast radius is probably wider than the ribbon: if the render step replays a stale
-scene, every surface captured after the first in a session is suspect, including the grid
-and dialog PNGs. Worth checking before trusting any capture output.
+Whether the blast radius extends past the ribbon is unknown — that claim rested on the
+withdrawn stale-scene reading. Grid and dialog captures have not been checked.
 
 A cheap guard — assert the tab captures are pairwise distinct — would stop this recurring
 silently, and would have caught it at the point it was introduced.
