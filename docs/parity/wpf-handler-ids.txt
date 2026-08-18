@@ -155,7 +155,9 @@ Column Sparkline
 Column Width
 Combo Chart
 Combo Chart Series
+Comma
 Comma Style
+Comma [0]
 Comment
 Conditional Formatting
 Conditional Formatting#CfPickerBtn_Click
@@ -171,6 +173,8 @@ Count Numbers
 Create from Selection
 Crop
 Crop Picture
+Currency
+Currency [0]
 Custom Margins
 Custom Sort
 Custom Views
@@ -241,6 +245,7 @@ Find & Select
 First Column
 First Slice Angle
 Flash Fill
+Followed Hyperlink
 Font Color
 Forecast Sheet
 Format
@@ -281,6 +286,8 @@ Group#GroupRowsMenuItem_Click
 Header & Footer
 Heading 1
 Heading 2
+Heading 3
+Heading 4
 Headings
 Help Online#HelpOnlineBtn_Click
 Hide
@@ -292,6 +299,7 @@ Histogram Chart
 Horizontal
 Horizontal#ArrangeAllMenuItem_Click
 Horizontal#OrientHorizMenuItem_Click
+Hyperlink
 Increase Decimal Places
 Increase Font Size
 Increase Indent
@@ -397,6 +405,7 @@ Paste Special
 Paste Values
 Paste#PasteBtn_Click
 Paste#PasteMenuItem_Click
+Percent
 Percent Style
 Percentage
 Picture
@@ -528,6 +537,7 @@ Thick Outside Borders
 Thin
 Tiled
 Times New Roman
+Title
 Top 10 Items
 Top 10%
 Top Align
