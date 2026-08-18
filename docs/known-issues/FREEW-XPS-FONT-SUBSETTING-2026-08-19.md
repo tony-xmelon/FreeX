@@ -42,8 +42,12 @@ failure is inside WPF's `TrueTypeSubsetter`, so it is a platform limitation on t
 rather than anything FreeW controls.
 
 The fixtures inherit the default document font. Pinning them to a font WPF can subset would make
-them deterministic and keep the assertions meaningful -- worth doing, but it needs someone to
-confirm which fonts subset cleanly here rather than guessing.
+them deterministic and keep the assertions meaningful.
+
+**Tried and rejected:** setting `DocumentView.FontFamily` on the WPF control before `LoadModel`
+does not propagate -- the export still subsets `CALIBRI.TTF` (verified by rethrowing from the new
+catch). The exported font comes from FreeW's own document style model (`StyleId = "Heading1"` and
+the default paragraph style), so pinning has to happen there, not on the host control.
 
 ## Note on visibility
 
