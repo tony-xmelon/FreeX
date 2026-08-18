@@ -70,27 +70,47 @@ The ribbon is a visual descendant of the exact `Grid` being rendered, it has rea
 bounds, and the selection is correct and different on every pass. Nothing about the render
 call is looking at the wrong visual or a stale tree.
 
-## The likely explanation
+## Root cause: every capture rasterizes the same stale scene
 
-`tab.File` is the only surface that differs, and its ribbon measures **122px tall** where
-every other tab measures **130px**. That 8px delta shifts everything below it, which is
-sufficient on its own to change the image — no ribbon content needs to have been drawn.
+The ribbon band is **not** blank. Sampling rows 0..130 of `tab.Home.png` finds 15,002
+non-white pixels across 413 distinct colours — the ribbon draws fine. It just draws the
+same thing every time.
 
-Read together with the strip highlight never changing, the ribbon region is most likely
-rasterizing **blank**: identical for every tab because nothing inside it is drawn, and
-different for File only because the empty band is a different height.
+The decisive measurement is `tab.File` against `tab.Home`, compared row by row:
 
-Next step: count non-background pixels in rows 0..130 of any captured tab PNG. If that band
-is uniform, the question becomes why `AvaloniaRibbonRenderer`'s content produces no draw
-operations under the Skia headless render target, which is a rendering-path question rather
-than anything to do with tab selection or the capture harness.
+```
+Home vs File: firstDiffRow=0  totalDiffRows=1
+```
+
+They differ in **exactly one row, row 0**. Backstage replaces the entire client area, so two
+captures of genuinely different application states cannot be pixel-identical over the other
+719 rows. Every surface is rasterizing the same scene, and the single varying row is the
+only thing that reaches the bitmap.
+
+That also corrects the earlier reading: `tab.File`'s hash differs not because Backstage
+rendered, but because of that one row. The 122px-vs-130px ribbon height measured at layout
+time never made it into the image either.
+
+So the fault is in the render step, not in tab selection, the visual tree, or the ribbon's
+drawing. Layout and selection are demonstrably correct at the moment of the call
+(see above); the rasterization does not observe them.
+
+Next step: `RenderVisualToBitmap` / `RenderTargetBitmap.Render` in the headless+Skia session
+is the suspect — check whether the composition tree is flushed before each render, and
+whether a fresh `RenderTargetBitmap` per call actually picks up composition updates or
+replays the first committed frame.
 
 ## Consequence
 
-Sixteen parity PNGs currently carry no information. Any parity review that consumed them
-compared identical images. This should be fixed before those surfaces are trusted again,
-and a cheap guard — assert the tab captures are pairwise distinct — would stop it silently
-recurring.
+**All seventeen** ribbon PNGs carry no information — not sixteen, since `tab.File` differs
+only by a single row. Any parity review that consumed them compared identical images.
+
+The blast radius is probably wider than the ribbon: if the render step replays a stale
+scene, every surface captured after the first in a session is suspect, including the grid
+and dialog PNGs. Worth checking before trusting any capture output.
+
+A cheap guard — assert the tab captures are pairwise distinct — would stop this recurring
+silently, and would have caught it at the point it was introduced.
 
 ## Incidental
 
