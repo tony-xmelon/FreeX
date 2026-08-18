@@ -10,8 +10,8 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 
 | Metric | Count |
 |---|---:|
-| Total commands | 553 |
-| PARITY (both) | 547 |
+| Total commands | 563 |
+| PARITY (both) | 557 |
 | AVALONIA-MISSING | 0 |
 | WPF-MISSING | 6 |
 | BOTH-MISSING | 0 |
@@ -386,16 +386,24 @@ See `functional-parity-classification.md` for the prioritized implementation lis
 | Check Cell | Styles | Home | yes | yes | PARITY |
 | Clear Rules | Styles | Home | yes | yes | PARITY |
 | Color Scales | Styles | Home | yes | yes | PARITY |
+| Comma | Styles | Home | yes | yes | PARITY |
+| Comma [0] | Styles | Home | yes | yes | PARITY |
 | Conditional Formatting | Styles | Home | yes | yes | PARITY |
+| Currency | Styles | Home | yes | yes | PARITY |
+| Currency [0] | Styles | Home | yes | yes | PARITY |
 | Data Bars | Styles | Home | yes | yes | PARITY |
 | Duplicate Values | Styles | Home | yes | yes | PARITY |
 | Equal To | Styles | Home | yes | yes | PARITY |
 | Explanatory Text | Styles | Home | yes | yes | PARITY |
+| Followed Hyperlink | Styles | Home | yes | yes | PARITY |
 | Format as Table | Styles | Home | yes | yes | PARITY |
 | Good | Styles | Home | yes | yes | PARITY |
 | Greater Than | Styles | Home | yes | yes | PARITY |
 | Heading 1 | Styles | Home | yes | yes | PARITY |
 | Heading 2 | Styles | Home | yes | yes | PARITY |
+| Heading 3 | Styles | Home | yes | yes | PARITY |
+| Heading 4 | Styles | Home | yes | yes | PARITY |
+| Hyperlink | Styles | Home | yes | yes | PARITY |
 | Input | Styles | Home | yes | yes | PARITY |
 | Less Than | Styles | Home | yes | yes | PARITY |
 | Linked Cell | Styles | Home | yes | yes | PARITY |
@@ -407,7 +415,9 @@ See `functional-parity-classification.md` for the prioritized implementation lis
 | Normal | Styles | Home | yes | yes | PARITY |
 | Note | Styles | Home | yes | yes | PARITY |
 | Output | Styles | Home | yes | yes | PARITY |
+| Percent | Styles | Home | yes | yes | PARITY |
 | Text that Contains | Styles | Home | yes | yes | PARITY |
+| Title | Styles | Home | yes | yes | PARITY |
 | Top 10 Items | Styles | Home | yes | yes | PARITY |
 | Top 10% | Styles | Home | yes | yes | PARITY |
 | Total | Styles | Home | yes | yes | PARITY |
