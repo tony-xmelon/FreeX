@@ -27,7 +27,51 @@ it. The same wiring is used for Scale Height and Scale Percent.
 The fix is to subscribe with `AddHandler(UIElement.KeyDownEvent, ..., handledEventsToo: true)` (or
 to use `PreviewKeyDown`).
 
-## Blocker 2: the commit does not reach the asserted workbook
+## Blocker 2 (corrected): the Percent combo's echo clears fit-to-pages
+
+An earlier revision of this note said the commit "does not reach the asserted workbook". **That was
+wrong** -- it read the model *before* the apply. Instrumenting the execution shows the width commit
+works and is then undone:
+
+```
+exec label=[Scale To Fit] ok=True noop=False wide=1    afterModel=1      <- applied
+exec label=[Scale To Fit] ok=True noop=False wide=null afterModel=null   <- reverted
+```
+
+The second commit comes from the **Percent** combo, not from focus loss:
+
+```
+  selChanged Width   suppress=False     <- real edit, commits wide=1
+  selChanged Percent suppress=False     <- echo of our own sync, unsuppressed
+  commitPercent text=[auto] lastSynced=[100]
+```
+
+`SyncPageLayoutScaleToFitControls` writes all three combos inside `_suppressToolbarSync`, but a
+`ComboBox` raises `SelectionChanged` for those writes on a **later dispatcher turn**, by which time
+the flag has been reset. The echo is therefore treated as a user edit.
+
+What makes it destructive is the value: with fit-to-pages active the Percent combo correctly reads
+`auto`, and `PlanScalePercentCommit` treats `auto` as "switch to automatic percent", which clears
+`FitToPagesWide`. A passive display value is being read as an intent to change mode.
+
+## The decision this needs
+
+`auto` in the Percent combo means "percent is not in use because fit-to-pages is", so committing it
+while fit-to-pages is set should be a no-op rather than a mode switch. That is a one-line change in
+`PlanScalePercentCommit`, but it is a product-semantics call about what an automatic percent commit
+means, so it is left to the owner rather than guessed.
+
+## Rejected: echo suppression by value
+
+Tracking what the sync wrote and ignoring a matching `SelectionChanged` looks right but does not
+work at that layer, and two attempts are recorded here so they are not repeated. Storing
+`state.PercentValue` compares a display label ("100%", "Automatic") against what a commit reads,
+which is the choice value ("100", "auto") -- they never match. Storing the post-sync
+`GetComboBoxText` instead reads the control *before* the deferred write lands, so it captures the
+old value. The echo is only distinguishable at the point where its meaning is decided, which is why
+the fix belongs in the percent planner.
+
+## Superseded: the commit does not reach the asserted workbook
 
 With Blocker 1 worked around, the commit runs with the right text and the plan says apply:
 
