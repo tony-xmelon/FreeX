@@ -61,6 +61,24 @@ So making these tests deterministic is not a one-line fixture change: it needs t
 stop touching Calibri at all, which is a product question about those fallbacks rather than test
 hygiene.
 
+## Also rejected: turning subsetting off
+
+`XpsSerializationManager` exposes
+`SetFontSubsettingPolicy(FontSubsetterCommitPolicies.None)`, which looks like the direct answer --
+nothing here needs a subset, since the package is read back in-process and discarded. Swapping
+`XpsDocumentWriter.Write` for `XpsSerializationManager.SaveAsXaml` + `Commit()` builds and runs, but
+the package it produces cannot be read back:
+
+```
+System.Windows.Markup.XamlParseException : Initialization of
+  'System.Windows.Documents.FixedDocument' threw an exception.
+---- System.FormatException : One of the identified items was in an invalid format.
+```
+
+That takes all nine Pdf/Xps export tests down rather than the seven, so it is strictly worse. It is
+not a drop-in replacement for the writer, and making it one is a bigger change than the problem
+justifies. Reverted.
+
 ## Note on visibility
 
 `FreeW.App.Host.Tests` is **not** part of `FreeX.DefaultTests.slnx`, so none of this shows up in the
