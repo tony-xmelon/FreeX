@@ -47,6 +47,17 @@ the font combo is now driven declaratively through `RibbonBackplaneControlNames[
 which belongs to whoever is doing that refactor. Guessing would just encode a different wrong
 expectation.
 
+## Workflow gotcha worth knowing
+
+`docs/parity/freep-whole-window-visual-evidence/artifact-manifest.json` records a sha256 for the
+**source files** behind the evidence, not just the PNGs -- including
+`shared/Free.Shared.Ribbon.Wpf/RibbonWpfRenderer.cs`. So editing a tracked source invalidates the
+manifest and the generated-docs preflight fails until it is regenerated. That happened twice in
+this session: the manifest was refreshed, then a later ribbon fix in a tracked file made it stale
+again. The generator itself is deterministic (verified: two consecutive runs, identical hash), so
+this is expected coupling rather than flakiness -- but it means "regenerate the manifest" belongs
+at the end of a change that touches those sources, not the start.
+
 ## Recommendation
 
 Add `FreeX.App.Host.Tests` to `FreeX.DefaultTests.slnx` once those five are resolved. Adding it
