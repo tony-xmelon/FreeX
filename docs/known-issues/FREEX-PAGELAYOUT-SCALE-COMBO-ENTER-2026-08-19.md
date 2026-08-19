@@ -5,8 +5,13 @@ types "1 page" into the Scale Width combo, raises Enter, and expects `FitToPages
 
 ## Status
 
-Open. Two independent blockers, the first proven, the second located but not fixed. No code
-change is committed for either -- see "Why nothing is committed".
+**RESOLVED** for the failing test. `PlanScalePercentCommit` now treats "Automatic" as a no-op while
+fit-to-pages is set, which is what actually reverted the user's value;
+`RenderedScaleWidthCombo_CommitText_AppliesFitToPagesWide` passes and two unit tests lock the
+semantics both ways.
+
+Blocker 1 below (ComboBox swallowing Enter) is **proven but deliberately not fixed** -- the obvious
+fix regresses keytips. See "Why the Enter fix is not landed".
 
 ## Blocker 1: ComboBox eats Enter before the handler (proven)
 
@@ -101,10 +106,17 @@ harness/wiring question about which workbook instance the command context resolv
 - **Missing combo re-sync after a commit.** Adding `SyncPageLayoutScaleToFitControls` after a
   successful apply did not help, because the apply itself never reached the model.
 
-## Why nothing is committed
+## Why the Enter fix is not landed
 
-Blocker 1's fix is correct in isolation but does not make the test pass on its own, and this
-project's full-suite failure count swung 5 -> 9 -> 12 -> 16 across consecutive runs on identical
-code, so a regression from a narrow change cannot be distinguished from that noise here. Landing a
-change that cannot be verified in the suite it lives in is how a plausible-but-wrong fix gets
-buried. The proof above is enough for whoever fixes Blocker 2 to land both together.
+Subscribing with `AddHandler(UIElement.KeyDownEvent, ..., handledEventsToo: true)` does make the
+combo see Enter -- and **regresses**
+`MainWindowRibbonKeyTipTests.PageLayoutSetupMenuKeyTips_UpdatePrintSettings`, which passes without
+it and fails with it. Accepting already-handled Enter means the scale combos also act on Enter
+presses that the keytip flow had already consumed.
+
+So the naive fix is wrong, which is worth knowing before anyone tries it again. A correct fix has
+to commit only when the combo itself owns the keystroke -- e.g. `PreviewKeyDown` gated on the combo
+having keyboard focus -- and needs verifying against the keytip tests.
+
+In practice the common path is covered: typing a value that matches a list entry updates
+`SelectedItem`, and `SelectionChanged` commits it. The gap is a typed value with no matching entry.
