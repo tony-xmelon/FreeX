@@ -30,22 +30,37 @@ touched no `src/FreeX.App.Host/` file).
   marquee -- so closing one window cannot destroy another's still-pasteable copy. The guard
   asserted the old direct calls, which would have forbidden that routing.
 
-## Remaining (5)
+## Also fixed: four backplane-refactor guards
 
-All trace to the in-flight ribbon backplane refactor (`MainWindow.RibbonBackplane.g.cs` is
-generated) landed across Rounds 142-144:
+Rounds 142-144 moved per-command ribbon writes into shared publishers both renderers consume. Four
+guards still asserted the host-local calls and were repointed at the code that now owns the
+behaviour, keeping what each was actually protecting:
 
-- `MainWindowSourceHygieneTests.FontDropdownSelection_SyncsThroughStyleDiffToolbarStateAndGridTypeface`
-- `MainWindowSourceHygieneTests.RefreshToolbar_AvoidsRepeatedDependencyPropertyWrites`
-- `MainWindowSourceHygieneTests.SplitRibbonCommand_ReflectsActiveSplitState`
-- `MainWindowRenderedPageLayoutComboTests.RenderedScaleWidthCombo_CommitText_AppliesFitToPagesWide`
-- `PageLayoutCommandSourceTests.PageLayoutHandlers_RouteThroughExpectedThemePageSetupAndPrintCommands`
+- `RefreshToolbar_AvoidsRepeatedDependencyPropertyWrites` and
+  `FontDropdownSelection_SyncsThroughStyleDiffToolbarStateAndGridTypeface` wanted
+  `SetRibbonComboValue`, which no longer exists anywhere. Bold and Font now go through
+  `WorkbookHomeFormatRibbonStatePublisher`, so the routing is asserted here and the writes where
+  they moved to.
+- `SplitRibbonCommand_ReflectsActiveSplitState` wanted a direct `SetChecked`. Split flows through
+  `WorkbookViewRibbonStatePlanner` now, still from `viewState` and never the shared `Sheet` -- the
+  per-window guarantee the guard existed for.
+- `PageLayoutHandlers_RouteThroughExpectedThemePageSetupAndPrintCommands` wanted
+  `new PageLayoutCommandSession([_currentSheetId])`. The shared `CreatePageLayoutCommandSession()`
+  composes from `CurrentGroupedEditSheetIds()`, so a grouped-sheet selection applies to the whole
+  group; the old assertion would have forbidden that.
 
-The guards assert `SetRibbonComboValue(...)`, which **no longer exists anywhere in production** --
-the font combo is now driven declaratively through `RibbonBackplaneControlNames["Font"] =
-"FontNameBox"`. Rewriting them means deciding what the new mechanism should be guaranteed to do,
-which belongs to whoever is doing that refactor. Guessing would just encode a different wrong
-expectation.
+## Remaining (1)
+
+`MainWindowRenderedPageLayoutComboTests.RenderedScaleWidthCombo_CommitText_AppliesFitToPagesWide`.
+Not a stale guard -- it found two real defects. See
+`FREEX-PAGELAYOUT-SCALE-COMBO-ENTER-2026-08-19.md`.
+
+## Instability worth knowing
+
+This suite's full-run failure count swung **5 -> 9 -> 12 -> 16** across consecutive runs on
+identical code, with keytip, grouped-sheet and clipboard tests appearing and disappearing. Judge a
+failure here by re-running it alone before believing it, and treat any narrow change as unverifiable
+against a full-suite count until that instability is addressed.
 
 ## Workflow gotcha worth knowing
 
