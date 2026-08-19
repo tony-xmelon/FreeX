@@ -46,8 +46,8 @@
                                             "excluded":  23
                                         },
                      "functionalMatrix":  {
-                                              "totalCommands":  553,
-                                              "parity":  547,
+                                              "totalCommands":  563,
+                                              "parity":  557,
                                               "avaloniaMissing":  0,
                                               "wpfMissing":  6,
                                               "bothMissing":  0,

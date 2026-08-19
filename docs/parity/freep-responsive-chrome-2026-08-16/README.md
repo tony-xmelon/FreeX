@@ -1,4 +1,4 @@
-# FreeP responsive WPF/Avalonia chrome capture â€” 2026-08-16
+# FreeP responsive WPF/Avalonia chrome capture — 2026-08-16
 
 This directory contains a guarded, scenario-isolated capture matrix for FreeP's six actual top-level ribbon tabs: Home, Insert, Design, Transitions, Animations and View. Both WPF and Avalonia are captured at 1280, 1100, 900 and 750 logical pixels, for 48 app-owned chrome captures.
 
