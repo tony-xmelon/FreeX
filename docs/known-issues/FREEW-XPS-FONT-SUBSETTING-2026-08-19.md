@@ -44,10 +44,22 @@ rather than anything FreeW controls.
 The fixtures inherit the default document font. Pinning them to a font WPF can subset would make
 them deterministic and keep the assertions meaningful.
 
-**Tried and rejected:** setting `DocumentView.FontFamily` on the WPF control before `LoadModel`
-does not propagate -- the export still subsets `CALIBRI.TTF` (verified by rethrowing from the new
-catch). The exported font comes from FreeW's own document style model (`StyleId = "Heading1"` and
-the default paragraph style), so pinning has to happen there, not on the host control.
+**Three pinning attempts, all rejected** -- each verified by rethrowing from the new catch, which
+still named `CALIBRI.TTF` every time:
+
+1. `DocumentView.FontFamily` on the WPF control before `LoadModel`.
+2. `doc.DefaultRun with { FontFamily = "Arial" }`, with the `Heading1` style removed from the
+   fixture so nothing else could reintroduce a font.
+3. `DocumentFontSet.Apply(doc, "Georgia")` -- a set with no Calibri in either slot.
+
+`DocumentRunFormattingResolver.Resolve` genuinely starts from `document.DefaultRun`, so body runs
+do follow (2) and (3). Calibri therefore enters from page furniture rather than body text --
+`DocumentView` carries several hardcoded `new FontFamily("Calibri")` fallbacks (e.g. around lines
+4944 and 10355). Whatever gets serialized alongside the text is pulling one of them.
+
+So making these tests deterministic is not a one-line fixture change: it needs the export path to
+stop touching Calibri at all, which is a product question about those fallbacks rather than test
+hygiene.
 
 ## Note on visibility
 
