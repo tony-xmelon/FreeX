@@ -1,51 +1,65 @@
-# Ribbon keytip sequences no longer open menus
+# Keytip menu tests: the menu opens, then is dismissed before the assertion
 
 ## Symptom
 
-Five tests in `MainWindowRibbonKeyTipTests` fail, every run, each the same shape:
+Five tests in `MainWindowRibbonKeyTipTests` fail, deterministically (5 of 68 on every run), each:
 
 ```
 Expected boolean to be True because the ribbon keytip sequence W,Q should open a menu,
 but found False.
 ```
 
-- `CrossTabMenuKeyTips_RouteThroughStaticRibbonMenus` (W,Q)
-- `DeclarativeHomeMenuChoices_AreEnabledAcrossFormattingFamilies` (H,B)
-- `PageLayoutSetupMenuKeyTips_UpdatePrintSettings` (P,O,R)
-- `FormulasAutoSumAndCalculationOptionKeyTips_InvokeMenuItems` (M,O)
-- `LegacyAltEditPasteSpecialKeyTip_ES_RoutesToPasteSpecialAndClosesKeyTips`
+`CrossTabMenuKeyTips_RouteThroughStaticRibbonMenus` (W,Q) ·
+`DeclarativeHomeMenuChoices_AreEnabledAcrossFormattingFamilies` (H,B) ·
+`PageLayoutSetupMenuKeyTips_UpdatePrintSettings` (P,O,R) ·
+`FormulasAutoSumAndCalculationOptionKeyTips_InvokeMenuItems` (M,O) ·
+`LegacyAltEditPasteSpecialKeyTip_ES_RoutesToPasteSpecialAndClosesKeyTips`
 
-## This is a product regression, not test flakiness
+## What is proven
 
-Earlier in the day these tests were **intermittent** (0-2 failures per run, varying which). They are
-now **deterministic**: 5 failures on five consecutive runs, and each fails when run *on its own*.
-Something changed between those measurements, and it was not the test harness.
+**The product code works.** Instrumenting `MainWindow.KeyTips.cs` shows the keytip route reaching
+the menu and opening it:
 
-**Not caused by the local work.** Reverting both production changes made here -- the
-`handledEventsToo` Enter subscription in `MainWindow.RibbonDeclarative.cs` and the
-`PlanScalePercentCommit` semantics -- and rebuilding still gives 5 failures of 68. The regression
-arrived with upstream commits merged in between.
-
-## Where to look
-
-`MainWindow.KeyTips.cs`'s `TryEnterMenuKeyTipScope` declines before opening anything when no menu
-item carries a keytip:
-
-```csharp
-if (!GetMenuItems(menu).Any(item => !string.IsNullOrWhiteSpace(RibbonTooltip.GetKeyTip(item))))
-    return false;
+```
+TryEnterMenuKeyTipScope hasMenu=True items=41 withKeyTip=41
+  afterSet IsOpen=True target=set visible=True items=10
 ```
 
-So a plausible cause is that menu items stopped carrying their keytip metadata, rather than the
-opening itself breaking. Recent upstream work in this area includes the ribbon metadata unification
-and the shared ribbon-state publishers (`Share FreeX home format / worksheet view / page layout
-scale / sheet options ribbon state`, `refactor(freex): unify ribbon metadata ownership`). Confirm by
-checking whether `RibbonTooltip.GetKeyTip` still returns a value for those menu items, before
-looking at the popup path.
+Every menu item carries its keytip, the gate passes, and the menu is open and visible. The failure
+is that it is **dismissed again before the assertion reads it** -- a WPF ContextMenu is dismissed
+when its window stops being foreground, which a test runner frequently is not.
 
-## Note on the earlier instability
+**Not caused by the local work.** Reverting both production changes made here -- the
+`handledEventsToo` Enter subscription and the `PlanScalePercentCommit` semantics -- and rebuilding
+still gives 5 of 68.
 
-The intermittency this file previously described is documented separately in
-`FREEX-HOST-KEYTIP-TEST-INSTABILITY-2026-08-20.md`, along with six rejected fixes and their
-numbers. That work stands, but it is now masked: while the menus do not open at all, the residual
-flakiness cannot be measured.
+## Two earlier claims in this file were wrong
+
+Recorded so nobody follows them:
+
+1. *"Menu items lost their keytip metadata."* No -- 41 of 41 carry keytips.
+2. *"This is a product regression."* No -- the product opens the menu correctly. What changed with
+   the upstream merges is that dismissal went from intermittent to reliable, which made the tests
+   fail every time instead of sometimes.
+
+## Tried and rejected, with numbers
+
+Baseline is 5 failures per run.
+
+- **Asserting the menu *opened* (class handler on `ContextMenu.OpenedEvent`) instead of that it is
+  still open.** 10, 11, 11, 10, 11 -- far worse, because sibling tests assert a menu is *closed*
+  after Escape and that reading now returns true. The assertion cannot simply be relaxed.
+- **`Topmost` on the window before the sequence.** Exactly unchanged.
+- **Releasing `PlacementTarget` when closing menus in teardown.** Fixes the failing pair but breaks
+  five other menus: 5 per run either way.
+- See `FREEX-HOST-KEYTIP-TEST-INSTABILITY-2026-08-20.md` for four more, with numbers.
+
+## What would actually fix it
+
+The assertion needs to distinguish "this sequence opened this menu" from "a menu is open right now"
+*without* breaking the Escape-closes-the-menu tests that share the harness -- for example by
+recording which menu was opened by the sequence and asserting on that identity, rather than a global
+"was any menu opened" flag or a live `IsOpen` read.
+
+Alternatively, keep the window foreground for the duration of a sequence so the popup is not
+dismissed. `Topmost` alone does not achieve that.
