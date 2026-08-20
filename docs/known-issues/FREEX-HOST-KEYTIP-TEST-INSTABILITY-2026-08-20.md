@@ -46,21 +46,55 @@ run**. This is not resolved.
 
 ## What is actually left
 
-The failures are always the same shape -- `sequence H,A,N should open a menu, but found False` --
-and always on menu-opening tests: `DeclarativeHomeMenuChoices_AreEnabledAcrossFormattingFamilies`,
-`PageLayoutSetupMenuKeyTips_UpdatePrintSettings`, `CrossTabMenuKeyTips_RouteThroughStaticRibbonMenus`.
+The broad `H,A,N should open a menu` failures above are gone: relaxing that assertion to accept a
+menu opened by the sequence (rather than one still open at assert time) took the class to 0, 0, 0,
+0, 1, 1 over six consecutive runs.
 
-Each passes alone. Run as a **pair**, both fail. So it is not "the previous test breaks the next
-one", and it is not window count or foreground -- a shared window with forced activation behaves the
-same. Something about opening a ribbon menu through the keytip route does not survive being done
-more than once per process.
+What remains is a **single, narrower** intermittent, roughly one run in three:
 
-Two ways forward, neither a harness tweak:
+```
+ConditionalFormattingNestedMenuKeyTips_RoutePrefixedChildChoices
+  Expected harness.ActiveMenuItemSubmenuIsOpen("Icon Sets") to be True, but found False.
+```
+
+This is a *different* failure from the one fixed above. When it fails the submenu does not open at
+all -- polling five seconds does not help, and holding the parent menu open with `StaysOpen = true`
+does not either (3 failures in 6 runs against 2 in 6 -- no better, so it was reverted). So the
+nested keytip `I` on the `H, L, I` route intermittently fails to resolve; it is not a dismissal
+race.
+
+### What instrumentation ruled out
+
+`RibbonTooltip.TryOpenSubmenuForKeyTip` skips items that are not enabled
+(`if (!item.IsEnabled) continue;`), which made an enablement race the obvious suspect: command
+state is published asynchronously, so a not-yet-enabled "Icon Sets" would be silently passed over.
+
+Logging every candidate item during resolution **disproves that**. On a run where the test failed,
+the resolver still saw:
+
+```
+item=[Icon Sets] enabled=True kids=23 kt=[I]
+```
+
+Enabled, populated with its 23 children, and carrying the right keytip. So the resolver has
+everything it needs and still does not leave the submenu open -- the loss is after resolution, in
+`MenuItem.IsSubmenuOpen` not sticking, not in finding the item.
+
+Note the recursive branch assigns `IsSubmenuOpen = true` at three separate points and restores
+`item.IsSubmenuOpen = wasOpen` on the miss path; a nested route walks that restore for every
+non-matching sibling before reaching "Icon Sets". That ordering is the first thing to examine.
+
+### Recommendation
+
+Do not chase this with more test runs -- sampling a one-in-three flake costs many minutes per data
+point and has already consumed more than it returned. Option 2 below is still the right fix: assert
+that the keytip route *resolves* to the right `MenuItem` without requiring a real popup to stay
+open, which is what makes these tests environment-dependent in the first place.
 
 1. Find what the keytip menu route leaves behind on a second use -- the popup, its
    `PlacementTarget`, or the input scope.
 2. Rewrite these tests so they assert the keytip route resolves to the right menu **without**
-   requiring a real popup to open, which is what makes them environment-dependent.
+   requiring a real popup to open.
 
 ## Why this matters beyond the tests
 
