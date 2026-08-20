@@ -16,6 +16,29 @@ open leaked into the next test**.
 Closing every open `ContextMenu`, `ComboBox` dropdown and the tab-overflow toggle reachable from the
 window took consecutive runs from 7 failures to 1-2, including clean passes.
 
+## Measured results
+
+| Harness | Failures across consecutive runs |
+|---|---|
+| Shared window (original) | 1, 7, 2 -- never clean |
+| + close every leaked popup in teardown | 1, 1, 0 |
+| + per-test window, retiring the previous one | 0, 1, 0, 1 / 1, 1, 1, 0 |
+
+Clean runs happen regularly now and never did before, but one test still fails intermittently --
+usually `DeclarativeHomeMenuChoices_AreEnabledAcrossFormattingFamilies` or
+`PageLayoutSetupMenuKeyTips_UpdatePrintSettings`, both of which open a menu and pass on their own.
+
+## Tried and rejected, with numbers
+
+- **Cancelling the keytip session in teardown** (`KeyTipSession.Cancel()`): 1, 2, 1, 2 against
+  1, 1, 0 without. No help.
+- **Closing each test's own window in `Dispose`**: 64 failures of 68, identically three runs
+  running. WPF's default `OnLastWindowClose` shuts the Application down with the last window. The
+  perfect repeatability is what proved shared window state was the variable.
+- **Widening the menu-open poll from 5s to 20s**: 0, 1, 0, 1 -- unchanged, so the menu genuinely
+  never opens rather than opening late.
+- **Hiding the retired window instead of closing it**: 3, 1, 1, 2 -- worse.
+
 ## What remains
 
 One or two tests still fail intermittently, most often
