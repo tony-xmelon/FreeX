@@ -28,8 +28,17 @@ behind. Four runs with it gave 1, 2, 1, 2 failures against 1, 1, 0 without, so i
 was not kept.
 
 The remaining leak is most likely keyboard focus or selection state on the shared window rather than
-a popup. The decisive next step is to give each test its own `MainWindow` instead of sharing one --
-slower, but it removes the whole class of problem rather than chasing individual leaks.
+a popup.
+
+**Per-test window isolation was tried and confirms the diagnosis, but is not a drop-in change.**
+Building a fresh session in `Create` and closing the window in `Dispose` gives **64 failures out of
+68, identically on three consecutive runs** -- the nondeterminism disappears completely, which is
+the proof that shared window state is what varies. But the tests are written against a window that
+persists: they rely on setup and ribbon state established outside their own body, so isolating them
+requires rewriting the tests, not just the harness. Reverted.
+
+So the choice is explicit: keep the shared window and accept 1-2 intermittents, or rework the class
+to stand alone. The second is the real fix and is a piece of work in its own right.
 
 ## Why this matters beyond the tests
 
