@@ -114,9 +114,18 @@ combo see Enter -- and **regresses**
 it and fails with it. Accepting already-handled Enter means the scale combos also act on Enter
 presses that the keytip flow had already consumed.
 
-So the naive fix is wrong, which is worth knowing before anyone tries it again. A correct fix has
-to commit only when the combo itself owns the keystroke -- e.g. `PreviewKeyDown` gated on the combo
-having keyboard focus -- and needs verifying against the keytip tests.
+Two further shapes were tried and **also regress the same keytip test**, each verified in isolation
+against the unmodified code (which passes in 2s; each variant fails in ~7s):
+
+1. `PreviewKeyDown` on the combo, gated on `IsKeyboardFocusWithin`. The handler only acts on Enter,
+   and the keytip sequence is P,P,A -- letters it returns early for -- yet the menu stops opening.
+2. Attaching that same `PreviewKeyDown` handler on `GotKeyboardFocus` and detaching it on
+   `LostKeyboardFocus`, so it is not present at all during keytip navigation. Same failure.
+
+The failure is always `Expected ActiveMenuIsOpen to be True because the ribbon keytip sequence
+P,P,A should open a menu`. So it is not Enter being intercepted: *any* change to these combos' key
+wiring disturbs keytip routing. That points at the keytip input pipeline rather than the combos, and
+fixing it needs that pipeline understood rather than another wiring variant.
 
 In practice the common path is covered: typing a value that matches a list entry updates
 `SelectedItem`, and `SelectionChanged` commits it. The gap is a typed value with no matching entry.
