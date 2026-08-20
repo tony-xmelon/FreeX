@@ -7,7 +7,7 @@ body{font-family:Segoe UI,Arial,sans-serif;margin:24px;color:#202124;background:
 <h1>FreeP Dialog/Pane Paired Visual Evidence</h1>
 <p>Real app-owned WPF and Avalonia render-target captures at a 96 DPI target. Semantic route coverage is not visual evidence.</p>
 <p>WPF source desktop DPI was 120x120; app-owned rasters were normalized to logical 96 DPI before comparison. Captures include app-owned client content only; native non-client title bars are outside the paired pixel gate. WPF mode: visible-app-owned-render-target; Avalonia mode: visible-app-owned-render-target.</p>
-<div class="summary"><b>Scenarios 28</b><b>Paired 28</b><b>Pass 22</b><b>Mismatch 6</b><b>Limitation 0</b></div>
+<div class="summary"><b>Scenarios 28</b><b>Paired 28</b><b>Pass 27</b><b>Mismatch 1</b><b>Limitation 0</b></div>
 <section class="pair pass">
   <h2>design.slide-size.initial <span>Pass</span></h2>
   <div class="checks">WPF 365.6x222.4 logical / 366x223 px @ 96 DPI; source 120x120 DPI; Avalonia 365.6x222.4 logical / 366x223 px @ 96 DPI; nonblank pass; focus pass; buttons pass; enabled state pass; target pixels 366x223/366x223; changed 7.78 %; foreground 49.66 %; mean/max 7.02/255; threshold pass; shell context unavailable</div>
@@ -28,15 +28,15 @@ body{font-family:Segoe UI,Arial,sans-serif;margin:24px;color:#202124;background:
   <div class="checks">WPF 345.6x253.6 logical / 346x254 px @ 96 DPI; source 120x120 DPI; Avalonia 345.6x253.6 logical / 346x254 px @ 96 DPI; nonblank pass; focus pass; buttons pass; enabled state pass; target pixels 346x254/346x254; changed 11.59 %; foreground 57.56 %; mean/max 9.57/255; threshold pass; shell context unavailable</div>
 
   <div class="images"><figure><figcaption>WPF context</figcaption><img loading="lazy" src="wpf/insert.header-footer.apply-to-all.png" alt="WPF context capture"></figure><figure><figcaption>Avalonia context</figcaption><img loading="lazy" src="avalonia/insert.header-footer.apply-to-all.png" alt="Avalonia context capture"></figure><figure><figcaption>Target diff</figcaption><img loading="lazy" src="diff/insert.header-footer.apply-to-all.png" alt="Target diff capture"></figure><figure><figcaption>Shell-context diff</figcaption><p>Capture unavailable.</p></figure></div>
-</section><section class="pair mismatch">
-  <h2>home.find-replace.find <span>Mismatch</span></h2>
-  <div class="checks">WPF 425.6x130.4 logical / 426x131 px @ 96 DPI; source 120x120 DPI; Avalonia 424.8x130.4 logical / 425x131 px @ 96 DPI; nonblank pass; focus pass; buttons pass; enabled state pass; target pixels 426x131/425x131; changed 8.44 %; foreground 86.94 %; mean/max 6.68/224; threshold mismatch; shell context unavailable</div>
-  <ul><li>Normalized target pixel threshold failed: changed 8.44 % (max 20 %), foreground changed 86.94 % (max 100 %), mean channel delta 6.68 (max 18.00), source pixels WPF 426x131, Avalonia 425x131.</li></ul>
+</section><section class="pair pass">
+  <h2>home.find-replace.find <span>Pass</span></h2>
+  <div class="checks">WPF 425.6x130.4 logical / 426x131 px @ 96 DPI; source 120x120 DPI; Avalonia 425.6x130.4 logical / 426x131 px @ 96 DPI; nonblank pass; focus pass; buttons pass; enabled state pass; target pixels 426x131/426x131; changed 8.17 %; foreground 87.82 %; mean/max 6.83/255; threshold pass; shell context unavailable</div>
+
   <div class="images"><figure><figcaption>WPF context</figcaption><img loading="lazy" src="wpf/home.find-replace.find.png" alt="WPF context capture"></figure><figure><figcaption>Avalonia context</figcaption><img loading="lazy" src="avalonia/home.find-replace.find.png" alt="Avalonia context capture"></figure><figure><figcaption>Target diff</figcaption><img loading="lazy" src="diff/home.find-replace.find.png" alt="Target diff capture"></figure><figure><figcaption>Shell-context diff</figcaption><p>Capture unavailable.</p></figure></div>
-</section><section class="pair mismatch">
-  <h2>home.find-replace.replace <span>Mismatch</span></h2>
-  <div class="checks">WPF 425.6x192 logical / 426x192 px @ 96 DPI; source 120x120 DPI; Avalonia 424.8x192 logical / 425x192 px @ 96 DPI; nonblank pass; focus pass; buttons pass; enabled state pass; target pixels 426x192/425x192; changed 9.91 %; foreground 79.54 %; mean/max 7.23/224; threshold mismatch; shell context unavailable</div>
-  <ul><li>Normalized target pixel threshold failed: changed 9.91 % (max 20 %), foreground changed 79.54 % (max 100 %), mean channel delta 7.23 (max 18.00), source pixels WPF 426x192, Avalonia 425x192.</li></ul>
+</section><section class="pair pass">
+  <h2>home.find-replace.replace <span>Pass</span></h2>
+  <div class="checks">WPF 425.6x192 logical / 426x192 px @ 96 DPI; source 120x120 DPI; Avalonia 425.6x192 logical / 426x192 px @ 96 DPI; nonblank pass; focus pass; buttons pass; enabled state pass; target pixels 426x192/426x192; changed 9.69 %; foreground 79.64 %; mean/max 7.41/255; threshold pass; shell context unavailable</div>
+
   <div class="images"><figure><figcaption>WPF context</figcaption><img loading="lazy" src="wpf/home.find-replace.replace.png" alt="WPF context capture"></figure><figure><figcaption>Avalonia context</figcaption><img loading="lazy" src="avalonia/home.find-replace.replace.png" alt="Avalonia context capture"></figure><figure><figcaption>Target diff</figcaption><img loading="lazy" src="diff/home.find-replace.replace.png" alt="Target diff capture"></figure><figure><figcaption>Shell-context diff</figcaption><p>Capture unavailable.</p></figure></div>
 </section><section class="pair pass">
   <h2>insert.hyperlink.initial <span>Pass</span></h2>
@@ -53,20 +53,20 @@ body{font-family:Segoe UI,Arial,sans-serif;margin:24px;color:#202124;background:
   <div class="checks">WPF 405.6x212 logical / 406x212 px @ 96 DPI; source 120x120 DPI; Avalonia 405.6x212 logical / 406x212 px @ 96 DPI; nonblank pass; focus pass; buttons pass; enabled state pass; target pixels 406x212/406x212; changed 10.34 %; foreground 52.08 %; mean/max 9.16/229; threshold pass; shell context unavailable</div>
 
   <div class="images"><figure><figcaption>WPF context</figcaption><img loading="lazy" src="wpf/insert.hyperlink.populated.png" alt="WPF context capture"></figure><figure><figcaption>Avalonia context</figcaption><img loading="lazy" src="avalonia/insert.hyperlink.populated.png" alt="Avalonia context capture"></figure><figure><figcaption>Target diff</figcaption><img loading="lazy" src="diff/insert.hyperlink.populated.png" alt="Target diff capture"></figure><figure><figcaption>Shell-context diff</figcaption><p>Capture unavailable.</p></figure></div>
-</section><section class="pair mismatch">
-  <h2>chart.edit-data.initial <span>Mismatch</span></h2>
-  <div class="checks">WPF 625.6x402.4 logical / 626x403 px @ 96 DPI; source 120x120 DPI; Avalonia 624.8x402.4 logical / 625x403 px @ 96 DPI; nonblank pass; focus pass; buttons pass; enabled state pass; target pixels 626x403/625x403; changed 10.90 %; foreground 18.89 %; mean/max 13.25/251; threshold mismatch; shell context unavailable</div>
-  <ul><li>Normalized target pixel threshold failed: changed 10.90 % (max 20 %), foreground changed 18.89 % (max 100 %), mean channel delta 13.25 (max 18.00), source pixels WPF 626x403, Avalonia 625x403.</li></ul>
+</section><section class="pair pass">
+  <h2>chart.edit-data.initial <span>Pass</span></h2>
+  <div class="checks">WPF 625.6x402.4 logical / 626x403 px @ 96 DPI; source 120x120 DPI; Avalonia 625.6x402.4 logical / 626x403 px @ 96 DPI; nonblank pass; focus pass; buttons pass; enabled state pass; target pixels 626x403/626x403; changed 10.82 %; foreground 18.84 %; mean/max 13.35/251; threshold pass; shell context unavailable</div>
+
   <div class="images"><figure><figcaption>WPF context</figcaption><img loading="lazy" src="wpf/chart.edit-data.initial.png" alt="WPF context capture"></figure><figure><figcaption>Avalonia context</figcaption><img loading="lazy" src="avalonia/chart.edit-data.initial.png" alt="Avalonia context capture"></figure><figure><figcaption>Target diff</figcaption><img loading="lazy" src="diff/chart.edit-data.initial.png" alt="Target diff capture"></figure><figure><figcaption>Shell-context diff</figcaption><p>Capture unavailable.</p></figure></div>
-</section><section class="pair mismatch">
-  <h2>chart.edit-data.validation <span>Mismatch</span></h2>
-  <div class="checks">WPF 625.6x402.4 logical / 626x403 px @ 96 DPI; source 120x120 DPI; Avalonia 624.8x402.4 logical / 625x403 px @ 96 DPI; nonblank pass; focus pass; buttons pass; enabled state pass; target pixels 626x403/625x403; changed 11.85 %; foreground 20.22 %; mean/max 14.21/255; threshold mismatch; shell context unavailable</div>
-  <ul><li>Normalized target pixel threshold failed: changed 11.85 % (max 20 %), foreground changed 20.22 % (max 100 %), mean channel delta 14.21 (max 18.00), source pixels WPF 626x403, Avalonia 625x403.</li></ul>
+</section><section class="pair pass">
+  <h2>chart.edit-data.validation <span>Pass</span></h2>
+  <div class="checks">WPF 625.6x402.4 logical / 626x403 px @ 96 DPI; source 120x120 DPI; Avalonia 625.6x402.4 logical / 626x403 px @ 96 DPI; nonblank pass; focus pass; buttons pass; enabled state pass; target pixels 626x403/626x403; changed 11.74 %; foreground 20.14 %; mean/max 14.34/255; threshold pass; shell context unavailable</div>
+
   <div class="images"><figure><figcaption>WPF context</figcaption><img loading="lazy" src="wpf/chart.edit-data.validation.png" alt="WPF context capture"></figure><figure><figcaption>Avalonia context</figcaption><img loading="lazy" src="avalonia/chart.edit-data.validation.png" alt="Avalonia context capture"></figure><figure><figcaption>Target diff</figcaption><img loading="lazy" src="diff/chart.edit-data.validation.png" alt="Target diff capture"></figure><figure><figcaption>Shell-context diff</figcaption><p>Capture unavailable.</p></figure></div>
-</section><section class="pair mismatch">
-  <h2>chart.edit-data.populated <span>Mismatch</span></h2>
-  <div class="checks">WPF 625.6x402.4 logical / 626x403 px @ 96 DPI; source 120x120 DPI; Avalonia 624.8x402.4 logical / 625x403 px @ 96 DPI; nonblank pass; focus pass; buttons pass; enabled state pass; target pixels 626x403/625x403; changed 10.90 %; foreground 18.89 %; mean/max 13.25/251; threshold mismatch; shell context unavailable</div>
-  <ul><li>Normalized target pixel threshold failed: changed 10.90 % (max 20 %), foreground changed 18.89 % (max 100 %), mean channel delta 13.25 (max 18.00), source pixels WPF 626x403, Avalonia 625x403.</li></ul>
+</section><section class="pair pass">
+  <h2>chart.edit-data.populated <span>Pass</span></h2>
+  <div class="checks">WPF 625.6x402.4 logical / 626x403 px @ 96 DPI; source 120x120 DPI; Avalonia 625.6x402.4 logical / 626x403 px @ 96 DPI; nonblank pass; focus pass; buttons pass; enabled state pass; target pixels 626x403/626x403; changed 10.82 %; foreground 18.84 %; mean/max 13.35/251; threshold pass; shell context unavailable</div>
+
   <div class="images"><figure><figcaption>WPF context</figcaption><img loading="lazy" src="wpf/chart.edit-data.populated.png" alt="WPF context capture"></figure><figure><figcaption>Avalonia context</figcaption><img loading="lazy" src="avalonia/chart.edit-data.populated.png" alt="Avalonia context capture"></figure><figure><figcaption>Target diff</figcaption><img loading="lazy" src="diff/chart.edit-data.populated.png" alt="Target diff capture"></figure><figure><figcaption>Shell-context diff</figcaption><p>Capture unavailable.</p></figure></div>
 </section><section class="pair pass">
   <h2>slideshow.custom-shows.initial <span>Pass</span></h2>

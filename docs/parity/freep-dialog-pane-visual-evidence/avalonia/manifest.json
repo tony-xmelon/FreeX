@@ -5,7 +5,7 @@
   "targetDpi": 96,
   "logicalShellWidth": 1280,
   "logicalShellHeight": 760,
-  "generatedAtUtc": "2026-08-20T20:32:06.7733215\u002B00:00",
+  "generatedAtUtc": "2026-08-20T23:34:31.3338822\u002B00:00",
   "captures": [
     {
       "scenarioId": "design.slide-size.initial",
@@ -541,13 +541,13 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/home.find-replace.find.png",
-      "logicalWidth": 424.8,
+      "logicalWidth": 425.6,
       "logicalHeight": 130.4,
-      "pixelWidth": 425,
+      "pixelWidth": 426,
       "pixelHeight": 131,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 4699,
+      "nonBackgroundPixelCount": 4750,
       "focusedRole": "textbox",
       "focusedLabel": "Find text",
       "buttons": [
@@ -679,7 +679,7 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/home.find-replace.find.png",
-      "pixelComparisonLogicalWidth": 424.8,
+      "pixelComparisonLogicalWidth": 425.6,
       "pixelComparisonLogicalHeight": 130.4
     },
     {
@@ -689,13 +689,13 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/home.find-replace.replace.png",
-      "logicalWidth": 424.8,
+      "logicalWidth": 425.6,
       "logicalHeight": 192,
-      "pixelWidth": 425,
+      "pixelWidth": 426,
       "pixelHeight": 192,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 7898,
+      "nonBackgroundPixelCount": 7950,
       "focusedRole": "textbox",
       "focusedLabel": "Find text",
       "buttons": [
@@ -827,7 +827,7 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/home.find-replace.replace.png",
-      "pixelComparisonLogicalWidth": 424.8,
+      "pixelComparisonLogicalWidth": 425.6,
       "pixelComparisonLogicalHeight": 192
     },
     {
@@ -1181,13 +1181,13 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/chart.edit-data.initial.png",
-      "logicalWidth": 624.8,
+      "logicalWidth": 625.6,
       "logicalHeight": 402.4,
-      "pixelWidth": 625,
+      "pixelWidth": 626,
       "pixelHeight": 403,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 137228,
+      "nonBackgroundPixelCount": 137405,
       "focusedRole": "combobox",
       "focusedLabel": "Chart type",
       "buttons": [
@@ -1382,7 +1382,7 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/chart.edit-data.initial.png",
-      "pixelComparisonLogicalWidth": 624.8,
+      "pixelComparisonLogicalWidth": 625.6,
       "pixelComparisonLogicalHeight": 402.4
     },
     {
@@ -1392,13 +1392,13 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/chart.edit-data.validation.png",
-      "logicalWidth": 624.8,
+      "logicalWidth": 625.6,
       "logicalHeight": 402.4,
-      "pixelWidth": 625,
+      "pixelWidth": 626,
       "pixelHeight": 403,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 138448,
+      "nonBackgroundPixelCount": 138622,
       "focusedRole": "textbox",
       "focusedLabel": "",
       "buttons": [
@@ -1598,7 +1598,7 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/chart.edit-data.validation.png",
-      "pixelComparisonLogicalWidth": 624.8,
+      "pixelComparisonLogicalWidth": 625.6,
       "pixelComparisonLogicalHeight": 402.4
     },
     {
@@ -1608,13 +1608,13 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/chart.edit-data.populated.png",
-      "logicalWidth": 624.8,
+      "logicalWidth": 625.6,
       "logicalHeight": 402.4,
-      "pixelWidth": 625,
+      "pixelWidth": 626,
       "pixelHeight": 403,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 137228,
+      "nonBackgroundPixelCount": 137405,
       "focusedRole": "combobox",
       "focusedLabel": "Chart type",
       "buttons": [
@@ -1809,7 +1809,7 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/chart.edit-data.populated.png",
-      "pixelComparisonLogicalWidth": 624.8,
+      "pixelComparisonLogicalWidth": 625.6,
       "pixelComparisonLogicalHeight": 402.4
     },
     {
