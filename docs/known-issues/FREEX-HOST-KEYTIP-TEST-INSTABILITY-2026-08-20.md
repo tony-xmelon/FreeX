@@ -84,17 +84,42 @@ Note the recursive branch assigns `IsSubmenuOpen = true` at three separate point
 `item.IsSubmenuOpen = wasOpen` on the miss path; a nested route walks that restore for every
 non-matching sibling before reaching "Icon Sets". That ordering is the first thing to examine.
 
-### Recommendation
+### Fixed by asserting resolution instead of popup liveness
 
-Do not chase this with more test runs -- sampling a one-in-three flake costs many minutes per data
-point and has already consumed more than it returned. Option 2 below is still the right fix: assert
-that the keytip route *resolves* to the right `MenuItem` without requiring a real popup to stay
-open, which is what makes these tests environment-dependent in the first place.
+Option 2 below is now implemented for the nested case. `MainWindow` exposes the items control the
+keytip route resolved to (`ActiveRibbonKeyTipItemsControlForTest`, the same
+`_activeRibbonKeyTipItemsControl` the resolver assigns on success), and
+`ActiveMenuItemSubmenuIsOpen` prefers a reference match against it, keeping the `IsSubmenuOpen` and
+`SubmenuOpened` reads only as fallbacks.
+
+That asserts what the test actually means -- the route reached the right `MenuItem` -- rather than
+requiring a popup to still be on screen when the assertion runs. Three consecutive runs after the
+change: 0, 2, 0 failures, with `ConditionalFormattingNestedMenuKeyTips_RoutePrefixedChildChoices`
+passing in all three.
+
+### Still open: focus-dependent failures
+
+The two failures in that middle run were a different shape, and neither involves menus:
+
+```
+LegacyAltDataFilterKeyTip_DFF_TogglesAutoFilterOnSelection
+  Expected harness.KeyTipScope not to be "None".
+FocusedRibbonTabAndEscape_StayInRibbonThenReturnToWorksheet
+  Expected harness.FocusedElementIsWorksheet to be True.
+```
+
+Both read state that depends on the window actually holding OS focus, which a headless/background
+test run cannot guarantee. The same principle applies -- assert against state the window owns
+rather than against real focus -- but that is a separate change to a different set of assertions,
+and it is not attempted here.
+
+Do not chase either by re-running the class to sample failure rates; that costs far more than it
+returns.
 
 1. Find what the keytip menu route leaves behind on a second use -- the popup, its
    `PlacementTarget`, or the input scope.
 2. Rewrite these tests so they assert the keytip route resolves to the right menu **without**
-   requiring a real popup to open.
+   requiring a real popup to open. *(Done for the nested submenu case.)*
 
 ## Why this matters beyond the tests
 
