@@ -4,7 +4,7 @@
   "available": true,
   "status": "available-reference-complete",
   "artifactCount": 53,
-  "captureDate": "2026-08-16",
+  "captureDate": "2026-08-20",
   "captureMode": "PowerPoint COM corpus export",
   "artifactPath": "tools/FreeP.RenderCompare/corpus/pptx-ref",
   "limitation": "The tracked tree contains 53 PowerPoint reference slides across all 27 corpus decks. This completes corpus coverage, not full PowerPoint UI or feature parity. Current-source recalibration metrics are recorded separately and are not a visual-parity claim.",
@@ -18,5 +18,5 @@
     "sha256MatchesLatestCapture": 53
   },
   "currentSourceRecalibration": "docs/parity/freep-powerpoint-recalibration-2026-08-15.json",
-  "provenance": "The original 43 tracked corpus/pptx-ref PNGs were verified against the 2026-08-14 PowerPoint COM capture. On 2026-08-16, PowerPoint COM exported the missing ten 15-smartart-grouped-list slides at 1280x720; an isolated worker validation then matched all 10/10 new PNGs with no missing references or hash differences. The capture cohort was created from commit 25499a5432 before later upstream integration."
+  "provenance": "The original 43 tracked corpus/pptx-ref PNGs were verified against the 2026-08-14 PowerPoint COM capture. On 2026-08-20, the invalid hand-authored 15-smartart-grouped-list fixture was replaced with a PowerPoint-authored native SmartArt deck, and PowerPoint COM exported its ten 1280x720 reference PNGs. The resulting 53-slide cohort is complete; this fixture repair was performed from source revision 71d317e0d8."
 }

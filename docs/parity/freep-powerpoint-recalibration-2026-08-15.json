@@ -1,7 +1,7 @@
 ﻿{
     "schema":  "freep.powerpoint-recalibration.v1",
-    "generatedAt":  "2026-08-16T10:20:00+03:00",
-    "sourceRevision":  "d86a812a44aa228d559581735bc1991f71761967",
+    "generatedAt":  "2026-08-20T00:00:00+03:00",
+    "sourceRevision":  "71d317e0d8",
     "canvas":  "1280x720",
     "officeBaseline":  "docs/parity/freep-powerpoint-baseline-2026-08-14.json",
     "summary":  {
@@ -12,16 +12,16 @@
                     "missingReferenceDecks":  [],
                     "officeComparisons":  106,
                     "officeComparisonFailures":  0,
-                    "wpfAverageMeanPercent":  3.8646,
-                    "wpfMaximumMeanPercent":  23.9325,
-                    "avaloniaAverageMeanPercent":  3.1123,
-                    "avaloniaMaximumMeanPercent":  18.0735,
+                    "wpfAverageMeanPercent":  1.1881,
+                    "wpfMaximumMeanPercent":  4.521,
+                    "avaloniaAverageMeanPercent":  1.1826,
+                    "avaloniaMaximumMeanPercent":  4.6503,
                     "rendererPairComparisons":  53,
                     "rendererPairFailures":  0,
-                    "rendererPairAverageMeanPercent":  1.6137,
-                    "rendererPairMaximumMeanPercent":  13.7186
+                    "rendererPairAverageMeanPercent":  0.6485,
+                    "rendererPairMaximumMeanPercent":  3.1324
                 },
-    "limitation":  "Mean channel differences include native text antialiasing. All 53 slides use committed PowerPoint COM PNG references; this complete corpus comparison still does not cover PowerPoint UI or every feature. PowerPoint COM was not invoked during recalibration.",
+    "limitation":  "Mean channel differences include native text antialiasing. All 53 slides use committed PowerPoint COM PNG references; the 15-smartart-grouped-list fixture and its ten Office references were regenerated and rerendered on 2026-08-20, while unaffected rows retain the 2026-08-16 current-source measurements. This corpus comparison does not cover PowerPoint UI or every feature.",
     "officeComparisons":  [
                               {
                                   "kind":  "wpf",
@@ -395,7 +395,7 @@
                                   "kind":  "wpf",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-01.png",
-                                  "meanPercent":  16.9541,
+                                  "meanPercent":  1.3477,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -403,7 +403,7 @@
                                   "kind":  "avalonia",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-01.png",
-                                  "meanPercent":  12.833,
+                                  "meanPercent":  1.3124,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -411,7 +411,7 @@
                                   "kind":  "wpf",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-02.png",
-                                  "meanPercent":  14.9039,
+                                  "meanPercent":  1.5199,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -419,7 +419,7 @@
                                   "kind":  "avalonia",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-02.png",
-                                  "meanPercent":  11.3007,
+                                  "meanPercent":  1.5689,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -427,7 +427,7 @@
                                   "kind":  "wpf",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-03.png",
-                                  "meanPercent":  15.3501,
+                                  "meanPercent":  1.5349,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -435,7 +435,7 @@
                                   "kind":  "avalonia",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-03.png",
-                                  "meanPercent":  11.6458,
+                                  "meanPercent":  1.5823,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -443,7 +443,7 @@
                                   "kind":  "wpf",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-04.png",
-                                  "meanPercent":  22.1471,
+                                  "meanPercent":  0.7196,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -451,7 +451,7 @@
                                   "kind":  "avalonia",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-04.png",
-                                  "meanPercent":  16.712,
+                                  "meanPercent":  0.7043,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -459,7 +459,7 @@
                                   "kind":  "wpf",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-05.png",
-                                  "meanPercent":  23.9325,
+                                  "meanPercent":  1.7059,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -467,7 +467,7 @@
                                   "kind":  "avalonia",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-05.png",
-                                  "meanPercent":  18.0735,
+                                  "meanPercent":  1.7286,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -475,7 +475,7 @@
                                   "kind":  "wpf",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-06.png",
-                                  "meanPercent":  23.0375,
+                                  "meanPercent":  4.2703,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -483,7 +483,7 @@
                                   "kind":  "avalonia",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-06.png",
-                                  "meanPercent":  17.4267,
+                                  "meanPercent":  4.2721,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -491,7 +491,7 @@
                                   "kind":  "wpf",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-07.png",
-                                  "meanPercent":  8.8791,
+                                  "meanPercent":  0.5132,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -499,7 +499,7 @@
                                   "kind":  "avalonia",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-07.png",
-                                  "meanPercent":  6.8276,
+                                  "meanPercent":  0.5063,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -507,7 +507,7 @@
                                   "kind":  "wpf",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-08.png",
-                                  "meanPercent":  17.4009,
+                                  "meanPercent":  3.2314,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -515,7 +515,7 @@
                                   "kind":  "avalonia",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-08.png",
-                                  "meanPercent":  13.1736,
+                                  "meanPercent":  3.1952,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -523,7 +523,7 @@
                                   "kind":  "wpf",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-09.png",
-                                  "meanPercent":  7.2833,
+                                  "meanPercent":  1.654,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -531,7 +531,7 @@
                                   "kind":  "avalonia",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-09.png",
-                                  "meanPercent":  5.6141,
+                                  "meanPercent":  1.6879,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -539,7 +539,7 @@
                                   "kind":  "wpf",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-10.png",
-                                  "meanPercent":  12.9867,
+                                  "meanPercent":  4.521,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -547,7 +547,7 @@
                                   "kind":  "avalonia",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-10.png",
-                                  "meanPercent":  9.8746,
+                                  "meanPercent":  4.6503,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -1014,61 +1014,61 @@
                                 {
                                     "deck":  "15-smartart-grouped-list",
                                     "slide":  "slide-01.png",
-                                    "meanPercent":  13.7186,
+                                    "meanPercent":  1.1571,
                                     "exitCode":  0
                                 },
                                 {
                                     "deck":  "15-smartart-grouped-list",
                                     "slide":  "slide-02.png",
-                                    "meanPercent":  5.3819,
+                                    "meanPercent":  1.0096,
                                     "exitCode":  0
                                 },
                                 {
                                     "deck":  "15-smartart-grouped-list",
                                     "slide":  "slide-03.png",
-                                    "meanPercent":  4.5147,
+                                    "meanPercent":  1.0167,
                                     "exitCode":  0
                                 },
                                 {
                                     "deck":  "15-smartart-grouped-list",
                                     "slide":  "slide-04.png",
-                                    "meanPercent":  6.3648,
+                                    "meanPercent":  0.2902,
                                     "exitCode":  0
                                 },
                                 {
                                     "deck":  "15-smartart-grouped-list",
                                     "slide":  "slide-05.png",
-                                    "meanPercent":  6.3985,
+                                    "meanPercent":  0.5229,
                                     "exitCode":  0
                                 },
                                 {
                                     "deck":  "15-smartart-grouped-list",
                                     "slide":  "slide-06.png",
-                                    "meanPercent":  6.6266,
+                                    "meanPercent":  0.812,
                                     "exitCode":  0
                                 },
                                 {
                                     "deck":  "15-smartart-grouped-list",
                                     "slide":  "slide-07.png",
-                                    "meanPercent":  3.2896,
+                                    "meanPercent":  0.3152,
                                     "exitCode":  0
                                 },
                                 {
                                     "deck":  "15-smartart-grouped-list",
                                     "slide":  "slide-08.png",
-                                    "meanPercent":  5.0143,
+                                    "meanPercent":  0.4934,
                                     "exitCode":  0
                                 },
                                 {
                                     "deck":  "15-smartart-grouped-list",
                                     "slide":  "slide-09.png",
-                                    "meanPercent":  4.8999,
+                                    "meanPercent":  1.6684,
                                     "exitCode":  0
                                 },
                                 {
                                     "deck":  "15-smartart-grouped-list",
                                     "slide":  "slide-10.png",
-                                    "meanPercent":  3.8879,
+                                    "meanPercent":  1.6541,
                                     "exitCode":  0
                                 },
                                 {
