@@ -1,5 +1,41 @@
 # WPF cannot subset this machine's Calibri, breaking the FreeW text layer
 
+## Status
+
+**Text layer: RESOLVED.** It no longer goes through XPS at all, so the subsetter is out of the
+picture. 15 failures -> 4.
+
+**XPS export itself: platform-blocked.** Four tests remain, and they exercise XPS export as a
+product feature (`XpsExportTests`, `PrintLayoutImageCloneTests.XpsExport_...`). That feature *is*
+WPF's XPS serializer, so it cannot avoid the subsetter. On a machine whose Calibri WPF cannot
+subset, FreeW cannot write XPS. Nothing in this repository can change that.
+
+## What was actually wrong, and the fix
+
+`PdfExport.BuildTextOverlaysPerPage` round-tripped the paginator through `XpsDocumentWriter` purely
+to recover selectable text. WPF subsets every font it serializes, and the subsetter throws on this
+Calibri -- so the whole text layer was lost, and originally the entire PDF export with it.
+
+Two fixes, in order:
+
+1. Catch the failure so one unparseable system font cannot kill a PDF export (15 -> 7).
+2. Stop needing the serializer: `WpfVisualTextOverlayExtractor` walks the `GlyphRunDrawing`s each
+   rendered page already carries (7 -> 4). No serializer, no package, no subset.
+
+The second also produces better evidence. An XPS font resource URI
+(`/Resources/Fonts/<hash>.odttf`) carries no family name, so `WpfXpsTextOverlayExtractor` had to
+substitute "Segoe UI" for every overlay; a `GlyphRun` still knows its `GlyphTypeface`, so overlays
+now name the typeface the page actually used.
+
+## The font is not corrupt, and WPF can read it
+
+`CALIBRI.TTF` is 1,650,632 bytes with a valid TrueType signature (`00 01 00 00`), and
+`new GlyphTypeface(...)` loads it fine -- **7048 glyphs, version 6.27**. Only
+`MS.Internal.TrueTypeSubsetter` rejects it. So this is a WPF limitation with a newer Calibri, not a
+damaged file, and not a font-cache problem (there is no user font cache directory on this machine).
+
+## Original investigation
+
 ## Symptom
 
 `FreeW.App.Host.Tests` fails with:
