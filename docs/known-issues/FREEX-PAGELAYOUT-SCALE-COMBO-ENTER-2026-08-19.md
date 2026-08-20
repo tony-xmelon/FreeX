@@ -10,8 +10,8 @@ fit-to-pages is set, which is what actually reverted the user's value;
 `RenderedScaleWidthCombo_CommitText_AppliesFitToPagesWide` passes and two unit tests lock the
 semantics both ways.
 
-Blocker 1 below (ComboBox swallowing Enter) is **proven but deliberately not fixed** -- the obvious
-fix regresses keytips. See "Why the Enter fix is not landed".
+Blocker 1 below (ComboBox swallowing Enter) is **also fixed**: the combos now subscribe with
+`handledEventsToo: true`, so a typed value with no matching list entry commits on Enter.
 
 ## Blocker 1: ComboBox eats Enter before the handler (proven)
 
@@ -106,7 +106,19 @@ harness/wiring question about which workbook instance the command context resolv
 - **Missing combo re-sync after a commit.** Adding `SyncPageLayoutScaleToFitControls` after a
   successful apply did not help, because the apply itself never reached the model.
 
-## Why the Enter fix is not landed
+## Correction: the Enter fix does not regress keytips
+
+An earlier revision of this note said `handledEventsToo` regressed
+`PageLayoutSetupMenuKeyTips_UpdatePrintSettings`, based on single runs of each arm. **That was
+wrong.** Measured over five runs per arm, that test passes **1/5 without** the fix and **2/5 with**
+it -- it is intermittent either way, for reasons that have nothing to do with these combos (see
+`FREEX-HOST-KEYTIP-TEST-INSTABILITY-2026-08-20.md`). Attributing an intermittent failure to a change
+from one run of each is exactly the trap that instability sets.
+
+The same caution applies to the two variants below: they were judged the same way and may also be
+fine. They are recorded as *unmeasured*, not as rejected.
+
+## Earlier, single-run judgements (unreliable)
 
 Subscribing with `AddHandler(UIElement.KeyDownEvent, ..., handledEventsToo: true)` does make the
 combo see Enter -- and **regresses**
