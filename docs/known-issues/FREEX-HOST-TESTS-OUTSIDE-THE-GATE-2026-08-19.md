@@ -78,3 +78,37 @@ at the end of a change that touches those sources, not the start.
 Add `FreeX.App.Host.Tests` to `FreeX.DefaultTests.slnx` once those five are resolved. Adding it
 before then turns the gate red on day one, which is why it is not done here. Until it is in the
 gate, run it explicitly after touching the WPF host.
+
+## Resolved: the exclusion is deliberate, and adding the project breaks the gate
+
+Tried on 2026-08-20 -- `tests/FreeX.App.Host.Tests` added to `FreeX.DefaultTests.slnx`, built
+clean, full gate run. **Reverted.** Two independent reasons, either sufficient:
+
+1. **The lane split is codified, not accidental.**
+   `FreeX.Core.Model.Tests.TestLaneSolutionTests.DefaultTestLane_ExcludesUiTestProjects` asserts
+   the default lane against an exact expected project list, precisely so UI projects stay in
+   `FreeX.UiTests.slnx`. Adding the project fails that guard. This document's earlier
+   "add it once stable" recommendation was written without noticing the guard, and was wrong:
+   the right way to change the lanes is to change that test deliberately, not to drift the .slnx.
+
+2. **The suite is not green.** The run finished 5180 passed / 8 failed / 24 skipped in 23m04s.
+   None of the eight are the keytip tests fixed the same day; they are unrelated pre-existing
+   failures, listed below. A gate that fails on every run trains people to ignore it.
+
+```
+R152_NameBoxCanonicalDisplayAfterEnterTests.NameBoxEnter_WithDefinedName...
+R129_DrawingObjectKeyboardFamilyTests.ArrowKey_WithShapeSelected_NudgesObj...
+R129_DrawingObjectKeyboardFamilyTests.EscapeKey_WithPictureSelected_Desele...
+R51_MergedCellSelectionNavTests.ArrowKey_OnTallMergedCell_MovesPastFarEdge...
+R74_NameBoxFormulaCollisionTests.NameBoxEnter_WithExistingNamedRangeName_S...
+MainWindowFormulaBarSyncTests.FormulaBarPointMode_SelectedReferenceText_Re...
+GeneratedDocsPreflightTests.GeneratedDocsPreflight_PassesFromOutsideReposi...
+R123_BackspaceDrawingObjectTests.BackspaceKey_WithNoObjectSelected_StillCl...
+MainWindowOutlineCommandLifecycleTests.OutlineGutterToggle_UsesMutationLif...
+GoToNavigationR1C1RegressionTests.F4_InInlineEditor_WhenR1C1ModeEnabled_Cy...
+```
+
+So "host tests are outside the gate" is **by design**. The real gap it was pointing at -- that
+nothing routinely runs these ~5,200 tests -- is better closed by running `FreeX.UiTests.slnx`
+on a schedule, or by fixing the eight above so the suite is green enough to be worth gating on.
+Do not re-add the project to the default lane without doing both.
