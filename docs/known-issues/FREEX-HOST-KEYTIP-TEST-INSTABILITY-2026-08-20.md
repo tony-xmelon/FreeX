@@ -18,50 +18,49 @@ window took consecutive runs from 7 failures to 1-2, including clean passes.
 
 ## Measured results
 
-| Harness | Failures across consecutive runs |
-|---|---|
-| Shared window (original) | 1, 7, 2 -- never clean |
-| + close every leaked popup in teardown | 1, 1, 0 |
-| + per-test window, retiring the previous one | 0, 1, 0, 1 / 1, 1, 1, 0 |
+Every figure below is failures per run of the class (68 tests), across consecutive runs.
 
-Clean runs happen regularly now and never did before, but one test still fails intermittently --
-usually `DeclarativeHomeMenuChoices_AreEnabledAcrossFormattingFamilies` or
-`PageLayoutSetupMenuKeyTips_UpdatePrintSettings`, both of which open a menu and pass on their own.
+| Harness | Runs |
+|---|---|
+| Shared window (original) | 1, 7, 2 |
+| + close every leaked popup in teardown | 1, 1, 0 |
+| + activate the window before each keytip sequence | 0, 2, 0, 1, 2, 2 and 2, 1, 2, 1, 1, 2 |
+| per-test windows instead of shared | 1, 1, 1, 0, 2 (2, 3, 2, 2, 2, 1 without activation) |
+
+The catastrophic runs are gone and clean runs now happen, but **one or two menu tests still fail per
+run**. This is not resolved.
 
 ## Tried and rejected, with numbers
 
-- **Cancelling the keytip session in teardown** (`KeyTipSession.Cancel()`): 1, 2, 1, 2 against
-  1, 1, 0 without. No help.
-- **Closing each test's own window in `Dispose`**: 64 failures of 68, identically three runs
-  running. WPF's default `OnLastWindowClose` shuts the Application down with the last window. The
+- **Per-test windows.** Committed on a three-run sample, then reverted: larger samples show no
+  advantage over a shared window, for more machinery and an Application-shutdown hazard.
+- **Closing each test's own window in `Dispose`.** 64 failures of 68, identically three runs
+  running -- WPF's default `OnLastWindowClose` shuts the Application down with the last window. The
   perfect repeatability is what proved shared window state was the variable.
-- **Widening the menu-open poll from 5s to 20s**: 0, 1, 0, 1 -- unchanged, so the menu genuinely
-  never opens rather than opening late.
-- **Hiding the retired window instead of closing it**: 3, 1, 1, 2 -- worse.
+- **Hiding the retired window instead of closing it.** 3, 1, 1, 2 -- worse.
+- **Cancelling the keytip session in teardown.** 1, 2, 1, 2 against 1, 1, 0 without.
+- **Widening the menu-open poll from 5s to 20s.** Unchanged, so the menu never opens rather than
+  opening late.
+- **`Topmost` before the sequence,** on the theory that a ContextMenu popup needs a foreground
+  window. Exactly unchanged.
 
-## What remains
+## What is actually left
 
-One or two tests still fail intermittently, most often
-`DeclarativeHomeMenuChoices_AreEnabledAcrossFormattingFamilies`, which passes on its own. So some
-state still crosses tests -- just much less of it.
+The failures are always the same shape -- `sequence H,A,N should open a menu, but found False` --
+and always on menu-opening tests: `DeclarativeHomeMenuChoices_AreEnabledAcrossFormattingFamilies`,
+`PageLayoutSetupMenuKeyTips_UpdatePrintSettings`, `CrossTabMenuKeyTips_RouteThroughStaticRibbonMenus`.
 
-**Tried and rejected:** cancelling the keytip session in teardown
-(`KeyTipSession.Cancel()`), on the theory that a test ending mid-sequence leaves a nested scope
-behind. Four runs with it gave 1, 2, 1, 2 failures against 1, 1, 0 without, so it does not help and
-was not kept.
+Each passes alone. Run as a **pair**, both fail. So it is not "the previous test breaks the next
+one", and it is not window count or foreground -- a shared window with forced activation behaves the
+same. Something about opening a ribbon menu through the keytip route does not survive being done
+more than once per process.
 
-The remaining leak is most likely keyboard focus or selection state on the shared window rather than
-a popup.
+Two ways forward, neither a harness tweak:
 
-**Per-test window isolation was tried and confirms the diagnosis, but is not a drop-in change.**
-Building a fresh session in `Create` and closing the window in `Dispose` gives **64 failures out of
-68, identically on three consecutive runs** -- the nondeterminism disappears completely, which is
-the proof that shared window state is what varies. But the tests are written against a window that
-persists: they rely on setup and ribbon state established outside their own body, so isolating them
-requires rewriting the tests, not just the harness. Reverted.
-
-So the choice is explicit: keep the shared window and accept 1-2 intermittents, or rework the class
-to stand alone. The second is the real fix and is a piece of work in its own right.
+1. Find what the keytip menu route leaves behind on a second use -- the popup, its
+   `PlacementTarget`, or the input scope.
+2. Rewrite these tests so they assert the keytip route resolves to the right menu **without**
+   requiring a real popup to open, which is what makes them environment-dependent.
 
 ## Why this matters beyond the tests
 
