@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "host": "avalonia",
-  "captureMode": "visible-app-owned-render-target; scenario-isolated-processes",
+  "captureMode": "visible-app-owned-render-target",
   "targetDpi": 96,
   "logicalShellWidth": 1280,
   "logicalShellHeight": 760,
-  "generatedAtUtc": "2026-08-16T08:13:43.7633193\u002B00:00",
+  "generatedAtUtc": "2026-08-20T20:32:06.7733215\u002B00:00",
   "captures": [
     {
       "scenarioId": "design.slide-size.initial",
@@ -14,13 +14,13 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/design.slide-size.initial.png",
-      "logicalWidth": 364.8,
+      "logicalWidth": 365.6,
       "logicalHeight": 222.4,
-      "pixelWidth": 365,
+      "pixelWidth": 366,
       "pixelHeight": 223,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 10773,
+      "nonBackgroundPixelCount": 10809,
       "focusedRole": "combobox",
       "focusedLabel": "Slide size preset",
       "buttons": [
@@ -117,7 +117,7 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/design.slide-size.initial.png",
-      "pixelComparisonLogicalWidth": 364.8,
+      "pixelComparisonLogicalWidth": 365.6,
       "pixelComparisonLogicalHeight": 222.4
     },
     {
@@ -127,13 +127,13 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/design.slide-size.invalid.png",
-      "logicalWidth": 364.8,
+      "logicalWidth": 365.6,
       "logicalHeight": 222.4,
-      "pixelWidth": 365,
+      "pixelWidth": 366,
       "pixelHeight": 223,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 10646,
+      "nonBackgroundPixelCount": 10682,
       "focusedRole": "textbox",
       "focusedLabel": "Slide width",
       "buttons": [
@@ -235,7 +235,7 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/design.slide-size.invalid.png",
-      "pixelComparisonLogicalWidth": 364.8,
+      "pixelComparisonLogicalWidth": 365.6,
       "pixelComparisonLogicalHeight": 222.4
     },
     {
@@ -245,13 +245,13 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/insert.header-footer.date-time.png",
-      "logicalWidth": 344.8,
-      "logicalHeight": 260,
-      "pixelWidth": 345,
-      "pixelHeight": 260,
+      "logicalWidth": 345.6,
+      "logicalHeight": 253.6,
+      "pixelWidth": 346,
+      "pixelHeight": 254,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 12079,
+      "nonBackgroundPixelCount": 12719,
       "focusedRole": "checkbox",
       "focusedLabel": "Date and time",
       "buttons": [
@@ -383,8 +383,8 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/insert.header-footer.date-time.png",
-      "pixelComparisonLogicalWidth": 344.8,
-      "pixelComparisonLogicalHeight": 260
+      "pixelComparisonLogicalWidth": 345.6,
+      "pixelComparisonLogicalHeight": 253.6
     },
     {
       "scenarioId": "insert.header-footer.apply-to-all",
@@ -393,13 +393,13 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/insert.header-footer.apply-to-all.png",
-      "logicalWidth": 344.8,
-      "logicalHeight": 260,
-      "pixelWidth": 345,
-      "pixelHeight": 260,
+      "logicalWidth": 345.6,
+      "logicalHeight": 253.6,
+      "pixelWidth": 346,
+      "pixelHeight": 254,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 13837,
+      "nonBackgroundPixelCount": 14145,
       "focusedRole": "textbox",
       "focusedLabel": "Footer text",
       "buttons": [
@@ -531,8 +531,8 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/insert.header-footer.apply-to-all.png",
-      "pixelComparisonLogicalWidth": 344.8,
-      "pixelComparisonLogicalHeight": 260
+      "pixelComparisonLogicalWidth": 345.6,
+      "pixelComparisonLogicalHeight": 253.6
     },
     {
       "scenarioId": "home.find-replace.find",
@@ -542,12 +542,12 @@
       "captureStatus": "complete",
       "imagePath": "avalonia/home.find-replace.find.png",
       "logicalWidth": 424.8,
-      "logicalHeight": 134.4,
+      "logicalHeight": 130.4,
       "pixelWidth": 425,
-      "pixelHeight": 135,
+      "pixelHeight": 131,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 4893,
+      "nonBackgroundPixelCount": 4699,
       "focusedRole": "textbox",
       "focusedLabel": "Find text",
       "buttons": [
@@ -680,7 +680,7 @@
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/home.find-replace.find.png",
       "pixelComparisonLogicalWidth": 424.8,
-      "pixelComparisonLogicalHeight": 134.4
+      "pixelComparisonLogicalHeight": 130.4
     },
     {
       "scenarioId": "home.find-replace.replace",
@@ -690,12 +690,12 @@
       "captureStatus": "complete",
       "imagePath": "avalonia/home.find-replace.replace.png",
       "logicalWidth": 424.8,
-      "logicalHeight": 199.2,
+      "logicalHeight": 192,
       "pixelWidth": 425,
-      "pixelHeight": 200,
+      "pixelHeight": 192,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 8843,
+      "nonBackgroundPixelCount": 7898,
       "focusedRole": "textbox",
       "focusedLabel": "Find text",
       "buttons": [
@@ -828,7 +828,7 @@
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/home.find-replace.replace.png",
       "pixelComparisonLogicalWidth": 424.8,
-      "pixelComparisonLogicalHeight": 199.2
+      "pixelComparisonLogicalHeight": 192
     },
     {
       "scenarioId": "insert.hyperlink.initial",
@@ -837,13 +837,13 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/insert.hyperlink.initial.png",
-      "logicalWidth": 404.8,
-      "logicalHeight": 216,
-      "pixelWidth": 405,
-      "pixelHeight": 216,
+      "logicalWidth": 405.6,
+      "logicalHeight": 212,
+      "pixelWidth": 406,
+      "pixelHeight": 212,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 12156,
+      "nonBackgroundPixelCount": 12237,
       "focusedRole": "textbox",
       "focusedLabel": "Hyperlink URL",
       "buttons": [
@@ -940,8 +940,8 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/insert.hyperlink.initial.png",
-      "pixelComparisonLogicalWidth": 404.8,
-      "pixelComparisonLogicalHeight": 216
+      "pixelComparisonLogicalWidth": 405.6,
+      "pixelComparisonLogicalHeight": 212
     },
     {
       "scenarioId": "insert.hyperlink.validation",
@@ -950,13 +950,13 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/insert.hyperlink.validation.png",
-      "logicalWidth": 404.8,
-      "logicalHeight": 216,
-      "pixelWidth": 405,
-      "pixelHeight": 216,
+      "logicalWidth": 405.6,
+      "logicalHeight": 212,
+      "pixelWidth": 406,
+      "pixelHeight": 212,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 14177,
+      "nonBackgroundPixelCount": 14258,
       "focusedRole": "textbox",
       "focusedLabel": "Hyperlink URL",
       "buttons": [
@@ -1058,8 +1058,8 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/insert.hyperlink.validation.png",
-      "pixelComparisonLogicalWidth": 404.8,
-      "pixelComparisonLogicalHeight": 216
+      "pixelComparisonLogicalWidth": 405.6,
+      "pixelComparisonLogicalHeight": 212
     },
     {
       "scenarioId": "insert.hyperlink.populated",
@@ -1068,13 +1068,13 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/insert.hyperlink.populated.png",
-      "logicalWidth": 404.8,
-      "logicalHeight": 216,
-      "pixelWidth": 405,
-      "pixelHeight": 216,
+      "logicalWidth": 405.6,
+      "logicalHeight": 212,
+      "pixelWidth": 406,
+      "pixelHeight": 212,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 13150,
+      "nonBackgroundPixelCount": 13231,
       "focusedRole": "textbox",
       "focusedLabel": "Hyperlink URL",
       "buttons": [
@@ -1171,8 +1171,8 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/insert.hyperlink.populated.png",
-      "pixelComparisonLogicalWidth": 404.8,
-      "pixelComparisonLogicalHeight": 216
+      "pixelComparisonLogicalWidth": 405.6,
+      "pixelComparisonLogicalHeight": 212
     },
     {
       "scenarioId": "chart.edit-data.initial",
@@ -1181,13 +1181,13 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/chart.edit-data.initial.png",
-      "logicalWidth": 640,
-      "logicalHeight": 440,
-      "pixelWidth": 640,
-      "pixelHeight": 440,
+      "logicalWidth": 624.8,
+      "logicalHeight": 402.4,
+      "pixelWidth": 625,
+      "pixelHeight": 403,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 179034,
+      "nonBackgroundPixelCount": 137228,
       "focusedRole": "combobox",
       "focusedLabel": "Chart type",
       "buttons": [
@@ -1382,8 +1382,8 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/chart.edit-data.initial.png",
-      "pixelComparisonLogicalWidth": 640,
-      "pixelComparisonLogicalHeight": 440
+      "pixelComparisonLogicalWidth": 624.8,
+      "pixelComparisonLogicalHeight": 402.4
     },
     {
       "scenarioId": "chart.edit-data.validation",
@@ -1392,13 +1392,13 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/chart.edit-data.validation.png",
-      "logicalWidth": 640,
-      "logicalHeight": 440,
-      "pixelWidth": 640,
-      "pixelHeight": 440,
+      "logicalWidth": 624.8,
+      "logicalHeight": 402.4,
+      "pixelWidth": 625,
+      "pixelHeight": 403,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 180331,
+      "nonBackgroundPixelCount": 138448,
       "focusedRole": "textbox",
       "focusedLabel": "",
       "buttons": [
@@ -1598,8 +1598,8 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/chart.edit-data.validation.png",
-      "pixelComparisonLogicalWidth": 640,
-      "pixelComparisonLogicalHeight": 440
+      "pixelComparisonLogicalWidth": 624.8,
+      "pixelComparisonLogicalHeight": 402.4
     },
     {
       "scenarioId": "chart.edit-data.populated",
@@ -1608,13 +1608,13 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/chart.edit-data.populated.png",
-      "logicalWidth": 640,
-      "logicalHeight": 440,
-      "pixelWidth": 640,
-      "pixelHeight": 440,
+      "logicalWidth": 624.8,
+      "logicalHeight": 402.4,
+      "pixelWidth": 625,
+      "pixelHeight": 403,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 179034,
+      "nonBackgroundPixelCount": 137228,
       "focusedRole": "combobox",
       "focusedLabel": "Chart type",
       "buttons": [
@@ -1809,8 +1809,8 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/chart.edit-data.populated.png",
-      "pixelComparisonLogicalWidth": 640,
-      "pixelComparisonLogicalHeight": 440
+      "pixelComparisonLogicalWidth": 624.8,
+      "pixelComparisonLogicalHeight": 402.4
     },
     {
       "scenarioId": "slideshow.custom-shows.initial",
@@ -1819,13 +1819,13 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/slideshow.custom-shows.initial.png",
-      "logicalWidth": 624.8,
+      "logicalWidth": 625.6,
       "logicalHeight": 402.4,
-      "pixelWidth": 625,
+      "pixelWidth": 626,
       "pixelHeight": 403,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 24928,
+      "nonBackgroundPixelCount": 24499,
       "focusedRole": "textbox",
       "focusedLabel": "Custom show name",
       "buttons": [
@@ -2055,7 +2055,7 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/slideshow.custom-shows.initial.png",
-      "pixelComparisonLogicalWidth": 624.8,
+      "pixelComparisonLogicalWidth": 625.6,
       "pixelComparisonLogicalHeight": 402.4
     },
     {
@@ -2065,13 +2065,13 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/slideshow.custom-shows.validation.png",
-      "logicalWidth": 624.8,
+      "logicalWidth": 625.6,
       "logicalHeight": 402.4,
-      "pixelWidth": 625,
+      "pixelWidth": 626,
       "pixelHeight": 403,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 25663,
+      "nonBackgroundPixelCount": 25234,
       "focusedRole": "textbox",
       "focusedLabel": "Custom show name",
       "buttons": [
@@ -2301,7 +2301,7 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/slideshow.custom-shows.validation.png",
-      "pixelComparisonLogicalWidth": 624.8,
+      "pixelComparisonLogicalWidth": 625.6,
       "pixelComparisonLogicalHeight": 402.4
     },
     {
@@ -2311,13 +2311,13 @@
       "host": "avalonia",
       "captureStatus": "complete",
       "imagePath": "avalonia/slideshow.custom-shows.populated.png",
-      "logicalWidth": 624.8,
+      "logicalWidth": 625.6,
       "logicalHeight": 402.4,
-      "pixelWidth": 625,
+      "pixelWidth": 626,
       "pixelHeight": 403,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 28513,
+      "nonBackgroundPixelCount": 28503,
       "focusedRole": "textbox",
       "focusedLabel": "Custom show name",
       "buttons": [
@@ -2547,7 +2547,7 @@
       "sourceDpiY": 96,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "avalonia/slideshow.custom-shows.populated.png",
-      "pixelComparisonLogicalWidth": 624.8,
+      "pixelComparisonLogicalWidth": 625.6,
       "pixelComparisonLogicalHeight": 402.4
     },
     {
@@ -2702,56 +2702,42 @@
           "isCancel": false
         },
         {
-          "actionId": "show-comments",
-          "label": "Show Comments",
-          "isEnabled": true,
-          "isDefault": false,
-          "isCancel": false
-        },
-        {
-          "actionId": "new-comment",
-          "label": "New Comment",
-          "isEnabled": true,
-          "isDefault": false,
-          "isCancel": false
-        },
-        {
-          "actionId": "edit-comment",
+          "actionId": "freep.review.comments.edit",
           "label": "Edit Comment",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "delete-comment",
+          "actionId": "freep.review.comments.delete",
           "label": "Delete Comment",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "previous-comment",
+          "actionId": "freep.review.comments.previous",
           "label": "Previous Comment",
           "isEnabled": false,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "next-comment",
+          "actionId": "freep.review.comments.next",
           "label": "Next Comment",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "resolve-comment",
+          "actionId": "freep.review.comments.resolve",
           "label": "Resolve Comment",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         },
         {
-          "actionId": "reopen-comment",
+          "actionId": "freep.review.comments.reopen",
           "label": "Reopen Comment",
           "isEnabled": false,
           "isDefault": false,
@@ -2789,56 +2775,42 @@
         },
         {
           "role": "button",
-          "label": "show-comments",
+          "label": "freep.review.comments.edit",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "new-comment",
+          "label": "freep.review.comments.delete",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "edit-comment",
-          "isEnabled": true,
-          "isChecked": null,
-          "isSelected": null
-        },
-        {
-          "role": "button",
-          "label": "delete-comment",
-          "isEnabled": true,
-          "isChecked": null,
-          "isSelected": null
-        },
-        {
-          "role": "button",
-          "label": "previous-comment",
+          "label": "freep.review.comments.previous",
           "isEnabled": false,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "next-comment",
+          "label": "freep.review.comments.next",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "resolve-comment",
+          "label": "freep.review.comments.resolve",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "reopen-comment",
+          "label": "freep.review.comments.reopen",
           "isEnabled": false,
           "isChecked": null,
           "isSelected": null
@@ -2901,7 +2873,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 893648,
+      "nonBackgroundPixelCount": 892548,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -2993,7 +2965,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 893711,
+      "nonBackgroundPixelCount": 892840,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -3078,7 +3050,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 893650,
+      "nonBackgroundPixelCount": 893232,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -3226,7 +3198,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 893710,
+      "nonBackgroundPixelCount": 894311,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [],
@@ -3274,7 +3246,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 894539,
+      "nonBackgroundPixelCount": 894311,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -3492,7 +3464,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 893371,
+      "nonBackgroundPixelCount": 894311,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -3745,7 +3717,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 889648,
+      "nonBackgroundPixelCount": 894311,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -3865,7 +3837,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 896523,
+      "nonBackgroundPixelCount": 805043,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -3877,9 +3849,58 @@
           "isCancel": false
         },
         {
-          "actionId": "print",
-          "label": "Print",
-          "isEnabled": false,
+          "actionId": "BackstagePrintFullPageSlides",
+          "label": "Full Page Slides - All slides, 3 pages",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "BackstagePrintNotesPages",
+          "label": "Notes Pages - All slides, 3 pages",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "BackstagePrintHandouts1slideperpage",
+          "label": "Handouts (1 slide per page) - All slides, 3 pages",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "BackstagePrintHandouts2slidesperpage",
+          "label": "Handouts (2 slides per page) - All slides, 2 pages",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "BackstagePrintHandouts3slidesperpage",
+          "label": "Handouts (3 slides per page) - All slides, 1 page",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "BackstagePrintHandouts4slidesperpage",
+          "label": "Handouts (4 slides per page) - All slides, 1 page",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "BackstagePrintHandouts6slidesperpage",
+          "label": "Handouts (6 slides per page) - All slides, 1 page",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "BackstagePrintHandouts9slidesperpage",
+          "label": "Handouts (9 slides per page) - All slides, 1 page",
+          "isEnabled": true,
           "isDefault": false,
           "isCancel": false
         }
@@ -3894,8 +3915,57 @@
         },
         {
           "role": "button",
-          "label": "print",
-          "isEnabled": false,
+          "label": "BackstagePrintFullPageSlides",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "BackstagePrintNotesPages",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "BackstagePrintHandouts1slideperpage",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "BackstagePrintHandouts2slidesperpage",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "BackstagePrintHandouts3slidesperpage",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "BackstagePrintHandouts4slidesperpage",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "BackstagePrintHandouts6slidesperpage",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "BackstagePrintHandouts9slidesperpage",
+          "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         }
@@ -3943,7 +4013,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 892995,
+      "nonBackgroundPixelCount": 805043,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -4348,7 +4418,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 893409,
+      "nonBackgroundPixelCount": 805043,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
