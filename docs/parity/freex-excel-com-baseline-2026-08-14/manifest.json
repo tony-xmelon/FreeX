@@ -4,7 +4,7 @@
   "available": true,
   "status": "available-with-known-deltas",
   "artifactCount": 45,
-  "captureDate": "2026-08-16",
+  "captureDate": "2026-08-20",
   "captureMode": "Excel COM range export paired with FreeX SheetGridImageCompare",
   "limitation": "The committed COM range references cover nine chart ranges, seven native cell-style ranges, and 29 pivot-table ranges; they are distinct from the 2026-08-16 interactive foreground evidence (36 Excel ribbon states including Draw and six popup/dialog tours). The associated current-session ribbon comparison has 27 provisional fixed-viewport rows for each host: WPF averages 13.937% RGB delta and Avalonia averages 15.639% versus Excel. These are triage metrics, not visual-parity acceptance results.",
   "comparison": {
@@ -23,33 +23,33 @@
     { "id": "closedxml-pivot-tables", "referenceCount": 10, "license": "MIT" }
   ],
   "currentSourceExpansion": {
-    "captureDate": "2026-08-16",
-    "sourceCommit": "7e6b60af3f1c249f0507aef175ec85b1cef2f497",
+    "captureDate": "2026-08-20",
+    "sourceCommit": "adbeb8542843eff41a93308f18edda4726cc8421",
     "fixture": "excel-native-chart-corpus",
     "referenceCount": 8,
     "comparedRows": 8,
     "failedRows": 0,
     "thresholdPercent": 25,
-    "worstMeanDiffPercent": 5.619678376906318,
-    "worstExactMeanDiffPercent": 7.928021444950052,
-    "worstChangedPixelPercent": 19.619086355005713,
+    "worstMeanDiffPercent": 4.632984204793028,
+    "worstExactMeanDiffPercent": 6.603014708349865,
+    "worstChangedPixelPercent": 17.927615020638278,
     "captureRange": "A1:N25",
     "chartTypes": ["clustered-column", "clustered-bar", "line-with-markers", "pie", "area", "xy-scatter", "3-d-column", "3-d-bar"]
   },
   "cellStyleExpansion": {
-    "captureDate": "2026-08-16",
-    "sourceCommit": "d86a812a44aa228d559581735bc1991f71761967",
+    "captureDate": "2026-08-20",
+    "sourceCommit": "adbeb8542843eff41a93308f18edda4726cc8421",
     "fixture": "excel-native-cellstyle-corpus",
     "referenceCount": 7,
     "comparedRows": 7,
     "failedRows": 0,
     "thresholdPercent": 25,
-    "meanDiffPercentAverage": 5.883057384064736,
-    "worstMeanDiffPercent": 16.826072984749455,
-    "worstExactMeanDiffPercent": 27.719826938251785,
-    "worstChangedPixelPercent": 34.33895139096833,
+    "meanDiffPercentAverage": 4.341314814814814,
+    "worstMeanDiffPercent": 6.242526143790849,
+    "worstExactMeanDiffPercent": 9.430575172249608,
+    "worstChangedPixelPercent": 26.914095730828656,
     "captureRange": "A1:E20",
     "surfaceFamilies": ["border-styles", "diagonal-borders", "pattern-fills", "gradient-fills", "alignment-and-rotation", "merged-cells", "fonts"]
   },
-  "provenance": "The source workbooks remain local-only under fidelity-corpus/files or are generated locally through FreeX.ExcelOpenSmoke; this bundle commits only the exported Excel reference PNGs and metrics. The 2026-08-14 cohort was created from commit 25499a5432 before later upstream integration. The eight current-source chart references were generated and COM-exported from sourceCommit on 2026-08-16. The seven current-source cell-style references were generated and COM-exported from cellStyleExpansion.sourceCommit on 2026-08-16 using range A1:E20; this does not require foreground UI automation."
+  "provenance": "The source workbooks remain local-only under fidelity-corpus/files or are generated locally through FreeX.ExcelOpenSmoke; this bundle commits only the exported Excel reference PNGs and metrics. The 2026-08-14 cohort was created from commit 25499a5432 before later upstream integration. On 2026-08-20, all eight current-source chart fixtures and seven current-source cell-style fixtures were regenerated with FreeX.ExcelOpenSmoke and COM-exported from sourceCommit, then compared through FreeX.SheetGridImageCompare. Chart ranges used A1:N25 and cell-style ranges used A1:E20; this does not require foreground UI automation."
 }

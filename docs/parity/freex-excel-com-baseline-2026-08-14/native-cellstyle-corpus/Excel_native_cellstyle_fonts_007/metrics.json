@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-16T10:21:08.7400995\u002B03:00",
+  "generatedAt": "2026-08-20T17:46:24.0264276\u002B03:00",
   "options": {
     "thresholdPercent": 25,
     "failOnDimensionMismatch": false,
@@ -12,9 +12,9 @@
     "comparedRows": 1,
     "failedRows": 0,
     "dimensionMismatches": 0,
-    "maxMeanDiffPercent": 5.378764161220043,
-    "maxExactMeanDiffPercent": 6.105956729345527,
-    "maxChangedPixelPercent": 17.501422879908933
+    "maxMeanDiffPercent": 6.242526143790849,
+    "maxExactMeanDiffPercent": 7.21311223668199,
+    "maxChangedPixelPercent": 19.99714249428499
   },
   "rows": [
     {
@@ -22,23 +22,23 @@
       "sheetName": "Fonts",
       "status": "OK",
       "effectiveStatus": "OK",
-      "meanDiffPercent": 5.378764161220043,
+      "meanDiffPercent": 6.242526143790849,
       "excelPng": "excel_01_Fonts.png",
       "freeXPng": "freex_01_Fonts.png",
       "excelDimensions": {
-        "width": 753,
-        "height": 616,
-        "text": "753x616"
+        "width": 620,
+        "height": 508,
+        "text": "620x508"
       },
       "freeXDimensions": {
-        "width": 753,
-        "height": 616,
-        "text": "753x616"
+        "width": 620,
+        "height": 508,
+        "text": "620x508"
       },
       "dimensionMismatch": false,
       "exactPixelMetrics": {
-        "meanDiffPercent": 6.105956729345527,
-        "changedPixelPercent": 17.501422879908933,
+        "meanDiffPercent": 7.21311223668199,
+        "changedPixelPercent": 19.99714249428499,
         "maxChannelDelta": 255,
         "pixelTolerance": 8
       },

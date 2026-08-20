@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-16T10:20:58.6790071\u002B03:00",
+  "generatedAt": "2026-08-20T17:45:15.2145377\u002B03:00",
   "options": {
     "thresholdPercent": 25,
     "failOnDimensionMismatch": false,
@@ -12,9 +12,9 @@
     "comparedRows": 1,
     "failedRows": 0,
     "dimensionMismatches": 0,
-    "maxMeanDiffPercent": 16.826072984749455,
-    "maxExactMeanDiffPercent": 27.719826938251785,
-    "maxChangedPixelPercent": 34.33895139096833
+    "maxMeanDiffPercent": 3.956389433551198,
+    "maxExactMeanDiffPercent": 6.636973513902027,
+    "maxChangedPixelPercent": 25.79478128032039
   },
   "rows": [
     {
@@ -22,23 +22,23 @@
       "sheetName": "Gradient",
       "status": "OK",
       "effectiveStatus": "OK",
-      "meanDiffPercent": 16.826072984749455,
+      "meanDiffPercent": 3.956389433551198,
       "excelPng": "excel_01_Gradient.png",
       "freeXPng": "freex_01_Gradient.png",
       "excelDimensions": {
-        "width": 482,
-        "height": 582,
-        "text": "482x582"
+        "width": 402,
+        "height": 482,
+        "text": "402x482"
       },
       "freeXDimensions": {
-        "width": 482,
-        "height": 582,
-        "text": "482x582"
+        "width": 402,
+        "height": 482,
+        "text": "402x482"
       },
       "dimensionMismatch": false,
       "exactPixelMetrics": {
-        "meanDiffPercent": 27.719826938251785,
-        "changedPixelPercent": 34.33895139096833,
+        "meanDiffPercent": 6.636973513902027,
+        "changedPixelPercent": 25.79478128032039,
         "maxChannelDelta": 255,
         "pixelTolerance": 8
       },

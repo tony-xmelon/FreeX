@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-16T10:20:55.4041466\u002B03:00",
+  "generatedAt": "2026-08-20T17:44:46.6400625\u002B03:00",
   "options": {
     "thresholdPercent": 25,
     "failOnDimensionMismatch": false,
@@ -12,9 +12,9 @@
     "comparedRows": 1,
     "failedRows": 0,
     "dimensionMismatches": 0,
-    "maxMeanDiffPercent": 4.866644880174292,
-    "maxExactMeanDiffPercent": 6.1376550741207545,
-    "maxChangedPixelPercent": 14.49723667837153
+    "maxMeanDiffPercent": 5.39272848583878,
+    "maxExactMeanDiffPercent": 6.910532457318601,
+    "maxChangedPixelPercent": 17.06532893328313
   },
   "rows": [
     {
@@ -22,23 +22,23 @@
       "sheetName": "Borders",
       "status": "OK",
       "effectiveStatus": "OK",
-      "meanDiffPercent": 4.866644880174292,
+      "meanDiffPercent": 5.39272848583878,
       "excelPng": "excel_01_Borders.png",
       "freeXPng": "freex_01_Borders.png",
       "excelDimensions": {
-        "width": 674,
-        "height": 589,
-        "text": "674x589"
+        "width": 554,
+        "height": 489,
+        "text": "554x489"
       },
       "freeXDimensions": {
-        "width": 674,
-        "height": 589,
-        "text": "674x589"
+        "width": 554,
+        "height": 489,
+        "text": "554x489"
       },
       "dimensionMismatch": false,
       "exactPixelMetrics": {
-        "meanDiffPercent": 6.1376550741207545,
-        "changedPixelPercent": 14.49723667837153,
+        "meanDiffPercent": 6.910532457318601,
+        "changedPixelPercent": 17.06532893328313,
         "maxChannelDelta": 255,
         "pixelTolerance": 8
       },

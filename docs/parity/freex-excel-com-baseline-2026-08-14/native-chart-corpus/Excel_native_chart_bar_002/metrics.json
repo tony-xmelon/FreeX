@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-16T10:04:20.6350352\u002B03:00",
+  "generatedAt": "2026-08-20T17:47:02.8715005\u002B03:00",
   "options": {
     "thresholdPercent": 25,
     "failOnDimensionMismatch": false,
@@ -12,9 +12,9 @@
     "comparedRows": 1,
     "failedRows": 0,
     "dimensionMismatches": 0,
-    "maxMeanDiffPercent": 4.316908496732026,
-    "maxExactMeanDiffPercent": 6.107300920672122,
-    "maxChangedPixelPercent": 15.901514702485944
+    "maxMeanDiffPercent": 4.398770152505447,
+    "maxExactMeanDiffPercent": 6.255715485215767,
+    "maxChangedPixelPercent": 17.009108082979495
   },
   "rows": [
     {
@@ -22,23 +22,23 @@
       "sheetName": "BarData",
       "status": "OK",
       "effectiveStatus": "OK",
-      "meanDiffPercent": 4.316908496732026,
+      "meanDiffPercent": 4.398770152505447,
       "excelPng": "excel_01_BarData.png",
       "freeXPng": "freex_01_BarData.png",
       "excelDimensions": {
-        "width": 1346,
-        "height": 727,
-        "text": "1346x727"
+        "width": 1122,
+        "height": 602,
+        "text": "1122x602"
       },
       "freeXDimensions": {
-        "width": 1346,
-        "height": 727,
-        "text": "1346x727"
+        "width": 1122,
+        "height": 602,
+        "text": "1122x602"
       },
       "dimensionMismatch": false,
       "exactPixelMetrics": {
-        "meanDiffPercent": 6.107300920672122,
-        "changedPixelPercent": 15.901514702485944,
+        "meanDiffPercent": 6.255715485215767,
+        "changedPixelPercent": 17.009108082979495,
         "maxChannelDelta": 255,
         "pixelTolerance": 8
       },

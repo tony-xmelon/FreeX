@@ -4,18 +4,18 @@ The Excel COM baseline now includes eight current-source chart references in add
 
 | Chart family | Mean pixel delta | Exact mean delta | Changed pixels (> 8) |
 | --- | ---: | ---: | ---: |
-| Clustered column | 4.6054% | 6.5207% | 16.9581% |
-| Clustered bar | 4.3169% | 6.1073% | 15.9015% |
-| Line with markers | 1.4467% | 2.0948% | 10.0225% |
-| Pie | 3.9083% | 5.5270% | 16.8347% |
-| Area | 4.1760% | 5.8864% | 15.9919% |
-| XY scatter | 0.9341% | 1.4135% | 9.3700% |
-| 3-D clustered column | 5.6197% | 7.9280% | 19.6191% |
-| 3-D clustered bar | 4.3749% | 6.1819% | 16.4974% |
+| Clustered column | 4.6330% | 6.6030% | 17.8742% |
+| Clustered bar | 4.3988% | 6.2557% | 17.0091% |
+| Line with markers | 1.5010% | 2.2132% | 10.5887% |
+| Pie | 3.9906% | 5.7009% | 17.9276% |
+| Area | 4.2136% | 5.9992% | 16.9771% |
+| XY scatter | 0.9972% | 1.5069% | 9.8754% |
+| 3-D clustered column | 3.9103% | 5.5648% | 16.5419% |
+| 3-D clustered bar | 3.0061% | 4.3087% | 14.4527% |
 
-All eight comparisons passed the existing 25% mean-delta discovery threshold with equal Excel/FreeX image dimensions. These are diagnostic range comparisons, not a visual-parity claim; 3-D charts are the highest-delta chart family in this set and should be reviewed first when tightening the threshold.
+All eight comparisons passed the existing 25% mean-delta discovery threshold with equal Excel/FreeX image dimensions. These are diagnostic range comparisons, not a visual-parity claim. The 2026-08-20 refresh was generated from current source commit `adbeb8542843eff41a93308f18edda4726cc8421` and uses fresh Excel COM references. The 3-D renderer repair reduces the 3-D column mean delta from the stale 5.6197% result to 3.9103% and the 3-D bar mean delta from 4.3749% to 3.0061%.
 
-The authoritative PNGs and per-case metrics are in `docs/parity/freex-excel-com-baseline-2026-08-14/native-chart-corpus/`. The aggregate manifest has 38 Excel reference artifacts: nine chart ranges and 29 PivotTable ranges.
+The authoritative PNGs and per-case metrics are in `docs/parity/freex-excel-com-baseline-2026-08-14/native-chart-corpus/`. The aggregate manifest has 45 Excel reference artifacts: nine chart ranges, seven cell-style ranges, and 29 PivotTable ranges.
 
 ## Reproduction
 

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-16T10:21:05.3503036\u002B03:00",
+  "generatedAt": "2026-08-20T17:45:38.2036323\u002B03:00",
   "options": {
     "thresholdPercent": 25,
     "failOnDimensionMismatch": false,
@@ -12,9 +12,9 @@
     "comparedRows": 1,
     "failedRows": 0,
     "dimensionMismatches": 0,
-    "maxMeanDiffPercent": 5.715143518518519,
-    "maxExactMeanDiffPercent": 9.158400848299939,
-    "maxChangedPixelPercent": 25.249111166601267
+    "maxMeanDiffPercent": 5.858179738562091,
+    "maxExactMeanDiffPercent": 9.430575172249608,
+    "maxChangedPixelPercent": 26.914095730828656
   },
   "rows": [
     {
@@ -22,23 +22,23 @@
       "sheetName": "Patterns",
       "status": "OK",
       "effectiveStatus": "OK",
-      "meanDiffPercent": 5.715143518518519,
+      "meanDiffPercent": 5.858179738562091,
       "excelPng": "excel_01_Patterns.png",
       "freeXPng": "freex_01_Patterns.png",
       "excelDimensions": {
-        "width": 578,
-        "height": 582,
-        "text": "578x582"
+        "width": 478,
+        "height": 482,
+        "text": "478x482"
       },
       "freeXDimensions": {
-        "width": 578,
-        "height": 582,
-        "text": "578x582"
+        "width": 478,
+        "height": 482,
+        "text": "478x482"
       },
       "dimensionMismatch": false,
       "exactPixelMetrics": {
-        "meanDiffPercent": 9.158400848299939,
-        "changedPixelPercent": 25.249111166601267,
+        "meanDiffPercent": 9.430575172249608,
+        "changedPixelPercent": 26.914095730828656,
         "maxChannelDelta": 255,
         "pixelTolerance": 8
       },

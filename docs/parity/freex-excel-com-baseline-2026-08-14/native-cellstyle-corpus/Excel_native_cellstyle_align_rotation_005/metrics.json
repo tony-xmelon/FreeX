@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-16T10:20:43.6050166\u002B03:00",
+  "generatedAt": "2026-08-20T17:42:22.8156729\u002B03:00",
   "options": {
     "thresholdPercent": 25,
     "failOnDimensionMismatch": false,
@@ -12,9 +12,9 @@
     "comparedRows": 1,
     "failedRows": 0,
     "dimensionMismatches": 0,
-    "maxMeanDiffPercent": 3.873968681917211,
-    "maxExactMeanDiffPercent": 6.375524138964654,
-    "maxChangedPixelPercent": 15.042560416863834
+    "maxMeanDiffPercent": 4.144684640522875,
+    "maxExactMeanDiffPercent": 6.947769779000063,
+    "maxChangedPixelPercent": 16.72227614656637
   },
   "rows": [
     {
@@ -22,23 +22,23 @@
       "sheetName": "AlignRotate",
       "status": "OK",
       "effectiveStatus": "OK",
-      "meanDiffPercent": 3.873968681917211,
+      "meanDiffPercent": 4.144684640522875,
       "excelPng": "excel_01_AlignRotate.png",
       "freeXPng": "freex_01_AlignRotate.png",
       "excelDimensions": {
-        "width": 766,
-        "height": 938,
-        "text": "766x938"
+        "width": 634,
+        "height": 780,
+        "text": "634x780"
       },
       "freeXDimensions": {
-        "width": 766,
-        "height": 938,
-        "text": "766x938"
+        "width": 634,
+        "height": 780,
+        "text": "634x780"
       },
       "dimensionMismatch": false,
       "exactPixelMetrics": {
-        "meanDiffPercent": 6.375524138964654,
-        "changedPixelPercent": 15.042560416863834,
+        "meanDiffPercent": 6.947769779000063,
+        "changedPixelPercent": 16.72227614656637,
         "maxChannelDelta": 255,
         "pixelTolerance": 8
       },

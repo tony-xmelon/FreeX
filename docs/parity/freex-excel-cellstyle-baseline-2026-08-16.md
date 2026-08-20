@@ -4,15 +4,15 @@ This iteration adds seven Excel COM-generated range references for visible grid 
 
 | Surface family | Mean pixel delta | Exact mean delta | Changed pixels (> 8) |
 | --- | ---: | ---: | ---: |
-| Border styles | 4.8666% | 6.1377% | 14.4972% |
-| Diagonal borders | 1.6302% | 2.5873% | 11.4247% |
-| Pattern fills | 5.7151% | 9.1584% | 25.2491% |
-| Gradient fills | 16.8261% | 27.7198% | 34.3390% |
-| Alignment and rotation | 3.8740% | 6.3755% | 15.0426% |
-| Merged cells | 2.8906% | 3.7673% | 12.2435% |
-| Fonts | 5.3788% | 6.1060% | 17.5014% |
+| Border styles | 5.3927% | 6.9105% | 17.0653% |
+| Diagonal borders | 1.5674% | 2.5054% | 11.8491% |
+| Pattern fills | 5.8582% | 9.4306% | 26.9141% |
+| Gradient fills | 3.9564% | 6.6370% | 25.7948% |
+| Alignment and rotation | 4.1447% | 6.9478% | 16.7223% |
+| Merged cells | 3.2273% | 4.2951% | 14.7616% |
+| Fonts | 6.2425% | 7.2131% | 19.9971% |
 
-All seven comparisons passed the existing 25% mean-delta discovery gate at equal image dimensions. They are diagnostic range comparisons, not a visual-parity claim. Gradient fills are now the highest-priority FreeX grid-formatting discrepancy in the committed native cell-style set: 16.8261% mean delta and 34.3390% changed pixels.
+All seven comparisons passed the existing 25% mean-delta discovery gate at equal image dimensions. They are diagnostic range comparisons, not a visual-parity claim. The 2026-08-20 refresh was generated from current source commit `adbeb8542843eff41a93308f18edda4726cc8421` and uses fresh Excel COM references. The gradient renderer repair reduces the gradient-fills mean delta from the stale 16.8261% result to 3.9564%; fonts are now the highest mean-delta cell-style family at 6.2425%.
 
 The authoritative Excel PNGs and per-case metrics are in `docs/parity/freex-excel-com-baseline-2026-08-14/native-cellstyle-corpus/`. The aggregate Office manifest now contains 45 artifacts: nine chart ranges, seven cell-style ranges, and 29 PivotTable ranges.
 

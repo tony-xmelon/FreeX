@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-16T10:05:07.5790325\u002B03:00",
+  "generatedAt": "2026-08-20T17:47:35.2142758\u002B03:00",
   "options": {
     "thresholdPercent": 25,
     "failOnDimensionMismatch": false,
@@ -12,9 +12,9 @@
     "comparedRows": 1,
     "failedRows": 0,
     "dimensionMismatches": 0,
-    "maxMeanDiffPercent": 3.908276960784314,
-    "maxExactMeanDiffPercent": 5.526977891597908,
-    "maxChangedPixelPercent": 16.834739847650894
+    "maxMeanDiffPercent": 3.990605936819172,
+    "maxExactMeanDiffPercent": 5.700884507515231,
+    "maxChangedPixelPercent": 17.927615020638278
   },
   "rows": [
     {
@@ -22,23 +22,23 @@
       "sheetName": "PieData",
       "status": "OK",
       "effectiveStatus": "OK",
-      "meanDiffPercent": 3.908276960784314,
+      "meanDiffPercent": 3.990605936819172,
       "excelPng": "excel_01_PieData.png",
       "freeXPng": "freex_01_PieData.png",
       "excelDimensions": {
-        "width": 1346,
-        "height": 727,
-        "text": "1346x727"
+        "width": 1122,
+        "height": 602,
+        "text": "1122x602"
       },
       "freeXDimensions": {
-        "width": 1346,
-        "height": 727,
-        "text": "1346x727"
+        "width": 1122,
+        "height": 602,
+        "text": "1122x602"
       },
       "dimensionMismatch": false,
       "exactPixelMetrics": {
-        "meanDiffPercent": 5.526977891597908,
-        "changedPixelPercent": 16.834739847650894,
+        "meanDiffPercent": 5.700884507515231,
+        "changedPixelPercent": 17.927615020638278,
         "maxChannelDelta": 255,
         "pixelTolerance": 8
       },
