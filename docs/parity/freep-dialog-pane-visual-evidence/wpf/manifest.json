@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "host": "wpf",
-  "captureMode": "visible-app-owned-render-target; scenario-isolated-processes",
+  "captureMode": "visible-app-owned-render-target",
   "targetDpi": 96,
   "logicalShellWidth": 1280,
   "logicalShellHeight": 760,
-  "generatedAtUtc": "2026-08-16T08:12:38.2501816\u002B00:00",
+  "generatedAtUtc": "2026-08-20T20:35:20.6926288\u002B00:00",
   "captures": [
     {
       "scenarioId": "design.slide-size.initial",
@@ -20,20 +20,20 @@
       "pixelHeight": 223,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 11477,
+      "nonBackgroundPixelCount": 11490,
       "focusedRole": "combobox",
       "focusedLabel": "Slide size preset",
       "buttons": [
         {
-          "actionId": "ok",
-          "label": "OK",
+          "actionId": "FreeP.SlideSize.Accept",
+          "label": "Apply slide size",
           "isEnabled": true,
           "isDefault": true,
           "isCancel": false
         },
         {
-          "actionId": "cancel",
-          "label": "Cancel",
+          "actionId": "FreeP.SlideSize.Cancel",
+          "label": "Cancel slide size changes",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": true
@@ -77,14 +77,14 @@
         },
         {
           "role": "button",
-          "label": "ok",
+          "label": "FreeP.SlideSize.Accept",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "cancel",
+          "label": "FreeP.SlideSize.Cancel",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
@@ -133,20 +133,20 @@
       "pixelHeight": 223,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 11335,
+      "nonBackgroundPixelCount": 11348,
       "focusedRole": "textbox",
       "focusedLabel": "Slide width",
       "buttons": [
         {
-          "actionId": "ok",
-          "label": "OK",
+          "actionId": "FreeP.SlideSize.Accept",
+          "label": "Apply slide size",
           "isEnabled": true,
           "isDefault": true,
           "isCancel": false
         },
         {
-          "actionId": "cancel",
-          "label": "Cancel",
+          "actionId": "FreeP.SlideSize.Cancel",
+          "label": "Cancel slide size changes",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": true
@@ -190,14 +190,14 @@
         },
         {
           "role": "button",
-          "label": "ok",
+          "label": "FreeP.SlideSize.Accept",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
         },
         {
           "role": "button",
-          "label": "cancel",
+          "label": "FreeP.SlideSize.Cancel",
           "isEnabled": true,
           "isChecked": null,
           "isSelected": null
@@ -1187,7 +1187,7 @@
       "pixelHeight": 403,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 81192,
+      "nonBackgroundPixelCount": 81321,
       "focusedRole": "combobox",
       "focusedLabel": "Chart type",
       "buttons": [
@@ -1398,7 +1398,7 @@
       "pixelHeight": 403,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 82623,
+      "nonBackgroundPixelCount": 82752,
       "focusedRole": "textbox",
       "focusedLabel": "",
       "buttons": [
@@ -1614,7 +1614,7 @@
       "pixelHeight": 403,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 81192,
+      "nonBackgroundPixelCount": 81321,
       "focusedRole": "combobox",
       "focusedLabel": "Chart type",
       "buttons": [
@@ -2563,7 +2563,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 895290,
+      "nonBackgroundPixelCount": 895547,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -2627,11 +2627,19 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 895290,
+      "nonBackgroundPixelCount": 895547,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [],
-      "controls": [],
+      "controls": [
+        {
+          "role": "textbox",
+          "label": "Notes",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
       "assertions": [
         {
           "id": "seeded-presentation",
@@ -2675,7 +2683,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 895290,
+      "nonBackgroundPixelCount": 895547,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -2690,6 +2698,48 @@
           "actionId": "new-comment",
           "label": "New Comment",
           "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "freep.review.comments.edit",
+          "label": "Edit Comment",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "freep.review.comments.delete",
+          "label": "Delete Comment",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "freep.review.comments.previous",
+          "label": "Previous Comment",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "freep.review.comments.next",
+          "label": "Next Comment",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "freep.review.comments.resolve",
+          "label": "Resolve Comment",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "freep.review.comments.reopen",
+          "label": "Reopen Comment",
+          "isEnabled": false,
           "isDefault": false,
           "isCancel": false
         },
@@ -2720,6 +2770,48 @@
           "role": "button",
           "label": "new-comment",
           "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "freep.review.comments.edit",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "freep.review.comments.delete",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "freep.review.comments.previous",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "freep.review.comments.next",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "freep.review.comments.resolve",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "freep.review.comments.reopen",
+          "isEnabled": false,
           "isChecked": null,
           "isSelected": null
         },
@@ -2781,7 +2873,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 895288,
+      "nonBackgroundPixelCount": 895545,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -2873,7 +2965,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 895288,
+      "nonBackgroundPixelCount": 895545,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -2958,7 +3050,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 895289,
+      "nonBackgroundPixelCount": 895546,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -3106,7 +3198,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 895290,
+      "nonBackgroundPixelCount": 895547,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [],
@@ -3154,7 +3246,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 895290,
+      "nonBackgroundPixelCount": 895547,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -3372,7 +3464,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 894947,
+      "nonBackgroundPixelCount": 895204,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -3625,7 +3717,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 891540,
+      "nonBackgroundPixelCount": 891797,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -3921,7 +4013,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 895286,
+      "nonBackgroundPixelCount": 895543,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -4326,7 +4418,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 895164,
+      "nonBackgroundPixelCount": 895421,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
