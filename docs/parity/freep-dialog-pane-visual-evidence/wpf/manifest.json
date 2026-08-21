@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "host": "wpf",
-  "captureMode": "visible-app-owned-render-target; scenario-isolated-processes",
+  "captureMode": "visible-app-owned-render-target",
   "targetDpi": 96,
   "logicalShellWidth": 1280,
   "logicalShellHeight": 760,
-  "generatedAtUtc": "2026-08-21T22:16:01.9210670\u002B00:00",
+  "generatedAtUtc": "2026-08-20T23:32:41.5474893\u002B00:00",
   "captures": [
     {
       "scenarioId": "design.slide-size.initial",
@@ -14,13 +14,13 @@
       "host": "wpf",
       "captureStatus": "complete",
       "imagePath": "wpf/design.slide-size.initial.png",
-      "logicalWidth": 365.3333333333333,
-      "logicalHeight": 222.66666666666666,
+      "logicalWidth": 365.6,
+      "logicalHeight": 222.4,
       "pixelWidth": 366,
       "pixelHeight": 223,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 11504,
+      "nonBackgroundPixelCount": 11490,
       "focusedRole": "combobox",
       "focusedLabel": "Slide size preset",
       "buttons": [
@@ -113,12 +113,12 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/design.slide-size.initial.png",
-      "pixelComparisonLogicalWidth": 365.3333333333333,
-      "pixelComparisonLogicalHeight": 222.66666666666666
+      "pixelComparisonLogicalWidth": 365.6,
+      "pixelComparisonLogicalHeight": 222.4
     },
     {
       "scenarioId": "design.slide-size.invalid",
@@ -127,13 +127,13 @@
       "host": "wpf",
       "captureStatus": "complete",
       "imagePath": "wpf/design.slide-size.invalid.png",
-      "logicalWidth": 365.3333333333333,
-      "logicalHeight": 222.66666666666666,
+      "logicalWidth": 365.6,
+      "logicalHeight": 222.4,
       "pixelWidth": 366,
       "pixelHeight": 223,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 11393,
+      "nonBackgroundPixelCount": 11348,
       "focusedRole": "textbox",
       "focusedLabel": "Slide width",
       "buttons": [
@@ -231,12 +231,12 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/design.slide-size.invalid.png",
-      "pixelComparisonLogicalWidth": 365.3333333333333,
-      "pixelComparisonLogicalHeight": 222.66666666666666
+      "pixelComparisonLogicalWidth": 365.6,
+      "pixelComparisonLogicalHeight": 222.4
     },
     {
       "scenarioId": "insert.header-footer.date-time",
@@ -245,13 +245,13 @@
       "host": "wpf",
       "captureStatus": "complete",
       "imagePath": "wpf/insert.header-footer.date-time.png",
-      "logicalWidth": 345.3333333333333,
-      "logicalHeight": 260.6666666666667,
+      "logicalWidth": 345.6,
+      "logicalHeight": 253.6,
       "pixelWidth": 346,
-      "pixelHeight": 261,
+      "pixelHeight": 254,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 14383,
+      "nonBackgroundPixelCount": 13542,
       "focusedRole": "checkbox",
       "focusedLabel": "Date and time",
       "buttons": [
@@ -379,12 +379,12 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/insert.header-footer.date-time.png",
-      "pixelComparisonLogicalWidth": 345.3333333333333,
-      "pixelComparisonLogicalHeight": 260.6666666666667
+      "pixelComparisonLogicalWidth": 345.6,
+      "pixelComparisonLogicalHeight": 253.6
     },
     {
       "scenarioId": "insert.header-footer.apply-to-all",
@@ -393,13 +393,13 @@
       "host": "wpf",
       "captureStatus": "complete",
       "imagePath": "wpf/insert.header-footer.apply-to-all.png",
-      "logicalWidth": 345.3333333333333,
-      "logicalHeight": 260.6666666666667,
+      "logicalWidth": 345.6,
+      "logicalHeight": 253.6,
       "pixelWidth": 346,
-      "pixelHeight": 261,
+      "pixelHeight": 254,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 15569,
+      "nonBackgroundPixelCount": 14699,
       "focusedRole": "textbox",
       "focusedLabel": "Footer text",
       "buttons": [
@@ -527,12 +527,12 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/insert.header-footer.apply-to-all.png",
-      "pixelComparisonLogicalWidth": 345.3333333333333,
-      "pixelComparisonLogicalHeight": 260.6666666666667
+      "pixelComparisonLogicalWidth": 345.6,
+      "pixelComparisonLogicalHeight": 253.6
     },
     {
       "scenarioId": "home.find-replace.find",
@@ -541,13 +541,13 @@
       "host": "wpf",
       "captureStatus": "complete",
       "imagePath": "wpf/home.find-replace.find.png",
-      "logicalWidth": 425.3333333333333,
-      "logicalHeight": 134,
+      "logicalWidth": 425.6,
+      "logicalHeight": 130.4,
       "pixelWidth": 426,
-      "pixelHeight": 134,
+      "pixelHeight": 131,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 5228,
+      "nonBackgroundPixelCount": 4693,
       "focusedRole": "textbox",
       "focusedLabel": "Find text",
       "buttons": [
@@ -675,12 +675,12 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/home.find-replace.find.png",
-      "pixelComparisonLogicalWidth": 425.3333333333333,
-      "pixelComparisonLogicalHeight": 134
+      "pixelComparisonLogicalWidth": 425.6,
+      "pixelComparisonLogicalHeight": 130.4
     },
     {
       "scenarioId": "home.find-replace.replace",
@@ -689,13 +689,13 @@
       "host": "wpf",
       "captureStatus": "complete",
       "imagePath": "wpf/home.find-replace.replace.png",
-      "logicalWidth": 425.3333333333333,
-      "logicalHeight": 198.66666666666666,
+      "logicalWidth": 425.6,
+      "logicalHeight": 192,
       "pixelWidth": 426,
-      "pixelHeight": 199,
+      "pixelHeight": 192,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 10575,
+      "nonBackgroundPixelCount": 8802,
       "focusedRole": "textbox",
       "focusedLabel": "Find text",
       "buttons": [
@@ -823,12 +823,12 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/home.find-replace.replace.png",
-      "pixelComparisonLogicalWidth": 425.3333333333333,
-      "pixelComparisonLogicalHeight": 198.66666666666666
+      "pixelComparisonLogicalWidth": 425.6,
+      "pixelComparisonLogicalHeight": 192
     },
     {
       "scenarioId": "insert.hyperlink.initial",
@@ -837,13 +837,13 @@
       "host": "wpf",
       "captureStatus": "complete",
       "imagePath": "wpf/insert.hyperlink.initial.png",
-      "logicalWidth": 405.3333333333333,
-      "logicalHeight": 216,
+      "logicalWidth": 405.6,
+      "logicalHeight": 212,
       "pixelWidth": 406,
-      "pixelHeight": 216,
+      "pixelHeight": 212,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 12671,
+      "nonBackgroundPixelCount": 12564,
       "focusedRole": "textbox",
       "focusedLabel": "Hyperlink URL",
       "buttons": [
@@ -936,12 +936,12 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/insert.hyperlink.initial.png",
-      "pixelComparisonLogicalWidth": 405.3333333333333,
-      "pixelComparisonLogicalHeight": 216
+      "pixelComparisonLogicalWidth": 405.6,
+      "pixelComparisonLogicalHeight": 212
     },
     {
       "scenarioId": "insert.hyperlink.validation",
@@ -950,13 +950,13 @@
       "host": "wpf",
       "captureStatus": "complete",
       "imagePath": "wpf/insert.hyperlink.validation.png",
-      "logicalWidth": 405.3333333333333,
-      "logicalHeight": 216,
+      "logicalWidth": 405.6,
+      "logicalHeight": 212,
       "pixelWidth": 406,
-      "pixelHeight": 216,
+      "pixelHeight": 212,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 14931,
+      "nonBackgroundPixelCount": 14841,
       "focusedRole": "textbox",
       "focusedLabel": "Hyperlink URL",
       "buttons": [
@@ -1054,12 +1054,12 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/insert.hyperlink.validation.png",
-      "pixelComparisonLogicalWidth": 405.3333333333333,
-      "pixelComparisonLogicalHeight": 216
+      "pixelComparisonLogicalWidth": 405.6,
+      "pixelComparisonLogicalHeight": 212
     },
     {
       "scenarioId": "insert.hyperlink.populated",
@@ -1068,13 +1068,13 @@
       "host": "wpf",
       "captureStatus": "complete",
       "imagePath": "wpf/insert.hyperlink.populated.png",
-      "logicalWidth": 405.3333333333333,
-      "logicalHeight": 216,
+      "logicalWidth": 405.6,
+      "logicalHeight": 212,
       "pixelWidth": 406,
-      "pixelHeight": 216,
+      "pixelHeight": 212,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 13709,
+      "nonBackgroundPixelCount": 13764,
       "focusedRole": "textbox",
       "focusedLabel": "Hyperlink URL",
       "buttons": [
@@ -1167,12 +1167,12 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/insert.hyperlink.populated.png",
-      "pixelComparisonLogicalWidth": 405.3333333333333,
-      "pixelComparisonLogicalHeight": 216
+      "pixelComparisonLogicalWidth": 405.6,
+      "pixelComparisonLogicalHeight": 212
     },
     {
       "scenarioId": "chart.edit-data.initial",
@@ -1181,13 +1181,13 @@
       "host": "wpf",
       "captureStatus": "complete",
       "imagePath": "wpf/chart.edit-data.initial.png",
-      "logicalWidth": 625.3333333333334,
-      "logicalHeight": 402.6666666666667,
+      "logicalWidth": 625.6,
+      "logicalHeight": 402.4,
       "pixelWidth": 626,
       "pixelHeight": 403,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 83287,
+      "nonBackgroundPixelCount": 81321,
       "focusedRole": "combobox",
       "focusedLabel": "Chart type",
       "buttons": [
@@ -1378,12 +1378,12 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/chart.edit-data.initial.png",
-      "pixelComparisonLogicalWidth": 625.3333333333334,
-      "pixelComparisonLogicalHeight": 402.6666666666667
+      "pixelComparisonLogicalWidth": 625.6,
+      "pixelComparisonLogicalHeight": 402.4
     },
     {
       "scenarioId": "chart.edit-data.validation",
@@ -1392,13 +1392,13 @@
       "host": "wpf",
       "captureStatus": "complete",
       "imagePath": "wpf/chart.edit-data.validation.png",
-      "logicalWidth": 625.3333333333334,
-      "logicalHeight": 402.6666666666667,
+      "logicalWidth": 625.6,
+      "logicalHeight": 402.4,
       "pixelWidth": 626,
       "pixelHeight": 403,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 84646,
+      "nonBackgroundPixelCount": 82752,
       "focusedRole": "textbox",
       "focusedLabel": "",
       "buttons": [
@@ -1594,12 +1594,12 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/chart.edit-data.validation.png",
-      "pixelComparisonLogicalWidth": 625.3333333333334,
-      "pixelComparisonLogicalHeight": 402.6666666666667
+      "pixelComparisonLogicalWidth": 625.6,
+      "pixelComparisonLogicalHeight": 402.4
     },
     {
       "scenarioId": "chart.edit-data.populated",
@@ -1608,13 +1608,13 @@
       "host": "wpf",
       "captureStatus": "complete",
       "imagePath": "wpf/chart.edit-data.populated.png",
-      "logicalWidth": 625.3333333333334,
-      "logicalHeight": 402.6666666666667,
+      "logicalWidth": 625.6,
+      "logicalHeight": 402.4,
       "pixelWidth": 626,
       "pixelHeight": 403,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 83287,
+      "nonBackgroundPixelCount": 81321,
       "focusedRole": "combobox",
       "focusedLabel": "Chart type",
       "buttons": [
@@ -1805,12 +1805,12 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/chart.edit-data.populated.png",
-      "pixelComparisonLogicalWidth": 625.3333333333334,
-      "pixelComparisonLogicalHeight": 402.6666666666667
+      "pixelComparisonLogicalWidth": 625.6,
+      "pixelComparisonLogicalHeight": 402.4
     },
     {
       "scenarioId": "slideshow.custom-shows.initial",
@@ -1819,13 +1819,13 @@
       "host": "wpf",
       "captureStatus": "complete",
       "imagePath": "wpf/slideshow.custom-shows.initial.png",
-      "logicalWidth": 625.3333333333334,
-      "logicalHeight": 402.6666666666667,
+      "logicalWidth": 625.6,
+      "logicalHeight": 402.4,
       "pixelWidth": 626,
       "pixelHeight": 403,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 140745,
+      "nonBackgroundPixelCount": 140369,
       "focusedRole": "textbox",
       "focusedLabel": "Custom show name",
       "buttons": [
@@ -2051,12 +2051,12 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/slideshow.custom-shows.initial.png",
-      "pixelComparisonLogicalWidth": 625.3333333333334,
-      "pixelComparisonLogicalHeight": 402.6666666666667
+      "pixelComparisonLogicalWidth": 625.6,
+      "pixelComparisonLogicalHeight": 402.4
     },
     {
       "scenarioId": "slideshow.custom-shows.validation",
@@ -2065,13 +2065,13 @@
       "host": "wpf",
       "captureStatus": "complete",
       "imagePath": "wpf/slideshow.custom-shows.validation.png",
-      "logicalWidth": 625.3333333333334,
-      "logicalHeight": 402.6666666666667,
+      "logicalWidth": 625.6,
+      "logicalHeight": 402.4,
       "pixelWidth": 626,
       "pixelHeight": 403,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 141514,
+      "nonBackgroundPixelCount": 141211,
       "focusedRole": "textbox",
       "focusedLabel": "Custom show name",
       "buttons": [
@@ -2297,12 +2297,12 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/slideshow.custom-shows.validation.png",
-      "pixelComparisonLogicalWidth": 625.3333333333334,
-      "pixelComparisonLogicalHeight": 402.6666666666667
+      "pixelComparisonLogicalWidth": 625.6,
+      "pixelComparisonLogicalHeight": 402.4
     },
     {
       "scenarioId": "slideshow.custom-shows.populated",
@@ -2311,13 +2311,13 @@
       "host": "wpf",
       "captureStatus": "complete",
       "imagePath": "wpf/slideshow.custom-shows.populated.png",
-      "logicalWidth": 625.3333333333334,
-      "logicalHeight": 402.6666666666667,
+      "logicalWidth": 625.6,
+      "logicalHeight": 402.4,
       "pixelWidth": 626,
       "pixelHeight": 403,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 139491,
+      "nonBackgroundPixelCount": 141785,
       "focusedRole": "textbox",
       "focusedLabel": "Custom show name",
       "buttons": [
@@ -2543,12 +2543,12 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/slideshow.custom-shows.populated.png",
-      "pixelComparisonLogicalWidth": 625.3333333333334,
-      "pixelComparisonLogicalHeight": 402.6666666666667
+      "pixelComparisonLogicalWidth": 625.6,
+      "pixelComparisonLogicalHeight": 402.4
     },
     {
       "scenarioId": "startup.slide-pane.seeded",
@@ -2563,7 +2563,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 892347,
+      "nonBackgroundPixelCount": 895547,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -2607,8 +2607,8 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/targets/startup.slide-pane.seeded.png",
       "pixelComparisonLogicalWidth": 180,
@@ -2627,7 +2627,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 892347,
+      "nonBackgroundPixelCount": 895547,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [],
@@ -2663,8 +2663,8 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/targets/startup.notes-pane.seeded.png",
       "pixelComparisonLogicalWidth": 1100,
@@ -2683,7 +2683,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 892347,
+      "nonBackgroundPixelCount": 895547,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -2853,8 +2853,8 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/targets/review.comments-pane.seeded.png",
       "pixelComparisonLogicalWidth": 1100,
@@ -2873,7 +2873,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 892339,
+      "nonBackgroundPixelCount": 895545,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -2945,8 +2945,8 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/targets/review.accessibility-pane.seeded.png",
       "pixelComparisonLogicalWidth": 320,
@@ -2965,7 +2965,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 892347,
+      "nonBackgroundPixelCount": 895545,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -3030,8 +3030,8 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/targets/review.alt-text-pane.seeded.png",
       "pixelComparisonLogicalWidth": 292,
@@ -3050,7 +3050,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 892335,
+      "nonBackgroundPixelCount": 895546,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -3178,8 +3178,8 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/targets/review.reading-order-pane.seeded.png",
       "pixelComparisonLogicalWidth": 320,
@@ -3198,7 +3198,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 892347,
+      "nonBackgroundPixelCount": 895547,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [],
@@ -3226,8 +3226,8 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/targets/review.proofing-pane.seeded.png",
       "pixelComparisonLogicalWidth": 320,
@@ -3246,7 +3246,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 892347,
+      "nonBackgroundPixelCount": 895547,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -3444,8 +3444,8 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/targets/accessibility.media-caption-pane.seeded.png",
       "pixelComparisonLogicalWidth": 320,
@@ -3464,7 +3464,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 891984,
+      "nonBackgroundPixelCount": 895204,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -3697,8 +3697,8 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/targets/context.smartart-text-pane.seeded.png",
       "pixelComparisonLogicalWidth": 320,
@@ -3717,7 +3717,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 888811,
+      "nonBackgroundPixelCount": 891797,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -3817,8 +3817,8 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/targets/animations.animation-pane.seeded.png",
       "pixelComparisonLogicalWidth": 240,
@@ -3837,7 +3837,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 804878,
+      "nonBackgroundPixelCount": 807182,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -3993,8 +3993,8 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/targets/file.print-options.seeded.png",
       "pixelComparisonLogicalWidth": 1010,
@@ -4013,7 +4013,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 892346,
+      "nonBackgroundPixelCount": 895543,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -4398,8 +4398,8 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/targets/insert.table-picker.open.png",
       "pixelComparisonLogicalWidth": 1100,
@@ -4418,7 +4418,7 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "nonBackgroundPixelCount": 892224,
+      "nonBackgroundPixelCount": 895421,
       "focusedRole": "",
       "focusedLabel": "",
       "buttons": [
@@ -4467,8 +4467,8 @@
         }
       ],
       "limitations": [],
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
       "rasterNormalization": "logical-96-dpi",
       "pixelComparisonImagePath": "wpf/targets/design.layout-picker.open.png",
       "pixelComparisonLogicalWidth": 1100,
