@@ -499,6 +499,7 @@
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\Sparklines\\SparklineAxisLinePlanner.cs",
                                                    "src\\FreeX.App.Presentation\\Sparklines\\SparklineAxisScalePlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Sparklines\\SparklineColumnColorPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\Sparklines\\SparklineLayoutEngine.cs",
                                                    "src\\FreeX.App.Presentation\\Sparklines\\SparklineSeriesReader.cs",
                                                    "src\\FreeX.App.Presentation\\Sparklines\\SparklineValueCache.cs",
