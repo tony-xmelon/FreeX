@@ -50,6 +50,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [planning/macos-port-dependency-backlog.md](planning/macos-port-dependency-backlog.md) - macOS port backlog inventory for WPF/Windows-only components and platform-service replacement work.
 - [planning/macos-state-management.md](planning/macos-state-management.md) - macOS port state-location guidance for user settings, recent files, diagnostics, caches, and shared abstractions.
 - [release/test-distribution.md](release/test-distribution.md) - test-suite distribution, default agent verification path, separate UI lane, diagnostics plan, and tester-release workflow.
+- [release/installation-and-browser-support.md](release/installation-and-browser-support.md) - desktop installation steps, Chromium/browser release status, and additional OS support options.
 - [release/macos-signing-notarization.md](release/macos-signing-notarization.md) - hosted macOS app preview artifact retrieval, Developer ID signing, and notarization runbook.
 - [release/tester-release-checklist.md](release/tester-release-checklist.md) - release-gate and public-preview accessibility checklist for tester builds.
 
