@@ -30,6 +30,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 
 - [user/guide.md](user/guide.md) - comprehensive end-user guide covering supported features, navigation, formulas, charts, PivotTables, printing, and keyboard shortcuts.
 - [user/linux-install.md](user/linux-install.md) - installing FreeX on Linux: .deb / AppImage / tarball options, checksum verification, and file associations.
+- [user/chromeos-install.md](user/chromeos-install.md) - running FreeX, FreeW, and FreeP Linux tester packages through ChromeOS Linux development environment (Crostini).
 - [user/troubleshooting.md](user/troubleshooting.md) - common issues, error messages, known limitations, and how to report bugs.
 
 ## Legal
@@ -47,6 +48,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [release/linux-public-preview-checklist.md](release/linux-public-preview-checklist.md) - Linux preview release-gate checklist: hosted CI gates plus human X11/Wayland and accessibility validation.
 - [release/linux-human-validation-checklist.md](release/linux-human-validation-checklist.md) - fillable Linux human-validation record (X11/Wayland, keyboard-only, Orca, install/AppImage) validated by Test-LinuxHumanValidationChecklist.ps1.
 - [release/linux-release.md](release/linux-release.md) - Linux release channel runbook: versioned tarball/AppImage publish, promotion gate, and dispatch instructions.
+- [release/installation-and-browser-support.md](release/installation-and-browser-support.md) - desktop installation steps, browser-release boundary, and ChromeOS support guidance.
 - [planning/macos-port-dependency-backlog.md](planning/macos-port-dependency-backlog.md) - macOS port backlog inventory for WPF/Windows-only components and platform-service replacement work.
 - [planning/macos-state-management.md](planning/macos-state-management.md) - macOS port state-location guidance for user settings, recent files, diagnostics, caches, and shared abstractions.
 - [release/test-distribution.md](release/test-distribution.md) - test-suite distribution, default agent verification path, separate UI lane, diagnostics plan, and tester-release workflow.
