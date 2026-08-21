@@ -4,7 +4,7 @@
   "EvidenceSubject": "freex",
   "EvidenceApp": "FreeX",
   "ScenarioId": "popup:table-autofilter-dropdown",
-  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\autofilter-excel-behavior-20260606\\screenshots\\autofilter-flyout-tour",
+  "OutputDirectory": "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-visual-popup-followup-20260821\\screenshots\\autofilter-flyout-tour",
   "OutputNaming": "freex_table_autofilter_dropdown.png",
   "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md",
   "HeaderCell": "A1",
