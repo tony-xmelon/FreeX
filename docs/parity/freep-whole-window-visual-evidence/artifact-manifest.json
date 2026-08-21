@@ -1,11 +1,11 @@
 {
     "schemaVersion":  1,
     "generatedBy":  "tools/Generate-FreePWholeWindowVisualEvidenceManifest.ps1",
-    "evidenceGeneratedAtUtc":  "2026-08-20T23:49:29.9572719+00:00",
+    "evidenceGeneratedAtUtc":  "2026-08-21T21:44:25.2042523+00:00",
     "scenarioCount":  33,
     "pairedCaptureCount":  33,
-    "passCount":  32,
-    "mismatchCount":  1,
+    "passCount":  33,
+    "mismatchCount":  0,
     "limitationCount":  0,
     "duplicateCaptureCount":  0,
     "fullPngCount":  66,
@@ -32,7 +32,7 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Presentation/InCanvasRichTextSelectionVisualContract.cs",
-                       "sha256":  "2318bfe93b7deabfb9bef6fd13f7544040a2af5caf0cf2f6b5e3d1cc36500c44"
+                       "sha256":  "9d5c10310904ee5c309ec7ee90b06a849328637a8d4792b6f958f2b577472df1"
                    },
                    {
                        "path":  "freep/FreeP.App.Presentation/InCanvasRichTextVisualPlanner.cs",
@@ -88,7 +88,7 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaRichTextEditingSurface.cs",
-                       "sha256":  "04c9da55c330e3662cb11d8bfd9ae101c7a033de6487274ff8d809c6c15ae4f5"
+                       "sha256":  "0a53a26da7c303d28372a7b5a0819759212e94ff974240b7cfd4546a3c4317d6"
                    },
                    {
                        "path":  "shared/Free.Shared.Ribbon/RibbonVisualMetrics.cs",
@@ -100,7 +100,7 @@
                    },
                    {
                        "path":  "shared/Free.Shared.Ribbon.Wpf/RibbonWpfRenderer.cs",
-                       "sha256":  "64a0b1f812353267a649c8855b440ec5a2afa816e91d6e0dd221a19d9bd157ab"
+                       "sha256":  "ce6116d934ce305c5fdb2125ada9743f5929099d770d820134224af2ad3d6b12"
                    },
                    {
                        "path":  "shared/Free.Shared.Ribbon.Avalonia/AvaloniaRibbonRenderer.cs",
@@ -118,408 +118,408 @@
     "files":  [
                   {
                       "path":  "avalonia/client/accessibility.media-caption-pane.png",
-                      "bytes":  86953,
-                      "sha256":  "eafac90b5e1be83afc7e256b009bc41c59a2014518f920ec877b0afd034c5c37"
+                      "bytes":  86955,
+                      "sha256":  "109ab7a13f81756290d4c1da8e7eba993134842e208a5441ddd810f5e68da168"
                   },
                   {
                       "path":  "avalonia/client/animations.animation-pane.png",
-                      "bytes":  53953,
-                      "sha256":  "eb20e73fd83b476394721a1cacac70819340ba321d629966fe0c5d12d4fd506f"
+                      "bytes":  54172,
+                      "sha256":  "17cee38ea042f45fc5c56206026db32e3af6e00811fc60cc8861b4f0674dd7af"
                   },
                   {
                       "path":  "avalonia/client/backstage.account.png",
-                      "bytes":  56646,
-                      "sha256":  "14a48e73690e505b47ec8df7fb495fb59c4aeba3b8acb24556a28821e676a4b4"
+                      "bytes":  57451,
+                      "sha256":  "533dc3bb92b84ea574806006b047fad62fddecbeafe26e39eac7d2a99bfba75b"
                   },
                   {
                       "path":  "avalonia/client/backstage.export.png",
-                      "bytes":  56024,
-                      "sha256":  "2c0c331a5fa5f59c94ac268b22bd2188e4bbf8504dba619dae60c0d5dba0c4af"
+                      "bytes":  55713,
+                      "sha256":  "072e48db29b8979ce5e09734d47c2d013ba8a524c5ccfc9d585f253f0b20817c"
                   },
                   {
                       "path":  "avalonia/client/backstage.info.png",
-                      "bytes":  38290,
-                      "sha256":  "961203f7cb50434552d6e0d01fe1aee58f60cdaf595e95cbc5830bbdebe22d06"
+                      "bytes":  37853,
+                      "sha256":  "9a0a2b83d9be6115a76e0519b30a3bf54fea949a11cf1b9f3e9a3e15af146cad"
                   },
                   {
                       "path":  "avalonia/client/backstage.new-from-template.png",
-                      "bytes":  33697,
-                      "sha256":  "cddd4be7ed26ce243389b13ecdc96aefc2e69e54ebbf82ec20b5fd052c39e50e"
+                      "bytes":  33334,
+                      "sha256":  "0c940c9e7f225d8dc76f316751260412cafea8db7985c8ffa8667ea4520be0f9"
                   },
                   {
                       "path":  "avalonia/client/backstage.options.png",
-                      "bytes":  45564,
-                      "sha256":  "5c4293d724d52fd8905b2a6990b851ae7cc587f9e139eb3e211ceff542b37b0b"
+                      "bytes":  45625,
+                      "sha256":  "cdf08ea675c2f2fc87ef6ef4d0fe4145bf8f3190ca725a74ff490e1e459b5cb8"
                   },
                   {
                       "path":  "avalonia/client/backstage.print.png",
-                      "bytes":  97715,
-                      "sha256":  "99388521f5e9c7ceb2571de8598ce7d74a41af994c4c276bfb61117fbbdd0292"
+                      "bytes":  97520,
+                      "sha256":  "8674d1b4f366f7aceddfe2e8f4a1cd00ac9ac08668975d4e0a852b0223a38516"
                   },
                   {
                       "path":  "avalonia/client/backstage.recent.png",
-                      "bytes":  34854,
-                      "sha256":  "51fe28ec93fc6cee313234b1b331c97d2c9cbda3c07fa8cfde925eb288906152"
+                      "bytes":  45663,
+                      "sha256":  "70d8c40f01fe36ab196a0c69ee254eab8f0ebf4f6e15038494eb3ae6713925e7"
                   },
                   {
                       "path":  "avalonia/client/context.smartart-text-pane.png",
-                      "bytes":  78323,
-                      "sha256":  "18a24d9b86c7b616e52eafe94cc2489724351f1ab49f39886693c8ce6314e5fa"
+                      "bytes":  76896,
+                      "sha256":  "b863466823c708ef63b2bafecdfaff8613a775322d4d2ad8ee4d1089957c520e"
                   },
                   {
                       "path":  "avalonia/client/editor.rich-text-caret.png",
-                      "bytes":  53811,
-                      "sha256":  "5380c9a1cd5558118c3ea73db7f40186258dad50b950fc38ad5d941a2841245d"
+                      "bytes":  53640,
+                      "sha256":  "8e34ffaff30ff024481c55bcca8626093aaa3b8b50ee9dabe945639d9cca1554"
                   },
                   {
                       "path":  "avalonia/client/editor.rich-text-selection.png",
-                      "bytes":  53539,
-                      "sha256":  "761fca683f117254f468b14d43a5bb5cbeae777ce79954db5702c13f9656011c"
+                      "bytes":  53354,
+                      "sha256":  "f015d5390de3d664644fcce12932a46ffc7b145d2e6e8a9b103ab9b9b736295a"
                   },
                   {
                       "path":  "avalonia/client/review.accessibility-pane.png",
-                      "bytes":  76554,
-                      "sha256":  "da206b6804e1b287df073a9fd9369c09ee82fb53c70cab8ab4ead7b647b3c6eb"
+                      "bytes":  75656,
+                      "sha256":  "2d3426332d6592254deca6dcc75b6807aaf1f59a150a9525a0985b12168a94aa"
                   },
                   {
                       "path":  "avalonia/client/review.alt-text-pane.png",
-                      "bytes":  73107,
-                      "sha256":  "f171742ed59455afa7fb64798cd62aa86bb928638f4e6ce9e602c217835680c1"
+                      "bytes":  72506,
+                      "sha256":  "0e36d04ed5c66857f44a984f5e448a51343d4e36efb6546893de8350480cb86a"
                   },
                   {
                       "path":  "avalonia/client/review.comments-pane.png",
-                      "bytes":  67297,
-                      "sha256":  "01878a08c1ad6bdbd317fa69fcb9ee5cfb200780191c3df686e3ddb6584b1e43"
+                      "bytes":  66036,
+                      "sha256":  "8bddc1133435c3eb24b630993fa795134f08f5dc3cfd565518a04a978da52853"
                   },
                   {
                       "path":  "avalonia/client/review.proofing-pane.png",
-                      "bytes":  64815,
-                      "sha256":  "a7554d426820f91947b570fd6e8d061b2f878fd102228c8fb71f249e4a0eeb9d"
+                      "bytes":  63561,
+                      "sha256":  "bd760bc50b52c41f6a8b39dd56d691514d5dd321ff820129feae33c9c4e71388"
                   },
                   {
                       "path":  "avalonia/client/review.reading-order-pane.png",
-                      "bytes":  100120,
-                      "sha256":  "2c4de06240615d6b4ae7819251433dd57d102ccb863abbfc05401c8d68ba14d7"
+                      "bytes":  99638,
+                      "sha256":  "be0ee9b4b882dcecadea3874b9a878d2990c922fd8c48bd603314254879df19e"
                   },
                   {
                       "path":  "avalonia/client/ribbon.animations.png",
-                      "bytes":  42505,
-                      "sha256":  "1c7698fef12d9b87b68cb47839cf34e4fe904f05c7931f80023286a909f95f36"
+                      "bytes":  42681,
+                      "sha256":  "3a4cfdd6b618e096a87df69ea0758a2fe48435d1b4e373f4336295c126ae0bd9"
                   },
                   {
                       "path":  "avalonia/client/ribbon.design.png",
-                      "bytes":  53908,
-                      "sha256":  "faa2fac9e3a1a790c999630f10c48648f3bf9f9beb838007f0f4dd30d4049419"
+                      "bytes":  53092,
+                      "sha256":  "cfac30b56065a5e23fe2c6ba4210e9ffd0e9bca82e966ecab99cb63364639908"
                   },
                   {
                       "path":  "avalonia/client/ribbon.home.png",
-                      "bytes":  49661,
-                      "sha256":  "9a9c12509e70f053defb4e730c664b65a0e18e2bfe7df8cbcd6e80f07e72797b"
+                      "bytes":  49260,
+                      "sha256":  "c82f46e526a187314d9a35809445ec8d4c606d1d3328c13bec90d19b47af6005"
                   },
                   {
                       "path":  "avalonia/client/ribbon.insert.png",
-                      "bytes":  48069,
-                      "sha256":  "78e9beca0a4d8ac8ae9cec814be1409cfe41000b26c3b7d166088fc5232d2f33"
+                      "bytes":  48132,
+                      "sha256":  "0b07446b38889b69bfa5b0dd66028f6d9be2d7b491059bd680a045053d377764"
                   },
                   {
                       "path":  "avalonia/client/ribbon.transitions.png",
-                      "bytes":  55725,
-                      "sha256":  "5f686106b2d4efed1323c935480d1aa5be03e93415871036199136293a835946"
+                      "bytes":  56650,
+                      "sha256":  "541a1c66f6500e2202f17f2e6682b390ff98bfb9b847ef79392b2358db8ac794"
                   },
                   {
                       "path":  "avalonia/client/ribbon.view.png",
-                      "bytes":  43343,
-                      "sha256":  "8ed834149edda8d6a5ca9c602a91096c97a50ba01d795e1f724788d4d2c3aebb"
+                      "bytes":  43574,
+                      "sha256":  "6eb9abf1cfa441eded6b630663aab13d2b65ac01a3d112747fd417874097ac97"
                   },
                   {
                       "path":  "avalonia/client/startup.notes.png",
-                      "bytes":  38774,
-                      "sha256":  "f72393096b5b505e73824e0808a758f82141f40cee2b5cbd337580de33d9ca4a"
+                      "bytes":  38406,
+                      "sha256":  "ba280a6d4ff238fa14eb07eb60bb6dbf63e3f3042f6a22559a19cbc52c58ea06"
                   },
                   {
                       "path":  "avalonia/client/startup.slide.png",
-                      "bytes":  29374,
-                      "sha256":  "d04648df3f73831c1433a5ed88b29973da3be31ae645bf539fe514f3ba68c3fb"
+                      "bytes":  28794,
+                      "sha256":  "75fb30752dc642de92e56f41b74872362dfc7ef4cf796eb7e6aeb2c7ee297f6c"
                   },
                   {
                       "path":  "avalonia/client/status.slide-2.png",
-                      "bytes":  38735,
-                      "sha256":  "789992e1980825c2f6094ec7e828f6f8a64c05c3b0b03fd85401d54dcfb42eb7"
+                      "bytes":  38411,
+                      "sha256":  "c165e2a937fca8faec14e1c1e6d13ca947469edc092c9b3c5b22692db13b1593"
                   },
                   {
                       "path":  "avalonia/client/view.clean-canvas.png",
-                      "bytes":  44498,
-                      "sha256":  "15cc54e997ffd6b866a3819bcd171de0e2f810cfdcabfbc8acd3acecfd631393"
+                      "bytes":  44731,
+                      "sha256":  "31e43c2dc272a1e81f1d3e2f35e8819d77625e7628c0496c49ea1be2d4be5365"
                   },
                   {
                       "path":  "avalonia/client/view.gridlines-guides.png",
-                      "bytes":  44986,
-                      "sha256":  "7c973b261bf3f2587dc0abee2fcf60eea25e7ae43c84fc945cdba5d27bba25be"
+                      "bytes":  45295,
+                      "sha256":  "8d8b03fbf0edcfb6872ba4d5f1583b5678e8d94ca1c24e1606a72fcfbeb9103d"
                   },
                   {
                       "path":  "avalonia/client/view.zoom-200.png",
-                      "bytes":  41800,
-                      "sha256":  "95803bb32e3e88052b2bcd360100f50b871767587934e715e8d6fe201c4486d3"
+                      "bytes":  41847,
+                      "sha256":  "03db61ba81bfa8a8efcd93859948f835480bbd158a69c7c9b66452829d2d8e91"
                   },
                   {
                       "path":  "avalonia/client/view.zoom-fit.png",
-                      "bytes":  44901,
-                      "sha256":  "e3632fe98a5c0333460767c4a69a0fc7aa52a8b68daa21a9170d9ef399712c17"
+                      "bytes":  45217,
+                      "sha256":  "7f6d9e66a00bd43720ecc4ffb7297a74c9d14ef7c110fc81de7867b0b715991c"
                   },
                   {
                       "path":  "avalonia/client/workspace.canvas.png",
-                      "bytes":  55361,
-                      "sha256":  "294e9d198ea9cdb7e3d8fdfb5b245deaa0ba9b0d6aff7dfc1df66d8086ac40e5"
+                      "bytes":  54605,
+                      "sha256":  "fa0ec9664bc79060f288ca1d96c2b3210d6faf0621fece0cdf75293680c157cf"
                   },
                   {
                       "path":  "avalonia/client/workspace.notes-pane.png",
-                      "bytes":  32178,
-                      "sha256":  "4daa5bff06f2bb8144c0143039e254061865c6e6e6f1aa02509217002c3866a0"
+                      "bytes":  32370,
+                      "sha256":  "113a8cad515959600ebcd783b7b5b797d4b1c3283ce10b806ac790182b310246"
                   },
                   {
                       "path":  "avalonia/client/workspace.slide-pane.png",
-                      "bytes":  37135,
-                      "sha256":  "1dbd32907785e373f7f90673c02989c7903c02c07279c7db7ba91717e508d044"
+                      "bytes":  37205,
+                      "sha256":  "12bb6882509cb17a85a5a586db7fc49efe71ca178b690fd97e1be673faa1d7c0"
                   },
                   {
                       "path":  "avalonia/full/accessibility.media-caption-pane.png",
-                      "bytes":  86953,
-                      "sha256":  "eafac90b5e1be83afc7e256b009bc41c59a2014518f920ec877b0afd034c5c37"
+                      "bytes":  86955,
+                      "sha256":  "109ab7a13f81756290d4c1da8e7eba993134842e208a5441ddd810f5e68da168"
                   },
                   {
                       "path":  "avalonia/full/animations.animation-pane.png",
-                      "bytes":  53953,
-                      "sha256":  "eb20e73fd83b476394721a1cacac70819340ba321d629966fe0c5d12d4fd506f"
+                      "bytes":  54172,
+                      "sha256":  "17cee38ea042f45fc5c56206026db32e3af6e00811fc60cc8861b4f0674dd7af"
                   },
                   {
                       "path":  "avalonia/full/backstage.account.png",
-                      "bytes":  56646,
-                      "sha256":  "14a48e73690e505b47ec8df7fb495fb59c4aeba3b8acb24556a28821e676a4b4"
+                      "bytes":  57451,
+                      "sha256":  "533dc3bb92b84ea574806006b047fad62fddecbeafe26e39eac7d2a99bfba75b"
                   },
                   {
                       "path":  "avalonia/full/backstage.export.png",
-                      "bytes":  56024,
-                      "sha256":  "2c0c331a5fa5f59c94ac268b22bd2188e4bbf8504dba619dae60c0d5dba0c4af"
+                      "bytes":  55713,
+                      "sha256":  "072e48db29b8979ce5e09734d47c2d013ba8a524c5ccfc9d585f253f0b20817c"
                   },
                   {
                       "path":  "avalonia/full/backstage.info.png",
-                      "bytes":  38290,
-                      "sha256":  "961203f7cb50434552d6e0d01fe1aee58f60cdaf595e95cbc5830bbdebe22d06"
+                      "bytes":  37853,
+                      "sha256":  "9a0a2b83d9be6115a76e0519b30a3bf54fea949a11cf1b9f3e9a3e15af146cad"
                   },
                   {
                       "path":  "avalonia/full/backstage.new-from-template.png",
-                      "bytes":  33697,
-                      "sha256":  "cddd4be7ed26ce243389b13ecdc96aefc2e69e54ebbf82ec20b5fd052c39e50e"
+                      "bytes":  33334,
+                      "sha256":  "0c940c9e7f225d8dc76f316751260412cafea8db7985c8ffa8667ea4520be0f9"
                   },
                   {
                       "path":  "avalonia/full/backstage.options.png",
-                      "bytes":  45564,
-                      "sha256":  "5c4293d724d52fd8905b2a6990b851ae7cc587f9e139eb3e211ceff542b37b0b"
+                      "bytes":  45625,
+                      "sha256":  "cdf08ea675c2f2fc87ef6ef4d0fe4145bf8f3190ca725a74ff490e1e459b5cb8"
                   },
                   {
                       "path":  "avalonia/full/backstage.print.png",
-                      "bytes":  97715,
-                      "sha256":  "99388521f5e9c7ceb2571de8598ce7d74a41af994c4c276bfb61117fbbdd0292"
+                      "bytes":  97520,
+                      "sha256":  "8674d1b4f366f7aceddfe2e8f4a1cd00ac9ac08668975d4e0a852b0223a38516"
                   },
                   {
                       "path":  "avalonia/full/backstage.recent.png",
-                      "bytes":  34854,
-                      "sha256":  "51fe28ec93fc6cee313234b1b331c97d2c9cbda3c07fa8cfde925eb288906152"
+                      "bytes":  45663,
+                      "sha256":  "70d8c40f01fe36ab196a0c69ee254eab8f0ebf4f6e15038494eb3ae6713925e7"
                   },
                   {
                       "path":  "avalonia/full/context.smartart-text-pane.png",
-                      "bytes":  78323,
-                      "sha256":  "18a24d9b86c7b616e52eafe94cc2489724351f1ab49f39886693c8ce6314e5fa"
+                      "bytes":  76896,
+                      "sha256":  "b863466823c708ef63b2bafecdfaff8613a775322d4d2ad8ee4d1089957c520e"
                   },
                   {
                       "path":  "avalonia/full/editor.rich-text-caret.png",
-                      "bytes":  53811,
-                      "sha256":  "5380c9a1cd5558118c3ea73db7f40186258dad50b950fc38ad5d941a2841245d"
+                      "bytes":  53640,
+                      "sha256":  "8e34ffaff30ff024481c55bcca8626093aaa3b8b50ee9dabe945639d9cca1554"
                   },
                   {
                       "path":  "avalonia/full/editor.rich-text-selection.png",
-                      "bytes":  53539,
-                      "sha256":  "761fca683f117254f468b14d43a5bb5cbeae777ce79954db5702c13f9656011c"
+                      "bytes":  53354,
+                      "sha256":  "f015d5390de3d664644fcce12932a46ffc7b145d2e6e8a9b103ab9b9b736295a"
                   },
                   {
                       "path":  "avalonia/full/review.accessibility-pane.png",
-                      "bytes":  76554,
-                      "sha256":  "da206b6804e1b287df073a9fd9369c09ee82fb53c70cab8ab4ead7b647b3c6eb"
+                      "bytes":  75656,
+                      "sha256":  "2d3426332d6592254deca6dcc75b6807aaf1f59a150a9525a0985b12168a94aa"
                   },
                   {
                       "path":  "avalonia/full/review.alt-text-pane.png",
-                      "bytes":  73107,
-                      "sha256":  "f171742ed59455afa7fb64798cd62aa86bb928638f4e6ce9e602c217835680c1"
+                      "bytes":  72506,
+                      "sha256":  "0e36d04ed5c66857f44a984f5e448a51343d4e36efb6546893de8350480cb86a"
                   },
                   {
                       "path":  "avalonia/full/review.comments-pane.png",
-                      "bytes":  67297,
-                      "sha256":  "01878a08c1ad6bdbd317fa69fcb9ee5cfb200780191c3df686e3ddb6584b1e43"
+                      "bytes":  66036,
+                      "sha256":  "8bddc1133435c3eb24b630993fa795134f08f5dc3cfd565518a04a978da52853"
                   },
                   {
                       "path":  "avalonia/full/review.proofing-pane.png",
-                      "bytes":  64815,
-                      "sha256":  "a7554d426820f91947b570fd6e8d061b2f878fd102228c8fb71f249e4a0eeb9d"
+                      "bytes":  63561,
+                      "sha256":  "bd760bc50b52c41f6a8b39dd56d691514d5dd321ff820129feae33c9c4e71388"
                   },
                   {
                       "path":  "avalonia/full/review.reading-order-pane.png",
-                      "bytes":  100120,
-                      "sha256":  "2c4de06240615d6b4ae7819251433dd57d102ccb863abbfc05401c8d68ba14d7"
+                      "bytes":  99638,
+                      "sha256":  "be0ee9b4b882dcecadea3874b9a878d2990c922fd8c48bd603314254879df19e"
                   },
                   {
                       "path":  "avalonia/full/ribbon.animations.png",
-                      "bytes":  42505,
-                      "sha256":  "1c7698fef12d9b87b68cb47839cf34e4fe904f05c7931f80023286a909f95f36"
+                      "bytes":  42681,
+                      "sha256":  "3a4cfdd6b618e096a87df69ea0758a2fe48435d1b4e373f4336295c126ae0bd9"
                   },
                   {
                       "path":  "avalonia/full/ribbon.design.png",
-                      "bytes":  53908,
-                      "sha256":  "faa2fac9e3a1a790c999630f10c48648f3bf9f9beb838007f0f4dd30d4049419"
+                      "bytes":  53092,
+                      "sha256":  "cfac30b56065a5e23fe2c6ba4210e9ffd0e9bca82e966ecab99cb63364639908"
                   },
                   {
                       "path":  "avalonia/full/ribbon.home.png",
-                      "bytes":  49661,
-                      "sha256":  "9a9c12509e70f053defb4e730c664b65a0e18e2bfe7df8cbcd6e80f07e72797b"
+                      "bytes":  49260,
+                      "sha256":  "c82f46e526a187314d9a35809445ec8d4c606d1d3328c13bec90d19b47af6005"
                   },
                   {
                       "path":  "avalonia/full/ribbon.insert.png",
-                      "bytes":  48069,
-                      "sha256":  "78e9beca0a4d8ac8ae9cec814be1409cfe41000b26c3b7d166088fc5232d2f33"
+                      "bytes":  48132,
+                      "sha256":  "0b07446b38889b69bfa5b0dd66028f6d9be2d7b491059bd680a045053d377764"
                   },
                   {
                       "path":  "avalonia/full/ribbon.transitions.png",
-                      "bytes":  55725,
-                      "sha256":  "5f686106b2d4efed1323c935480d1aa5be03e93415871036199136293a835946"
+                      "bytes":  56650,
+                      "sha256":  "541a1c66f6500e2202f17f2e6682b390ff98bfb9b847ef79392b2358db8ac794"
                   },
                   {
                       "path":  "avalonia/full/ribbon.view.png",
-                      "bytes":  43343,
-                      "sha256":  "8ed834149edda8d6a5ca9c602a91096c97a50ba01d795e1f724788d4d2c3aebb"
+                      "bytes":  43574,
+                      "sha256":  "6eb9abf1cfa441eded6b630663aab13d2b65ac01a3d112747fd417874097ac97"
                   },
                   {
                       "path":  "avalonia/full/startup.notes.png",
-                      "bytes":  38774,
-                      "sha256":  "f72393096b5b505e73824e0808a758f82141f40cee2b5cbd337580de33d9ca4a"
+                      "bytes":  38406,
+                      "sha256":  "ba280a6d4ff238fa14eb07eb60bb6dbf63e3f3042f6a22559a19cbc52c58ea06"
                   },
                   {
                       "path":  "avalonia/full/startup.slide.png",
-                      "bytes":  29374,
-                      "sha256":  "d04648df3f73831c1433a5ed88b29973da3be31ae645bf539fe514f3ba68c3fb"
+                      "bytes":  28794,
+                      "sha256":  "75fb30752dc642de92e56f41b74872362dfc7ef4cf796eb7e6aeb2c7ee297f6c"
                   },
                   {
                       "path":  "avalonia/full/status.slide-2.png",
-                      "bytes":  38735,
-                      "sha256":  "789992e1980825c2f6094ec7e828f6f8a64c05c3b0b03fd85401d54dcfb42eb7"
+                      "bytes":  38411,
+                      "sha256":  "c165e2a937fca8faec14e1c1e6d13ca947469edc092c9b3c5b22692db13b1593"
                   },
                   {
                       "path":  "avalonia/full/view.clean-canvas.png",
-                      "bytes":  44498,
-                      "sha256":  "15cc54e997ffd6b866a3819bcd171de0e2f810cfdcabfbc8acd3acecfd631393"
+                      "bytes":  44731,
+                      "sha256":  "31e43c2dc272a1e81f1d3e2f35e8819d77625e7628c0496c49ea1be2d4be5365"
                   },
                   {
                       "path":  "avalonia/full/view.gridlines-guides.png",
-                      "bytes":  44986,
-                      "sha256":  "7c973b261bf3f2587dc0abee2fcf60eea25e7ae43c84fc945cdba5d27bba25be"
+                      "bytes":  45295,
+                      "sha256":  "8d8b03fbf0edcfb6872ba4d5f1583b5678e8d94ca1c24e1606a72fcfbeb9103d"
                   },
                   {
                       "path":  "avalonia/full/view.zoom-200.png",
-                      "bytes":  41800,
-                      "sha256":  "95803bb32e3e88052b2bcd360100f50b871767587934e715e8d6fe201c4486d3"
+                      "bytes":  41847,
+                      "sha256":  "03db61ba81bfa8a8efcd93859948f835480bbd158a69c7c9b66452829d2d8e91"
                   },
                   {
                       "path":  "avalonia/full/view.zoom-fit.png",
-                      "bytes":  44901,
-                      "sha256":  "e3632fe98a5c0333460767c4a69a0fc7aa52a8b68daa21a9170d9ef399712c17"
+                      "bytes":  45217,
+                      "sha256":  "7f6d9e66a00bd43720ecc4ffb7297a74c9d14ef7c110fc81de7867b0b715991c"
                   },
                   {
                       "path":  "avalonia/full/workspace.canvas.png",
-                      "bytes":  55361,
-                      "sha256":  "294e9d198ea9cdb7e3d8fdfb5b245deaa0ba9b0d6aff7dfc1df66d8086ac40e5"
+                      "bytes":  54605,
+                      "sha256":  "fa0ec9664bc79060f288ca1d96c2b3210d6faf0621fece0cdf75293680c157cf"
                   },
                   {
                       "path":  "avalonia/full/workspace.notes-pane.png",
-                      "bytes":  32178,
-                      "sha256":  "4daa5bff06f2bb8144c0143039e254061865c6e6e6f1aa02509217002c3866a0"
+                      "bytes":  32370,
+                      "sha256":  "113a8cad515959600ebcd783b7b5b797d4b1c3283ce10b806ac790182b310246"
                   },
                   {
                       "path":  "avalonia/full/workspace.slide-pane.png",
-                      "bytes":  37135,
-                      "sha256":  "1dbd32907785e373f7f90673c02989c7903c02c07279c7db7ba91717e508d044"
+                      "bytes":  37205,
+                      "sha256":  "12bb6882509cb17a85a5a586db7fc49efe71ca178b690fd97e1be673faa1d7c0"
                   },
                   {
                       "path":  "avalonia/manifest.json",
-                      "bytes":  130898,
-                      "sha256":  "0ba75a492907fd8f702cf92913f5c3935adbbe1f01afc1b79857623df07513aa"
+                      "bytes":  132759,
+                      "sha256":  "3b9ce15a2e4521c6426959519acf4c7d8e3464df5d19d808483ef36d1c6fc6d6"
                   },
                   {
                       "path":  "diff/accessibility.media-caption-pane.png",
-                      "bytes":  131754,
-                      "sha256":  "afce3b6da8dcfff07868235e14ed3a80d31e0fd257744ae9978b92478e377c25"
+                      "bytes":  129590,
+                      "sha256":  "eace7c1be02f6a55392c54f3422184185b0f397041bf02fc26befdf3fbbc5048"
                   },
                   {
                       "path":  "diff/animations.animation-pane.png",
-                      "bytes":  88956,
-                      "sha256":  "5052395be68ddc29975dd69d976657e0c71a8a2a4a3f6673dcbb28c3b7265e2b"
+                      "bytes":  87240,
+                      "sha256":  "7c71c99df365c8e33da6b6971ca536d445ace28569045bf891b0243995fdcd1b"
                   },
                   {
                       "path":  "diff/backstage.account.png",
-                      "bytes":  70134,
-                      "sha256":  "bdb6b67e2b8f7bcad0670e33e07353b94542f802b9919192cfe328b6c2d0fd93"
+                      "bytes":  71084,
+                      "sha256":  "e755c8a18e7cba1d133443912fd8176c9aa898d69e6be8bd31128390629405ee"
                   },
                   {
                       "path":  "diff/backstage.export.png",
-                      "bytes":  70716,
-                      "sha256":  "0552b5e53be2e0e1d75e17e2b7e0a7ec402262e4d9f8acf007299d4a642a1b94"
+                      "bytes":  70212,
+                      "sha256":  "7953d7004aff1df89ff2875d76a0dc725ff25b168793cbee4bbab32684283a08"
                   },
                   {
                       "path":  "diff/backstage.info.png",
-                      "bytes":  46129,
-                      "sha256":  "6863e20844a3145700c547c0707382e6d360eabba6ad2b350d97b83729cafc68"
+                      "bytes":  45769,
+                      "sha256":  "cab748a860527072f7c8f2e5b494c2fc1d0053383c4979c8b9f6f861ce4db4d1"
                   },
                   {
                       "path":  "diff/backstage.new-from-template.png",
-                      "bytes":  39476,
-                      "sha256":  "df4e719b6173ee58cb870926db92810ee95e1dc735a7cb4eef7f1fc2e100e246"
+                      "bytes":  39301,
+                      "sha256":  "3a06b180bd936f2aa7818032eb3f7608df7c41b483e785168dd06ad08ce8b199"
                   },
                   {
                       "path":  "diff/backstage.options.png",
-                      "bytes":  52934,
-                      "sha256":  "20118d9f1be0d153dcebfb05b01289ba5611dae5411da74f25a9ea56461e3a5d"
+                      "bytes":  53159,
+                      "sha256":  "7e2682556d2600cd1ef56fa8b3f73ed1ba36d65ac13888fd965b92c95c13248f"
                   },
                   {
                       "path":  "diff/backstage.print.png",
-                      "bytes":  124481,
-                      "sha256":  "cacd8c0b0e870bf863798d09002f7e73899c930790a0378324f206a4eaf31379"
+                      "bytes":  125213,
+                      "sha256":  "10d0305b6a04828f761efd09490c187e8b74a80fa777097b6d9fa57bf8f1f9bc"
                   },
                   {
                       "path":  "diff/backstage.recent.png",
-                      "bytes":  38742,
-                      "sha256":  "a3bb13b53508ac2676f9a39777345338c3919cef055b76dffabf3aee11cc7880"
+                      "bytes":  47792,
+                      "sha256":  "0ac80d9a56201288e22839448fc78f96f3fc5bb63adc863b0c31ff7201f66dfb"
                   },
                   {
                       "path":  "diff/context.smartart-text-pane.png",
-                      "bytes":  115830,
-                      "sha256":  "463683a1af55441299f92e6bed3b084a0f3a4cc2acfd1df4e04ae4161263353d"
+                      "bytes":  111693,
+                      "sha256":  "4587c0a781419107beefd9174332fae787a4213e65a5c9b0c1bcf672decc0b33"
                   },
                   {
                       "path":  "diff/editor.rich-text-caret.png",
-                      "bytes":  86118,
-                      "sha256":  "b31cb4b8793184dfeea9f8468f2b23bbe309c27a71070993182303e298cf946b"
+                      "bytes":  85402,
+                      "sha256":  "83c66eaaa9cc28fe2717ed34544de4b2832bda914faf1de4a793f779ebcaf129"
                   },
                   {
                       "path":  "diff/editor.rich-text-selection.avalonia-selection.png",
-                      "bytes":  4337,
-                      "sha256":  "163330df67b902fa8bb96b2f73019e32530cbd7a6870f2ad7b30652096a4f96f"
+                      "bytes":  4378,
+                      "sha256":  "59bf0394bc352558f58f580dff06f779a449426706f10a6d561df53f88c2727a"
                   },
                   {
                       "path":  "diff/editor.rich-text-selection.png",
-                      "bytes":  84635,
-                      "sha256":  "21acdc5bd9202bde622293f26b4d099ca1aee274a2e93a02e77f52d15a2157a6"
+                      "bytes":  82310,
+                      "sha256":  "21d31f683354db00930926ee37529d9f6a21f12672720ee4624d8fb75736573a"
                   },
                   {
                       "path":  "diff/editor.rich-text-selection.selection.png",
-                      "bytes":  6461,
-                      "sha256":  "325d1ab813a6479b01361e538a05f7b98e9938def4bbd449b0093ec76cb5c5e2"
+                      "bytes":  4494,
+                      "sha256":  "27d1cbced040e4b6e9647ab0b8f930dd9ced20cd1d78dbacfe2b34614e2221b2"
                   },
                   {
                       "path":  "diff/editor.rich-text-selection.wpf-selection.png",
@@ -528,458 +528,458 @@
                   },
                   {
                       "path":  "diff/review.accessibility-pane.png",
-                      "bytes":  115597,
-                      "sha256":  "0fa61c39d82013b141b632edace7f8d1d0b8e3576d922fd26ad1d972e2accc22"
+                      "bytes":  113574,
+                      "sha256":  "1ce97ba0e4f1772f0b088db4b5cb2f8e0f7b69896f0c67f4e1248d7c567e2b13"
                   },
                   {
                       "path":  "diff/review.alt-text-pane.png",
-                      "bytes":  110315,
-                      "sha256":  "91655237ea301ca7268333827e6cb32090a5174a08c1f5bd843eda7a6e778a5e"
+                      "bytes":  107997,
+                      "sha256":  "54e39c587f74c7c8bf0962a43fec877f9f72fd9f501dc1589c5b94eb89459eb0"
                   },
                   {
                       "path":  "diff/review.comments-pane.png",
-                      "bytes":  104992,
-                      "sha256":  "b76932b660b9993989d8495a811dc91358453c5f9d2cbc04f1e651d6807e70da"
+                      "bytes":  102545,
+                      "sha256":  "7a7be881e4034dae9f0a33b9ffcbfb37860f79f0d54abfe8cabdddb81b5b360d"
                   },
                   {
                       "path":  "diff/review.proofing-pane.png",
-                      "bytes":  96065,
-                      "sha256":  "0c9af417ebab4c2ba4fd407b653ad10472e383c982a5ec72d81f2405c4122aa6"
+                      "bytes":  93699,
+                      "sha256":  "127384fdb2755d37c501c28f461fd68aa0086272e4e4f89eb0ea2f1753b42652"
                   },
                   {
                       "path":  "diff/review.reading-order-pane.png",
-                      "bytes":  139120,
-                      "sha256":  "296e8c9840fa7385bf02a07d139e7b0d92f85c2c60f19466f2cd39c9567ffd30"
+                      "bytes":  136515,
+                      "sha256":  "286403e83eb564d71be61982b359b11ec814f08a16dd2a58c98545c2f4184068"
                   },
                   {
                       "path":  "diff/ribbon.animations.png",
-                      "bytes":  73545,
-                      "sha256":  "66c17cc460d9e09c357b13363b5b7f9a339c93b2bc9a3f2c0b2155a8c5b6ddd3"
+                      "bytes":  73096,
+                      "sha256":  "be90923e76bf944f794b456927068aa54f47dca919b938b2de78d560e9d24ba4"
                   },
                   {
                       "path":  "diff/ribbon.design.png",
-                      "bytes":  82599,
-                      "sha256":  "ac2a50d1c3f090dcfea814801342833c941cba1d4bc77ee649d49d4090aa9000"
+                      "bytes":  81512,
+                      "sha256":  "19a9bf61e16894e8715c83d8ed28fcb82dbb5d6d341fc02aaf0176cb7b7ac98f"
                   },
                   {
                       "path":  "diff/ribbon.home.png",
-                      "bytes":  79945,
-                      "sha256":  "6e97bd0cdeb1310e6182074c98208aafdba3fbc93c045121fc7a331f607a8b9f"
+                      "bytes":  78939,
+                      "sha256":  "3312bee4f803fd8c90ed3d594c242eb0c32cb307b1c8f4c0e7de4a4e3155ad9c"
                   },
                   {
                       "path":  "diff/ribbon.insert.png",
-                      "bytes":  79806,
-                      "sha256":  "5d51a4262a87e470a9810cd0bea35dc5a5629ebb9b478745c3c12dbc2029bf99"
+                      "bytes":  78977,
+                      "sha256":  "e902839ffef12bb46e293450c39d7a4b475cfe96a66f02c41265680f2ac305cd"
                   },
                   {
                       "path":  "diff/ribbon.transitions.png",
-                      "bytes":  83785,
-                      "sha256":  "3add4ae237f9aaf1162defc1461ddbe79f4632da1fff307261b878027808dbd5"
+                      "bytes":  83342,
+                      "sha256":  "51caa85b98798183284aead250b34c16bfe7e5bc6608c6262b744aeecbf6030b"
                   },
                   {
                       "path":  "diff/ribbon.view.png",
-                      "bytes":  61756,
-                      "sha256":  "a67296f3241c86f3b3e32926dddcc94a01a1415a961d9c96bfd4302a15b2d966"
+                      "bytes":  60970,
+                      "sha256":  "cf546f2ea21d7e0dcd46619cc909b4a9b6bb86d12960159d063694fef41ac569"
                   },
                   {
                       "path":  "diff/startup.notes.png",
-                      "bytes":  66329,
-                      "sha256":  "d7b49f948ab31e43da8e91769b0311ffe7ecff128cf4828133c1e1fd4faa5fdc"
+                      "bytes":  65360,
+                      "sha256":  "6751493c6268886ebc0f747f7bac8d5fd9a728efefd90ebc5380b54539065589"
                   },
                   {
                       "path":  "diff/startup.slide.png",
-                      "bytes":  51181,
-                      "sha256":  "5bd136b3f4f21d07f8802b3351f5bd22e4caeccf45ba413b770c5293e8dc3b29"
+                      "bytes":  50249,
+                      "sha256":  "9e7537fab7aa97bb0359ad7557af48cbcb107a019557cd449213e6061e776595"
                   },
                   {
                       "path":  "diff/status.slide-2.png",
-                      "bytes":  65887,
-                      "sha256":  "5c1abe902badfde5053a08600d1618c0d45c3d57f9e8d99d09bc92bdde3460dc"
+                      "bytes":  65003,
+                      "sha256":  "de80284a22f5f8fcb177e11a22a8d4f805b11f6082f8e8befa1ce05ebf1609f7"
                   },
                   {
                       "path":  "diff/view.clean-canvas.png",
-                      "bytes":  63170,
-                      "sha256":  "1cf8f45af20d004fe8147a52f74dcab310e592b9a487ab14bfe8749f71e4fa02"
+                      "bytes":  62140,
+                      "sha256":  "bfabefb9e3e3e77cb83f7e75518ae424a9069add35a38d9040cacb69450a7ee5"
                   },
                   {
                       "path":  "diff/view.gridlines-guides.png",
-                      "bytes":  63436,
-                      "sha256":  "ea16ab6ea34a911494e0e5ae310258c147a0c05df3c5817499e079bed6db3325"
+                      "bytes":  62447,
+                      "sha256":  "453fbf58b5d520c4c7ce0f527a3bfe659df3d43e6359bb7aec36e4435795618f"
                   },
                   {
                       "path":  "diff/view.zoom-200.png",
-                      "bytes":  59478,
-                      "sha256":  "aa9b4ca43cf995185d2baa6b79690420e814b3148b5d27ff6c11e4b63782d069"
+                      "bytes":  58036,
+                      "sha256":  "f9ce00f9872ace9fe27f4e9b83a491168f524e7edd99fb7e700db3a75163310a"
                   },
                   {
                       "path":  "diff/view.zoom-fit.png",
-                      "bytes":  63845,
-                      "sha256":  "37b607cd4eb459c2a13292b8cf963cec51e910e313ffb68864a606829fe6f03d"
+                      "bytes":  62802,
+                      "sha256":  "639a70002294eafab7be9f930152a0a4708bf52d525052dee779687d3c752761"
                   },
                   {
                       "path":  "diff/workspace.canvas.png",
-                      "bytes":  84703,
-                      "sha256":  "57a5ffe88b1b54b04f90ad8076e1d63fc756bd8c035baef45f07fdf9e2611301"
+                      "bytes":  83381,
+                      "sha256":  "4bef2555a7782a4e92399269be0a0b216477b4326a8554090cc51ff4285f7c60"
                   },
                   {
                       "path":  "diff/workspace.notes-pane.png",
-                      "bytes":  47946,
-                      "sha256":  "b2875e1a534259bd5115ca9100779b7331f7c953f29f1a8cffde6831a5535a3f"
+                      "bytes":  47294,
+                      "sha256":  "14e52ca9c96e5993f36b22d3b0edec9258f048b34b55e10fad5edc9aafcabfcf"
                   },
                   {
                       "path":  "diff/workspace.slide-pane.png",
-                      "bytes":  65713,
-                      "sha256":  "6b6adea1f0fec8031a71d71531478e5816a4c8cba1f4eb1caca66ed2e14b4440"
+                      "bytes":  65036,
+                      "sha256":  "1bfe630e351c0376eee8c0c4cf645ca9e5072dbbd26bdda85f23024c59d29e01"
                   },
                   {
                       "path":  "report.html",
-                      "bytes":  46432,
-                      "sha256":  "1d54bb26d209be2b1d64dc90e3a1b99ca72092d1452309212c34183e9ea0f16b"
+                      "bytes":  46178,
+                      "sha256":  "c166bf9e69a18c5572d4173a7ce6e0af62a01fe4d3082701e771d437b9157caf"
                   },
                   {
                       "path":  "report.md",
-                      "bytes":  13163,
-                      "sha256":  "76b9f826cada6c1f1f18fe64547577653684ea824e4b2fda45ae652b78c02505"
+                      "bytes":  12904,
+                      "sha256":  "3814a037355ada3865b553f787f11cd062c24480c0628474dc59d84ca5ebfa04"
                   },
                   {
                       "path":  "summary.json",
-                      "bytes":  379178,
-                      "sha256":  "9f1868794bab7895c85fd451ef3dfdbf492451a2ea59e0dc13c21d5f1da8b382"
+                      "bytes":  380533,
+                      "sha256":  "3147c7283d800c1a5ee7e7bdfa7c554a5de754c9f034a5a992f69ac9571b2328"
                   },
                   {
                       "path":  "wpf/client/accessibility.media-caption-pane.png",
-                      "bytes":  77458,
-                      "sha256":  "fb37dc59cbbbbb89ec31e9e8244db935c4018d78880fc64a338d59675cef4660"
+                      "bytes":  77345,
+                      "sha256":  "5a50d179b816a1c605ef74395433a5e91f7e0f11b1f5dfd296eabbf4c1804745"
                   },
                   {
                       "path":  "wpf/client/animations.animation-pane.png",
-                      "bytes":  63019,
-                      "sha256":  "27829605d3b9830f34ede8ea492c9eb9aed6364fea6671128a1a8f098c1af6fa"
+                      "bytes":  62657,
+                      "sha256":  "346a4b076db3ad704d251451ed11f4599b4c5441f05971e767d47304aacc4fe0"
                   },
                   {
                       "path":  "wpf/client/backstage.account.png",
-                      "bytes":  38125,
-                      "sha256":  "0e77b3b1a7e03266af259bd2c3b07b89d0e27b882522c62faeef1c21b2feefb4"
+                      "bytes":  38452,
+                      "sha256":  "c6c3a1b56436a905654026d744f74eb4df9ed663aea0617034589ac18fa28265"
                   },
                   {
                       "path":  "wpf/client/backstage.export.png",
-                      "bytes":  42365,
-                      "sha256":  "c30ff580dcc3d542bf928f4f9fcd6a89aba8a8df3d1bfd39860c5fd64f8c8ba9"
+                      "bytes":  42378,
+                      "sha256":  "598b1738db9279ce8fcd9459333acf0645bb03aa38b7bca58792b38bc36d186c"
                   },
                   {
                       "path":  "wpf/client/backstage.info.png",
-                      "bytes":  28701,
-                      "sha256":  "f3158a98c63bd4b5e981d159f19041252cabbaf604328b19ff6cc16966db246d"
+                      "bytes":  28722,
+                      "sha256":  "3cad3f8328b045c59f8ac679855760c263348e74d934cc9784fc023576cb9bc1"
                   },
                   {
                       "path":  "wpf/client/backstage.new-from-template.png",
-                      "bytes":  25367,
-                      "sha256":  "9c306adeba97dab472649106ccd1558ae176697c791b494b0bad1bb521179f7e"
+                      "bytes":  25385,
+                      "sha256":  "8e294b78500f8e53b0d5a0a3c7fd7f6b77df60b345e403ca5ec1f09773f858ef"
                   },
                   {
                       "path":  "wpf/client/backstage.options.png",
-                      "bytes":  31028,
-                      "sha256":  "ecd6de7565f7bac517bcff7d5461b60f4091bc2b85aeeaef3fb9379d271170d0"
+                      "bytes":  31199,
+                      "sha256":  "ab8f914be30ddfe0d94079600d6354308f41fb24a6ae46bc621111d50aac374b"
                   },
                   {
                       "path":  "wpf/client/backstage.print.png",
-                      "bytes":  65702,
-                      "sha256":  "d98d03ad97bb95dea3d45cda206a95d43e0116d42aaa60540447def4a4f02b68"
+                      "bytes":  65671,
+                      "sha256":  "0113afc95d99ceb378c700f4e13ab85b342fd1905a0e78c83b308b90f7c7639a"
                   },
                   {
                       "path":  "wpf/client/backstage.recent.png",
-                      "bytes":  23085,
-                      "sha256":  "afade1ec6590e646b8a970786a6f9189a3fccb728aa50ceecc6be13718b11e22"
+                      "bytes":  23102,
+                      "sha256":  "81df5983866618005ba4a938225a2143cf831450949f32b561cb03af2c95b61a"
                   },
                   {
                       "path":  "wpf/client/context.smartart-text-pane.png",
-                      "bytes":  67335,
-                      "sha256":  "f6e6c85ead34365f3b2a9cc70a2997f10bd49fb2f767a01203dee54cfaa7d048"
+                      "bytes":  67269,
+                      "sha256":  "641bbc2682839ff4a951eac62caff335255837fac931ac5352133af99859867e"
                   },
                   {
                       "path":  "wpf/client/editor.rich-text-caret.png",
-                      "bytes":  58066,
-                      "sha256":  "b4f087e0eed97240ad62fac345229c28d77b1dfe29074d94d2346db0bb37c195"
+                      "bytes":  57651,
+                      "sha256":  "32d6ed4f97e0123537d06d91370e12ef55d843d104973e94eb967ba15206acc3"
                   },
                   {
                       "path":  "wpf/client/editor.rich-text-selection.png",
-                      "bytes":  58402,
-                      "sha256":  "5b4c2421a49d82e73dc6bb2a54f857e0a14136b240c04ea8d94c3f98dbb37604"
+                      "bytes":  57982,
+                      "sha256":  "6c0b2462e1d738560e1d5484067a93b465ea7a99d6aba93871b3206c2e07eef1"
                   },
                   {
                       "path":  "wpf/client/review.accessibility-pane.png",
-                      "bytes":  80097,
-                      "sha256":  "50d2cc840f79f9760be546e08fed6a0c432ce1aacca69a8f349d16aa4c8b44e9"
+                      "bytes":  79969,
+                      "sha256":  "5b6a9b55b2493aaa99850d42e288c31082757fecbba79cbd280d924fa324ee59"
                   },
                   {
                       "path":  "wpf/client/review.alt-text-pane.png",
-                      "bytes":  68131,
-                      "sha256":  "61a444eec5c83196736124d86b60b657ca13ce1f47fd17307ae8fa97b4db9a49"
+                      "bytes":  68345,
+                      "sha256":  "f08901e5712ed9a2699c77e8c241eba7fbe80223f601eb06a056e70d0d21117e"
                   },
                   {
                       "path":  "wpf/client/review.comments-pane.png",
-                      "bytes":  64835,
-                      "sha256":  "b47aedd68fbd0b9f70bbdbb5c6c6621a40c7fb9d272f8bfc7f011f074fc031d7"
+                      "bytes":  64785,
+                      "sha256":  "91eff6f32a503836a8a4a5184e4176441825c3ee2d9e937ca59a05bc677703b2"
                   },
                   {
                       "path":  "wpf/client/review.proofing-pane.png",
-                      "bytes":  60538,
-                      "sha256":  "4c8f406314217d89bb7656c73e0e3dc5f9015ef0ca9b98f61449079452dbdd60"
+                      "bytes":  60481,
+                      "sha256":  "a6a327165555eb0d33cf7bc678985cec045abdcd370c1416feac0f65fdf88d2e"
                   },
                   {
                       "path":  "wpf/client/review.reading-order-pane.png",
-                      "bytes":  87902,
-                      "sha256":  "4c4fd1cc336b84de4b24ac267b5556c5be69fc58ef1fe6baf9f2438104f1fa32"
+                      "bytes":  87785,
+                      "sha256":  "aefa48d88825487e853d3b79767112a1b951fddd1d6b1d0e8f0917d99e63f8d1"
                   },
                   {
                       "path":  "wpf/client/ribbon.animations.png",
-                      "bytes":  55215,
-                      "sha256":  "e58ae14f836ac51c629614cefa75ee29a6fd9f7723f102acf060416cfae12df4"
+                      "bytes":  54802,
+                      "sha256":  "981e6d4302e09fa9777c47f6aab2e1466c439e6dc0ea9d6c94f38b9ea1654a1a"
                   },
                   {
                       "path":  "wpf/client/ribbon.design.png",
-                      "bytes":  52534,
-                      "sha256":  "ba833ecbc5192e5b40f47ddca5bfd855cf67d0e8b1ae427d9c820834c69084c4"
+                      "bytes":  52110,
+                      "sha256":  "1c4c09d6ba1dafd84159f244149701f56810e6e1773542f20da4ea066d079d26"
                   },
                   {
                       "path":  "wpf/client/ribbon.home.png",
-                      "bytes":  53905,
-                      "sha256":  "9471823893d802c011bc117bbefd3e58c4414d8f8d1350af32295f1756e60149"
+                      "bytes":  53482,
+                      "sha256":  "a016dc2a619db9c02d83027ece984e05ffe39d79bb62b5818e2d4eedb17771b8"
                   },
                   {
                       "path":  "wpf/client/ribbon.insert.png",
-                      "bytes":  54638,
-                      "sha256":  "dfe89444f97585d8feb87c5a8edf06febc2424a5ed598a12b36319a6ec20ce30"
+                      "bytes":  54219,
+                      "sha256":  "96068fa2cdaab51c17482fa65fee3769ee4ce83f0f64853c40d812359f448eda"
                   },
                   {
                       "path":  "wpf/client/ribbon.transitions.png",
-                      "bytes":  52196,
-                      "sha256":  "e857f31a8d834e420ecb4ec32798acc027cf39ce6bef8f9d2aa818163f09dc71"
+                      "bytes":  51783,
+                      "sha256":  "8d5576a332e67976470fde25b9214b4bff6b44aae41a713720b00153f049a3ac"
                   },
                   {
                       "path":  "wpf/client/ribbon.view.png",
-                      "bytes":  41681,
-                      "sha256":  "88b76594716f434fd5e61e13091d27e75ddf055162aea1c0d6f6d8ae28a86269"
+                      "bytes":  41294,
+                      "sha256":  "b685497c93efcec0af5cdb7385c681f6244f4136301dc09d8d15756329d4d920"
                   },
                   {
                       "path":  "wpf/client/startup.notes.png",
-                      "bytes":  42298,
-                      "sha256":  "a4e27aef9d1f4f5cbe0cbdfe7b1965d904784ab0bccb733191e4ea7456805d5c"
+                      "bytes":  42318,
+                      "sha256":  "cd20b341dae62065a9d6cc860e2836bd28b7aaf0da2f7aa2fd4c25af5c0ba9de"
                   },
                   {
                       "path":  "wpf/client/startup.slide.png",
-                      "bytes":  34181,
-                      "sha256":  "024ba15ae3ef2b85518fcef6978aba7185ee5926439f4590c6eff94f76111091"
+                      "bytes":  34197,
+                      "sha256":  "0158d617ab90737fedd4fdf4fd9dbe493619f7c96fd94b32428c108a8ece6398"
                   },
                   {
                       "path":  "wpf/client/status.slide-2.png",
-                      "bytes":  42284,
-                      "sha256":  "713e31f80f1c73bccdb8cccfb5bb436cec4f28f2a0ec5fbd5b45d3000b479acc"
+                      "bytes":  42305,
+                      "sha256":  "37c56bf5235bedd29c76c2bb1c49e18e3ae90124e2877badf432246c02dd264b"
                   },
                   {
                       "path":  "wpf/client/view.clean-canvas.png",
-                      "bytes":  43415,
-                      "sha256":  "5f972a34058f8485375446b1a89ac18e5f7a8f2c1184bbbf45abdae48233bca8"
+                      "bytes":  43033,
+                      "sha256":  "084b6817a33b6f6581936826a78443bd4b076eddfabfdec0faecb7b1a734a75c"
                   },
                   {
                       "path":  "wpf/client/view.gridlines-guides.png",
-                      "bytes":  43596,
-                      "sha256":  "4991db45126f140df62789ee83defef7bafb4e610cba107bdbdd2a489b1ba1f5"
+                      "bytes":  43194,
+                      "sha256":  "069fb9822469d3eb9c0f7cf4c97db323ceb5487b2c75adbf28603ae1c0cd5ff1"
                   },
                   {
                       "path":  "wpf/client/view.zoom-200.png",
-                      "bytes":  40606,
-                      "sha256":  "52a62af15a7488f4524c1f2615e7309d227782a2145770cd570c30aab9544330"
+                      "bytes":  40558,
+                      "sha256":  "843b821c1e68a3688fa183c632861536f0e3dc2a7ee46f619bd0e09e3a730fe6"
                   },
                   {
                       "path":  "wpf/client/view.zoom-fit.png",
-                      "bytes":  43483,
-                      "sha256":  "9d52d2940c78ff1026a67f65a8b194b74d65f8de9f84ebacb0f96d62a0422543"
+                      "bytes":  43134,
+                      "sha256":  "3f8a0a01c374ee9b3b43554cd53eb52a1763c8dc794fb9609f3c192c8909366f"
                   },
                   {
                       "path":  "wpf/client/workspace.canvas.png",
-                      "bytes":  54354,
-                      "sha256":  "7d04661611458cbcac3b5805484142dd0a55a25a569a554c1e8d71bbdd04556b"
+                      "bytes":  53992,
+                      "sha256":  "22f77f1a223d659e5a385d41f3c0e131367c4e02b1f169517298efe628b5ac30"
                   },
                   {
                       "path":  "wpf/client/workspace.notes-pane.png",
-                      "bytes":  30199,
-                      "sha256":  "3b684862594146dd40843d9615a013821cf69ecf9754b120665daf72462021fb"
+                      "bytes":  30220,
+                      "sha256":  "142903c8311864e9f43d48ae78b6b7619ae314a14593643c6858793bba6f68d3"
                   },
                   {
                       "path":  "wpf/client/workspace.slide-pane.png",
-                      "bytes":  43021,
-                      "sha256":  "6bdaca959b2b2de5a57203677387ee011788824a9a9371a29ef5759fbb33f106"
+                      "bytes":  43037,
+                      "sha256":  "deed019540deeba613a861d9ada0660eac64e20e91e65aaa49b8830c36e29026"
                   },
                   {
                       "path":  "wpf/full/accessibility.media-caption-pane.png",
-                      "bytes":  77458,
-                      "sha256":  "fb37dc59cbbbbb89ec31e9e8244db935c4018d78880fc64a338d59675cef4660"
+                      "bytes":  77345,
+                      "sha256":  "5a50d179b816a1c605ef74395433a5e91f7e0f11b1f5dfd296eabbf4c1804745"
                   },
                   {
                       "path":  "wpf/full/animations.animation-pane.png",
-                      "bytes":  63019,
-                      "sha256":  "27829605d3b9830f34ede8ea492c9eb9aed6364fea6671128a1a8f098c1af6fa"
+                      "bytes":  62657,
+                      "sha256":  "346a4b076db3ad704d251451ed11f4599b4c5441f05971e767d47304aacc4fe0"
                   },
                   {
                       "path":  "wpf/full/backstage.account.png",
-                      "bytes":  38125,
-                      "sha256":  "0e77b3b1a7e03266af259bd2c3b07b89d0e27b882522c62faeef1c21b2feefb4"
+                      "bytes":  38452,
+                      "sha256":  "c6c3a1b56436a905654026d744f74eb4df9ed663aea0617034589ac18fa28265"
                   },
                   {
                       "path":  "wpf/full/backstage.export.png",
-                      "bytes":  42365,
-                      "sha256":  "c30ff580dcc3d542bf928f4f9fcd6a89aba8a8df3d1bfd39860c5fd64f8c8ba9"
+                      "bytes":  42378,
+                      "sha256":  "598b1738db9279ce8fcd9459333acf0645bb03aa38b7bca58792b38bc36d186c"
                   },
                   {
                       "path":  "wpf/full/backstage.info.png",
-                      "bytes":  28701,
-                      "sha256":  "f3158a98c63bd4b5e981d159f19041252cabbaf604328b19ff6cc16966db246d"
+                      "bytes":  28722,
+                      "sha256":  "3cad3f8328b045c59f8ac679855760c263348e74d934cc9784fc023576cb9bc1"
                   },
                   {
                       "path":  "wpf/full/backstage.new-from-template.png",
-                      "bytes":  25367,
-                      "sha256":  "9c306adeba97dab472649106ccd1558ae176697c791b494b0bad1bb521179f7e"
+                      "bytes":  25385,
+                      "sha256":  "8e294b78500f8e53b0d5a0a3c7fd7f6b77df60b345e403ca5ec1f09773f858ef"
                   },
                   {
                       "path":  "wpf/full/backstage.options.png",
-                      "bytes":  31028,
-                      "sha256":  "ecd6de7565f7bac517bcff7d5461b60f4091bc2b85aeeaef3fb9379d271170d0"
+                      "bytes":  31199,
+                      "sha256":  "ab8f914be30ddfe0d94079600d6354308f41fb24a6ae46bc621111d50aac374b"
                   },
                   {
                       "path":  "wpf/full/backstage.print.png",
-                      "bytes":  65702,
-                      "sha256":  "d98d03ad97bb95dea3d45cda206a95d43e0116d42aaa60540447def4a4f02b68"
+                      "bytes":  65671,
+                      "sha256":  "0113afc95d99ceb378c700f4e13ab85b342fd1905a0e78c83b308b90f7c7639a"
                   },
                   {
                       "path":  "wpf/full/backstage.recent.png",
-                      "bytes":  23085,
-                      "sha256":  "afade1ec6590e646b8a970786a6f9189a3fccb728aa50ceecc6be13718b11e22"
+                      "bytes":  23102,
+                      "sha256":  "81df5983866618005ba4a938225a2143cf831450949f32b561cb03af2c95b61a"
                   },
                   {
                       "path":  "wpf/full/context.smartart-text-pane.png",
-                      "bytes":  67335,
-                      "sha256":  "f6e6c85ead34365f3b2a9cc70a2997f10bd49fb2f767a01203dee54cfaa7d048"
+                      "bytes":  67269,
+                      "sha256":  "641bbc2682839ff4a951eac62caff335255837fac931ac5352133af99859867e"
                   },
                   {
                       "path":  "wpf/full/editor.rich-text-caret.png",
-                      "bytes":  58066,
-                      "sha256":  "b4f087e0eed97240ad62fac345229c28d77b1dfe29074d94d2346db0bb37c195"
+                      "bytes":  57651,
+                      "sha256":  "32d6ed4f97e0123537d06d91370e12ef55d843d104973e94eb967ba15206acc3"
                   },
                   {
                       "path":  "wpf/full/editor.rich-text-selection.png",
-                      "bytes":  58402,
-                      "sha256":  "5b4c2421a49d82e73dc6bb2a54f857e0a14136b240c04ea8d94c3f98dbb37604"
+                      "bytes":  57982,
+                      "sha256":  "6c0b2462e1d738560e1d5484067a93b465ea7a99d6aba93871b3206c2e07eef1"
                   },
                   {
                       "path":  "wpf/full/review.accessibility-pane.png",
-                      "bytes":  80097,
-                      "sha256":  "50d2cc840f79f9760be546e08fed6a0c432ce1aacca69a8f349d16aa4c8b44e9"
+                      "bytes":  79969,
+                      "sha256":  "5b6a9b55b2493aaa99850d42e288c31082757fecbba79cbd280d924fa324ee59"
                   },
                   {
                       "path":  "wpf/full/review.alt-text-pane.png",
-                      "bytes":  68131,
-                      "sha256":  "61a444eec5c83196736124d86b60b657ca13ce1f47fd17307ae8fa97b4db9a49"
+                      "bytes":  68345,
+                      "sha256":  "f08901e5712ed9a2699c77e8c241eba7fbe80223f601eb06a056e70d0d21117e"
                   },
                   {
                       "path":  "wpf/full/review.comments-pane.png",
-                      "bytes":  64835,
-                      "sha256":  "b47aedd68fbd0b9f70bbdbb5c6c6621a40c7fb9d272f8bfc7f011f074fc031d7"
+                      "bytes":  64785,
+                      "sha256":  "91eff6f32a503836a8a4a5184e4176441825c3ee2d9e937ca59a05bc677703b2"
                   },
                   {
                       "path":  "wpf/full/review.proofing-pane.png",
-                      "bytes":  60538,
-                      "sha256":  "4c8f406314217d89bb7656c73e0e3dc5f9015ef0ca9b98f61449079452dbdd60"
+                      "bytes":  60481,
+                      "sha256":  "a6a327165555eb0d33cf7bc678985cec045abdcd370c1416feac0f65fdf88d2e"
                   },
                   {
                       "path":  "wpf/full/review.reading-order-pane.png",
-                      "bytes":  87902,
-                      "sha256":  "4c4fd1cc336b84de4b24ac267b5556c5be69fc58ef1fe6baf9f2438104f1fa32"
+                      "bytes":  87785,
+                      "sha256":  "aefa48d88825487e853d3b79767112a1b951fddd1d6b1d0e8f0917d99e63f8d1"
                   },
                   {
                       "path":  "wpf/full/ribbon.animations.png",
-                      "bytes":  55215,
-                      "sha256":  "e58ae14f836ac51c629614cefa75ee29a6fd9f7723f102acf060416cfae12df4"
+                      "bytes":  54802,
+                      "sha256":  "981e6d4302e09fa9777c47f6aab2e1466c439e6dc0ea9d6c94f38b9ea1654a1a"
                   },
                   {
                       "path":  "wpf/full/ribbon.design.png",
-                      "bytes":  52534,
-                      "sha256":  "ba833ecbc5192e5b40f47ddca5bfd855cf67d0e8b1ae427d9c820834c69084c4"
+                      "bytes":  52110,
+                      "sha256":  "1c4c09d6ba1dafd84159f244149701f56810e6e1773542f20da4ea066d079d26"
                   },
                   {
                       "path":  "wpf/full/ribbon.home.png",
-                      "bytes":  53905,
-                      "sha256":  "9471823893d802c011bc117bbefd3e58c4414d8f8d1350af32295f1756e60149"
+                      "bytes":  53482,
+                      "sha256":  "a016dc2a619db9c02d83027ece984e05ffe39d79bb62b5818e2d4eedb17771b8"
                   },
                   {
                       "path":  "wpf/full/ribbon.insert.png",
-                      "bytes":  54638,
-                      "sha256":  "dfe89444f97585d8feb87c5a8edf06febc2424a5ed598a12b36319a6ec20ce30"
+                      "bytes":  54219,
+                      "sha256":  "96068fa2cdaab51c17482fa65fee3769ee4ce83f0f64853c40d812359f448eda"
                   },
                   {
                       "path":  "wpf/full/ribbon.transitions.png",
-                      "bytes":  52196,
-                      "sha256":  "e857f31a8d834e420ecb4ec32798acc027cf39ce6bef8f9d2aa818163f09dc71"
+                      "bytes":  51783,
+                      "sha256":  "8d5576a332e67976470fde25b9214b4bff6b44aae41a713720b00153f049a3ac"
                   },
                   {
                       "path":  "wpf/full/ribbon.view.png",
-                      "bytes":  41681,
-                      "sha256":  "88b76594716f434fd5e61e13091d27e75ddf055162aea1c0d6f6d8ae28a86269"
+                      "bytes":  41294,
+                      "sha256":  "b685497c93efcec0af5cdb7385c681f6244f4136301dc09d8d15756329d4d920"
                   },
                   {
                       "path":  "wpf/full/startup.notes.png",
-                      "bytes":  42298,
-                      "sha256":  "a4e27aef9d1f4f5cbe0cbdfe7b1965d904784ab0bccb733191e4ea7456805d5c"
+                      "bytes":  42318,
+                      "sha256":  "cd20b341dae62065a9d6cc860e2836bd28b7aaf0da2f7aa2fd4c25af5c0ba9de"
                   },
                   {
                       "path":  "wpf/full/startup.slide.png",
-                      "bytes":  34181,
-                      "sha256":  "024ba15ae3ef2b85518fcef6978aba7185ee5926439f4590c6eff94f76111091"
+                      "bytes":  34197,
+                      "sha256":  "0158d617ab90737fedd4fdf4fd9dbe493619f7c96fd94b32428c108a8ece6398"
                   },
                   {
                       "path":  "wpf/full/status.slide-2.png",
-                      "bytes":  42284,
-                      "sha256":  "713e31f80f1c73bccdb8cccfb5bb436cec4f28f2a0ec5fbd5b45d3000b479acc"
+                      "bytes":  42305,
+                      "sha256":  "37c56bf5235bedd29c76c2bb1c49e18e3ae90124e2877badf432246c02dd264b"
                   },
                   {
                       "path":  "wpf/full/view.clean-canvas.png",
-                      "bytes":  43415,
-                      "sha256":  "5f972a34058f8485375446b1a89ac18e5f7a8f2c1184bbbf45abdae48233bca8"
+                      "bytes":  43033,
+                      "sha256":  "084b6817a33b6f6581936826a78443bd4b076eddfabfdec0faecb7b1a734a75c"
                   },
                   {
                       "path":  "wpf/full/view.gridlines-guides.png",
-                      "bytes":  43596,
-                      "sha256":  "4991db45126f140df62789ee83defef7bafb4e610cba107bdbdd2a489b1ba1f5"
+                      "bytes":  43194,
+                      "sha256":  "069fb9822469d3eb9c0f7cf4c97db323ceb5487b2c75adbf28603ae1c0cd5ff1"
                   },
                   {
                       "path":  "wpf/full/view.zoom-200.png",
-                      "bytes":  40606,
-                      "sha256":  "52a62af15a7488f4524c1f2615e7309d227782a2145770cd570c30aab9544330"
+                      "bytes":  40558,
+                      "sha256":  "843b821c1e68a3688fa183c632861536f0e3dc2a7ee46f619bd0e09e3a730fe6"
                   },
                   {
                       "path":  "wpf/full/view.zoom-fit.png",
-                      "bytes":  43483,
-                      "sha256":  "9d52d2940c78ff1026a67f65a8b194b74d65f8de9f84ebacb0f96d62a0422543"
+                      "bytes":  43134,
+                      "sha256":  "3f8a0a01c374ee9b3b43554cd53eb52a1763c8dc794fb9609f3c192c8909366f"
                   },
                   {
                       "path":  "wpf/full/workspace.canvas.png",
-                      "bytes":  54354,
-                      "sha256":  "7d04661611458cbcac3b5805484142dd0a55a25a569a554c1e8d71bbdd04556b"
+                      "bytes":  53992,
+                      "sha256":  "22f77f1a223d659e5a385d41f3c0e131367c4e02b1f169517298efe628b5ac30"
                   },
                   {
                       "path":  "wpf/full/workspace.notes-pane.png",
-                      "bytes":  30199,
-                      "sha256":  "3b684862594146dd40843d9615a013821cf69ecf9754b120665daf72462021fb"
+                      "bytes":  30220,
+                      "sha256":  "142903c8311864e9f43d48ae78b6b7619ae314a14593643c6858793bba6f68d3"
                   },
                   {
                       "path":  "wpf/full/workspace.slide-pane.png",
-                      "bytes":  43021,
-                      "sha256":  "6bdaca959b2b2de5a57203677387ee011788824a9a9371a29ef5759fbb33f106"
+                      "bytes":  43037,
+                      "sha256":  "deed019540deeba613a861d9ada0660eac64e20e91e65aaa49b8830c36e29026"
                   },
                   {
                       "path":  "wpf/manifest.json",
-                      "bytes":  130521,
-                      "sha256":  "576860b211465af6e0154fa6a1607805130561a3ab2b5fcce20d13d70a69e8e7"
+                      "bytes":  130523,
+                      "sha256":  "2e8532dccf5503f9a91457582a3c3e3af28d126c943470eda828dd83a779566d"
                   }
               ]
 }
