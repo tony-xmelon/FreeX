@@ -4,7 +4,7 @@
   "EvidenceSubject": "freex",
   "EvidenceApp": "FreeX",
   "ScenarioId": "dropdown:home-number-format",
-  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-popup-excel-capture-20260608\\screenshots\\home-number-format-dropdown-tour",
+  "OutputDirectory": "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\freex-number-format-gallery-20260821\\screenshots\\home-number-format-dropdown-tour",
   "OutputNaming": "freex_dropdown_home_number_format_opened.png",
   "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md",
   "SelectedCell": "A1",
@@ -24,7 +24,7 @@
     "More Number Formats..."
   ],
   "CaptureStatus": "complete",
-  "CaptureMethod": "RenderTargetBitmap-combobox-popup-child",
+  "CaptureMethod": "RenderTargetBitmap-number-format-gallery-popup",
   "Pairing": {
     "PairKeyPattern": "interactive:home-number-format:\u003CState\u003E",
     "CounterpartSubject": "excel",
@@ -40,12 +40,12 @@
       "FileName": "freex_dropdown_home_number_format_opened",
       "OutputFileName": "freex_dropdown_home_number_format_opened.png",
       "CounterpartFileName": "interactive_home_number_format_opened.png",
-      "CaptureLogicalWidth": 143.33333333333334,
-      "CaptureLogicalHeight": 274
+      "CaptureLogicalWidth": 264,
+      "CaptureLogicalHeight": 643
     }
   ],
   "Limitations": [
-    "This in-app tour opens the production Home Number Format ComboBox and captures the open WPF popup child without global mouse or keyboard input.",
+    "This in-app tour opens the production Home Number Format gallery and captures its explicit WPF popup without global mouse or keyboard input.",
     "The paired Microsoft Excel transient capture is declared by tools/screenshot_excel.ps1 and remains a separate foreground-guarded capture.",
     "The scenario captures the opened dropdown with the default General format selected."
   ]
