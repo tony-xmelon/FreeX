@@ -9,7 +9,7 @@
     "mismatchCount":  1,
     "limitationCount":  0,
     "pngCount":  123,
-    "fileCount":  130,
+    "fileCount":  128,
     "files":  [
                   {
                       "path":  "avalonia/accessibility.media-caption-pane.seeded.png",
@@ -20,11 +20,6 @@
                       "path":  "avalonia/animations.animation-pane.seeded.png",
                       "bytes":  143454,
                       "sha256":  "52fadaf81678db41f514d6338964283637bba88392ea5a9c150a212b82013a5d"
-                  },
-                  {
-                      "path":  "avalonia/capture-progress.log",
-                      "bytes":  2090,
-                      "sha256":  "9663f5e0e90070d6b49b44e0ba3dfd7c605848033467b77058197d31f1b5c8f9"
                   },
                   {
                       "path":  "avalonia/chart.edit-data.initial.png",
@@ -455,11 +450,6 @@
                       "path":  "wpf/animations.animation-pane.seeded.png",
                       "bytes":  131470,
                       "sha256":  "7e002a192fb4d4ced4d9a95dd47ff231226e907eae9c0a86bc5511e99bd26bca"
-                  },
-                  {
-                      "path":  "wpf/capture-progress.log",
-                      "bytes":  2090,
-                      "sha256":  "9663f5e0e90070d6b49b44e0ba3dfd7c605848033467b77058197d31f1b5c8f9"
                   },
                   {
                       "path":  "wpf/chart.edit-data.initial.png",
