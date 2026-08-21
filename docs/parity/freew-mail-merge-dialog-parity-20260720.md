@@ -1,12 +1,12 @@
 # FreeW Mail Merge Dialog Parity
 
-Generated from the WPF authority and shared/presentation/Avalonia source hashes. This report is deterministic; run 	ools/Generate-FreeWMailMergeDialogParityEvidence.ps1 -Check to verify freshness.
+Generated from the WPF authority and shared/presentation/Avalonia source hashes. This report is deterministic; run `tools/Generate-FreeWMailMergeDialogParityEvidence.ps1 -Check` to verify freshness.
 
-- Schema: $(System.Collections.Specialized.OrderedDictionary.schema)
+- Schema: `freex.freew.mail-merge-dialog-parity.v1`
 - Surfaces inventoried: 16
 - Implemented dialog/policy surfaces: 16
 - Implemented policy-only surfaces: 0
-- Authority: $(System.Collections.Specialized.OrderedDictionary.authority)
+- Authority: `FreeW.App.Host WPF dialog and command behavior`
 
 | Surface | Status | Shared policy | Exact shell-wiring gap |
 |---|---|---|---|
@@ -33,4 +33,4 @@ MainWindow and ribbon command/definition routes are included in the generated so
 
 ## Freshness
 
-The JSON records SHA-256 hashes for every authority, implementation, and focused-test input. -Check regenerates both artifacts in memory and fails if either committed artifact differs.
+The JSON records SHA-256 hashes for every authority, implementation, and focused-test input. `-Check` regenerates both artifacts in memory and fails if either committed artifact differs.
