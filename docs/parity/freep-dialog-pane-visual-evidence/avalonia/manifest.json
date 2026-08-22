@@ -5,7 +5,7 @@
   "targetDpi": 96,
   "logicalShellWidth": 1280,
   "logicalShellHeight": 760,
-  "generatedAtUtc": "2026-08-20T23:34:31.3338822\u002B00:00",
+  "generatedAtUtc": "2026-08-22T04:37:10.0286501+03:00",
   "captures": [
     {
       "scenarioId": "design.slide-size.initial",
@@ -329,7 +329,7 @@
         },
         {
           "role": "checkbox",
-          "label": "Don\u0027t show on title slide",
+          "label": "Don't show on title slide",
           "isEnabled": true,
           "isChecked": false,
           "isSelected": null
@@ -477,7 +477,7 @@
         },
         {
           "role": "checkbox",
-          "label": "Don\u0027t show on title slide",
+          "label": "Don't show on title slide",
           "isEnabled": true,
           "isChecked": false,
           "isSelected": null
@@ -1193,7 +1193,7 @@
       "buttons": [
         {
           "actionId": "FreeP.ChartData.AddSeries",
-          "label": "\u002B Series",
+          "label": "+ Series",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
@@ -1221,7 +1221,7 @@
         },
         {
           "actionId": "FreeP.ChartData.AddCategory",
-          "label": "\u002B Category",
+          "label": "+ Category",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
@@ -1404,7 +1404,7 @@
       "buttons": [
         {
           "actionId": "FreeP.ChartData.AddSeries",
-          "label": "\u002B Series",
+          "label": "+ Series",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
@@ -1432,7 +1432,7 @@
         },
         {
           "actionId": "FreeP.ChartData.AddCategory",
-          "label": "\u002B Category",
+          "label": "+ Category",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
@@ -1620,7 +1620,7 @@
       "buttons": [
         {
           "actionId": "FreeP.ChartData.AddSeries",
-          "label": "\u002B Series",
+          "label": "+ Series",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
@@ -1648,7 +1648,7 @@
         },
         {
           "actionId": "FreeP.ChartData.AddCategory",
-          "label": "\u002B Category",
+          "label": "+ Category",
           "isEnabled": true,
           "isDefault": false,
           "isCancel": false
@@ -2669,196 +2669,6 @@
       "pixelComparisonImagePath": "avalonia/targets/startup.notes-pane.seeded.png",
       "pixelComparisonLogicalWidth": 1100,
       "pixelComparisonLogicalHeight": 60
-    },
-    {
-      "scenarioId": "review.comments-pane.seeded",
-      "routeId": "review.comments-pane",
-      "stateId": "seeded",
-      "host": "avalonia",
-      "captureStatus": "complete",
-      "imagePath": "avalonia/review.comments-pane.seeded.png",
-      "logicalWidth": 1280,
-      "logicalHeight": 760,
-      "pixelWidth": 1280,
-      "pixelHeight": 760,
-      "dpiX": 96,
-      "dpiY": 96,
-      "nonBackgroundPixelCount": 893710,
-      "focusedRole": "",
-      "focusedLabel": "",
-      "buttons": [
-        {
-          "actionId": "close",
-          "label": "Close",
-          "isEnabled": true,
-          "isDefault": false,
-          "isCancel": false
-        },
-        {
-          "actionId": "new-comment",
-          "label": "New Comment",
-          "isEnabled": true,
-          "isDefault": false,
-          "isCancel": false
-        },
-        {
-          "actionId": "freep.review.comments.edit",
-          "label": "Edit Comment",
-          "isEnabled": true,
-          "isDefault": false,
-          "isCancel": false
-        },
-        {
-          "actionId": "freep.review.comments.delete",
-          "label": "Delete Comment",
-          "isEnabled": true,
-          "isDefault": false,
-          "isCancel": false
-        },
-        {
-          "actionId": "freep.review.comments.previous",
-          "label": "Previous Comment",
-          "isEnabled": false,
-          "isDefault": false,
-          "isCancel": false
-        },
-        {
-          "actionId": "freep.review.comments.next",
-          "label": "Next Comment",
-          "isEnabled": true,
-          "isDefault": false,
-          "isCancel": false
-        },
-        {
-          "actionId": "freep.review.comments.resolve",
-          "label": "Resolve Comment",
-          "isEnabled": true,
-          "isDefault": false,
-          "isCancel": false
-        },
-        {
-          "actionId": "freep.review.comments.reopen",
-          "label": "Reopen Comment",
-          "isEnabled": false,
-          "isDefault": false,
-          "isCancel": false
-        },
-        {
-          "actionId": "save",
-          "label": "Save",
-          "isEnabled": true,
-          "isDefault": false,
-          "isCancel": false
-        },
-        {
-          "actionId": "reply",
-          "label": "Reply",
-          "isEnabled": true,
-          "isDefault": false,
-          "isCancel": false
-        }
-      ],
-      "controls": [
-        {
-          "role": "button",
-          "label": "close",
-          "isEnabled": true,
-          "isChecked": null,
-          "isSelected": null
-        },
-        {
-          "role": "button",
-          "label": "new-comment",
-          "isEnabled": true,
-          "isChecked": null,
-          "isSelected": null
-        },
-        {
-          "role": "button",
-          "label": "freep.review.comments.edit",
-          "isEnabled": true,
-          "isChecked": null,
-          "isSelected": null
-        },
-        {
-          "role": "button",
-          "label": "freep.review.comments.delete",
-          "isEnabled": true,
-          "isChecked": null,
-          "isSelected": null
-        },
-        {
-          "role": "button",
-          "label": "freep.review.comments.previous",
-          "isEnabled": false,
-          "isChecked": null,
-          "isSelected": null
-        },
-        {
-          "role": "button",
-          "label": "freep.review.comments.next",
-          "isEnabled": true,
-          "isChecked": null,
-          "isSelected": null
-        },
-        {
-          "role": "button",
-          "label": "freep.review.comments.resolve",
-          "isEnabled": true,
-          "isChecked": null,
-          "isSelected": null
-        },
-        {
-          "role": "button",
-          "label": "freep.review.comments.reopen",
-          "isEnabled": false,
-          "isChecked": null,
-          "isSelected": null
-        },
-        {
-          "role": "button",
-          "label": "save",
-          "isEnabled": true,
-          "isChecked": null,
-          "isSelected": null
-        },
-        {
-          "role": "button",
-          "label": "reply",
-          "isEnabled": true,
-          "isChecked": null,
-          "isSelected": null
-        }
-      ],
-      "assertions": [
-        {
-          "id": "seeded-presentation",
-          "passed": true,
-          "detail": "Loaded 3 seeded slides."
-        },
-        {
-          "id": "seeded-selection",
-          "passed": true,
-          "detail": "Initially selected shape ids: 10."
-        },
-        {
-          "id": "no-preselection-mutation",
-          "passed": true,
-          "detail": "Opening the choice overlay did not mutate shape count or layout."
-        },
-        {
-          "id": "choice-state",
-          "passed": true,
-          "detail": "The picker exposes its expected default/current/disabled choice state."
-        }
-      ],
-      "limitations": [],
-      "sourceDpiX": 96,
-      "sourceDpiY": 96,
-      "rasterNormalization": "logical-96-dpi",
-      "pixelComparisonImagePath": "avalonia/targets/review.comments-pane.seeded.png",
-      "pixelComparisonLogicalWidth": 1100,
-      "pixelComparisonLogicalHeight": 100
     },
     {
       "scenarioId": "review.accessibility-pane.seeded",
@@ -4473,6 +4283,196 @@
       "pixelComparisonImagePath": "avalonia/targets/design.layout-picker.open.png",
       "pixelComparisonLogicalWidth": 1100,
       "pixelComparisonLogicalHeight": 181
+    },
+    {
+      "scenarioId": "review.comments-pane.seeded",
+      "routeId": "review.comments-pane",
+      "stateId": "seeded",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "imagePath": "avalonia/review.comments-pane.seeded.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 898279,
+      "focusedRole": "",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "close",
+          "label": "Close",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "new-comment",
+          "label": "New Comment",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "freep.review.comments.edit",
+          "label": "Edit Comment",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "freep.review.comments.delete",
+          "label": "Delete Comment",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "freep.review.comments.previous",
+          "label": "Previous Comment",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "freep.review.comments.next",
+          "label": "Next Comment",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "freep.review.comments.resolve",
+          "label": "Resolve Comment",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "freep.review.comments.reopen",
+          "label": "Reopen Comment",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "save",
+          "label": "Save",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "reply",
+          "label": "Reply",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        }
+      ],
+      "controls": [
+        {
+          "role": "button",
+          "label": "close",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "new-comment",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "freep.review.comments.edit",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "freep.review.comments.delete",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "freep.review.comments.previous",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "freep.review.comments.next",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "freep.review.comments.resolve",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "freep.review.comments.reopen",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "save",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "reply",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "avalonia/targets/review.comments-pane.seeded.png",
+      "pixelComparisonLogicalWidth": 1100,
+      "pixelComparisonLogicalHeight": 100
     }
   ],
   "limitations": []
