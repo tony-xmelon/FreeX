@@ -8,7 +8,7 @@ This companion classifies every `WPF-MISSING`, `AVALONIA-MISSING`, and `BOTH-MIS
 
 | Metric | Count |
 |---|---:|
-| Total commands | 563 |
+| Total commands | 565 |
 | Non-parity rows classified | 6 |
 | AVALONIA-MISSING | 0 |
 | Intentional Linux omissions | 0 |

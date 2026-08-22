@@ -10,8 +10,8 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 
 | Metric | Count |
 |---|---:|
-| Total commands | 563 |
-| PARITY (both) | 557 |
+| Total commands | 565 |
+| PARITY (both) | 559 |
 | AVALONIA-MISSING | 0 |
 | WPF-MISSING | 6 |
 | BOTH-MISSING | 0 |
@@ -447,6 +447,7 @@ See `functional-parity-classification.md` for the prioritized implementation lis
 | Symbol | Symbols | Insert | yes | yes | PARITY |
 | PivotTable | Tables | Insert | yes | yes | PARITY |
 | Table | Tables | Insert | yes | yes | PARITY |
+| pivot.chart.insert | Tables | Insert | yes | yes | PARITY |
 | Header & Footer | Text | Insert | yes | yes | PARITY |
 | Text Box | Text | Insert | yes | yes | PARITY |
 | Background | Page Setup | Page Layout | yes | yes | PARITY |
@@ -527,7 +528,6 @@ See `functional-parity-classification.md` for the prioritized implementation lis
 | +/- Buttons | Show | PivotTable Analyze | yes | yes | PARITY |
 | Field Headers | Show | PivotTable Analyze | yes | yes | PARITY |
 | Field List | Show | PivotTable Analyze | yes | yes | PARITY |
-| PivotChart | Tools | PivotTable Analyze | yes | yes | PARITY |
 | PivotChart Options | Tools | PivotTable Analyze | yes | yes | PARITY |
 | pivot.chart.changeType | Tools | PivotTable Analyze | yes | yes | PARITY |
 | Alt Text | Accessibility | Review | yes | yes | PARITY |
@@ -544,7 +544,9 @@ See `functional-parity-classification.md` for the prioritized implementation lis
 | Next Note | Notes | Review | yes | yes | PARITY |
 | Previous Note | Notes | Review | yes | yes | PARITY |
 | Show Notes | Notes | Review | yes | yes | PARITY |
+| Check Performance | Proofing | Review | yes | yes | PARITY |
 | Spelling | Proofing | Review | yes | yes | PARITY |
+| Translate | Proofing | Review | yes | yes | PARITY |
 | Workbook Statistics | Proofing | Review | yes | yes | PARITY |
 | Allow Users to Edit Ranges | Protect | Review | yes | yes | PARITY |
 | Protect Workbook | Protect | Review | yes | yes | PARITY |

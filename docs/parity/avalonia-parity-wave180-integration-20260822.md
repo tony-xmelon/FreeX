@@ -46,8 +46,24 @@ test, and 2/2 WPF renderer plus package round-trip tests. Remaining TTML model
 extensions include line-through/overline combinations, outline/shadow, ruby,
 and bidi-specific behavior.
 
+## Review command integration
+
+The final integration run included the newly landed WPF Translate helper and
+Check Performance report. Avalonia already contained the production Translate
+dialog route, but the shared Review ribbon did not bind it. Both hosts now use
+typed shared command IDs for Translate and Check Performance, Avalonia binds
+the existing Translate route, and the performance dialog's title and
+accessibility text come from the neutral localization catalog in both hosts.
+
+The refreshed functional matrix contains 565 commands: 559 parity rows, zero
+Avalonia-missing rows, and the same six classified WPF ComboBox-control rows.
+The authoritative managed interaction inventory now contains 644 ribbon
+placements, 607 distinct command IDs, and 718 total ribbon/collapsed-group
+rows. Focused Avalonia integration tests passed 33/33 and focused WPF Review
+tests passed 25/25.
+
 ## Claim boundary
 
 Wave 180 advances one bounded slice in each application and repairs the
-integration regression encountered on current main. It does not claim complete
+integration regressions encountered on current main. It does not claim complete
 functional or visual parity for any application.
