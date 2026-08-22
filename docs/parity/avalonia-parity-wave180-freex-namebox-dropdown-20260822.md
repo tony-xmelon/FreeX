@@ -1,8 +1,8 @@
 # Avalonia Parity Wave180: FreeX Name Box Dropdown
 
-Date: 2026-08-22  
-Application: FreeX Avalonia Application host  
-Display: 1280x820 at 96 DPI  
+Date: 2026-08-22
+Application: FreeX Avalonia Application host
+Display: 1280x820 at 96 DPI
 Slice branch: `codex/wave180-freex-chart-interaction-20260822`
 
 ## Selected Gap and Root Cause
@@ -20,8 +20,9 @@ row content reliably inside the popup.
 The popup now uses the Avalonia-native model-backed `FuncDataTemplate`, an
 explicit fixed viewport, and a non-virtualizing `StackPanel` items panel. The
 existing planner, selection handlers, row labels, font, padding, and automation
-descriptions remain unchanged. A focused test exercises the production popup
-population path and verifies the five physical-fixture navigation labels.
+descriptions remain unchanged. A focused test shows and lays out the production
+window, opens the popup, and verifies the five realized text descendants rather
+than only inspecting the item models.
 
 Changed files:
 

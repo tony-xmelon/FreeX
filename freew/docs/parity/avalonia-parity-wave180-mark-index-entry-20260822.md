@@ -1,7 +1,7 @@
 # Avalonia Parity Wave180: Mark Index Entry
 
-Date: 2026-08-22  
-Base: `504bcd2b311d3fac5c64589e857c17e576fb8795`  
+Date: 2026-08-22
+Base: `504bcd2b311d3fac5c64589e857c17e576fb8795`
 Target DPI: 96
 
 ## Selected Route
