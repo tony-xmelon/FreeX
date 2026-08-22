@@ -37,15 +37,15 @@ Inventory scenarios: **512**. Captured WPF: **221**. Captured Avalonia: **291**.
 | `cell-borders.populated` | captured/captured | **genuine-visual-mismatch** | pass (6.6% painted) | pass (7.2% painted) | 7.65 % | 4.78 | focus,action-button-order | heatmaps/cell-borders.populated.png |
 | `cell-borders.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (6.6% painted) | pass (7.2% painted) | 7.71 % | 4.85 | focus,action-button-order | heatmaps/cell-borders.validation-error.png |
 | `cell-shading.initial` | captured/captured | **pass** | pass (1.9% painted) | pass (1.7% painted) | 2.08 % | 1.48 |  | heatmaps/cell-shading.initial.png |
-| `chart-axis-titles.initial` | captured/captured | **semantic-mismatch** | pass (0.9% painted) | pass (0.9% painted) | 1.68 % | 1.69 | focus | heatmaps/chart-axis-titles.initial.png |
-| `chart-axis-titles.populated` | captured/captured | **semantic-mismatch** | pass (1.1% painted) | pass (1.3% painted) | 2.13 % | 2.26 | focus | heatmaps/chart-axis-titles.populated.png |
-| `chart-axis-titles.validation-error` | captured/captured | **semantic-mismatch** | pass (1.0% painted) | pass (1.0% painted) | 1.80 % | 1.82 | focus | heatmaps/chart-axis-titles.validation-error.png |
-| `chart-size.initial` | captured/captured | **semantic-mismatch** | pass (0.9% painted) | pass (1.0% painted) | 1.77 % | 1.75 | focus | heatmaps/chart-size.initial.png |
-| `chart-size.populated` | captured/captured | **semantic-mismatch** | pass (0.9% painted) | pass (1.0% painted) | 1.77 % | 1.75 | focus | heatmaps/chart-size.populated.png |
-| `chart-size.validation-error` | captured/captured | **semantic-mismatch** | pass (1.0% painted) | pass (1.1% painted) | 1.89 % | 1.89 | focus | heatmaps/chart-size.validation-error.png |
-| `chart-title.initial` | captured/captured | **semantic-mismatch** | pass (0.5% painted) | pass (0.5% painted) | 0.92 % | 1.14 | focus | heatmaps/chart-title.initial.png |
-| `chart-title.populated` | captured/captured | **semantic-mismatch** | pass (0.6% painted) | pass (0.8% painted) | 1.22 % | 1.54 | focus | heatmaps/chart-title.populated.png |
-| `chart-title.validation-error` | captured/captured | **semantic-mismatch** | pass (0.6% painted) | pass (0.6% painted) | 1.04 % | 1.27 | focus | heatmaps/chart-title.validation-error.png |
+| `chart-axis-titles.initial` | captured/captured | **pass** | pass (1.3% painted) | pass (0.9% painted) | 2.03 % | 1.99 |  | heatmaps/chart-axis-titles.initial.png |
+| `chart-axis-titles.populated` | captured/captured | **pass** | pass (1.5% painted) | pass (1.3% painted) | 2.46 % | 2.55 |  | heatmaps/chart-axis-titles.populated.png |
+| `chart-axis-titles.validation-error` | captured/captured | **pass** | pass (1.4% painted) | pass (1.0% painted) | 2.16 % | 2.14 |  | heatmaps/chart-axis-titles.validation-error.png |
+| `chart-size.initial` | captured/captured | **pass** | pass (1.4% painted) | pass (1.0% painted) | 2.10 % | 2.03 |  | heatmaps/chart-size.initial.png |
+| `chart-size.populated` | captured/captured | **pass** | pass (1.4% painted) | pass (1.0% painted) | 2.10 % | 2.03 |  | heatmaps/chart-size.populated.png |
+| `chart-size.validation-error` | captured/captured | **pass** | pass (1.4% painted) | pass (1.1% painted) | 2.23 % | 2.17 |  | heatmaps/chart-size.validation-error.png |
+| `chart-title.initial` | captured/captured | **pass** | pass (0.9% painted) | pass (0.5% painted) | 1.21 % | 1.45 |  | heatmaps/chart-title.initial.png |
+| `chart-title.populated` | captured/captured | **pass** | pass (0.9% painted) | pass (0.8% painted) | 1.51 % | 1.85 |  | heatmaps/chart-title.populated.png |
+| `chart-title.validation-error` | captured/captured | **pass** | pass (0.9% painted) | pass (0.6% painted) | 1.32 % | 1.57 |  | heatmaps/chart-title.validation-error.png |
 | `columns.initial` | captured/captured | **genuine-visual-mismatch** | pass (4.1% painted) | pass (4.2% painted) | 3.60 % | 2.55 |  | heatmaps/columns.initial.png |
 | `columns.populated` | captured/captured | **genuine-visual-mismatch** | pass (4.1% painted) | pass (4.2% painted) | 3.60 % | 2.55 |  | heatmaps/columns.populated.png |
 | `columns.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (4.2% painted) | pass (4.3% painted) | 3.76 % | 2.73 |  | heatmaps/columns.validation-error.png |
@@ -143,9 +143,9 @@ Inventory scenarios: **512**. Captured WPF: **221**. Captured Avalonia: **291**.
 | `manage-styles.initial` | captured/captured | **genuine-visual-mismatch** | pass (7.7% painted) | pass (6.7% painted) | 7.64 % | 4.43 | focus | heatmaps/manage-styles.initial.png |
 | `manage-styles.populated` | captured/captured | **genuine-visual-mismatch** | pass (7.7% painted) | pass (6.7% painted) | 7.64 % | 4.43 | focus | heatmaps/manage-styles.populated.png |
 | `manage-styles.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (7.7% painted) | pass (6.7% painted) | 7.64 % | 4.43 | focus | heatmaps/manage-styles.validation-error.png |
-| `manual-hyphenation.initial` | captured/captured | **semantic-mismatch** | pass (4.3% painted) | pass (4.3% painted) | 2.09 % | 1.41 | focus,default-button,action-button-order | heatmaps/manual-hyphenation.initial.png |
-| `manual-hyphenation.populated` | captured/captured | **semantic-mismatch** | pass (4.3% painted) | pass (4.3% painted) | 2.12 % | 1.38 | focus,default-button,action-button-order | heatmaps/manual-hyphenation.populated.png |
-| `manual-hyphenation.validation-error` | captured/captured | **semantic-mismatch** | pass (4.3% painted) | pass (4.3% painted) | 2.12 % | 1.38 | focus,default-button,action-button-order | heatmaps/manual-hyphenation.validation-error.png |
+| `manual-hyphenation.initial` | captured/captured | **pass** | pass (4.3% painted) | pass (4.3% painted) | 2.55 % | 1.79 |  | heatmaps/manual-hyphenation.initial.png |
+| `manual-hyphenation.populated` | captured/captured | **pass** | pass (4.3% painted) | pass (4.3% painted) | 2.59 % | 1.79 |  | heatmaps/manual-hyphenation.populated.png |
+| `manual-hyphenation.validation-error` | captured/captured | **pass** | pass (4.3% painted) | pass (4.3% painted) | 2.59 % | 1.79 |  | heatmaps/manual-hyphenation.validation-error.png |
 | `mark-citation.initial` | captured/captured | **genuine-visual-mismatch** | pass (5.0% painted) | pass (5.0% painted) | 3.24 % | 2.40 |  | heatmaps/mark-citation.initial.png |
 | `mark-citation.populated` | captured/captured | **genuine-visual-mismatch** | pass (5.0% painted) | pass (5.3% painted) | 3.56 % | 2.84 |  | heatmaps/mark-citation.populated.png |
 | `mark-citation.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (5.1% painted) | pass (5.1% painted) | 3.37 % | 2.54 |  | heatmaps/mark-citation.validation-error.png |
