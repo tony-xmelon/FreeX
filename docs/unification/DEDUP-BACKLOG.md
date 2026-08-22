@@ -1,9 +1,9 @@
 # Dedup Backlog - closed historical inventory
 
-**Closed 2026-08-09.** Every practical item in this inventory and the later whole-codebase audits has either
+**Historical inventory, closed 2026-08-09.** Every practical item in this inventory and the later whole-codebase audits has either
 been extracted, adopted, or recorded as an intentional renderer/domain boundary. Current evidence is generated
-in `dedup-residual-metrics.md`; the final classification and verification record is
-`DEDUP-EXHAUSTION-2026-08-09.md`. This file is retained to explain the provenance of the earlier candidates.
+in `dedup-residual-metrics.md`; the latest classification and verification record is
+`DEDUP-CERTIFICATION-2026-08-22.md`. This file is retained to explain the provenance of the earlier candidates.
 
 Verified duplication candidates, ranked, each tagged with its **unlock condition** (which session must
 settle before extraction is safe). Built 2026-06-25 from a read-only cross-app audit while the three
@@ -24,7 +24,10 @@ The audit confirmed these are already consolidated in `Free.Shared.*`; remaining
 per-shell glue, not duplication:
 
 - **Recent files** — `Free.Shared.AppServices.RecentFilesStore` + `FileCommandWorkflow` + `Free.Shared.Shell.BackstageRecentFileListPlanner`; caps in `ApplicationOptionsSupport`. (Per-app `MaxRecentDocuments` 6 vs 8 is intentional UI.)
-- **Autosave/recovery** — `Free.Shared.AppServices.AutosaveSnapshotStore` + `AutosaveSnapshotCoordinator` ("shared by FreeX and FreeW"). Per-app `AutosaveCoordinator`/`AutosaveAdapter`/`MainWindow.Autosave` are thin host bindings.
+- **Autosave snapshot substrate** — `Free.Shared.AppServices.AutosaveSnapshotStore` +
+  `AutosaveSnapshotCoordinator` remain shared. The later FreeP/FreeW session and recovery layers accumulated a
+  second copy and are reopened in `DEDUP-CERTIFICATION-2026-08-22.md`; native scheduling and editor projection
+  remain host bindings.
 - **Status bar** — `Free.Shared.AppServices.StatusBarViewModel`/`StatusBarDisplayModelBuilder` + `Free.Shared.Ribbon.Wpf.SisterAppStatusBarChrome`.
 - **User-message service** — `Free.Shared.AppServices.IUserMessageService` + `Free.Shared.Shell.Wpf.WpfUserMessageService`/`DialogMessageHelper`. FreeX, FreeW, and FreeP file-command hosts now accept the service through constructor injection; the remaining `HeadlessMessageBox.Handler` sites are WPF dialog/test helper seams, not file-command lifecycle duplication.
 - **Ribbon command registry** — `Free.Shared.Ribbon.Commands.RibbonCommandRegistry` + WPF/Avalonia renderers. Per-app `BuildRegistry` is genuine command wiring.

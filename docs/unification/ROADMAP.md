@@ -1,6 +1,6 @@
 # FreeFamily Unification Architecture Roadmap
 
-Updated 2026-08-13 at final code checkpoint `b9661deea0`. Companion to `README.md` (principles), `LOG.md`
+Updated 2026-08-22 at audit checkpoint `b688e47423`. Companion to `README.md` (principles), `LOG.md`
 (execution record), and `dedup-residual-metrics.md` (current deterministic residual evidence).
 
 ## Vision
@@ -22,7 +22,7 @@ The objective is dual thin renderers, not renderer replacement.
 |---|---|---|---|
 | Windows WPF | mature | mature | mature |
 | Linux/macOS Avalonia | strong | strong | strong |
-| Portable workarea/session tier | exhausted to native adapters | exhausted to native adapters | exhausted to native adapters |
+| Portable workarea/session tier | exhausted to native adapters | mature; autosave follow-up open | mature; autosave/dictionary follow-up open |
 | Shared application frame | adopted | adopted | adopted |
 | Shared theme/localization mechanics | adopted | adopted | adopted |
 
@@ -52,10 +52,12 @@ resources, static semantic command IDs, and workbook keyboard shortcut aliases.
 All measured candidates were extracted or classified from the final tree. Remaining matches are native control,
 event, focus, geometry/materialization, drawing, media, accessibility-attachment, and capture adapters.
 
-### WS-B - Product portable tiers - complete
+### WS-B - Product portable tiers - follow-up open
 
 `FreeX.App.Presentation`/`FreeX.App.Services`, `FreeW.App.Presentation`, and `FreeP.App.Presentation` own each
-product's renderer-neutral workarea behavior. Their document models remain separate by design.
+product's renderer-neutral workarea behavior. Their document models remain separate by design. Later FreeP
+feature work copied FreeW autosave/recovery lifecycle and dictionary-storage mechanics; those four families are
+the current portable-tier follow-up.
 
 ### WS-C - Shared document substrate - mature
 
@@ -64,25 +66,28 @@ text search are shared. The continuation added one OOXML protection hash impleme
 directional-arrowhead geometry. XLSX, DOCX, and PPTX rules stay local when the formats encode different
 semantics.
 
-### WS-D - Common application frame - complete
+### WS-D - Common application frame - mature
 
 Ribbon, Backstage, shell workflow, theming, localization mechanics, options, diagnostics, file lifecycle,
 print/export orchestration, desktop URI launching, Legal Notices, and shared dialog mechanics are common.
 FreeW application workflow/dialog contracts and FreeP Backstage/header-footer contracts have joined that frame;
-all three Avalonia apps now share startup lifetime policy and shared title contracts.
+all three Avalonia apps now share startup lifetime policy and shared title contracts. Autosave snapshot storage
+is shared already; the current queue consolidates the duplicated FreeP/FreeW session and recovery layers above it.
 
-### WS-E - Test and evidence infrastructure - final gates pending
+### WS-E - Test and evidence infrastructure - visual evidence current
 
 Repository/source location, temporary resources, localization contracts, parity capture, image comparison, and
 ownership guards are shared. Source guards defend architectural ownership; behavior tests remain preferred.
-Several integrated slices intentionally deferred focused or broad verification, and the final synchronized
-preflight/build/test/visual gates have not run.
+The 2026-08-22 FreeX WPF run captured and reviewed 116/116 surfaces. Focused tests and broader integration gates
+belong to the implementation slices that remain open.
 
 ## Remaining campaign queue
 
-1. Run final repository preflight, Release build, default test lane, WPF UI lane, and ribbon lane.
-2. Capture final FreeX WPF evidence and compare every baseline surface pixel-for-pixel.
-3. Fast-forward and push `main`, verify ancestry, and clean campaign-owned worktrees/branches.
+1. Extract the shared FreeP/FreeW recovery workflow and autosave session.
+2. Extract the shared autosave recovery planner.
+3. Extract shared atomic line-set storage and adopt it in both custom-dictionary stores.
+4. Re-audit the FreeP/FreeW Avalonia autosave adapters after the shared lifecycle lands.
+5. Run focused tests, regenerate residual metrics, integrate, push, and clean campaign-owned resources.
 
 ## Deliberate exceptions
 
@@ -116,4 +121,4 @@ lane, the UI lane when WPF behavior or UI infrastructure changed, and the focuse
 ribbon work. FreeX WPF must also be parity-captured against a clean pre-campaign `origin/main` baseline and
 the resulting manifests/images compared before merge.
 
-These final synchronized gates are active after code checkpoint `b9661deea0`.
+The latest classification and visual evidence are in `DEDUP-CERTIFICATION-2026-08-22.md`.
