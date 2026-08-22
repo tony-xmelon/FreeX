@@ -30,11 +30,12 @@ sync waits and copies analysis inputs to `/tmp` before image processing. The fir
 clipboard read also has a bounded retry for the observed focus-handoff race; exact expected values
 remain mandatory.
 
-The production failure was in `XlsxFileAdapter.Save`: `Sheet.FilterHiddenRows` was stamped as raw
-row `hidden="1"` in addition to the AutoFilter criteria. The saved package therefore conflated
-filter-owned visibility with manual/group visibility. Filter-owned rows are now represented only by
-AutoFilter criteria; manual and unsupported-native-filter raw hidden state continues through
-`Sheet.HiddenRows` and the existing load reclassification path.
+The production failure was in `XlsxFileAdapter.Save`: runtime-owned `Sheet.FilterHiddenRows` was
+stamped as raw row `hidden="1"` in addition to the AutoFilter criteria. Supported/materializable
+filter rows are now represented only by criteria. Explicit fresh-save/imported filter-hidden rows
+with no runtime owner retain their existing raw-hidden contract; manual rows continue through
+`HiddenRows`; and rows attributable only to unsupported native criteria are conditionally serialized
+from `FilterHiddenRows` so save-load-save remains faithful.
 
 Focused regression coverage verifies that a supported worksheet filter does not serialize its
 filter-owned row as raw hidden XML, while the existing load/clear and unsupported-filter tests remain
