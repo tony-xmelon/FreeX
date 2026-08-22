@@ -16,8 +16,8 @@
     "sourceSha256":  {
                          "freew/tools/FreeW.RibbonShot/Program.cs":  "bde41959da0f2ed44cc5d7c45300080bc3cb7dc5874ffc66014ec90782515c0f",
                          "freew/tools/FreeW.ShellVisualHarness.Avalonia/Program.cs":  "34dd75e8b50ac33e2c1a72ac98b6ced0e3925129a816282056a47d1381882807",
-                         "freew/FreeW.App.Host/MainWindow.cs":  "2a7b21d369c686820169b121ed1779c0e4095191f8834fe1c67a63177a1015ad",
-                         "freew/FreeW.App.Avalonia/MainWindow.cs":  "2697714bb0e33380746508b5c717827b369ca7ae5910584680b8d57d8f5791b8"
+                         "freew/FreeW.App.Host/MainWindow.cs":  "f27d5a71bb2cb39e4c8a2357202f347e6fc421f6d84dbc4937d96c8e0ab2d138",
+                         "freew/FreeW.App.Avalonia/MainWindow.cs":  "16c0d91d9c7e0015e8a3f33da1dd99ab45215dcb0c4e605cd01b3405d1dd077d"
                      },
     "pairedStaticChrome":  [
                                {
