@@ -77,9 +77,9 @@ Inventory scenarios: **512**. Captured WPF: **221**. Captured Avalonia: **291**.
 | `document-inspector.initial` | captured/captured | **genuine-visual-mismatch** | pass (2.8% painted) | pass (1.4% painted) | 3.97 % | 3.85 |  | heatmaps/document-inspector.initial.png |
 | `document-inspector.populated` | captured/captured | **genuine-visual-mismatch** | pass (2.8% painted) | pass (1.4% painted) | 3.97 % | 3.85 |  | heatmaps/document-inspector.populated.png |
 | `document-inspector.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (2.8% painted) | pass (1.4% painted) | 3.97 % | 3.85 |  | heatmaps/document-inspector.validation-error.png |
-| `draw-table-dimension.initial` | captured/captured | **semantic-mismatch** | pass (0.6% painted) | pass (0.3% painted) | 0.98 % | 1.22 | default-button,cancel-button,action-button-order | heatmaps/draw-table-dimension.initial.png |
-| `draw-table-dimension.populated` | captured/captured | **semantic-mismatch** | pass (0.6% painted) | pass (0.3% painted) | 0.98 % | 1.22 | default-button,cancel-button,action-button-order | heatmaps/draw-table-dimension.populated.png |
-| `draw-table-dimension.validation-error` | captured/captured | **semantic-mismatch** | pass (0.6% painted) | pass (0.3% painted) | 1.09 % | 1.34 | default-button,cancel-button,action-button-order | heatmaps/draw-table-dimension.validation-error.png |
+| `draw-table-dimension.initial` | captured/captured | **pass** | pass (0.7% painted) | pass (0.6% painted) | 1.26 % | 1.46 |  | heatmaps/draw-table-dimension.initial.png |
+| `draw-table-dimension.populated` | captured/captured | **pass** | pass (0.7% painted) | pass (0.6% painted) | 1.26 % | 1.46 |  | heatmaps/draw-table-dimension.populated.png |
+| `draw-table-dimension.validation-error` | captured/captured | **pass** | pass (0.7% painted) | pass (0.7% painted) | 1.37 % | 1.58 |  | heatmaps/draw-table-dimension.validation-error.png |
 | `drop-cap-options.initial` | captured/captured | **pass** | pass (1.3% painted) | pass (1.5% painted) | 2.83 % | 2.94 |  | heatmaps/drop-cap-options.initial.png |
 | `drop-cap-options.populated` | captured/captured | **pass** | pass (1.3% painted) | pass (1.5% painted) | 2.83 % | 2.94 |  | heatmaps/drop-cap-options.populated.png |
 | `drop-cap-options.validation-error` | captured/captured | **pass** | pass (1.3% painted) | pass (1.6% painted) | 2.88 % | 3.00 |  | heatmaps/drop-cap-options.validation-error.png |
