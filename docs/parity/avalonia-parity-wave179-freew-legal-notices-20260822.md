@@ -15,11 +15,13 @@ and scrollbar template differences preserved.
 
 ## Change
 
-The FreeW Avalonia `LegalNoticesDialog` now applies a route-local grayscale
-`TextRenderingMode.Antialias` at the dialog inheritance boundary and to the realized
-legal-document controls/presenters. The shared Avalonia dialog chrome, shared metrics,
-WPF authority, notice content, and all other routes are unchanged. The focused visual
-test locks the realized route-local policy by automation ID and rendering mode.
+The renderer-neutral FreeW presentation now opts into a route-local grayscale text
+policy. The shared Avalonia Legal Notices renderer maps that policy to
+`TextRenderingMode.Antialias` on the dialog and realized legal-document
+controls/presenters, preserving the thin FreeW platform wrapper. Shared dialog chrome,
+shared metrics, WPF authority, notice content, and all other routes are unchanged. The
+focused visual test locks the realized route-local policy by automation ID and rendering
+mode; the shared ownership guard locks the renderer boundary.
 
 ## Fresh route-local evidence
 
