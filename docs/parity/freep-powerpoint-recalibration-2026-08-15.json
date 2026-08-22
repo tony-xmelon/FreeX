@@ -14,12 +14,12 @@
                     "officeComparisonFailures":  0,
                     "wpfAverageMeanPercent":  1.1881,
                     "wpfMaximumMeanPercent":  4.521,
-                    "avaloniaAverageMeanPercent":  1.1823,
+                    "avaloniaAverageMeanPercent":  1.1799,
                     "avaloniaMaximumMeanPercent":  4.6503,
                     "rendererPairComparisons":  53,
                     "rendererPairFailures":  0,
-                    "rendererPairAverageMeanPercent":  0.6486,
-                    "rendererPairMaximumMeanPercent":  3.1324
+                    "rendererPairAverageMeanPercent":  0.6495,
+                    "rendererPairMaximumMeanPercent":  3.1808
                 },
     "limitation":  "Mean channel differences include native text antialiasing. All 53 slides use committed PowerPoint COM PNG references; the 15-smartart-grouped-list fixture and its ten Office references were regenerated and rerendered on 2026-08-20, while unaffected rows retain the 2026-08-16 current-source measurements. This corpus comparison does not cover PowerPoint UI or every feature.",
     "officeComparisons":  [
@@ -627,7 +627,7 @@
                                   "kind":  "avalonia",
                                   "deck":  "17-bullets-autofit",
                                   "slide":  "slide-02.png",
-                                  "meanPercent":  3.1232,
+                                  "meanPercent":  2.9976,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -1098,7 +1098,7 @@
                                 {
                                     "deck":  "17-bullets-autofit",
                                     "slide":  "slide-02.png",
-                                    "meanPercent":  3.1324,
+                                    "meanPercent":  3.1808,
                                     "exitCode":  0
                                 },
                                 {
