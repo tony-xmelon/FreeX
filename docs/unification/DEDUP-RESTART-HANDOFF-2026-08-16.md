@@ -1,5 +1,8 @@
 # Deduplication restart handoff - 2026-08-16
 
+> Superseded by `DEDUP-CERTIFICATION-2026-08-22.md`. The six candidates in this handoff are closed; the
+> newer certification records four post-checkpoint cross-app candidates and fresh 116-surface FreeX evidence.
+
 ## Integrated state
 
 - Architecture-residual integration commit before this update: `047144c3be`.
