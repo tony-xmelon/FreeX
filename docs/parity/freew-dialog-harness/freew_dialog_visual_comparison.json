@@ -10953,17 +10953,17 @@
     {
       "scenarioId": "symbol-picker.initial",
       "captureStatus": "captured/captured",
-      "classification": "genuine-visual-mismatch",
+      "classification": "pass",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 109532,
-        "changedRatio": 0.32598809523809524,
-        "meanAbsoluteChannelDelta": 11.754648809523802,
-        "p95AbsoluteChannelDelta": 34,
-        "luminanceSimilarity": 0.9063992050716827,
-        "perceptualHashDistance": 18
+        "changedPixels": 7400,
+        "changedRatio": 0.022023809523809525,
+        "meanAbsoluteChannelDelta": 1.8886428571428648,
+        "p95AbsoluteChannelDelta": 0,
+        "luminanceSimilarity": 0.9389599908416847,
+        "perceptualHashDistance": 3
       },
-      "semanticDifference": "focus",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/symbol-picker.initial.png",
       "note": null,
       "wpfContent": {
@@ -10972,17 +10972,17 @@
         "width": 560,
         "height": 600,
         "pixelCount": 336000,
-        "opaqueRatio": 0.91325,
-        "nearTransparentRatio": 0.08675,
+        "opaqueRatio": 0.9131994047619048,
+        "nearTransparentRatio": 0.08680059523809523,
         "nearBlackRatio": 0,
-        "dominantColorRatio": 0.9635654973733265,
-        "distinctColorCount": 224,
+        "dominantColorRatio": 0.9376374924633761,
+        "distinctColorCount": 178,
         "luminanceRange": 223.99999999999997,
-        "contentPixelRatio": 0.03281845238095238,
+        "contentPixelRatio": 0.0331875,
         "contentBounds": {
           "x": 10,
           "y": 10,
-          "width": 526,
+          "width": 525,
           "height": 272
         }
       },
@@ -10995,10 +10995,10 @@
         "opaqueRatio": 0.914875,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0,
-        "dominantColorRatio": 0.6446984040234485,
-        "distinctColorCount": 90,
+        "dominantColorRatio": 0.9645085524303997,
+        "distinctColorCount": 63,
         "luminanceRange": 223.99999999999997,
-        "contentPixelRatio": 0.3250565476190476,
+        "contentPixelRatio": 0.032470238095238094,
         "contentBounds": {
           "x": 10,
           "y": 10,
@@ -14705,8 +14705,8 @@
     }
   ],
   "counts": {
-    "genuine-visual-mismatch": 142,
-    "pass": 79,
+    "genuine-visual-mismatch": 141,
+    "pass": 80,
     "avalonia-extension": 70
   },
   "scope": {

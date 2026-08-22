@@ -200,7 +200,7 @@ Inventory scenarios: **512**. Captured WPF: **221**. Captured Avalonia: **291**.
 | `style.initial` | captured/captured | **genuine-visual-mismatch** | pass (25.5% painted) | pass (23.4% painted) | 10.70 % | 8.01 |  | heatmaps/style.initial.png |
 | `style.populated` | captured/captured | **genuine-visual-mismatch** | pass (25.7% painted) | pass (23.6% painted) | 10.80 % | 8.19 |  | heatmaps/style.populated.png |
 | `style.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (25.5% painted) | pass (23.4% painted) | 10.70 % | 8.01 |  | heatmaps/style.validation-error.png |
-| `symbol-picker.initial` | captured/captured | **genuine-visual-mismatch** | pass (3.3% painted) | pass (32.5% painted) | 32.60 % | 11.75 | focus | heatmaps/symbol-picker.initial.png |
+| `symbol-picker.initial` | captured/captured | **pass** | pass (3.3% painted) | pass (3.2% painted) | 2.20 % | 1.89 |  | heatmaps/symbol-picker.initial.png |
 | `table-formula.initial` | captured/captured | **genuine-visual-mismatch** | pass (4.8% painted) | pass (4.9% painted) | 3.08 % | 2.18 |  | heatmaps/table-formula.initial.png |
 | `table-formula.populated` | captured/captured | **genuine-visual-mismatch** | pass (4.8% painted) | pass (5.3% painted) | 3.46 % | 2.74 |  | heatmaps/table-formula.populated.png |
 | `table-formula.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (4.9% painted) | pass (5.1% painted) | 3.36 % | 2.43 |  | heatmaps/table-formula.validation-error.png |
