@@ -400,14 +400,14 @@
                                                                                            "currentSourceRevision":  "bc5cae61f0",
                                                                                            "wpfAverageMeanPercent":  1.1881,
                                                                                            "wpfMaximumMeanPercent":  4.521,
-                                                                                           "avaloniaAverageMeanPercent":  1.1823,
+                                                                                           "avaloniaAverageMeanPercent":  1.18,
                                                                                            "avaloniaMaximumMeanPercent":  4.6503,
-                                                                                           "rendererPairAverageMeanPercent":  0.6486,
-                                                                                           "rendererPairMaximumMeanPercent":  3.1324
+                                                                                           "rendererPairAverageMeanPercent":  0.6479,
+                                                                                           "rendererPairMaximumMeanPercent":  3.0952
                                                                                        },
                                               "claimBoundary":  "Route/scenario coverage, committed PNG manifests, and local WPF/Avalonia comparison results only; no PowerPoint visual-parity claim is made."
                                           },
-                     "nextSlice":  "The tracked PowerPoint corpus now has 53 COM-exported reference slides across 27 ready decks, with 0 deck missing references. The last current-source recalibration covers 53 paired Office slides and averages 1.1881% for WPF and 1.1823% for Avalonia, with maxima of 4.521% / 4.6503%. Recalibrate against all tracked references, then prioritize bullets/text-autofit and 3-D charts."
+                     "nextSlice":  "The tracked PowerPoint corpus now has 53 COM-exported reference slides across 27 ready decks, with 0 deck missing references. The last current-source recalibration covers 53 paired Office slides and averages 1.1881% for WPF and 1.1800% for Avalonia, with maxima of 4.521% / 4.6503%. Recalibrate against all tracked references, then prioritize bullets/text-autofit and 3-D charts."
                  }
              ]
 }
