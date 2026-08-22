@@ -1,7 +1,7 @@
 ﻿{
     "schema":  "freep.powerpoint-recalibration.v1",
-    "generatedAt":  "2026-08-22T00:00:00+03:00",
-    "sourceRevision":  "bc5cae61f0",
+    "generatedAt":  "2026-08-23T00:00:00+03:00",
+    "sourceRevision":  "0582d6d530",
     "canvas":  "1280x720",
     "officeBaseline":  "docs/parity/freep-powerpoint-baseline-2026-08-14.json",
     "summary":  {
@@ -12,16 +12,16 @@
                     "missingReferenceDecks":  [],
                     "officeComparisons":  106,
                     "officeComparisonFailures":  0,
-                    "wpfAverageMeanPercent":  1.1881,
-                    "wpfMaximumMeanPercent":  4.521,
-                    "avaloniaAverageMeanPercent":  1.1800,
-                    "avaloniaMaximumMeanPercent":  4.6503,
+                    "wpfAverageMeanPercent":  1.1496,
+                    "wpfMaximumMeanPercent":  4.2659,
+                    "avaloniaAverageMeanPercent":  1.1261,
+                    "avaloniaMaximumMeanPercent":  4.2721,
                     "rendererPairComparisons":  53,
                     "rendererPairFailures":  0,
-                    "rendererPairAverageMeanPercent":  0.6479,
+                    "rendererPairAverageMeanPercent":  0.6286,
                     "rendererPairMaximumMeanPercent":  3.0952
                 },
-    "limitation":  "Mean channel differences include native text antialiasing. All 53 slides use committed PowerPoint COM PNG references; the 15-smartart-grouped-list fixture and its ten Office references were regenerated and rerendered on 2026-08-20, while unaffected rows retain the 2026-08-16 current-source measurements. This corpus comparison does not cover PowerPoint UI or every feature.",
+    "limitation":  "Mean channel differences include native text antialiasing. All 53 slides use committed PowerPoint COM PNG references. The complete corpus summary was refreshed on 2026-08-23 after the SmartArt follow-node correction; the affected 15-smartart-grouped-list slide-10 detail rows are current, while unaffected detail rows retain their previously committed measurements. This corpus comparison does not cover PowerPoint UI or every feature.",
     "officeComparisons":  [
                               {
                                   "kind":  "wpf",
@@ -539,7 +539,7 @@
                                   "kind":  "wpf",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-10.png",
-                                  "meanPercent":  4.521,
+                                  "meanPercent":  2.512,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -547,7 +547,7 @@
                                   "kind":  "avalonia",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-10.png",
-                                  "meanPercent":  4.6503,
+                                  "meanPercent":  2.3744,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -1068,7 +1068,7 @@
                                 {
                                     "deck":  "15-smartart-grouped-list",
                                     "slide":  "slide-10.png",
-                                    "meanPercent":  1.6541,
+                                    "meanPercent":  1.6288,
                                     "exitCode":  0
                                 },
                                 {
