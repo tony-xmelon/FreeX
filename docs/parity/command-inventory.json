@@ -708,7 +708,7 @@
         {
           "name": "Chart (treemap/sunburst/histogram/Pareto/box-and-whisker/waterfall/funnel/true 3D surface mesh)",
           "status": "Partial",
-          "notes": "Treemap, sunburst, histogram, Pareto, box-and-whisker, waterfall, and funnel now have model/render/XLSX paths and are covered by the 28-case chart interop harness; chartEx passed 7/7 openability/export and visual gate in the final 2026-06-01 evidence. Surface has package, matrix-rendering, and Insert/Change Chart picker support. Map Chart and true 3D mesh-style surface remain deferred/hidden until authoring/rendering scope is productized."
+          "notes": "Treemap, sunburst, histogram, Pareto, box-and-whisker, waterfall, and funnel now have model/render/XLSX paths and are covered by the 28-case chart interop harness; chartEx passed 7/7 openability/export and visual gate in the final 2026-06-01 evidence. Surface has package, matrix-rendering, and Insert/Change Chart picker support. Map Chart is explicitly out of scope for the current parity goal and remains hidden until a separately approved geospatial model, dataset/licensing policy, renderer, and XLSX authoring contract exist; true 3D mesh-style surface remains deferred."
         },
         {
           "name": "Recommended Charts",
@@ -779,7 +779,7 @@
         {
           "name": "Freehand Ink",
           "status": "Excluded",
-          "notes": "Out of scope and not surfaced in the ribbon"
+          "notes": "Explicitly out of scope for the current parity goal: worksheet Ink authoring/display/editing and InkML/contentPart interpretation. Workbook-level Ink visibility metadata may persist, but no Draw-ribbon Ink command is surfaced."
         },
         {
           "name": "Bring Forward/Send Backward",
