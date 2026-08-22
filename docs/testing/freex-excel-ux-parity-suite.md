@@ -24,6 +24,14 @@ The active Codex goal tracker now points at this UX parity workstream; this docu
 - Microsoft cloud services, online templates, co-authoring, identity, SharePoint-only workflows, and web-backed linked data.
 - VBA/macro execution, Office Scripts, COM add-ins, and proprietary automation runtimes.
 - External connections, Power Query, Data Model, and OLAP unless a later goal explicitly opts them back in.
+- Worksheet Ink authoring, display, editing, and InkML/contentPart interpretation. Workbook-level Ink visibility metadata is retained, but no worksheet Ink renderer or command surface is in scope.
+- Map Chart authoring and rendering. Existing package preservation remains available where possible; a future Map Chart feature requires an approved geospatial model, dataset/licensing policy, renderer, and XLSX authoring contract.
+
+## Resume Priorities
+
+The focused FreeX/FreeW/FreeP adaptive-ribbon pass and FreeX legacy Form Controls authoring, interaction, rendering, undo/redo, and XLSX round-trip work are complete.
+
+Resume from evidence-producing paired foreground UX validation: capture real Excel/FreeX comparisons, log only reproducible visual or behavioral gaps, and prioritize narrow fixes to ribbon/chrome, dialogs, grid interactions, and persistence. Do not reopen Map Chart or worksheet Ink work without an explicit scope decision and the required source artifacts.
 
 ## First Runner
 
