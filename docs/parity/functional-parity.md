@@ -10,8 +10,8 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 
 | Metric | Count |
 |---|---:|
-| Total commands | 566 |
-| PARITY (both) | 560 |
+| Total commands | 574 |
+| PARITY (both) | 568 |
 | AVALONIA-MISSING | 0 |
 | WPF-MISSING | 6 |
 | BOTH-MISSING | 0 |
@@ -439,6 +439,14 @@ See `functional-parity-classification.md` for the prioritized implementation lis
 | Stacked Column Chart | Charts | Insert | yes | yes | PARITY |
 | Stock Chart | Charts | Insert | yes | yes | PARITY |
 | Comment | Comments | Insert | yes | yes | PARITY |
+| insert.formControl.button | Controls | Insert | yes | yes | PARITY |
+| insert.formControl.checkBox | Controls | Insert | yes | yes | PARITY |
+| insert.formControl.dropDown | Controls | Insert | yes | yes | PARITY |
+| insert.formControl.listBox | Controls | Insert | yes | yes | PARITY |
+| insert.formControl.optionButton | Controls | Insert | yes | yes | PARITY |
+| insert.formControl.scrollBar | Controls | Insert | yes | yes | PARITY |
+| insert.formControl.spinner | Controls | Insert | yes | yes | PARITY |
+| insert.formControls | Controls | Insert | yes | yes | PARITY |
 | Insert Timeline | Filters | Insert | yes | yes | PARITY |
 | Insert Link | Links | Insert | yes | yes | PARITY |
 | Column Sparkline | Sparklines | Insert | yes | yes | PARITY |
