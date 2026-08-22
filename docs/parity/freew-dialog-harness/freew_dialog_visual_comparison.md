@@ -152,9 +152,9 @@ Inventory scenarios: **512**. Captured WPF: **221**. Captured Avalonia: **291**.
 | `mark-index-entry.initial` | captured/captured | **genuine-visual-mismatch** | pass (4.8% painted) | pass (7.1% painted) | 10.54 % | 4.99 |  | heatmaps/mark-index-entry.initial.png |
 | `mark-index-entry.populated` | captured/captured | **genuine-visual-mismatch** | pass (4.8% painted) | pass (6.9% painted) | 10.36 % | 5.20 |  | heatmaps/mark-index-entry.populated.png |
 | `mark-index-entry.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (4.8% painted) | pass (7.2% painted) | 10.65 % | 5.09 |  | heatmaps/mark-index-entry.validation-error.png |
-| `multilevel-list.initial` | captured/captured | **genuine-visual-mismatch** | pass (23.3% painted) | pass (21.8% painted) | 25.44 % | 11.05 |  | heatmaps/multilevel-list.initial.png |
-| `multilevel-list.populated` | captured/captured | **genuine-visual-mismatch** | pass (23.3% painted) | pass (21.8% painted) | 25.44 % | 11.05 |  | heatmaps/multilevel-list.populated.png |
-| `multilevel-list.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (23.3% painted) | pass (21.9% painted) | 25.53 % | 11.14 |  | heatmaps/multilevel-list.validation-error.png |
+| `multilevel-list.initial` | captured/captured | **genuine-visual-mismatch** | pass (23.0% painted) | pass (22.8% painted) | 3.95 % | 4.03 |  | heatmaps/multilevel-list.initial.png |
+| `multilevel-list.populated` | captured/captured | **genuine-visual-mismatch** | pass (23.0% painted) | pass (22.8% painted) | 3.95 % | 4.03 |  | heatmaps/multilevel-list.populated.png |
+| `multilevel-list.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (23.1% painted) | pass (23.0% painted) | 4.17 % | 4.27 |  | heatmaps/multilevel-list.validation-error.png |
 | `options.initial` | captured/captured | **genuine-visual-mismatch** | pass (4.0% painted) | pass (4.3% painted) | 4.78 % | 3.50 |  | heatmaps/options.initial.png |
 | `options.populated` | captured/captured | **genuine-visual-mismatch** | pass (4.0% painted) | pass (4.3% painted) | 4.81 % | 3.53 |  | heatmaps/options.populated.png |
 | `options.tab-auto-correct` | captured/captured | **genuine-visual-mismatch** | pass (7.7% painted) | pass (8.8% painted) | 10.48 % | 9.13 |  | heatmaps/options.tab-auto-correct.png |
