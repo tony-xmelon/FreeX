@@ -2,7 +2,7 @@
   "schema": "freex.parity.functional.classification.v1",
   "sourceSchema": "freex.parity.functional.v1",
   "summary": {
-    "totalCommands": 565,
+    "totalCommands": 566,
     "nonParityCommands": 6,
     "avaloniaMissing": 0,
     "wpfMissing": 6,

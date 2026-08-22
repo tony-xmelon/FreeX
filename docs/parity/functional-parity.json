@@ -1,8 +1,8 @@
 {
   "schema": "freex.parity.functional.v1",
   "summary": {
-    "totalCommands": 565,
-    "parity": 559,
+    "totalCommands": 566,
+    "parity": 560,
     "avaloniaMissing": 0,
     "wpfMissing": 6,
     "bothMissing": 0,
@@ -364,6 +364,7 @@
     { "id": "Shape Gradient", "tab": "Draw", "group": "Format", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Shapes", "tab": "Draw", "group": "Illustrations", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Share", "tab": "Review", "group": "Protect", "wpf": true, "avalonia": true, "status": "PARITY" },
+    { "id": "Show Changes", "tab": "Review", "group": "Changes", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Show Comments", "tab": "Review", "group": "Comments", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Show Detail", "tab": "Data", "group": "Outline", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Show Details", "tab": "PivotTable Analyze", "group": "Active Field", "wpf": true, "avalonia": true, "status": "PARITY" },

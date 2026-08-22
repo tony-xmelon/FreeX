@@ -10,8 +10,8 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 
 | Metric | Count |
 |---|---:|
-| Total commands | 565 |
-| PARITY (both) | 559 |
+| Total commands | 566 |
+| PARITY (both) | 560 |
 | AVALONIA-MISSING | 0 |
 | WPF-MISSING | 6 |
 | BOTH-MISSING | 0 |
@@ -532,6 +532,7 @@ See `functional-parity-classification.md` for the prioritized implementation lis
 | pivot.chart.changeType | Tools | PivotTable Analyze | yes | yes | PARITY |
 | Alt Text | Accessibility | Review | yes | yes | PARITY |
 | Check Accessibility | Accessibility | Review | yes | yes | PARITY |
+| Show Changes | Changes | Review | yes | yes | PARITY |
 | Delete Comment | Comments | Review | yes | yes | PARITY |
 | New Comment | Comments | Review | yes | yes | PARITY |
 | Next Comment | Comments | Review | yes | yes | PARITY |

@@ -421,6 +421,7 @@
     { "id": "Workbook Statistics", "tab": "Review", "group": "Proofing", "controlKind": "Button", "display": "Workbook Statistics", "keyTip": "W", "contextual": false, "menuItem": false },
     { "id": "Check Accessibility", "tab": "Review", "group": "Accessibility", "controlKind": "Button", "display": "Check Accessibility", "keyTip": "CA", "contextual": false, "menuItem": false },
     { "id": "Alt Text", "tab": "Review", "group": "Accessibility", "controlKind": "Button", "display": "Alt Text", "keyTip": "T", "contextual": false, "menuItem": false },
+    { "id": "Show Changes", "tab": "Review", "group": "Changes", "controlKind": "Button", "display": "Show Changes", "keyTip": "CH", "contextual": false, "menuItem": false },
     { "id": "New Comment", "tab": "Review", "group": "Comments", "controlKind": "Button", "display": "New Comment", "keyTip": "CM", "contextual": false, "menuItem": false },
     { "id": "Delete Comment", "tab": "Review", "group": "Comments", "controlKind": "Button", "display": "Delete Comment", "keyTip": "XC", "contextual": false, "menuItem": false },
     { "id": "Previous Comment", "tab": "Review", "group": "Comments", "controlKind": "Button", "display": "Previous Comment", "keyTip": "PC", "contextual": false, "menuItem": false },
