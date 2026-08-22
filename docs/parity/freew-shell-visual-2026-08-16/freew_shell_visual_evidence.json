@@ -14,7 +14,7 @@
                       "avalonia":  "Avalonia headless Skia (UseHeadlessDrawing=false)"
                   },
     "sourceSha256":  {
-                         "freew/tools/FreeW.RibbonShot/Program.cs":  "d9483e0173bfbe8b30cc3e98cef96d8b00c37247fc288aa58073adff76ab48d7",
+                         "freew/tools/FreeW.RibbonShot/Program.cs":  "bde41959da0f2ed44cc5d7c45300080bc3cb7dc5874ffc66014ec90782515c0f",
                          "freew/tools/FreeW.ShellVisualHarness.Avalonia/Program.cs":  "34dd75e8b50ac33e2c1a72ac98b6ced0e3925129a816282056a47d1381882807",
                          "freew/FreeW.App.Host/MainWindow.cs":  "2a7b21d369c686820169b121ed1779c0e4095191f8834fe1c67a63177a1015ad",
                          "freew/FreeW.App.Avalonia/MainWindow.cs":  "2697714bb0e33380746508b5c717827b369ca7ae5910584680b8d57d8f5791b8"
