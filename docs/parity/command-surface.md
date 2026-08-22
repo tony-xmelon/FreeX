@@ -257,7 +257,7 @@ Backstage key tips are prefix-free for exact-first routing in both WPF and Avalo
 | Screenshot | Excluded | OS-level feature (Win+Shift+S) |
 | Chart (column/bar/line/area/pie/doughnut/scatter/bubble) | Implemented | Select Data Source, Move Chart, Insert Chart, and chart format dialogs expose keyboard access keys for modeled fields and option controls |
 | Chart (stock/radar) | Implemented | Model, ribbon insertion, renderer, and XLSX read/write paths implemented |
-| Chart (treemap/sunburst/histogram/Pareto/box-and-whisker/waterfall/funnel/true 3D surface mesh) | Partial | Treemap, sunburst, histogram, Pareto, box-and-whisker, waterfall, and funnel now have model/render/XLSX paths and are covered by the 28-case chart interop harness; chartEx passed 7/7 openability/export and visual gate in the final 2026-06-01 evidence. Surface has package, matrix-rendering, and Insert/Change Chart picker support. Map Chart and true 3D mesh-style surface remain deferred/hidden until authoring/rendering scope is productized. |
+| Chart (treemap/sunburst/histogram/Pareto/box-and-whisker/waterfall/funnel/true 3D surface mesh) | Partial | Treemap, sunburst, histogram, Pareto, box-and-whisker, waterfall, and funnel now have model/render/XLSX paths and are covered by the 28-case chart interop harness; chartEx passed 7/7 openability/export and visual gate in the final 2026-06-01 evidence. Surface has package, matrix-rendering, and Insert/Change Chart picker support. Map Chart is explicitly out of scope for the current parity goal and remains hidden until a separately approved geospatial model, dataset/licensing policy, renderer, and XLSX authoring contract exist; true 3D mesh-style surface remains deferred. |
 | Recommended Charts | Excluded | Excel-equivalent recommendations require proprietary Microsoft-style data-pattern heuristics; normal chart authoring remains implemented/partial by chart family |
 | Sparklines (line/column/win-loss) | Implemented |  |
 | Text Box | Implemented |  |
@@ -285,7 +285,7 @@ workbook command behavior to track here.
 | Rectangle | Implemented |  |
 | Ellipse | Implemented |  |
 | Line | Implemented |  |
-| Freehand Ink | Excluded | Out of scope and not surfaced in the ribbon |
+| Freehand Ink | Excluded | Explicitly out of scope for the current parity goal: worksheet Ink authoring/display/editing and InkML/contentPart interpretation. Workbook-level Ink visibility metadata may persist, but no Draw-ribbon Ink command is surfaced. |
 | Bring Forward/Send Backward | Implemented |  |
 | Object Size/Rotation (command-based) | Implemented |  |
 | Fill Color | Implemented | Shared color picker exposes custom color and button access keys. |
