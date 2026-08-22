@@ -1,7 +1,7 @@
 ﻿{
     "schema":  "freep.powerpoint-recalibration.v1",
-    "generatedAt":  "2026-08-20T00:00:00+03:00",
-    "sourceRevision":  "71d317e0d8",
+    "generatedAt":  "2026-08-22T00:00:00+03:00",
+    "sourceRevision":  "bc5cae61f0",
     "canvas":  "1280x720",
     "officeBaseline":  "docs/parity/freep-powerpoint-baseline-2026-08-14.json",
     "summary":  {
@@ -14,11 +14,11 @@
                     "officeComparisonFailures":  0,
                     "wpfAverageMeanPercent":  1.1881,
                     "wpfMaximumMeanPercent":  4.521,
-                    "avaloniaAverageMeanPercent":  1.1826,
+                    "avaloniaAverageMeanPercent":  1.1823,
                     "avaloniaMaximumMeanPercent":  4.6503,
                     "rendererPairComparisons":  53,
                     "rendererPairFailures":  0,
-                    "rendererPairAverageMeanPercent":  0.6485,
+                    "rendererPairAverageMeanPercent":  0.6486,
                     "rendererPairMaximumMeanPercent":  3.1324
                 },
     "limitation":  "Mean channel differences include native text antialiasing. All 53 slides use committed PowerPoint COM PNG references; the 15-smartart-grouped-list fixture and its ten Office references were regenerated and rerendered on 2026-08-20, while unaffected rows retain the 2026-08-16 current-source measurements. This corpus comparison does not cover PowerPoint UI or every feature.",
@@ -611,7 +611,7 @@
                                   "kind":  "avalonia",
                                   "deck":  "17-bullets-autofit",
                                   "slide":  "slide-01.png",
-                                  "meanPercent":  0.8537,
+                                  "meanPercent":  0.8339,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -1092,7 +1092,7 @@
                                 {
                                     "deck":  "17-bullets-autofit",
                                     "slide":  "slide-01.png",
-                                    "meanPercent":  0.8386,
+                                    "meanPercent":  0.8439,
                                     "exitCode":  0
                                 },
                                 {
