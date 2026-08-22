@@ -19,9 +19,12 @@ The ambiguity is resolved: the popup reports `overlay-layer` at `64,214` with
 the required `208x136` bounds. The physical result remains honestly failing at
 `0/1` for the parity crop and `0/8` for dropdown interaction because the overlay
 content is blank in the root capture and emits no `object-selected` events.
-Managed Name Box tests remain `16/16` passing and the production build passes
-with zero warnings and errors. The next FreeX slice must repair overlay
-rasterization/input rather than add more native-window heuristics.
+Physical evidence is linked into the production executable only when the Docker
+runner sets `FreeXPhysicalEvidence=true`; normal shipping builds exclude the
+instrumentation implementation. Managed Name Box tests remain `16/16` passing
+and the production build passes with zero warnings and errors. The next FreeX
+slice must repair overlay rasterization/input rather than add more native-window
+heuristics.
 
 ## FreeW: Font dialog geometry
 
@@ -56,3 +59,17 @@ Functional inventory parity remains complete for the generated inputs. The
 next visual/physical work remains FreeX's blank/non-interactive Linux overlay,
 FreeW's classified dialog and Word-reference mismatches, and FreeP's residual
 native text and complex-rendering differences against WPF and PowerPoint.
+
+## Verification
+
+- Repository preflight passed, including generated evidence, packaging checks,
+  and the 13,591-file conflict-marker scan.
+- The serial Release solution build passed with zero warnings and errors.
+- Integrated focused lanes passed: 16 managed Name Box tests, 4 Name Box source
+  guards, 3 FreeW Font dialog tests, 1 FreeP Aptos policy test, and all 8
+  deterministic integration-gate tests.
+- The default non-UI lane exposed nine failures. Eight deterministic source and
+  ownership contracts were corrected and rerun successfully. The remaining
+  `GridCaptureTests.CaptureGridRange_WritesPngAndJsonLog_ForNewWorkbook` failure
+  reproduces alone because this Windows headless environment emits an empty PNG;
+  no assertion or product threshold was weakened to hide it.
