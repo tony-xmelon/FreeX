@@ -869,6 +869,7 @@
                                                    "src\\FreeX.App.Presentation\\Charts\\ChartViewportCellAccessorBuilder.cs",
                                                    "src\\FreeX.App.Presentation\\Charts\\Geometry.cs",
                                                    "src\\FreeX.App.Presentation\\Charts\\LegendLayoutBuilder.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\RecommendedChartPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\Charts\\TrendlineAnnotationFormatter.cs",
                                                    "src\\FreeX.App.Presentation\\Charts\\TrendlineCalculator.cs",
                                                    "src\\FreeX.App.Presentation\\Charts\\TrendlineProjectionPlanner.cs",
