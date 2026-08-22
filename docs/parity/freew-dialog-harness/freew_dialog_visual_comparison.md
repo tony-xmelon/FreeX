@@ -170,9 +170,9 @@ Inventory scenarios: **512**. Captured WPF: **221**. Captured Avalonia: **291**.
 | `page-setup.tab-margins` | captured/captured | **genuine-visual-mismatch** | pass (15.5% painted) | pass (14.8% painted) | 9.66 % | 6.10 |  | heatmaps/page-setup.tab-margins.png |
 | `page-setup.tab-paper` | captured/captured | **genuine-visual-mismatch** | pass (5.6% painted) | pass (5.2% painted) | 4.46 % | 2.99 |  | heatmaps/page-setup.tab-paper.png |
 | `page-setup.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (15.6% painted) | pass (14.8% painted) | 9.77 % | 6.21 |  | heatmaps/page-setup.validation-error.png |
-| `paragraph.initial` | captured/captured | **genuine-visual-mismatch** | pass (11.3% painted) | pass (11.0% painted) | 16.36 % | 12.02 |  | heatmaps/paragraph.initial.png |
-| `paragraph.populated` | captured/captured | **genuine-visual-mismatch** | pass (11.3% painted) | pass (11.0% painted) | 16.36 % | 12.02 |  | heatmaps/paragraph.populated.png |
-| `paragraph.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (11.5% painted) | pass (11.4% painted) | 16.88 % | 12.55 |  | heatmaps/paragraph.validation-error.png |
+| `paragraph.initial` | captured/captured | **genuine-visual-mismatch** | pass (12.4% painted) | pass (11.3% painted) | 12.43 % | 10.34 |  | heatmaps/paragraph.initial.png |
+| `paragraph.populated` | captured/captured | **genuine-visual-mismatch** | pass (12.4% painted) | pass (11.3% painted) | 12.43 % | 10.34 |  | heatmaps/paragraph.populated.png |
+| `paragraph.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (12.5% painted) | pass (12.1% painted) | 13.13 % | 11.06 |  | heatmaps/paragraph.validation-error.png |
 | `password-prompt.initial` | captured/captured | **pass** | pass (0.5% painted) | pass (0.7% painted) | 1.13 % | 1.41 |  | heatmaps/password-prompt.initial.png |
 | `password-prompt.populated` | captured/captured | **pass** | pass (0.6% painted) | pass (0.7% painted) | 1.17 % | 1.44 |  | heatmaps/password-prompt.populated.png |
 | `paste-special.initial` | captured/captured | **genuine-visual-mismatch** | pass (10.3% painted) | pass (11.5% painted) | 8.76 % | 7.14 |  | heatmaps/paste-special.initial.png |
