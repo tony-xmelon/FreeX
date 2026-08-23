@@ -89,9 +89,9 @@ Inventory scenarios: **512**. Captured WPF: **221**. Captured Avalonia: **291**.
 | `find-replace.initial` | captured/captured | **genuine-visual-mismatch** | pass (4.9% painted) | pass (5.1% painted) | 7.10 % | 4.20 |  | heatmaps/find-replace.initial.png |
 | `find-replace.populated` | captured/captured | **genuine-visual-mismatch** | pass (4.9% painted) | pass (5.1% painted) | 7.15 % | 4.26 |  | heatmaps/find-replace.populated.png |
 | `find-replace.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (5.0% painted) | pass (5.2% painted) | 7.23 % | 4.35 |  | heatmaps/find-replace.validation-error.png |
-| `font.initial` | captured/captured | **genuine-visual-mismatch** | pass (11.5% painted) | pass (9.7% painted) | 6.72 % | 6.65 |  | heatmaps/font.initial.png |
-| `font.populated` | captured/captured | **genuine-visual-mismatch** | pass (11.5% painted) | pass (9.7% painted) | 6.81 % | 6.74 |  | heatmaps/font.populated.png |
-| `font.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (11.6% painted) | pass (9.8% painted) | 6.93 % | 6.89 |  | heatmaps/font.validation-error.png |
+| `font.initial` | captured/captured | **genuine-visual-mismatch** | pass (11.5% painted) | pass (9.7% painted) | 6.37 % | 5.96 |  | heatmaps/font.initial.png |
+| `font.populated` | captured/captured | **genuine-visual-mismatch** | pass (11.5% painted) | pass (9.7% painted) | 6.46 % | 6.04 |  | heatmaps/font.populated.png |
+| `font.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (11.6% painted) | pass (9.8% painted) | 6.58 % | 6.20 |  | heatmaps/font.validation-error.png |
 | `footnote-endnote-options.initial` | captured/captured | **genuine-visual-mismatch** | pass (13.7% painted) | pass (13.8% painted) | 8.41 % | 4.71 |  | heatmaps/footnote-endnote-options.initial.png |
 | `footnote-endnote-options.populated` | captured/captured | **genuine-visual-mismatch** | pass (13.7% painted) | pass (13.8% painted) | 8.60 % | 4.87 |  | heatmaps/footnote-endnote-options.populated.png |
 | `footnote-endnote-options.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (13.8% painted) | pass (14.1% painted) | 8.76 % | 5.18 |  | heatmaps/footnote-endnote-options.validation-error.png |
