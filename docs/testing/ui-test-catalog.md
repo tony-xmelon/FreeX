@@ -62,7 +62,7 @@ Each surface is tracked with these states:
 | Menu/toolbar in-scope rows | 200 | From `parity/command-inventory.json`: Implemented + Partial menu/toolbar rows (174 Implemented + 26 Partial of 225 total, 25 Excluded). Includes the current Draw tab menu/toolbar delta. |
 | Top-level ribbon/backstage tabs | 10 | File, Home, Insert, Draw, Page Layout, Formulas, Data, Review, View, Help. |
 | Contextual ribbon tab declarations | 7 | Shape Format, Picture Format, Chart Design, Format, Table Design, PivotTable Analyze, Design from `FreeXRibbon` shared definitions. |
-| Dialog source classes | 119 | Unique `*Dialog` class/x:Class names in `src/FreeX.App.Host`. |
+| Dialog source classes | 121 | Unique `*Dialog` class/x:Class names in `src/FreeX.App.Host`. |
 | XAML click-wired controls | 40 | Renderer-specific `Click="..."` occurrences remaining in `src/FreeX.App.Host/MainWindow.xaml`. |
 | Explicit UIA automation ids | 35 | Renderer-specific `AutomationProperties.AutomationId="..."` declarations remaining in `src/FreeX.App.Host/MainWindow.xaml`. |
 | Ribbon keytip metadata declarations | 14 | Renderer-specific `RibbonTooltip.KeyTip="..."` declarations remaining in `src/FreeX.App.Host/MainWindow.xaml`. |
