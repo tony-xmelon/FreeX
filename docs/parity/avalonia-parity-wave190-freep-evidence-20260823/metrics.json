@@ -1,0 +1,146 @@
+{
+  "schema": "freep.parity.wave190.increasing-circle-origin.v1",
+  "date": "2026-08-23",
+  "source": {
+    "baseRevision": "2aef931ca017f5c3755d86b302099597c72947db",
+    "acceptedCorrectionRevision": "f27b90c3dd",
+    "aptosQualificationRevision": "01a8703c11",
+    "deck": "tools/FreeP.RenderCompare/corpus/15-smartart-grouped-list.pptx",
+    "slide": 9,
+    "width": 1280,
+    "height": 720
+  },
+  "authority": {
+    "kind": "committed-powerpoint-com-png",
+    "path": "tools/FreeP.RenderCompare/corpus/pptx-ref/15-smartart-grouped-list/slide-09.png",
+    "powerPointComAvailableForFollowUp": false
+  },
+  "predicate": {
+    "topologyFlagRequired": "UseImportedIncreasingCircleTextRaster",
+    "literalVisibleLabelInspected": false,
+    "fileNameInspected": false,
+    "screenshotHashInspectedAtRuntime": false,
+    "resolvedLayout": {
+      "paragraphCount": 1,
+      "runCountPerParagraph": 1,
+      "fontFamily": "Aptos",
+      "fontSizePt": 44.0,
+      "regular": true,
+      "autoFit": "None",
+      "storedFontScale": false,
+      "fontScale": 1.0,
+      "bullet": "None",
+      "paragraphAlign": "Left",
+      "paragraphLevel": 0,
+      "rightToLeft": false,
+      "lineSpacingPercent": null,
+      "lineSpacingPointsExact": null,
+      "tabs": 0,
+      "runEffects": false,
+      "body3dEffects": false,
+      "warp": null,
+      "verticalType": "Horizontal",
+      "wrap": true,
+      "columnCount": 1,
+      "columnSpacingEmu": 1270,
+      "insetsEmu": {
+        "left": 111760,
+        "top": 111760,
+        "right": 111760,
+        "bottom": 111760
+      }
+    },
+    "measuredFrames": [
+      {
+        "anchor": "Top",
+        "widthEmu": 2500245,
+        "heightEmu": 3556686,
+        "sourceShapeCount": 2
+      },
+      {
+        "anchor": "Bottom",
+        "widthEmu": 2500245,
+        "heightEmu": 845153,
+        "sourceShapeCount": 2
+      }
+    ],
+    "calibration": {
+      "fontScale": 0.93,
+      "originOffsetYDip": -4.0
+    }
+  },
+  "metricsPercentOf255": {
+    "beforeWave190": {
+      "wpfOffice": 0.9662,
+      "avaloniaOffice": 1.5440,
+      "wpfAvalonia": 1.3657
+    },
+    "acceptedWave190": {
+      "wpfOffice": 0.9662,
+      "avaloniaOffice": 0.8675,
+      "wpfAvalonia": 0.8540
+    },
+    "signatureGateFollowUp": {
+      "wpfOffice": 0.9662,
+      "avaloniaOffice": 0.8675,
+      "wpfAvalonia": 0.8540
+    },
+    "smartArtRoi": {
+      "x": 60,
+      "y": 60,
+      "width": 880,
+      "height": 180,
+      "before": 7.3109,
+      "after": 3.3749
+    }
+  },
+  "hashes": {
+    "sourceDeckSha256": "c1a1822c03bbe139cd58290745fa1e3a4d55331122519b3c5d0875759e2bda03",
+    "officeReferenceSha256": "3d38f17c29033f835e27264f71105cf3c02fb18d8e7b6cb1dc5425dc9c6767ad",
+    "wpfAfterSha256": "285e9f4aa9014e704a01df1ede731e2f63e448245cf8b04d642f2bd727967e70",
+    "avaloniaAfterSha256": "3292631276611b64c951f7d4f1cd3f287f6706774e151b25ab30cecf166ef0eb",
+    "avaloniaOfficeDiffSha256": "f2d2b1b795624914553799e3e6de5cfc1c3b07bd1897a2e4a7f7c22e1ac54b7c"
+  },
+  "committedArtifacts": [
+    {
+      "path": "docs/parity/avalonia-parity-wave190-freep-evidence-20260823/avalonia-slide-09.png",
+      "bytes": 37606,
+      "sha256": "3292631276611b64c951f7d4f1cd3f287f6706774e151b25ab30cecf166ef0eb"
+    },
+    {
+      "path": "docs/parity/avalonia-parity-wave190-freep-evidence-20260823/avalonia-office-slide-09-diff.png",
+      "bytes": 44288,
+      "sha256": "f2d2b1b795624914553799e3e6de5cfc1c3b07bd1897a2e4a7f7c22e1ac54b7c"
+    }
+  ],
+  "controls": {
+    "deck15ByteStableAgainst01a8703c11": {
+      "wpfSlides": 10,
+      "avaloniaSlides": 10
+    },
+    "06-charts": [
+      { "slide": 1, "wpfOffice": 0.9846, "avaloniaOffice": 0.9375, "wpfAvalonia": 0.4242 },
+      { "slide": 2, "wpfOffice": 1.2449, "avaloniaOffice": 1.1365, "wpfAvalonia": 0.3599 },
+      { "slide": 3, "wpfOffice": 0.6149, "avaloniaOffice": 0.5839, "wpfAvalonia": 0.2974 },
+      { "slide": 4, "wpfOffice": 1.2552, "avaloniaOffice": 1.1998, "wpfAvalonia": 0.4455 }
+    ],
+    "14-smartart-live": [
+      { "slide": 1, "wpfOffice": 1.3451, "avaloniaOffice": 1.3124, "wpfAvalonia": 1.1567 },
+      { "slide": 2, "wpfOffice": 1.5158, "avaloniaOffice": 1.5689, "wpfAvalonia": 1.0093 },
+      { "slide": 3, "wpfOffice": 0.7149, "avaloniaOffice": 0.7043, "wpfAvalonia": 0.2878 },
+      { "slide": 4, "wpfOffice": 1.7017, "avaloniaOffice": 1.7286, "wpfAvalonia": 0.5210 }
+    ],
+    "26-chart-surface3d-default-tall-frame": [
+      { "slide": 1, "wpfOffice": 2.4757, "avaloniaOffice": 2.2723, "wpfAvalonia": 1.0104 }
+    ]
+  },
+  "verification": {
+    "focusedAvalonia": { "passed": 17, "failed": 0 },
+    "fullAvalonia": { "passed": 288, "failed": 0 },
+    "focusedPresentation": { "passed": 445, "failed": 0 },
+    "renderCompareEvidence": { "passed": 7, "failed": 0 },
+    "renderCompareBuildWarnings": 0,
+    "renderCompareBuildErrors": 0
+  },
+  "claimBoundary": "The committed Office PNG is authoritative. The -4 DIP correction is admitted only for the exact resolved source signature above. No claim is made for other font sizes, autofit modes, bullets, effects, text geometry, PowerPoint UI behavior, or a live COM export on this host."
+}

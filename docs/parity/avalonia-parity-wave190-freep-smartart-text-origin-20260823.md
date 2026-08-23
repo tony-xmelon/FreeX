@@ -9,12 +9,19 @@ Office authority: `tools/FreeP.RenderCompare/corpus/pptx-ref/15-smartart-grouped
 
 Avalonia now applies a measured `-4.0` DIP paint-origin correction to text only
 when the compositor's `UseImportedIncreasingCircleTextRaster` flag is true and
-every visible run is Aptos. The same Aptos-only predicate gates both the font
-scale and origin offset. The compositor flag is emitted only for the
-authoritative imported cache topology: live layout unsupported,
-`/IncreasingCircleProcess` identity, exactly 12 cached shapes, 3 ellipses, 3
-chords, 6 rectangles, and exactly 4 text-bearing rectangles. The correction
-does not inspect visible labels or file names.
+the resolved layout matches the authoritative slide-09 source signature: one
+non-empty regular 44 pt Aptos run in one left-aligned paragraph; no autofit,
+stored scale, bullets, tabs, baseline, warp, run effects, or body 3-D effects;
+horizontal wrapped one-column text with the source insets/spacing; and one of
+the source's two anchor/frame-height combinations. The same exact predicate
+gates both the font scale and origin offset.
+
+The compositor flag remains bounded to the authoritative imported cache
+topology: live layout unsupported, `/IncreasingCircleProcess` identity,
+exactly 12 cached shapes, 3 ellipses, 3 chords, 6 rectangles, and exactly 4
+text-bearing rectangles. The correction does not inspect visible labels, file
+names, or screenshot hashes. Font-size, autofit, bullet, glyph/body-effect,
+spacing, geometry, non-Aptos, and mixed-font variants are negative controls.
 
 The existing `0.930` Aptos-to-Arial calibration is unchanged. WPF is unchanged.
 Measurement and font raster policy remain route-scoped; the new value adjusts
@@ -39,6 +46,13 @@ the imported SmartArt frame, not a separate acceptance threshold.
 After tightening the origin correction to the Aptos-only predicate, all ten
 fresh WPF and Avalonia deck-15 renders remain byte-stable against the accepted
 correction in `f27b90c3dd`; the after metrics above are unchanged.
+
+After the exact source-signature follow-up, all ten fresh WPF and Avalonia
+deck-15 renders remain byte-stable against `01a8703c11`; the target and ROI
+metrics are unchanged again. Durable target evidence is committed in
+[`avalonia-parity-wave190-freep-evidence-20260823`](avalonia-parity-wave190-freep-evidence-20260823/metrics.json),
+including machine-readable metrics/hashes, the after Avalonia PNG, and the
+Avalonia/Office diff heatmap.
 
 Pixel inspection showed the four Avalonia text child ROIs starting about 4-5
 pixels below Office before the correction. Afterward, their top dark-pixel
@@ -70,9 +84,9 @@ the imported raster route, and non-Aptos controls retain the generic path.
 ## Verification
 
 - `dotnet build tools/FreeP.RenderCompare/FreeP.RenderCompare.csproj --configuration Release --no-restore` - 0 warnings, 0 errors.
-- `dotnet test freep/FreeP.App.Rendering.Avalonia.Tests/FreeP.App.Rendering.Avalonia.Tests.csproj --configuration Release --no-build` - 287/287 passed.
-- Focused Avalonia raster/live-renderer tests - 16/16 passed, including all-Calibri and mixed Aptos/Calibri negative origin controls.
-- Focused SmartArt and corpus presentation tests - 444/444 passed.
+- `dotnet test freep/FreeP.App.Rendering.Avalonia.Tests/FreeP.App.Rendering.Avalonia.Tests.csproj --configuration Release --no-build` - 288/288 passed.
+- Focused Avalonia raster/live-renderer tests - 17/17 passed, including font-size, autofit, bullet, run/body-effect, spacing, geometry, all-Calibri, and mixed Aptos/Calibri negative controls.
+- Focused SmartArt and corpus presentation tests - 445/445 passed, including the source-backed four-shape resolved-layout signature.
 - `FreeP.RenderCompare.Tests` SmartArt evidence filter - 7/7 passed.
 - Fresh WPF/Avalonia renders and direct `FreeP.RenderCompare --diff` measurements completed for deck 15, deck 06, deck 14, and deck 26.
 
