@@ -1,9 +1,15 @@
 {
-  "schema": "freep.parity.wave194.deck17-slide02.topology.v2",
+  "schema": "freep.parity.wave194.deck17-slide02.topology.v3",
   "date": "2026-08-23",
   "sourceRevision": "bb454fbc7d4d8b4588a4d2ed0adec678527e3936",
   "deck": "17-bullets-autofit",
   "slide": "slide-02",
+  "sourceCorpus": {
+    "path": "tools/FreeP.RenderCompare/corpus/17-bullets-autofit.pptx",
+    "hashAlgorithm": "SHA-256",
+    "hashScope": "entire raw file bytes",
+    "sha256": "f4fc0c9e3d048cac3e0c7fe3d929029238448ff05281be542df105a46c6c88ea"
+  },
   "officeReference": {
     "root": "tools/FreeP.RenderCompare/corpus/pptx-ref",
     "bundle": "docs/parity/evidence/avalonia-parity-wave193-freep-evidence-20260823",
@@ -78,5 +84,5 @@
       "wpfAvalonia": 2.9091
     }
   },
-  "provenance": "Derived from the committed Office-authored 17-bullets-autofit corpus deck and the retained Wave193 comparison bundle. No renderer runtime change is claimed."
+  "provenance": "Derived from the committed Office-authored 17-bullets-autofit corpus deck, bound by a whole-file raw-byte SHA-256, and the retained Wave193 comparison bundle. No renderer runtime change or residual-cause attribution is claimed."
 }

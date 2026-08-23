@@ -26,14 +26,21 @@ Latin face and `Aptos` as the minor Latin face. The retained topology evidence
 is recorded in
 [`topology.json`](./evidence/freep-wave194-deck17-slide02-topology-20260823/topology.json).
 
+The evidence is bound to the complete source corpus file, not only the Office
+reference PNG:
+
+- path: `tools/FreeP.RenderCompare/corpus/17-bullets-autofit.pptx`
+- raw whole-file SHA-256:
+  `f4fc0c9e3d048cac3e0c7fe3d929029238448ff05281be542df105a46c6c88ea`
+
 ## Why no runtime change
 
 Wave193 already showed that the largest current residual stays at slide 02 with
 `3.0587%` WPF/Office, `2.5360%` Avalonia/Office, and `2.9091%`
-WPF/Avalonia. The retained probes rejected the broader typography swaps that
-would have been needed for a general renderer correction, so the current
-remaining delta is still best explained as host font/raster variance rather
-than a topology bug.
+WPF/Avalonia. This topology evidence rules out the investigated structural,
+autofit, and theme-inheritance hypotheses. The visual residual remains
+unresolved: without renderer-level evidence, this slice does not establish
+host font or raster behavior as its cause.
 
 ## Retained evidence
 
@@ -54,5 +61,6 @@ The Office PNG provenance remains pinned by the committed reference bundle:
 ## Decision
 
 No renderer code is changed in Wave194. The evidence slice now documents the
-exact Office-authored topology and the retained reference hashes, which closes
-the concrete gap without introducing a fixture-specific runtime hack.
+exact Office-authored topology, pins the source PPTX and retained reference
+hashes, and leaves the visual cause unresolved without introducing a
+fixture-specific runtime change.
