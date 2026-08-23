@@ -1,7 +1,7 @@
 # FreeP Wave187 Surface3D authored-camera parity
 
-Date: 2026-08-23  
-Source revision: `8e5f6c82da`  
+Date: 2026-08-23
+Source revision: `8e5f6c82da`
 Corpus: 27 decks / 53 slides, 1280x720, committed PowerPoint PNG references
 
 ## Accepted correction
@@ -44,8 +44,9 @@ were `0.9846%, 1.2449%, 0.6149%, 1.2552%`; Avalonia deltas were
 `0.4242%, 0.3599%, 0.2974%, 0.4455%`. Their SHA-256 hashes match the
 Wave186 controls exactly.
 
-The fresh current-source corpus pass produced, after applying the final
-deck25 delta to the pass captured during the x=260 rejection check:
+The exploratory 53-slide corpus pass was captured with the rejected `x = 260`
+vertex. Applying the final deck25 `x = 247` delta arithmetically to that pass
+produces these diagnostic estimates:
 
 | Aggregate | Result |
 | --- | ---: |
@@ -53,8 +54,21 @@ deck25 delta to the pass captured during the x=260 rejection check:
 | Avalonia vs Office average / maximum | 1.0118% / 2.5815% |
 | WPF vs Avalonia average / maximum | 0.6249% / 2.9091% |
 
-The pair aggregate is unchanged by the accepted x=247 refinement; the
-committed Wave186 summary rounds a retained historical set to `0.6248%`.
+These estimates are not a canonical recalibration. The retained detail rows in
+`freep-powerpoint-recalibration-2026-08-15.json` are the internally consistent
+Wave186 historical set; they were not all rerendered with the final `x = 247`
+source revision. The cross-app dashboard must therefore continue consuming the
+canonical Wave186 summary:
+
+| Aggregate | Canonical Wave186 result |
+| --- | ---: |
+| WPF vs Office average / maximum | 1.0447% / 3.0587% |
+| Avalonia vs Office average / maximum | 1.0124% / 2.9238% |
+| WPF vs Avalonia average / maximum | 0.6248% / 1.6684% |
+
+The canonical JSON source revision, summary, and detail rows intentionally
+remain unchanged. Only the directly measured deck25 before/after rows and the
+deck26/`06-charts` controls above are authoritative Wave187 evidence.
 
 ## Rejected experiment
 
