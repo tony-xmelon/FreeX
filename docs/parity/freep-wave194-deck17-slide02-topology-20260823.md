@@ -10,13 +10,20 @@ making a speculative renderer change.
 The committed `17-bullets-autofit.pptx` corpus slide 02 is a two-text-shape
 layout with:
 
-- a title shape using `spAutoFit`, `Aptos Display`, 28 pt, and the text
+- a title shape using `spAutoFit`, an inherited run font, and the effective
+  theme font `Aptos Display` from `theme.majorLatin` at 28 pt, with the text
   `Autofit Shrink Demo`
-- a body shape using `noAutofit`, `Aptos`, 18 pt, one column, no bullets, and
-  eight one-run paragraphs
+- a body shape using `noAutofit`, an inherited run font, and the effective
+  theme font `Aptos` from `theme.minorLatin` at 18 pt, with one column, no
+  bullets, and eight one-run paragraphs
 
-The Office theme carries `Aptos Display` as the major Latin face and `Aptos`
-as the minor Latin face. The retained topology evidence is recorded in
+The loaded FreeP model therefore reports `run.FontFamily == null` for both
+shapes; the effective faces are resolved from the committed Office theme, not
+from an explicit run-level font override. The retained topology evidence makes
+both values explicit as `rawRunFontFamily` and `effectiveFontFamily`, together
+with `fontFamilySource`. The Office theme carries `Aptos Display` as the major
+Latin face and `Aptos` as the minor Latin face. The retained topology evidence
+is recorded in
 [`topology.json`](./evidence/freep-wave194-deck17-slide02-topology-20260823/topology.json).
 
 ## Why no runtime change
