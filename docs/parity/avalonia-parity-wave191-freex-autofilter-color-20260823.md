@@ -2,7 +2,7 @@
 
 Date: 2026-08-23
 Branch: `codex/parity-wave191-freex-20260823`
-Run: `20260823T121806Z`
+Run: `20260823T124634Z`
 
 ## Result
 
@@ -12,7 +12,7 @@ Physical lane: 1 passed, 0 failed, 1 total.
 
 Exact postconditions:
 
-- rendered menu swatch: `#00B050`
+- rendered menu swatch gate: sample `(113,452)` changed from `#FFFFFF` to `#00B050`; sample and click `(139,456)` are inside button `(97,439,75,27)`
 - applied visible values: `North,East,`
 - clean save: `true`
 - package: `ref=A1:B5|colId=0|cellColor=1|dxfId=0|fill=FF00B050`
@@ -24,23 +24,25 @@ The saved XLSX is retained in the evidence bundle so the XML package can be inde
 
 ## Implementation
 
-`XlsxAutoFilterXmlCodec` now writes `cellColor="1"` explicitly for fill-color filters and `cellColor="0"` for font-color filters, matching Excel/WPF OOXML authority. The physical harness adds the deterministic green/yellow/no-fill fixture, rendered swatch coordinate, package parser, and identity-checked production reopen. The runner and source test register the bounded lane.
+`XlsxAutoFilterXmlCodec` now writes `cellColor="1"` explicitly for fill-color filters and `cellColor="0"` for font-color filters, matching Excel/WPF OOXML authority. The physical harness adds the deterministic green/yellow/no-fill fixture, a pixel-gated rendered swatch click, package parser, and identity-checked production reopen. Criteria is derived only after the rendered menu pixel passes; the runner independently requires the swatch-gate artifact and the exact package/semantic postconditions.
 
 ## Verification
 
 - Core IO color persistence tests: 8 passed, 0 failed.
-- Avalonia physical-lane source tests: 2 passed, 0 failed.
+- Avalonia physical-lane source/hash tests: 3 passed, 0 failed.
 - Presentation color planner/workflow tests: 30 passed, 0 failed.
 - Linux Docker physical lane: 1 passed, 0 failed.
-- App image: `sha256:08c4378b7d9b42e8a134fdbf766f85a1cb62debefe18b292b51ae3acc87a2773`.
+- App image: `sha256:a4c04d475c05e4697d75847c7f5991a215697ba7087d17bf8fc8958402def90b`.
 
-Source and harness provenance is recorded in [manifest.json](evidence/wave191-freex-autofilter-color-20260823/manifest.json). The bundle includes the fixture, saved XLSX, physical result, postcondition, reopen diagnostics, and four rendered captures, all retained and hash-listed.
+Source and harness provenance is recorded in [manifest.json](evidence/wave191-freex-autofilter-color-20260823/manifest.json). The bundle includes the fixture, saved XLSX, physical result, swatch gate, postcondition, reopen diagnostics, and four rendered captures, all retained and hash-listed.
 
 ## Provenance Audit Follow-up
 
 The first evidence record was incomplete: its four PNGs were ignored locally, `commitAtRun` pointed at base `9bd76f7f...`, and its command used `-SkipImageBuild`. That record did not prove that the app image contained the committed Wave191 product change.
 
-The physical lane was rerun from clean source commit `89ee11ebcafa39fee03624a5d41a40a0254c615f` with no `-SkipImageBuild` or `-SkipPublish`. The runner published and built app image `freex-linux-interactive-app-freex-15bded1b2789:current` with digest `sha256:019ad128467448d43c5369dad67336b45725a7e2bd8f2eb998d2903acc837a20` from Ubuntu base digest `sha256:429831d647c2614b4b7044312614f4cc8d1781015799c06c7666fcebe794a274`. The manifest records the final harness, runner, fixture-generator, source-test, product-source, and product-test SHA-256 values, plus the fresh run command and every retained file hash.
+The later integration hash divergence came from checkout-dependent line endings. The worker tree retained a mix of LF and CRLF bytes under global `core.autocrlf=true`, while Git blobs and a fresh integration checkout normalized different subsets. Wave191 provenance/evidence text paths now have explicit `eol=lf` attributes, and the source test hashes every manifest artifact and provenance path from checkout bytes. This catches both stale hashes and ignored/missing evidence on a clean checkout.
+
+The strengthened physical lane was rerun from clean source commit `97d114b4c0d63c464a4dd151ae94905ae15789d1` with no `-SkipImageBuild` or `-SkipPublish`. The runner published and built app image `freex-linux-interactive-app-freex-15bded1b2789:current` with digest `sha256:a4c04d475c05e4697d75847c7f5991a215697ba7087d17bf8fc8958402def90b` from Ubuntu base digest `sha256:89446b2863db602caf7a869e3aad7358ec31c4c7842d70d2e17f0127fe76e824`. The manifest records the exact LF checkout hashes for the final harness, runner, fixture generator, source test, product source, product test, fresh run command, and every retained file.
 
 ## Remaining Color Gaps
 

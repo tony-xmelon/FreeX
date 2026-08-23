@@ -1,5 +1,6 @@
 document-path=/documents/freex-wave191-autofilter-color.xlsx
 menu-open=true
+swatch-gate=true
 criteria=fill:#00B050
 visible=North,East,
 save-clean=true

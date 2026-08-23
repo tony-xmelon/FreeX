@@ -1,0 +1,9 @@
+schema-version=1
+before=autofilter-color-before.png
+source=autofilter-color-menu-open.png
+button-bounds=97,439,75,27
+click=139,456
+sample=113,452
+before-rgb=#FFFFFF
+sample-rgb=#00B050
+gate=passed
