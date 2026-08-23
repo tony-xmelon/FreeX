@@ -1,27 +1,61 @@
 {
   "schemaVersion": 1,
   "wave": 190,
-  "reportId": "20260823T102404Z",
+  "reportId": "20260823T105230Z",
   "branch": "codex/parity-wave190-freex-20260823",
-  "commitAtRun": "049953808ebde9bb6c9761dacbb11a2f49ec2533",
-  "harnessSha256": "4d05c5672cde646f69f913e1d7ceb51c0425992446ef5344d69529f908fc4e48",
-  "sourceTestSha256": "b9ca40c1baa86f1854660e79e15a1c65b39b18304a8587da7e0507d339e07b5b",
+  "commitAtRun": "8b5487b35f6e503adafc354176857bf3aee400af",
+  "harnessSha256": "836f4eb4c8873bb42ae86530d372267c8145ef4447729a0195ee502bae7496b4",
+  "sourceTestSha256": "c4d1111e62e51b9574278dbde9d1e5925da15d17d8c25f5b45ada9ece26b3b2e",
   "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/Run-FreeXLinuxInteractionValidation.ps1 -PhysicalOnly -PhysicalProbeSelector autofilter-date-criteria-persistence -SkipImageBuild -TimeoutMinutes 20",
-  "result": { "passed": 2, "failed": 0, "total": 2 },
+  "result": {
+    "passed": 2,
+    "failed": 0,
+    "total": 2
+  },
   "acceptance": {
     "before": "lessThan=45323; reopened=Jan01,Jan15",
     "after": "greaterThan=45323; rendered-grid=Mar15; semantic-A5=Mar15"
   },
   "openDialogs": [
-    { "cycle": "before", "attempt": 1, "windowId": "25165831", "title": "Open Workbook", "pid": "29" },
-    { "cycle": "after", "attempt": 2, "windowId": "25168074", "title": "Open Workbook", "pid": "29" }
+    {
+      "cycle": "before",
+      "attempt": 1,
+      "windowId": "25165831",
+      "title": "Open Workbook",
+      "pid": "29"
+    },
+    {
+      "cycle": "after",
+      "attempt": 2,
+      "windowId": "25168091",
+      "title": "Open Workbook",
+      "pid": "29"
+    }
   ],
   "files": [
-    { "path": "physical-result.json", "sha256": "3896860db9e6c97ec3fdcfeb63aeb4a448e315cab2e7529b64b8dcd00e829d56" },
-    { "path": "postcondition.txt", "sha256": "77f563abff89becaad7de12b261d2def6c2cbc60af1ce166c5f014d594c476c4" },
-    { "path": "before-open-cycle.txt", "sha256": "0b14bfe6fd09aa68c2ab5d83c0ec2911e60fb6e67276271c65bcf264cdfc22ec" },
-    { "path": "after-open-cycle.txt", "sha256": "3278cce000dc8b01cbd88f8663c9a026ac6766f562adb6414b2aceb21d787448" },
-    { "path": "before-reopened.png", "sha256": "d4d39109d76d39e5e1933c9e4f40e3232ddad24287aff8fd9d495f8cc8699c77" },
-    { "path": "after-reopened-grid-read.png", "sha256": "97a48a5af9e28ef2c5e46ba2b892117fd456e26355408f0a037eb957d835974d" }
+    {
+      "path": "physical-result.json",
+      "sha256": "186032aab75b2a2249392dbb2ef06043ff17d2d6d99f4a38b9dd6aa9a5ccc449"
+    },
+    {
+      "path": "postcondition.txt",
+      "sha256": "ab622a2288f6e78f031d0f5d9ee1559b4c6924497fc900f4f408a64af7408ebd"
+    },
+    {
+      "path": "before-open-cycle.txt",
+      "sha256": "6ae5ee974ad9320dbcd6facb89b1c054b95853fa5d72fd8d47438e963056effa"
+    },
+    {
+      "path": "after-open-cycle.txt",
+      "sha256": "0bd02b16176217188b25c6fea348418de2ce07d9fea13d20faceafea71c44f6d"
+    },
+    {
+      "path": "before-reopened.png",
+      "sha256": "d4d39109d76d39e5e1933c9e4f40e3232ddad24287aff8fd9d495f8cc8699c77"
+    },
+    {
+      "path": "after-reopened-grid-read.png",
+      "sha256": "97a48a5af9e28ef2c5e46ba2b892117fd456e26355408f0a037eb957d835974d"
+    }
   ]
 }
