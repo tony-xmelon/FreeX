@@ -1,9 +1,10 @@
 # FreeFamily Unification Program
 
-> **Status (2026-08-22):** the historical renderer/workflow campaign remains integrated. A fresh audit at
-> `b688e47423` found four reusable families introduced by later product work: recovery workflow, autosave
-> session, autosave recovery planning, and atomic custom-dictionary storage. Current metrics and 116-surface
-> FreeX WPF evidence are recorded in `DEDUP-CERTIFICATION-2026-08-22.md`.
+> **Status (2026-08-23):** the whole-production continuation has extracted or classified every material
+> candidate found by repeated exact, normalized, and behavioral audits. The previously reopened recovery,
+> autosave, recovery-planning, and dictionary-storage families are shared, and the final defined-name policy
+> tail is closed. Current metrics and 116-surface FreeX WPF evidence are recorded in
+> `DEDUP-CERTIFICATION-2026-08-23.md`.
 > **Goal:** maximize what is shared across FreeX (spreadsheet), FreeW (word processor), and FreeP
 > (presentations), leaving WPF and Avalonia as thin native renderers over focused app workareas.
 
@@ -53,8 +54,9 @@ Closing waves also converged sister-app startup, print-service selection, packag
 metadata and semantic IDs, localized planner resources, typed test access, and shortcut aliases. Three independent
 final audits found no remaining P0-P2 portable policy duplication. See the
 [dated campaign report](DEDUP-EXHAUSTION-2026-08-09.md) for the exact verification ledger, metrics, and residual
-native-renderer classifications. The 2026-08-22 re-audit then found four later FreeP/FreeW additions that now
-have a stable second consumer; see the current certification report before declaring the queue exhausted again.
+native-renderer classifications. The 2026-08-22 re-audit found four later FreeP/FreeW additions with stable
+second consumers; the 2026-08-23 continuation consolidated those and every later material candidate found by
+the whole-production audit.
 
 ## Governance principles (how we avoid divergence)
 
@@ -97,8 +99,8 @@ worktree with the same parity-capture manifest. Compare every PNG and the manife
 is in addition to repository preflight, the Release solution build, the default test lane, the UI lane for
 WPF changes, and the focused ribbon lane for adaptive-layout work.
 
-The 2026-08-22 checkpoint captured 116/116 FreeX WPF surfaces against the preserved baseline. Ninety-two are
-pixel-identical and all 24 expected feature changes were reviewed without a visual break. Current evidence and
-the reopened four-slice queue are recorded in `DEDUP-CERTIFICATION-2026-08-22.md`.
+The final 2026-08-23 checkpoint captured 116/116 FreeX WPF surfaces against the preserved baseline. Ninety-one
+are pixel-identical and all 25 changed surfaces were reviewed without a visual break. Current evidence and the
+exhausted-scope classification are recorded in `DEDUP-CERTIFICATION-2026-08-23.md`.
 
 See [LOG.md](LOG.md) for the per-phase execution record (what changed, verification results, decisions).

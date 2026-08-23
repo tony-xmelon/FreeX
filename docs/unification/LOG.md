@@ -4,6 +4,34 @@ Newest entries first. Each phase records: what changed, how it was verified, and
 
 ---
 
+## Whole-production dedup continuation - implementation complete (2026-08-23)
+
+**Implementation checkpoint:** `fe9d2d97ee088f8faaaf9e407020dfde2c573810` on
+`codex/dedup-wave184-20260823`, based on `origin/main` `c7ec0062ec`.
+
+The continuation closed the reopened FreeP/FreeW recovery, autosave, recovery-planning, and dictionary-storage
+families, then repeatedly scanned and reviewed the full production tree. Fifty-five integration commits share
+additional ribbon/frame, file lifecycle, package/OOXML, formula, command, accessibility, editing, dialog,
+geometry, chart/table/text/shape/SmartArt, slideshow, and renderer-neutral policies. The largest change removed
+the approximately 27,000-line Accessibility shadow formula/conditional-format engine in favor of canonical
+Calc/Formula evaluation. The final actionable audit result, XLSX defined-name preservation policy, is shared by
+both save paths at this checkpoint.
+
+The deterministic renderer/shared-root report now measures 576,743 LOC, with 6,848 exact duplicate LOC
+(1.187357%) and 8,153 normalized duplicate LOC (1.413628%). Campaign C# change is +21,402/-41,409, net
+-20,007 lines. The separate whole-production review found no remaining material reusable behavior; residuals
+are native realization, format/domain ownership, compatibility boundaries, or catalogs.
+
+FreeX WPF visual validation captured 116/116 surfaces. Ninety-one are pixel-identical; all 25 changed surfaces
+were manually reviewed without blank content, clipping, overlap, missing controls, stale dialogs, or broken
+layout. See `DEDUP-CERTIFICATION-2026-08-23.md` for scope disposition, evidence paths, and residual risks.
+
+**Final integration gate:** generated-document check, repository preflight, Release solution build, default
+tests, UI tests, and whitespace validation are run on the documented integration tree before promotion to
+`main`.
+
+---
+
 ## Dedup implementation scope exhausted - final checkpoint (2026-08-13)
 
 **Implementation checkpoint:** `b9661deea09a048a4931b872d84a47ea1e83642a` on
