@@ -1,1293 +1,1407 @@
-{
-  "schema": "freex.dialog-parity-inventory.v1",
-  "sourceSnapshot": "repository files at generation time",
-  "generatedBy": "tools/Generate-DialogParityInventory.ps1",
-  "scope": "Current-main dialog parity inventory slice. Capture booleans mean current checked-in evidence exists; they do not imply functional parity.",
-  "summary": {
-    "totalRoutes": 57,
-    "wpfCaptures": 57,
-    "avaloniaCaptures": 57,
-    "avaloniaHarnessRoutes": 57,
-    "sharedOrPresentationBacked": 57
-  },
-  "rows": [
-    {
-      "routeId": "dialog.FormatCells",
-      "displayName": "Format Cells",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.FormatCells.png",
-        "screenshots\\home-alignment-number-tour\\freex_home_alignment_format_cells_dialog.png",
-        "screenshots\\home-alignment-number-tour\\freex_home_number_format_cells_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FormatCells.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\FormatCells\\FormatCellsInputParser.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.FindReplace",
-      "displayName": "Find and Replace",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.FindReplace.png",
-        "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_find_dialog.png",
-        "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_replace_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FindReplace.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\Dialogs\\FindReplaceOptions.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.GoTo",
-      "displayName": "Go To",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.GoTo.png",
-        "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_go_to_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.GoTo.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\GoToDialogPlanner.cs",
-        "src\\FreeX.App.Services\\WorkbookReferenceNavigator.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.GoToSpecial",
-      "displayName": "Go To Special",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.GoToSpecial.png",
-        "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_go_to_special_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.GoToSpecial.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\GoToDialogPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.Sort",
-      "displayName": "Sort",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.Sort.png",
-        "screenshots\\data-sort-filter-outline-tour\\freex_data_sort_filter_outline_sort_dialog.png",
-        "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_custom_sort_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Sort.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\SortDialogPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.SortOptions",
-      "displayName": "Sort Options",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.SortOptions.png",
-        "screenshots\\data-sort-filter-outline-tour\\freex_data_sort_filter_outline_sort_options_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.SortOptions.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\SortDialogPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.AutoFilter",
-      "displayName": "AutoFilter",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.AutoFilter.png",
-        "screenshots\\autofilter-flyout-tour\\freex_table_autofilter_dropdown.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.AutoFilter.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\Filtering\\AutoFilterChecklistPlanner.cs",
-        "src\\FreeX.App.Presentation\\Filtering\\AutoFilterDialogCriteriaPlanner.cs",
-        "src\\FreeX.App.Presentation\\Filtering\\AutoFilterDialogModel.cs",
-        "src\\FreeX.App.Presentation\\Filtering\\AutoFilterDropdownMenuPlanner.cs",
-        "src\\FreeX.App.Presentation\\Filtering\\AutoFilterHeaderButtonPlanner.cs",
-        "src\\FreeX.App.Presentation\\Filtering\\AutoFilterMenuCatalog.cs",
-        "src\\FreeX.App.Presentation\\Filtering\\AutoFilterMenuModel.cs",
-        "src\\FreeX.App.Presentation\\Filtering\\AutoFilterMenuPlanner.cs",
-        "src\\FreeX.App.Presentation\\Filtering\\AutoFilterPopupPlacementPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.DataValidation",
-      "displayName": "Data Validation",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.DataValidation.png",
-        "screenshots\\data-tools-dialogs-tour\\freex_data_tools_data_validation_error_alert_tab.png",
-        "screenshots\\data-tools-dialogs-tour\\freex_data_tools_data_validation_input_message_tab.png",
-        "screenshots\\data-tools-dialogs-tour\\freex_data_tools_data_validation_settings_tab.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.DataValidation.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\Dialogs\\DataValidationDialogModel.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.TextToColumns",
-      "displayName": "Text to Columns",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.TextToColumns.png",
-        "screenshots\\data-tools-dialogs-tour\\freex_data_tools_text_to_columns_step1_original_data_type.png",
-        "screenshots\\data-tools-dialogs-tour\\freex_data_tools_text_to_columns_step2_delimited.png",
-        "screenshots\\data-tools-dialogs-tour\\freex_data_tools_text_to_columns_step2_fixed_width.png",
-        "screenshots\\data-tools-dialogs-tour\\freex_data_tools_text_to_columns_step3_column_format_destination.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.TextToColumns.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\CellReferenceInputParser.cs",
-        "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsApplyPlanner.cs",
-        "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsCommandPlanner.cs",
-        "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDelimiters.cs",
-        "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogMetrics.cs",
-        "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogPlanner.cs",
-        "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogResult.cs",
-        "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogState.cs",
-        "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsFixedWidthBreakPlanner.cs",
-        "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsFixedWidthRulerPlanner.cs",
-        "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsOptions.cs",
-        "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsPlanner.cs",
-        "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsResult.cs",
-        "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsSplitter.cs",
-        "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsValueConverter.cs",
-        "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsWizardSurfacePlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.AdvancedFilter",
-      "displayName": "Advanced Filter",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.AdvancedFilter.png",
-        "screenshots\\data-tools-dialogs-tour\\freex_data_tools_advanced_filter_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.AdvancedFilter.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\Filtering\\AdvancedFilterPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.Consolidate",
-      "displayName": "Consolidate",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.Consolidate.png",
-        "screenshots\\data-tools-dialogs-tour\\freex_data_tools_consolidate_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Consolidate.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateAggregation.cs",
-        "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateApplicationWorkflow.cs",
-        "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateApplyPlanner.cs",
-        "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateCellValue.cs",
-        "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateDialogModels.cs",
-        "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateDialogPlanner.cs",
-        "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateInputParser.cs",
-        "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateModels.cs",
-        "src\\FreeX.App.Presentation\\Consolidate\\ConsolidatePlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.RemoveDuplicates",
-      "displayName": "Remove Duplicates",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.RemoveDuplicates.png",
-        "screenshots\\data-tools-dialogs-tour\\freex_data_tools_remove_duplicates_headers_columns.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.RemoveDuplicates.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\RemoveDuplicatesPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.GoalSeek",
-      "displayName": "Goal Seek",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.GoalSeek.png",
-        "screenshots\\data-tools-dialogs-tour\\freex_data_tools_goal_seek_dialog.png",
-        "screenshots\\data-what-if-workflows-tour\\freex_data_what_if_workflows_goal_seek_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.GoalSeek.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\GoalSeekRequestParser.cs",
-        "src\\FreeX.App.Services\\WorkbookSession.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.GoalSeekStatus",
-      "displayName": "Goal Seek Status",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.GoalSeekStatus.png",
-        "screenshots\\data-tools-dialogs-tour\\freex_data_tools_goal_seek_status_dialog.png",
-        "screenshots\\data-what-if-workflows-tour\\freex_data_what_if_workflows_goal_seek_status_success.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.GoalSeekStatus.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\WorkbookGoalSeekResult.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.DataTable",
-      "displayName": "Data Table",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.DataTable.png",
-        "screenshots\\data-tools-dialogs-tour\\freex_data_tools_data_table_dialog.png",
-        "screenshots\\data-what-if-workflows-tour\\freex_data_what_if_workflows_data_table_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.DataTable.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\DataTablePlanner.cs",
-        "src\\FreeX.App.Services\\WorkbookSession.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.ScenarioManager",
-      "displayName": "Scenario Manager",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ScenarioManager.png",
-        "screenshots\\data-tools-dialogs-tour\\freex_data_tools_scenario_manager_dialog.png",
-        "screenshots\\data-what-if-workflows-tour\\freex_data_what_if_workflows_scenario_manager_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ScenarioManager.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\ScenarioManagerPlanner.cs",
-        "src\\FreeX.App.Services\\WorkbookSession.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.ForecastSheet",
-      "displayName": "Forecast Sheet",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ForecastSheet.png",
-        "screenshots\\data-tools-dialogs-tour\\freex_data_tools_forecast_sheet_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ForecastSheet.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\ForecastSheetPlanner.cs",
-        "src\\FreeX.App.Services\\WorkbookSession.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.Subtotal",
-      "displayName": "Subtotal",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.Subtotal.png",
-        "screenshots\\data-sort-filter-outline-tour\\freex_data_sort_filter_outline_subtotal_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Subtotal.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\SubtotalPlanner.cs",
-        "src\\FreeX.App.Services\\WorkbookSession.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.CreateTable",
-      "displayName": "Create Table",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.CreateTable.png",
-        "screenshots\\insert-tables-charts-tour\\freex_insert_tables_charts_create_table_dialog.png",
-        "screenshots\\table-workflows-tour\\freex_table_workflows_create_table_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.CreateTable.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\TableUI\\TableCreationPlanner.cs",
-        "src\\FreeX.App.Services\\CreateTableDialogPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.RecommendedPivotTables",
-      "displayName": "Recommended PivotTables",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.RecommendedPivotTables.png",
-        "screenshots\\insert-tables-charts-tour\\freex_insert_tables_charts_recommended_pivottables_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.RecommendedPivotTables.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\RecommendedPivotTablesDialogPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.Sparkline",
-      "displayName": "Sparkline",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.Sparkline.png",
-        "screenshots\\insert-tables-charts-tour\\freex_insert_tables_charts_sparkline_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Sparkline.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\Sparklines\\SparklineAxisLinePlanner.cs",
-        "src\\FreeX.App.Presentation\\Sparklines\\SparklineAxisScalePlanner.cs",
-        "src\\FreeX.App.Presentation\\Sparklines\\SparklineColumnColorPlanner.cs",
-        "src\\FreeX.App.Presentation\\Sparklines\\SparklineLayoutEngine.cs",
-        "src\\FreeX.App.Presentation\\Sparklines\\SparklineSeriesReader.cs",
-        "src\\FreeX.App.Presentation\\Sparklines\\SparklineValueCache.cs",
-        "src\\FreeX.App.Presentation\\SparklineUI\\SparklinePlanner.cs",
-        "src\\FreeX.App.Presentation\\SparklineUI\\SparklineRenderPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.InsertHyperlink",
-      "displayName": "Insert Hyperlink",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.InsertHyperlink.png",
-        "screenshots\\insert-objects-links-tour\\freex_insert_hyperlink_dialog_address_focus.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.InsertHyperlink.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\WorkbookSession.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.SymbolPicker",
-      "displayName": "Symbol Picker",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.SymbolPicker.png",
-        "screenshots\\insert-objects-links-tour\\freex_insert_symbol_picker_opened.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.SymbolPicker.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\Dialogs\\SymbolPickerCatalogPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.ErrorChecking",
-      "displayName": "Error Checking",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ErrorChecking.png",
-        "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_error_checking_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ErrorChecking.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\ErrorCheckingDialogPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.EvaluateFormula",
-      "displayName": "Evaluate Formula",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.EvaluateFormula.png",
-        "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_evaluate_after_step.png",
-        "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_evaluate_default.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.EvaluateFormula.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\EvaluateFormulaDialogPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.WatchWindow",
-      "displayName": "Watch Window",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.WatchWindow.png",
-        "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_watch_window_after_delete.png",
-        "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_watch_window_after_refresh.png",
-        "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_watch_window_list.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.WatchWindow.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.Core.Commands\\WatchWindowService.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.AddWatch",
-      "displayName": "Add Watch",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.AddWatch.png",
-        "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_watch_add_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.AddWatch.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\AddWatchDialogPlanner.cs",
-        "src\\FreeX.App.Services\\WatchWindowDialogPlanner.cs",
-        "src\\FreeX.Core.Commands\\WatchWindowService.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.PageSetup",
-      "displayName": "Page Setup",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PageSetup.png",
-        "screenshots\\page-layout-setup-tour\\freex_page_layout_setup_dialog_margins_tab.png",
-        "screenshots\\page-layout-setup-tour\\freex_page_layout_setup_dialog_page_tab.png",
-        "screenshots\\page-layout-setup-tour\\freex_page_layout_setup_dialog_sheet_tab_print_titles.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PageSetup.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\PageLayout\\PageLayoutInputParser.cs",
-        "src\\FreeX.App.Presentation\\PageLayout\\PageSetupCommandFactory.cs",
-        "src\\FreeX.App.Presentation\\PageLayout\\PageSetupDialogModel.cs",
-        "src\\FreeX.App.Presentation\\PageLayout\\PageSetupDialogPlanner.cs",
-        "src\\FreeX.App.Presentation\\PageLayout\\PageSetupInitialFocusTarget.cs",
-        "src\\FreeX.App.Presentation\\PageLayout\\PageSetupRangeSelectionFormatter.cs",
-        "src\\FreeX.App.Presentation\\PageLayout\\PageSetupRangeSelectionTarget.cs",
-        "src\\FreeX.App.Presentation\\PageLayout\\PageSetupSubmissionPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.SelectionPane",
-      "displayName": "Selection Pane",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.SelectionPane.png",
-        "screenshots\\page-layout-setup-tour\\freex_page_layout_setup_arrange_selection_pane_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.SelectionPane.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\DrawingUI\\SelectionPaneGroupedCommandPlanner.cs",
-        "src\\FreeX.App.Presentation\\DrawingUI\\SelectionPanePlanner.cs",
-        "src\\FreeX.App.Presentation\\DrawingUI\\SelectionPaneSession.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.InsertSlicer",
-      "displayName": "Insert Slicer",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.InsertSlicer.png",
-        "screenshots\\pivot-options-slicer-tour\\freex_pivot_insert_slicer_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.InsertSlicer.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\SlicerTimeline\\PivotFieldItemsReader.cs",
-        "src\\FreeX.App.Presentation\\SlicerTimeline\\PivotSlicerTimelineDialogContract.cs",
-        "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerItemResolver.cs",
-        "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerLayoutModel.cs",
-        "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineHitDateResolver.cs",
-        "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineInteractionPlanner.cs",
-        "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelinePanePlanner.cs",
-        "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineSourceReader.cs",
-        "src\\FreeX.App.Presentation\\SlicerTimeline\\TimelineLayoutModel.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.InsertTimeline",
-      "displayName": "Insert Timeline",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.InsertTimeline.png",
-        "screenshots\\pivot-options-slicer-tour\\freex_pivot_insert_timeline_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.InsertTimeline.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\SlicerTimeline\\PivotFieldItemsReader.cs",
-        "src\\FreeX.App.Presentation\\SlicerTimeline\\PivotSlicerTimelineDialogContract.cs",
-        "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerItemResolver.cs",
-        "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerLayoutModel.cs",
-        "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineHitDateResolver.cs",
-        "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineInteractionPlanner.cs",
-        "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelinePanePlanner.cs",
-        "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineSourceReader.cs",
-        "src\\FreeX.App.Presentation\\SlicerTimeline\\TimelineLayoutModel.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.PivotTableOptions",
-      "displayName": "PivotTable Options",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PivotTableOptions.png",
-        "screenshots\\pivot-options-slicer-tour\\freex_pivot_options_dialog_display_style_options.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotTableOptions.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\PivotUI\\PivotOptionsPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.PivotFieldFilter",
-      "displayName": "Pivot Field Filter",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PivotFieldFilter.png",
-        "screenshots\\pivot-field-list-context-tour\\freex_pivot_field_filter_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotFieldFilter.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\PivotUI\\PivotFieldFilterPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.PivotValueFieldSettings",
-      "displayName": "Value Field Settings",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PivotValueFieldSettings.png",
-        "screenshots\\pivot-advanced-workflows-tour\\freex_pivot_advanced_value_field_settings_dialog.png",
-        "screenshots\\pivot-field-list-context-tour\\freex_pivot_value_field_settings_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotValueFieldSettings.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\PivotUI\\PivotValueFieldPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.ChangeChartType",
-      "displayName": "Change Chart Type",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ChangeChartType.png",
-        "screenshots\\chart-data-layout-tour\\freex_chart_data_layout_change_chart_type_dialog.png",
-        "screenshots\\chart-object-selection-tour\\freex_chart_object_selection_change_chart_type_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ChangeChartType.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\Charts\\Editing\\ChartTypeChangePlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.SelectDataSource",
-      "displayName": "Select Data Source",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.SelectDataSource.png",
-        "screenshots\\chart-data-layout-tour\\freex_chart_data_layout_select_data_dialog.png",
-        "screenshots\\chart-object-selection-tour\\freex_chart_object_selection_select_data_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.SelectDataSource.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\Charts\\AxisScale.cs",
-        "src\\FreeX.App.Presentation\\Charts\\ChartCategoryAxisSkip.cs",
-        "src\\FreeX.App.Presentation\\Charts\\ChartDataLabelTextPlanner.cs",
-        "src\\FreeX.App.Presentation\\Charts\\ChartDialogValueParser.cs",
-        "src\\FreeX.App.Presentation\\Charts\\ChartInputParser.cs",
-        "src\\FreeX.App.Presentation\\Charts\\ChartInsertionPlanner.cs",
-        "src\\FreeX.App.Presentation\\Charts\\ChartLayout.cs",
-        "src\\FreeX.App.Presentation\\Charts\\ChartLayoutEngine.cs",
-        "src\\FreeX.App.Presentation\\Charts\\ChartLayoutRequest.cs",
-        "src\\FreeX.App.Presentation\\Charts\\ChartLayoutRequestBuilder.cs",
-        "src\\FreeX.App.Presentation\\Charts\\ChartRenderPolicyPlanner.cs",
-        "src\\FreeX.App.Presentation\\Charts\\ChartStylePlanner.cs",
-        "src\\FreeX.App.Presentation\\Charts\\ChartViewportCellAccessorBuilder.cs",
-        "src\\FreeX.App.Presentation\\Charts\\Geometry.cs",
-        "src\\FreeX.App.Presentation\\Charts\\LegendLayoutBuilder.cs",
-        "src\\FreeX.App.Presentation\\Charts\\RecommendedChartPlanner.cs",
-        "src\\FreeX.App.Presentation\\Charts\\TrendlineAnnotationFormatter.cs",
-        "src\\FreeX.App.Presentation\\Charts\\TrendlineCalculator.cs",
-        "src\\FreeX.App.Presentation\\Charts\\TrendlineProjectionPlanner.cs",
-        "src\\FreeX.Core.Commands\\ChartCommands.Mutate.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.FormatChartArea",
-      "displayName": "Format Chart Area",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.FormatChartArea.png",
-        "screenshots\\chart-data-layout-tour\\freex_chart_data_layout_format_chart_area_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FormatChartArea.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\Charts\\Editing\\ChartAreaFormatPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.ShapeEffects",
-      "displayName": "Shape Effects",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ShapeEffects.png",
-        "screenshots\\draw-object-formatting-tour\\freex_draw_object_formatting_shape_effects_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ShapeEffects.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\ShapeEffectsPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.ShapeGradient",
-      "displayName": "Shape Gradient",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ShapeGradient.png",
-        "screenshots\\draw-object-formatting-tour\\freex_draw_object_formatting_shape_gradient_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ShapeGradient.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\ShapeGradientPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.Options",
-      "displayName": "Options",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.Options.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Options.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\OptionsDialogPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.ConditionalFormatNewRule",
-      "displayName": "New Conditional Formatting Rule",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ConditionalFormatNewRule.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ConditionalFormatNewRule.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalDataBarLayoutPlanner.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatCellRenderPlanner.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatCommandPlanner.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatDialogPlanner.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatEvaluator.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatIconSetCatalog.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatInputParser.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatPresetFactory.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatPresetGalleryPlanner.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRenderEvaluator.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRuleBuilder.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRuleMoveDirection.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatStatistics.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormattingResults.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconCellLayoutPlanner.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconGlyphGeometry.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconGlyphResolver.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ManageConditionalFormatsPlanner.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ManageConditionalFormatsSession.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\PresentationRgb.cs",
-        "src\\FreeX.App.Presentation\\Dialogs\\ConditionalFormatRuleSchema.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.ConditionalFormatManage",
-      "displayName": "Conditional Formatting Rules Manager",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ConditionalFormatManage.png",
-        "screenshots\\home-styles-cf-tour\\freex_home_styles_cf_manage_rules_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ConditionalFormatManage.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalDataBarLayoutPlanner.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatCellRenderPlanner.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatCommandPlanner.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatDialogPlanner.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatEvaluator.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatIconSetCatalog.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatInputParser.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatPresetFactory.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatPresetGalleryPlanner.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRenderEvaluator.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRuleBuilder.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRuleMoveDirection.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatStatistics.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormattingResults.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconCellLayoutPlanner.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconGlyphGeometry.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconGlyphResolver.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ManageConditionalFormatsPlanner.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\ManageConditionalFormatsSession.cs",
-        "src\\FreeX.App.Presentation\\ConditionalFormatting\\PresentationRgb.cs",
-        "src\\FreeX.App.Presentation\\Dialogs\\ConditionalFormatRuleSchema.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.Zoom",
-      "displayName": "Zoom",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.Zoom.png",
-        "screenshots\\status-footer-interactions-tour\\freex_status_footer_interactions_zoom_dialog_close_focus_return.png",
-        "screenshots\\view-panes-zoom-tour\\freex_view_panes_zoom_dialog_custom_125.png",
-        "tools\\foreground-captures\\freex-status-zoom-text-dialog-click\\freex-status-zoom-text-dialog-click_20260611_002303.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Zoom.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\WorkbookSession.cs",
-        "src\\FreeX.App.Services\\ZoomLevelMapper.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.CustomViews",
-      "displayName": "Custom Views",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.CustomViews.png",
-        "screenshots\\view-panes-zoom-tour\\freex_view_panes_zoom_custom_views_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.CustomViews.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\CustomViews\\CustomViewsPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.PrintPreview",
-      "displayName": "Print Preview / Print",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PrintPreview.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PrintPreview.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewCommentSummaryInstructionBuilder.cs",
-        "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewDialogPlanner.cs",
-        "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewInstructionBuilder.cs",
-        "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewNavigationState.cs",
-        "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewPaginationContext.cs",
-        "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewSettingsPanelPlanner.cs",
-        "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewSurfacePlanner.cs",
-        "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewToolbarStatePlanner.cs",
-        "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewWorkbookPaginationContext.cs",
-        "src\\FreeX.App.Services\\PrintJobPlanner.cs",
-        "src\\FreeX.App.Services\\WorkbookExportPrintPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.OpenWorkbook",
-      "displayName": "Open Workbook",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.OpenWorkbook.png",
-        "screenshots\\open-workbook-dialog-tour\\freex_open_workbook_dialog_opened.png",
-        "tools\\foreground-captures\\freex-open-dialog\\freex-open-dialog_20260610_142532.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.OpenWorkbook.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\WorkbookFileDialogSurfacePlanner.cs",
-        "src\\FreeX.App.Services\\WorkbookFilePickerPlanner.cs",
-        "src\\FreeX.App.Services\\WorkbookOpenIngressPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.SaveAsWorkbook",
-      "displayName": "Save As Workbook",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.SaveAsWorkbook.png",
-        "screenshots\\save-as-workbook-dialog-tour\\freex_save_as_workbook_dialog_opened.png",
-        "tools\\foreground-captures\\freex-save-as-dialog\\freex-save-as-dialog_20260610_142550.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.SaveAsWorkbook.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\WorkbookFileDialogSurfacePlanner.cs",
-        "src\\FreeX.App.Services\\WorkbookFilePickerPlanner.cs",
-        "src\\FreeX.App.Services\\WorkbookSaveService.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.ExportOptions",
-      "displayName": "Export Options",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ExportOptions.png",
-        "screenshots\\file-io-import-smoke-tour\\freex_file_io_import_smoke_export_pdf_options.png",
-        "screenshots\\file-io-import-smoke-tour\\freex_file_io_import_smoke_export_xps_options.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ExportOptions.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\ExportFilePickerPlanner.cs",
-        "src\\FreeX.App.Services\\ExportOptionsDialogSurfacePlanner.cs",
-        "src\\FreeX.Core.Model\\ExportPathPlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.AccessibilityChecker",
-      "displayName": "Accessibility Checker",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.AccessibilityChecker.png",
-        "screenshots\\review-comments-protection-tour\\freex_review_accessibility_checker_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.AccessibilityChecker.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\ReviewWorkflowPlanner.cs",
-        "src\\FreeX.Core.Commands\\AccessibilityCheckerService.Charts.cs",
-        "src\\FreeX.Core.Commands\\AccessibilityCheckerService.Contrast.cs",
-        "src\\FreeX.Core.Commands\\AccessibilityCheckerService.CoreFormulaFinancialDelegation.cs",
-        "src\\FreeX.Core.Commands\\AccessibilityCheckerService.cs",
-        "src\\FreeX.Core.Commands\\AccessibilityCheckerService.HiddenContent.cs",
-        "src\\FreeX.Core.Commands\\AccessibilityCheckerService.Tables.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.AllowEditRanges",
-      "displayName": "Allow Edit Ranges",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.AllowEditRanges.png",
-        "screenshots\\review-comments-protection-tour\\freex_review_allow_edit_ranges_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.AllowEditRanges.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\Protection\\AllowEditRangePlanner.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.ProtectSheet",
-      "displayName": "Protect Sheet",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ProtectSheet.png",
-        "screenshots\\review-comments-protection-tour\\freex_review_protect_sheet_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ProtectSheet.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\Protection\\AllowEditRangePlanner.cs",
-        "src\\FreeX.App.Presentation\\Protection\\ProtectionDialogPlanner.cs",
-        "src\\FreeX.App.Presentation\\Protection\\ProtectionPassword.cs",
-        "src\\FreeX.App.Presentation\\Protection\\ProtectionStateProjector.cs",
-        "src\\FreeX.App.Presentation\\Protection\\ProtectionWorkflowSession.cs",
-        "src\\FreeX.App.Presentation\\Protection\\ProtectSheetOptions.cs",
-        "src\\FreeX.App.Presentation\\Protection\\ProtectWorkbookOptions.cs",
-        "src\\FreeX.App.Presentation\\Protection\\SheetProtectionOption.cs",
-        "src\\FreeX.App.Presentation\\Protection\\SheetProtectionOptions.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.ProtectWorkbook",
-      "displayName": "Protect Workbook",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ProtectWorkbook.png",
-        "screenshots\\review-comments-protection-tour\\freex_review_protect_workbook_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ProtectWorkbook.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Presentation\\Protection\\AllowEditRangePlanner.cs",
-        "src\\FreeX.App.Presentation\\Protection\\ProtectionDialogPlanner.cs",
-        "src\\FreeX.App.Presentation\\Protection\\ProtectionPassword.cs",
-        "src\\FreeX.App.Presentation\\Protection\\ProtectionStateProjector.cs",
-        "src\\FreeX.App.Presentation\\Protection\\ProtectionWorkflowSession.cs",
-        "src\\FreeX.App.Presentation\\Protection\\ProtectSheetOptions.cs",
-        "src\\FreeX.App.Presentation\\Protection\\ProtectWorkbookOptions.cs",
-        "src\\FreeX.App.Presentation\\Protection\\SheetProtectionOption.cs",
-        "src\\FreeX.App.Presentation\\Protection\\SheetProtectionOptions.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.WorkbookStatistics",
-      "displayName": "Workbook Statistics",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.WorkbookStatistics.png",
-        "screenshots\\review-stats-share-tour\\freex_review_workbook_statistics_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.WorkbookStatistics.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\WorkbookStatisticsFormatter.cs",
-        "src\\FreeX.Core.Commands\\WorkbookStatisticsService.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.RenameSheet",
-      "displayName": "Rename Sheet",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.RenameSheet.png",
-        "screenshots\\sheet-tabs-tour\\freex_sheet_tabs_rename_dialog_opened.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.RenameSheet.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\WorkbookSession.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.UnhideSheet",
-      "displayName": "Unhide Sheet",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.UnhideSheet.png",
-        "screenshots\\sheet-tabs-tour\\freex_sheet_tabs_unhide_dialog_opened.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.UnhideSheet.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\WorkbookSession.cs",
-        "src\\FreeX.App.Services\\WorkbookSheetSelectionService.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.About",
-      "displayName": "About",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.About.png",
-        "screenshots\\help-about-legal-tour\\freex_about_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.About.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\AppHelpInfo.cs"
-      ],
-      "notes": []
-    },
-    {
-      "routeId": "dialog.LegalNotices",
-      "displayName": "Legal Notices",
-      "wpfCaptureExists": true,
-      "avaloniaCaptureExists": true,
-      "sharedBackingStatus": "shared-or-presentation-backed",
-      "wpfEvidence": [
-        "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.LegalNotices.png",
-        "screenshots\\help-about-legal-tour\\freex_legal_notices_dialog.png"
-      ],
-      "avaloniaEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.LegalNotices.png"
-      ],
-      "avaloniaCaptureHarnessRoute": true,
-      "sharedBackingEvidence": [
-        "src\\FreeX.App.Services\\LegalNoticeProvider.cs"
-      ],
-      "notes": []
-    }
-  ]
+﻿{
+    "schema":  "freex.dialog-parity-inventory.v1",
+    "sourceSnapshot":  "repository files at generation time",
+    "generatedBy":  "tools/Generate-DialogParityInventory.ps1",
+    "scope":  "Current-main dialog parity inventory slice. Capture booleans mean current checked-in evidence exists; they do not imply functional parity.",
+    "summary":  {
+                    "totalRoutes":  57,
+                    "wpfCaptures":  57,
+                    "avaloniaCaptures":  57,
+                    "avaloniaHarnessRoutes":  57,
+                    "sharedOrPresentationBacked":  57
+                },
+    "rows":  [
+                 {
+                     "routeId":  "dialog.FormatCells",
+                     "displayName":  "Format Cells",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.FormatCells.png",
+                                         "screenshots\\home-alignment-number-tour\\freex_home_alignment_format_cells_dialog.png",
+                                         "screenshots\\home-alignment-number-tour\\freex_home_number_format_cells_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FormatCells.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\FormatCells\\FormatCellsInputParser.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.FindReplace",
+                     "displayName":  "Find and Replace",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.FindReplace.png",
+                                         "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_find_dialog.png",
+                                         "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_replace_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FindReplace.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\Dialogs\\FindReplaceOptions.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.GoTo",
+                     "displayName":  "Go To",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.GoTo.png",
+                                         "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_go_to_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.GoTo.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\GoToDialogPlanner.cs",
+                                                   "src\\FreeX.App.Services\\WorkbookReferenceNavigator.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.GoToSpecial",
+                     "displayName":  "Go To Special",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.GoToSpecial.png",
+                                         "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_go_to_special_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.GoToSpecial.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\GoToDialogPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.Sort",
+                     "displayName":  "Sort",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.Sort.png",
+                                         "screenshots\\data-sort-filter-outline-tour\\freex_data_sort_filter_outline_sort_dialog.png",
+                                         "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_custom_sort_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Sort.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\SortDialogPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.SortOptions",
+                     "displayName":  "Sort Options",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.SortOptions.png",
+                                         "screenshots\\data-sort-filter-outline-tour\\freex_data_sort_filter_outline_sort_options_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.SortOptions.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\SortDialogPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.AutoFilter",
+                     "displayName":  "AutoFilter",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.AutoFilter.png",
+                                         "screenshots\\autofilter-flyout-tour\\freex_table_autofilter_dropdown.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.AutoFilter.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\Filtering\\AutoFilterChecklistPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Filtering\\AutoFilterDialogCriteriaPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Filtering\\AutoFilterDialogModel.cs",
+                                                   "src\\FreeX.App.Presentation\\Filtering\\AutoFilterDropdownMenuPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Filtering\\AutoFilterHeaderButtonPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Filtering\\AutoFilterMenuCatalog.cs",
+                                                   "src\\FreeX.App.Presentation\\Filtering\\AutoFilterMenuModel.cs",
+                                                   "src\\FreeX.App.Presentation\\Filtering\\AutoFilterMenuPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Filtering\\AutoFilterPopupPlacementPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.DataValidation",
+                     "displayName":  "Data Validation",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.DataValidation.png",
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_data_validation_error_alert_tab.png",
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_data_validation_input_message_tab.png",
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_data_validation_settings_tab.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.DataValidation.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\Dialogs\\DataValidationDialogModel.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.TextToColumns",
+                     "displayName":  "Text to Columns",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.TextToColumns.png",
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_text_to_columns_step1_original_data_type.png",
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_text_to_columns_step2_delimited.png",
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_text_to_columns_step2_fixed_width.png",
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_text_to_columns_step3_column_format_destination.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.TextToColumns.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\CellReferenceInputParser.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsApplyPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsCommandPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDelimiters.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogMetrics.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogResult.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogState.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsFixedWidthBreakPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsFixedWidthRulerPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsOptions.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsResult.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsSplitter.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsValueConverter.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsWizardSurfacePlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.AdvancedFilter",
+                     "displayName":  "Advanced Filter",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.AdvancedFilter.png",
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_advanced_filter_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.AdvancedFilter.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\Filtering\\AdvancedFilterPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.Consolidate",
+                     "displayName":  "Consolidate",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.Consolidate.png",
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_consolidate_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Consolidate.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateAggregation.cs",
+                                                   "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateApplicationWorkflow.cs",
+                                                   "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateApplyPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateCellValue.cs",
+                                                   "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateDialogModels.cs",
+                                                   "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateDialogPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateInputParser.cs",
+                                                   "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateModels.cs",
+                                                   "src\\FreeX.App.Presentation\\Consolidate\\ConsolidatePlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.RemoveDuplicates",
+                     "displayName":  "Remove Duplicates",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.RemoveDuplicates.png",
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_remove_duplicates_headers_columns.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.RemoveDuplicates.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\RemoveDuplicatesPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.GoalSeek",
+                     "displayName":  "Goal Seek",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.GoalSeek.png",
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_goal_seek_dialog.png",
+                                         "screenshots\\data-what-if-workflows-tour\\freex_data_what_if_workflows_goal_seek_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.GoalSeek.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\GoalSeekRequestParser.cs",
+                                                   "src\\FreeX.App.Services\\WorkbookSession.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.GoalSeekStatus",
+                     "displayName":  "Goal Seek Status",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.GoalSeekStatus.png",
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_goal_seek_status_dialog.png",
+                                         "screenshots\\data-what-if-workflows-tour\\freex_data_what_if_workflows_goal_seek_status_success.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.GoalSeekStatus.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\WorkbookGoalSeekResult.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.DataTable",
+                     "displayName":  "Data Table",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.DataTable.png",
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_data_table_dialog.png",
+                                         "screenshots\\data-what-if-workflows-tour\\freex_data_what_if_workflows_data_table_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.DataTable.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\DataTablePlanner.cs",
+                                                   "src\\FreeX.App.Services\\WorkbookSession.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.ScenarioManager",
+                     "displayName":  "Scenario Manager",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ScenarioManager.png",
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_scenario_manager_dialog.png",
+                                         "screenshots\\data-what-if-workflows-tour\\freex_data_what_if_workflows_scenario_manager_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ScenarioManager.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\ScenarioManagerPlanner.cs",
+                                                   "src\\FreeX.App.Services\\WorkbookSession.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.ForecastSheet",
+                     "displayName":  "Forecast Sheet",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ForecastSheet.png",
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_forecast_sheet_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ForecastSheet.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\ForecastSheetPlanner.cs",
+                                                   "src\\FreeX.App.Services\\WorkbookSession.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.Subtotal",
+                     "displayName":  "Subtotal",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.Subtotal.png",
+                                         "screenshots\\data-sort-filter-outline-tour\\freex_data_sort_filter_outline_subtotal_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Subtotal.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\SubtotalPlanner.cs",
+                                                   "src\\FreeX.App.Services\\WorkbookSession.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.CreateTable",
+                     "displayName":  "Create Table",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.CreateTable.png",
+                                         "screenshots\\insert-tables-charts-tour\\freex_insert_tables_charts_create_table_dialog.png",
+                                         "screenshots\\table-workflows-tour\\freex_table_workflows_create_table_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.CreateTable.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\TableUI\\TableCreationPlanner.cs",
+                                                   "src\\FreeX.App.Services\\CreateTableDialogPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.RecommendedPivotTables",
+                     "displayName":  "Recommended PivotTables",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.RecommendedPivotTables.png",
+                                         "screenshots\\insert-tables-charts-tour\\freex_insert_tables_charts_recommended_pivottables_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.RecommendedPivotTables.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\RecommendedPivotTablesDialogPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.Sparkline",
+                     "displayName":  "Sparkline",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.Sparkline.png",
+                                         "screenshots\\insert-tables-charts-tour\\freex_insert_tables_charts_sparkline_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Sparkline.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\Sparklines\\SparklineAxisLinePlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Sparklines\\SparklineAxisScalePlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Sparklines\\SparklineColumnColorPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Sparklines\\SparklineLayoutEngine.cs",
+                                                   "src\\FreeX.App.Presentation\\Sparklines\\SparklineSeriesReader.cs",
+                                                   "src\\FreeX.App.Presentation\\Sparklines\\SparklineValueCache.cs",
+                                                   "src\\FreeX.App.Presentation\\SparklineUI\\SparklinePlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\SparklineUI\\SparklineRenderPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.InsertHyperlink",
+                     "displayName":  "Insert Hyperlink",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.InsertHyperlink.png",
+                                         "screenshots\\insert-objects-links-tour\\freex_insert_hyperlink_dialog_address_focus.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.InsertHyperlink.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\WorkbookSession.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.SymbolPicker",
+                     "displayName":  "Symbol Picker",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.SymbolPicker.png",
+                                         "screenshots\\insert-objects-links-tour\\freex_insert_symbol_picker_opened.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.SymbolPicker.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\Dialogs\\SymbolPickerCatalogPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.ErrorChecking",
+                     "displayName":  "Error Checking",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ErrorChecking.png",
+                                         "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_error_checking_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ErrorChecking.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\ErrorCheckingDialogPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.EvaluateFormula",
+                     "displayName":  "Evaluate Formula",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.EvaluateFormula.png",
+                                         "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_evaluate_after_step.png",
+                                         "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_evaluate_default.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.EvaluateFormula.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\EvaluateFormulaDialogPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.WatchWindow",
+                     "displayName":  "Watch Window",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.WatchWindow.png",
+                                         "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_watch_window_after_delete.png",
+                                         "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_watch_window_after_refresh.png",
+                                         "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_watch_window_list.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.WatchWindow.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.Core.Commands\\WatchWindowService.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.AddWatch",
+                     "displayName":  "Add Watch",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.AddWatch.png",
+                                         "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_watch_add_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.AddWatch.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\AddWatchDialogPlanner.cs",
+                                                   "src\\FreeX.App.Services\\WatchWindowDialogPlanner.cs",
+                                                   "src\\FreeX.Core.Commands\\WatchWindowService.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.PageSetup",
+                     "displayName":  "Page Setup",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PageSetup.png",
+                                         "screenshots\\page-layout-setup-tour\\freex_page_layout_setup_dialog_margins_tab.png",
+                                         "screenshots\\page-layout-setup-tour\\freex_page_layout_setup_dialog_page_tab.png",
+                                         "screenshots\\page-layout-setup-tour\\freex_page_layout_setup_dialog_sheet_tab_print_titles.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PageSetup.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PageLayoutInputParser.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PageSetupCommandFactory.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PageSetupDialogModel.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PageSetupDialogPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PageSetupInitialFocusTarget.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PageSetupRangeSelectionFormatter.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PageSetupRangeSelectionTarget.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PageSetupSubmissionPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.SelectionPane",
+                     "displayName":  "Selection Pane",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.SelectionPane.png",
+                                         "screenshots\\page-layout-setup-tour\\freex_page_layout_setup_arrange_selection_pane_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.SelectionPane.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\DrawingUI\\SelectionPaneGroupedCommandPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\DrawingUI\\SelectionPanePlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\DrawingUI\\SelectionPaneSession.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.InsertSlicer",
+                     "displayName":  "Insert Slicer",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.InsertSlicer.png",
+                                         "screenshots\\pivot-options-slicer-tour\\freex_pivot_insert_slicer_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.InsertSlicer.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\PivotFieldItemsReader.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\PivotSlicerTimelineDialogContract.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerItemResolver.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerLayoutModel.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineHitDateResolver.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineInteractionPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelinePanePlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineSourceReader.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\TimelineLayoutModel.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.InsertTimeline",
+                     "displayName":  "Insert Timeline",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.InsertTimeline.png",
+                                         "screenshots\\pivot-options-slicer-tour\\freex_pivot_insert_timeline_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.InsertTimeline.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\PivotFieldItemsReader.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\PivotSlicerTimelineDialogContract.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerItemResolver.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerLayoutModel.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineHitDateResolver.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineInteractionPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelinePanePlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineSourceReader.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\TimelineLayoutModel.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.PivotTableOptions",
+                     "displayName":  "PivotTable Options",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PivotTableOptions.png",
+                                         "screenshots\\pivot-options-slicer-tour\\freex_pivot_options_dialog_display_style_options.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotTableOptions.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\PivotUI\\PivotOptionsPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.PivotFieldFilter",
+                     "displayName":  "Pivot Field Filter",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PivotFieldFilter.png",
+                                         "screenshots\\pivot-field-list-context-tour\\freex_pivot_field_filter_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotFieldFilter.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\PivotUI\\PivotFieldFilterPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.PivotValueFieldSettings",
+                     "displayName":  "Value Field Settings",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PivotValueFieldSettings.png",
+                                         "screenshots\\pivot-advanced-workflows-tour\\freex_pivot_advanced_value_field_settings_dialog.png",
+                                         "screenshots\\pivot-field-list-context-tour\\freex_pivot_value_field_settings_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotValueFieldSettings.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\PivotUI\\PivotValueFieldPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.ChangeChartType",
+                     "displayName":  "Change Chart Type",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ChangeChartType.png",
+                                         "screenshots\\chart-data-layout-tour\\freex_chart_data_layout_change_chart_type_dialog.png",
+                                         "screenshots\\chart-object-selection-tour\\freex_chart_object_selection_change_chart_type_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ChangeChartType.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\Charts\\Editing\\ChartTypeChangePlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.SelectDataSource",
+                     "displayName":  "Select Data Source",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.SelectDataSource.png",
+                                         "screenshots\\chart-data-layout-tour\\freex_chart_data_layout_select_data_dialog.png",
+                                         "screenshots\\chart-object-selection-tour\\freex_chart_object_selection_select_data_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.SelectDataSource.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\Charts\\AxisScale.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\ChartCategoryAxisSkip.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\ChartDataLabelTextPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\ChartDialogValueParser.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\ChartInputParser.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\ChartInsertionPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\ChartLayout.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\ChartLayoutEngine.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\ChartLayoutRequest.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\ChartLayoutRequestBuilder.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\ChartRenderPolicyPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\ChartStylePlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\ChartViewportCellAccessorBuilder.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\Geometry.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\LegendLayoutBuilder.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\RecommendedChartPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\TrendlineAnnotationFormatter.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\TrendlineCalculator.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\TrendlineProjectionPlanner.cs",
+                                                   "src\\FreeX.Core.Commands\\ChartCommands.Mutate.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.FormatChartArea",
+                     "displayName":  "Format Chart Area",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.FormatChartArea.png",
+                                         "screenshots\\chart-data-layout-tour\\freex_chart_data_layout_format_chart_area_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FormatChartArea.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\Charts\\Editing\\ChartAreaFormatPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.ShapeEffects",
+                     "displayName":  "Shape Effects",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ShapeEffects.png",
+                                         "screenshots\\draw-object-formatting-tour\\freex_draw_object_formatting_shape_effects_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ShapeEffects.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\ShapeEffectsPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.ShapeGradient",
+                     "displayName":  "Shape Gradient",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ShapeGradient.png",
+                                         "screenshots\\draw-object-formatting-tour\\freex_draw_object_formatting_shape_gradient_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ShapeGradient.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\ShapeGradientPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.Options",
+                     "displayName":  "Options",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.Options.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Options.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\OptionsDialogPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.ConditionalFormatNewRule",
+                     "displayName":  "New Conditional Formatting Rule",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ConditionalFormatNewRule.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ConditionalFormatNewRule.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalDataBarLayoutPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatCellRenderPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatCommandPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatDialogPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatEvaluator.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatIconSetCatalog.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatInputParser.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatPresetFactory.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatPresetGalleryPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRenderEvaluator.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRuleBuilder.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRuleMoveDirection.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatStatistics.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormattingResults.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconCellLayoutPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconGlyphGeometry.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconGlyphResolver.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ManageConditionalFormatsPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ManageConditionalFormatsSession.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\PresentationRgb.cs",
+                                                   "src\\FreeX.App.Presentation\\Dialogs\\ConditionalFormatRuleSchema.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.ConditionalFormatManage",
+                     "displayName":  "Conditional Formatting Rules Manager",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ConditionalFormatManage.png",
+                                         "screenshots\\home-styles-cf-tour\\freex_home_styles_cf_manage_rules_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ConditionalFormatManage.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalDataBarLayoutPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatCellRenderPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatCommandPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatDialogPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatEvaluator.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatIconSetCatalog.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatInputParser.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatPresetFactory.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatPresetGalleryPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRenderEvaluator.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRuleBuilder.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRuleMoveDirection.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatStatistics.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormattingResults.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconCellLayoutPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconGlyphGeometry.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconGlyphResolver.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ManageConditionalFormatsPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ManageConditionalFormatsSession.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\PresentationRgb.cs",
+                                                   "src\\FreeX.App.Presentation\\Dialogs\\ConditionalFormatRuleSchema.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.Zoom",
+                     "displayName":  "Zoom",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.Zoom.png",
+                                         "screenshots\\status-footer-interactions-tour\\freex_status_footer_interactions_zoom_dialog_close_focus_return.png",
+                                         "screenshots\\view-panes-zoom-tour\\freex_view_panes_zoom_dialog_custom_125.png",
+                                         "tools\\foreground-captures\\freex-status-zoom-text-dialog-click\\freex-status-zoom-text-dialog-click_20260611_002303.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Zoom.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\WorkbookSession.cs",
+                                                   "src\\FreeX.App.Services\\ZoomLevelMapper.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.CustomViews",
+                     "displayName":  "Custom Views",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.CustomViews.png",
+                                         "screenshots\\view-panes-zoom-tour\\freex_view_panes_zoom_custom_views_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.CustomViews.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\CustomViews\\CustomViewsPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.PrintPreview",
+                     "displayName":  "Print Preview / Print",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PrintPreview.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PrintPreview.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewCommentSummaryInstructionBuilder.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewDialogPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewInstructionBuilder.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewNavigationState.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewPaginationContext.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewSettingsPanelPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewSurfacePlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewToolbarStatePlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewWorkbookPaginationContext.cs",
+                                                   "src\\FreeX.App.Services\\PrintJobPlanner.cs",
+                                                   "src\\FreeX.App.Services\\WorkbookExportPrintPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.OpenWorkbook",
+                     "displayName":  "Open Workbook",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.OpenWorkbook.png",
+                                         "screenshots\\open-workbook-dialog-tour\\freex_open_workbook_dialog_opened.png",
+                                         "tools\\foreground-captures\\freex-open-dialog\\freex-open-dialog_20260610_142532.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.OpenWorkbook.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\WorkbookFileDialogSurfacePlanner.cs",
+                                                   "src\\FreeX.App.Services\\WorkbookFilePickerPlanner.cs",
+                                                   "src\\FreeX.App.Services\\WorkbookOpenIngressPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.SaveAsWorkbook",
+                     "displayName":  "Save As Workbook",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.SaveAsWorkbook.png",
+                                         "screenshots\\save-as-workbook-dialog-tour\\freex_save_as_workbook_dialog_opened.png",
+                                         "tools\\foreground-captures\\freex-save-as-dialog\\freex-save-as-dialog_20260610_142550.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.SaveAsWorkbook.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\WorkbookFileDialogSurfacePlanner.cs",
+                                                   "src\\FreeX.App.Services\\WorkbookFilePickerPlanner.cs",
+                                                   "src\\FreeX.App.Services\\WorkbookSaveService.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.ExportOptions",
+                     "displayName":  "Export Options",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ExportOptions.png",
+                                         "screenshots\\file-io-import-smoke-tour\\freex_file_io_import_smoke_export_pdf_options.png",
+                                         "screenshots\\file-io-import-smoke-tour\\freex_file_io_import_smoke_export_xps_options.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ExportOptions.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\ExportFilePickerPlanner.cs",
+                                                   "src\\FreeX.App.Services\\ExportOptionsDialogSurfacePlanner.cs",
+                                                   "src\\FreeX.Core.Model\\ExportPathPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.AccessibilityChecker",
+                     "displayName":  "Accessibility Checker",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.AccessibilityChecker.png",
+                                         "screenshots\\review-comments-protection-tour\\freex_review_accessibility_checker_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.AccessibilityChecker.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\ReviewWorkflowPlanner.cs",
+                                                   "src\\FreeX.Core.Commands\\AccessibilityCheckerService.Charts.cs",
+                                                   "src\\FreeX.Core.Commands\\AccessibilityCheckerService.Contrast.cs",
+                                                   "src\\FreeX.Core.Commands\\AccessibilityCheckerService.CoreFormulaFinancialDelegation.cs",
+                                                   "src\\FreeX.Core.Commands\\AccessibilityCheckerService.cs",
+                                                   "src\\FreeX.Core.Commands\\AccessibilityCheckerService.HiddenContent.cs",
+                                                   "src\\FreeX.Core.Commands\\AccessibilityCheckerService.Tables.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.AllowEditRanges",
+                     "displayName":  "Allow Edit Ranges",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.AllowEditRanges.png",
+                                         "screenshots\\review-comments-protection-tour\\freex_review_allow_edit_ranges_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.AllowEditRanges.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\Protection\\AllowEditRangePlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.ProtectSheet",
+                     "displayName":  "Protect Sheet",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ProtectSheet.png",
+                                         "screenshots\\review-comments-protection-tour\\freex_review_protect_sheet_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ProtectSheet.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\Protection\\AllowEditRangePlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectionDialogPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectionPassword.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectionStateProjector.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectionWorkflowSession.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectSheetOptions.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectWorkbookOptions.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\SheetProtectionOption.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\SheetProtectionOptions.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.ProtectWorkbook",
+                     "displayName":  "Protect Workbook",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ProtectWorkbook.png",
+                                         "screenshots\\review-comments-protection-tour\\freex_review_protect_workbook_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ProtectWorkbook.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\Protection\\AllowEditRangePlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectionDialogPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectionPassword.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectionStateProjector.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectionWorkflowSession.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectSheetOptions.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectWorkbookOptions.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\SheetProtectionOption.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\SheetProtectionOptions.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.WorkbookStatistics",
+                     "displayName":  "Workbook Statistics",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.WorkbookStatistics.png",
+                                         "screenshots\\review-stats-share-tour\\freex_review_workbook_statistics_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.WorkbookStatistics.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\WorkbookStatisticsFormatter.cs",
+                                                   "src\\FreeX.Core.Commands\\WorkbookStatisticsService.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.RenameSheet",
+                     "displayName":  "Rename Sheet",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.RenameSheet.png",
+                                         "screenshots\\sheet-tabs-tour\\freex_sheet_tabs_rename_dialog_opened.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.RenameSheet.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\WorkbookSession.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.UnhideSheet",
+                     "displayName":  "Unhide Sheet",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.UnhideSheet.png",
+                                         "screenshots\\sheet-tabs-tour\\freex_sheet_tabs_unhide_dialog_opened.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.UnhideSheet.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\WorkbookSession.cs",
+                                                   "src\\FreeX.App.Services\\WorkbookSheetSelectionService.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.About",
+                     "displayName":  "About",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.About.png",
+                                         "screenshots\\help-about-legal-tour\\freex_about_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.About.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\AppHelpInfo.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.LegalNotices",
+                     "displayName":  "Legal Notices",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.LegalNotices.png",
+                                         "screenshots\\help-about-legal-tour\\freex_legal_notices_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.LegalNotices.png"
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Services\\LegalNoticeProvider.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 }
+             ]
 }
