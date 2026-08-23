@@ -25,6 +25,14 @@ blob hashes, and the Docker image digest are retained under
 `docs/parity/evidence/wave192-freex-autofilter-font-color-20260823/`.
 Wave 191's fill-color selector and criteria guard remain covered.
 
+Independent review found that the initially retained Wave 191 and Wave 192
+workbooks had lost their modeled color criteria during a loaded-package patch
+save even though the pre-save runtime parser had observed them. The production
+patch writer now re-emits modeled worksheet and table AutoFilter criteria.
+Both physical lanes were rerun from current source, and package-semantic tests
+now open the committed XLSX files and require the expected `colorFilter` and
+DXF color nodes. The corrected fill and font workbooks pass those checks.
+
 ## FreeW
 
 The Avalonia Font dialog now aligns the complete effects lane by one pixel and
@@ -39,6 +47,12 @@ Only the three `font.*` rows change in the 291-row canonical comparison; all
 141 genuine visual mismatches, 80 passes, and 70 Avalonia extensions. Native
 control/glyph rasterization and action-row/tab-template edges remain measured
 residuals.
+
+A tracked provenance bundle now binds the three states and six host captures
+to capture dimensions, painted bounds, exact canonical comparison rows, source
+hashes, and the external capture-manifest identities. The WPF/Avalonia PNGs are
+not committed, so pixel regeneration still requires the capture hosts; this is
+an explicit limitation rather than an opaque freshness claim.
 
 ## FreeP
 
@@ -57,26 +71,31 @@ data instead of accepting a corpus-specific overlay.
 
 ## Focused Verification
 
-- FreeX physical source/evidence guards: **8/8** passed; R89 color and shared
-  AutoFilter codec lane: **20/20** passed.
+- FreeX fill and font physical Linux lanes: **1/1** each; committed package
+  semantics: **4/4**; physical source/evidence guards: **8/8**; focused Core IO
+  color/save lane: **57/57**.
 - FreeW planner/rasterization guards: **35/35** passed; Font visual and policy
-  guards: **6/6** passed; canonical evidence consistency: **291/291** rows.
+  guards: **6/6** passed; Font provenance: **3** states and **6** host captures;
+  canonical evidence consistency: **291/291** rows.
 - One broader FreeW dialog-dedup source guard remains **12/13** because the
   unchanged `origin/main` expectation still requires an Autosave dialog
   composer string that the current Autosave adapter no longer contains. The
   failure is outside the Wave 192 Font change.
-- FreeP worker verification: focused renderer **108/108**, presentation
-  **732/732**, and comparison **21/21**; full Avalonia renderer **290/290**;
-  full corpus **106/106** renders and **159/159** diffs.
-- FreeP evidence integrity: **9/9** image hashes, 27-deck/53-slide declaration,
-  and WPF byte stability passed.
+- FreeP full Avalonia renderer: **290/290**; presentation: **5,466/5,466**;
+  comparison: **88/88**. The worker run reported **106/106** current-source
+  renders; those complete render outputs are not retained.
+- FreeP retained integrity proves **53** unique rows across **27** decks,
+  **159** comparison metrics with recomputed aggregates, **53** mapped
+  PowerPoint references, **9/9** evidence image hashes and dimensions, and
+  actual WPF byte stability. It does not claim to retain all 106 render PNGs.
 - Cross-app dashboard generation, freshness check, behavior guard, FreeW
   evidence consistency, and `git diff --check` pass.
 
 ## Integration Gates
 
-Independent review, repository preflight, the full Release solution build, and
-the default non-UI test lane remain to run on the final integration commit.
+A second independent review, repository preflight, the full Release solution
+build, and the default non-UI test lane remain to run on the final integration
+commit.
 
 ## Remaining
 
