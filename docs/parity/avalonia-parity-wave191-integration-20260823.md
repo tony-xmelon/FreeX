@@ -23,8 +23,9 @@ image digest are committed under
 `docs/parity/evidence/wave191-freex-autofilter-color-20260823/`. The original
 provisional run was rejected because it reused a base image; the accepted run
 rebuilt from clean committed source. The rendered-pixel gate proves that the
-sample changed from `#FFFFFF` to `#00B050` before the bounded click, and all 16
-manifest entries match both committed Git blobs and fresh-checkout bytes.
+sample changed from `#FFFFFF` to `#00B050` before the bounded click. All 17
+manifest entries declare either canonical-LF text hashing or strict raw binary
+hashing and match worktree, committed Git blob, and Windows-checkout variants.
 
 ## FreeW
 
@@ -57,8 +58,8 @@ to **0.6097%**. WPF and measured neighboring controls remain unchanged.
 
 ## Focused Verification
 
-- FreeX: physical Linux lane 1/1; fresh-checkout source/hash guards 3/3;
-  focused R89 IO tests 5/5
+- FreeX: physical Linux lane 1/1; cross-platform source/hash guards 4/4;
+  focused R89 IO tests 5/5 and final codec/color contract tests 20/20
   on integration, with the worker's broader color IO lane 8/8 and presentation
   color lane 30/30.
 - FreeW: planner/raster guards 35/35; Font visual and policy guards 6/6;
@@ -68,18 +69,26 @@ to **0.6097%**. WPF and measured neighboring controls remain unchanged.
 - FreeP: full Avalonia renderer suite 290/290 on integration; corpus semantic
   guards 22/22; SmartArt evidence 7/7; full corpus renders 106/106 and diffs
   159/159 in the worker lane.
-- Independent review verified the mechanical swatch gate, all 16 committed
+- Independent review verified the mechanical swatch gate, all committed
   FreeX hashes, the four tracked FreeP PNG hashes, the FreeW whitespace fix, and
-  the narrow `.gitattributes` scope. Its only follow-up was an existing
-  integration-worktree CRLF checkout state; a fresh detached checkout produced
-  LF bytes and passed all three FreeX source/hash guards.
+  the narrow `.gitattributes` scope. The default lane then exposed two stale
+  modeled-boolean expectations and an existing integration-worktree CRLF state.
+  The final contract writes explicit `cellColor=1/0`, preserves raw lexical
+  precedence, canonicalizes only declared UTF-8 text hashes, and retains strict
+  raw hashes for PNG/XLSX evidence.
 
 ## Integration Gates
 
 - Cross-app dashboard generation/check, schema validation, FreeW evidence
   consistency, and whitespace validation pass.
-- Repository preflight, full Release build, and the default non-UI lane run on
-  the final integrated branch; exact results are recorded here before push.
+- `tools/Test-RepositoryPreflight.ps1`: passed, including all generated parity
+  documents and 13,814 conflict-marker-scanned text files.
+- `dotnet build FreeX.slnx --configuration Release`: passed with **0 warnings**
+  and **0 errors**.
+- `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build`:
+  passed with solution-level exit **0**. All 25 retained TRX locations report
+  `Completed` and zero failures; capture batches intentionally share and
+  overwrite one TRX filename.
 
 ## Remaining
 
