@@ -1,7 +1,7 @@
 # Avalonia Parity Wave 187: FreeW Legal Notices
 
-Date: 2026-08-23  
-Scope: FreeW Legal Notices dialog, six canonical states at 620 x 600 logical pixels  
+Date: 2026-08-23
+Scope: FreeW Legal Notices dialog, six canonical states at 620 x 600 logical pixels
 Authority: FreeW WPF `SharedLegalNoticesDialog`
 
 ## Pinned canonical baseline
