@@ -5,8 +5,8 @@ Date: 2026-08-23
 Wave 193 integrates one bounded evidence slice for each application. The
 cumulative app-slice count is **579**, accepted after all final integration
 gates passed against tested source commit
-`615b53f474dfa1849ae965018d890cba4a138d42`. This report is a later docs-only
-acceptance refresh; it does not alter the tested source commit.
+`615b53f474dfa1849ae965018d890cba4a138d42`. This report is an acceptance-only
+documentation/tooling refresh; it does not alter the tested source commit.
 
 ## FreeX
 
@@ -91,8 +91,8 @@ The following non-build checks are part of this integration handoff:
 
 All final integration gates passed against tested source commit
 `615b53f474dfa1849ae965018d890cba4a138d42`; no pending gates remain. The later
-acceptance commit contains documentation and generator/guard changes only and
-does not alter the tested source.
+acceptance commit is an acceptance-only documentation/tooling refresh and does
+not alter the tested source.
 
 - Independent review found no findings after dashboard and source-guard
   remediations.
