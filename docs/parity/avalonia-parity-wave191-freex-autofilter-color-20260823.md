@@ -29,7 +29,7 @@ The saved XLSX is retained in the evidence bundle so the XML package can be inde
 ## Verification
 
 - Core IO color persistence tests: 8 passed, 0 failed.
-- Avalonia physical-lane source/hash tests: 3 passed, 0 failed.
+- Avalonia physical-lane source/hash tests: 4 passed, 0 failed.
 - Presentation color planner/workflow tests: 30 passed, 0 failed.
 - Linux Docker physical lane: 1 passed, 0 failed.
 - App image: `sha256:a4c04d475c05e4697d75847c7f5991a215697ba7087d17bf8fc8958402def90b`.
@@ -40,7 +40,7 @@ Source and harness provenance is recorded in [manifest.json](evidence/wave191-fr
 
 The first evidence record was incomplete: its four PNGs were ignored locally, `commitAtRun` pointed at base `9bd76f7f...`, and its command used `-SkipImageBuild`. That record did not prove that the app image contained the committed Wave191 product change.
 
-The later integration hash divergence came from checkout-dependent line endings. The worker tree retained a mix of LF and CRLF bytes under global `core.autocrlf=true`, while Git blobs and a fresh integration checkout normalized different subsets. Wave191 provenance/evidence text paths now have explicit `eol=lf` attributes, and the source test hashes every manifest artifact and provenance path from checkout bytes. This catches both stale hashes and ignored/missing evidence on a clean checkout.
+The later integration hash divergence came from checkout-dependent line endings. The worker tree retained a mix of LF and CRLF bytes under global `core.autocrlf=true`, while Git blobs and a fresh integration checkout normalized different subsets. Wave191 text entries now declare `hashMode=canonical-lf`: strict UTF-8 is normalized only from CRLF or lone CR to LF before SHA-256. PNG and XLSX entries declare `hashMode=raw` and remain byte-exact. The `eol=lf` attributes keep future checkouts stable, while the canonical policy also validates pre-existing Windows worktrees without refreshing them. The source tests cover LF/CRLF/CR equivalence, raw-byte inequality, every manifest artifact, and every provenance path.
 
 The strengthened physical lane was rerun from clean source commit `97d114b4c0d63c464a4dd151ae94905ae15789d1` with no `-SkipImageBuild` or `-SkipPublish`. The runner published and built app image `freex-linux-interactive-app-freex-15bded1b2789:current` with digest `sha256:a4c04d475c05e4697d75847c7f5991a215697ba7087d17bf8fc8958402def90b` from Ubuntu base digest `sha256:89446b2863db602caf7a869e3aad7358ec31c4c7842d70d2e17f0127fe76e824`. The manifest records the exact LF checkout hashes for the final harness, runner, fixture generator, source test, product source, product test, fresh run command, and every retained file.
 

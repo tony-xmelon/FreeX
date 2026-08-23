@@ -1,6 +1,10 @@
 {
   "schemaVersion": 1,
   "wave": 191,
+  "hashPolicy": {
+    "canonical-lf": "SHA-256 of strict UTF-8 text after CRLF and lone CR are normalized to LF",
+    "raw": "SHA-256 of exact file bytes"
+  },
   "reportId": "20260823T124634Z",
   "branch": "codex/parity-wave191-freex-20260823",
   "commitAtRun": "97d114b4c0d63c464a4dd151ae94905ae15789d1",
@@ -11,17 +15,19 @@
   "appImageDigest": "sha256:a4c04d475c05e4697d75847c7f5991a215697ba7087d17bf8fc8958402def90b",
   "harnessSha256": "dac2a6972b639f34cb6c78072883bfce5085bd49408985c02c39ce5cbd532218",
   "runnerSha256": "c24f270b60adbdff274d69d126a9d5482d55ae7679135049486a510c85b746a9",
-  "sourceTestSha256": "5411b1d79f4c1aeb02a863d03eb42150aca57567c594db082692f094762874df",
+  "sourceTestSha256": "bbd4ef02820922332a9b5d01e866b2304e74dd1e4c187cf6d5c95b060b33230e",
   "fixtureGeneratorSha256": "937e95a7ea2d39aba3871bcb9c811e20147774ee83b0a6e12c89e3768247a4b1",
   "productSourceSha256": "a5ece9ee30db01e826f3aa93f426e307967fd319e9b844031a39cdf8a8d6bb31",
   "productTestSha256": "b658f3f598b28238ee184ad1a146b42c5b597a8cf8b19767625777623df62419",
+  "codecContractTestSha256": "9cfc7f159a9240b2e22ae2b5b938079301ba47c764c686b993fc75ac7e1de25c",
   "provenanceFiles": [
-    { "path": "tools/LinuxInteractiveDocker/run-freex-input-probes.sh", "sha256": "dac2a6972b639f34cb6c78072883bfce5085bd49408985c02c39ce5cbd532218" },
-    { "path": "tools/Run-FreeXLinuxInteractionValidation.ps1", "sha256": "c24f270b60adbdff274d69d126a9d5482d55ae7679135049486a510c85b746a9" },
-    { "path": "tools/LinuxInteractiveDocker/New-FreeXWave191AutoFilterColorFixture.ps1", "sha256": "937e95a7ea2d39aba3871bcb9c811e20147774ee83b0a6e12c89e3768247a4b1" },
-    { "path": "src/FreeX.Core.IO/XlsxAutoFilterXmlCodec.cs", "sha256": "a5ece9ee30db01e826f3aa93f426e307967fd319e9b844031a39cdf8a8d6bb31" },
-    { "path": "tests/FreeX.Core.IO.Tests/R89_AutoFilterColorDxfTests.cs", "sha256": "b658f3f598b28238ee184ad1a146b42c5b597a8cf8b19767625777623df62419" },
-    { "path": "tests/FreeX.App.Avalonia.Tests/Wave191AutoFilterColorPhysicalSourceTests.cs", "sha256": "5411b1d79f4c1aeb02a863d03eb42150aca57567c594db082692f094762874df" }
+    { "path": "tools/LinuxInteractiveDocker/run-freex-input-probes.sh", "hashMode": "canonical-lf", "sha256": "dac2a6972b639f34cb6c78072883bfce5085bd49408985c02c39ce5cbd532218" },
+    { "path": "tools/Run-FreeXLinuxInteractionValidation.ps1", "hashMode": "canonical-lf", "sha256": "c24f270b60adbdff274d69d126a9d5482d55ae7679135049486a510c85b746a9" },
+    { "path": "tools/LinuxInteractiveDocker/New-FreeXWave191AutoFilterColorFixture.ps1", "hashMode": "canonical-lf", "sha256": "937e95a7ea2d39aba3871bcb9c811e20147774ee83b0a6e12c89e3768247a4b1" },
+    { "path": "src/FreeX.Core.IO/XlsxAutoFilterXmlCodec.cs", "hashMode": "canonical-lf", "sha256": "a5ece9ee30db01e826f3aa93f426e307967fd319e9b844031a39cdf8a8d6bb31" },
+    { "path": "tests/FreeX.Core.IO.Tests/R89_AutoFilterColorDxfTests.cs", "hashMode": "canonical-lf", "sha256": "b658f3f598b28238ee184ad1a146b42c5b597a8cf8b19767625777623df62419" },
+    { "path": "tests/FreeX.Core.IO.Tests/XlsxAutoFilterAndLeafCodecTests.cs", "hashMode": "canonical-lf", "sha256": "9cfc7f159a9240b2e22ae2b5b938079301ba47c764c686b993fc75ac7e1de25c" },
+    { "path": "tests/FreeX.App.Avalonia.Tests/Wave191AutoFilterColorPhysicalSourceTests.cs", "hashMode": "canonical-lf", "sha256": "bbd4ef02820922332a9b5d01e866b2304e74dd1e4c187cf6d5c95b060b33230e" }
   ],
   "command": "pwsh -NoProfile -ExecutionPolicy Bypass -File tools/Run-FreeXLinuxInteractionValidation.ps1 -Port 62921 -TimeoutMinutes 20 -PhysicalOnly -PhysicalProbeSelector autofilter-color-persistence",
   "result": {
@@ -39,15 +45,15 @@
     "package": "ref=A1:B5|colId=0|cellColor=1|dxfId=0|fill=FF00B050"
   },
   "files": [
-    { "path": "physical-result.json", "sha256": "4d844180933e74bd13789c62c75539c329d48a9eec0d67355ef0cd56b12ce4fe" },
-    { "path": "autofilter-color-postcondition.txt", "sha256": "9ef6c4a9d729da7b5608565627a6ebc171678760d19d8cba342a7ccaa0221e4b" },
-    { "path": "autofilter-color-swatch-gate.txt", "sha256": "8cd2ddba53acf32601cd4cbfb82ceaf4f01379bcc9ffa6deec8e37ad47d2d8fb" },
-    { "path": "fixture-input.xlsx", "sha256": "971ea530d3586727010607c6d69921941b179378d8abc7438aa108d9352e37eb" },
-    { "path": "saved-color-filter.xlsx", "sha256": "b756c69d5b9cb5be9eba2c0ffe1d71d52c748488f802035bb01f0468a4f9704c" },
-    { "path": "autofilter-color-before.png", "sha256": "4acdd2c05378f984d1fb49df11bc3fcce7e1b1d751caa88a909d9f14f53be6e5" },
-    { "path": "autofilter-color-menu-open.png", "sha256": "1db48bf0d5ea97fab8556c3378140a503cb5d6ec2180c7baf05304fd2cf541c2" },
-    { "path": "autofilter-color-applied.png", "sha256": "2233f5af09bc73529ca8c16cd50fdb006a343cfd7f28ada4c541a58546d69ff3" },
-    { "path": "autofilter-color-reopened.png", "sha256": "a7f81cb3e29ed61897c87037cc6fc461da64bd1f1849779eef3b8683941164d0" },
-    { "path": "autofilter-color-reopen-diagnostics.txt", "sha256": "6c83ecb1bd7f205952f230d26495b37c966fa2a18ec6e7684683740253120ab9" }
+    { "path": "physical-result.json", "hashMode": "canonical-lf", "sha256": "4d844180933e74bd13789c62c75539c329d48a9eec0d67355ef0cd56b12ce4fe" },
+    { "path": "autofilter-color-postcondition.txt", "hashMode": "canonical-lf", "sha256": "9ef6c4a9d729da7b5608565627a6ebc171678760d19d8cba342a7ccaa0221e4b" },
+    { "path": "autofilter-color-swatch-gate.txt", "hashMode": "canonical-lf", "sha256": "8cd2ddba53acf32601cd4cbfb82ceaf4f01379bcc9ffa6deec8e37ad47d2d8fb" },
+    { "path": "fixture-input.xlsx", "hashMode": "raw", "sha256": "971ea530d3586727010607c6d69921941b179378d8abc7438aa108d9352e37eb" },
+    { "path": "saved-color-filter.xlsx", "hashMode": "raw", "sha256": "b756c69d5b9cb5be9eba2c0ffe1d71d52c748488f802035bb01f0468a4f9704c" },
+    { "path": "autofilter-color-before.png", "hashMode": "raw", "sha256": "4acdd2c05378f984d1fb49df11bc3fcce7e1b1d751caa88a909d9f14f53be6e5" },
+    { "path": "autofilter-color-menu-open.png", "hashMode": "raw", "sha256": "1db48bf0d5ea97fab8556c3378140a503cb5d6ec2180c7baf05304fd2cf541c2" },
+    { "path": "autofilter-color-applied.png", "hashMode": "raw", "sha256": "2233f5af09bc73529ca8c16cd50fdb006a343cfd7f28ada4c541a58546d69ff3" },
+    { "path": "autofilter-color-reopened.png", "hashMode": "raw", "sha256": "a7f81cb3e29ed61897c87037cc6fc461da64bd1f1849779eef3b8683941164d0" },
+    { "path": "autofilter-color-reopen-diagnostics.txt", "hashMode": "canonical-lf", "sha256": "6c83ecb1bd7f205952f230d26495b37c966fa2a18ec6e7684683740253120ab9" }
   ]
 }
