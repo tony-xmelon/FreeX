@@ -40,12 +40,12 @@
     {
       "path": "autofilter-no-fill-postcondition.txt",
       "hashMode": "canonical-lf",
-      "sha256": "9702e274c77ecee66b898902312b9f66e3cfce666385c174b5656b7648e147e1"
+      "sha256": "5dff49e2a9e6e3406d3484b44103f26c1a08d5589e548e178c806f9dc2790f14"
     },
     {
       "path": "autofilter-no-fill-reopen-diagnostics.txt",
       "hashMode": "canonical-lf",
-      "sha256": "0abc553ece283ae4cf435c819566822217d2e38df0a3854618c431d7090d772b"
+      "sha256": "6c83ecb1bd7f205952f230d26495b37c966fa2a18ec6e7684683740253120ab9"
     },
     {
       "path": "autofilter-no-fill-reopened.png",
@@ -55,7 +55,7 @@
     {
       "path": "autofilter-no-fill-swatch-gate.txt",
       "hashMode": "canonical-lf",
-      "sha256": "82a124b928e1434b083859093342fc10336a0738810eb69359ff28c6a6d036b7"
+      "sha256": "6f86938c650ccd227d1cada560b66f183d73fdafd9e6a3ceee526665d35ed643"
     },
     {
       "path": "calibration-a1.png",
