@@ -1,6 +1,6 @@
 {
   "schema": "freew.dialog-route-inventory.v1",
-  "generatedFromSha256": "f799a88a368e9fdb678809d31273702ac8d11146bfd8a3ca3ebf1566f232b238",
+  "generatedFromSha256": "532d3578fbbc6f5e29dcc4611fd03b71985e6ff6ff1210a05162ec41a23a6611",
   "scenarios": [
     {
       "id": "avalonia.about.initial",
