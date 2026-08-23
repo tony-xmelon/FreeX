@@ -62,15 +62,22 @@ Avalonia PNG, and its Office diff are committed under
 - FreeP exact-signature rendering guards: 17/17 passed; full Avalonia rendering
   suite: 288/288 passed; SmartArt/corpus presentation: 445/445 passed;
   RenderCompare evidence: 7/7 passed.
-- Independent review findings were corrected before integration; the final
-  follow-up review result is recorded before push.
+- Independent review findings were corrected before integration. The final
+  follow-up found no remaining product or test issue; its sole evidence-digest
+  finding was corrected, and all six committed FreeX artifact hashes verify.
 
 ## Integration Gates
 
 - Cross-app dashboard generation/check, schema validation, FreeW evidence
   consistency, and whitespace validation passed.
-- Repository preflight, full Release build, and the default non-UI lane run on
-  the final integrated branch; exact results are recorded here before push.
+- Repository preflight passed, including generated-document freshness and all
+  cross-app evidence guards.
+- `dotnet build FreeX.slnx --configuration Release` passed on the final
+  integrated branch with **0 warnings** and **0 errors**. The run used one node
+  with shared compilation/build servers disabled to avoid cross-session locks.
+- `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build`
+  passed with no failed project or test. Only explicitly skipped benchmark
+  cases were skipped by their existing policy.
 
 ## Remaining
 
