@@ -16,40 +16,49 @@ and the same visible rows after production reopen.
 
 ## Result
 
-No product change is claimed. The physical selector was run once after a
-minimal diagnostic correction and failed **0/2** before criteria commit:
+No product change is claimed and the prepared direct `Border.PointerPressed`
+route was reverted because it was never exercised by a valid B1 X11 run.
+The follow-up attempts did not reach the 2/2 acceptance bar:
 
-- Run: production Linux Docker/X11, port `62875`.
-- Artifact: `artifacts/linux-interactive/freex/interaction-validation/20260823T050225Z/x11-validation/`.
-- Calibration passed at `1280x820`; `A1=(29,236)`, cell pitch `64x20`.
-- The fixture rendered `Amount`, `10`, `50`, `75`, and `100` correctly.
-- `autofilter-numeric-header-selected.png` and
-  `autofilter-numeric-mouse-open.png` show the same selected B1 state with no
-  flyout. The production `Alt+Down` fallback also produced no flyout.
-- Postcondition: `greater-menu-open=true` was only the selection transition,
-  `greater-visible=10,50,75,100`, `greater-save-clean=false`, package empty,
-  and Equals never started.
-
-The preceding run at port `62874` showed the same route failure after the
-numeric fixture was corrected. The first earlier run was discarded because
-the fixture encoded the `Amount` header incorrectly; it is not evidence.
+- Port `62876`: calibration passed, but the selector still used the old
+  `A1 + cellWidth - 10` coordinate, which clicks the A/B boundary. The
+  resulting `0/2` artifact was
+  `artifacts/linux-interactive/freex/sessions/20260823T050301241Z/x11-validation/`.
+  Its B1 screenshots show no flyout; the `greater-menu-open=true` value was a
+  false positive from the selection screenshot comparison.
+- Port `62877`: wrapper exited before X11 with
+  `-SkipPublish requires -ResumeReportDirectory with an existing provenance record.`
+- Ports `62878` and `62879`: the wrapper stopped its owned container, then
+  exited at `Run-FreeXLinuxInteractionValidation.ps1:1662` because the
+  physical manifest was invalid. The saved manifests were
+  `artifacts/linux-interactive/freex/sessions/20260823T052247132Z/x11-validation/`
+  and `artifacts/linux-interactive/freex/sessions/20260823T052413071Z/x11-validation/`;
+  both report calibration failure: “The paced Down key did not produce a
+  measurable A1-to-A2 selection transition,” with `cellWidth=159` and
+  `cellHeight=0`. Their screenshots show the default workbook, not the
+  numeric fixture, so they never exercised the B1 route.
+- The latest report directories contained only the generated fixture and
+  `resume-provenance.json` because the wrapper throws before writing its final
+  report when the physical manifest fails schema validation.
 
 ## Verification
 
-- Core.IO focused `R38/R65/R98`: **21 passed, 0 failed**.
-- Avalonia source guard for the provisional physical lane: **1 passed, 0 failed**.
-- The provisional fixture, selector, source guard, and equality unit-test
-  changes were reverted after the failed physical run; no incomplete harness
-  or product change remains in this slice.
+- Production Avalonia Release build before cleanup: **0 warnings, 0 errors**.
+- Core.IO focused `R38/R65/R98`: **20 passed, 0 failed**.
+- The direct route and numeric harness changes were reverted after the
+  unexercised/invalid runs; this note is the only follow-up change.
 
 ## Blocker and remaining
 
-The reproducible blocker is the Avalonia physical input route from a valid
-non-first AutoFilter header cell to its rendered flyout: the visible glyph
-does not open the flyout, and the active-header `Alt+Down` route does not open
-it either. Parser, save, package, reopen, equality, and comparison behavior
-therefore remain uncredited by physical evidence.
+The immediate blocker is deterministic physical startup/evidence readiness:
+the wrapper can declare the desktop ready while the default workbook is still
+the visible surface, and the calibration lane then fails before the fixture
+is usable. The runner also throws on the numeric result IDs at schema
+validation, so the report never reaches a final 0/2 row for the later runs.
+The product pointer route itself remains uncredited, because no valid B1
+glyph click was captured after the corrected coordinate was prepared.
 
-Numeric criteria need a focused product-route fix and a new 2/2 physical run.
-Date, color, composite/multi-column, and criteria-clear/reapply workflows also
-remain outside this evidence row.
+Numeric criteria need a deterministic fixture-open/calibration wait, the
+runner artifact-schema mapping fix, and one fresh 2/2 physical run before any
+product-route change can be accepted. Date, color, composite/multi-column,
+and criteria-clear/reapply workflows also remain outside this evidence row.
