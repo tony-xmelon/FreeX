@@ -2,7 +2,7 @@
 
 Date: 2026-08-23
 Branch: `codex/parity-wave191-freex-20260823`
-Run: `20260823T120957Z`
+Run: `20260823T121806Z`
 
 ## Result
 
@@ -34,7 +34,13 @@ The saved XLSX is retained in the evidence bundle so the XML package can be inde
 - Linux Docker physical lane: 1 passed, 0 failed.
 - App image: `sha256:08c4378b7d9b42e8a134fdbf766f85a1cb62debefe18b292b51ae3acc87a2773`.
 
-Source and harness provenance is recorded in [manifest.json](evidence/wave191-freex-autofilter-color-20260823/manifest.json). The bundle includes the fixture, saved XLSX, physical result, postcondition, reopen diagnostics, and four rendered captures.
+Source and harness provenance is recorded in [manifest.json](evidence/wave191-freex-autofilter-color-20260823/manifest.json). The bundle includes the fixture, saved XLSX, physical result, postcondition, reopen diagnostics, and four rendered captures, all retained and hash-listed.
+
+## Provenance Audit Follow-up
+
+The first evidence record was incomplete: its four PNGs were ignored locally, `commitAtRun` pointed at base `9bd76f7f...`, and its command used `-SkipImageBuild`. That record did not prove that the app image contained the committed Wave191 product change.
+
+The physical lane was rerun from clean source commit `89ee11ebcafa39fee03624a5d41a40a0254c615f` with no `-SkipImageBuild` or `-SkipPublish`. The runner published and built app image `freex-linux-interactive-app-freex-15bded1b2789:current` with digest `sha256:019ad128467448d43c5369dad67336b45725a7e2bd8f2eb998d2903acc837a20` from Ubuntu base digest `sha256:429831d647c2614b4b7044312614f4cc8d1781015799c06c7666fcebe794a274`. The manifest records the final harness, runner, fixture-generator, source-test, product-source, and product-test SHA-256 values, plus the fresh run command and every retained file hash.
 
 ## Remaining Color Gaps
 
