@@ -1,7 +1,7 @@
 {
   "schema": "freew.dialog-route-inventory.v1",
   "schemaVersion": 1,
-  "generatedFromSha256": "7124c481448e2145f88b93c4429c9798044a693d260a006a0eccf66fb5c5695c",
+  "generatedFromSha256": "99df7046cda536885f729ca07e89cd9e38ba85c7c660260ed3f21b7d61103f58",
   "routes": [
     {
       "host": "avalonia",
