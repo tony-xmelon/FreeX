@@ -4,7 +4,9 @@ Date: 2026-08-23
 
 Wave 193 integrates one bounded evidence slice for each application. The
 cumulative app-slice count is **579**, accepted after all final integration
-gates passed at integration HEAD `5296d9a47a`.
+gates passed against tested source commit
+`615b53f474dfa1849ae965018d890cba4a138d42`. This report is a later docs-only
+acceptance refresh; it does not alter the tested source commit.
 
 ## FreeX
 
@@ -62,8 +64,8 @@ references remain unchanged.
 ## Generated Dashboard And Guards
 
 `tools/Generate-CrossAppParityDashboard.ps1` now generates Wave193 metadata,
-the accepted 579-slice count, the empty pending integration-gate list, and the
-FreeX/FreeW/FreeP Wave193 evidence summaries in both
+the tested-source commit, the accepted 579-slice count, the empty pending
+integration-gate list, and the FreeX/FreeW/FreeP Wave193 evidence summaries in both
 `docs/parity/avalonia-wpf-cross-app-dashboard.json` and
 `docs/parity/avalonia-wpf-cross-app-dashboard.md`.
 
@@ -89,8 +91,10 @@ authoritative **3/3** and **8/8** worker results remain recorded above.
 
 ## Integration Gates
 
-All final integration gates passed at integration HEAD `5296d9a47a`; no pending
-gates remain.
+All final integration gates passed against tested source commit
+`615b53f474dfa1849ae965018d890cba4a138d42`; no pending gates remain. The later
+acceptance commit contains documentation and generator/guard changes only and
+does not alter the tested source.
 
 - Independent review found no findings after dashboard and source-guard
   remediations.
@@ -101,7 +105,7 @@ gates remain.
   `dotnet build FreeX.slnx --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1`
   passed with **0 warnings** and **0 errors**.
 - The final default non-UI lane exited **0**. Key totals were Core.IO
-  **5,839 passed / 56 skipped**, Avalonia **2,178 passed**, Host Logic
+  **5,839 passed / 56 skipped**, Avalonia **2,182 passed**, Host Logic
   **1,490 passed / 4 skipped**, FreeP Presentation **5,466 passed**, and
   FreeP Avalonia **724 passed**.
 - The initial default lane exposed three source-test regressions. Remediation
