@@ -6,15 +6,15 @@
   "sourceFiles": [
     {
       "path": "freew/FreeW.App.Host/FontDialog.cs",
-      "sha256": "11caeb75debab1e34740b4adf17938e5a2ba1aa5444883b0d668c36ce294bb02"
+      "sha256": "6426b4cde130649fc418a386a043fda5b81d7546cea81a251fa473090addfc6d"
     },
     {
       "path": "freew/FreeW.App.Avalonia/FontDialog.cs",
-      "sha256": "fb33b7908b40b6bf31ecf503c8483ad6fdc144684646f59ad4fcfdd32eb125f0"
+      "sha256": "dd0a9bc5e3cfbcf4c42a88b1340cb8481426a70c69a1af4b5707e9008770c5d0"
     },
     {
       "path": "freew/FreeW.App.Presentation/Dialogs/FontDialogPlanner.cs",
-      "sha256": "4c8eba4a5c82371e5db05b8daf6057588d330097f9a7838ae2fe2e3c6d96390f"
+      "sha256": "56606620bb474e604a6e241b22ce27f870c4b107ee728d49629ae6a88e030d08"
     }
   ],
   "trackedInputs": {
