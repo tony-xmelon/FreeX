@@ -1,6 +1,7 @@
 schema-version=1
 before=autofilter-color-before.png
 source=autofilter-color-menu-open.png
+mode=fill
 button-bounds=97,439,75,27
 click=139,456
 sample=113,452
