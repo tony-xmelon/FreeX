@@ -76,7 +76,7 @@
     { "path": "tests/FreeX.Core.IO.Tests/Wave194AutoFilterMixedTypeSourcePatchTests.cs", "sha256": "571ccbe848ed03b58c81d011ea1b5a8ef9b25e49eaadc727c4176ab9cb787efd" }
   ],
   "validationFiles": [
-    { "path": "tests/FreeX.App.Avalonia.Tests/Wave194AutoFilterMixedTypeGeometryAssertions.cs", "hashMode": "canonical-lf", "sha256": "ac7e3962834ba4e464357292fef46d62036287583e4483b01d12aa4ccba2e03a" },
-    { "path": "tests/FreeX.App.Avalonia.Tests/Wave194AutoFilterMixedTypeGeometryMutationTests.cs", "hashMode": "canonical-lf", "sha256": "5f22c7ff0c56877b80d1cdc156ce940d76bba3dfa25cee3735dab3d9b67c99af" }
+    { "path": "tests/FreeX.App.Avalonia.Tests/Wave194AutoFilterMixedTypeGeometryAssertions.cs", "hashMode": "canonical-lf", "sha256": "2c336f9d3b9be01ea98828b7fa86a2035c129bcf27c3d22e80403bdbce5bb415" },
+    { "path": "tests/FreeX.App.Avalonia.Tests/Wave194AutoFilterMixedTypeGeometryMutationTests.cs", "hashMode": "canonical-lf", "sha256": "cf51e07e39a75f78923b9f80c310020d9dedf29226c4a82904c055af50f6e1ab" }
   ]
 }
