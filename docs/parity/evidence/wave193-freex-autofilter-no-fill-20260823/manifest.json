@@ -5,18 +5,23 @@
     "canonical-lf": "SHA-256 of strict UTF-8 text after CRLF and lone CR are normalized to LF",
     "raw": "SHA-256 of exact file bytes"
   },
-  "reportId": "20260823T165457Z",
+  "reportId": "20260823T175328Z",
   "branch": "codex/parity-wave193-freex-20260823",
-  "commitAtRun": "e1b0d85954028fc7f56e944d5622902bc251b6ce",
-  "sourceCommitAtImageBuild": "e1b0d85954028fc7f56e944d5622902bc251b6ce",
+  "commitAtRun": "92507d139d6cd2c72b0538a67ba7b2266c56786d",
+  "sourceCommitAtImageBuild": "92507d139d6cd2c72b0538a67ba7b2266c56786d",
   "sourceTreeStatusAtImageBuild": "clean",
   "appImageReference": "freex-linux-interactive-app-freex-a130098bdc04:current",
-  "appImageId": "sha256:561e22e144ac00be3c8fd8ab3634eb9649e85c6edbd03562d6292dcb0624f5c4",
+  "appImageId": "sha256:f10318df56fa3a634a7a9a8982ab763c6d203b6f675e90e3e4e2d47ee7e51345",
   "baseImageDigest": "sha256:d5d647464a56ff7dcc338f6692ad0b5b0da26087b3aec37141d9303a48b0f617",
   "physicalRun": {
     "selector": "autofilter-no-fill-persistence",
     "summary": "1/1 passed",
     "x11Result": "autofilter-color-no-fill-save-reopen-physical",
+    "popupOpenChangedPixels": 1905,
+    "popupDismissedChangedPixels": 1905,
+    "popupRestoredChangedPixels": 0,
+    "swatchRgb": "#FFFFFF",
+    "clickAcknowledged": true,
     "packageSignature": "ref=A1:B5|colId=0|cellColor=1|dxfId=0|dxf=empty",
     "reopenedVisible": "South,West,",
     "reopenedSemanticA4": "East"
@@ -25,7 +30,7 @@
     {
       "path": "autofilter-no-fill-applied.png",
       "hashMode": "raw",
-      "sha256": "6f61a07c70b55749769f43df41b45b3aa6704208df401c3e61ffe9ea2090e9f7"
+      "sha256": "de2d8e8c3fbf1a885384612ee7501c7c4ec651a08364fe5a85efeccbe82bff17"
     },
     {
       "path": "autofilter-no-fill-before.png",
@@ -40,7 +45,7 @@
     {
       "path": "autofilter-no-fill-postcondition.txt",
       "hashMode": "canonical-lf",
-      "sha256": "5dff49e2a9e6e3406d3484b44103f26c1a08d5589e548e178c806f9dc2790f14"
+      "sha256": "cd405997281572cdf6d9f1ab3686d9a011ed050804ac74af220aa28f17a7fae9"
     },
     {
       "path": "autofilter-no-fill-reopen-diagnostics.txt",
@@ -55,7 +60,22 @@
     {
       "path": "autofilter-no-fill-swatch-gate.txt",
       "hashMode": "canonical-lf",
-      "sha256": "6f86938c650ccd227d1cada560b66f183d73fdafd9e6a3ceee526665d35ed643"
+      "sha256": "f7bc07007067b922cded1161772726a651ab0e8164f1cd2d89d33c9db9b5a1b5"
+    },
+    {
+      "path": "autofilter-no-fill-target-before.png",
+      "hashMode": "raw",
+      "sha256": "f5cc3de722f51e00688462bc0e4b56bd4f3278833f2a38e223d04a9052d2fbb0"
+    },
+    {
+      "path": "autofilter-no-fill-target-dismissed.png",
+      "hashMode": "raw",
+      "sha256": "f5cc3de722f51e00688462bc0e4b56bd4f3278833f2a38e223d04a9052d2fbb0"
+    },
+    {
+      "path": "autofilter-no-fill-target-menu-open.png",
+      "hashMode": "raw",
+      "sha256": "4d7c11d1cbf59d8faad1a9e7534f3fb36b8afc6c3cacabb9dc2a77910ade542d"
     },
     {
       "path": "calibration-a1.png",
@@ -75,7 +95,7 @@
     {
       "path": "fixture-input.xlsx",
       "hashMode": "raw",
-      "sha256": "ea518ae91c488790353d665f881fa0e4ba25f8f283219f099b621fb20b2a74c3"
+      "sha256": "b391ca4cf1e41b7431bdd9213d384559accc85a58ecfe74b1a1f00d9511981c2"
     },
     {
       "path": "fixture-open-readiness.txt",
@@ -85,31 +105,31 @@
     {
       "path": "physical-result.json",
       "hashMode": "canonical-lf",
-      "sha256": "acc166c159b0aa7b55012f02006e3d2c3a5884441d71d9934f0d84364fb5a0bf"
+      "sha256": "df9e84f1f6c663a29af6e9580401059bae9b2df2a5cfc4252e469c8efe5b8fb6"
     },
     {
       "path": "saved-no-fill.xlsx",
       "hashMode": "raw",
-      "sha256": "3b168bee6bd78ab3336fd47cd759001ef299d4ae4f635cc91d0174a3e0d18026"
+      "sha256": "6576f268b8f05bf36c7b2fe8799a5e8b70163de8aaa63cb92cde16c702806436"
     },
     {
       "path": "x11-input-results.json",
       "hashMode": "canonical-lf",
-      "sha256": "acc166c159b0aa7b55012f02006e3d2c3a5884441d71d9934f0d84364fb5a0bf"
+      "sha256": "0e0049930928e847590f619ecf6063462587b9f047baacbdbc3319211fb392b2"
     }
   ],
   "provenanceFiles": [
     {
       "path": "tools/LinuxInteractiveDocker/run-freex-input-probes.sh",
       "hashMode": "canonical-lf",
-      "sha256": "1c07db9f0dfc38d5b0bcbdca7b8a1c9101aeb9dcbc966c58be80e12c6df884bd",
-      "gitBlob": "1c07db9f0dfc38d5b0bcbdca7b8a1c9101aeb9dcbc966c58be80e12c6df884bd"
+      "sha256": "e7e51f5cf4c37e0bce485dfaf056fc311b0c779db15db6d6da7c89d81e44ab4f",
+      "gitBlob": "e7e51f5cf4c37e0bce485dfaf056fc311b0c779db15db6d6da7c89d81e44ab4f"
     },
     {
       "path": "tools/Run-FreeXLinuxInteractionValidation.ps1",
       "hashMode": "canonical-lf",
-      "sha256": "8eadc53def42bcff4a5662eaab0eed6947c76f7d179e988d3894e3412a5cb992",
-      "gitBlob": "8eadc53def42bcff4a5662eaab0eed6947c76f7d179e988d3894e3412a5cb992"
+      "sha256": "bf3330dc6cac109c1e59fdfdb5361fa4649d79781ac258f59c74a98d101462df",
+      "gitBlob": "bf3330dc6cac109c1e59fdfdb5361fa4649d79781ac258f59c74a98d101462df"
     },
     {
       "path": "tools/LinuxInteractiveDocker/New-FreeXWave193AutoFilterNoFillFixture.ps1",
@@ -150,8 +170,8 @@
     {
       "path": "tests/FreeX.App.Avalonia.Tests/Wave193AutoFilterNoFillPhysicalSourceTests.cs",
       "hashMode": "canonical-lf",
-      "sha256": "346d9aa46e28a517bc945ac40d9b07637de2e362fe81b4c38bc74606528a47a6",
-      "gitBlob": "346d9aa46e28a517bc945ac40d9b07637de2e362fe81b4c38bc74606528a47a6"
+      "sha256": "cca280f5729d8b51301b3a092c694195ea26da7a162a255cae09bccff1f66a1d",
+      "gitBlob": "cca280f5729d8b51301b3a092c694195ea26da7a162a255cae09bccff1f66a1d"
     }
   ]
 }
