@@ -38,10 +38,40 @@ function Get-GitFileBytes {
     $memory.ToArray()
 }
 
+function Test-GitAncestor {
+    param([Parameter(Mandatory = $true)][string]$Ancestor, [Parameter(Mandatory = $true)][string]$Descendant)
+    $start = [Diagnostics.ProcessStartInfo]::new("git")
+    $start.WorkingDirectory = $repoRoot
+    $start.RedirectStandardOutput = $true
+    $start.RedirectStandardError = $true
+    $start.UseShellExecute = $false
+    $start.Arguments = "merge-base --is-ancestor `"$Ancestor`" `"$Descendant`""
+    $process = [Diagnostics.Process]::Start($start)
+    $outputText = $process.StandardOutput.ReadToEnd()
+    $errorText = $process.StandardError.ReadToEnd()
+    $process.WaitForExit()
+    if ($process.ExitCode -eq 0) { return $true }
+    if ($process.ExitCode -eq 1) { return $false }
+    throw "git merge-base failed for $Ancestor -> ${Descendant}: $errorText$outputText"
+}
+
+if ([int]$manifest.schemaVersion -ne 2) { throw "Wave194 manifest schemaVersion must be 2." }
+if ([string]$manifest.sourceBoundary.relationship -ne "ancestor") {
+    throw "Wave194 source boundary relationship must be ancestor."
+}
+$sourceReachable = Test-GitAncestor `
+    -Ancestor ([string]$manifest.sourceCommit) `
+    -Descendant ([string]$manifest.sourceBoundary.integrationCommit)
+if (-not $sourceReachable) {
+    throw "Wave194 source commit is not reachable from the recorded integration commit."
+}
+
 $audit = [Collections.Generic.List[string]]::new()
-$audit.Add("schema-version=1")
+$audit.Add("schema-version=$($manifest.schemaVersion)")
 $audit.Add("status=$($manifest.status)")
 $audit.Add("source-commit=$($manifest.sourceCommit)")
+$audit.Add("integration-commit=$($manifest.sourceBoundary.integrationCommit)")
+$audit.Add("source-relationship=$($manifest.sourceBoundary.relationship)|reachable=$sourceReachable")
 
 foreach ($file in $manifest.files) {
     $path = Join-Path $evidenceRoot ([string]$file.path)
@@ -62,5 +92,16 @@ foreach ($file in $manifest.provenanceFiles) {
     $audit.Add("$($file.path)|worktree=$worktree|commit=$committed|match=True")
 }
 
+foreach ($file in $manifest.validationFiles) {
+    $worktreePath = Join-Path $repoRoot ([string]$file.path)
+    if (-not (Test-Path -LiteralPath $worktreePath -PathType Leaf)) { throw "Missing validation file: $($file.path)" }
+    $worktree = Get-CanonicalHash -Bytes ([IO.File]::ReadAllBytes($worktreePath)) -Mode ([string]$file.hashMode)
+    $head = Get-CanonicalHash -Bytes (Get-GitFileBytes -Revision "HEAD" -Path $file.path) -Mode ([string]$file.hashMode)
+    if ($worktree -ne [string]$file.sha256 -or $head -ne [string]$file.sha256) {
+        throw "Validation hash mismatch: $($file.path)"
+    }
+    $audit.Add("$($file.path)|scope=post-integration-head|worktree=$worktree|head=$head|match=True")
+}
+
 [IO.File]::WriteAllLines((Join-Path $evidenceRoot "hash-audit.txt"), $audit, [Text.UTF8Encoding]::new($false))
-"Wave194 integrity passed: $($manifest.files.Count) evidence files, $($manifest.provenanceFiles.Count) provenance files."
+"Wave194 integrity passed: $($manifest.files.Count) evidence files, $($manifest.provenanceFiles.Count) reachable provenance files, $($manifest.validationFiles.Count) current validation files."

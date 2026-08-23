@@ -1,9 +1,18 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "wave": 194,
   "status": "passed",
   "branch": "codex/parity-wave194-freex-20260823",
-  "sourceCommit": "9cc05c169a9c3fc861609c7f5ed5cf833cd8f953",
+  "sourceCommit": "ddacd9c15132fa3d3c6efc997adad8472e539432",
+  "sourceBoundary": {
+    "integrationCommit": "d94a20c0002f3e5dc4fbd88c3ad2634b5d0defdb",
+    "relationship": "ancestor",
+    "hashBinding": "canonical-lf worktree and git-show source commit"
+  },
+  "validationBoundary": {
+    "scope": "post-integration current HEAD",
+    "hashBinding": "canonical-lf worktree and git-show HEAD"
+  },
   "physicalCaptureSourceCommit": "bbcccc8237e862cebddd8fde7c4a270ee17198f8",
   "reportId": "20260823T214605Z",
   "sessionId": "20260823T214824517Z",
@@ -63,9 +72,11 @@
     { "path": "src/FreeX.Core.Commands/FilterCommand.cs", "sha256": "b7009ab0a882d9d44663c81bf6cf428124bcf8d002225632eccd8d3affdb3758" },
     { "path": "src/FreeX.Core.IO/XlsxAutoFilterXmlCodec.cs", "sha256": "a5ece9ee30db01e826f3aa93f426e307967fd319e9b844031a39cdf8a8d6bb31" },
     { "path": "tests/FreeX.App.Avalonia.Tests/Wave194AutoFilterMixedTypePhysicalSourceTests.cs", "sha256": "e75ee5e030f16beed5a45c535f9b4633b2915d4c505e4fa9cb09c0855cfeec8f" },
-    { "path": "tests/FreeX.App.Avalonia.Tests/Wave194AutoFilterMixedTypeGeometryAssertions.cs", "sha256": "e4ba539dd331764b18993b165e37f36f86172252dea17fc63a9ec8e47f31888f" },
-    { "path": "tests/FreeX.App.Avalonia.Tests/Wave194AutoFilterMixedTypeGeometryMutationTests.cs", "sha256": "c712362e73452e2f340dded1f89ac88da44614877f95ea1bf725af633b4694d1" },
     { "path": "tests/FreeX.App.Presentation.Tests/Filtering/Wave194AutoFilterMixedTypeChecklistTests.cs", "sha256": "59b3112b37dafa7070989dc5e65c2a5bba68a9e021aa6711a54ad35e0891ee2c" },
     { "path": "tests/FreeX.Core.IO.Tests/Wave194AutoFilterMixedTypeSourcePatchTests.cs", "sha256": "571ccbe848ed03b58c81d011ea1b5a8ef9b25e49eaadc727c4176ab9cb787efd" }
+  ],
+  "validationFiles": [
+    { "path": "tests/FreeX.App.Avalonia.Tests/Wave194AutoFilterMixedTypeGeometryAssertions.cs", "hashMode": "canonical-lf", "sha256": "ac7e3962834ba4e464357292fef46d62036287583e4483b01d12aa4ccba2e03a" },
+    { "path": "tests/FreeX.App.Avalonia.Tests/Wave194AutoFilterMixedTypeGeometryMutationTests.cs", "hashMode": "canonical-lf", "sha256": "5f22c7ff0c56877b80d1cdc156ce940d76bba3dfa25cee3735dab3d9b67c99af" }
   ]
 }

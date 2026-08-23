@@ -2,7 +2,8 @@
 
 Date: 2026-08-24
 Branch: codex/parity-wave194-freex-20260823
-Provenance source commit: 9cc05c169a9c3fc861609c7f5ed5cf833cd8f953
+Reachable provenance source commit: ddacd9c15132fa3d3c6efc997adad8472e539432
+Integration descendant: d94a20c0002f3e5dc4fbd88c3ad2634b5d0defdb
 Physical capture source commit: bbcccc8237e862cebddd8fde7c4a270ee17198f8
 
 ## Result
@@ -38,18 +39,22 @@ Focused tests passed:
 
 * Presentation Wave194 checklist ordering/dedup/display: 1/1.
 * Core.IO Wave194 SourcePatch/package/reload/no-row-delta: 2/2.
-* Avalonia Wave194 source/geometry/integrity guards and production recalculation: 7/7.
+* Avalonia Wave194 source/geometry/integrity guards and production recalculation: 8/8.
 * Physical Docker/X11 `autofilter-mixed-type-persistence`: 1/1.
 
 No full solution build ran. The clean accepted image is
 `sha256:1abac66282eb8c8f9bef568684d364a3f1333c6df517bac2dc327aef6168d166`.
 The owned port-62949 container stopped and was removed by the harness.
 
-The later geometry-only harness refactor at provenance commit `9cc05c169a`
+The later geometry-only harness refactor at reachable provenance commit `ddacd9c151`
 centralizes the accepted crop `(97,589,260,18)` and click `(103,598)` without
 changing their resolved values or any accepted result bytes. Executable-line
 source guards and mutation tests bind every crop and the actual click to that
-single geometry contract; no physical rerun was required.
+single geometry contract. The post-integration guards are separately bound by
+matching canonical-LF worktree and `git show HEAD` hashes because they
+intentionally strengthen the integrated source guard without changing the
+physical harness. The verifier also proves `ddacd9c151` is an ancestor of
+`d94a20c000`; no physical rerun was required.
 
 Earlier non-authoritative iterations failed honestly: one used wrong control
 coordinates; one raced popup rendering; one isolated Select All's tri-state
