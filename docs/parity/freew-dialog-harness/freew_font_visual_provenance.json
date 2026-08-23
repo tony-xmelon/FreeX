@@ -1,8 +1,8 @@
 {
   "schema": "freew.font-visual-provenance.v1",
-  "wave": 192,
+  "wave": 193,
   "routeId": "font",
-  "generatedAtSourceRevision": "4dabf99f5a76d73ac0165ff6095fa202e01df638",
+  "generatedAtSourceRevision": "20105a1cc31a775eda9719f654a7e3f7aa13a796",
   "sourceFiles": [
     {
       "path": "freew/FreeW.App.Host/FontDialog.cs",
@@ -10,35 +10,66 @@
     },
     {
       "path": "freew/FreeW.App.Avalonia/FontDialog.cs",
-      "sha256": "dd0a9bc5e3cfbcf4c42a88b1340cb8481426a70c69a1af4b5707e9008770c5d0"
+      "sha256": "1bb92cbb0918988f1b5f6a29090cd5b6fc299c71e096a7915aaa59fefdb7465a"
     },
     {
       "path": "freew/FreeW.App.Presentation/Dialogs/FontDialogPlanner.cs",
       "sha256": "56606620bb474e604a6e241b22ce27f870c4b107ee728d49629ae6a88e030d08"
+    },
+    {
+      "path": "shared/Free.Shared.Shell.Avalonia/AvaloniaCompactDialogChrome.cs",
+      "sha256": "5025a0d25ec4416a947337ffdf0eab28cf35868fb59c514607ad5f9120aa7f56"
     }
   ],
   "trackedInputs": {
     "inventory": {
       "path": "docs/parity/freew-dialog-harness/freew_dialog_evidence_inventory.json",
-      "sha256": "7eff22c7fa8aebd030b862590994665f6dca57c9d7363750ad8831b3ab62eb23"
+      "sha256": "ee5a4dfd2de47c390358fe6e492ce90776792987c5e39b664daf2ec2e9416ea7"
     },
     "comparison": {
       "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json",
-      "sha256": "bc6d66729e17a3624c600c4f756a595d8b7e4045fb129e67879145f3f3f0512d"
+      "sha256": "65a3140a5186bed3842ce638fdeed98f8f2bbc7830535f37e563995bdd7d2206"
     },
     "freshnessSidecar": {
       "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_freshness.json",
-      "sha256": "da4af8da30c42eb1424b5b98e25ec2e2d56a3c244c9e8ec3037ee933f660cf86"
+      "sha256": "71dafe7f357b64b235427b2fb93bc8383c29d617eaa44151c6c074efe814fce5"
     }
+  },
+  "captureArtifacts": {
+    "wpf": {
+      "path": "artifacts/wave193-freew-font-checkbox-glyph/wpf/wpf_dialog_capture_manifest.json",
+      "sha256": "7f04771bfb575d2d53db45da8c0d36b27825ce4e88c38c0ca297395f78094d2f",
+      "tracked": false
+    },
+    "avalonia": {
+      "path": "artifacts/wave193-freew-font-checkbox-glyph/indicator-native-bevel/avalonia/avalonia_dialog_capture_manifest.json",
+      "sha256": "bcbb990d7d3cb0c52e0c140524440134fe0a80621efd03132b8f3fb62171289d",
+      "tracked": false
+    }
+  },
+  "wave192Baseline": {
+    "changedPixelsByState": {
+      "initial": 11227,
+      "populated": 11384,
+      "validation-error": 11585
+    },
+    "aggregateChangedPixels": 34196
+  },
+  "wave193Result": {
+    "aggregateChangedPixels": 32861,
+    "aggregateDelta": -1335,
+    "relativeImprovement": 0.0390396537606738,
+    "nonFontRowsCompared": 288,
+    "nonFontRowsChanged": 0
   },
   "captureArtifactPolicy": {
     "externalArtifactsTracked": false,
-    "limitation": "The six source capture PNGs and the two host capture manifests were supplied to the Wave192 comparison run but are not committed. The manifest SHA-256 values below preserve artifact identity; the tracked comparison rows and row hashes preserve the inspectable result. Reproducing the pixels requires the listed capture hosts and command.",
+    "limitation": "The six source capture PNGs and the two host capture manifests were supplied to the Wave193 comparison run but are not committed. The actual manifest SHA-256 values below preserve artifact identity; the tracked comparison rows and row hashes preserve the inspectable result. Reproducing the pixels requires the listed capture hosts and command.",
     "trackedAuthority": "The comparison JSON is the repository-backed authority for the exact row, metrics, content gates, dimensions, and painted bounds. The legacy freshness sidecar is supplemental host-manifest identity evidence, not the sole authority."
   },
   "freshGeneration": {
-    "command": "dotnet run --project freew/tools/FreeW.DialogVisualHarness/FreeW.DialogVisualHarness.csproj -c Release -- compare --inventory docs/parity/freew-dialog-harness/freew_dialog_evidence_inventory.json --wpf artifacts/freew-dialog-harness/about-legal-final-wpf/wpf_dialog_capture_manifest.json --avalonia artifacts/freew-dialog-harness/about-legal-final-avalonia/avalonia_dialog_capture_manifest.json --output docs/parity/freew-dialog-harness --baseline docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json --refresh-route font",
-    "checkCommand": "dotnet run --project freew/tools/FreeW.DialogVisualHarness/FreeW.DialogVisualHarness.csproj -c Release -- compare --inventory docs/parity/freew-dialog-harness/freew_dialog_evidence_inventory.json --wpf artifacts/freew-dialog-harness/about-legal-final-wpf/wpf_dialog_capture_manifest.json --avalonia artifacts/freew-dialog-harness/about-legal-final-avalonia/avalonia_dialog_capture_manifest.json --output docs/parity/freew-dialog-harness --check",
+    "command": "dotnet run --project freew/tools/FreeW.DialogVisualHarness/FreeW.DialogVisualHarness.csproj -c Release --no-build -- compare --inventory docs/parity/freew-dialog-harness/freew_dialog_evidence_inventory.json --wpf artifacts/wave193-freew-font-checkbox-glyph/wpf/wpf_dialog_capture_manifest.json --avalonia artifacts/wave193-freew-font-checkbox-glyph/indicator-native-bevel/avalonia/avalonia_dialog_capture_manifest.json --output docs/parity/freew-dialog-harness --baseline docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json --refresh-route font",
+    "checkCommand": "dotnet run --project freew/tools/FreeW.DialogVisualHarness/FreeW.DialogVisualHarness.csproj -c Release --no-build -- compare --inventory docs/parity/freew-dialog-harness/freew_dialog_evidence_inventory.json --wpf artifacts/wave193-freew-font-checkbox-glyph/wpf/wpf_dialog_capture_manifest.json --avalonia artifacts/wave193-freew-font-checkbox-glyph/indicator-native-bevel/avalonia/avalonia_dialog_capture_manifest.json --output docs/parity/freew-dialog-harness --baseline docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json --refresh-route font --check",
     "provenanceCheckCommand": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/Test-FreeWFontVisualProvenance.ps1"
   },
   "rows": [
@@ -46,15 +77,15 @@
       "scenarioId": "font.initial",
       "state": "initial",
       "comparisonRowPointer": "/rows/81",
-      "comparisonRowSha256": "2c8ade19eb641d89488dcf0c6f7f8567a46e1190c7c5bb55b7aa9ea060c0e835",
+      "comparisonRowSha256": "cca7450a0fb7be099caf5534724280f498226b1ad4cf7adce3d5f8dc1727c1eb",
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 176180,
-        "changedPixels": 11227,
-        "changedRatio": 0.06372459984107164,
-        "meanAbsoluteChannelDelta": 5.95648957505582,
-        "p95AbsoluteChannelDelta": 25,
-        "luminanceSimilarity": 0.884656003694392,
+        "changedPixels": 10782,
+        "changedRatio": 0.061198773981155634,
+        "meanAbsoluteChannelDelta": 5.731662693457455,
+        "p95AbsoluteChannelDelta": 20,
+        "luminanceSimilarity": 0.8865694020339555,
         "perceptualHashDistance": 0
       }
     },
@@ -62,15 +93,15 @@
       "scenarioId": "font.populated",
       "state": "populated",
       "comparisonRowPointer": "/rows/82",
-      "comparisonRowSha256": "b6a27148d9df173adc1c22a40460f8cc0f6b0a4acfe68354bbb35aceba31fdea",
+      "comparisonRowSha256": "387880a43712190ee110afc81e3272cae8611d5d6d410999707025c27da0f650",
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 176180,
-        "changedPixels": 11384,
-        "changedRatio": 0.06461573390850267,
-        "meanAbsoluteChannelDelta": 6.044638059560315,
-        "p95AbsoluteChannelDelta": 26,
-        "luminanceSimilarity": 0.8838760084974056,
+        "changedPixels": 10939,
+        "changedRatio": 0.062089908048586676,
+        "meanAbsoluteChannelDelta": 5.81981117796195,
+        "p95AbsoluteChannelDelta": 22.333333333333332,
+        "luminanceSimilarity": 0.885776340131823,
         "perceptualHashDistance": 0
       }
     },
@@ -78,15 +109,15 @@
       "scenarioId": "font.validation-error",
       "state": "validation-error",
       "comparisonRowPointer": "/rows/83",
-      "comparisonRowSha256": "3ca94b9491c7fa0fa5f9fefa83dc94058d74fe305eb0658fd60a4b6990f18728",
+      "comparisonRowSha256": "97f6bda7c9c717cf915e4e2a69c1aadc2f1b08d26b8839f0ed6724b49aa33c45",
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 176180,
-        "changedPixels": 11585,
-        "changedRatio": 0.06575661255534113,
-        "meanAbsoluteChannelDelta": 6.199275362318913,
-        "p95AbsoluteChannelDelta": 31,
-        "luminanceSimilarity": 0.8821293099762123,
+        "changedPixels": 11140,
+        "changedRatio": 0.06323078669542513,
+        "meanAbsoluteChannelDelta": 5.974448480720548,
+        "p95AbsoluteChannelDelta": 25,
+        "luminanceSimilarity": 0.8840010231171405,
         "perceptualHashDistance": 0
       }
     }
@@ -102,11 +133,11 @@
       "sourcePath": "freew/FreeW.App.Host/FontDialog.cs",
       "captureArtifact": {
         "kind": "external-capture-manifest-containing-row",
-        "path": "artifacts/freew-dialog-harness/about-legal-final-wpf/wpf_dialog_capture_manifest.json",
-        "sha256": "d32578baacc83a2069e83583489b54cfcd606eae572f915f623f59bfe82d8374",
+        "path": "artifacts/wave193-freew-font-checkbox-glyph/wpf/wpf_dialog_capture_manifest.json",
+        "sha256": "7f04771bfb575d2d53db45da8c0d36b27825ce4e88c38c0ca297395f78094d2f",
         "tracked": false
       },
-      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "bc6d66729e17a3624c600c4f756a595d8b7e4045fb129e67879145f3f3f0512d", "jsonPointer": "/rows/81", "sha256OfCanonicalRow": "2c8ade19eb641d89488dcf0c6f7f8567a46e1190c7c5bb55b7aa9ea060c0e835" }
+      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "65a3140a5186bed3842ce638fdeed98f8f2bbc7830535f37e563995bdd7d2206", "jsonPointer": "/rows/81", "sha256OfCanonicalRow": "cca7450a0fb7be099caf5534724280f498226b1ad4cf7adce3d5f8dc1727c1eb" }
     },
     {
       "host": "avalonia",
@@ -118,11 +149,11 @@
       "sourcePath": "freew/FreeW.App.Avalonia/FontDialog.cs",
       "captureArtifact": {
         "kind": "external-capture-manifest-containing-row",
-        "path": "artifacts/freew-dialog-harness/about-legal-final-avalonia/avalonia_dialog_capture_manifest.json",
-        "sha256": "5443d0a8c60fb77d8d56a35e8c55e329db6bf772a006f94c3f3c4602bd18ed74",
+        "path": "artifacts/wave193-freew-font-checkbox-glyph/indicator-native-bevel/avalonia/avalonia_dialog_capture_manifest.json",
+        "sha256": "bcbb990d7d3cb0c52e0c140524440134fe0a80621efd03132b8f3fb62171289d",
         "tracked": false
       },
-      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "bc6d66729e17a3624c600c4f756a595d8b7e4045fb129e67879145f3f3f0512d", "jsonPointer": "/rows/81", "sha256OfCanonicalRow": "2c8ade19eb641d89488dcf0c6f7f8567a46e1190c7c5bb55b7aa9ea060c0e835" }
+      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "65a3140a5186bed3842ce638fdeed98f8f2bbc7830535f37e563995bdd7d2206", "jsonPointer": "/rows/81", "sha256OfCanonicalRow": "cca7450a0fb7be099caf5534724280f498226b1ad4cf7adce3d5f8dc1727c1eb" }
     },
     {
       "host": "wpf",
@@ -134,11 +165,11 @@
       "sourcePath": "freew/FreeW.App.Host/FontDialog.cs",
       "captureArtifact": {
         "kind": "external-capture-manifest-containing-row",
-        "path": "artifacts/freew-dialog-harness/about-legal-final-wpf/wpf_dialog_capture_manifest.json",
-        "sha256": "d32578baacc83a2069e83583489b54cfcd606eae572f915f623f59bfe82d8374",
+        "path": "artifacts/wave193-freew-font-checkbox-glyph/wpf/wpf_dialog_capture_manifest.json",
+        "sha256": "7f04771bfb575d2d53db45da8c0d36b27825ce4e88c38c0ca297395f78094d2f",
         "tracked": false
       },
-      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "bc6d66729e17a3624c600c4f756a595d8b7e4045fb129e67879145f3f3f0512d", "jsonPointer": "/rows/82", "sha256OfCanonicalRow": "b6a27148d9df173adc1c22a40460f8cc0f6b0a4acfe68354bbb35aceba31fdea" }
+      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "65a3140a5186bed3842ce638fdeed98f8f2bbc7830535f37e563995bdd7d2206", "jsonPointer": "/rows/82", "sha256OfCanonicalRow": "387880a43712190ee110afc81e3272cae8611d5d6d410999707025c27da0f650" }
     },
     {
       "host": "avalonia",
@@ -150,11 +181,11 @@
       "sourcePath": "freew/FreeW.App.Avalonia/FontDialog.cs",
       "captureArtifact": {
         "kind": "external-capture-manifest-containing-row",
-        "path": "artifacts/freew-dialog-harness/about-legal-final-avalonia/avalonia_dialog_capture_manifest.json",
-        "sha256": "5443d0a8c60fb77d8d56a35e8c55e329db6bf772a006f94c3f3c4602bd18ed74",
+        "path": "artifacts/wave193-freew-font-checkbox-glyph/indicator-native-bevel/avalonia/avalonia_dialog_capture_manifest.json",
+        "sha256": "bcbb990d7d3cb0c52e0c140524440134fe0a80621efd03132b8f3fb62171289d",
         "tracked": false
       },
-      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "bc6d66729e17a3624c600c4f756a595d8b7e4045fb129e67879145f3f3f0512d", "jsonPointer": "/rows/82", "sha256OfCanonicalRow": "b6a27148d9df173adc1c22a40460f8cc0f6b0a4acfe68354bbb35aceba31fdea" }
+      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "65a3140a5186bed3842ce638fdeed98f8f2bbc7830535f37e563995bdd7d2206", "jsonPointer": "/rows/82", "sha256OfCanonicalRow": "387880a43712190ee110afc81e3272cae8611d5d6d410999707025c27da0f650" }
     },
     {
       "host": "wpf",
@@ -166,11 +197,11 @@
       "sourcePath": "freew/FreeW.App.Host/FontDialog.cs",
       "captureArtifact": {
         "kind": "external-capture-manifest-containing-row",
-        "path": "artifacts/freew-dialog-harness/about-legal-final-wpf/wpf_dialog_capture_manifest.json",
-        "sha256": "d32578baacc83a2069e83583489b54cfcd606eae572f915f623f59bfe82d8374",
+        "path": "artifacts/wave193-freew-font-checkbox-glyph/wpf/wpf_dialog_capture_manifest.json",
+        "sha256": "7f04771bfb575d2d53db45da8c0d36b27825ce4e88c38c0ca297395f78094d2f",
         "tracked": false
       },
-      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "bc6d66729e17a3624c600c4f756a595d8b7e4045fb129e67879145f3f3f0512d", "jsonPointer": "/rows/83", "sha256OfCanonicalRow": "3ca94b9491c7fa0fa5f9fefa83dc94058d74fe305eb0658fd60a4b6990f18728" }
+      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "65a3140a5186bed3842ce638fdeed98f8f2bbc7830535f37e563995bdd7d2206", "jsonPointer": "/rows/83", "sha256OfCanonicalRow": "97f6bda7c9c717cf915e4e2a69c1aadc2f1b08d26b8839f0ed6724b49aa33c45" }
     },
     {
       "host": "avalonia",
@@ -182,11 +213,11 @@
       "sourcePath": "freew/FreeW.App.Avalonia/FontDialog.cs",
       "captureArtifact": {
         "kind": "external-capture-manifest-containing-row",
-        "path": "artifacts/freew-dialog-harness/about-legal-final-avalonia/avalonia_dialog_capture_manifest.json",
-        "sha256": "5443d0a8c60fb77d8d56a35e8c55e329db6bf772a006f94c3f3c4602bd18ed74",
+        "path": "artifacts/wave193-freew-font-checkbox-glyph/indicator-native-bevel/avalonia/avalonia_dialog_capture_manifest.json",
+        "sha256": "bcbb990d7d3cb0c52e0c140524440134fe0a80621efd03132b8f3fb62171289d",
         "tracked": false
       },
-      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "bc6d66729e17a3624c600c4f756a595d8b7e4045fb129e67879145f3f3f0512d", "jsonPointer": "/rows/83", "sha256OfCanonicalRow": "3ca94b9491c7fa0fa5f9fefa83dc94058d74fe305eb0658fd60a4b6990f18728" }
+      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "65a3140a5186bed3842ce638fdeed98f8f2bbc7830535f37e563995bdd7d2206", "jsonPointer": "/rows/83", "sha256OfCanonicalRow": "97f6bda7c9c717cf915e4e2a69c1aadc2f1b08d26b8839f0ed6724b49aa33c45" }
     }
   ]
 }
