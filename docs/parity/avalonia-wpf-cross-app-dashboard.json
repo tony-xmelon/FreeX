@@ -19,6 +19,7 @@
                     "docs/parity/avalonia-parity-wave184-freex-autofilter-20260823.md",
                     "docs/parity/avalonia-parity-wave185-freex-autofilter-sort-20260823.md",
                     "docs/parity/avalonia-parity-wave186-freex-autofilter-text-20260823.md",
+                    "docs/parity/avalonia-parity-wave187-freex-autofilter-numeric-20260823.md",
                     "docs/parity/freew-command-inventory.json",
                     "docs/parity/freew-dialog-harness/freew_dialog_route_inventory.json",
                     "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json",
@@ -28,6 +29,7 @@
                     "docs/parity/avalonia-parity-wave184-freew-table-properties-cell-20260823.md",
                     "freew/docs/parity/avalonia-parity-wave185-freew-page-setup-text-raster-20260823.md",
                     "freew/docs/parity/avalonia-parity-wave186-freew-table-properties-text-raster-20260823.md",
+                    "docs/parity/avalonia-parity-wave187-freew-legal-notices-20260823.md",
                     "docs/parity/freep-command-parity-inventory.json",
                     "docs/parity/freep-dialog-pane-visual-evidence/summary.json",
                     "docs/parity/freep-dialog-pane-visual-evidence/artifact-manifest.json",
@@ -43,7 +45,8 @@
                     "docs/parity/freep-responsive-chrome-2026-08-16/manifest.json",
                     "docs/parity/freep-wave184-smartart-2026-08-23.md",
                     "docs/parity/freep-wave185-bullets-autofit-20260823.md",
-                    "docs/parity/freep-wave186-surface3d-smartart-20260823.md"
+                    "docs/parity/freep-wave186-surface3d-smartart-20260823.md",
+                    "docs/parity/avalonia-parity-wave187-freep-surface3d-20260823.md"
                 ],
     "apps":  [
                  {
@@ -123,7 +126,8 @@
                                                                   "docs/parity/avalonia-parity-wave183-freex-namebox-overlay-20260823.md",
                                                                   "docs/parity/avalonia-parity-wave184-freex-autofilter-20260823.md",
                                                                   "docs/parity/avalonia-parity-wave185-freex-autofilter-sort-20260823.md",
-                                                                  "docs/parity/avalonia-parity-wave186-freex-autofilter-text-20260823.md"
+                                                                  "docs/parity/avalonia-parity-wave186-freex-autofilter-text-20260823.md",
+                                                                  "docs/parity/avalonia-parity-wave187-freex-autofilter-numeric-20260823.md"
                                                               ],
                                               "routeCoverage":  {
                                                                     "inventoryRouteCount":  57,
@@ -178,6 +182,9 @@
                                                                        "linuxAutoFilterSortPersistenceTotal":  1,
                                                                        "linuxAutoFilterTextCriteriaPassed":  2,
                                                                        "linuxAutoFilterTextCriteriaTotal":  2,
+                                                                       "linuxAutoFilterNumericCriteriaAcceptedPassed":  0,
+                                                                       "linuxAutoFilterNumericCriteriaIntendedTotal":  2,
+                                                                       "linuxAutoFilterNumericCriteriaStatus":  "blocked-before-valid-fixture-run",
                                                                        "limitations":  [
                                                                                            "The 2026-08-16 interactive run captured 36 foreground ribbon states for each of Excel, WPF, and Avalonia, including Draw at all four widths, plus six guarded Excel popup/dialog surfaces. The 27 fixed-viewport triage rows average 13.937% RGB delta for WPF and 15.639% for Avalonia versus Excel; nine maximized rows are coverage-only, not an acceptance threshold.",
                                                                                            "The ribbon harness creates a blank workbook before tab discovery so the enabled Draw tab is materialized; the current manifest records no unavailable-tab skips.",
@@ -185,6 +192,7 @@
                                                                                            "The production Linux X11 AutoFilter apply/change/clear workflow passes 1/1 with exact SUBTOTAL postconditions 30 -\u003e 10 -\u003e 20 -\u003e 30.",
                                                                                            "The production Linux X11 AutoFilter sort/save/reopen workflow passes 1/1 with exact ascending and descending visible-order and package-state postconditions.",
                                                                                            "The production Linux X11 AutoFilter text-criteria save/reopen workflows pass 2/2 for Begins With and Equals with exact visible-row and package-state postconditions.",
+                                                                                           "Wave187 numeric AutoFilter evidence remains blocked before a valid fixture run: 0/2 intended workflows are accepted. The attempted direct pointer-route change was reverted unexercised; deterministic fixture readiness and result-schema mapping must be repaired before product behavior is judged.",
                                                                                            "The current-source range corpus retains 35 Avalonia grid captures: eight charts, seven cell styles, and 20 native PivotTable surfaces. These are renderer coverage evidence, not raw-pixel Office acceptance rows.",
                                                                                            "The committed COM range references cover nine chart ranges, seven native cell-style ranges, and 29 pivot-table ranges; they are distinct from the 2026-08-16 interactive foreground evidence (36 Excel ribbon states including Draw and six popup/dialog tours). The associated current-session ribbon comparison has 27 provisional fixed-viewport rows for each host: WPF averages 13.937% RGB delta and Avalonia averages 15.639% versus Excel. These are triage metrics, not visual-parity acceptance results."
                                                                                        ]
@@ -199,7 +207,7 @@
                                                                                        },
                                               "claimBoundary":  "Coverage, manifest pairing, and DPI-normalized size comparability only; do not read these fields as visual parity."
                                           },
-                     "nextSlice":  "Command/dialog route coverage is complete for the generated inputs: all 0 pseudo-gallery rows are catalog-backed in classifier evidence (0 conditional-format rows over 38 runtime catalog items, 0 font/border rows, and 0 accounting-symbol rows), and dialog screenshot evidence has 94 paired WPF/Avalonia manifest surface ids with 0 Avalonia-only ids. This is coverage and size-comparability evidence, not visual parity. The paired screenshots retain 0 unresolved high-delta visual review candidates at triage score \u003e= 0.4 (highest 0.100622); keep those candidates separate from 0 scale-aware dimension mismatch rows and 21 raw PNG pixel dimension mismatches. Production Linux evidence now covers Name Box (1/1 visual, 8/8 interaction), AutoFilter apply/change/clear recalculation (1/1), sort/save/reopen persistence (1/1), and text-criteria save/reopen persistence (2/2); extend physical verification to number, date, color, and multi-column criteria workflows."
+                     "nextSlice":  "Command/dialog route coverage is complete for the generated inputs: all 0 pseudo-gallery rows are catalog-backed in classifier evidence (0 conditional-format rows over 38 runtime catalog items, 0 font/border rows, and 0 accounting-symbol rows), and dialog screenshot evidence has 94 paired WPF/Avalonia manifest surface ids with 0 Avalonia-only ids. This is coverage and size-comparability evidence, not visual parity. The paired screenshots retain 0 unresolved high-delta visual review candidates at triage score \u003e= 0.4 (highest 0.100622); keep those candidates separate from 0 scale-aware dimension mismatch rows and 21 raw PNG pixel dimension mismatches. Production Linux evidence now covers Name Box (1/1 visual, 8/8 interaction), AutoFilter apply/change/clear recalculation (1/1), sort/save/reopen persistence (1/1), and text-criteria save/reopen persistence (2/2). Numeric criteria remain at 0/2 accepted because Wave187 never reached a valid fixture run; repair deterministic fixture-open/calibration readiness and result-schema mapping, then rerun number criteria before extending to date, color, multi-column, and clear/reapply workflows."
                  },
                  {
                      "app":  "FreeW",
@@ -228,7 +236,8 @@
                                                                   "docs/parity/freew-word-chrome-2026-08-16/manifest.json",
                                                                   "docs/parity/avalonia-parity-wave184-freew-table-properties-cell-20260823.md",
                                                                   "freew/docs/parity/avalonia-parity-wave185-freew-page-setup-text-raster-20260823.md",
-                                                                  "freew/docs/parity/avalonia-parity-wave186-freew-table-properties-text-raster-20260823.md"
+                                                                  "freew/docs/parity/avalonia-parity-wave186-freew-table-properties-text-raster-20260823.md",
+                                                                  "docs/parity/avalonia-parity-wave187-freew-legal-notices-20260823.md"
                                                               ],
                                               "canonicalComparison":  {
                                                                           "kind":  "canonical-inputs-only",
@@ -281,6 +290,7 @@
                                                                                            "The focused table-properties.tab-cell pair improved from 12.240179% to 12.100893% changed pixels; it remains classified as a genuine visual mismatch.",
                                                                                            "The six-state Page Setup family improved from 8.317758% to 8.196280% average changed pixels; all six states remain genuine visual mismatches.",
                                                                                            "The seven-state Table Properties family improved from 8.259991% to 8.136310% average changed pixels; six states remain genuine visual mismatches and one remains a pass.",
+                                                                                           "Fresh current-source Legal Notices captures improved from 326094 to 324936 aggregate changed pixels; all four overflowing states improved, both short states were unchanged, and all six remain genuine visual mismatches.",
                                                                                            "Avalonia-only route/state rows are reported separately and are outside the WPF-authority pairing set.",
                                                                                            "Word reference PNGs are available for triage, but this current-source capture cohort has 94 failed and 3 skipped comparisons; it is not a Word visual-parity claim."
                                                                                        ]
@@ -295,7 +305,7 @@
                                                                                        },
                                               "claimBoundary":  "Route and evidence-row coverage only; paired comparison rows and mismatch classifications do not establish Word visual parity."
                                           },
-                     "nextSlice":  "A committed current-source Word PNG baseline bundle is available for 99 comparable rows, but 94 comparisons remain outside tolerance. The focused Table Properties family improved from 8.259991% to 8.136310% average changed pixels while preserving six mismatch and one pass classifications; continue with the legal-notices family or the next classified font, pagination, drawing/object, chart, table, or WordArt residual."
+                     "nextSlice":  "A committed current-source Word PNG baseline bundle is available for 99 comparable rows, but 94 comparisons remain outside tolerance. Fresh Legal Notices captures improved from 326094 to 324936 aggregate changed pixels without a state regression; continue with its glyph/template raster tail or the next classified font, pagination, drawing/object, chart, table, or WordArt residual."
                  },
                  {
                      "app":  "FreeP",
@@ -328,7 +338,8 @@
                                                                   "docs/parity/freep-responsive-chrome-2026-08-16/manifest.json",
                                                                   "docs/parity/freep-wave184-smartart-2026-08-23.md",
                                                                   "docs/parity/freep-wave185-bullets-autofit-20260823.md",
-                                                                  "docs/parity/freep-wave186-surface3d-smartart-20260823.md"
+                                                                  "docs/parity/freep-wave186-surface3d-smartart-20260823.md",
+                                                                  "docs/parity/avalonia-parity-wave187-freep-surface3d-20260823.md"
                                                               ],
                                               "routeCoverage":  {
                                                                     "laneEntries":  [
@@ -419,6 +430,7 @@
                                                                                            "The tracked tree contains 53 PowerPoint reference slides across all 27 corpus decks. This completes corpus coverage, not full PowerPoint UI or feature parity. Current-source recalibration metrics are recorded separately and are not a visual-parity claim.",
                                                                                            "Native PowerPoint ribbon capture status is \u0027complete\u0027 with 28/28 mapped tab/width references.",
                                                                                            "Responsive FreeP app chrome is \u0027complete\u0027 with 48/48 WPF/Avalonia tab/width captures (6 tabs at 4 widths).",
+                                                                                           "The directly measured Wave187 authored-camera Surface3D target improved from 2.7438% to 2.7032% WPF/Office, 2.6220% to 2.5815% Avalonia/Office, and 1.0805% to 1.0804% WPF/Avalonia; deck26 and four ordinary-chart controls were preserved. Diagnostic reconstructed corpus estimates remain outside the canonical recalibration summary.",
                                                                                            "Live microphone/camera capture, permission prompts, and encoded camera payloads require real devices.",
                                                                                            "No hardware capture artifacts are generated by this tool.",
                                                                                            "WPF uses native Windows dialogs and Avalonia uses the platform storage provider. OS-owned picker chrome is not an app-owned cross-host pixel-parity surface."
@@ -443,7 +455,7 @@
                                                                                        },
                                               "claimBoundary":  "Route/scenario coverage, committed PNG manifests, and local WPF/Avalonia comparison results only; no PowerPoint visual-parity claim is made."
                                           },
-                     "nextSlice":  "The tracked PowerPoint corpus now has 53 COM-exported reference slides across 27 ready decks, with 0 deck missing references. The current-source recalibration covers 53 paired Office slides and averages 1.0447% for WPF and 1.0124% for Avalonia, with maxima of 3.0587% / 2.9238%. Prioritize the remaining complex SmartArt, text, and 3-D rendering residuals while preserving the WPF/Avalonia pair metric."
+                     "nextSlice":  "The tracked PowerPoint corpus now has 53 COM-exported reference slides across 27 ready decks, with 0 deck missing references. The canonical recalibration covers 53 paired Office slides and averages 1.0447% for WPF and 1.0124% for Avalonia, with maxima of 3.0587% / 2.9238%. Wave187 directly improved the authored-camera Surface3D deck25 target while preserving deck26 and ordinary-chart controls; continue with a genuinely new Surface3D topology or the slide-09 SmartArt/text residual."
                  }
              ]
 }
