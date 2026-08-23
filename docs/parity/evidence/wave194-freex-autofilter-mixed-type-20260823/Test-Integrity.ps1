@@ -12,7 +12,13 @@ function Get-CanonicalHash {
         $text = [Text.Encoding]::UTF8.GetString($Bytes).Replace("`r`n", "`n").Replace("`r", "`n")
         $Bytes = [Text.Encoding]::UTF8.GetBytes($text)
     }
-    [Convert]::ToHexString([Security.Cryptography.SHA256]::HashData($Bytes)).ToLowerInvariant()
+    $hasher = [Security.Cryptography.SHA256]::Create()
+    try {
+        [BitConverter]::ToString($hasher.ComputeHash($Bytes)).Replace("-", "").ToLowerInvariant()
+    }
+    finally {
+        $hasher.Dispose()
+    }
 }
 
 function Get-GitFileBytes {
@@ -22,8 +28,7 @@ function Get-GitFileBytes {
     $start.RedirectStandardOutput = $true
     $start.RedirectStandardError = $true
     $start.UseShellExecute = $false
-    [void]$start.ArgumentList.Add("show")
-    [void]$start.ArgumentList.Add("${Revision}:$Path")
+    $start.Arguments = "show --no-textconv `"${Revision}:$Path`""
     $process = [Diagnostics.Process]::Start($start)
     $memory = [IO.MemoryStream]::new()
     $process.StandardOutput.BaseStream.CopyTo($memory)
