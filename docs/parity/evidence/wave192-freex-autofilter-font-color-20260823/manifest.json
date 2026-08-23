@@ -149,17 +149,17 @@
     {
       "path": "autofilter-font-color-postcondition.txt",
       "hashMode": "canonical-lf",
-      "sha256": "e6765e364aab634b1280a6c812cce23559c0ddce587324dbf095e5016ae1a25a"
+      "sha256": "132db0efa4ae88bc2f96e8cac41d37dc2a4525d6f4bfc79fea73dd53cb0c016a"
     },
     {
       "path": "autofilter-font-color-swatch-gate.txt",
       "hashMode": "canonical-lf",
-      "sha256": "5e2e56ed82658086490847574d57bdc5f1f83f637ebad7b206d057c2b6ae1db7"
+      "sha256": "91daf8e18d20737a19bc8ce2f7566d852d53bf9ee0a6d3664964ef1b76f9b24e"
     },
     {
       "path": "autofilter-font-color-reopen-diagnostics.txt",
       "hashMode": "canonical-lf",
-      "sha256": "35059bed46cb01ce663277dcffa6b070818b0b1e2746ec7e0494e17e147faeb6"
+      "sha256": "6f55c47d944eca6dfbfd2fcb286f9f6e4f12ca5d694e119beeef07b70c08a658"
     },
     {
       "path": "hash-audit.txt",

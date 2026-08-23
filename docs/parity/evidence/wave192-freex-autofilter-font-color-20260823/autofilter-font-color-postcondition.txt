@@ -9,4 +9,3 @@ dialog-open=true
 dialog-closed=true
 reopened-visible=North,East,
 reopened-semantic-a4=East
-
