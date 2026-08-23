@@ -1,7 +1,7 @@
 # Avalonia Parity Wave 191: FreeW Font Combo Template
 
-Date: 2026-08-23  
-Scope: FreeW Avalonia Font dialog, the three canonical states at the existing 460 x 340 logical target  
+Date: 2026-08-23
+Scope: FreeW Avalonia Font dialog, the three canonical states at the existing 460 x 340 logical target
 Authority: fresh FreeW WPF `FontDialog` captures
 
 ## Finding
