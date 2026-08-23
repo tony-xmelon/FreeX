@@ -1,5 +1,8 @@
 document-path=/documents/freex-wave193-autofilter-no-fill.xlsx
 menu-open=true
+popup-open-transition=true
+popup-dismissed-transition=true
+click-acknowledged=true
 swatch-gate=true
 criteria=nofill:#FFFFFF
 visible=South,West,
