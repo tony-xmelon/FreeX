@@ -44,7 +44,7 @@ Evidence and provenance are retained under
 ## Verification
 
 - Focused FreeX Core IO color/codec tests: **16/16 passed**.
-- Wave192 source/workflow guards: **2/2 passed before evidence assembly**; the two evidence-hash guards are recorded in the final verification after the committed bundle was added.
+- Wave191 and Wave192 source/evidence guards: **8/8 passed**.
 - Physical Linux Docker lane: **1/1 passed**.
 - App image: `freex-linux-interactive-app-freex-92b5f322f615:current`, digest `sha256:81bde7c6d5fdd20391500d63f072c2a23b5bbea145640f661e1a8e57ac0a65e1`.
 - Docker base image digest: `sha256:42786d247531ef93985d0a893e90d76f2b23c342178f8c47702c9dd58ddc12eb`.

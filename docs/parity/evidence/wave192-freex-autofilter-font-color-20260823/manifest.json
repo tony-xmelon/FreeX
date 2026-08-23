@@ -17,7 +17,7 @@
     {
       "path": "tools/LinuxInteractiveDocker/run-freex-input-probes.sh",
       "hashMode": "canonical-lf",
-      "sha256": "0f991156dad630baa29c8ee73daf320f262c56041b1ea8717dd44b12190b8e06"
+      "sha256": "337d857b3ff1da629c46dbef1951cfdbebf36db9cb720fb98125e73c5cc45018"
     },
     {
       "path": "tools/Run-FreeXLinuxInteractionValidation.ps1",
@@ -64,8 +64,8 @@
     {
       "path": "tools/LinuxInteractiveDocker/run-freex-input-probes.sh",
       "hashMode": "canonical-lf",
-      "worktreeSha256": "0f991156dad630baa29c8ee73daf320f262c56041b1ea8717dd44b12190b8e06",
-      "gitBlobContentSha256": "0f991156dad630baa29c8ee73daf320f262c56041b1ea8717dd44b12190b8e06",
+      "worktreeSha256": "337d857b3ff1da629c46dbef1951cfdbebf36db9cb720fb98125e73c5cc45018",
+      "gitBlobContentSha256": "337d857b3ff1da629c46dbef1951cfdbebf36db9cb720fb98125e73c5cc45018",
       "match": true
     },
     {
@@ -164,7 +164,7 @@
     {
       "path": "hash-audit.txt",
       "hashMode": "canonical-lf",
-      "sha256": "4cc2bb157cacd1adcfb33a0206405511cadeb38f99ba3bf9778d8c4140de428b"
+      "sha256": "1b152976b851c5472ef8634a5e05157d71fe971eba91113c5e046fa20f4a79f7"
     },
     {
       "path": "fixture-input.xlsx",
