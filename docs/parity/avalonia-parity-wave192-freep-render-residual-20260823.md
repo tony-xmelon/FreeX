@@ -41,7 +41,9 @@ Mean channel difference as a percentage of the maximum channel range:
 | Avalonia vs Office | 2.5815% | 0.8675% |
 | WPF vs Avalonia | 1.0804% | 0.8540% |
 
-Fresh authoritative corpus rerender and all 159 row comparisons:
+Worker-run corpus measurement and all 159 row comparisons (the render count is
+reported by the worker run; the generated 106-image render set is not retained
+in this evidence bundle):
 
 | Aggregate | Average | Maximum slide residual |
 | --- | ---: | ---: |
@@ -59,6 +61,8 @@ The WPF slide09 PNG is byte-stable against the Wave191 evidence hash
 Machine-readable rows, target images, heatmaps, and SHA-256 integrity checks
 are committed under
 `docs/parity/evidence/avalonia-parity-wave192-freep-evidence-20260823/`.
+The committed PowerPoint reference mapping and provenance are recorded in
+`references.json` in that directory.
 
 ## Verification
 
@@ -67,9 +71,20 @@ are committed under
 - Focused chart/SmartArt/model `FreeP.App.Presentation.Tests`: 732/732 passed.
 - Focused `FreeP.RenderCompare.Tests`: 21/21 passed.
 - Full `FreeP.App.Rendering.Avalonia.Tests`: 290/290 passed.
-- Full corpus: 106/106 WPF/Avalonia renders; 159/159 reference and pair diffs; every image 1280x720.
-- `Test-Integrity.ps1`: 9/9 evidence image hashes, 27/53 corpus cardinality, and WPF byte-stability gate passed.
+- Worker-run claim: 106/106 WPF/Avalonia renders and 159/159 reference and pair diffs; this render count is not independently reproducible from the retained bundle.
+- `Test-Integrity.ps1`: 53 unique rows across 27 decks / 53 slides, all 159 comparisons, recomputed aggregates, target/control equality, 9/9 evidence PNG hashes and dimensions, 53/53 committed reference mappings with hashes and dimensions, and actual WPF hash equality against both Wave191 and Wave192 stability hashes.
 - PowerPoint COM was unavailable; committed Office PNGs are the authority.
+
+## Evidence proof boundary
+
+The retained evidence proves the 53-row metric table, its three comparisons
+per row, the declared aggregate values within the documented four-decimal
+rounding, target/control consistency, the nine retained Wave192 PNGs, the
+WPF increasing-circle stability hash, and the one-to-one mapping to 53 tracked
+PowerPoint reference PNGs at 1280x720. It does not prove that 106 current-source
+WPF/Avalonia renders were performed because those generated render outputs and
+their per-render provenance are not retained. That number remains a worker-run
+claim and is intentionally not asserted by `Test-Integrity.ps1`.
 
 ## Remaining residual
 
