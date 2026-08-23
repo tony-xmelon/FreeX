@@ -1,3 +1,0 @@
-expected-document=freex-wave194-autofilter-mixed-type.xlsx
-observed-window-title=freex-wave194-autofilter-mixed-type.xlsx - FreeX
-status=passed
