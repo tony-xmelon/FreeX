@@ -35,12 +35,12 @@ dimensions, but only normalized existing AutoFilter XML. When a command added
 modeled `FilterColumns` state, the patch package therefore retained
 `<autoFilter>` while silently dropping the new `filterColumn/colorFilter`.
 
-`XlsxFileAdapter.SourcePackageSnapshot` now re-emits independent worksheet
-metadata, including modeled AutoFilter criteria, after the patch save and
-before the package is returned. The fix is shared by fill and font color save
-paths. The new package test opens the committed XLSX evidence, asserts its XML
-semantics, applies each real command to the fixture, saves, reloads, and
-asserts the exact semantics again.
+`XlsxFileAdapter.SourcePackageSnapshot` now re-emits only modeled AutoFilter
+criteria after a patch save. Filter-owned hidden rows are an explicit dimension
+patch concern, while unrelated dimension/view metadata stays under the existing
+source sanitization and preservation rules. The fix is shared by fill and font
+color save paths. The package test requires the real source-patch diagnostic,
+opens the committed XLSX evidence, and asserts exact save/reload semantics.
 
 ## Verification
 
@@ -52,4 +52,7 @@ asserts the exact semantics again.
   `sha256:f252624586ad7f4ec6ddd50992111a5eecd05f36ee132359b8191dcffdd1662b`.
 
 The evidence manifest records canonical-LF hashes for text, raw-byte hashes
-for PNG/XLSX artifacts, and Git-blob audits for source provenance.
+for PNG/XLSX artifacts, and Git-blob audits for source provenance. It maps image
+source `3541f35714` to byte-equivalent integration source `0fc47ab4d6`, evidence
+commit `5205d4bc85`, and integration result `5743087e21`; guards verify those
+blobs and ancestry directly through Git.
