@@ -1,0 +1,919 @@
+{
+  "schema": "freep.parity.wave191.increasing-circle-color-gate.v1",
+  "date": "2026-08-23",
+  "source": {
+    "baseRevision": "9bd76f7f75",
+    "deck": "tools/FreeP.RenderCompare/corpus/15-smartart-grouped-list.pptx",
+    "slide": 9,
+    "width": 1280,
+    "height": 720,
+    "sourceDeckSha256": "c1a1822c03bbe139cd58290745fa1e3a4d55331122519b3c5d0875759e2bda03",
+    "officeReferenceSha256": "3d38f17c29033f835e27264f71105cf3c02fb18d8e7b6cb1dc5425dc9c6767ad"
+  },
+  "decision": "IncreasingCircleProcess slide-09 residual selected; no new Surface3D topology was committed because Wave175 found no new authored topology in the corpus.",
+  "predicate": {
+    "topologyFlagRequired": "UseImportedIncreasingCircleTextRaster",
+    "resolvedTextColor": "Black",
+    "literalVisibleLabelInspected": false,
+    "fileNameInspected": false,
+    "screenshotHashInspectedAtRuntime": false,
+    "change": "correct the Wave190 predicate from an impossible white resolved-color check to the actual black semantic default; all existing topology/layout/font/effect gates remain"
+  },
+  "target": {
+    "before": {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-09",
+      "wpfOffice": 0.9662,
+      "avaloniaOffice": 1.6879,
+      "wpfAvalonia": 1.6009
+    },
+    "after": {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-09",
+      "wpfOffice": 0.9662,
+      "avaloniaOffice": 0.8675,
+      "wpfAvalonia": 0.854
+    },
+    "delta": {
+      "avaloniaOffice": -0.8204,
+      "wpfAvalonia": -0.7469,
+      "wpfOffice": 0.0
+    }
+  },
+  "corpusBefore": {
+    "corpusDecks": 27,
+    "corpusSlides": 53,
+    "wpfAverage": 1.0309,
+    "wpfMaximum": 3.0587,
+    "avaloniaAverage": 1.0117,
+    "avaloniaMaximum": 2.5815,
+    "wpfAvaloniaAverage": 0.6238,
+    "wpfAvaloniaMaximum": 2.9091
+  },
+  "corpusAfter": {
+    "corpusDecks": 27,
+    "corpusSlides": 53,
+    "wpfAverage": 1.0309,
+    "wpfMaximum": 3.0587,
+    "avaloniaAverage": 0.9962,
+    "avaloniaMaximum": 2.5815,
+    "wpfAvaloniaAverage": 0.6097,
+    "wpfAvaloniaMaximum": 2.9091
+  },
+  "controls": [
+    {
+      "deck": "06-charts",
+      "slide": "slide-01",
+      "wpfOffice": 0.9846,
+      "avaloniaOffice": 0.9375,
+      "wpfAvalonia": 0.4242
+    },
+    {
+      "deck": "06-charts",
+      "slide": "slide-02",
+      "wpfOffice": 1.2449,
+      "avaloniaOffice": 1.1365,
+      "wpfAvalonia": 0.3599
+    },
+    {
+      "deck": "06-charts",
+      "slide": "slide-03",
+      "wpfOffice": 0.6149,
+      "avaloniaOffice": 0.5839,
+      "wpfAvalonia": 0.2974
+    },
+    {
+      "deck": "06-charts",
+      "slide": "slide-04",
+      "wpfOffice": 1.2552,
+      "avaloniaOffice": 1.1998,
+      "wpfAvalonia": 0.4455
+    },
+    {
+      "deck": "14-smartart-live",
+      "slide": "slide-01",
+      "wpfOffice": 1.3451,
+      "avaloniaOffice": 1.3124,
+      "wpfAvalonia": 1.1567
+    },
+    {
+      "deck": "14-smartart-live",
+      "slide": "slide-02",
+      "wpfOffice": 1.5158,
+      "avaloniaOffice": 1.5689,
+      "wpfAvalonia": 1.0093
+    },
+    {
+      "deck": "14-smartart-live",
+      "slide": "slide-03",
+      "wpfOffice": 0.7149,
+      "avaloniaOffice": 0.7043,
+      "wpfAvalonia": 0.2878
+    },
+    {
+      "deck": "14-smartart-live",
+      "slide": "slide-04",
+      "wpfOffice": 1.7017,
+      "avaloniaOffice": 1.7286,
+      "wpfAvalonia": 0.521
+    },
+    {
+      "deck": "26-chart-surface3d-default-tall-frame",
+      "slide": "slide-01",
+      "wpfOffice": 2.4757,
+      "avaloniaOffice": 2.2723,
+      "wpfAvalonia": 1.0104
+    }
+  ],
+  "images": {
+    "avalonia-after-slide-09.png": "3292631276611b64c951f7d4f1cd3f287f6706774e151b25ab30cecf166ef0eb",
+    "avalonia-office-slide-09-diff.png": "f2d2b1b795624914553799e3e6de5cfc1c3b07bd1897a2e4a7f7c22e1ac54b7c",
+    "avalonia-before-slide-09.png": "cd4ffe901c37c0da1616e9a8eee8dd7bda4e886382623f46f214689eb1d2a27f",
+    "wpf-after-slide-09.png": "285e9f4aa9014e704a01df1ede731e2f63e448245cf8b04d642f2bd727967e70"
+  },
+  "rowsBefore": [
+    {
+      "deck": "01-title-slide",
+      "slide": "slide-01",
+      "wpfOffice": 1.2511,
+      "avaloniaOffice": 1.386,
+      "wpfAvalonia": 1.1359
+    },
+    {
+      "deck": "02-autoshapes",
+      "slide": "slide-01",
+      "wpfOffice": 0.4773,
+      "avaloniaOffice": 0.4758,
+      "wpfAvalonia": 0.1028
+    },
+    {
+      "deck": "03-mixed-text",
+      "slide": "slide-01",
+      "wpfOffice": 1.1277,
+      "avaloniaOffice": 1.1281,
+      "wpfAvalonia": 1.2258
+    },
+    {
+      "deck": "04-picture",
+      "slide": "slide-01",
+      "wpfOffice": 0.1487,
+      "avaloniaOffice": 0.1316,
+      "wpfAvalonia": 0.1363
+    },
+    {
+      "deck": "05-table",
+      "slide": "slide-01",
+      "wpfOffice": 1.3262,
+      "avaloniaOffice": 1.2,
+      "wpfAvalonia": 0.3551
+    },
+    {
+      "deck": "06-charts",
+      "slide": "slide-01",
+      "wpfOffice": 0.9846,
+      "avaloniaOffice": 0.9375,
+      "wpfAvalonia": 0.4242
+    },
+    {
+      "deck": "06-charts",
+      "slide": "slide-02",
+      "wpfOffice": 1.2449,
+      "avaloniaOffice": 1.1365,
+      "wpfAvalonia": 0.3599
+    },
+    {
+      "deck": "06-charts",
+      "slide": "slide-03",
+      "wpfOffice": 0.6149,
+      "avaloniaOffice": 0.5839,
+      "wpfAvalonia": 0.2974
+    },
+    {
+      "deck": "06-charts",
+      "slide": "slide-04",
+      "wpfOffice": 1.2552,
+      "avaloniaOffice": 1.1998,
+      "wpfAvalonia": 0.4455
+    },
+    {
+      "deck": "07-customgeom",
+      "slide": "slide-01",
+      "wpfOffice": 0.4557,
+      "avaloniaOffice": 0.3136,
+      "wpfAvalonia": 0.3275
+    },
+    {
+      "deck": "08-effects",
+      "slide": "slide-01",
+      "wpfOffice": 1.2296,
+      "avaloniaOffice": 1.311,
+      "wpfAvalonia": 0.5409
+    },
+    {
+      "deck": "09-smartart",
+      "slide": "slide-01",
+      "wpfOffice": 0.4026,
+      "avaloniaOffice": 0.3455,
+      "wpfAvalonia": 0.2666
+    },
+    {
+      "deck": "10-motionpath",
+      "slide": "slide-01",
+      "wpfOffice": 0.0406,
+      "avaloniaOffice": 0.0702,
+      "wpfAvalonia": 0.0672
+    },
+    {
+      "deck": "11-bevel3d",
+      "slide": "slide-01",
+      "wpfOffice": 1.0278,
+      "avaloniaOffice": 0.9537,
+      "wpfAvalonia": 0.5195
+    },
+    {
+      "deck": "12-fills",
+      "slide": "slide-01",
+      "wpfOffice": 1.1788,
+      "avaloniaOffice": 1.0807,
+      "wpfAvalonia": 0.3282
+    },
+    {
+      "deck": "13-wordart",
+      "slide": "slide-01",
+      "wpfOffice": 1.4924,
+      "avaloniaOffice": 1.4588,
+      "wpfAvalonia": 1.3126
+    },
+    {
+      "deck": "14-smartart-live",
+      "slide": "slide-01",
+      "wpfOffice": 1.3451,
+      "avaloniaOffice": 1.3124,
+      "wpfAvalonia": 1.1567
+    },
+    {
+      "deck": "14-smartart-live",
+      "slide": "slide-02",
+      "wpfOffice": 1.5158,
+      "avaloniaOffice": 1.5689,
+      "wpfAvalonia": 1.0093
+    },
+    {
+      "deck": "14-smartart-live",
+      "slide": "slide-03",
+      "wpfOffice": 0.7149,
+      "avaloniaOffice": 0.7043,
+      "wpfAvalonia": 0.2878
+    },
+    {
+      "deck": "14-smartart-live",
+      "slide": "slide-04",
+      "wpfOffice": 1.7017,
+      "avaloniaOffice": 1.7286,
+      "wpfAvalonia": 0.521
+    },
+    {
+      "deck": "15-picture-crop",
+      "slide": "slide-01",
+      "wpfOffice": 0.2631,
+      "avaloniaOffice": 0.2588,
+      "wpfAvalonia": 0.2295
+    },
+    {
+      "deck": "15-picture-crop",
+      "slide": "slide-02",
+      "wpfOffice": 0.2186,
+      "avaloniaOffice": 0.1694,
+      "wpfAvalonia": 0.1083
+    },
+    {
+      "deck": "15-picture-crop",
+      "slide": "slide-03",
+      "wpfOffice": 0.5335,
+      "avaloniaOffice": 0.5085,
+      "wpfAvalonia": 0.2718
+    },
+    {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-01",
+      "wpfOffice": 1.3451,
+      "avaloniaOffice": 1.3124,
+      "wpfAvalonia": 1.1567
+    },
+    {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-02",
+      "wpfOffice": 1.5158,
+      "avaloniaOffice": 1.5689,
+      "wpfAvalonia": 1.0093
+    },
+    {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-03",
+      "wpfOffice": 1.5307,
+      "avaloniaOffice": 1.5823,
+      "wpfAvalonia": 1.016
+    },
+    {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-04",
+      "wpfOffice": 0.7149,
+      "avaloniaOffice": 0.7043,
+      "wpfAvalonia": 0.2878
+    },
+    {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-05",
+      "wpfOffice": 1.7017,
+      "avaloniaOffice": 1.7286,
+      "wpfAvalonia": 0.521
+    },
+    {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-06",
+      "wpfOffice": 1.5481,
+      "avaloniaOffice": 1.5581,
+      "wpfAvalonia": 0.8054
+    },
+    {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-07",
+      "wpfOffice": 0.509,
+      "avaloniaOffice": 0.5063,
+      "wpfAvalonia": 0.3147
+    },
+    {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-08",
+      "wpfOffice": 1.1608,
+      "avaloniaOffice": 1.1313,
+      "wpfAvalonia": 0.4828
+    },
+    {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-09",
+      "wpfOffice": 0.9662,
+      "avaloniaOffice": 1.6879,
+      "wpfAvalonia": 1.6009
+    },
+    {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-10",
+      "wpfOffice": 1.7356,
+      "avaloniaOffice": 1.5956,
+      "wpfAvalonia": 1.6302
+    },
+    {
+      "deck": "16-bg-tabs-vtext",
+      "slide": "slide-01",
+      "wpfOffice": 0.5848,
+      "avaloniaOffice": 0.5775,
+      "wpfAvalonia": 0.058
+    },
+    {
+      "deck": "16-bg-tabs-vtext",
+      "slide": "slide-02",
+      "wpfOffice": 0.5812,
+      "avaloniaOffice": 0.5944,
+      "wpfAvalonia": 0.6217
+    },
+    {
+      "deck": "16-bg-tabs-vtext",
+      "slide": "slide-03",
+      "wpfOffice": 0.4491,
+      "avaloniaOffice": 0.4187,
+      "wpfAvalonia": 0.2924
+    },
+    {
+      "deck": "17-bullets-autofit",
+      "slide": "slide-01",
+      "wpfOffice": 0.8441,
+      "avaloniaOffice": 0.8339,
+      "wpfAvalonia": 0.8439
+    },
+    {
+      "deck": "17-bullets-autofit",
+      "slide": "slide-02",
+      "wpfOffice": 3.0587,
+      "avaloniaOffice": 2.536,
+      "wpfAvalonia": 2.9091
+    },
+    {
+      "deck": "18-chart-types",
+      "slide": "slide-01",
+      "wpfOffice": 0.4397,
+      "avaloniaOffice": 0.4139,
+      "wpfAvalonia": 0.3366
+    },
+    {
+      "deck": "18-chart-types",
+      "slide": "slide-02",
+      "wpfOffice": 0.7202,
+      "avaloniaOffice": 0.7641,
+      "wpfAvalonia": 0.2204
+    },
+    {
+      "deck": "18-chart-types",
+      "slide": "slide-03",
+      "wpfOffice": 1.016,
+      "avaloniaOffice": 0.996,
+      "wpfAvalonia": 0.374
+    },
+    {
+      "deck": "18-chart-types",
+      "slide": "slide-04",
+      "wpfOffice": 0.6549,
+      "avaloniaOffice": 0.6725,
+      "wpfAvalonia": 0.2457
+    },
+    {
+      "deck": "19-chart-labels",
+      "slide": "slide-01",
+      "wpfOffice": 1.3311,
+      "avaloniaOffice": 1.333,
+      "wpfAvalonia": 0.6511
+    },
+    {
+      "deck": "19-chart-labels",
+      "slide": "slide-02",
+      "wpfOffice": 0.6216,
+      "avaloniaOffice": 0.6238,
+      "wpfAvalonia": 0.466
+    },
+    {
+      "deck": "19-chart-labels",
+      "slide": "slide-03",
+      "wpfOffice": 1.4984,
+      "avaloniaOffice": 1.4225,
+      "wpfAvalonia": 0.9265
+    },
+    {
+      "deck": "20-columns-gradoutline",
+      "slide": "slide-01",
+      "wpfOffice": 1.0468,
+      "avaloniaOffice": 0.9527,
+      "wpfAvalonia": 0.7789
+    },
+    {
+      "deck": "21-comments-notes",
+      "slide": "slide-01",
+      "wpfOffice": 0.0558,
+      "avaloniaOffice": 0.0833,
+      "wpfAvalonia": 0.0905
+    },
+    {
+      "deck": "21-comments-notes",
+      "slide": "slide-02",
+      "wpfOffice": 0.0887,
+      "avaloniaOffice": 0.1159,
+      "wpfAvalonia": 0.0941
+    },
+    {
+      "deck": "22-chart-baseline-depth",
+      "slide": "slide-01",
+      "wpfOffice": 2.3911,
+      "avaloniaOffice": 2.1353,
+      "wpfAvalonia": 1.0479
+    },
+    {
+      "deck": "23-run-baseline",
+      "slide": "slide-01",
+      "wpfOffice": 0.0325,
+      "avaloniaOffice": 0.0776,
+      "wpfAvalonia": 0.0873
+    },
+    {
+      "deck": "24-run-baseline-wrap",
+      "slide": "slide-01",
+      "wpfOffice": 0.7662,
+      "avaloniaOffice": 0.8774,
+      "wpfAvalonia": 0.6696
+    },
+    {
+      "deck": "25-chart-surface3d-view3d",
+      "slide": "slide-01",
+      "wpfOffice": 2.7032,
+      "avaloniaOffice": 2.5815,
+      "wpfAvalonia": 1.0804
+    },
+    {
+      "deck": "26-chart-surface3d-default-tall-frame",
+      "slide": "slide-01",
+      "wpfOffice": 2.4757,
+      "avaloniaOffice": 2.2723,
+      "wpfAvalonia": 1.0104
+    }
+  ],
+  "rowsAfter": [
+    {
+      "deck": "01-title-slide",
+      "slide": "slide-01",
+      "wpfOffice": 1.2511,
+      "avaloniaOffice": 1.386,
+      "wpfAvalonia": 1.1359
+    },
+    {
+      "deck": "02-autoshapes",
+      "slide": "slide-01",
+      "wpfOffice": 0.4773,
+      "avaloniaOffice": 0.4758,
+      "wpfAvalonia": 0.1028
+    },
+    {
+      "deck": "03-mixed-text",
+      "slide": "slide-01",
+      "wpfOffice": 1.1277,
+      "avaloniaOffice": 1.1281,
+      "wpfAvalonia": 1.2258
+    },
+    {
+      "deck": "04-picture",
+      "slide": "slide-01",
+      "wpfOffice": 0.1487,
+      "avaloniaOffice": 0.1316,
+      "wpfAvalonia": 0.1363
+    },
+    {
+      "deck": "05-table",
+      "slide": "slide-01",
+      "wpfOffice": 1.3262,
+      "avaloniaOffice": 1.2,
+      "wpfAvalonia": 0.3551
+    },
+    {
+      "deck": "06-charts",
+      "slide": "slide-01",
+      "wpfOffice": 0.9846,
+      "avaloniaOffice": 0.9375,
+      "wpfAvalonia": 0.4242
+    },
+    {
+      "deck": "06-charts",
+      "slide": "slide-02",
+      "wpfOffice": 1.2449,
+      "avaloniaOffice": 1.1365,
+      "wpfAvalonia": 0.3599
+    },
+    {
+      "deck": "06-charts",
+      "slide": "slide-03",
+      "wpfOffice": 0.6149,
+      "avaloniaOffice": 0.5839,
+      "wpfAvalonia": 0.2974
+    },
+    {
+      "deck": "06-charts",
+      "slide": "slide-04",
+      "wpfOffice": 1.2552,
+      "avaloniaOffice": 1.1998,
+      "wpfAvalonia": 0.4455
+    },
+    {
+      "deck": "07-customgeom",
+      "slide": "slide-01",
+      "wpfOffice": 0.4557,
+      "avaloniaOffice": 0.3136,
+      "wpfAvalonia": 0.3275
+    },
+    {
+      "deck": "08-effects",
+      "slide": "slide-01",
+      "wpfOffice": 1.2296,
+      "avaloniaOffice": 1.311,
+      "wpfAvalonia": 0.5409
+    },
+    {
+      "deck": "09-smartart",
+      "slide": "slide-01",
+      "wpfOffice": 0.4026,
+      "avaloniaOffice": 0.3455,
+      "wpfAvalonia": 0.2666
+    },
+    {
+      "deck": "10-motionpath",
+      "slide": "slide-01",
+      "wpfOffice": 0.0406,
+      "avaloniaOffice": 0.0702,
+      "wpfAvalonia": 0.0672
+    },
+    {
+      "deck": "11-bevel3d",
+      "slide": "slide-01",
+      "wpfOffice": 1.0278,
+      "avaloniaOffice": 0.9537,
+      "wpfAvalonia": 0.5195
+    },
+    {
+      "deck": "12-fills",
+      "slide": "slide-01",
+      "wpfOffice": 1.1788,
+      "avaloniaOffice": 1.0807,
+      "wpfAvalonia": 0.3282
+    },
+    {
+      "deck": "13-wordart",
+      "slide": "slide-01",
+      "wpfOffice": 1.4924,
+      "avaloniaOffice": 1.4588,
+      "wpfAvalonia": 1.3126
+    },
+    {
+      "deck": "14-smartart-live",
+      "slide": "slide-01",
+      "wpfOffice": 1.3451,
+      "avaloniaOffice": 1.3124,
+      "wpfAvalonia": 1.1567
+    },
+    {
+      "deck": "14-smartart-live",
+      "slide": "slide-02",
+      "wpfOffice": 1.5158,
+      "avaloniaOffice": 1.5689,
+      "wpfAvalonia": 1.0093
+    },
+    {
+      "deck": "14-smartart-live",
+      "slide": "slide-03",
+      "wpfOffice": 0.7149,
+      "avaloniaOffice": 0.7043,
+      "wpfAvalonia": 0.2878
+    },
+    {
+      "deck": "14-smartart-live",
+      "slide": "slide-04",
+      "wpfOffice": 1.7017,
+      "avaloniaOffice": 1.7286,
+      "wpfAvalonia": 0.521
+    },
+    {
+      "deck": "15-picture-crop",
+      "slide": "slide-01",
+      "wpfOffice": 0.2631,
+      "avaloniaOffice": 0.2588,
+      "wpfAvalonia": 0.2295
+    },
+    {
+      "deck": "15-picture-crop",
+      "slide": "slide-02",
+      "wpfOffice": 0.2186,
+      "avaloniaOffice": 0.1694,
+      "wpfAvalonia": 0.1083
+    },
+    {
+      "deck": "15-picture-crop",
+      "slide": "slide-03",
+      "wpfOffice": 0.5335,
+      "avaloniaOffice": 0.5085,
+      "wpfAvalonia": 0.2718
+    },
+    {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-01",
+      "wpfOffice": 1.3451,
+      "avaloniaOffice": 1.3124,
+      "wpfAvalonia": 1.1567
+    },
+    {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-02",
+      "wpfOffice": 1.5158,
+      "avaloniaOffice": 1.5689,
+      "wpfAvalonia": 1.0093
+    },
+    {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-03",
+      "wpfOffice": 1.5307,
+      "avaloniaOffice": 1.5823,
+      "wpfAvalonia": 1.016
+    },
+    {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-04",
+      "wpfOffice": 0.7149,
+      "avaloniaOffice": 0.7043,
+      "wpfAvalonia": 0.2878
+    },
+    {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-05",
+      "wpfOffice": 1.7017,
+      "avaloniaOffice": 1.7286,
+      "wpfAvalonia": 0.521
+    },
+    {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-06",
+      "wpfOffice": 1.5481,
+      "avaloniaOffice": 1.5581,
+      "wpfAvalonia": 0.8054
+    },
+    {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-07",
+      "wpfOffice": 0.509,
+      "avaloniaOffice": 0.5063,
+      "wpfAvalonia": 0.3147
+    },
+    {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-08",
+      "wpfOffice": 1.1608,
+      "avaloniaOffice": 1.1313,
+      "wpfAvalonia": 0.4828
+    },
+    {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-09",
+      "wpfOffice": 0.9662,
+      "avaloniaOffice": 0.8675,
+      "wpfAvalonia": 0.854
+    },
+    {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-10",
+      "wpfOffice": 1.7356,
+      "avaloniaOffice": 1.5956,
+      "wpfAvalonia": 1.6302
+    },
+    {
+      "deck": "16-bg-tabs-vtext",
+      "slide": "slide-01",
+      "wpfOffice": 0.5848,
+      "avaloniaOffice": 0.5775,
+      "wpfAvalonia": 0.058
+    },
+    {
+      "deck": "16-bg-tabs-vtext",
+      "slide": "slide-02",
+      "wpfOffice": 0.5812,
+      "avaloniaOffice": 0.5944,
+      "wpfAvalonia": 0.6217
+    },
+    {
+      "deck": "16-bg-tabs-vtext",
+      "slide": "slide-03",
+      "wpfOffice": 0.4491,
+      "avaloniaOffice": 0.4187,
+      "wpfAvalonia": 0.2924
+    },
+    {
+      "deck": "17-bullets-autofit",
+      "slide": "slide-01",
+      "wpfOffice": 0.8441,
+      "avaloniaOffice": 0.8339,
+      "wpfAvalonia": 0.8439
+    },
+    {
+      "deck": "17-bullets-autofit",
+      "slide": "slide-02",
+      "wpfOffice": 3.0587,
+      "avaloniaOffice": 2.536,
+      "wpfAvalonia": 2.9091
+    },
+    {
+      "deck": "18-chart-types",
+      "slide": "slide-01",
+      "wpfOffice": 0.4397,
+      "avaloniaOffice": 0.4139,
+      "wpfAvalonia": 0.3366
+    },
+    {
+      "deck": "18-chart-types",
+      "slide": "slide-02",
+      "wpfOffice": 0.7202,
+      "avaloniaOffice": 0.7641,
+      "wpfAvalonia": 0.2204
+    },
+    {
+      "deck": "18-chart-types",
+      "slide": "slide-03",
+      "wpfOffice": 1.016,
+      "avaloniaOffice": 0.996,
+      "wpfAvalonia": 0.374
+    },
+    {
+      "deck": "18-chart-types",
+      "slide": "slide-04",
+      "wpfOffice": 0.6549,
+      "avaloniaOffice": 0.6725,
+      "wpfAvalonia": 0.2457
+    },
+    {
+      "deck": "19-chart-labels",
+      "slide": "slide-01",
+      "wpfOffice": 1.3311,
+      "avaloniaOffice": 1.333,
+      "wpfAvalonia": 0.6511
+    },
+    {
+      "deck": "19-chart-labels",
+      "slide": "slide-02",
+      "wpfOffice": 0.6216,
+      "avaloniaOffice": 0.6238,
+      "wpfAvalonia": 0.466
+    },
+    {
+      "deck": "19-chart-labels",
+      "slide": "slide-03",
+      "wpfOffice": 1.4984,
+      "avaloniaOffice": 1.4225,
+      "wpfAvalonia": 0.9265
+    },
+    {
+      "deck": "20-columns-gradoutline",
+      "slide": "slide-01",
+      "wpfOffice": 1.0468,
+      "avaloniaOffice": 0.9527,
+      "wpfAvalonia": 0.7789
+    },
+    {
+      "deck": "21-comments-notes",
+      "slide": "slide-01",
+      "wpfOffice": 0.0558,
+      "avaloniaOffice": 0.0833,
+      "wpfAvalonia": 0.0905
+    },
+    {
+      "deck": "21-comments-notes",
+      "slide": "slide-02",
+      "wpfOffice": 0.0887,
+      "avaloniaOffice": 0.1159,
+      "wpfAvalonia": 0.0941
+    },
+    {
+      "deck": "22-chart-baseline-depth",
+      "slide": "slide-01",
+      "wpfOffice": 2.3911,
+      "avaloniaOffice": 2.1353,
+      "wpfAvalonia": 1.0479
+    },
+    {
+      "deck": "23-run-baseline",
+      "slide": "slide-01",
+      "wpfOffice": 0.0325,
+      "avaloniaOffice": 0.0776,
+      "wpfAvalonia": 0.0873
+    },
+    {
+      "deck": "24-run-baseline-wrap",
+      "slide": "slide-01",
+      "wpfOffice": 0.7662,
+      "avaloniaOffice": 0.8774,
+      "wpfAvalonia": 0.6696
+    },
+    {
+      "deck": "25-chart-surface3d-view3d",
+      "slide": "slide-01",
+      "wpfOffice": 2.7032,
+      "avaloniaOffice": 2.5815,
+      "wpfAvalonia": 1.0804
+    },
+    {
+      "deck": "26-chart-surface3d-default-tall-frame",
+      "slide": "slide-01",
+      "wpfOffice": 2.4757,
+      "avaloniaOffice": 2.2723,
+      "wpfAvalonia": 1.0104
+    }
+  ],
+  "verification": {
+    "renderCompareBuildWarnings": 0,
+    "renderCompareBuildErrors": 0,
+    "avaloniaRendererPassed": 290,
+    "avaloniaRendererFailed": 0,
+    "corpusSemanticGuardsPassed": 22,
+    "corpusSemanticGuardsFailed": 0,
+    "renderCompareSmartArtEvidencePassed": 7,
+    "renderCompareSmartArtEvidenceFailed": 0,
+    "fullCorpusDecks": 27,
+    "fullCorpusSlides": 53,
+    "fullCorpusRendersPassed": 106,
+    "fullCorpusRendersFailed": 0,
+    "fullCorpusDiffsPassed": 159,
+    "fullCorpusDiffsFailed": 0,
+    "powerPointComAvailable": false
+  },
+  "neighboringDeck15": [
+    {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-08",
+      "wpfOffice": 1.1608,
+      "avaloniaOffice": 1.1313,
+      "wpfAvalonia": 0.4828
+    },
+    {
+      "deck": "15-smartart-grouped-list",
+      "slide": "slide-10",
+      "wpfOffice": 1.7356,
+      "avaloniaOffice": 1.5956,
+      "wpfAvalonia": 1.6302
+    }
+  ],
+  "byteStability": {
+    "deck15WpfSlidesStable": 10,
+    "deck15WpfSlidesCompared": 10,
+    "deck15AvaloniaControlSlidesStable": 9,
+    "deck15AvaloniaControlSlidesCompared": 9
+  }
+}
