@@ -13,6 +13,15 @@
   "appImageReference": "freex-linux-interactive-app-freex-92b5f322f615:current",
   "baseImageDigest": "sha256:139480d3bbefee9deb69dde84a035bd378da35b96cdb38126bc2a8d8a51e814a",
   "appImageDigest": "sha256:6e3770905926290378060ef9b24ba97e649028e832efa0c29f80401a69243743",
+  "integrationProvenance": {
+    "manifestPath": "docs/parity/evidence/wave192-freex-autofilter-font-color-20260823/manifest.json",
+    "indexPath": "docs/parity/avalonia-wpf-cross-app-dashboard.json",
+    "resultPath": "docs/parity/avalonia-parity-wave192-integration-20260823.md",
+    "resultCommit": "5743087e21e3806f9f29ed17b7cad3d170d2c1dc",
+    "sourceEquivalentCommit": "0fc47ab4d663b0af2c617ee8485cd3ed841d14d5",
+    "evidenceCommit": "5205d4bc8593db366de368a2fcd0a04be442f954",
+    "imageSourceCommit": "3541f35714892b4b3ac9e50fc3102c3804f5d11b"
+  },
   "provenanceFiles": [
     {
       "path": "tools/LinuxInteractiveDocker/run-freex-input-probes.sh",

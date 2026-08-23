@@ -36,11 +36,12 @@ workflow exposed a real save bug: the loaded-XLSX cell-patch save path did not
 re-emit newly modeled AutoFilter criteria after patching cells, so visible
 in-memory state could be lost in the saved package.
 
-`XlsxFileAdapter.SourcePackageSnapshot` now re-emits independent worksheet
-metadata, including modeled AutoFilter criteria, after the patch save. The
-cross-platform package test opens both committed evidence packages, asserts
-their exact XML semantics, applies fill/font commands to their fixtures, saves,
-reloads, and asserts the semantics again.
+`XlsxFileAdapter.SourcePackageSnapshot` now re-emits only modeled AutoFilter
+criteria after a patch save. Filter-owned hidden rows are patched through the
+dimension path, while unrelated dimension/view metadata remains governed by
+the existing source sanitization and preservation rules. The cross-platform
+package test requires `LastSaveDiagnostics.Path == SourcePatch`, opens both
+committed evidence packages, and asserts their exact save/reload semantics.
 
 ## Verification
 
@@ -55,4 +56,7 @@ reloads, and asserts the semantics again.
 - Docker base image digest: `sha256:139480d3bbefee9deb69dde84a035bd378da35b96cdb38126bc2a8d8a51e814a`.
 
 The evidence manifest records canonical-LF hashes for text, raw-byte hashes
-for PNG/XLSX artifacts, and Git-blob audits for source provenance.
+for PNG/XLSX artifacts, and Git-blob audits for source provenance. It maps image
+source `3541f35714` to byte-equivalent integration source `0fc47ab4d6`, evidence
+commit `5205d4bc85`, and integration result `5743087e21`; guards verify those
+blobs and ancestry directly through Git.

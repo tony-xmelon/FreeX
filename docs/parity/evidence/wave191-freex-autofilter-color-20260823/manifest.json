@@ -13,6 +13,15 @@
   "appImageReference": "freex-linux-interactive-app-freex-15bded1b2789:current",
   "baseImageDigest": "sha256:46b7662ef313b8e68a94b10addac7b45a68a6abd2ef37d7e69cf33450b120370",
   "appImageDigest": "sha256:f252624586ad7f4ec6ddd50992111a5eecd05f36ee132359b8191dcffdd1662b",
+  "integrationProvenance": {
+    "manifestPath": "docs/parity/evidence/wave191-freex-autofilter-color-20260823/manifest.json",
+    "indexPath": "docs/parity/avalonia-wpf-cross-app-dashboard.json",
+    "resultPath": "docs/parity/avalonia-parity-wave192-integration-20260823.md",
+    "resultCommit": "5743087e21e3806f9f29ed17b7cad3d170d2c1dc",
+    "sourceEquivalentCommit": "0fc47ab4d663b0af2c617ee8485cd3ed841d14d5",
+    "evidenceCommit": "5205d4bc8593db366de368a2fcd0a04be442f954",
+    "imageSourceCommit": "3541f35714892b4b3ac9e50fc3102c3804f5d11b"
+  },
   "harnessSha256": "337d857b3ff1da629c46dbef1951cfdbebf36db9cb720fb98125e73c5cc45018",
   "runnerSha256": "62e3f4cd2ea5a644c3499076cb8d4cf225641ecc4b8a34b54d421dca6a43bd1e",
   "sourceTestSha256": "bbd4ef02820922332a9b5d01e866b2304e74dd1e4c187cf6d5c95b060b33230e",
