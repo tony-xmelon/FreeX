@@ -16,9 +16,11 @@ through the production picker, and observes the same rows plus semantic
 `A4=East`.
 
 The focused source/evidence results are **3/3** for Avalonia and **8/8** for
-Core.IO. The committed Wave193 manifest retains **15/15** artifacts and
-**9/9** provenance files. Package tests cover `SourcePatch` for the
-criterion-only, no-row-visibility-delta case and verify the saved/reopened
+Core.IO. The committed Wave193 manifest retains **18/18** artifacts and
+**9/9** provenance files. Its physical transition evidence records popup-open
+at **1,905** changed pixels, popup-dismissed at **1,905** changed pixels, and
+restoration at **0** changed pixels, with the click acknowledged. Package tests
+cover `SourcePatch` for the criterion-only, no-row-visibility-delta case and verify the saved/reopened
 No Fill package semantics. Evidence is under
 `docs/parity/evidence/wave193-freex-autofilter-no-fill-20260823/`.
 
