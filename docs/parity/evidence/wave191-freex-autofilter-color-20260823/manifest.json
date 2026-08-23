@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "wave": 191,
+  "reportId": "20260823T120957Z",
+  "branch": "codex/parity-wave191-freex-20260823",
+  "commitAtRun": "9bd76f7f756234b308e59303367719e26310c67b",
+  "appImageDigest": "sha256:08c4378b7d9b42e8a134fdbf766f85a1cb62debefe18b292b51ae3acc87a2773",
+  "harnessSha256": "32aa003d626630320673786eea0f1608b7bb8bdfa4a5791dbdb81ab7cfa3157e",
+  "runnerSha256": "e41fd5ca0efcaea3a97aa81b047b5643f404949f25253d00b05a725dd40f7825",
+  "sourceTestSha256": "eb34d3d1da94b50f8f58db16c60222eb9f39190404ab2955b66c9463873f2e3a",
+  "fixtureGeneratorSha256": "937e95a7ea2d39aba3871bcb9c811e20147774ee83b0a6e12c89e3768247a4b1",
+  "command": "pwsh -NoProfile -ExecutionPolicy Bypass -File tools/Run-FreeXLinuxInteractionValidation.ps1 -Port 62919 -TimeoutMinutes 20 -PhysicalOnly -PhysicalProbeSelector autofilter-color-persistence -SkipImageBuild",
+  "result": {
+    "passed": 1,
+    "failed": 0,
+    "total": 1
+  },
+  "acceptance": {
+    "shortcut": "Ctrl+F12 production Open picker",
+    "criteria": "fill:#00B050",
+    "visible": "North,East,",
+    "reopenedVisible": "North,East,",
+    "reopenedSemanticA4": "East",
+    "package": "ref=A1:B5|colId=0|cellColor=1|dxfId=0|fill=FF00B050"
+  },
+  "files": [
+    { "path": "physical-result.json", "sha256": "666bd4165884d12849fd71d47a3927d33f545433381263d6cb1bab65f5a5d800" },
+    { "path": "autofilter-color-postcondition.txt", "sha256": "8db243fdc701d076499e15eb2917b1f0e9cfb544d7303e15454e955e8d18ecae" },
+    { "path": "fixture-input.xlsx", "sha256": "79a3e8a8159b9618f9932eea535125b483afba7fa559baa2aafe2718488e6519" },
+    { "path": "saved-color-filter.xlsx", "sha256": "9db8e1d7a61034121ef7a73222dd062354f650c183eacd9c7aeceed67222d193" },
+    { "path": "autofilter-color-before.png", "sha256": "4acdd2c05378f984d1fb49df11bc3fcce7e1b1d751caa88a909d9f14f53be6e5" },
+    { "path": "autofilter-color-menu-open.png", "sha256": "1db48bf0d5ea97fab8556c3378140a503cb5d6ec2180c7baf05304fd2cf541c2" },
+    { "path": "autofilter-color-applied.png", "sha256": "2233f5af09bc73529ca8c16cd50fdb006a343cfd7f28ada4c541a58546d69ff3" },
+    { "path": "autofilter-color-reopened.png", "sha256": "a7f81cb3e29ed61897c87037cc6fc461da64bd1f1849779eef3b8683941164d0" },
+    { "path": "autofilter-color-reopen-diagnostics.txt", "sha256": "6c83ecb1bd7f205952f230d26495b37c966fa2a18ec6e7684683740253120ab9" }
+  ]
+}

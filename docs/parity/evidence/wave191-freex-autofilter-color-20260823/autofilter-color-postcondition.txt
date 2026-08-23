@@ -1,0 +1,10 @@
+document-path=/documents/freex-wave191-autofilter-color.xlsx
+menu-open=true
+criteria=fill:#00B050
+visible=North,East,
+save-clean=true
+package=ref=A1:B5|colId=0|cellColor=1|dxfId=0|fill=FF00B050
+dialog-open=true
+dialog-closed=true
+reopened-visible=North,East,
+reopened-semantic-a4=East
