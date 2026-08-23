@@ -1,7 +1,7 @@
 ﻿{
     "schema":  "freep.powerpoint-recalibration.v1",
     "generatedAt":  "2026-08-23T00:00:00+03:00",
-    "sourceRevision":  "dc489d2ef0",
+    "sourceRevision":  "7bc01053a9",
     "canvas":  "1280x720",
     "officeBaseline":  "docs/parity/freep-powerpoint-baseline-2026-08-14.json",
     "summary":  {
@@ -12,16 +12,16 @@
                     "missingReferenceDecks":  [],
                     "officeComparisons":  106,
                     "officeComparisonFailures":  0,
-                    "wpfAverageMeanPercent":  1.0593,
+                    "wpfAverageMeanPercent":  1.0447,
                     "wpfMaximumMeanPercent":  3.0587,
-                    "avaloniaAverageMeanPercent":  1.0271,
+                    "avaloniaAverageMeanPercent":  1.0124,
                     "avaloniaMaximumMeanPercent":  2.9238,
                     "rendererPairComparisons":  53,
                     "rendererPairFailures":  0,
                     "rendererPairAverageMeanPercent":  0.6248,
                     "rendererPairMaximumMeanPercent":  1.6684
                 },
-    "limitation":  "Mean channel differences include native text antialiasing. All 53 slides use committed PowerPoint COM PNG references. The Wave185 summary starts from the exact Wave184 aggregate and applies only the exact current-source deltas for 17-bullets-autofit slide 02; unaffected detail rows retain their Wave184 measurements. This corpus comparison does not cover PowerPoint UI or every feature.",
+    "limitation":  "Mean channel differences include native text antialiasing. All 53 slides use committed PowerPoint COM PNG references. The Wave186 summary starts from the exact Wave185 aggregate and applies only the exact current-source deltas for 15-smartart-grouped-list slide 10; unaffected detail rows retain their Wave185 measurements. This corpus comparison does not cover PowerPoint UI or every feature.",
     "officeComparisons":  [
                               {
                                   "kind":  "wpf",
@@ -539,7 +539,7 @@
                                   "kind":  "wpf",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-10.png",
-                                  "meanPercent":  2.512,
+                                  "meanPercent":  1.7356,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -547,7 +547,7 @@
                                   "kind":  "avalonia",
                                   "deck":  "15-smartart-grouped-list",
                                   "slide":  "slide-10.png",
-                                  "meanPercent":  2.3744,
+                                  "meanPercent":  1.5956,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -1068,7 +1068,7 @@
                                 {
                                     "deck":  "15-smartart-grouped-list",
                                     "slide":  "slide-10.png",
-                                    "meanPercent":  1.6288,
+                                    "meanPercent":  1.6302,
                                     "exitCode":  0
                                 },
                                 {
