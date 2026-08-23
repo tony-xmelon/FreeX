@@ -413,17 +413,17 @@
                                                                                            "captureMode":  "PowerPoint COM corpus export",
                                                                                            "referenceReadyDecks":  27,
                                                                                            "missingReferenceDecks":  0,
-                                                                                           "currentSourceRevision":  "2ac7e8e13a",
+                                                                                           "currentSourceRevision":  "dc489d2ef0",
                                                                                            "wpfAverageMeanPercent":  1.0593,
                                                                                            "wpfMaximumMeanPercent":  3.0587,
-                                                                                           "avaloniaAverageMeanPercent":  1.036,
-                                                                                           "avaloniaMaximumMeanPercent":  3.0055,
-                                                                                           "rendererPairAverageMeanPercent":  0.6283,
-                                                                                           "rendererPairMaximumMeanPercent":  3.0952
+                                                                                           "avaloniaAverageMeanPercent":  1.0271,
+                                                                                           "avaloniaMaximumMeanPercent":  2.9238,
+                                                                                           "rendererPairAverageMeanPercent":  0.6248,
+                                                                                           "rendererPairMaximumMeanPercent":  1.6684
                                                                                        },
                                               "claimBoundary":  "Route/scenario coverage, committed PNG manifests, and local WPF/Avalonia comparison results only; no PowerPoint visual-parity claim is made."
                                           },
-                     "nextSlice":  "The tracked PowerPoint corpus now has 53 COM-exported reference slides across 27 ready decks, with 0 deck missing references. The current-source recalibration covers 53 paired Office slides and averages 1.0593% for WPF and 1.0360% for Avalonia, with maxima of 3.0587% / 3.0055%. Prioritize the remaining complex SmartArt, text, and 3-D rendering residuals while preserving the WPF/Avalonia pair metric."
+                     "nextSlice":  "The tracked PowerPoint corpus now has 53 COM-exported reference slides across 27 ready decks, with 0 deck missing references. The current-source recalibration covers 53 paired Office slides and averages 1.0593% for WPF and 1.0271% for Avalonia, with maxima of 3.0587% / 2.9238%. Prioritize the remaining complex SmartArt, text, and 3-D rendering residuals while preserving the WPF/Avalonia pair metric."
                  }
              ]
 }

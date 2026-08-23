@@ -1,7 +1,7 @@
 ﻿{
     "schema":  "freep.powerpoint-recalibration.v1",
     "generatedAt":  "2026-08-23T00:00:00+03:00",
-    "sourceRevision":  "2ac7e8e13a",
+    "sourceRevision":  "dc489d2ef0",
     "canvas":  "1280x720",
     "officeBaseline":  "docs/parity/freep-powerpoint-baseline-2026-08-14.json",
     "summary":  {
@@ -14,14 +14,14 @@
                     "officeComparisonFailures":  0,
                     "wpfAverageMeanPercent":  1.0593,
                     "wpfMaximumMeanPercent":  3.0587,
-                    "avaloniaAverageMeanPercent":  1.0360,
-                    "avaloniaMaximumMeanPercent":  3.0055,
+                    "avaloniaAverageMeanPercent":  1.0271,
+                    "avaloniaMaximumMeanPercent":  2.9238,
                     "rendererPairComparisons":  53,
                     "rendererPairFailures":  0,
-                    "rendererPairAverageMeanPercent":  0.6283,
-                    "rendererPairMaximumMeanPercent":  3.0952
+                    "rendererPairAverageMeanPercent":  0.6248,
+                    "rendererPairMaximumMeanPercent":  1.6684
                 },
-    "limitation":  "Mean channel differences include native text antialiasing. All 53 slides use committed PowerPoint COM PNG references. The full-corpus summary starts from the exact Wave183 53-slide refresh and applies the exact current-source deltas for 15-smartart-grouped-list slides 06 and 08; unaffected detail rows retain their previously committed measurements. This corpus comparison does not cover PowerPoint UI or every feature.",
+    "limitation":  "Mean channel differences include native text antialiasing. All 53 slides use committed PowerPoint COM PNG references. The Wave185 summary starts from the exact Wave184 aggregate and applies only the exact current-source deltas for 17-bullets-autofit slide 02; unaffected detail rows retain their Wave184 measurements. This corpus comparison does not cover PowerPoint UI or every feature.",
     "officeComparisons":  [
                               {
                                   "kind":  "wpf",
@@ -627,7 +627,7 @@
                                   "kind":  "avalonia",
                                   "deck":  "17-bullets-autofit",
                                   "slide":  "slide-02.png",
-                                  "meanPercent":  3.0055,
+                                  "meanPercent":  2.5360,
                                   "maxChannel":  255,
                                   "exitCode":  0
                               },
@@ -1098,7 +1098,7 @@
                                 {
                                     "deck":  "17-bullets-autofit",
                                     "slide":  "slide-02.png",
-                                    "meanPercent":  3.0952,
+                                    "meanPercent":  2.9091,
                                     "exitCode":  0
                                 },
                                 {
