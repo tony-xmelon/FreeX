@@ -1,6 +1,6 @@
 # FreeFamily Unification Architecture Roadmap
 
-Updated 2026-08-23 at implementation checkpoint `fe9d2d97ee`. Companion to `README.md` (principles), `LOG.md`
+Updated 2026-08-23 at implementation checkpoint `818a2036c3`. Companion to `README.md` (principles), `LOG.md`
 (execution record), and `dedup-residual-metrics.md` (current deterministic residual evidence).
 
 ## Vision
@@ -77,8 +77,9 @@ is shared already; the current queue consolidates the duplicated FreeP/FreeW ses
 
 Repository/source location, temporary resources, localization contracts, parity capture, image comparison, and
 ownership guards are shared. Source guards defend architectural ownership; behavior tests remain preferred.
-The 2026-08-22 FreeX WPF run captured and reviewed 116/116 surfaces. Focused tests and broader integration gates
-belong to future implementation slices when new duplicate behavior appears.
+The 2026-08-23 FreeX WPF run captured and reviewed 116/116 surfaces. After the final adaptive-ribbon repair,
+all 116 surfaces were captured again and were pixel-identical to the reviewed final set. Focused tests and
+broader integration gates belong to future implementation slices when new duplicate behavior appears.
 
 ## Remaining campaign queue
 
@@ -118,4 +119,4 @@ lane, the UI lane when WPF behavior or UI infrastructure changed, and the focuse
 ribbon work. FreeX WPF must also be parity-captured against a clean pre-campaign `origin/main` baseline and
 the resulting manifests/images compared before merge.
 
-The latest classification and visual evidence are in `DEDUP-CERTIFICATION-2026-08-22.md`.
+The latest classification and visual evidence are in `DEDUP-CERTIFICATION-2026-08-23.md`.

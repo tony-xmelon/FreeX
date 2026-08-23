@@ -29,23 +29,23 @@
                    },
     "repository":  {
                        "analysisRevision":  "HEAD",
-                       "analysisCommit":  "fe9d2d97ee088f8faaaf9e407020dfde2c573810",
+                       "analysisCommit":  "818a2036c32a283af6d835f23f3bc39f926adc60",
                        "upstreamRevision":  "origin/main",
-                       "upstreamCommit":  "c7ec0062ec8711a9ce91df345568cdeb94645655",
-                       "mergeBaseCommit":  "c7ec0062ec8711a9ce91df345568cdeb94645655",
-                       "inputTreeSha256":  "cb66ce2a9dee0679848b49c8e31d7f08c3c9d21f40dd8579fc220ddc960f03a7",
+                       "upstreamCommit":  "94241681c6184e23572b5449cbfc312fe4bbe626",
+                       "mergeBaseCommit":  "94241681c6184e23572b5449cbfc312fe4bbe626",
+                       "inputTreeSha256":  "74c580eead1de98a83549e11bbd2599ee1730a6af55bf3e7c6e078e4cd76853e",
                        "campaignLocDelta":  {
                                                 "allCSharp":  {
-                                                                  "filesChanged":  511,
-                                                                  "addedLines":  21402,
-                                                                  "deletedLines":  41409,
-                                                                  "netLines":  -20007
+                                                                  "filesChanged":  537,
+                                                                  "addedLines":  21565,
+                                                                  "deletedLines":  41489,
+                                                                  "netLines":  -19924
                                                               },
                                                 "rendererCSharp":  {
-                                                                       "filesChanged":  160,
-                                                                       "addedLines":  4388,
-                                                                       "deletedLines":  4840,
-                                                                       "netLines":  -452
+                                                                       "filesChanged":  161,
+                                                                       "addedLines":  4396,
+                                                                       "deletedLines":  4847,
+                                                                       "netLines":  -451
                                                                    }
                                             }
                    },
@@ -87,9 +87,9 @@
                                        "platform":  "Avalonia",
                                        "path":  "freew/FreeW.App.Avalonia",
                                        "fileCount":  88,
-                                       "physicalLines":  55283,
-                                       "nonBlankLines":  49694,
-                                       "codeLines":  44883
+                                       "physicalLines":  55286,
+                                       "nonBlankLines":  49697,
+                                       "codeLines":  44884
                                    },
                                    {
                                        "id":  "FreeP.Wpf.App",
@@ -167,9 +167,9 @@
                                        "platform":  "Neutral",
                                        "path":  "freep/FreeP.App.Presentation",
                                        "fileCount":  346,
-                                       "physicalLines":  134410,
-                                       "nonBlankLines":  119329,
-                                       "codeLines":  113569
+                                       "physicalLines":  134423,
+                                       "nonBlankLines":  119341,
+                                       "codeLines":  113576
                                    },
                                    {
                                        "id":  "Shared",
@@ -177,22 +177,22 @@
                                        "platform":  "Neutral",
                                        "path":  "shared",
                                        "fileCount":  430,
-                                       "physicalLines":  60916,
-                                       "nonBlankLines":  53442,
-                                       "codeLines":  48041
+                                       "physicalLines":  60925,
+                                       "nonBlankLines":  53451,
+                                       "codeLines":  48047
                                    }
                                ],
                      "totals":  {
                                     "fileCount":  2541,
-                                    "physicalLines":  710107,
-                                    "nonBlankLines":  629133,
-                                    "codeLines":  576743
+                                    "physicalLines":  710132,
+                                    "nonBlankLines":  629157,
+                                    "codeLines":  576757
                                 },
                      "duplicateCoverage":  {
                                                "exact":  {
-                                                             "codeLines":  576743,
+                                                             "codeLines":  576757,
                                                              "duplicateLines":  6848,
-                                                             "percent":  1.187357,
+                                                             "percent":  1.187328,
                                                              "byRoot":  [
                                                                             {
                                                                                 "rootId":  "FreeP.Avalonia.App",
@@ -208,9 +208,9 @@
                                                                             },
                                                                             {
                                                                                 "rootId":  "FreeP.Presentation",
-                                                                                "codeLines":  113569,
+                                                                                "codeLines":  113576,
                                                                                 "duplicateLines":  16,
-                                                                                "coveragePercent":  0.014088
+                                                                                "coveragePercent":  0.014087
                                                                             },
                                                                             {
                                                                                 "rootId":  "FreeP.Wpf.App",
@@ -226,9 +226,9 @@
                                                                             },
                                                                             {
                                                                                 "rootId":  "FreeW.Avalonia",
-                                                                                "codeLines":  44883,
+                                                                                "codeLines":  44884,
                                                                                 "duplicateLines":  660,
-                                                                                "coveragePercent":  1.47049
+                                                                                "coveragePercent":  1.470457
                                                                             },
                                                                             {
                                                                                 "rootId":  "FreeW.Presentation",
@@ -268,16 +268,16 @@
                                                                             },
                                                                             {
                                                                                 "rootId":  "Shared",
-                                                                                "codeLines":  48041,
+                                                                                "codeLines":  48047,
                                                                                 "duplicateLines":  34,
-                                                                                "coveragePercent":  0.070773
+                                                                                "coveragePercent":  0.070764
                                                                             }
                                                                         ]
                                                          },
                                                "normalized":  {
-                                                                  "codeLines":  576743,
+                                                                  "codeLines":  576757,
                                                                   "duplicateLines":  8153,
-                                                                  "percent":  1.413628,
+                                                                  "percent":  1.413594,
                                                                   "byRoot":  [
                                                                                  {
                                                                                      "rootId":  "FreeP.Avalonia.App",
@@ -293,9 +293,9 @@
                                                                                  },
                                                                                  {
                                                                                      "rootId":  "FreeP.Presentation",
-                                                                                     "codeLines":  113569,
+                                                                                     "codeLines":  113576,
                                                                                      "duplicateLines":  169,
-                                                                                     "coveragePercent":  0.148808
+                                                                                     "coveragePercent":  0.148799
                                                                                  },
                                                                                  {
                                                                                      "rootId":  "FreeP.Wpf.App",
@@ -311,9 +311,9 @@
                                                                                  },
                                                                                  {
                                                                                      "rootId":  "FreeW.Avalonia",
-                                                                                     "codeLines":  44883,
+                                                                                     "codeLines":  44884,
                                                                                      "duplicateLines":  687,
-                                                                                     "coveragePercent":  1.530646
+                                                                                     "coveragePercent":  1.530612
                                                                                  },
                                                                                  {
                                                                                      "rootId":  "FreeW.Presentation",
@@ -353,9 +353,9 @@
                                                                                  },
                                                                                  {
                                                                                      "rootId":  "Shared",
-                                                                                     "codeLines":  48041,
+                                                                                     "codeLines":  48047,
                                                                                      "duplicateLines":  137,
-                                                                                     "coveragePercent":  0.285173
+                                                                                     "coveragePercent":  0.285137
                                                                                  }
                                                                              ]
                                                               }
@@ -1176,8 +1176,8 @@
                                                                "mode":  "exact",
                                                                "rootA":  "FreeW.Avalonia",
                                                                "fileA":  "freew/FreeW.App.Avalonia/TableDialogs.cs",
-                                                               "startLineA":  438,
-                                                               "endLineA":  457,
+                                                               "startLineA":  441,
+                                                               "endLineA":  460,
                                                                "rootB":  "FreeW.Wpf",
                                                                "fileB":  "freew/FreeW.App.Host/TablePropertiesDialog.cs",
                                                                "startLineB":  307,
@@ -3951,8 +3951,8 @@
                                                                     "mode":  "normalized",
                                                                     "rootA":  "FreeW.Avalonia",
                                                                     "fileA":  "freew/FreeW.App.Avalonia/TableDialogs.cs",
-                                                                    "startLineA":  438,
-                                                                    "endLineA":  457,
+                                                                    "startLineA":  441,
+                                                                    "endLineA":  460,
                                                                     "rootB":  "FreeW.Wpf",
                                                                     "fileB":  "freew/FreeW.App.Host/TablePropertiesDialog.cs",
                                                                     "startLineB":  307,
@@ -9691,7 +9691,7 @@
                                        "physicalLines":  9978,
                                        "nonBlankLines":  9067,
                                        "codeLines":  8871,
-                                       "sha256":  "29009458737b248496cc9f498b48592a8a9e7285d52511b1ffdfd30b38a59f0e",
+                                       "sha256":  "8448a699ce2622e2efd4b8000fc4a8a4468ad6944939d6a5e878d7c64e895e24",
                                        "normalizedSha256":  "873df6204f3fc80294e39425d81c8c24a24b919b44cf4ca92afc4acc45f84ae4"
                                    },
                                    {
@@ -11299,11 +11299,11 @@
                                    {
                                        "rootId":  "FreeP.Presentation",
                                        "path":  "freep/FreeP.App.Presentation/SlideCompositor.cs",
-                                       "physicalLines":  2960,
-                                       "nonBlankLines":  2675,
-                                       "codeLines":  2331,
-                                       "sha256":  "8cdca78f340a5effe744b071407a6d64ebca41d284a8e0aa2c92e050391f452d",
-                                       "normalizedSha256":  "73169477af6cf05751dd84d98bae2f6a44aa9539f633e4f45243eadfd7bf181e"
+                                       "physicalLines":  2973,
+                                       "nonBlankLines":  2687,
+                                       "codeLines":  2338,
+                                       "sha256":  "cb433f9249023d90f37be2ee2b623457f726d468630b32060ee563a832071a16",
+                                       "normalizedSha256":  "a2f26eb3ab8f23510a45ed59c8fb8713d834ad62b1f1565bc3602e87e7437dee"
                                    },
                                    {
                                        "rootId":  "FreeP.Presentation",
@@ -13342,11 +13342,11 @@
                                    {
                                        "rootId":  "FreeW.Avalonia",
                                        "path":  "freew/FreeW.App.Avalonia/TableDialogs.cs",
-                                       "physicalLines":  703,
-                                       "nonBlankLines":  638,
-                                       "codeLines":  627,
-                                       "sha256":  "dd02f554458a85da24093fcbbedea7ec5443f79c89ab32c3b03110784a21e114",
-                                       "normalizedSha256":  "6c89e1533c4aeb5251d6aa2cc128a9af1eff9e48b86393e6a699c3e234395e5f"
+                                       "physicalLines":  706,
+                                       "nonBlankLines":  641,
+                                       "codeLines":  628,
+                                       "sha256":  "88d15bc26f3293dce095daf354976a31db3057dea5af8f6a03305acce9f15a86",
+                                       "normalizedSha256":  "c89c29ce84366b68841d04d96b34711bdee9bc3cec1759742e2a18bde3a0472d"
                                    },
                                    {
                                        "rootId":  "FreeW.Avalonia",
@@ -16063,7 +16063,7 @@
                                        "physicalLines":  797,
                                        "nonBlankLines":  713,
                                        "codeLines":  691,
-                                       "sha256":  "5956a6566a707baef3a000dd5bf1d1ed67bc9bd9aa05cd40a791e0731420dae8",
+                                       "sha256":  "b7f56b81f9e5d1c63cce822000c61d7107405428c7bc95fd9e9847a0f7711419",
                                        "normalizedSha256":  "297985e2ebd0193dcced6b8200243c68af7dd81e29b1e0f1fcb0f1c903c32fc9"
                                    },
                                    {
@@ -19444,11 +19444,11 @@
                                    {
                                        "rootId":  "Shared",
                                        "path":  "shared/Free.Shared.Ribbon.Wpf/RibbonAdaptivePanel.cs",
-                                       "physicalLines":  473,
-                                       "nonBlankLines":  417,
-                                       "codeLines":  380,
-                                       "sha256":  "5cd4602fb9c918a64e9a1cc16aebb7dae6abc3fe6266ddc0b8245362d3d92f42",
-                                       "normalizedSha256":  "63bcb26f27a65efaa7286ca30cab0846043be281cd3b31378194dabda7d3b983"
+                                       "physicalLines":  474,
+                                       "nonBlankLines":  418,
+                                       "codeLines":  381,
+                                       "sha256":  "92dba41a1337c71562d4818615cc345118b8b3de23e5609c74f2cc97747040f1",
+                                       "normalizedSha256":  "2097cd662c467a8f27719c30ea4fd3f8ef5b240bb61a270614c6332748f07b99"
                                    },
                                    {
                                        "rootId":  "Shared",
@@ -20119,11 +20119,11 @@
                                    {
                                        "rootId":  "Shared",
                                        "path":  "shared/Free.Shared.Shell.Avalonia/AvaloniaLegalNoticesDialog.cs",
-                                       "physicalLines":  385,
-                                       "nonBlankLines":  348,
-                                       "codeLines":  322,
-                                       "sha256":  "02dd546eb66bbf818613005f6cd05a04582c11973ae61aecb30d20d7f3993df3",
-                                       "normalizedSha256":  "2b76908f000abc01ac655571f28535bc3b4c8a54a3f8ce1f843487879bd250a2"
+                                       "physicalLines":  393,
+                                       "nonBlankLines":  356,
+                                       "codeLines":  327,
+                                       "sha256":  "e8358d2caac4e9b7ee887645f8dce878ad8a980134ac9bdbd37d06fd0fb898ed",
+                                       "normalizedSha256":  "3c8a39088715c8512ee14fb1bb1b18cc551d0519d136cb619406d9cd3b03131d"
                                    },
                                    {
                                        "rootId":  "Shared",

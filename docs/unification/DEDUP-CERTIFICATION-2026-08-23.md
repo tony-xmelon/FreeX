@@ -2,9 +2,9 @@
 
 ## Checkpoint
 
-- Implementation checkpoint: `fe9d2d97ee088f8faaaf9e407020dfde2c573810` on
+- Implementation checkpoint: `818a2036c32a283af6d835f23f3bc39f926adc60` on
   `codex/dedup-wave184-20260823`, based on `origin/main` at
-  `c7ec0062ec8711a9ce91df345568cdeb94645655`.
+  `94241681c6184e23572b5449cbfc312fe4bbe626`.
 - The campaign re-audited the entire production C# tree, not only the renderer roots measured by
   `Measure-DedupResiduals.ps1`. Exact and normalized candidates were reviewed by behavior and ownership.
 - All material reusable behavior found by that audit has been extracted or classified. The last actionable
@@ -33,6 +33,9 @@ The largest single change removed the approximately 27,000-line Accessibility fo
 shadow engine. Accessibility now evaluates through the canonical Calc/Formula implementation via
 `ConditionalFormatEvaluationSession`. Focused reviews also corrected rollback semantics, worksheet drawing
 relationship selection, conditional theme-color precedence, and FreeW's effective semantic insertion offset.
+Final integration validation also found and fixed an adaptive WPF ribbon recovery defect: reclaiming width
+could leave every Insert group collapsed while constrained measurement concealed the clipping. The shared
+adaptive panel now recovers a visible group correctly, with focused and full ribbon-lane coverage.
 
 ## Scope disposition
 
@@ -54,17 +57,17 @@ not unfinished extraction work.
 
 ## Residual measurement
 
-The deterministic renderer/shared-root scanner now covers 2,541 production C# files and 576,743 code lines.
+The deterministic renderer/shared-root scanner now covers 2,541 production C# files and 576,757 code lines.
 
 | Measure | 2026-08-22 baseline | Final checkpoint | Delta |
 |---|---:|---:|---:|
-| Exact duplicate coverage | 1.254589% | 1.187357% | -0.067232 percentage points |
-| Normalized duplicate coverage | 1.523430% | 1.413628% | -0.109802 percentage points |
+| Exact duplicate coverage | 1.254589% | 1.187328% | -0.067261 percentage points |
+| Normalized duplicate coverage | 1.523430% | 1.413594% | -0.109836 percentage points |
 | Exact duplicate LOC | 7,238 | 6,848 | -390 |
 | Normalized duplicate LOC | 8,789 | 8,153 | -636 |
-| Measured code LOC | 576,922 | 576,743 | -179 |
+| Measured code LOC | 576,922 | 576,757 | -165 |
 
-Against the merge base, all C# changes total 21,402 additions and 41,409 deletions: a net reduction of 20,007
+Against the merge base, all C# changes total 21,565 additions and 41,489 deletions: a net reduction of 19,924
 lines. The scanner deliberately measures renderer, portable-presentation, service, and shared roots; the final
 manual audit separately reviewed the full production tree. There are no whole-file exact duplicates.
 
@@ -82,8 +85,9 @@ controls, stale dialogs, or broken layout.
 
 `dialog.AutoFilter` is the only dimension change (312x475 to 312x481). The strict grid differences for
 `grid.demo` (6.068569%) and `grid.sheetTabsOverflow` (5.680394%) are expected adaptive-ribbon/status evolution.
-Compared with the preceding 2026-08-23 checkpoint, 114 of 116 images are byte-identical; the two tiny changes
-are benign focus/capture variance.
+After the final adaptive-ribbon repair, the complete 116-surface suite was captured again. All 116 PNGs are
+pixel-identical to the manually reviewed final capture, so the repair introduced no new visual delta. The
+preserved-baseline result remains 91 identical surfaces and 25 reviewed expected changes.
 
 Evidence:
 
@@ -91,12 +95,14 @@ Evidence:
 - `C:\Users\anton\AppData\Local\Temp\freex-dedup-visual-20260823-final\report\changed-surfaces.csv`
 - `C:\Users\anton\AppData\Local\Temp\freex-dedup-visual-20260823-final\report\manifest-audit.json`
 - `C:\Users\anton\AppData\Local\Temp\freex-dedup-visual-20260823-final\report\parity-report.html`
+- `C:\Users\anton\AppData\Local\Temp\freex-dedup-visual-20260823-post-ribbon\report\current-vs-prior\parity-report.html`
 
 ## Verification and residual risk
 
-Focused tests accompanied each extraction. Final repository preflight, Release solution build, default test
-lane, UI test lane, generated-document check, and `git diff --check` are the integration gate for this
-checkpoint; their final results are recorded in the integration commit and campaign log.
+Focused tests accompanied each extraction. The Release solution build passed with zero warnings and errors;
+the default lane passed with zero failures; the rebuilt UI lane passed 6,440 tests with 51 intentional skips
+and zero failures; and the focused `RibbonUiLane` passed 64/64. Generated-document, repository-preflight, and
+whitespace checks are rerun on the documentation commit immediately before promotion to `main`.
 
 Residual implementation risks are bounded native or contract details, not known duplicate policy: real OLE
 COM behavior, direct disposal callbacks, destination-stream length contracts, and source-shape architecture
