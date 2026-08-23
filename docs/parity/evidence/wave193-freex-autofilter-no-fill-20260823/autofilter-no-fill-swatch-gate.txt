@@ -1,0 +1,11 @@
+schema-version=1
+before=autofilter-no-fill-before.png
+source=autofilter-no-fill-menu-open.png
+mode=nofill
+button-bounds=177,439,75,27
+click=219,456
+sample=193,452
+before-rgb=#FFFFFF
+sample-rgb=#FFFFFF
+gate=passed
+

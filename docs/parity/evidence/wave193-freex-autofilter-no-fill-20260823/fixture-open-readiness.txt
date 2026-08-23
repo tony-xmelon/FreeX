@@ -1,0 +1,3 @@
+expected-document=freex-wave193-autofilter-no-fill.xlsx
+observed-window-title=freex-wave193-autofilter-no-fill.xlsx - FreeX
+status=passed
