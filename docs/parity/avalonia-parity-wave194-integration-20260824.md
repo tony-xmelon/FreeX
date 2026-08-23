@@ -1,7 +1,7 @@
 # Avalonia/WPF Parity Wave 194 Integration
 
 Date: 2026-08-24
-Tested source commit: `cacb80a5c04d3f737808e700bb58cb7ac6d22541`
+Tested source commit: `1bc64c7a5489fea5fafb536ec4a4fc69ceadf1e0`
 Cumulative app slices: **582**, pending final integration gates
 
 This is an acceptance-only dashboard and evidence refresh. It does not change
@@ -23,7 +23,7 @@ The exact saved and reopened package contract is:
 
 `ref=A1:B7|colId=0|filters=42|blank=|hidden=4,5,6,7|A2-type=n|A2=42|A3-type=inlineStr|A3=42|A6-style=1|A6=45292|C1-formula=SUBTOTAL(103,A2:A7)|C1=2`
 
-Focused evidence is Avalonia **8/8**, Presentation **1/1**, and Core.IO
+Focused evidence is Avalonia **9/9**, Presentation **1/1**, and Core.IO
 **2/2**. The retained bundle contains **20/20 artifacts**, **10/10 reachable
 provenance files**, and **2/2 validation files**. The accepted geometry is
 `97,589,260,18` with click `103,598`; crop, readiness/transition checks, and
@@ -72,15 +72,25 @@ The initial independent review reported two P2 findings:
 Both findings were remediated. FreeX now has one geometry contract plus
 mutation coverage and reachable-source provenance. FreeP topology schema v3
 pins the complete PPTX and states the residual as unresolved. Final independent
-re-review remains pending.
+review found no findings; all prior Wave194 findings are closed, 20/10/2 FreeX
+artifact/reachable-provenance/validation hashes are verified, and FreeP and
+FreeW are clean.
 
 ## Pending integration gates
 
 The following exact results must be recorded before Wave194 can be marked
 accepted:
 
-- Final independent re-review after both remediations.
-- Full Release build of `FreeX.slnx` at the tested source commit.
+- Default non-UI test lane and authoritative project totals.
+- Repository preflight at the tested source commit.
+
+Completed integration gates:
+
+- Final independent re-review: passed with no findings; all prior Wave194
+  findings are closed, 20/10/2 hashes are verified, and FreeP/FreeW are clean.
+- Full Release build: passed at `1bc64c7a5489fea5fafb536ec4a4fc69ceadf1e0`
+  with 0 warnings and 0 errors using
+  `dotnet build FreeX.slnx --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1`.
 - Final default non-UI test lane and authoritative project totals.
 - Repository preflight at the tested source commit.
 
@@ -91,7 +101,7 @@ this pending acceptance unit.
 ## Acceptance boundary
 
 The git-aware acceptance boundary is re-anchored to the tested source commit
-`cacb80a5c04d3f737808e700bb58cb7ac6d22541`. Only the Wave194 report, generated
+`1bc64c7a5489fea5fafb536ec4a4fc69ceadf1e0`. Only the Wave194 report, generated
 dashboard artifacts, dashboard generator, dashboard behavior guard, and the
 existing dashboard guard test are allowlisted for this refresh. Product code,
 app tests, physical evidence, and other source drift remain rejected.
