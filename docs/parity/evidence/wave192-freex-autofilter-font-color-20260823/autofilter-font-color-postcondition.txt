@@ -1,0 +1,12 @@
+document-path=/documents/freex-wave192-autofilter-font-color.xlsx
+menu-open=true
+swatch-gate=true
+criteria=font:#00B050
+visible=North,East,
+save-clean=true
+package=ref=A1:B5|colId=0|cellColor=0|dxfId=0|font=FF00B050
+dialog-open=true
+dialog-closed=true
+reopened-visible=North,East,
+reopened-semantic-a4=East
+

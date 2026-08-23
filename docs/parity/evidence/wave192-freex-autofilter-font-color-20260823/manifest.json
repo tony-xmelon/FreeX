@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "wave": 192,
+  "hashPolicy": {
+    "canonical-lf": "SHA-256 of strict UTF-8 text after CRLF and lone CR are normalized to LF",
+    "raw": "SHA-256 of exact file bytes"
+  },
+  "reportId": "20260823T140402Z",
+  "branch": "codex/parity-wave192-freex-20260823",
+  "commitAtRun": "e165bc84a9cf207194247f1095e6d3579bc907c6",
+  "sourceCommitAtImageBuild": "e165bc84a9cf207194247f1095e6d3579bc907c6",
+  "sourceTreeStatusAtImageBuild": "clean",
+  "appImageReference": "freex-linux-interactive-app-freex-92b5f322f615:current",
+  "baseImageDigest": "sha256:42786d247531ef93985d0a893e90d76f2b23c342178f8c47702c9dd58ddc12eb",
+  "appImageDigest": "sha256:81bde7c6d5fdd20391500d63f072c2a23b5bbea145640f661e1a8e57ac0a65e1",
+  "provenanceFiles": [
+    {
+      "path": "tools/LinuxInteractiveDocker/run-freex-input-probes.sh",
+      "hashMode": "canonical-lf",
+      "sha256": "4d5012e6eee9a439bab68691a8edad62e1fe9d717f31166fe4000ebcee9bb2f3"
+    },
+    {
+      "path": "tools/Run-FreeXLinuxInteractionValidation.ps1",
+      "hashMode": "canonical-lf",
+      "sha256": "62e3f4cd2ea5a644c3499076cb8d4cf225641ecc4b8a34b54d421dca6a43bd1e"
+    },
+    {
+      "path": "tools/LinuxInteractiveDocker/New-FreeXWave192AutoFilterFontColorFixture.ps1",
+      "hashMode": "canonical-lf",
+      "sha256": "a6e63b8fadebe191f7098ac74fb3484f29426be9a2bf013be11431d1576bd577"
+    },
+    {
+      "path": "src/FreeX.Core.Commands/FilterCommand.cs",
+      "hashMode": "canonical-lf",
+      "sha256": "b7009ab0a882d9d44663c81bf6cf428124bcf8d002225632eccd8d3affdb3758"
+    },
+    {
+      "path": "src/FreeX.Core.IO/XlsxAutoFilterXmlCodec.cs",
+      "hashMode": "canonical-lf",
+      "sha256": "a5ece9ee30db01e826f3aa93f426e307967fd319e9b844031a39cdf8a8d6bb31"
+    },
+    {
+      "path": "src/FreeX.Core.IO/XlsxAutoFilterColorFilterDxfWriter.cs",
+      "hashMode": "canonical-lf",
+      "sha256": "20dfe92c718417e98486db8d5b24e37966a986108e269b9ade2c9b5d3d43a6d1"
+    },
+    {
+      "path": "tests/FreeX.Core.IO.Tests/R89_AutoFilterColorDxfTests.cs",
+      "hashMode": "canonical-lf",
+      "sha256": "b658f3f598b28238ee184ad1a146b42c5b597a8cf8b19767625777623df62419"
+    },
+    {
+      "path": "tests/FreeX.Core.IO.Tests/XlsxAutoFilterAndLeafCodecTests.cs",
+      "hashMode": "canonical-lf",
+      "sha256": "9cfc7f159a9240b2e22ae2b5b938079301ba47c764c686b993fc75ac7e1de25c"
+    },
+    {
+      "path": "tests/FreeX.App.Avalonia.Tests/Wave192AutoFilterFontColorPhysicalSourceTests.cs",
+      "hashMode": "canonical-lf",
+      "sha256": "cab4666ccded2e822ccb450fed43aecaad8b697a4103ce435eb165b9eede5ebe"
+    }
+  ],
+  "gitBlobAudit": [
+    {
+      "path": "tools/LinuxInteractiveDocker/run-freex-input-probes.sh",
+      "hashMode": "canonical-lf",
+      "worktreeSha256": "4d5012e6eee9a439bab68691a8edad62e1fe9d717f31166fe4000ebcee9bb2f3",
+      "gitBlobContentSha256": "4d5012e6eee9a439bab68691a8edad62e1fe9d717f31166fe4000ebcee9bb2f3",
+      "match": true
+    },
+    {
+      "path": "tools/Run-FreeXLinuxInteractionValidation.ps1",
+      "hashMode": "canonical-lf",
+      "worktreeSha256": "62e3f4cd2ea5a644c3499076cb8d4cf225641ecc4b8a34b54d421dca6a43bd1e",
+      "gitBlobContentSha256": "62e3f4cd2ea5a644c3499076cb8d4cf225641ecc4b8a34b54d421dca6a43bd1e",
+      "match": true
+    },
+    {
+      "path": "tools/LinuxInteractiveDocker/New-FreeXWave192AutoFilterFontColorFixture.ps1",
+      "hashMode": "canonical-lf",
+      "worktreeSha256": "a6e63b8fadebe191f7098ac74fb3484f29426be9a2bf013be11431d1576bd577",
+      "gitBlobContentSha256": "a6e63b8fadebe191f7098ac74fb3484f29426be9a2bf013be11431d1576bd577",
+      "match": true
+    },
+    {
+      "path": "src/FreeX.Core.Commands/FilterCommand.cs",
+      "hashMode": "canonical-lf",
+      "worktreeSha256": "b7009ab0a882d9d44663c81bf6cf428124bcf8d002225632eccd8d3affdb3758",
+      "gitBlobContentSha256": "b7009ab0a882d9d44663c81bf6cf428124bcf8d002225632eccd8d3affdb3758",
+      "match": true
+    },
+    {
+      "path": "src/FreeX.Core.IO/XlsxAutoFilterXmlCodec.cs",
+      "hashMode": "canonical-lf",
+      "worktreeSha256": "a5ece9ee30db01e826f3aa93f426e307967fd319e9b844031a39cdf8a8d6bb31",
+      "gitBlobContentSha256": "a5ece9ee30db01e826f3aa93f426e307967fd319e9b844031a39cdf8a8d6bb31",
+      "match": true
+    },
+    {
+      "path": "src/FreeX.Core.IO/XlsxAutoFilterColorFilterDxfWriter.cs",
+      "hashMode": "canonical-lf",
+      "worktreeSha256": "20dfe92c718417e98486db8d5b24e37966a986108e269b9ade2c9b5d3d43a6d1",
+      "gitBlobContentSha256": "20dfe92c718417e98486db8d5b24e37966a986108e269b9ade2c9b5d3d43a6d1",
+      "match": true
+    },
+    {
+      "path": "tests/FreeX.Core.IO.Tests/R89_AutoFilterColorDxfTests.cs",
+      "hashMode": "canonical-lf",
+      "worktreeSha256": "b658f3f598b28238ee184ad1a146b42c5b597a8cf8b19767625777623df62419",
+      "gitBlobContentSha256": "b658f3f598b28238ee184ad1a146b42c5b597a8cf8b19767625777623df62419",
+      "match": true
+    },
+    {
+      "path": "tests/FreeX.Core.IO.Tests/XlsxAutoFilterAndLeafCodecTests.cs",
+      "hashMode": "canonical-lf",
+      "worktreeSha256": "9cfc7f159a9240b2e22ae2b5b938079301ba47c764c686b993fc75ac7e1de25c",
+      "gitBlobContentSha256": "9cfc7f159a9240b2e22ae2b5b938079301ba47c764c686b993fc75ac7e1de25c",
+      "match": true
+    },
+    {
+      "path": "tests/FreeX.App.Avalonia.Tests/Wave192AutoFilterFontColorPhysicalSourceTests.cs",
+      "hashMode": "canonical-lf",
+      "worktreeSha256": "cab4666ccded2e822ccb450fed43aecaad8b697a4103ce435eb165b9eede5ebe",
+      "gitBlobContentSha256": "cab4666ccded2e822ccb450fed43aecaad8b697a4103ce435eb165b9eede5ebe",
+      "match": true
+    }
+  ],
+  "command": "pwsh -NoProfile -ExecutionPolicy Bypass -File tools/Run-FreeXLinuxInteractionValidation.ps1 -Port 62921 -TimeoutMinutes 20 -PhysicalOnly -PhysicalProbeSelector autofilter-font-color-persistence",
+  "result": {
+    "passed": 1,
+    "failed": 0,
+    "total": 1
+  },
+  "acceptance": {
+    "shortcut": "Ctrl+F12 production Open picker",
+    "swatchGate": "before=#FFFFFF; rendered=#00B050; sample=113,452; click=139,456; button=97,439,75,27",
+    "criteria": "font:#00B050",
+    "visible": "North,East,",
+    "reopenedVisible": "North,East,",
+    "reopenedSemanticA4": "East",
+    "package": "ref=A1:B5|colId=0|cellColor=0|dxfId=0|font=FF00B050"
+  },
+  "files": [
+    {
+      "path": "physical-result.json",
+      "hashMode": "canonical-lf",
+      "sha256": "b1c7bc74ea78af3cbd4b68b4ab95f426a0d17a7afa68fe0b2335fc2e22ccf48a"
+    },
+    {
+      "path": "autofilter-font-color-postcondition.txt",
+      "hashMode": "canonical-lf",
+      "sha256": "e6765e364aab634b1280a6c812cce23559c0ddce587324dbf095e5016ae1a25a"
+    },
+    {
+      "path": "autofilter-font-color-swatch-gate.txt",
+      "hashMode": "canonical-lf",
+      "sha256": "5e2e56ed82658086490847574d57bdc5f1f83f637ebad7b206d057c2b6ae1db7"
+    },
+    {
+      "path": "autofilter-font-color-reopen-diagnostics.txt",
+      "hashMode": "canonical-lf",
+      "sha256": "35059bed46cb01ce663277dcffa6b070818b0b1e2746ec7e0494e17e147faeb6"
+    },
+    {
+      "path": "fixture-input.xlsx",
+      "hashMode": "raw",
+      "sha256": "7974b7829d4ca45457a5a4aa0402a9305c9f318b28eed3954ffa5a4cfb512e8a"
+    },
+    {
+      "path": "saved-font-color.xlsx",
+      "hashMode": "raw",
+      "sha256": "851cb3265305d77e78c834354aed797f29c8add1b0d763b5757f00f117c0813f"
+    },
+    {
+      "path": "autofilter-font-color-before.png",
+      "hashMode": "raw",
+      "sha256": "6c96f576ccf6e4f28877e87decc1254be1823a681b8a235f7680b3b22f861cb4"
+    },
+    {
+      "path": "autofilter-font-color-menu-open.png",
+      "hashMode": "raw",
+      "sha256": "85ccdbd8c9e10854a013eb9bdfca84758b36452700207e07aee71596328b1bb2"
+    },
+    {
+      "path": "autofilter-font-color-applied.png",
+      "hashMode": "raw",
+      "sha256": "9a58623096e3273c2b427c9c95735433d1e0813f2d8e13547bdddf8d9897d00e"
+    },
+    {
+      "path": "autofilter-font-color-reopened.png",
+      "hashMode": "raw",
+      "sha256": "18fa3e2e2eb85c14bd1bc251af92d0b01a214434c00f0adee821bc1c475cb425"
+    },
+    {
+      "path": "hash-audit.txt",
+      "hashMode": "canonical-lf",
+      "sha256": "1203e0721fea78463101dafbb551606ab4a15420e9ada812248f26ddc901734a"
+    }
+  ]
+}
