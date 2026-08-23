@@ -3,7 +3,8 @@
   "wave": 194,
   "status": "passed",
   "branch": "codex/parity-wave194-freex-20260823",
-  "sourceCommit": "bbcccc8237e862cebddd8fde7c4a270ee17198f8",
+  "sourceCommit": "9cc05c169a9c3fc861609c7f5ed5cf833cd8f953",
+  "physicalCaptureSourceCommit": "bbcccc8237e862cebddd8fde7c4a270ee17198f8",
   "reportId": "20260823T214605Z",
   "sessionId": "20260823T214824517Z",
   "appImageId": "sha256:1abac66282eb8c8f9bef568684d364a3f1333c6df517bac2dc327aef6168d166",
@@ -54,14 +55,16 @@
     { "path": "x11-input-results.json", "hashMode": "canonical-lf", "sha256": "04af62544590df0b5a2e2820cd33e7f4486fcc7cd57699b8d4bd57a92b3ae74b" }
   ],
   "provenanceFiles": [
-    { "path": "tools/LinuxInteractiveDocker/run-freex-input-probes.sh", "sha256": "40bc35de90ae7117de772db841634cab3bf8ee444082577b6d9ac5d8b4769548" },
+    { "path": "tools/LinuxInteractiveDocker/run-freex-input-probes.sh", "sha256": "0173bd6d209a0796bb8206c2dc42c1bcfc7b44271a7b8b7ff194a8704a3c16e8" },
     { "path": "tools/Run-FreeXLinuxInteractionValidation.ps1", "sha256": "d5c394f66a2cd15b7704b415ed16a925d06428c2c54f2506e6e25a1586c00383" },
     { "path": "tools/LinuxInteractiveDocker/New-FreeXWave194AutoFilterMixedTypeFixture.ps1", "sha256": "71a0a4216f9e1462edb87df91bd52e4d1ad1fe38f690435e3754667593565697" },
     { "path": "src/FreeX.App.Avalonia/MainWindow.AutoFilter.cs", "sha256": "ec55dbcb09b9a5fb050dae31b55d1b9d99f077bf905cbecd29cfdc86bfb4a6d3" },
     { "path": "src/FreeX.App.Presentation/Filtering/AutoFilterChecklistPlanner.cs", "sha256": "8f626d66d61f352823e0fb4c87ba421222fb5be28f2451fc3abbf3e886ae6172" },
     { "path": "src/FreeX.Core.Commands/FilterCommand.cs", "sha256": "b7009ab0a882d9d44663c81bf6cf428124bcf8d002225632eccd8d3affdb3758" },
     { "path": "src/FreeX.Core.IO/XlsxAutoFilterXmlCodec.cs", "sha256": "a5ece9ee30db01e826f3aa93f426e307967fd319e9b844031a39cdf8a8d6bb31" },
-    { "path": "tests/FreeX.App.Avalonia.Tests/Wave194AutoFilterMixedTypePhysicalSourceTests.cs", "sha256": "97219ad55279bd40e74a2d3561be4438ebe2f952210f290b9cc527f8671e2f5e" },
+    { "path": "tests/FreeX.App.Avalonia.Tests/Wave194AutoFilterMixedTypePhysicalSourceTests.cs", "sha256": "e75ee5e030f16beed5a45c535f9b4633b2915d4c505e4fa9cb09c0855cfeec8f" },
+    { "path": "tests/FreeX.App.Avalonia.Tests/Wave194AutoFilterMixedTypeGeometryAssertions.cs", "sha256": "e4ba539dd331764b18993b165e37f36f86172252dea17fc63a9ec8e47f31888f" },
+    { "path": "tests/FreeX.App.Avalonia.Tests/Wave194AutoFilterMixedTypeGeometryMutationTests.cs", "sha256": "c712362e73452e2f340dded1f89ac88da44614877f95ea1bf725af633b4694d1" },
     { "path": "tests/FreeX.App.Presentation.Tests/Filtering/Wave194AutoFilterMixedTypeChecklistTests.cs", "sha256": "59b3112b37dafa7070989dc5e65c2a5bba68a9e021aa6711a54ad35e0891ee2c" },
     { "path": "tests/FreeX.Core.IO.Tests/Wave194AutoFilterMixedTypeSourcePatchTests.cs", "sha256": "571ccbe848ed03b58c81d011ea1b5a8ef9b25e49eaadc727c4176ab9cb787efd" }
   ]
