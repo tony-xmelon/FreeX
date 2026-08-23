@@ -51,10 +51,17 @@ with zero warnings and errors.
 
 ## Integration Gates
 
-- Cross-app dashboard generation, check mode, schema validation, and evidence
-  aggregation guards are run before push.
-- Repository preflight, full Release build, and the default non-UI lane are run
-  from the integrated branch; final results are recorded here before push.
+- Repository preflight passed across 270 JSON files, 306 XML-backed files, 111
+  PowerShell scripts, 160 projects, generated parity documentation, and the
+  conflict-marker scan over 13,785 text files.
+- `dotnet build FreeX.slnx --configuration Release` passed with zero warnings
+  and zero errors in 1 minute 22 seconds.
+- `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build`
+  passed. The final FreeX Avalonia assembly completed 2,162/2,162 tests; all
+  other completed default-lane assemblies were also green, with benchmark-only
+  skips retained.
+- Cross-app dashboard generation, check mode, schema validation, evidence
+  aggregation guards, and whitespace validation passed before push.
 
 ## Remaining
 
@@ -64,4 +71,3 @@ with zero warnings and errors.
   remaining pagination, drawing/object, chart, table, and WordArt mismatches.
 - FreeP: the remaining imported SmartArt target residual or a genuinely new
   Surface3D/SmartArt topology while preserving Office and control metrics.
-
