@@ -33,10 +33,10 @@ FreeX Wave193 No Fill transition evidence: **popup-open 1905 changed pixels (min
 Wave193's cumulative 579 app-slice count is **accepted**. All final integration gates passed against tested source commit `615b53f474dfa1849ae965018d890cba4a138d42`. This dashboard/report is a later docs-only acceptance refresh; it does not alter the tested source commit.
 
 - Independent review: Passed: independent review found no findings after dashboard and source-guard remediations.
-- Repository preflight: Passed: 288 JSON, 306 XML-backed, and 13,843 text files conflict scanned.
+- Repository preflight: Passed at tested source commit 615b53f474dfa1849ae965018d890cba4a138d42: 288 JSON, 306 XML-backed, and 13,845 text files conflict scanned.
 - Tested source commit: `615b53f474dfa1849ae965018d890cba4a138d42`
 - Acceptance refresh: This dashboard/report is a later docs-only acceptance refresh; it does not alter the tested source commit.
-- Full Release build: Passed: the first full Release build passed before remediation; the post-remediation normal rebuild hit transient shared compiler locks; the prescribed retry dotnet build FreeX.slnx --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 passed with 0 warnings and 0 errors.
+- Full Release build: Passed at tested source commit 615b53f474dfa1849ae965018d890cba4a138d42: dotnet build FreeX.slnx --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 passed with 0 warnings and 0 errors.
 - Final default non-UI test lane: Passed: final default lane exit 0 with Core.IO 5,839 passed/56 skipped, Avalonia 2,182 passed, Host Logic 1,490 passed/4 skipped, FreeP Presentation 5,466 passed, and FreeP Avalonia 724 passed.
 - Remediation: The initial default lane exposed three source-test regressions; remediation fixed all three, and focused reruns passed.
 

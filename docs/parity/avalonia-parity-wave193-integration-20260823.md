@@ -82,12 +82,10 @@ The following non-build checks are part of this integration handoff:
 - Cross-app dashboard behavior guard.
 - FreeW Font provenance/evidence consistency guard.
 - FreeP Wave193 retained-evidence integrity guard.
-- FreeX Wave193 source/evidence guards where callable without a build.
+- FreeX Wave193 source/evidence guards ran with the final tested-source
+  assemblies available: the worker results remain **3/3 Avalonia** and
+  **8/8 Core.IO**.
 - `git diff --check`.
-
-The focused FreeX Avalonia and Core.IO test assemblies are absent in this
-worktree, so those source guards were not callable with `--no-build`; the
-authoritative **3/3** and **8/8** worker results remain recorded above.
 
 ## Integration Gates
 
@@ -98,12 +96,12 @@ does not alter the tested source.
 
 - Independent review found no findings after dashboard and source-guard
   remediations.
-- Repository preflight passed after conflict-marker scans of **288 JSON**,
-  **306 XML-backed**, and **13,843 text files**.
-- The first full Release build passed before remediation. The post-remediation
-  normal rebuild hit transient shared compiler locks; the prescribed retry
-  `dotnet build FreeX.slnx --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1`
-  passed with **0 warnings** and **0 errors**.
+- Repository preflight passed at tested source commit
+  `615b53f474dfa1849ae965018d890cba4a138d42` after conflict-marker scans of
+  **288 JSON**, **306 XML-backed**, and **13,845 text files**.
+- The final tested-source Release build passed with **0 warnings** and
+  **0 errors** using
+  `dotnet build FreeX.slnx --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1`.
 - The final default non-UI lane exited **0**. Key totals were Core.IO
   **5,839 passed / 56 skipped**, Avalonia **2,182 passed**, Host Logic
   **1,490 passed / 4 skipped**, FreeP Presentation **5,466 passed**, and
