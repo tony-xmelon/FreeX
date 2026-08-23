@@ -5,14 +5,14 @@
     "canonical-lf": "SHA-256 of strict UTF-8 text after CRLF and lone CR are normalized to LF",
     "raw": "SHA-256 of exact file bytes"
   },
-  "reportId": "20260823T140402Z",
+  "reportId": "20260823T144853Z",
   "branch": "codex/parity-wave192-freex-20260823",
-  "commitAtRun": "e165bc84a9cf207194247f1095e6d3579bc907c6",
-  "sourceCommitAtImageBuild": "e165bc84a9cf207194247f1095e6d3579bc907c6",
+  "commitAtRun": "3541f35714892b4b3ac9e50fc3102c3804f5d11b",
+  "sourceCommitAtImageBuild": "3541f35714892b4b3ac9e50fc3102c3804f5d11b",
   "sourceTreeStatusAtImageBuild": "clean",
   "appImageReference": "freex-linux-interactive-app-freex-92b5f322f615:current",
-  "baseImageDigest": "sha256:42786d247531ef93985d0a893e90d76f2b23c342178f8c47702c9dd58ddc12eb",
-  "appImageDigest": "sha256:81bde7c6d5fdd20391500d63f072c2a23b5bbea145640f661e1a8e57ac0a65e1",
+  "baseImageDigest": "sha256:139480d3bbefee9deb69dde84a035bd378da35b96cdb38126bc2a8d8a51e814a",
+  "appImageDigest": "sha256:6e3770905926290378060ef9b24ba97e649028e832efa0c29f80401a69243743",
   "provenanceFiles": [
     {
       "path": "tools/LinuxInteractiveDocker/run-freex-input-probes.sh",
@@ -58,6 +58,16 @@
       "path": "tests/FreeX.App.Avalonia.Tests/Wave192AutoFilterFontColorPhysicalSourceTests.cs",
       "hashMode": "canonical-lf",
       "sha256": "7b8a82345bea923f545aecc356c97388626576955a85c818c8966531b4924fcc"
+    },
+    {
+      "path": "src/FreeX.Core.IO/XlsxFileAdapter.SourcePackageSnapshot.cs",
+      "hashMode": "canonical-lf",
+      "sha256": "7ccda83d11682598f8c4837829050e14ccd499c843651970f431a3a5ef638661"
+    },
+    {
+      "path": "tests/FreeX.App.Avalonia.Tests/Wave192AutoFilterColorPackageTests.cs",
+      "hashMode": "canonical-lf",
+      "sha256": "2e7a65983d3e9d1226c404d602f7d42c2bef2c88608b71928d3bc3714313c668"
     }
   ],
   "gitBlobAudit": [
@@ -123,6 +133,20 @@
       "worktreeSha256": "7b8a82345bea923f545aecc356c97388626576955a85c818c8966531b4924fcc",
       "gitBlobContentSha256": "7b8a82345bea923f545aecc356c97388626576955a85c818c8966531b4924fcc",
       "match": true
+    },
+    {
+      "path": "src/FreeX.Core.IO/XlsxFileAdapter.SourcePackageSnapshot.cs",
+      "hashMode": "canonical-lf",
+      "worktreeSha256": "7ccda83d11682598f8c4837829050e14ccd499c843651970f431a3a5ef638661",
+      "gitBlobContentSha256": "7ccda83d11682598f8c4837829050e14ccd499c843651970f431a3a5ef638661",
+      "match": true
+    },
+    {
+      "path": "tests/FreeX.App.Avalonia.Tests/Wave192AutoFilterColorPackageTests.cs",
+      "hashMode": "canonical-lf",
+      "worktreeSha256": "2e7a65983d3e9d1226c404d602f7d42c2bef2c88608b71928d3bc3714313c668",
+      "gitBlobContentSha256": "2e7a65983d3e9d1226c404d602f7d42c2bef2c88608b71928d3bc3714313c668",
+      "match": true
     }
   ],
   "command": "pwsh -NoProfile -ExecutionPolicy Bypass -File tools/Run-FreeXLinuxInteractionValidation.ps1 -Port 62921 -TimeoutMinutes 20 -PhysicalOnly -PhysicalProbeSelector autofilter-font-color-persistence",
@@ -159,22 +183,22 @@
     {
       "path": "autofilter-font-color-reopen-diagnostics.txt",
       "hashMode": "canonical-lf",
-      "sha256": "6f55c47d944eca6dfbfd2fcb286f9f6e4f12ca5d694e119beeef07b70c08a658"
+      "sha256": "6c83ecb1bd7f205952f230d26495b37c966fa2a18ec6e7684683740253120ab9"
     },
     {
       "path": "hash-audit.txt",
       "hashMode": "canonical-lf",
-      "sha256": "1b152976b851c5472ef8634a5e05157d71fe971eba91113c5e046fa20f4a79f7"
+      "sha256": "07b041a6b8d4d4ac3fb9f3a3017899f6af6c8ffb466ff6c9c52a4a457b6ad68f"
     },
     {
       "path": "fixture-input.xlsx",
       "hashMode": "raw",
-      "sha256": "7974b7829d4ca45457a5a4aa0402a9305c9f318b28eed3954ffa5a4cfb512e8a"
+      "sha256": "114b5ca707bb9128d7b936a98aacc919d17bd0a072bcd40ab2953b59cf9d8034"
     },
     {
       "path": "saved-font-color.xlsx",
       "hashMode": "raw",
-      "sha256": "851cb3265305d77e78c834354aed797f29c8add1b0d763b5757f00f117c0813f"
+      "sha256": "7ef6667471cb157f1ada475b439de25551b56c9bcbe6d414d1f6c9519b75e34f"
     },
     {
       "path": "autofilter-font-color-before.png",
@@ -196,5 +220,7 @@
       "hashMode": "raw",
       "sha256": "18fa3e2e2eb85c14bd1bc251af92d0b01a214434c00f0adee821bc1c475cb425"
     }
-  ]
+  ],
+  "sourcePatchSaveSha256": "7ccda83d11682598f8c4837829050e14ccd499c843651970f431a3a5ef638661",
+  "packageSemanticTestSha256": "2e7a65983d3e9d1226c404d602f7d42c2bef2c88608b71928d3bc3714313c668"
 }

@@ -2,15 +2,15 @@
 
 Date: 2026-08-23
 Branch: `codex/parity-wave192-freex-20260823`
-Image-build source commit: `e165bc84a9cf207194247f1095e6d3579bc907c6`
+Source/image-build commit: `3541f35714`
+Physical run: `20260823T144853Z`
 
 ## Result
 
-The production Linux X11 AutoFilter persistence lane now proves **Filter by
-Font Color** through the rendered popup. It pixel-gated the green `#00B050`
-font swatch before clicking inside its measured button, applied the filter,
-saved, reopened through the identity-checked production Open picker, and
-verified the same visible and semantic state after reopen.
+The production Linux X11 lane proves **Filter by Font Color** through the
+rendered popup. It pixel-gated the green `#00B050` font swatch, applied the
+filter, saved, reopened through the identity-checked production Open picker,
+and verified the same visible and semantic state after reopen.
 
 Physical lane: **1 passed, 0 failed, 1 total**.
 
@@ -24,40 +24,35 @@ Exact postconditions:
 - reopened visible values: `North,East,`
 - reopened semantic `A4`: `East`
 
-The package parser independently reads `xl/worksheets/sheet1.xml`, resolves
-the saved `dxfId` into `xl/styles.xml`, requires `cellColor="0"`, and requires
-the DXF font color. The criteria string is produced only by the rendered-pixel
-gate; a coordinate click without the gate cannot credit the result.
+The retained XLSX was parsed independently from `xl/worksheets/sheet1.xml`
+and `xl/styles.xml`; it contains `filterColumn/colorFilter`,
+`cellColor="0"`, and a DXF font color of `FF00B050`.
 
-## Implementation
+## Root Cause and Fix
 
-Wave191's color probe is now a shared fill/font workflow. Wave192 adds the
-font-color selector, deterministic green-font fixture, font-mode DXF parser,
-identity-checked reopen postcondition, and source/evidence guards. The
-production font-color command and allocator were already correct and are
-covered by the focused R89 tests, so no speculative product change was made.
-Wave191 fill behavior remains on its original selector and call path.
+Independent review found the prior retained font package contained only an
+`<autoFilter>` element and no color criterion or green DXF. The production
+workflow exposed a real save bug: the loaded-XLSX cell-patch save path did not
+re-emit newly modeled AutoFilter criteria after patching cells, so visible
+in-memory state could be lost in the saved package.
 
-Evidence and provenance are retained under
-`docs/parity/evidence/wave192-freex-autofilter-font-color-20260823/`.
+`XlsxFileAdapter.SourcePackageSnapshot` now re-emits independent worksheet
+metadata, including modeled AutoFilter criteria, after the patch save. The
+cross-platform package test opens both committed evidence packages, asserts
+their exact XML semantics, applies fill/font commands to their fixtures, saves,
+reloads, and asserts the semantics again.
 
 ## Verification
 
-- Focused FreeX Core IO color/codec tests: **16/16 passed**.
-- Wave191 and Wave192 source/evidence guards: **8/8 passed**.
-- Physical Linux Docker lane: **1/1 passed**.
-- App image: `freex-linux-interactive-app-freex-92b5f322f615:current`, digest `sha256:81bde7c6d5fdd20391500d63f072c2a23b5bbea145640f661e1a8e57ac0a65e1`.
-- Docker base image digest: `sha256:42786d247531ef93985d0a893e90d76f2b23c342178f8c47702c9dd58ddc12eb`.
+- Linux Docker font lane: **1/1 passed** from source commit `3541f35714`.
+- Fresh saved package: `cellColor=0`, `dxfId=0`, font `FF00B050`.
+- The companion Linux Docker fill lane also passed **1/1** from the same
+  committed source.
+- Core IO color/codec tests, package semantic tests, and source/evidence guards
+  are rerun with this correction.
+- App image: `freex-linux-interactive-app-freex-92b5f322f615:current`, digest
+  `sha256:6e3770905926290378060ef9b24ba97e649028e832efa0c29f80401a69243743`.
+- Docker base image digest: `sha256:139480d3bbefee9deb69dde84a035bd378da35b96cdb38126bc2a8d8a51e814a`.
 
-The evidence manifest records canonical-LF SHA-256 for text and exact raw-byte
-SHA-256 for PNG/XLSX artifacts. The final audit compares those hashes with
-Git-blob content and validates the declared cross-platform checkout policy.
-
-## Remaining Color Gaps
-
-This wave closes physical font-color apply/save/reopen and preserves the
-Wave191 fill-color lane. Physical No Fill, color-filter change/clear sequencing,
-mixed-type columns, and multi-column color criteria remain outside the credited
-physical evidence. Shared command, planner, codec, and focused tests cover
-their existing paths, but they still need rendered Linux X11 evidence for
-WPF/Excel-authority credit.
+The evidence manifest records canonical-LF hashes for text, raw-byte hashes
+for PNG/XLSX artifacts, and Git-blob audits for source provenance.
