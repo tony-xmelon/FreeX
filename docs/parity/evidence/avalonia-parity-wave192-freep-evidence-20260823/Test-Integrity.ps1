@@ -89,11 +89,27 @@ function Read-PngDimensions([string]$path) {
     return [pscustomobject]@{ Width = [int]$width; Height = [int]$height }
 }
 
-function Assert-GitPath([string]$revision, [string]$relativePath, [string]$context) {
-    & git -C $repoRoot cat-file -e "$revision`:$relativePath" 2>$null
-    if ($LASTEXITCODE -ne 0) {
+function Get-GitBlobHash([string]$revision, [string]$relativePath, [string]$context) {
+    $blobHash = ((& git -C $repoRoot rev-parse "$revision`:$relativePath" 2>$null) -join "").Trim()
+    if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($blobHash)) {
         Fail "$context '$relativePath' is not present at committed revision $revision."
     }
+
+    $objectType = ((& git -C $repoRoot cat-file -t $blobHash 2>$null) -join "").Trim()
+    if ($LASTEXITCODE -ne 0 -or $objectType -ne "blob") {
+        Fail "$context '$relativePath' at committed revision $revision is not a blob."
+    }
+
+    return $blobHash.ToLowerInvariant()
+}
+
+function Get-CurrentGitBlobHash([string]$absolutePath, [string]$relativePath, [string]$context) {
+    $blobHash = ((& git -C $repoRoot hash-object -- $absolutePath 2>$null) -join "").Trim()
+    if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($blobHash)) {
+        Fail "$context '$relativePath' could not be hashed as a Git blob."
+    }
+
+    return $blobHash.ToLowerInvariant()
 }
 
 $sourceDecks = [int](Get-RequiredProperty $metrics.source "corpusDecks" "metrics.source")
@@ -255,7 +271,11 @@ foreach ($reference in $referenceRows) {
     if ($LASTEXITCODE -ne 0 -or [string]$trackedPath -ne $relativePath) {
         Fail "PowerPoint reference is not tracked by Git: '$relativePath'."
     }
-    Assert-GitPath $referenceRevision $relativePath "PowerPoint reference"
+    $sourceBlobHash = Get-GitBlobHash $referenceRevision $relativePath "PowerPoint reference"
+    $currentBlobHash = Get-CurrentGitBlobHash $absolutePath $relativePath "PowerPoint reference"
+    if ($sourceBlobHash -ne $currentBlobHash) {
+        Fail "PowerPoint reference '$relativePath' drifted from committed revision $referenceRevision`: source blob $sourceBlobHash, current blob $currentBlobHash."
+    }
 
     $dimensions = Read-PngDimensions $absolutePath
     $declaredWidth = [int](Get-RequiredProperty $reference "width" "references[$key]")
