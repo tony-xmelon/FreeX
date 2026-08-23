@@ -9,7 +9,7 @@
                                 ],
     "integrationGateEvidence":  {
                                     "testedSourceCommit":  "615b53f474dfa1849ae965018d890cba4a138d42",
-                                    "acceptanceRefreshNote":  "This dashboard/report is a later docs-only acceptance refresh; it does not alter the tested source commit.",
+                                    "acceptanceRefreshNote":  "This dashboard/report is an acceptance-only documentation/tooling refresh; it does not alter the tested source commit.",
                                     "independentReview":  "Passed: independent review found no findings after dashboard and source-guard remediations.",
                                     "repositoryPreflight":  "Passed at tested source commit 615b53f474dfa1849ae965018d890cba4a138d42: 288 JSON, 306 XML-backed, and 13,845 text files conflict scanned.",
                                     "fullReleaseBuild":  "Passed at tested source commit 615b53f474dfa1849ae965018d890cba4a138d42: dotnet build FreeX.slnx --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 passed with 0 warnings and 0 errors.",
