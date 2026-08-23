@@ -61,6 +61,17 @@ the slide-09 SmartArt residual.
   passed; slide-01 and `06-charts` controls remained byte-identical.
 - Cross-app dashboard generation, generated-file check, and schema/evidence
   aggregation guards passed.
+- Repository preflight passed, including generated documentation and all
+  architecture/source guards. The exact integration tip built in Release with
+  zero warnings and errors using serialized, non-shared compilation.
+- Integration gating caught and corrected native hidden-row fallback ownership
+  for unsupported AutoFilter metadata (20/20 focused R38/R65/R98 tests) and a
+  private FreeP test workspace walker (6/6 shared-locator source guards).
+- The complete default non-UI lane then cleared every product and architecture
+  failure. Its only remaining failure is the established headless limitation
+  `GridCaptureTests.CaptureGridRange_WritesPngAndJsonLog_ForNewWorkbook`, where
+  the render target produces an empty PNG without a graphical host; the
+  containing Avalonia project reported 2,157 passes and one failure.
 
 These metrics prove the named routes, workflows, artifacts, and comparison
 results only. They do not establish pixel-level Microsoft Office equivalence.
