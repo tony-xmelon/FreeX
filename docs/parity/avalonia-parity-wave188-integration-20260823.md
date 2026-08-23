@@ -64,9 +64,15 @@ controls were rerendered consistently.
 
 - Cross-app dashboard generation, check mode, schema validation, and evidence
   aggregation guards passed.
-- Repository preflight, serialized full Release build, and the default non-UI
-  lane are run from the integrated branch before push; final results are
-  recorded here before commit.
+- Repository preflight passed after validating 270 JSON files, 306 XML-backed
+  files, 110 PowerShell scripts, 160 projects, all generated parity documents,
+  291 FreeW comparison rows, and 13,779 text files for conflict markers.
+- The full `FreeX.slnx` Release build passed with **0 warnings and 0 errors** in
+  **3m50s**.
+- The complete default non-UI lane passed with no failures. This includes the
+  Avalonia suite at **2,160/2,160**, FreeP presentation at **5,465/5,465**,
+  FreeP Avalonia rendering at **285/285**, and the formerly failing empty-grid
+  PNG capture after the dedup campaign's capture fix.
 
 ## Remaining
 
