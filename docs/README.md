@@ -31,6 +31,8 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [user/guide.md](user/guide.md) - comprehensive end-user guide covering supported features, navigation, formulas, charts, PivotTables, printing, and keyboard shortcuts.
 - [user/linux-install.md](user/linux-install.md) - installing FreeX on Linux: .deb / AppImage / tarball options, checksum verification, and file associations.
 - [user/troubleshooting.md](user/troubleshooting.md) - common issues, error messages, known limitations, and how to report bugs.
+- [support/feedback.md](support/feedback.md) - suite-wide feedback, diagnostic-attachment safety, and private security-report routing.
+- [../SECURITY.md](../SECURITY.md) - supported-preview posture and private vulnerability reporting policy.
 
 ## Legal
 
@@ -50,6 +52,8 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [planning/macos-port-dependency-backlog.md](planning/macos-port-dependency-backlog.md) - macOS port backlog inventory for WPF/Windows-only components and platform-service replacement work.
 - [planning/macos-state-management.md](planning/macos-state-management.md) - macOS port state-location guidance for user settings, recent files, diagnostics, caches, and shared abstractions.
 - [release/test-distribution.md](release/test-distribution.md) - test-suite distribution, default agent verification path, separate UI lane, diagnostics plan, and tester-release workflow.
+- [release/app-platform-publish-lanes.md](release/app-platform-publish-lanes.md) - canonical per-app and full-suite portable/installer artifact map for Windows, Linux, and macOS.
+- [release/public-preview-readiness.md](release/public-preview-readiness.md) - suite-wide certificate-independent, crash-analytics, feedback, packaging, and deferred-signing release gate.
 - [release/macos-signing-notarization.md](release/macos-signing-notarization.md) - hosted macOS app preview artifact retrieval, Developer ID signing, and notarization runbook.
 - [release/tester-release-checklist.md](release/tester-release-checklist.md) - release-gate and public-preview accessibility checklist for tester builds.
 

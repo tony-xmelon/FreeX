@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 689 | 689 | 0 | 0 | 0 | 0 | 0 | 0 | 689 | 0 | 0 | 0 | 0 | 110 |
+| 691 | 691 | 0 | 0 | 0 | 0 | 0 | 0 | 691 | 0 | 0 | 0 | 0 | 110 |
 
 ## Workflow Evidence
 
@@ -349,12 +349,14 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.duplicate-slide` | Duplicate Slide | Yes | Yes | none | shared | home/slides (RibbonButton) | home/slides (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.edit-summary-zoom-targets` | [[Ribbon_Command_EditSummaryZoomTargets_Label]] | Yes | Yes | none | shared | insert/links (RibbonButton) | insert/links (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.edit-zoom-target` | [[Ribbon_Command_ChangeZoomTarget_Label]] | Yes | Yes | none | shared | insert/links (RibbonButton) | insert/links (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.feedback` | Send Feedback | Yes | Yes | none | shared | help/support (RibbonButton) | help/support (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.find` | Find | Yes | Yes | none | shared | home/editing (RibbonButton) | home/editing (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.font-color` | Font Color | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
 | `freep.font-family` | Font | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
 | `freep.font-size` | Size | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
 | `freep.format-painter` | Format Painter | Yes | Yes | none | shared | home/clipboard (RibbonButton) | home/clipboard (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.header-footer` | Header & Footer | Yes | Yes | none | shared | insert/text (RibbonButton) | insert/text (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.help-online` | Help Online | Yes | Yes | none | shared | help/support (RibbonButton) | help/support (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.indent-decrease` | Decrease Indent | Yes | Yes | none | shared | home/paragraph (RibbonButton) | home/paragraph (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.indent-increase` | Increase Indent | Yes | Yes | none | shared | home/paragraph (RibbonButton) | home/paragraph (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-area` | Area | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
