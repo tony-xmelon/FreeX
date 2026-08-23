@@ -39,7 +39,7 @@ Focused tests passed:
 
 * Presentation Wave194 checklist ordering/dedup/display: 1/1.
 * Core.IO Wave194 SourcePatch/package/reload/no-row-delta: 2/2.
-* Avalonia Wave194 source/geometry/integrity guards and production recalculation: 8/8.
+* Avalonia Wave194 source/geometry/integrity guards and production recalculation: 9/9.
 * Physical Docker/X11 `autofilter-mixed-type-persistence`: 1/1.
 
 No full solution build ran. The clean accepted image is
@@ -53,8 +53,10 @@ source guards and mutation tests bind every crop and the actual click to that
 single geometry contract. The post-integration guards are separately bound by
 matching canonical-LF worktree and `git show HEAD` hashes because they
 intentionally strengthen the integrated source guard without changing the
-physical harness. The verifier also proves `ddacd9c151` is an ancestor of
-`d94a20c000`; no physical rerun was required.
+physical harness. The target-action extractor requires unique full live start
+and end delimiters before slicing, and mutation coverage proves a correct
+here-document decoy cannot hide a wrong live click. The verifier also proves
+`ddacd9c151` is an ancestor of `d94a20c000`; no physical rerun was required.
 
 Earlier non-authoritative iterations failed honestly: one used wrong control
 coordinates; one raced popup rendering; one isolated Select All's tri-state
