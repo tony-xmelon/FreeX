@@ -4,7 +4,9 @@ Date: 2026-08-23
 
 Wave 193 integrates one bounded evidence slice for each application. The
 cumulative app-slice count is **579**, accepted after all final integration
-gates passed at integration HEAD `5296d9a47a`.
+gates passed against tested source commit
+`615b53f474dfa1849ae965018d890cba4a138d42`. This report is a later docs-only
+acceptance refresh; it does not alter the tested source commit.
 
 ## FreeX
 
@@ -62,8 +64,8 @@ references remain unchanged.
 ## Generated Dashboard And Guards
 
 `tools/Generate-CrossAppParityDashboard.ps1` now generates Wave193 metadata,
-the accepted 579-slice count, the empty pending integration-gate list, and the
-FreeX/FreeW/FreeP Wave193 evidence summaries in both
+the tested-source commit, the accepted 579-slice count, the empty pending
+integration-gate list, and the FreeX/FreeW/FreeP Wave193 evidence summaries in both
 `docs/parity/avalonia-wpf-cross-app-dashboard.json` and
 `docs/parity/avalonia-wpf-cross-app-dashboard.md`.
 
@@ -80,28 +82,28 @@ The following non-build checks are part of this integration handoff:
 - Cross-app dashboard behavior guard.
 - FreeW Font provenance/evidence consistency guard.
 - FreeP Wave193 retained-evidence integrity guard.
-- FreeX Wave193 source/evidence guards where callable without a build.
+- FreeX Wave193 source/evidence guards ran with the final tested-source
+  assemblies available: the worker results remain **3/3 Avalonia** and
+  **8/8 Core.IO**.
 - `git diff --check`.
-
-The focused FreeX Avalonia and Core.IO test assemblies are absent in this
-worktree, so those source guards were not callable with `--no-build`; the
-authoritative **3/3** and **8/8** worker results remain recorded above.
 
 ## Integration Gates
 
-All final integration gates passed at integration HEAD `5296d9a47a`; no pending
-gates remain.
+All final integration gates passed against tested source commit
+`615b53f474dfa1849ae965018d890cba4a138d42`; no pending gates remain. The later
+acceptance commit contains documentation and generator/guard changes only and
+does not alter the tested source.
 
 - Independent review found no findings after dashboard and source-guard
   remediations.
-- Repository preflight passed after conflict-marker scans of **288 JSON**,
-  **306 XML-backed**, and **13,843 text files**.
-- The first full Release build passed before remediation. The post-remediation
-  normal rebuild hit transient shared compiler locks; the prescribed retry
-  `dotnet build FreeX.slnx --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1`
-  passed with **0 warnings** and **0 errors**.
+- Repository preflight passed at tested source commit
+  `615b53f474dfa1849ae965018d890cba4a138d42` after conflict-marker scans of
+  **288 JSON**, **306 XML-backed**, and **13,845 text files**.
+- The final tested-source Release build passed with **0 warnings** and
+  **0 errors** using
+  `dotnet build FreeX.slnx --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1`.
 - The final default non-UI lane exited **0**. Key totals were Core.IO
-  **5,839 passed / 56 skipped**, Avalonia **2,178 passed**, Host Logic
+  **5,839 passed / 56 skipped**, Avalonia **2,182 passed**, Host Logic
   **1,490 passed / 4 skipped**, FreeP Presentation **5,466 passed**, and
   FreeP Avalonia **724 passed**.
 - The initial default lane exposed three source-test regressions. Remediation
