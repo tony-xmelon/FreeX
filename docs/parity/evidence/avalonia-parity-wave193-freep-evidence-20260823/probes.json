@@ -1,0 +1,94 @@
+{
+  "schema": "freep.parity.wave193.static-probes.v1",
+  "date": "2026-08-23",
+  "status": "no-runtime-change-verified",
+  "sourceRevision": "7be852a085b51e22ef48e4de28eacbb38415c996",
+  "target": {
+    "deck": "17-bullets-autofit",
+    "slide": "slide-02",
+    "baselineSource": "avalonia-parity-wave192-freep-evidence-20260823/metrics.json",
+    "wpfOffice": 3.0587,
+    "avaloniaOffice": 2.536,
+    "wpfAvalonia": 2.9091,
+    "ooxml": {
+      "bodyAutoFit": "noAutofit",
+      "bodyParagraphs": 8,
+      "bodyRunFont": "Aptos",
+      "bodyRunFontSizePt": 18,
+      "bodyBullets": false,
+      "bodyColumns": 1,
+      "bodyStoredFontScale": false,
+      "titleFont": "Aptos Display",
+      "titleFontSizePt": 28
+    }
+  },
+  "aggregateBaseline": {
+    "wpfOfficeAverage": 1.0309,
+    "wpfOfficeMaximum": 3.0587,
+    "avaloniaOfficeAverage": 0.9962,
+    "avaloniaOfficeMaximum": 2.5815,
+    "wpfAvaloniaAverage": 0.6097,
+    "wpfAvaloniaMaximum": 2.9091
+  },
+  "probes": [
+    {
+      "id": "avalonia-port-wpf-light-width",
+      "outcome": "rejected",
+      "targetAvaloniaOffice": 3.6208,
+      "pairWpfAvalonia": 3.3449,
+      "source": "docs/parity/freep-wave177-bullets-autofit-renderer-audit-20260822.md"
+    },
+    {
+      "id": "avalonia-remove-light-keep-width",
+      "outcome": "rejected",
+      "targetAvaloniaOffice": 3.6209,
+      "source": "docs/parity/freep-wave177-bullets-autofit-renderer-audit-20260822.md"
+    },
+    {
+      "id": "avalonia-fixed-line-spacing-1.21",
+      "outcome": "rejected",
+      "targetAvaloniaOffice": 3.5344,
+      "source": "docs/parity/freep-wave177-bullets-autofit-renderer-audit-20260822.md"
+    },
+    {
+      "id": "avalonia-calibri-one",
+      "outcome": "rejected",
+      "targetAvaloniaOffice": 3.9395,
+      "slide01ControlAvaloniaOffice": 1.0304,
+      "source": "docs/parity/freep-wave177-bullets-autofit-renderer-audit-20260822.md"
+    },
+    {
+      "id": "wpf-aptos-to-arial",
+      "outcome": "rejected",
+      "targetWpfOffice": 4.824,
+      "slide01ControlWpfOffice": 1.0498,
+      "source": "docs/parity/freep-bullets-autofit-aptos-arial-probe-rejected-20260718.md"
+    },
+    {
+      "id": "wpf-draw-time-vertical-metric-probes",
+      "outcome": "rejected",
+      "targetWpfOfficeRange": "3.3828%-3.8637%",
+      "source": "docs/parity/freep-bullets-autofit-body-vertical-only-rejected-20260718.md"
+    }
+  ],
+  "verification": {
+    "renderCompareBuildWarnings": 0,
+    "renderCompareBuildErrors": 0,
+    "avaloniaFocusedPassed": 22,
+    "presentationFocusedPassed": 130,
+    "renderCompareTestsPassed": 88,
+    "rendererOutputs": 106,
+    "comparisons": 159,
+    "rowsExactlyEqualWave192": 53
+  },
+  "evidenceBoundary": {
+    "runtimeChangeRetained": false,
+    "newBuildRun": true,
+    "newTestRun": true,
+    "newCurrentSourceRender": true,
+    "newCorpusRender": true,
+    "newOfficeReference": false,
+    "newPngEvidence": true,
+    "nextVerificationRequiresBuildLaneRelease": false
+  }
+}
