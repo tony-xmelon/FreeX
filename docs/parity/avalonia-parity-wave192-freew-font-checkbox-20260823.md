@@ -52,6 +52,24 @@ WPF/Avalonia glyph and control rasterization still differs.
 - Focused `FontDialogVisualParityTests` plus `FontDialogPolicySourceGuardTests`: `6/6` passed.
 - FreeW evidence consistency guard: passed for `291` rows.
 
+## Repository-backed provenance
+
+The prior `freew_dialog_visual_freshness.json` sidecar authenticated only opaque hashes for
+externally supplied WPF and Avalonia capture manifests. Wave192 now includes the compact
+`docs/parity/freew-dialog-harness/freew_font_visual_provenance.json` bundle. It binds each of the
+three WPF/Avalonia state pairs to its host, state, `460 x 383` capture dimensions, `421 x 321`
+painted bounds, exact comparison-row JSON pointer and SHA-256, source revision and source-file
+hashes, and the host-manifest SHA-256. `tools/Test-FreeWFontVisualProvenance.ps1` verifies those
+bindings and fails on stale or mismatched tracked evidence; it passed with `3` states and `6`
+host captures.
+
+The PNG captures and the two source capture manifests used for the Wave192 run are not committed
+in this repository. That is an explicit limitation, not an implied fresh local capture: the
+manifest hashes preserve their identity, while the tracked comparison rows preserve the exact
+inspectable result and content-gate metadata. Reproducing the pixels still requires the WPF and
+Avalonia capture hosts. The generation and check commands are recorded in the provenance bundle;
+the legacy freshness sidecar is supplemental and is no longer the only authority.
+
 ## Remaining tail
 
 The remaining Font delta is the native WPF/Avalonia text and control raster tail, including checkbox
