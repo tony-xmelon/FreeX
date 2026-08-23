@@ -214,6 +214,10 @@ if ([string]$references.root -ne $referenceRoot -or [int]$references.expectedWid
     Fail "references.json provenance root or expected dimensions disagree with metrics.source."
 }
 $referenceRevision = [string](Get-RequiredProperty $references "sourceRevision" "references")
+$metricsRevision = [string](Get-RequiredProperty $metrics.source "baseRevision" "metrics.source")
+if ($referenceRevision -ne $metricsRevision) {
+    Fail "references.sourceRevision '$referenceRevision' does not match metrics.source.baseRevision '$metricsRevision'."
+}
 & git -C $repoRoot cat-file -e "$referenceRevision^{commit}" 2>$null
 if ($LASTEXITCODE -ne 0) {
     Fail "references.sourceRevision '$referenceRevision' is not a committed revision."
@@ -235,6 +239,11 @@ foreach ($reference in $referenceRows) {
     $path = [string](Get-RequiredProperty $reference "path" "references[$key]")
     if ([string]::IsNullOrWhiteSpace($path) -or $path.StartsWith("/") -or $path.Contains("..")) {
         Fail "references[$key].path is not a safe repository-relative path: '$path'."
+    }
+    $normalizedPath = $path.Replace("\", "/")
+    $expectedPath = "$($reference.deck)/$($reference.slide).png"
+    if ($normalizedPath -ne $expectedPath) {
+        Fail "references[$key].path '$path' does not map to its deck/slide key '$expectedPath'."
     }
     $relativePath = "$referenceRoot/$path"
     $absolutePath = Join-Path $repoRoot ($relativePath -replace "/", "\")
