@@ -1,6 +1,6 @@
 # FreeFamily Unification Architecture Roadmap
 
-Updated 2026-08-22 at audit checkpoint `b688e47423`. Companion to `README.md` (principles), `LOG.md`
+Updated 2026-08-23 at implementation checkpoint `818a2036c3`. Companion to `README.md` (principles), `LOG.md`
 (execution record), and `dedup-residual-metrics.md` (current deterministic residual evidence).
 
 ## Vision
@@ -22,7 +22,7 @@ The objective is dual thin renderers, not renderer replacement.
 |---|---|---|---|
 | Windows WPF | mature | mature | mature |
 | Linux/macOS Avalonia | strong | strong | strong |
-| Portable workarea/session tier | exhausted to native adapters | mature; autosave follow-up open | mature; autosave/dictionary follow-up open |
+| Portable workarea/session tier | exhausted to native adapters | exhausted to native adapters | exhausted to native adapters |
 | Shared application frame | adopted | adopted | adopted |
 | Shared theme/localization mechanics | adopted | adopted | adopted |
 
@@ -52,12 +52,11 @@ resources, static semantic command IDs, and workbook keyboard shortcut aliases.
 All measured candidates were extracted or classified from the final tree. Remaining matches are native control,
 event, focus, geometry/materialization, drawing, media, accessibility-attachment, and capture adapters.
 
-### WS-B - Product portable tiers - follow-up open
+### WS-B - Product portable tiers - implementation complete
 
 `FreeX.App.Presentation`/`FreeX.App.Services`, `FreeW.App.Presentation`, and `FreeP.App.Presentation` own each
-product's renderer-neutral workarea behavior. Their document models remain separate by design. Later FreeP
-feature work copied FreeW autosave/recovery lifecycle and dictionary-storage mechanics; those four families are
-the current portable-tier follow-up.
+product's renderer-neutral workarea behavior. Their document models remain separate by design. The later
+FreeP/FreeW autosave, recovery, recovery-planning, and dictionary-storage copies have been consolidated.
 
 ### WS-C - Shared document substrate - mature
 
@@ -78,16 +77,15 @@ is shared already; the current queue consolidates the duplicated FreeP/FreeW ses
 
 Repository/source location, temporary resources, localization contracts, parity capture, image comparison, and
 ownership guards are shared. Source guards defend architectural ownership; behavior tests remain preferred.
-The 2026-08-22 FreeX WPF run captured and reviewed 116/116 surfaces. Focused tests and broader integration gates
-belong to the implementation slices that remain open.
+The 2026-08-23 FreeX WPF run captured and reviewed 116/116 surfaces. After the final adaptive-ribbon repair,
+all 116 surfaces were captured again and were pixel-identical to the reviewed final set. Focused tests and
+broader integration gates belong to future implementation slices when new duplicate behavior appears.
 
 ## Remaining campaign queue
 
-1. Extract the shared FreeP/FreeW recovery workflow and autosave session.
-2. Extract the shared autosave recovery planner.
-3. Extract shared atomic line-set storage and adopt it in both custom-dictionary stores.
-4. Re-audit the FreeP/FreeW Avalonia autosave adapters after the shared lifecycle lands.
-5. Run focused tests, regenerate residual metrics, integrate, push, and clean campaign-owned resources.
+No material implementation slice remains at the 2026-08-23 checkpoint. Integration verification, merge/push,
+and campaign-owned worktree cleanup close the campaign. See `DEDUP-CERTIFICATION-2026-08-23.md` for the final
+whole-production audit, residual classification, metrics, and FreeX visual evidence.
 
 ## Deliberate exceptions
 
@@ -105,7 +103,7 @@ shared; product wording stays in the product catalog so translators and feature 
 
 ## Future trigger after this campaign
 
-After the active residual queue is finished or classified, do not start another broad dedup campaign from file
+After this campaign is integrated, do not start another broad dedup campaign from file
 size alone. Re-open this roadmap only when one of these is true:
 
 1. `tools/Measure-DedupResiduals.ps1` identifies a new high-confidence cross-renderer block with reusable policy.
@@ -121,4 +119,4 @@ lane, the UI lane when WPF behavior or UI infrastructure changed, and the focuse
 ribbon work. FreeX WPF must also be parity-captured against a clean pre-campaign `origin/main` baseline and
 the resulting manifests/images compared before merge.
 
-The latest classification and visual evidence are in `DEDUP-CERTIFICATION-2026-08-22.md`.
+The latest classification and visual evidence are in `DEDUP-CERTIFICATION-2026-08-23.md`.

@@ -243,7 +243,7 @@
     { "id": "Recommended Charts", "tab": "Insert", "group": "Charts", "controlKind": "Button", "display": "Recommended Charts", "keyTip": "RC", "contextual": false, "menuItem": false },
     { "id": "Column Chart", "tab": "Insert", "group": "Charts", "controlKind": "Button", "display": "Column", "keyTip": "CC", "contextual": false, "menuItem": false },
     { "id": "Stacked Column Chart", "tab": "Insert", "group": "Charts", "controlKind": "Button", "display": "Stacked Column", "keyTip": "SC", "contextual": false, "menuItem": false },
-    { "id": "100% Stacked Column Chart", "tab": "Insert", "group": "Charts", "controlKind": "Button", "display": "100% Stacked Column", "keyTip": "PC", "contextual": false, "menuItem": false },
+    { "id": "100% Stacked Column Chart", "tab": "Insert", "group": "Charts", "controlKind": "Button", "display": "100% Stacked Column", "keyTip": "PCC", "contextual": false, "menuItem": false },
     { "id": "Bar Chart", "tab": "Insert", "group": "Charts", "controlKind": "Button", "display": "Bar", "keyTip": "BC", "contextual": false, "menuItem": false },
     { "id": "Stacked Bar Chart", "tab": "Insert", "group": "Charts", "controlKind": "Button", "display": "Stacked Bar", "keyTip": "SB", "contextual": false, "menuItem": false },
     { "id": "100% Stacked Bar Chart", "tab": "Insert", "group": "Charts", "controlKind": "Button", "display": "100% Stacked Bar", "keyTip": "PB", "contextual": false, "menuItem": false },

@@ -3,7 +3,7 @@
 **Historical inventory, closed 2026-08-09.** Every practical item in this inventory and the later whole-codebase audits has either
 been extracted, adopted, or recorded as an intentional renderer/domain boundary. Current evidence is generated
 in `dedup-residual-metrics.md`; the latest classification and verification record is
-`DEDUP-CERTIFICATION-2026-08-22.md`. This file is retained to explain the provenance of the earlier candidates.
+`DEDUP-CERTIFICATION-2026-08-23.md`. This file is retained to explain the provenance of the earlier candidates.
 
 Verified duplication candidates, ranked, each tagged with its **unlock condition** (which session must
 settle before extraction is safe). Built 2026-06-25 from a read-only cross-app audit while the three

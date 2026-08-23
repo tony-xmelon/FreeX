@@ -4,6 +4,40 @@ Newest entries first. Each phase records: what changed, how it was verified, and
 
 ---
 
+## Whole-production dedup continuation - implementation complete (2026-08-23)
+
+**Implementation checkpoint:** `818a2036c32a283af6d835f23f3bc39f926adc60` on
+`codex/dedup-wave184-20260823`, based on `origin/main` `94241681c6`.
+
+The continuation closed the reopened FreeP/FreeW recovery, autosave, recovery-planning, and dictionary-storage
+families, then repeatedly scanned and reviewed the full production tree. Sixty-eight integration commits share
+additional ribbon/frame, file lifecycle, package/OOXML, formula, command, accessibility, editing, dialog,
+geometry, chart/table/text/shape/SmartArt, slideshow, and renderer-neutral policies. The largest change removed
+the approximately 27,000-line Accessibility shadow formula/conditional-format engine in favor of canonical
+Calc/Formula evaluation. The final actionable audit result, XLSX defined-name preservation policy, is shared by
+both save paths at this checkpoint.
+
+The final ribbon integration pass found one real WPF recovery regression: at a constrained width every Insert
+group could remain collapsed while measurement masked clipping. `RibbonAdaptivePanel` now restores a visible
+group when width returns, and the updated behavior is guarded by focused tests plus the complete ribbon lane.
+
+The deterministic renderer/shared-root report now measures 576,757 LOC, with 6,848 exact duplicate LOC
+(1.187328%) and 8,153 normalized duplicate LOC (1.413594%). Campaign C# change is +21,565/-41,489, net
+-19,924 lines. The separate whole-production review found no remaining material reusable behavior; residuals
+are native realization, format/domain ownership, compatibility boundaries, or catalogs.
+
+FreeX WPF visual validation captured 116/116 surfaces. Ninety-one are pixel-identical; all 25 changed surfaces
+were manually reviewed without blank content, clipping, overlap, missing controls, stale dialogs, or broken
+layout. A complete post-ribbon-fix recapture is pixel-identical on all 116 surfaces to that reviewed final
+capture. See `DEDUP-CERTIFICATION-2026-08-23.md` for scope disposition, evidence paths, and residual risks.
+
+**Final integration gate:** Release solution build passed with 0 warnings/errors; the default lane passed with
+0 failures; the rebuilt UI lane passed 6,440 tests with 51 intentional skips and 0 failures; and the focused
+`RibbonUiLane` passed 64/64. Generated-document, repository-preflight, and whitespace checks are rerun on the
+documented integration tree immediately before promotion to `main`.
+
+---
+
 ## Dedup implementation scope exhausted - final checkpoint (2026-08-13)
 
 **Implementation checkpoint:** `b9661deea09a048a4931b872d84a47ea1e83642a` on
