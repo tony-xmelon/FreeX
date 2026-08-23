@@ -1,0 +1,564 @@
+﻿{
+    "schema":  "freep.parity.wave193.corpus.v1",
+    "date":  "2026-08-23",
+    "source":  {
+                   "baseRevision":  "7be852a085b51e22ef48e4de28eacbb38415c996",
+                   "corpusDecks":  27,
+                   "corpusSlides":  53,
+                   "rendererOutputs":  106,
+                   "comparisons":  159,
+                   "width":  1280,
+                   "height":  720,
+                   "officeReferenceRoot":  "tools/FreeP.RenderCompare/corpus/pptx-ref"
+               },
+    "aggregate":  {
+                      "wpfOfficeAverage":  1.0309,
+                      "wpfOfficeMaximum":  3.0587,
+                      "avaloniaOfficeAverage":  0.9962,
+                      "avaloniaOfficeMaximum":  2.5815,
+                      "wpfAvaloniaAverage":  0.6097,
+                      "wpfAvaloniaMaximum":  2.9091
+                  },
+    "target":  {
+                   "deck":  "17-bullets-autofit",
+                   "slide":  "slide-02",
+                   "wpfOffice":  3.0587,
+                   "avaloniaOffice":  2.536,
+                   "wpfAvalonia":  2.9091,
+                   "wpfOfficeMaxChannel":  255,
+                   "avaloniaOfficeMaxChannel":  255,
+                   "wpfAvaloniaMaxChannel":  255
+               },
+    "rows":  [
+                 {
+                     "deck":  "01-title-slide",
+                     "slide":  "slide-01",
+                     "wpfOffice":  1.2511,
+                     "avaloniaOffice":  1.386,
+                     "wpfAvalonia":  1.1359,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "02-autoshapes",
+                     "slide":  "slide-01",
+                     "wpfOffice":  0.4773,
+                     "avaloniaOffice":  0.4758,
+                     "wpfAvalonia":  0.1028,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  240
+                 },
+                 {
+                     "deck":  "03-mixed-text",
+                     "slide":  "slide-01",
+                     "wpfOffice":  1.1277,
+                     "avaloniaOffice":  1.1281,
+                     "wpfAvalonia":  1.2258,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "04-picture",
+                     "slide":  "slide-01",
+                     "wpfOffice":  0.1487,
+                     "avaloniaOffice":  0.1316,
+                     "wpfAvalonia":  0.1363,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "05-table",
+                     "slide":  "slide-01",
+                     "wpfOffice":  1.3262,
+                     "avaloniaOffice":  1.2,
+                     "wpfAvalonia":  0.3551,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "06-charts",
+                     "slide":  "slide-01",
+                     "wpfOffice":  0.9846,
+                     "avaloniaOffice":  0.9375,
+                     "wpfAvalonia":  0.4242,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "06-charts",
+                     "slide":  "slide-02",
+                     "wpfOffice":  1.2449,
+                     "avaloniaOffice":  1.1365,
+                     "wpfAvalonia":  0.3599,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "06-charts",
+                     "slide":  "slide-03",
+                     "wpfOffice":  0.6149,
+                     "avaloniaOffice":  0.5839,
+                     "wpfAvalonia":  0.2974,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "06-charts",
+                     "slide":  "slide-04",
+                     "wpfOffice":  1.2552,
+                     "avaloniaOffice":  1.1998,
+                     "wpfAvalonia":  0.4455,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "07-customgeom",
+                     "slide":  "slide-01",
+                     "wpfOffice":  0.4557,
+                     "avaloniaOffice":  0.3136,
+                     "wpfAvalonia":  0.3275,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "08-effects",
+                     "slide":  "slide-01",
+                     "wpfOffice":  1.2296,
+                     "avaloniaOffice":  1.311,
+                     "wpfAvalonia":  0.5409,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "09-smartart",
+                     "slide":  "slide-01",
+                     "wpfOffice":  0.4026,
+                     "avaloniaOffice":  0.3455,
+                     "wpfAvalonia":  0.2666,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "10-motionpath",
+                     "slide":  "slide-01",
+                     "wpfOffice":  0.0406,
+                     "avaloniaOffice":  0.0702,
+                     "wpfAvalonia":  0.0672,
+                     "wpfOfficeMaxChannel":  173,
+                     "avaloniaOfficeMaxChannel":  173,
+                     "wpfAvaloniaMaxChannel":  173
+                 },
+                 {
+                     "deck":  "11-bevel3d",
+                     "slide":  "slide-01",
+                     "wpfOffice":  1.0278,
+                     "avaloniaOffice":  0.9537,
+                     "wpfAvalonia":  0.5195,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "12-fills",
+                     "slide":  "slide-01",
+                     "wpfOffice":  1.1788,
+                     "avaloniaOffice":  1.0807,
+                     "wpfAvalonia":  0.3282,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "13-wordart",
+                     "slide":  "slide-01",
+                     "wpfOffice":  1.4924,
+                     "avaloniaOffice":  1.4588,
+                     "wpfAvalonia":  1.3126,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "14-smartart-live",
+                     "slide":  "slide-01",
+                     "wpfOffice":  1.3451,
+                     "avaloniaOffice":  1.3124,
+                     "wpfAvalonia":  1.1567,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "14-smartart-live",
+                     "slide":  "slide-02",
+                     "wpfOffice":  1.5158,
+                     "avaloniaOffice":  1.5689,
+                     "wpfAvalonia":  1.0093,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "14-smartart-live",
+                     "slide":  "slide-03",
+                     "wpfOffice":  0.7149,
+                     "avaloniaOffice":  0.7043,
+                     "wpfAvalonia":  0.2878,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "14-smartart-live",
+                     "slide":  "slide-04",
+                     "wpfOffice":  1.7017,
+                     "avaloniaOffice":  1.7286,
+                     "wpfAvalonia":  0.521,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "15-picture-crop",
+                     "slide":  "slide-01",
+                     "wpfOffice":  0.2631,
+                     "avaloniaOffice":  0.2588,
+                     "wpfAvalonia":  0.2295,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "15-picture-crop",
+                     "slide":  "slide-02",
+                     "wpfOffice":  0.2186,
+                     "avaloniaOffice":  0.1694,
+                     "wpfAvalonia":  0.1083,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "15-picture-crop",
+                     "slide":  "slide-03",
+                     "wpfOffice":  0.5335,
+                     "avaloniaOffice":  0.5085,
+                     "wpfAvalonia":  0.2718,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "15-smartart-grouped-list",
+                     "slide":  "slide-01",
+                     "wpfOffice":  1.3451,
+                     "avaloniaOffice":  1.3124,
+                     "wpfAvalonia":  1.1567,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "15-smartart-grouped-list",
+                     "slide":  "slide-02",
+                     "wpfOffice":  1.5158,
+                     "avaloniaOffice":  1.5689,
+                     "wpfAvalonia":  1.0093,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "15-smartart-grouped-list",
+                     "slide":  "slide-03",
+                     "wpfOffice":  1.5307,
+                     "avaloniaOffice":  1.5823,
+                     "wpfAvalonia":  1.016,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "15-smartart-grouped-list",
+                     "slide":  "slide-04",
+                     "wpfOffice":  0.7149,
+                     "avaloniaOffice":  0.7043,
+                     "wpfAvalonia":  0.2878,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "15-smartart-grouped-list",
+                     "slide":  "slide-05",
+                     "wpfOffice":  1.7017,
+                     "avaloniaOffice":  1.7286,
+                     "wpfAvalonia":  0.521,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "15-smartart-grouped-list",
+                     "slide":  "slide-06",
+                     "wpfOffice":  1.5481,
+                     "avaloniaOffice":  1.5581,
+                     "wpfAvalonia":  0.8054,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "15-smartart-grouped-list",
+                     "slide":  "slide-07",
+                     "wpfOffice":  0.509,
+                     "avaloniaOffice":  0.5063,
+                     "wpfAvalonia":  0.3147,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "15-smartart-grouped-list",
+                     "slide":  "slide-08",
+                     "wpfOffice":  1.1608,
+                     "avaloniaOffice":  1.1313,
+                     "wpfAvalonia":  0.4828,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "15-smartart-grouped-list",
+                     "slide":  "slide-09",
+                     "wpfOffice":  0.9662,
+                     "avaloniaOffice":  0.8675,
+                     "wpfAvalonia":  0.854,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "15-smartart-grouped-list",
+                     "slide":  "slide-10",
+                     "wpfOffice":  1.7356,
+                     "avaloniaOffice":  1.5956,
+                     "wpfAvalonia":  1.6302,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "16-bg-tabs-vtext",
+                     "slide":  "slide-01",
+                     "wpfOffice":  0.5848,
+                     "avaloniaOffice":  0.5775,
+                     "wpfAvalonia":  0.058,
+                     "wpfOfficeMaxChannel":  96,
+                     "avaloniaOfficeMaxChannel":  95,
+                     "wpfAvaloniaMaxChannel":  95
+                 },
+                 {
+                     "deck":  "16-bg-tabs-vtext",
+                     "slide":  "slide-02",
+                     "wpfOffice":  0.5812,
+                     "avaloniaOffice":  0.5944,
+                     "wpfAvalonia":  0.6217,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "16-bg-tabs-vtext",
+                     "slide":  "slide-03",
+                     "wpfOffice":  0.4491,
+                     "avaloniaOffice":  0.4187,
+                     "wpfAvalonia":  0.2924,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "17-bullets-autofit",
+                     "slide":  "slide-01",
+                     "wpfOffice":  0.8441,
+                     "avaloniaOffice":  0.8339,
+                     "wpfAvalonia":  0.8439,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "17-bullets-autofit",
+                     "slide":  "slide-02",
+                     "wpfOffice":  3.0587,
+                     "avaloniaOffice":  2.536,
+                     "wpfAvalonia":  2.9091,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "18-chart-types",
+                     "slide":  "slide-01",
+                     "wpfOffice":  0.4397,
+                     "avaloniaOffice":  0.4139,
+                     "wpfAvalonia":  0.3366,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "18-chart-types",
+                     "slide":  "slide-02",
+                     "wpfOffice":  0.7202,
+                     "avaloniaOffice":  0.7641,
+                     "wpfAvalonia":  0.2204,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "18-chart-types",
+                     "slide":  "slide-03",
+                     "wpfOffice":  1.016,
+                     "avaloniaOffice":  0.996,
+                     "wpfAvalonia":  0.374,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "18-chart-types",
+                     "slide":  "slide-04",
+                     "wpfOffice":  0.6549,
+                     "avaloniaOffice":  0.6725,
+                     "wpfAvalonia":  0.2457,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "19-chart-labels",
+                     "slide":  "slide-01",
+                     "wpfOffice":  1.3311,
+                     "avaloniaOffice":  1.333,
+                     "wpfAvalonia":  0.6511,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "19-chart-labels",
+                     "slide":  "slide-02",
+                     "wpfOffice":  0.6216,
+                     "avaloniaOffice":  0.6238,
+                     "wpfAvalonia":  0.466,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "19-chart-labels",
+                     "slide":  "slide-03",
+                     "wpfOffice":  1.4984,
+                     "avaloniaOffice":  1.4225,
+                     "wpfAvalonia":  0.9265,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "20-columns-gradoutline",
+                     "slide":  "slide-01",
+                     "wpfOffice":  1.0468,
+                     "avaloniaOffice":  0.9527,
+                     "wpfAvalonia":  0.7789,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "21-comments-notes",
+                     "slide":  "slide-01",
+                     "wpfOffice":  0.0558,
+                     "avaloniaOffice":  0.0833,
+                     "wpfAvalonia":  0.0905,
+                     "wpfOfficeMaxChannel":  196,
+                     "avaloniaOfficeMaxChannel":  196,
+                     "wpfAvaloniaMaxChannel":  196
+                 },
+                 {
+                     "deck":  "21-comments-notes",
+                     "slide":  "slide-02",
+                     "wpfOffice":  0.0887,
+                     "avaloniaOffice":  0.1159,
+                     "wpfAvalonia":  0.0941,
+                     "wpfOfficeMaxChannel":  173,
+                     "avaloniaOfficeMaxChannel":  173,
+                     "wpfAvaloniaMaxChannel":  173
+                 },
+                 {
+                     "deck":  "22-chart-baseline-depth",
+                     "slide":  "slide-01",
+                     "wpfOffice":  2.3911,
+                     "avaloniaOffice":  2.1353,
+                     "wpfAvalonia":  1.0479,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  191
+                 },
+                 {
+                     "deck":  "23-run-baseline",
+                     "slide":  "slide-01",
+                     "wpfOffice":  0.0325,
+                     "avaloniaOffice":  0.0776,
+                     "wpfAvalonia":  0.0873,
+                     "wpfOfficeMaxChannel":  242,
+                     "avaloniaOfficeMaxChannel":  242,
+                     "wpfAvaloniaMaxChannel":  242
+                 },
+                 {
+                     "deck":  "24-run-baseline-wrap",
+                     "slide":  "slide-01",
+                     "wpfOffice":  0.7662,
+                     "avaloniaOffice":  0.8774,
+                     "wpfAvalonia":  0.6696,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  255
+                 },
+                 {
+                     "deck":  "25-chart-surface3d-view3d",
+                     "slide":  "slide-01",
+                     "wpfOffice":  2.7032,
+                     "avaloniaOffice":  2.5815,
+                     "wpfAvalonia":  1.0804,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  191
+                 },
+                 {
+                     "deck":  "26-chart-surface3d-default-tall-frame",
+                     "slide":  "slide-01",
+                     "wpfOffice":  2.4757,
+                     "avaloniaOffice":  2.2723,
+                     "wpfAvalonia":  1.0104,
+                     "wpfOfficeMaxChannel":  255,
+                     "avaloniaOfficeMaxChannel":  255,
+                     "wpfAvaloniaMaxChannel":  191
+                 }
+             ]
+}
