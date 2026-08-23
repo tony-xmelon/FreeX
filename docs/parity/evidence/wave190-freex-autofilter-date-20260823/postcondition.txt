@@ -1,0 +1,26 @@
+document-path=/documents/freex-wave189-autofilter-date.xlsx
+before-menu-open=true
+before-criteria=date<:2024-02-01
+before-visible=Jan01,Jan15,
+before-save-clean=true
+before-package=ref=A1:B5|colId=1|operator=lessThan|value=45323
+before-open-attempts=1
+before-dialog-open=true
+before-dialog-closed=true
+before-dialog-id=25165831
+before-dialog-title=Open Workbook
+before-dialog-pid=29
+before-reopened=Jan01,Jan15,
+after-menu-open=true
+after-criteria=date>:2024-02-01
+after-visible=Mar15,,
+after-save-clean=true
+after-package=ref=A1:B5|colId=1|operator=greaterThan|value=45323
+after-open-attempts=2
+after-dialog-open=true
+after-dialog-closed=true
+after-dialog-id=25168074
+after-dialog-title=Open Workbook
+after-dialog-pid=29
+after-reopened-visible=Mar15
+after-reopened-semantic-a5=Mar15
