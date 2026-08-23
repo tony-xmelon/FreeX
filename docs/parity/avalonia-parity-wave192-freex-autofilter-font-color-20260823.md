@@ -58,5 +58,8 @@ committed evidence packages, and asserts their exact save/reload semantics.
 The evidence manifest records canonical-LF hashes for text, raw-byte hashes
 for PNG/XLSX artifacts, and Git-blob audits for source provenance. It maps image
 source `3541f35714` to byte-equivalent integration source `0fc47ab4d6`, evidence
-commit `5205d4bc85`, and integration result `5743087e21`; guards verify those
-blobs and ancestry directly through Git.
+commit `5205d4bc85`, and history-preserving integration anchor `d82b66ee56`.
+The anchor merges the integration tip into the image-source worker history, so
+guards can verify the real image revision's ancestry and every retained artifact
+blob directly through Git. Integration must merge or fast-forward this worker;
+cherry-picking the correction commit would discard that provenance ancestry.
