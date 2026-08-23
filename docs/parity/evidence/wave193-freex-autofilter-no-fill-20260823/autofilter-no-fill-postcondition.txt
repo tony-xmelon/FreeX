@@ -1,0 +1,12 @@
+document-path=/documents/freex-wave193-autofilter-no-fill.xlsx
+menu-open=true
+swatch-gate=true
+criteria=nofill:#FFFFFF
+visible=South,West,
+save-clean=true
+package=ref=A1:B5|colId=0|cellColor=1|dxfId=0|dxf=empty
+dialog-open=true
+dialog-closed=true
+reopened-visible=South,West,
+reopened-semantic-a4=East
+
