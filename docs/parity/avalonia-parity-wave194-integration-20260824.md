@@ -1,7 +1,7 @@
 # Avalonia/WPF Parity Wave 194 Integration
 
 Date: 2026-08-24
-Tested source commit: `1bc64c7a5489fea5fafb536ec4a4fc69ceadf1e0`
+Tested source commit: `f2aab993242fa6a6cc49d67c4b7770c23ce4c067`
 Cumulative app slices: **582**, pending final integration gates
 
 This is an acceptance-only dashboard and evidence refresh. It does not change
@@ -69,28 +69,35 @@ The initial independent review reported two P2 findings:
 2. FreeP did not pin the complete source PPTX and initially over-attributed the
    remaining render residual to host font/raster behavior.
 
-Both findings were remediated. FreeX now has one geometry contract plus
-mutation coverage and reachable-source provenance. FreeP topology schema v3
-pins the complete PPTX and states the residual as unresolved. Final independent
-review found no findings; all prior Wave194 findings are closed, 20/10/2 FreeX
-artifact/reachable-provenance/validation hashes are verified, and FreeP and
-FreeW are clean.
+Both findings were remediated at the prior tested source. FreeX now has one
+geometry contract plus mutation coverage and reachable-source provenance. FreeP
+topology schema v3 pins the complete PPTX and states the residual as unresolved.
+The tested source then advanced because the first full default lane exposed
+three over-broad color-geometry source-guard failures.
+
+The initial default lane exited **1** solely because the Wave191/192/193
+color-geometry guard was bounded through a later selector and counted
+`mixed_type_target_click_x_offset`. At that pre-remediation source, FreeX
+Avalonia reported **2,188 passed, 3 failed, 2,191 total**.
+
+Remediation commit `f2aab993242fa6a6cc49d67c4b7770c23ce4c067` structurally scopes
+the old guard to `probe_autofilter_color_persistence_physical` and adds
+isolation and inside-function mutation tests. Worker verification passed:
+failing classes **11/11**, full color lane **17/17**, Wave194 **9/9**, full
+Avalonia project **2,193/2,193**, and focused project build **0/0**. There was
+no runtime harness or evidence change.
+
+The prior final no-findings review is superseded by this source advancement.
+Final independent review, Release build, default lane, and repository
+preflight are all reopened pending post-remediation results.
 
 ## Pending integration gates
 
 The following exact results must be recorded before Wave194 can be marked
 accepted:
 
-- Default non-UI test lane and authoritative project totals.
-- Repository preflight at the tested source commit.
-
-Completed integration gates:
-
-- Final independent re-review: passed with no findings; all prior Wave194
-  findings are closed, 20/10/2 hashes are verified, and FreeP/FreeW are clean.
-- Full Release build: passed at `1bc64c7a5489fea5fafb536ec4a4fc69ceadf1e0`
-  with 0 warnings and 0 errors using
-  `dotnet build FreeX.slnx --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1`.
+- Final independent review after the source-guard remediation.
+- Full Release build at the tested source commit.
 - Final default non-UI test lane and authoritative project totals.
 - Repository preflight at the tested source commit.
 
@@ -101,7 +108,7 @@ this pending acceptance unit.
 ## Acceptance boundary
 
 The git-aware acceptance boundary is re-anchored to the tested source commit
-`1bc64c7a5489fea5fafb536ec4a4fc69ceadf1e0`. Only the Wave194 report, generated
+`f2aab993242fa6a6cc49d67c4b7770c23ce4c067`. Only the Wave194 report, generated
 dashboard artifacts, dashboard generator, dashboard behavior guard, and the
 existing dashboard guard test are allowlisted for this refresh. Product code,
 app tests, physical evidence, and other source drift remain rejected.
