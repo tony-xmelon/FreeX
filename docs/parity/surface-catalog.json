@@ -609,6 +609,7 @@
     { "id": "help.online", "tab": "Help", "group": "Help", "controlKind": "Button", "display": "Help Online", "keyTip": "H", "contextual": false, "menuItem": false },
     { "id": "help.feedback", "tab": "Help", "group": "Help", "controlKind": "Button", "display": "Feedback", "keyTip": "F", "contextual": false, "menuItem": false },
     { "id": "help.copyDiagnostics", "tab": "Help", "group": "Help", "controlKind": "Button", "display": "Copy Diagnostics", "keyTip": "D", "contextual": false, "menuItem": false },
+    { "id": "help.testCrashReporting", "tab": "Help", "group": "Help", "controlKind": "Button", "display": "Test Crash Reporting", "keyTip": "T", "contextual": false, "menuItem": false },
     { "id": "help.checkForUpdates", "tab": "Help", "group": "Help", "controlKind": "Button", "display": "Check for Updates", "keyTip": "U", "contextual": false, "menuItem": false },
     { "id": "help.about", "tab": "Help", "group": "Help", "controlKind": "Button", "display": "About FreeX", "keyTip": "A", "contextual": false, "menuItem": false },
     { "id": "help.legalNotices", "tab": "Help", "group": "Help", "controlKind": "Button", "display": "Legal Notices", "keyTip": "L", "contextual": false, "menuItem": false }

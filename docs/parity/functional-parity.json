@@ -1,8 +1,8 @@
 {
   "schema": "freex.parity.functional.v1",
   "summary": {
-    "totalCommands": 574,
-    "parity": 568,
+    "totalCommands": 575,
+    "parity": 569,
     "avaloniaMissing": 0,
     "wpfMissing": 6,
     "bothMissing": 0,
@@ -511,6 +511,7 @@
     { "id": "help.feedback", "tab": "Help", "group": "Help", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "help.legalNotices", "tab": "Help", "group": "Help", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "help.online", "tab": "Help", "group": "Help", "wpf": true, "avalonia": true, "status": "PARITY" },
+    { "id": "help.testCrashReporting", "tab": "Help", "group": "Help", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "insert.formControl.button", "tab": "Insert", "group": "Controls", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "insert.formControl.checkBox", "tab": "Insert", "group": "Controls", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "insert.formControl.dropDown", "tab": "Insert", "group": "Controls", "wpf": true, "avalonia": true, "status": "PARITY" },
