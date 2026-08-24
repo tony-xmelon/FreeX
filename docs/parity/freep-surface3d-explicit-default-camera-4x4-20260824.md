@@ -60,8 +60,22 @@ The compact fixture improves from `5.3093%` to `5.2712%` WPF and from
 `12.9131%` WPF and from `12.8149%` to `12.7843%` Avalonia. Fixtures 22, 25,
 and 26 remain unchanged at the measurements above.
 
+## Full-size elevation scale follow-up
+
+The full 4x4 reference resolves nine 5-unit elevation bands (`0-5` through
+`40-45`), while its compact control retains five 10-unit bands. The shared
+planner now selects the denser automatic range only for a large imported 4x4
+or greater grid, only when no value-axis range is authored, and only when the
+denser maximum still contains the source data. Both renderers use the sampled
+Office swatch colors for all nine bands.
+
+This reduces the full fixture to `12.0660%` WPF and `11.9404%` Avalonia. The
+compact control remains at `5.2699%` and `5.1219%`, respectively; its small
+improvement is from the exact five-band swatch colors rather than a scale
+change.
+
 ## Verification
 
-- `ChartRenderPlannerTests`: 282/282 passed.
+- Focused Surface3D planner test: 1/1 passed.
 - `FreeP.RenderCompare` Release build: 0 warnings, 0 errors.
 - Both WPF and Avalonia rendered all four Surface3D gate fixtures at 1280x720.
