@@ -6,11 +6,11 @@ Corpus fixture: `27-chart-surface3d-4x4.pptx`, slide 01, 1280x720
 ## Scope
 
 This PowerPoint-authored fixture adds a `Surface3D` chart with four category
-columns, four series, no blank cells, `varyColors=1`, and the Office default
-camera serialized explicitly as `rotX=15`, `rotY=20`, and `rAngAx=0`. It is a
-new topology relative to the existing 3x3 Surface3D corpus fixtures. The
-matching `28-chart-surface3d-4x4-compact` control uses the same data and camera
-in a compact chart frame, separating topology fidelity from full-slide scaling.
+columns, four series, no blank cells, and the Office default camera serialized
+explicitly as `rotX=15`, `rotY=20`, and `rAngAx=0`. It is a new topology
+relative to the existing 3x3 Surface3D corpus fixtures. The matching
+`28-chart-surface3d-4x4-compact` control uses the same data and camera in a
+compact chart frame, separating topology fidelity from full-slide scaling.
 
 PowerPoint's explicit default camera is semantically equivalent to an omitted
 `c:view3D`; it is not an authored camera override. The shared renderer now
@@ -45,8 +45,23 @@ The correction is scoped by modeled chart semantics only: chart family,
 imported text metrics, and default camera values. It does not inspect a file
 name, title, data labels, or fixture-specific geometry.
 
+## Elevation legend follow-up
+
+PowerPoint omits optional `c:varyColors` XML in these saved Surface3D files,
+but still renders an elevation-band legend rather than one entry per source
+series. The shared planner now recognizes that imported Surface3D behavior
+without relying on the optional flag. It produces ordered value intervals and
+their Office-style band colors, with the largest elevation shown at the top.
+
+For a compact 4x4 chart, the planner reserves at least 96 units for this
+five-item legend; full-size charts preserve their prior imported reservation.
+The compact fixture improves from `5.3093%` to `5.2712%` WPF and from
+`5.1628%` to `5.1232%` Avalonia. The full fixture improves from `12.9559%` to
+`12.9131%` WPF and from `12.8149%` to `12.7843%` Avalonia. Fixtures 22, 25,
+and 26 remain unchanged at the measurements above.
+
 ## Verification
 
-- `ChartRenderPlannerTests`: 248/248 passed.
+- `ChartRenderPlannerTests`: 282/282 passed.
 - `FreeP.RenderCompare` Release build: 0 warnings, 0 errors.
 - Both WPF and Avalonia rendered all four Surface3D gate fixtures at 1280x720.
