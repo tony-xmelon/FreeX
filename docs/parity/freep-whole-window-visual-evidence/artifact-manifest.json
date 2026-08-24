@@ -16,7 +16,7 @@
   "inputs": [
     {
       "path": "freep/TestSupport/VisualEvidence/WholeWindowVisualEvidenceContract.cs",
-      "sha256": "a44e9f3d5b368f4e9c8b153de7a09dd4caaa7b5087152a2c4afd6c594d473410"
+      "sha256": "1b2dc4e7aed1d7df17ba826ff87e73ca4dbf3cdee76b15252da647b6bd2c3274"
     },
     {
       "path": "freep/TestSupport/VisualEvidence/WholeWindowVisualEvidenceHostCoordinator.cs",

@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 707 | 707 | 0 | 0 | 0 | 0 | 0 | 0 | 707 | 0 | 0 | 0 | 0 | 110 |
+| 708 | 708 | 0 | 0 | 0 | 0 | 0 | 0 | 708 | 0 | 0 | 0 | 0 | 110 |
 
 ## Workflow Evidence
 
@@ -582,6 +582,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.slideshow.custom-shows` | Custom Shows | Yes | Yes | none | shared | slide-show/slide-show (RibbonButton) | slide-show/slide-show (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slideshow.from-beginning` | From Beginning | Yes | Yes | none | shared | slide-show/slide-show (RibbonButton) | slide-show/slide-show (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slideshow.from-current-slide` | From Current Slide | Yes | Yes | none | shared | slide-show/slide-show (RibbonButton) | slide-show/slide-show (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.slideshow.hide-slide` | Hide Slide | Yes | Yes | none | shared | slide-show/slide-show (RibbonButton) | slide-show/slide-show (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slideshow.record-timings` | Record Timings | Yes | Yes | none | shared | slide-show/slide-show (RibbonButton) | slide-show/slide-show (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slideshow.rehearse-timings` | Rehearse Timings | Yes | Yes | none | shared | slide-show/slide-show (RibbonButton) | slide-show/slide-show (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slideshow.setup` | Set Up Slide Show | Yes | Yes | none | shared | slide-show/slide-show (RibbonButton) | slide-show/slide-show (RibbonButton) | Available in both generated FreeP ribbon profiles. |

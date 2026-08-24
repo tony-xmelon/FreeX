@@ -503,8 +503,8 @@
     {
       "app": "FreeP",
       "commandInventory": {
-        "totalCommands": 707,
-        "bothProfiles": 707,
+        "totalCommands": 708,
+        "bothProfiles": 708,
         "wpfOnly": 0,
         "avaloniaOnly": 0,
         "actionableMissingWpf": 0,
@@ -620,12 +620,12 @@
           "evidenceClassification": "guarded native PowerPoint ribbon reference lane; complete foreground capture is semantic review evidence, not raw pixel equivalence"
         },
         "responsiveAppChrome": {
-          "expectedCaptureCount": 48,
+          "expectedCaptureCount": 64,
           "captureStatus": "complete",
-          "capturedPairCount": 24,
-          "wpfCaptureCount": 24,
-          "avaloniaCaptureCount": 24,
-          "tabCount": 6,
+          "capturedPairCount": 32,
+          "wpfCaptureCount": 32,
+          "avaloniaCaptureCount": 32,
+          "tabCount": 8,
           "widthCount": 4,
           "evidenceClassification": "complete responsive app-owned WPF/Avalonia ribbon/chrome capture matrix; paired state coverage, not a pixel-equivalence claim"
         },
@@ -677,7 +677,7 @@
           "limitations": [
             "The tracked tree contains 53 PowerPoint reference slides across all 27 corpus decks. This completes corpus coverage, not full PowerPoint UI or feature parity. Current-source recalibration metrics are recorded separately and are not a visual-parity claim.",
             "Native PowerPoint ribbon capture status is 'complete' with 28/28 mapped tab/width references.",
-            "Responsive FreeP app chrome is 'complete' with 48/48 WPF/Avalonia tab/width captures (6 tabs at 4 widths).",
+            "Responsive FreeP app chrome is 'complete' with 64/64 WPF/Avalonia tab/width captures (8 tabs at 4 widths).",
             "The directly measured Wave187 authored-camera Surface3D target improved from 2.7438% to 2.7032% WPF/Office, 2.6220% to 2.5815% Avalonia/Office, and 1.0805% to 1.0804% WPF/Avalonia; deck26 and four ordinary-chart controls were preserved. Diagnostic reconstructed corpus estimates remain outside the canonical recalibration summary.",
             "The directly measured Wave188 imported IncreasingCircleProcess slide-09 target improved from 1.6516% to 0.9662% WPF/Office and from 1.6609% to 1.6009% WPF/Avalonia; Avalonia/Office remained 1.6879%. The WPF raster compensation is gated by an explicit imported-cache semantic flag and exact 12-shape topology, with ordinary authored phase-label controls excluded.",
             "Wave189 consumes the same semantic IncreasingCircle cache flag on Avalonia and improves slide-09 Avalonia/Office from 1.6879% to 1.5440% and WPF/Avalonia from 1.6009% to 1.3657%; WPF/Office remains 0.9662%, and neighboring SmartArt plus Surface3D controls are unchanged.",
