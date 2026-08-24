@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 693 | 693 | 0 | 0 | 0 | 0 | 0 | 0 | 693 | 0 | 0 | 0 | 0 | 110 |
+| 703 | 703 | 0 | 0 | 0 | 0 | 0 | 0 | 703 | 0 | 0 | 0 | 0 | 110 |
 
 ## Workflow Evidence
 
@@ -494,6 +494,16 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.redo` | Redo | Yes | Yes | none | shared | home/edit (RibbonButton) | home/edit (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.remove-link` | Remove Link | Yes | Yes | none | shared | insert/links (RibbonButton) | insert/links (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.replace` | Replace | Yes | Yes | none | shared | home/editing (RibbonButton) | home/editing (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.review.accessibility.check` | Check Accessibility | Yes | Yes | none | shared | review/accessibility (RibbonButton) | review/accessibility (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.review.alt-text` | Alt Text | Yes | Yes | none | shared | review/accessibility (RibbonButton) | review/accessibility (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.review.comments.add` | New Comment | Yes | Yes | none | shared | review/comments (RibbonButton) | review/comments (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.review.comments.delete` | Delete | Yes | Yes | none | shared | review/comments (RibbonButton) | review/comments (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.review.comments.next` | Next | Yes | Yes | none | shared | review/comments (RibbonButton) | review/comments (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.review.comments.pane` | Comments | Yes | Yes | none | shared | review/comments (RibbonButton) | review/comments (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.review.comments.previous` | Previous | Yes | Yes | none | shared | review/comments (RibbonButton) | review/comments (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.review.comments.reply` | Reply | Yes | Yes | none | shared | review/comments (RibbonButton) | review/comments (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.review.proofing.spelling` | Spelling | Yes | Yes | none | shared | review/proofing (RibbonButton) | review/proofing (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.review.reading-order.pane` | Reading Order | Yes | Yes | none | shared | review/accessibility (RibbonButton) | review/accessibility (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-chevron` | Chevron | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-chord` | Chord | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-cross` | Cross | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
