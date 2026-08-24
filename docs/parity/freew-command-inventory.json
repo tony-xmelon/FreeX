@@ -12773,7 +12773,7 @@
           "group": "Links",
           "label": "Link",
           "controlType": "RibbonButton",
-          "layout": "Small"
+          "layout": "Medium"
         }
       ],
       "avaloniaLocations": [
