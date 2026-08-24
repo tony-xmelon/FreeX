@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "tool": "tools/Capture-FreePResponsiveChrome.ps1",
-  "generatedAtUtc": "2026-08-24T22:52:59.0755667Z",
+  "generatedAtUtc": "2026-08-24T23:00:25.2423271Z",
   "captureStatus": "complete",
   "evidenceSubject": "FreeP WPF and Avalonia app-owned ribbon/chrome",
   "captureMethod": "visible app-owned whole-client render target, scenario-isolated host process; each host invocation exits successfully before its captured PNG pair is recorded",
@@ -9,6 +9,7 @@
   "sourceSha256": {
     "freep/TestSupport/VisualEvidence.Wpf/WpfWholeWindowVisualEvidenceCapture.cs": "c21150dffbbfc56503d06a433fd5c1ce4e3934fcce633dded5721261fc31bd9d",
     "freep/TestSupport/VisualEvidence.Avalonia/AvaloniaWholeWindowVisualEvidenceCapture.cs": "9bb3cdda05d24333474523068e093b25dfbe53331e7be8b5cff06c1a2140529f",
+    "freep/TestSupport/VisualEvidence/WholeWindowVisualEvidenceContract.cs": "dfbe788628c4f0db5ffd59f3c34021d73209f84a0bb7257815fc7d6270b80ceb",
     "freep/FreeP.App.Host/MainWindow.cs": "3bfc395375661a718a5642e48c916f4ff989b7d9f6013fa05a97bf12a5e101f2",
     "freep/FreeP.App.Avalonia/MainWindow.cs": "b1b14fbba5df140e8543b94415c14e4be1d98b5e435fc804e630ff26700d6437",
     "freep/FreeP.Ribbon.Definitions/FreePRibbon.cs": "bfd8dec3def7f44fcc4104a66c3095a27b289546b66475e280808630caf600f9",
@@ -35,10 +36,12 @@
     "design",
     "transitions",
     "animations",
+    "slide-show",
+    "review",
     "view"
   ],
-  "expectedCaptureCount": 48,
-  "actualCaptureCount": 48,
+  "expectedCaptureCount": 64,
+  "actualCaptureCount": 64,
   "captures": [
     {
       "captureKey": "ribbon:1280:wpf:home",
@@ -98,6 +101,30 @@
       "clientImagePath": "1280/wpf/client/ribbon.animations.png",
       "fullImageSha256": "525b0538ca5164b39797275fe0512930881174f3c6819aca014ce216960e0a67",
       "clientImageSha256": "525b0538ca5164b39797275fe0512930881174f3c6819aca014ce216960e0a67",
+      "captureStatus": "complete"
+    },
+    {
+      "captureKey": "ribbon:1280:wpf:slide-show",
+      "host": "wpf",
+      "tabId": "slide-show",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "fullImagePath": "1280/wpf/full/ribbon.slide-show.png",
+      "clientImagePath": "1280/wpf/client/ribbon.slide-show.png",
+      "fullImageSha256": "4a043e83ef69776e07fbb9b3b05b34ca7a123e080ecb2dd310d4c1ef354aaf17",
+      "clientImageSha256": "4a043e83ef69776e07fbb9b3b05b34ca7a123e080ecb2dd310d4c1ef354aaf17",
+      "captureStatus": "complete"
+    },
+    {
+      "captureKey": "ribbon:1280:wpf:review",
+      "host": "wpf",
+      "tabId": "review",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "fullImagePath": "1280/wpf/full/ribbon.review.png",
+      "clientImagePath": "1280/wpf/client/ribbon.review.png",
+      "fullImageSha256": "221b9a364a2f6b1383eadc15db8d9b05f3f312f21667b0972fb4e7b415532fc4",
+      "clientImageSha256": "221b9a364a2f6b1383eadc15db8d9b05f3f312f21667b0972fb4e7b415532fc4",
       "captureStatus": "complete"
     },
     {
@@ -173,6 +200,30 @@
       "captureStatus": "complete"
     },
     {
+      "captureKey": "ribbon:1280:avalonia:slide-show",
+      "host": "avalonia",
+      "tabId": "slide-show",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "fullImagePath": "1280/avalonia/full/ribbon.slide-show.png",
+      "clientImagePath": "1280/avalonia/client/ribbon.slide-show.png",
+      "fullImageSha256": "c6d362f713b512f012fd2b21d12125986b705d57d0d02c77dbfc2fefd3f22b77",
+      "clientImageSha256": "c6d362f713b512f012fd2b21d12125986b705d57d0d02c77dbfc2fefd3f22b77",
+      "captureStatus": "complete"
+    },
+    {
+      "captureKey": "ribbon:1280:avalonia:review",
+      "host": "avalonia",
+      "tabId": "review",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "fullImagePath": "1280/avalonia/full/ribbon.review.png",
+      "clientImagePath": "1280/avalonia/client/ribbon.review.png",
+      "fullImageSha256": "29b01957286bb6727665b050b6fa7bec7058b4c3be5804c92700c7e44f9158d0",
+      "clientImageSha256": "29b01957286bb6727665b050b6fa7bec7058b4c3be5804c92700c7e44f9158d0",
+      "captureStatus": "complete"
+    },
+    {
       "captureKey": "ribbon:1280:avalonia:view",
       "host": "avalonia",
       "tabId": "view",
@@ -242,6 +293,30 @@
       "clientImagePath": "1100/wpf/client/ribbon.animations.png",
       "fullImageSha256": "ba09980f18dd5f9fcf54261985a72391087754b31420bd12b4f0fb9207dd4f27",
       "clientImageSha256": "ba09980f18dd5f9fcf54261985a72391087754b31420bd12b4f0fb9207dd4f27",
+      "captureStatus": "complete"
+    },
+    {
+      "captureKey": "ribbon:1100:wpf:slide-show",
+      "host": "wpf",
+      "tabId": "slide-show",
+      "logicalWidth": 1100,
+      "logicalHeight": 760,
+      "fullImagePath": "1100/wpf/full/ribbon.slide-show.png",
+      "clientImagePath": "1100/wpf/client/ribbon.slide-show.png",
+      "fullImageSha256": "ec0493fab39a4eb6367c7a0382cae083be71d16e1917aab2b74f9d9eeab4781a",
+      "clientImageSha256": "ec0493fab39a4eb6367c7a0382cae083be71d16e1917aab2b74f9d9eeab4781a",
+      "captureStatus": "complete"
+    },
+    {
+      "captureKey": "ribbon:1100:wpf:review",
+      "host": "wpf",
+      "tabId": "review",
+      "logicalWidth": 1100,
+      "logicalHeight": 760,
+      "fullImagePath": "1100/wpf/full/ribbon.review.png",
+      "clientImagePath": "1100/wpf/client/ribbon.review.png",
+      "fullImageSha256": "deea721f1e152c206e1ccbf2c2a0ebd24ea86a93830c889da6b91153397c1d28",
+      "clientImageSha256": "deea721f1e152c206e1ccbf2c2a0ebd24ea86a93830c889da6b91153397c1d28",
       "captureStatus": "complete"
     },
     {
@@ -317,6 +392,30 @@
       "captureStatus": "complete"
     },
     {
+      "captureKey": "ribbon:1100:avalonia:slide-show",
+      "host": "avalonia",
+      "tabId": "slide-show",
+      "logicalWidth": 1100,
+      "logicalHeight": 760,
+      "fullImagePath": "1100/avalonia/full/ribbon.slide-show.png",
+      "clientImagePath": "1100/avalonia/client/ribbon.slide-show.png",
+      "fullImageSha256": "59baab81371774746ca4b4d148c986c8832072c469f2af4d06643f7be9cd07e3",
+      "clientImageSha256": "59baab81371774746ca4b4d148c986c8832072c469f2af4d06643f7be9cd07e3",
+      "captureStatus": "complete"
+    },
+    {
+      "captureKey": "ribbon:1100:avalonia:review",
+      "host": "avalonia",
+      "tabId": "review",
+      "logicalWidth": 1100,
+      "logicalHeight": 760,
+      "fullImagePath": "1100/avalonia/full/ribbon.review.png",
+      "clientImagePath": "1100/avalonia/client/ribbon.review.png",
+      "fullImageSha256": "fdaf98772087663115a780b9d8761c1dd7e5afa4f2a47e98c08ffdb40d3e2b52",
+      "clientImageSha256": "fdaf98772087663115a780b9d8761c1dd7e5afa4f2a47e98c08ffdb40d3e2b52",
+      "captureStatus": "complete"
+    },
+    {
       "captureKey": "ribbon:1100:avalonia:view",
       "host": "avalonia",
       "tabId": "view",
@@ -386,6 +485,30 @@
       "clientImagePath": "900/wpf/client/ribbon.animations.png",
       "fullImageSha256": "3ba36fda9cd0a0dd3296ccabbf5d378073ca6a3c49a8717c9545a64827ebc11d",
       "clientImageSha256": "3ba36fda9cd0a0dd3296ccabbf5d378073ca6a3c49a8717c9545a64827ebc11d",
+      "captureStatus": "complete"
+    },
+    {
+      "captureKey": "ribbon:900:wpf:slide-show",
+      "host": "wpf",
+      "tabId": "slide-show",
+      "logicalWidth": 900,
+      "logicalHeight": 760,
+      "fullImagePath": "900/wpf/full/ribbon.slide-show.png",
+      "clientImagePath": "900/wpf/client/ribbon.slide-show.png",
+      "fullImageSha256": "98e27814e676291fc50c06d388747dcb298246b04f5bfb3c302b1a0cae70f5d6",
+      "clientImageSha256": "98e27814e676291fc50c06d388747dcb298246b04f5bfb3c302b1a0cae70f5d6",
+      "captureStatus": "complete"
+    },
+    {
+      "captureKey": "ribbon:900:wpf:review",
+      "host": "wpf",
+      "tabId": "review",
+      "logicalWidth": 900,
+      "logicalHeight": 760,
+      "fullImagePath": "900/wpf/full/ribbon.review.png",
+      "clientImagePath": "900/wpf/client/ribbon.review.png",
+      "fullImageSha256": "eaf8c33f075feb977cff47a1d2045984ef46c31c0ba7db6245f7096cb7ac3506",
+      "clientImageSha256": "eaf8c33f075feb977cff47a1d2045984ef46c31c0ba7db6245f7096cb7ac3506",
       "captureStatus": "complete"
     },
     {
@@ -461,6 +584,30 @@
       "captureStatus": "complete"
     },
     {
+      "captureKey": "ribbon:900:avalonia:slide-show",
+      "host": "avalonia",
+      "tabId": "slide-show",
+      "logicalWidth": 900,
+      "logicalHeight": 760,
+      "fullImagePath": "900/avalonia/full/ribbon.slide-show.png",
+      "clientImagePath": "900/avalonia/client/ribbon.slide-show.png",
+      "fullImageSha256": "089dce4a9bcdc5f206c2565453b4a3b892ab88ec2146d396277ee1253ff448e7",
+      "clientImageSha256": "089dce4a9bcdc5f206c2565453b4a3b892ab88ec2146d396277ee1253ff448e7",
+      "captureStatus": "complete"
+    },
+    {
+      "captureKey": "ribbon:900:avalonia:review",
+      "host": "avalonia",
+      "tabId": "review",
+      "logicalWidth": 900,
+      "logicalHeight": 760,
+      "fullImagePath": "900/avalonia/full/ribbon.review.png",
+      "clientImagePath": "900/avalonia/client/ribbon.review.png",
+      "fullImageSha256": "56a09b13ada324c17f2c5c1c514bf005922c65412b4d40a451aa800e1d813700",
+      "clientImageSha256": "56a09b13ada324c17f2c5c1c514bf005922c65412b4d40a451aa800e1d813700",
+      "captureStatus": "complete"
+    },
+    {
       "captureKey": "ribbon:900:avalonia:view",
       "host": "avalonia",
       "tabId": "view",
@@ -530,6 +677,30 @@
       "clientImagePath": "750/wpf/client/ribbon.animations.png",
       "fullImageSha256": "4442cabb7e9169e9df06b3f3867145c9ede1b021730ab305888362f9bfcdcf1c",
       "clientImageSha256": "8b36524fd9222eef45474a591f84d66d9a8026aee86066d9fa6feee7cc2039f9",
+      "captureStatus": "complete"
+    },
+    {
+      "captureKey": "ribbon:750:wpf:slide-show",
+      "host": "wpf",
+      "tabId": "slide-show",
+      "logicalWidth": 750,
+      "logicalHeight": 760,
+      "fullImagePath": "750/wpf/full/ribbon.slide-show.png",
+      "clientImagePath": "750/wpf/client/ribbon.slide-show.png",
+      "fullImageSha256": "d613e37882e23869615c754e96bcf2070e89b92b5c8658db378439a004d1e150",
+      "clientImageSha256": "899936e8c859bce0dc20bbdd45f5f98ea5fc78535d99cac503ad7ee42ec0f03d",
+      "captureStatus": "complete"
+    },
+    {
+      "captureKey": "ribbon:750:wpf:review",
+      "host": "wpf",
+      "tabId": "review",
+      "logicalWidth": 750,
+      "logicalHeight": 760,
+      "fullImagePath": "750/wpf/full/ribbon.review.png",
+      "clientImagePath": "750/wpf/client/ribbon.review.png",
+      "fullImageSha256": "13cbf2e89aee35a0b24dcb11d2e87589905f7e16345968e2f4aa900ea5c1b492",
+      "clientImageSha256": "8fc0c52cf905c4f573da81619302eea1351e64c1c9f44fce5861cc54e7c1f9a4",
       "captureStatus": "complete"
     },
     {
@@ -605,6 +776,30 @@
       "captureStatus": "complete"
     },
     {
+      "captureKey": "ribbon:750:avalonia:slide-show",
+      "host": "avalonia",
+      "tabId": "slide-show",
+      "logicalWidth": 750,
+      "logicalHeight": 760,
+      "fullImagePath": "750/avalonia/full/ribbon.slide-show.png",
+      "clientImagePath": "750/avalonia/client/ribbon.slide-show.png",
+      "fullImageSha256": "3c4468630f30e96686a0b4c8e6d5a3bb9853eab475c47cf86bc700a4c2a1682e",
+      "clientImageSha256": "ff256eb7643bcebd73f7c6dde5c5705aaade380d4c4d3c16046483b98daeae78",
+      "captureStatus": "complete"
+    },
+    {
+      "captureKey": "ribbon:750:avalonia:review",
+      "host": "avalonia",
+      "tabId": "review",
+      "logicalWidth": 750,
+      "logicalHeight": 760,
+      "fullImagePath": "750/avalonia/full/ribbon.review.png",
+      "clientImagePath": "750/avalonia/client/ribbon.review.png",
+      "fullImageSha256": "4e8ceb2e718b1d35ce48c1b50a1acc284e57f7cf991a8bd9d6c5bf3472428333",
+      "clientImageSha256": "0d252b393cd18848654fabf95a1a789eb3b5fa0270f1704df30c72bffa2aec9c",
+      "captureStatus": "complete"
+    },
+    {
       "captureKey": "ribbon:750:avalonia:view",
       "host": "avalonia",
       "tabId": "view",
@@ -619,7 +814,7 @@
   ],
   "comparisonBoundary": "This responsive lane exercises FreeP's own WPF and Avalonia chrome at four widths. It complements the 1280px full-window scenario lane and the native PowerPoint reference lane; it does not assert raw cross-host or PowerPoint pixel equivalence.",
   "limitations": [
-    "The six shared FreeP top-level tabs are captured. Slide Show is exposed by FreeP as a group on Transitions rather than a separate top-level tab.",
+    "The eight primary FreeP top-level tabs are captured. Help remains outside this product-chrome lane.",
     "Backstage, dialogs, panes, editing overlays, canvas and status states remain covered by the full-window and dialog/pane evidence lanes at the canonical 1280px viewport."
   ]
 }
