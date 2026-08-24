@@ -5,7 +5,7 @@
   "targetDpi": 96,
   "logicalClientWidth": 1280,
   "logicalClientHeight": 760,
-  "generatedAtUtc": "2026-08-16T15:10:06.8959377\u002B00:00",
+  "generatedAtUtc": "2026-08-24T22:51:54.4573962\u002B00:00",
   "captures": [
     {
       "scenarioId": "ribbon.view",
@@ -21,9 +21,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892624,
-      "fullImageSha256": "8ed834149edda8d6a5ca9c602a91096c97a50ba01d795e1f724788d4d2c3aebb",
-      "clientImageSha256": "8ed834149edda8d6a5ca9c602a91096c97a50ba01d795e1f724788d4d2c3aebb",
+      "nonBackgroundPixelCount": 902749,
+      "fullImageSha256": "ad74e837de77fe90506927b784de10af0773373aee6ac9f18ca0f3921709d85e",
+      "clientImageSha256": "ad74e837de77fe90506927b784de10af0773373aee6ac9f18ca0f3921709d85e",
       "semanticState": {
         "scenarioId": "ribbon.view",
         "host": "avalonia",
@@ -40,7 +40,10 @@
           "design",
           "transitions",
           "animations",
-          "view"
+          "slide-show",
+          "review",
+          "view",
+          "help"
         ],
         "visibleContextualTabIds": [],
         "backstageOpen": false,

@@ -5,7 +5,7 @@
   "targetDpi": 96,
   "logicalClientWidth": 900,
   "logicalClientHeight": 760,
-  "generatedAtUtc": "2026-08-16T15:10:43.7963459\u002B00:00",
+  "generatedAtUtc": "2026-08-24T22:52:26.2656910\u002B00:00",
   "captures": [
     {
       "scenarioId": "ribbon.view",
@@ -21,9 +21,9 @@
       "dpiY": 96,
       "sourceDpiX": 120,
       "sourceDpiY": 120,
-      "nonBackgroundPixelCount": 626262,
-      "fullImageSha256": "88b76594716f434fd5e61e13091d27e75ddf055162aea1c0d6f6d8ae28a86269",
-      "clientImageSha256": "2b52f82053e01af9a262c9ea61a0a68354bd7b92ad723ab853b02a7138bf3def",
+      "nonBackgroundPixelCount": 638712,
+      "fullImageSha256": "d9dcb61a8ed6444dc66e65127ac63e14f324502db4596b15dad96326ef9bfa60",
+      "clientImageSha256": "d9dcb61a8ed6444dc66e65127ac63e14f324502db4596b15dad96326ef9bfa60",
       "semanticState": {
         "scenarioId": "ribbon.view",
         "host": "wpf",
@@ -40,7 +40,10 @@
           "design",
           "transitions",
           "animations",
-          "view"
+          "slide-show",
+          "review",
+          "view",
+          "help"
         ],
         "visibleContextualTabIds": [],
         "backstageOpen": false,
@@ -61,14 +64,14 @@
         "titleBarBounds": {
           "x": 0,
           "y": 0,
-          "width": 1280,
+          "width": 900,
           "height": 34,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
           "y": 34,
-          "width": 1280,
+          "width": 900,
           "height": 122.96000000000001,
           "isVisible": true
         },
@@ -82,21 +85,21 @@
         "canvasBounds": {
           "x": 180,
           "y": 156.96,
-          "width": 1100,
+          "width": 720,
           "height": 517.04,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
           "y": 674,
-          "width": 1100,
+          "width": 720,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
           "y": 734,
-          "width": 1280,
+          "width": 900,
           "height": 26,
           "isVisible": true
         },
