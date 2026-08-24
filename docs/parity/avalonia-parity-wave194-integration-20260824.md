@@ -1,17 +1,31 @@
 # Avalonia/WPF Parity Wave 194 Integration
 
 Date: 2026-08-24
-Tested source commit: `3d60b7b421b388ccfa5c9c18dc4e25642b7a14c6`
-Cumulative app slices: **582**, accepted after final integration gates
+Tested source commit: `729172266c0f054e37abd3fc3535c0e2f2c87652`
+Cumulative app slices: **582** (**194 per app**)
+Unprocessed slices: **0**
 
 This is an acceptance-only dashboard and evidence refresh. It does not change
-the tested source commit, product code, or app behavior. The dashboard keeps
-functional coverage, app-owned WPF/Avalonia comparisons, and Microsoft Office
-equivalence as separate claims.
+the tested source commit, product code, or app behavior. Functional/source
+parity evidence, app-owned WPF/Avalonia comparison evidence, and Microsoft
+Office reference evidence are separate claims. This report does **not** claim
+100% visual parity.
 
 ## App slices
 
 ### FreeX
+
+The generated functional matrix records **575** commands, **569** parity
+rows, **0** Avalonia-missing rows, and **0** real classified behavior gaps.
+Dialog route coverage is **57/57** on both hosts, with **94/94** paired
+WPF/Avalonia manifest surfaces and **0** unresolved high-delta review
+candidates in the generated FreeX dialog triage queue.
+
+The retained Excel comparison evidence contains **36** foreground ribbon
+references for each of Excel, WPF, and Avalonia, including Draw, with **27**
+fixed-viewport triage rows. The mean RGB deltas versus Excel are **13.9366%**
+for WPF and **15.6391%** for Avalonia. These are triage measurements, not
+visual-parity acceptance thresholds.
 
 The physical Docker/X11 mixed-type AutoFilter workflow passes **1/1**. The
 rendered checklist groups numeric `42` and text `"42"`; the workflow clears
@@ -35,6 +49,21 @@ complete AutoFilter or Excel visual parity.
 
 ### FreeW
 
+The current generated inventory records **952** commands, **731** both-profile
+rows, **216** profile-shape-only rows, and **0** actionable gaps. The current
+dialog comparison manifest contains **291 rows**:
+
+| Classification | Count |
+|---|---:|
+| Pass | 80 |
+| Genuine visual mismatch | 141 |
+| Avalonia extension | 70 |
+
+The 221 paired rows therefore contain 80 local comparison passes and 141
+genuine visual mismatches. The 70 Avalonia extensions are reported separately
+because they have no WPF authority row. This is functional/source coverage
+plus visual evidence; it is not a Word visual-parity claim.
+
 The Avalonia Font dialog action-button border now uses the WPF-style `#C8C8C8`
 value. The aggregate changed-pixel count improves from **32,861** to
 **32,312**, a delta of **-549** and a relative improvement of **1.6712%**.
@@ -46,6 +75,12 @@ This is canonical Font-dialog WPF/Avalonia evidence. The remaining native text
 and control raster differences do not establish Word visual parity.
 
 ### FreeP
+
+The generated command inventory records **707/707** both-profile commands and
+**0** actionable gaps. Current app-owned visual evidence records **33/33**
+whole-window scenarios, **28/28** dialog scenarios, **28/28** native
+PowerPoint chrome references, and **61/61** paired local WPF/Avalonia
+comparisons.
 
 No runtime change is made. Wave194 records schema v3 topology evidence for
 deck17 slide02 and pins the complete source corpus file
@@ -62,96 +97,45 @@ and it does not claim PowerPoint visual parity.
 
 ## Review history
 
-The initial independent review reported two P2 findings:
+The retained review remediations remain valid: FreeX uses one authoritative
+mixed-type geometry contract with mutation coverage and reachable-source
+provenance. FreeP topology schema v3 pins the complete PPTX and describes its
+remaining rendering residual as unresolved. The final independent review found
+no findings in the accepted Wave194 source/evidence set.
 
-1. FreeX duplicated the mixed-type crop/readiness/transition geometry and the
-   actual physical click instead of consuming one authoritative contract.
-2. FreeP did not pin the complete source PPTX and initially over-attributed the
-   remaining render residual to host font/raster behavior.
-
-Both findings were remediated at the prior tested source. FreeX now has one
-geometry contract plus mutation coverage and reachable-source provenance. FreeP
-topology schema v3 pins the complete PPTX and states the residual as unresolved.
-The tested source then advanced because the first full default lane exposed
-three over-broad color-geometry source-guard failures.
-
-The initial default lane exited **1** solely because the Wave191/192/193
-color-geometry guard was bounded through a later selector and counted
-`mixed_type_target_click_x_offset`. At that pre-remediation source, FreeX
-Avalonia reported **2,188 passed, 3 failed, 2,191 total**.
-
-Remediation commit `f2aab993242fa6a6cc49d67c4b7770c23ce4c067` structurally scopes
-the old guard to `probe_autofilter_color_persistence_physical` and adds
-isolation and inside-function mutation tests. Worker verification passed:
-failing classes **11/11**, full color lane **17/17**, Wave194 **9/9**, full
-Avalonia project **2,193/2,193**, and focused project build **0/0**. There was
-no runtime harness or evidence change.
-
-The prior final no-findings review is superseded by this source advancement.
-Final independent review found no findings. The reviewer verified that f2a
-structurally scopes the color function before the mixed-type function, accepts
-the later decoy, rejects the internal assignment, verifies Wave191-193 retained
-hashes **11/11, 11/11, 18/18**, verifies Wave194 **20 evidence plus 12
-provenance/validation**, and found FreeP and FreeW clean.
-
-The accepted Wave194 histories were reintegrated with current origin/main's six
-foreground-capture commits in merge `3d60b7b421b388ccfa5c9c18dc4e25642b7a14c6`.
-The merge contained zero overlapping paths between those inputs. The initial
-repository preflight reached the generated/dashboard guards and failed only
-because the prior tested-source anchor treated these incoming paths as outside
-the acceptance allowlist: `docs/testing/freex-excel-ux-parity-suite.md`,
-`tests/FreeX.Core.IO.Tests/ToolHarnessDedupSourceTests.cs`, and
-`tools/FreeX.ForegroundCapture/Program.cs`. This was remediated by anchoring
-tested source at `3d60b7b421b388ccfa5c9c18dc4e25642b7a14c6`, not by expanding
-the allowlist.
+The current integration branch is anchored to
+`729172266c0f054e37abd3fc3535c0e2f2c87652`. This refresh does not expand the
+acceptance allowlist or reinterpret visual mismatch rows as functional gaps.
 
 ## Integration gates
 
-All final integration gates passed at the tested source commit.
+All supplied final integration gates passed at tested source commit
+`729172266c0f054e37abd3fc3535c0e2f2c87652`.
 
-- Final independent review: passed with no findings; all source-guard and
-  evidence checks above were verified.
-- Reintegration: merge `3d60b7b421b388ccfa5c9c18dc4e25642b7a14c6` contained
-  current origin/main's six foreground-capture commits with the accepted
-  Wave194 histories and had zero overlapping paths between those inputs.
-- Focused tests at the tested source: FreeX Avalonia Wave194 **9/9**; FreeX
-  Presentation Wave194 **1/1**; FreeX Core.IO Wave194 plus five
-  foreground-capture guards **8/8**; FreeP Presentation Wave194 **2/2**.
-- Initial repository preflight: reached the generated/dashboard guards and
-  failed only because the prior tested-source anchor treated the three incoming
-  foreground paths listed above as outside the acceptance allowlist; the fix
-  re-anchored tested source to `3d60b7b421b388ccfa5c9c18dc4e25642b7a14c6`
-  without expanding the allowlist.
-- Full Release build: passed at tested source commit
-  `3d60b7b421b388ccfa5c9c18dc4e25642b7a14c6` with 0 warnings and 0 errors,
-  elapsed `00:13:08.13`, using `dotnet build FreeX.slnx --configuration Release
-  --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false
-  /nr:false -m:1`.
-- Final default non-UI lane at tested source commit
-  `3d60b7b421b388ccfa5c9c18dc4e25642b7a14c6`: exited 0 with **43,432 passed,
-  134 skipped/not-run, 0 failed, 43,566 total**. There were 25 unique TRX files plus 31 additional
-  passed captures overwritten into the shared capture TRX path across seven
-  capture assemblies. Key totals: FreeP Avalonia 724/0; FreeP Host 2,409/0;
-  FreeP Presentation 5,468/0; FreeX Avalonia 2,193/0; Host Logic 1,490 passed/4
-  skipped; Presentation 5,465/1; Core.IO 5,846/56; Core Model 6,317/41;
-  Formula 5,199/7; Calc 1,982/24; Integration 661/1.
-
-- Repository preflight: passed at tested source commit
-  `3d60b7b421b388ccfa5c9c18dc4e25642b7a14c6` with exit 0 using
+- Repository preflight: passed with exit code 0 using
   `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1`.
-  It validated **292 JSON**, **306 XML-backed**, and **13,862 text** files for
-  conflict markers; **117 PowerShell scripts**, **10 workflows**, **160 project
-  files**, **124 solution entries**, **32 default-test entries**, **51 FreeW
-  entries**, and **42 FreeP entries**. Linux packaging passed, and generated
-  docs/dashboard plus FreeW/FreeP inventories/evidence were current.
+- Full Release build: `dotnet build FreeX.slnx --configuration Release -m:1`
+  passed with **0 warnings and 0 errors** in **00:06:07**.
+- Final default non-UI lane: **31 unique TRXs** and matching console
+  aggregation, with **43,465 passed**, **134 intentional skips**, **0 failed**,
+  **43,599 total**.
+- Focused current-head evidence: FreeW Avalonia **2,175/2,175**, FreeW host
+  **1,835/1,835**, FreeW Presentation **2,892/2,892**, FreeW Ribbon
+  definitions **62/62**; FreeP Avalonia **724/724**, FreeP host **2,416/2,416**,
+  FreeP Presentation **5,481/5,481**.
 
-Wave194 is now accepted at 582 cumulative app slices. No visual parity claim is
-made by this functional/evidence acceptance record.
+This documentation refresh records the supplied gate results and does not rerun
+the full build or default lane.
+
+Wave194 is accepted at 582 cumulative app slices, with zero unprocessed slices.
+Functional/source parity evidence is complete for the generated command/profile
+and focused-gate surfaces, while visual mismatch evidence remains explicitly
+open as described above. No 100% visual parity claim is made.
 
 ## Acceptance boundary
 
 The git-aware acceptance boundary is re-anchored to the tested source commit
-`3d60b7b421b388ccfa5c9c18dc4e25642b7a14c6`. Only the Wave194 report, generated
+`729172266c0f054e37abd3fc3535c0e2f2c87652`. Only the Wave194 report, generated
 dashboard artifacts, dashboard generator, dashboard behavior guard, and the
 existing dashboard guard test are allowlisted for this refresh. Product code,
 app tests, physical evidence, and other source drift remain rejected.
