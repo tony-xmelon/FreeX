@@ -4,15 +4,15 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia) plus freep/FreeP.App.Presentation SmartArtLayoutPreset",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 693,
-    "both": 693,
+    "totalCommands": 703,
+    "both": 703,
     "wpfOnly": 0,
     "avaloniaOnly": 0,
     "missingWpf": 0,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 693,
+    "shared": 703,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 0,
@@ -14405,6 +14405,346 @@
           "groupId": "editing",
           "group": "Editing",
           "label": "Replace",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.review.accessibility.check",
+      "label": "Check Accessibility",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "accessibility",
+          "group": "Accessibility",
+          "label": "Check Accessibility",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "accessibility",
+          "group": "Accessibility",
+          "label": "Check Accessibility",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.review.alt-text",
+      "label": "Alt Text",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "accessibility",
+          "group": "Accessibility",
+          "label": "Alt Text",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "accessibility",
+          "group": "Accessibility",
+          "label": "Alt Text",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.review.comments.add",
+      "label": "New Comment",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "New Comment",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "New Comment",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.review.comments.delete",
+      "label": "Delete",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "Delete",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "Delete",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.review.comments.next",
+      "label": "Next",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "Next",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "Next",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.review.comments.pane",
+      "label": "Comments",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "Comments",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "Comments",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.review.comments.previous",
+      "label": "Previous",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "Previous",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "Previous",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.review.comments.reply",
+      "label": "Reply",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "Reply",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "Reply",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.review.proofing.spelling",
+      "label": "Spelling",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "proofing",
+          "group": "Proofing",
+          "label": "Spelling",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "proofing",
+          "group": "Proofing",
+          "label": "Spelling",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.review.reading-order.pane",
+      "label": "Reading Order",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "accessibility",
+          "group": "Accessibility",
+          "label": "Reading Order",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "accessibility",
+          "group": "Accessibility",
+          "label": "Reading Order",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
