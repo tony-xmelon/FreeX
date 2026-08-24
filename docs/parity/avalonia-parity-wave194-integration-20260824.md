@@ -1,7 +1,7 @@
 # Avalonia/WPF Parity Wave 194 Integration
 
 Date: 2026-08-24
-Tested source commit: `729172266c0f054e37abd3fc3535c0e2f2c87652`
+Tested source commit: `729502d7b55d6daa13ec4c860c15176a01100959`
 Cumulative app slices: **582** (**194 per app**)
 Unprocessed slices: **0**
 
@@ -100,29 +100,31 @@ and it does not claim PowerPoint visual parity.
 The retained review remediations remain valid: FreeX uses one authoritative
 mixed-type geometry contract with mutation coverage and reachable-source
 provenance. FreeP topology schema v3 pins the complete PPTX and describes its
-remaining rendering residual as unresolved. The final independent review found
-no findings in the accepted Wave194 source/evidence set.
+remaining rendering residual as unresolved. The prior final independent review
+is superseded by the Surface3D elevation-legend merge; a fresh independent
+review of the current tested source is pending.
 
 The current integration branch is anchored to
-`729172266c0f054e37abd3fc3535c0e2f2c87652`. This refresh does not expand the
+`729502d7b55d6daa13ec4c860c15176a01100959`. This refresh does not expand the
 acceptance allowlist or reinterpret visual mismatch rows as functional gaps.
 
 ## Integration gates
 
 All supplied final integration gates passed at tested source commit
-`729172266c0f054e37abd3fc3535c0e2f2c87652`.
+`729502d7b55d6daa13ec4c860c15176a01100959`.
 
 - Repository preflight: passed with exit code 0 using
   `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1`.
 - Full Release build: `dotnet build FreeX.slnx --configuration Release -m:1`
-  passed with **0 warnings and 0 errors** in **00:06:07**.
+  passed with **0 warnings and 0 errors** in **00:05:57.47**.
 - Final default non-UI lane: **31 unique TRXs** and matching console
-  aggregation, with **43,465 passed**, **134 intentional skips**, **0 failed**,
-  **43,599 total**.
-- Focused current-head evidence: FreeW Avalonia **2,175/2,175**, FreeW host
+  aggregation, with **43,466 passed**, **134 intentional skips**, **0 failed**,
+  **43,600 total**.
+- Focused post-merge evidence: FreeW Avalonia **2,175/2,175**, FreeW host
   **1,835/1,835**, FreeW Presentation **2,892/2,892**, FreeW Ribbon
   definitions **62/62**; FreeP Avalonia **724/724**, FreeP host **2,416/2,416**,
-  FreeP Presentation **5,481/5,481**.
+  FreeP Presentation **5,482/5,482**, retention **2/2**, and
+  ChartRenderPlanner **250/250**.
 
 This documentation refresh records the supplied gate results and does not rerun
 the full build or default lane.
@@ -135,7 +137,7 @@ open as described above. No 100% visual parity claim is made.
 ## Acceptance boundary
 
 The git-aware acceptance boundary is re-anchored to the tested source commit
-`729172266c0f054e37abd3fc3535c0e2f2c87652`. Only the Wave194 report, generated
+`729502d7b55d6daa13ec4c860c15176a01100959`. Only the Wave194 report, generated
 dashboard artifacts, dashboard generator, dashboard behavior guard, and the
 existing dashboard guard test are allowlisted for this refresh. Product code,
 app tests, physical evidence, and other source drift remain rejected.
