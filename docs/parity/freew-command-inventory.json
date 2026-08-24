@@ -37830,7 +37830,7 @@
       "behaviorEvidence": {
         "evidenceId": "freew.table-insertion.shared-workflow",
         "slice": "Insert table command behavior",
-        "summary": "The shared insertion workflow maps the 2 × 2 menu choice and primary Table face to one command for both renderers.",
+        "summary": "The shared insertion workflow maps the 2 Ã— 2 menu choice and primary Table face to one command for both renderers.",
         "wpfEvidence": {
           "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
           "test": "TableInsertionRibbonWorkflowTests.EditorFamilyBuilderReceivesTheSameCanonicalAndAdapterCommands"
@@ -37874,7 +37874,7 @@
       "behaviorEvidence": {
         "evidenceId": "freew.table-insertion.shared-workflow",
         "slice": "Insert table command behavior",
-        "summary": "The shared insertion workflow maps the 3 × 3 menu choice and legacy Table route to one command for both renderers.",
+        "summary": "The shared insertion workflow maps the 3 Ã— 3 menu choice and legacy Table route to one command for both renderers.",
         "wpfEvidence": {
           "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
           "test": "TableInsertionRibbonWorkflowTests.EditorFamilyBuilderReceivesTheSameCanonicalAndAdapterCommands"
@@ -37918,7 +37918,7 @@
       "behaviorEvidence": {
         "evidenceId": "freew.table-insertion.shared-workflow",
         "slice": "Insert table command behavior",
-        "summary": "The shared insertion workflow inserts a 4 × 4 table through the same renderer port in both hosts.",
+        "summary": "The shared insertion workflow inserts a 4 Ã— 4 table through the same renderer port in both hosts.",
         "wpfEvidence": {
           "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
           "test": "TableInsertionRibbonWorkflowTests.EditorFamilyBuilderReceivesTheSameCanonicalAndAdapterCommands"
@@ -37962,7 +37962,7 @@
       "behaviorEvidence": {
         "evidenceId": "freew.table-insertion.shared-workflow",
         "slice": "Insert table command behavior",
-        "summary": "The shared insertion workflow inserts a 5 × 2 table through the same renderer port in both hosts.",
+        "summary": "The shared insertion workflow inserts a 5 Ã— 2 table through the same renderer port in both hosts.",
         "wpfEvidence": {
           "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
           "test": "TableInsertionRibbonWorkflowTests.EditorFamilyBuilderReceivesTheSameCanonicalAndAdapterCommands"
