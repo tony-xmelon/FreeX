@@ -74,8 +74,30 @@ compact control remains at `5.2699%` and `5.1219%`, respectively; its small
 improvement is from the exact five-band swatch colors rather than a scale
 change.
 
+## Full-size projection and mesh-band follow-up
+
+The full-size 4x4 reference uses a separate Office projection envelope: it is
+not a uniformly enlarged compact chart. The planner now reserves the measured
+left, top, right, and lower projection space for that semantic combination
+(imported default camera, four or more categories, four or more series, and a
+plot taller than 400 units). Value and series labels follow the same frame.
+
+Office also clips the full-size mesh at each elevation interval. The renderer
+now clips each projected triangle at those value thresholds and paints the
+resulting pieces with the existing nine Office-derived elevation colors. This
+is intentionally limited to full-size imported grids; compact 4x4 and the
+registered 3x3 surface paths retain their previous geometry.
+
+| Fixture | WPF before | WPF after | Avalonia before | Avalonia after |
+| --- | ---: | ---: | ---: | ---: |
+| 27 full-size 4x4 | 12.0660% | **7.0670%** | 11.9404% | **6.9444%** |
+| 28 compact 4x4 control | 5.2699% | **5.2699%** | 5.1219% | **5.1219%** |
+
+Ink/Draw fidelity and map-chart fidelity remain outside the active parity
+scope; this work changes only shared Surface3D rendering.
+
 ## Verification
 
-- Focused Surface3D planner test: 1/1 passed.
+- Focused Surface3D planner tests: 2/2 passed.
 - `FreeP.RenderCompare` Release build: 0 warnings, 0 errors.
 - Both WPF and Avalonia rendered all four Surface3D gate fixtures at 1280x720.
