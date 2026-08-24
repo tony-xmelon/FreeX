@@ -8,7 +8,9 @@ Corpus fixture: `27-chart-surface3d-4x4.pptx`, slide 01, 1280x720
 This PowerPoint-authored fixture adds a `Surface3D` chart with four category
 columns, four series, no blank cells, `varyColors=1`, and the Office default
 camera serialized explicitly as `rotX=15`, `rotY=20`, and `rAngAx=0`. It is a
-new topology relative to the existing 3x3 Surface3D corpus fixtures.
+new topology relative to the existing 3x3 Surface3D corpus fixtures. The
+matching `28-chart-surface3d-4x4-compact` control uses the same data and camera
+in a compact chart frame, separating topology fidelity from full-slide scaling.
 
 PowerPoint's explicit default camera is semantically equivalent to an omitted
 `c:view3D`; it is not an authored camera override. The shared renderer now
@@ -29,6 +31,10 @@ Existing Surface3D controls remain at their established levels after the
 change: 22 baseline depth is `2.4221%` WPF / `2.1353%` Avalonia, 25 authored
 view is `2.6356%` / `2.5295%`, and 26 tall default frame is `2.5048%` /
 `2.2723%`.
+
+The compact 4x4 control measures `5.5346%` WPF and `5.3880%` Avalonia. Its
+substantially lower residual than the full-slide fixture confirms the remaining
+gap is large-plot projection scaling rather than unsupported 4x4 topology.
 
 The correction is scoped by modeled chart semantics only: chart family,
 imported text metrics, and default camera values. It does not inspect a file
