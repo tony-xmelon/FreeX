@@ -7220,7 +7220,7 @@
           "group": "Clipboard",
           "label": "Copy",
           "controlType": "RibbonButton",
-          "layout": "Medium"
+          "layout": "Small"
         }
       ],
       "avaloniaLocations": [
@@ -7757,7 +7757,7 @@
           "group": "Clipboard",
           "label": "Cut",
           "controlType": "RibbonButton",
-          "layout": "Medium"
+          "layout": "Small"
         }
       ],
       "avaloniaLocations": [
@@ -10763,7 +10763,7 @@
           "group": "Clipboard",
           "label": "Format Painter",
           "controlType": "RibbonButton",
-          "layout": "Medium"
+          "layout": "Small"
         }
       ],
       "avaloniaLocations": [
@@ -25119,7 +25119,7 @@
           "groupId": "clipboard",
           "group": "Clipboard",
           "label": "Paste",
-          "controlType": "RibbonButton",
+          "controlType": "RibbonDropdown",
           "layout": "Large"
         }
       ],
@@ -25161,8 +25161,8 @@
           "groupId": "clipboard",
           "group": "Clipboard",
           "label": "Merge Formatting",
-          "controlType": "RibbonButton",
-          "layout": "Small"
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ],
       "avaloniaLocations": [
@@ -25203,8 +25203,8 @@
           "groupId": "clipboard",
           "group": "Clipboard",
           "label": "Paste Text Only",
-          "controlType": "RibbonButton",
-          "layout": "Small"
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ],
       "avaloniaLocations": [
@@ -25245,8 +25245,8 @@
           "groupId": "clipboard",
           "group": "Clipboard",
           "label": "Paste Special…",
-          "controlType": "RibbonButton",
-          "layout": "Small"
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ],
       "avaloniaLocations": [
