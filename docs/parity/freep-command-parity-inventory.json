@@ -16972,9 +16972,9 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "Custom Shows",
           "controlType": "RibbonButton",
@@ -16984,9 +16984,9 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "Custom Shows",
           "controlType": "RibbonButton",
@@ -17006,9 +17006,9 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "From Beginning",
           "controlType": "RibbonButton",
@@ -17018,9 +17018,9 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "From Beginning",
           "controlType": "RibbonButton",
@@ -17040,9 +17040,9 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "From Current Slide",
           "controlType": "RibbonButton",
@@ -17052,9 +17052,9 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "From Current Slide",
           "controlType": "RibbonButton",
@@ -17074,9 +17074,9 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "Record Timings",
           "controlType": "RibbonButton",
@@ -17086,9 +17086,9 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "Record Timings",
           "controlType": "RibbonButton",
@@ -17108,9 +17108,9 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "Rehearse Timings",
           "controlType": "RibbonButton",
@@ -17120,9 +17120,9 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "Rehearse Timings",
           "controlType": "RibbonButton",
@@ -17142,9 +17142,9 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "Set Up Slide Show",
           "controlType": "RibbonButton",
@@ -17154,9 +17154,9 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "Set Up Slide Show",
           "controlType": "RibbonButton",
