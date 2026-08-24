@@ -1,7 +1,7 @@
 # Avalonia/WPF Parity Wave 194 Integration
 
 Date: 2026-08-24
-Tested source commit: `f2aab993242fa6a6cc49d67c4b7770c23ce4c067`
+Tested source commit: `3d60b7b421b388ccfa5c9c18dc4e25642b7a14c6`
 Cumulative app slices: **582**, accepted after final integration gates
 
 This is an acceptance-only dashboard and evidence refresh. It does not change
@@ -24,7 +24,7 @@ The exact saved and reopened package contract is:
 `ref=A1:B7|colId=0|filters=42|blank=|hidden=4,5,6,7|A2-type=n|A2=42|A3-type=inlineStr|A3=42|A6-style=1|A6=45292|C1-formula=SUBTOTAL(103,A2:A7)|C1=2`
 
 Focused evidence is Avalonia **9/9**, Presentation **1/1**, and Core.IO
-**2/2**. The retained bundle contains **20/20 artifacts**, **10/10 reachable
+**8/8** (Wave194 plus five foreground-capture guards). The retained bundle contains **20/20 artifacts**, **10/10 reachable
 provenance files**, and **2/2 validation files**. The accepted geometry is
 `97,589,260,18` with click `103,598`; crop, readiness/transition checks, and
 the actual click consume one authoritative geometry contract. The geometry
@@ -94,25 +94,50 @@ the later decoy, rejects the internal assignment, verifies Wave191-193 retained
 hashes **11/11, 11/11, 18/18**, verifies Wave194 **20 evidence plus 12
 provenance/validation**, and found FreeP and FreeW clean.
 
+The accepted Wave194 histories were reintegrated with current origin/main's six
+foreground-capture commits in merge `3d60b7b421b388ccfa5c9c18dc4e25642b7a14c6`.
+The merge contained zero overlapping paths between those inputs. The initial
+repository preflight reached the generated/dashboard guards and failed only
+because the prior tested-source anchor treated these incoming paths as outside
+the acceptance allowlist: `docs/testing/freex-excel-ux-parity-suite.md`,
+`tests/FreeX.Core.IO.Tests/ToolHarnessDedupSourceTests.cs`, and
+`tools/FreeX.ForegroundCapture/Program.cs`. This was remediated by anchoring
+tested source at `3d60b7b421b388ccfa5c9c18dc4e25642b7a14c6`, not by expanding
+the allowlist.
+
 ## Integration gates
 
 All final integration gates passed at the tested source commit.
 
 - Final independent review: passed with no findings; all source-guard and
   evidence checks above were verified.
-- Full Release build: passed with 0 warnings and 0 errors, elapsed
-  `00:13:58.57`, using `dotnet build FreeX.slnx --configuration Release
+- Reintegration: merge `3d60b7b421b388ccfa5c9c18dc4e25642b7a14c6` contained
+  current origin/main's six foreground-capture commits with the accepted
+  Wave194 histories and had zero overlapping paths between those inputs.
+- Focused tests at the tested source: FreeX Avalonia Wave194 **9/9**; FreeX
+  Presentation Wave194 **1/1**; FreeX Core.IO Wave194 plus five
+  foreground-capture guards **8/8**; FreeP Presentation Wave194 **2/2**.
+- Initial repository preflight: reached the generated/dashboard guards and
+  failed only because the prior tested-source anchor treated the three incoming
+  foreground paths listed above as outside the acceptance allowlist; the fix
+  re-anchored tested source to `3d60b7b421b388ccfa5c9c18dc4e25642b7a14c6`
+  without expanding the allowlist.
+- Full Release build: passed at tested source commit
+  `3d60b7b421b388ccfa5c9c18dc4e25642b7a14c6` with 0 warnings and 0 errors,
+  elapsed `00:13:08.13`, using `dotnet build FreeX.slnx --configuration Release
   --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false
   /nr:false -m:1`.
-- Final default non-UI lane: exited 0 with **43,427 passed, 134 skipped/not-run,
-  0 failed, 43,561 total**. There were 25 unique TRX files plus 31 additional
+- Final default non-UI lane at tested source commit
+  `3d60b7b421b388ccfa5c9c18dc4e25642b7a14c6`: exited 0 with **43,432 passed,
+  134 skipped/not-run, 0 failed, 43,566 total**. There were 25 unique TRX files plus 31 additional
   passed captures overwritten into the shared capture TRX path across seven
   capture assemblies. Key totals: FreeP Avalonia 724/0; FreeP Host 2,409/0;
   FreeP Presentation 5,468/0; FreeX Avalonia 2,193/0; Host Logic 1,490 passed/4
-  skipped; Presentation 5,465/1; Core.IO 5,841/56; Core Model 6,317/41;
+  skipped; Presentation 5,465/1; Core.IO 5,846/56; Core Model 6,317/41;
   Formula 5,199/7; Calc 1,982/24; Integration 661/1.
 
-- Repository preflight: passed with exit 0 using
+- Repository preflight: passed at tested source commit
+  `3d60b7b421b388ccfa5c9c18dc4e25642b7a14c6` with exit 0 using
   `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1`.
   It validated **292 JSON**, **306 XML-backed**, and **13,862 text** files for
   conflict markers; **117 PowerShell scripts**, **10 workflows**, **160 project
@@ -126,7 +151,7 @@ made by this functional/evidence acceptance record.
 ## Acceptance boundary
 
 The git-aware acceptance boundary is re-anchored to the tested source commit
-`f2aab993242fa6a6cc49d67c4b7770c23ce4c067`. Only the Wave194 report, generated
+`3d60b7b421b388ccfa5c9c18dc4e25642b7a14c6`. Only the Wave194 report, generated
 dashboard artifacts, dashboard generator, dashboard behavior guard, and the
 existing dashboard guard test are allowlisted for this refresh. Product code,
 app tests, physical evidence, and other source drift remain rejected.
