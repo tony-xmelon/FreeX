@@ -4,15 +4,15 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia) plus freep/FreeP.App.Presentation SmartArtLayoutPreset",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 704,
-    "both": 704,
+    "totalCommands": 706,
+    "both": 706,
     "wpfOnly": 0,
     "avaloniaOnly": 0,
     "missingWpf": 0,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 704,
+    "shared": 706,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 0,
@@ -25665,6 +25665,40 @@
       ]
     },
     {
+      "commandId": "freep.view.normal",
+      "label": "Normal",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "presentation-views",
+          "group": "Presentation Views",
+          "label": "Normal",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "presentation-views",
+          "group": "Presentation Views",
+          "label": "Normal",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ]
+    },
+    {
       "commandId": "freep.view.selection-pane",
       "label": "Selection Pane",
       "wpfPresent": true,
@@ -25797,6 +25831,40 @@
           "label": "Notes",
           "controlType": "RibbonToggleButton",
           "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.view.slide-sorter",
+      "label": "Slide Sorter",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "presentation-views",
+          "group": "Presentation Views",
+          "label": "Slide Sorter",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "presentation-views",
+          "group": "Presentation Views",
+          "label": "Slide Sorter",
+          "controlType": "RibbonButton",
+          "layout": "Large"
         }
       ]
     },
