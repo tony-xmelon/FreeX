@@ -5,7 +5,7 @@
   "targetDpi": 96,
   "logicalClientWidth": 1280,
   "logicalClientHeight": 760,
-  "generatedAtUtc": "2026-08-16T15:09:51.1569310\u002B00:00",
+  "generatedAtUtc": "2026-08-24T22:58:44.5280241\u002B00:00",
   "captures": [
     {
       "scenarioId": "ribbon.view",
@@ -21,9 +21,9 @@
       "dpiY": 96,
       "sourceDpiX": 120,
       "sourceDpiY": 120,
-      "nonBackgroundPixelCount": 890455,
-      "fullImageSha256": "88b76594716f434fd5e61e13091d27e75ddf055162aea1c0d6f6d8ae28a86269",
-      "clientImageSha256": "88b76594716f434fd5e61e13091d27e75ddf055162aea1c0d6f6d8ae28a86269",
+      "nonBackgroundPixelCount": 914909,
+      "fullImageSha256": "e04756a9265d74ec0118c939bcbd0ad56db753be4bd8872f213dc2642e33022d",
+      "clientImageSha256": "e04756a9265d74ec0118c939bcbd0ad56db753be4bd8872f213dc2642e33022d",
       "semanticState": {
         "scenarioId": "ribbon.view",
         "host": "wpf",
@@ -40,7 +40,10 @@
           "design",
           "transitions",
           "animations",
-          "view"
+          "slide-show",
+          "review",
+          "view",
+          "help"
         ],
         "visibleContextualTabIds": [],
         "backstageOpen": false,
