@@ -125,15 +125,15 @@
     }
   ],
   "summary": {
-    "totalCommands": 951,
-    "both": 708,
+    "totalCommands": 952,
+    "both": 709,
     "wpfOnly": 2,
     "avaloniaOnly": 241,
     "missingWpf": 241,
     "missingAvalonia": 2,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 708,
+    "sharedProfile": 709,
     "profileShapeOnly": 238,
     "commandIdAliases": 0,
     "platformOnly": 5,
@@ -19609,6 +19609,48 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.layout-selection-pane",
+      "label": "Selection Pane",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Selection Pane",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Selection Pane",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": false
       }
     },

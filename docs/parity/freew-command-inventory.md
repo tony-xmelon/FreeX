@@ -10,13 +10,13 @@ Gap classifications are generated from explicit rule order: shared-profile, comm
 
 | Total | Both profiles | WPF profile only | Avalonia profile only | Missing WPF profile | Missing Avalonia profile | Actionable missing WPF | Actionable missing Avalonia |
 |---:|---:|---:|---:|---:|---:|---:|---:|
-| 951 | 708 | 2 | 241 | 241 | 2 | 0 | 0 |
+| 952 | 709 | 2 | 241 | 241 | 2 | 0 | 0 |
 
 ## Classification Counts
 
 | Shared profile | Profile-shape only | Command-id aliases | Platform-only | Deferred | Actionable gaps | Behavior evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|
-| 708 | 238 | 0 | 5 | 0 | 0 | 506 |
+| 709 | 238 | 0 | 5 | 0 | 0 | 506 |
 
 ## Classification Rules
 
@@ -446,6 +446,7 @@ Gap classifications are generated from explicit rule order: shared-profile, comm
 | `freew.layout-rotate` | Rotate | Yes | Yes | none | shared-profile | shared-profile | shared-profile | layout/arrange (RibbonDropdown; Medium) | layout/arrange (RibbonDropdown; Medium) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.layout-rotate-left90` | Rotate Left 90° | Yes | Yes | none | shared-profile | shared-profile | shared-profile | layout/arrange (RibbonMenuItem; Menu) | layout/arrange (RibbonMenuItem; Menu) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.layout-rotate-right90` | Rotate Right 90° | Yes | Yes | none | shared-profile | shared-profile | shared-profile | layout/arrange (RibbonMenuItem; Menu) | layout/arrange (RibbonMenuItem; Menu) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
+| `freew.layout-selection-pane` | Selection Pane | Yes | Yes | none | shared-profile | shared-profile | shared-profile | layout/arrange (RibbonButton; Medium) | layout/arrange (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.layout-send-backward` | Send Backward | Yes | Yes | none | shared-profile | shared-profile | shared-profile | layout/arrange (RibbonButton; Medium) | layout/arrange (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.layout-wrap` | Wrap Text | Yes | Yes | none | shared-profile | shared-profile | shared-profile | layout/arrange (RibbonDropdown; Medium) | layout/arrange (RibbonDropdown; Medium) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.layout-wrap-behind` | Behind Text | Yes | Yes | none | shared-profile | shared-profile | shared-profile | layout/arrange (RibbonMenuItem; Menu) | layout/arrange (RibbonMenuItem; Menu) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
