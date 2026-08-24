@@ -103,8 +103,8 @@
         "excluded": 23
       },
       "functionalMatrix": {
-        "totalCommands": 574,
-        "parity": 568,
+        "totalCommands": 575,
+        "parity": 569,
         "avaloniaMissing": 0,
         "wpfMissing": 6,
         "bothMissing": 0,
@@ -305,15 +305,15 @@
     {
       "app": "FreeW",
       "commandInventory": {
-        "totalCommands": 931,
-        "bothProfiles": 693,
+        "totalCommands": 952,
+        "bothProfiles": 731,
         "wpfProfileOnly": 2,
-        "avaloniaProfileOnly": 236,
-        "missingWpfProfile": 236,
+        "avaloniaProfileOnly": 219,
+        "missingWpfProfile": 219,
         "missingAvaloniaProfile": 2,
         "actionableMissingWpf": 0,
         "actionableMissingAvalonia": 0,
-        "profileShapeOnly": 233,
+        "profileShapeOnly": 216,
         "commandIdAliases": 0,
         "platformOnly": 5,
         "deferred": 0,
@@ -434,8 +434,8 @@
     {
       "app": "FreeP",
       "commandInventory": {
-        "totalCommands": 691,
-        "bothProfiles": 691,
+        "totalCommands": 707,
+        "bothProfiles": 707,
         "wpfOnly": 0,
         "avaloniaOnly": 0,
         "actionableMissingWpf": 0,

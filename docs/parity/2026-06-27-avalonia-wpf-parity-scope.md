@@ -13,6 +13,10 @@ The target is 100% practical parity: shared policy where the platforms should be
 
 This update replaces the 2026-06-27 pre-dedup snapshot. The extensive dedup session has landed many items that were previously blockers; the remaining work is now mostly evidence, command-depth, renderer-edge fidelity, and app-specific workflow completion.
 
+## Explicit Scope Exclusion (2026-08-24)
+
+The active visual-parity program intentionally excludes Ink/Draw fidelity and map-chart fidelity in FreeX, FreeW, and FreeP until they are separately prioritized. Do not treat either area as current implementation or visual-calibration debt, and do not add fixture-specific rendering work for them under this program.
+
 ## Current Evidence
 
 - Primary repo root: `C:\Users\anton\OneDrive\Documents\FreeX\FreeX`.

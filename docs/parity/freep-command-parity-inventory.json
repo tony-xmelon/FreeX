@@ -4,15 +4,15 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia) plus freep/FreeP.App.Presentation SmartArtLayoutPreset",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 691,
-    "both": 691,
+    "totalCommands": 707,
+    "both": 707,
     "wpfOnly": 0,
     "avaloniaOnly": 0,
     "missingWpf": 0,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 691,
+    "shared": 707,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 0,
@@ -9257,6 +9257,40 @@
       ]
     },
     {
+      "commandId": "freep.copy-diagnostics",
+      "label": "Copy Diagnostics",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "help",
+          "tab": "Help",
+          "groupId": "support",
+          "group": "Support",
+          "label": "Copy Diagnostics",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "help",
+          "tab": "Help",
+          "groupId": "support",
+          "group": "Support",
+          "label": "Copy Diagnostics",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ]
+    },
+    {
       "commandId": "freep.cut",
       "label": "Cut",
       "wpfPresent": true,
@@ -14377,6 +14411,346 @@
       ]
     },
     {
+      "commandId": "freep.review.accessibility.check",
+      "label": "Check Accessibility",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "accessibility",
+          "group": "Accessibility",
+          "label": "Check Accessibility",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "accessibility",
+          "group": "Accessibility",
+          "label": "Check Accessibility",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.review.alt-text",
+      "label": "Alt Text",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "accessibility",
+          "group": "Accessibility",
+          "label": "Alt Text",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "accessibility",
+          "group": "Accessibility",
+          "label": "Alt Text",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.review.comments.add",
+      "label": "New Comment",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "New Comment",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "New Comment",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.review.comments.delete",
+      "label": "Delete",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "Delete",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "Delete",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.review.comments.next",
+      "label": "Next",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "Next",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "Next",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.review.comments.pane",
+      "label": "Comments",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "Comments",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "Comments",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.review.comments.previous",
+      "label": "Previous",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "Previous",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "Previous",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.review.comments.reply",
+      "label": "Reply",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "Reply",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "Reply",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.review.proofing.spelling",
+      "label": "Spelling",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "proofing",
+          "group": "Proofing",
+          "label": "Spelling",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "proofing",
+          "group": "Proofing",
+          "label": "Spelling",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.review.reading-order.pane",
+      "label": "Reading Order",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "accessibility",
+          "group": "Accessibility",
+          "label": "Reading Order",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "accessibility",
+          "group": "Accessibility",
+          "label": "Reading Order",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
       "commandId": "freep.shape-chevron",
       "label": "Chevron",
       "wpfPresent": true,
@@ -16938,9 +17312,9 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "Custom Shows",
           "controlType": "RibbonButton",
@@ -16950,9 +17324,9 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "Custom Shows",
           "controlType": "RibbonButton",
@@ -16972,9 +17346,9 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "From Beginning",
           "controlType": "RibbonButton",
@@ -16984,9 +17358,9 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "From Beginning",
           "controlType": "RibbonButton",
@@ -17006,9 +17380,9 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "From Current Slide",
           "controlType": "RibbonButton",
@@ -17018,9 +17392,9 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "From Current Slide",
           "controlType": "RibbonButton",
@@ -17040,9 +17414,9 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "Record Timings",
           "controlType": "RibbonButton",
@@ -17052,9 +17426,9 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "Record Timings",
           "controlType": "RibbonButton",
@@ -17074,9 +17448,9 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "Rehearse Timings",
           "controlType": "RibbonButton",
@@ -17086,9 +17460,9 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "Rehearse Timings",
           "controlType": "RibbonButton",
@@ -17108,9 +17482,9 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "Set Up Slide Show",
           "controlType": "RibbonButton",
@@ -17120,9 +17494,9 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
+          "tabId": "slide-show",
+          "tab": "Slide Show",
+          "groupId": "slide-show",
           "group": "Slide Show",
           "label": "Set Up Slide Show",
           "controlType": "RibbonButton",
@@ -17142,8 +17516,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Fill - Accent 1",
@@ -17154,8 +17528,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Fill - Accent 1",
@@ -17176,8 +17550,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Fill - Accent 2",
@@ -17188,8 +17562,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Fill - Accent 2",
@@ -17210,8 +17584,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Fill - Accent 3",
@@ -17222,8 +17596,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Fill - Accent 3",
@@ -17244,8 +17618,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Fill - Accent 4",
@@ -17256,8 +17630,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Fill - Accent 4",
@@ -17278,8 +17652,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Fill - Accent 5",
@@ -17290,8 +17664,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Fill - Accent 5",
@@ -17312,8 +17686,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Fill - Accent 6",
@@ -17324,8 +17698,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Fill - Accent 6",
@@ -17346,8 +17720,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Outline - Accent 1",
@@ -17358,8 +17732,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Outline - Accent 1",
@@ -17380,8 +17754,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Outline - Accent 2",
@@ -17392,8 +17766,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Outline - Accent 2",
@@ -17414,8 +17788,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Outline - Accent 3",
@@ -17426,8 +17800,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Outline - Accent 3",
@@ -17448,8 +17822,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Outline - Accent 4",
@@ -17460,8 +17834,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Outline - Accent 4",
@@ -17482,8 +17856,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Outline - Accent 5",
@@ -17494,8 +17868,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Outline - Accent 5",
@@ -17516,8 +17890,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Outline - Accent 6",
@@ -17528,8 +17902,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colored Outline - Accent 6",
@@ -17550,8 +17924,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colorful - Accent Colors",
@@ -17562,8 +17936,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colorful - Accent Colors",
@@ -17584,8 +17958,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colorful Range - Accent Colors 2 to 3",
@@ -17596,8 +17970,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colorful Range - Accent Colors 2 to 3",
@@ -17618,8 +17992,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colorful Range - Accent Colors 3 to 4",
@@ -17630,8 +18004,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colorful Range - Accent Colors 3 to 4",
@@ -17652,8 +18026,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colorful Range - Accent Colors 4 to 5",
@@ -17664,8 +18038,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colorful Range - Accent Colors 4 to 5",
@@ -17686,8 +18060,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colorful Range - Accent Colors 5 to 6",
@@ -17698,8 +18072,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Colorful Range - Accent Colors 5 to 6",
@@ -17720,8 +18094,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Dark 1 Outline",
@@ -17732,8 +18106,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Dark 1 Outline",
@@ -17754,8 +18128,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Dark 2 Fill",
@@ -17766,8 +18140,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Dark 2 Fill",
@@ -17788,8 +18162,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Dark 2 Outline",
@@ -17800,8 +18174,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Dark 2 Outline",
@@ -17822,8 +18196,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Change Colors",
@@ -17834,8 +18208,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Change Colors",
@@ -17856,8 +18230,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Loop - Accent 1",
@@ -17868,8 +18242,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Loop - Accent 1",
@@ -17890,8 +18264,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Loop - Accent 2",
@@ -17902,8 +18276,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Loop - Accent 2",
@@ -17924,8 +18298,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Loop - Accent 3",
@@ -17936,8 +18310,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Loop - Accent 3",
@@ -17958,8 +18332,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Loop - Accent 4",
@@ -17970,8 +18344,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Loop - Accent 4",
@@ -17992,8 +18366,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Loop - Accent 5",
@@ -18004,8 +18378,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Loop - Accent 5",
@@ -18026,8 +18400,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Loop - Accent 6",
@@ -18038,8 +18412,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Loop - Accent 6",
@@ -18060,8 +18434,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Range - Accent 1",
@@ -18072,8 +18446,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Range - Accent 1",
@@ -18094,8 +18468,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Range - Accent 2",
@@ -18106,8 +18480,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Range - Accent 2",
@@ -18128,8 +18502,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Range - Accent 3",
@@ -18140,8 +18514,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Range - Accent 3",
@@ -18162,8 +18536,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Range - Accent 4",
@@ -18174,8 +18548,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Range - Accent 4",
@@ -18196,8 +18570,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Range - Accent 5",
@@ -18208,8 +18582,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Range - Accent 5",
@@ -18230,8 +18604,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Range - Accent 6",
@@ -18242,8 +18616,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Gradient Range - Accent 6",
@@ -18264,8 +18638,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Grayscale",
@@ -18276,8 +18650,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Grayscale",
@@ -18298,8 +18672,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Monochromatic Accent 2",
@@ -18310,8 +18684,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Monochromatic Accent 2",
@@ -18332,8 +18706,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Monochromatic Accent 3",
@@ -18344,8 +18718,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Monochromatic Accent 3",
@@ -18366,8 +18740,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Monochromatic Accent 4",
@@ -18378,8 +18752,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Monochromatic Accent 4",
@@ -18400,8 +18774,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Monochromatic Accent 5",
@@ -18412,8 +18786,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Monochromatic Accent 5",
@@ -18434,8 +18808,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Monochromatic Accent 6",
@@ -18446,8 +18820,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Monochromatic Accent 6",
@@ -18468,8 +18842,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Single Accent",
@@ -18480,8 +18854,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Single Accent",
@@ -18502,8 +18876,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Theme Accents",
@@ -18514,8 +18888,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Theme Accents",
@@ -18536,8 +18910,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Transparent Gradient Range - Accent 1",
@@ -18548,8 +18922,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Transparent Gradient Range - Accent 1",
@@ -18570,8 +18944,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Transparent Gradient Range - Accent 2",
@@ -18582,8 +18956,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Transparent Gradient Range - Accent 2",
@@ -18604,8 +18978,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Transparent Gradient Range - Accent 3",
@@ -18616,8 +18990,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Transparent Gradient Range - Accent 3",
@@ -18638,8 +19012,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Transparent Gradient Range - Accent 4",
@@ -18650,8 +19024,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Transparent Gradient Range - Accent 4",
@@ -18672,8 +19046,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Transparent Gradient Range - Accent 5",
@@ -18684,8 +19058,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Transparent Gradient Range - Accent 5",
@@ -18706,8 +19080,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Transparent Gradient Range - Accent 6",
@@ -18718,8 +19092,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-colors",
           "group": "SmartArt Colors",
           "label": "Transparent Gradient Range - Accent 6",
@@ -18740,8 +19114,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Convert to Shapes",
@@ -18752,8 +19126,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Convert to Shapes",
@@ -18774,8 +19148,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Accent Process",
@@ -18786,8 +19160,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Accent Process",
@@ -18808,8 +19182,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Alternating Process",
@@ -18820,8 +19194,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Alternating Process",
@@ -18842,8 +19216,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Arrow Ribbon",
@@ -18854,8 +19228,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Arrow Ribbon",
@@ -18876,8 +19250,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Ascending Process",
@@ -18888,8 +19262,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Ascending Process",
@@ -18910,8 +19284,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Basic Block List",
@@ -18922,8 +19296,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Basic Block List",
@@ -18944,8 +19318,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Basic Chevron Process",
@@ -18956,8 +19330,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Basic Chevron Process",
@@ -18978,8 +19352,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Basic Cycle",
@@ -18990,8 +19364,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Basic Cycle",
@@ -19012,8 +19386,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Basic Hierarchy",
@@ -19024,8 +19398,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Basic Hierarchy",
@@ -19046,8 +19420,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "[[Ribbon_Command_SmartArtBasicList_Label]]",
@@ -19058,8 +19432,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "[[Ribbon_Command_SmartArtBasicList_Label]]",
@@ -19080,8 +19454,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Basic Matrix",
@@ -19092,8 +19466,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Basic Matrix",
@@ -19114,8 +19488,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Basic Process",
@@ -19126,8 +19500,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Basic Process",
@@ -19148,8 +19522,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Basic Pyramid",
@@ -19160,8 +19534,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Basic Pyramid",
@@ -19182,8 +19556,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Basic Radial",
@@ -19194,8 +19568,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Basic Radial",
@@ -19216,8 +19590,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Basic Relationship",
@@ -19228,8 +19602,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Basic Relationship",
@@ -19250,8 +19624,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Basic Timeline",
@@ -19262,8 +19636,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Basic Timeline",
@@ -19284,8 +19658,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Basic Venn",
@@ -19296,8 +19670,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Basic Venn",
@@ -19318,8 +19692,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Bending Process",
@@ -19330,8 +19704,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Bending Process",
@@ -19352,8 +19726,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Block Cycle",
@@ -19364,8 +19738,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Block Cycle",
@@ -19386,8 +19760,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Chevron Process",
@@ -19398,8 +19772,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Chevron Process",
@@ -19420,8 +19794,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Circle Accent Timeline",
@@ -19432,8 +19806,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Circle Accent Timeline",
@@ -19454,8 +19828,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "[[Ribbon_Command_SmartArtCircleArrowProcess_Label]]",
@@ -19466,8 +19840,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "[[Ribbon_Command_SmartArtCircleArrowProcess_Label]]",
@@ -19488,8 +19862,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Circle Process",
@@ -19500,8 +19874,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Circle Process",
@@ -19522,8 +19896,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Closed Chevron Process",
@@ -19534,8 +19908,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Closed Chevron Process",
@@ -19556,8 +19930,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Continuous Block Process",
@@ -19568,8 +19942,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Continuous Block Process",
@@ -19590,8 +19964,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Continuous Cycle",
@@ -19602,8 +19976,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Continuous Cycle",
@@ -19624,8 +19998,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Continuous Picture List",
@@ -19636,8 +20010,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Continuous Picture List",
@@ -19658,8 +20032,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Converging Radial",
@@ -19670,8 +20044,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Converging Radial",
@@ -19692,8 +20066,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Cycle 2",
@@ -19704,8 +20078,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Cycle 2",
@@ -19726,8 +20100,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Descending Block List",
@@ -19738,8 +20112,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Descending Block List",
@@ -19760,8 +20134,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Descending Process",
@@ -19772,8 +20146,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Descending Process",
@@ -19794,8 +20168,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Diverging Radial",
@@ -19806,8 +20180,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Diverging Radial",
@@ -19828,8 +20202,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Funnel Process",
@@ -19840,8 +20214,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Funnel Process",
@@ -19862,8 +20236,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Gear Cycle",
@@ -19874,8 +20248,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Gear Cycle",
@@ -19896,8 +20270,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Grid Matrix",
@@ -19908,8 +20282,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Grid Matrix",
@@ -19930,8 +20304,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Grouped List",
@@ -19942,8 +20316,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Grouped List",
@@ -19964,8 +20338,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Hierarchy 3",
@@ -19976,8 +20350,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Hierarchy 3",
@@ -19998,8 +20372,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Horizontal Block List",
@@ -20010,8 +20384,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Horizontal Block List",
@@ -20032,8 +20406,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Horizontal Bullet List",
@@ -20044,8 +20418,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Horizontal Bullet List",
@@ -20066,8 +20440,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Horizontal Hierarchy",
@@ -20078,8 +20452,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Horizontal Hierarchy",
@@ -20100,8 +20474,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Increasing Circle Process",
@@ -20112,8 +20486,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Increasing Circle Process",
@@ -20134,8 +20508,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Interlocking Rings",
@@ -20146,8 +20520,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Interlocking Rings",
@@ -20168,8 +20542,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Inverted Pyramid",
@@ -20180,8 +20554,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Inverted Pyramid",
@@ -20202,8 +20576,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Labeled Hierarchy",
@@ -20214,8 +20588,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Labeled Hierarchy",
@@ -20236,8 +20610,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "List 2",
@@ -20248,8 +20622,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "List 2",
@@ -20270,8 +20644,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Multidirectional Cycle",
@@ -20282,8 +20656,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Multidirectional Cycle",
@@ -20304,8 +20678,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Name and Title Organization Chart",
@@ -20316,8 +20690,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Name and Title Organization Chart",
@@ -20338,8 +20712,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Non-Directional Cycle",
@@ -20350,8 +20724,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Non-Directional Cycle",
@@ -20372,8 +20746,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Opposing Ideas",
@@ -20384,8 +20758,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Opposing Ideas",
@@ -20406,8 +20780,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Organization Chart",
@@ -20418,8 +20792,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Organization Chart",
@@ -20440,8 +20814,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Phased Process",
@@ -20452,8 +20826,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Phased Process",
@@ -20474,8 +20848,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Picture Accent List",
@@ -20486,8 +20860,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Picture Accent List",
@@ -20508,8 +20882,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Picture Accent Process",
@@ -20520,8 +20894,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Picture Accent Process",
@@ -20542,8 +20916,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Picture Caption List",
@@ -20554,8 +20928,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Picture Caption List",
@@ -20576,8 +20950,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Picture Grid",
@@ -20588,8 +20962,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Picture Grid",
@@ -20610,8 +20984,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Picture Lineup",
@@ -20622,8 +20996,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Picture Lineup",
@@ -20644,8 +21018,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Picture Stack",
@@ -20656,8 +21030,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Picture Stack",
@@ -20678,8 +21052,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Picture Strips",
@@ -20690,8 +21064,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Picture Strips",
@@ -20712,8 +21086,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Pyramid List",
@@ -20724,8 +21098,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Pyramid List",
@@ -20746,8 +21120,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Radial Cluster",
@@ -20758,8 +21132,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Radial Cluster",
@@ -20780,8 +21154,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Radial Cycle",
@@ -20792,8 +21166,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Radial Cycle",
@@ -20814,8 +21188,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "[[Ribbon_Command_SmartArtRadialList_Label]]",
@@ -20826,8 +21200,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "[[Ribbon_Command_SmartArtRadialList_Label]]",
@@ -20848,8 +21222,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Radial Venn",
@@ -20860,8 +21234,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Radial Venn",
@@ -20882,8 +21256,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Segmented Process",
@@ -20894,8 +21268,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Segmented Process",
@@ -20916,8 +21290,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Stacked List",
@@ -20928,8 +21302,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Stacked List",
@@ -20950,8 +21324,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Stacked Venn",
@@ -20962,8 +21336,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Stacked Venn",
@@ -20984,8 +21358,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Step Down Process",
@@ -20996,8 +21370,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Step Down Process",
@@ -21018,8 +21392,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Table Hierarchy",
@@ -21030,8 +21404,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Table Hierarchy",
@@ -21052,8 +21426,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Target List",
@@ -21064,8 +21438,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Target List",
@@ -21086,8 +21460,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Text Cycle",
@@ -21098,8 +21472,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Text Cycle",
@@ -21120,8 +21494,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Titled Matrix",
@@ -21132,8 +21506,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Titled Matrix",
@@ -21154,8 +21528,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Trapezoid List",
@@ -21166,8 +21540,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Trapezoid List",
@@ -21188,8 +21562,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "[[Ribbon_Command_SmartArtVerticalArrowList_Label]]",
@@ -21200,8 +21574,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "[[Ribbon_Command_SmartArtVerticalArrowList_Label]]",
@@ -21222,8 +21596,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Vertical Block List",
@@ -21234,8 +21608,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Vertical Block List",
@@ -21256,8 +21630,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Vertical List",
@@ -21268,8 +21642,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Vertical List",
@@ -21290,8 +21664,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Vertical Bullet List",
@@ -21302,8 +21676,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Vertical Bullet List",
@@ -21324,8 +21698,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Vertical Chevron List",
@@ -21336,8 +21710,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Vertical Chevron List",
@@ -21358,8 +21732,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Vertical Picture List",
@@ -21370,8 +21744,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Vertical Picture List",
@@ -21392,8 +21766,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Vertical Process",
@@ -21404,8 +21778,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Vertical Process",
@@ -21426,8 +21800,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Bird's Eye Scene",
@@ -21438,8 +21812,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Bird's Eye Scene",
@@ -21460,8 +21834,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Brick Scene",
@@ -21472,8 +21846,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Brick Scene",
@@ -21494,8 +21868,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Cartoon",
@@ -21506,8 +21880,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Cartoon",
@@ -21528,8 +21902,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Flat Scene",
@@ -21540,8 +21914,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Flat Scene",
@@ -21562,8 +21936,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Inset",
@@ -21574,8 +21948,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Inset",
@@ -21596,8 +21970,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Intense Effect",
@@ -21608,8 +21982,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Intense Effect",
@@ -21630,8 +22004,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Metallic Scene",
@@ -21642,8 +22016,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Metallic Scene",
@@ -21664,8 +22038,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Moderate Effect",
@@ -21676,8 +22050,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Moderate Effect",
@@ -21698,8 +22072,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Polished",
@@ -21710,8 +22084,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Polished",
@@ -21732,8 +22106,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Powder",
@@ -21744,8 +22118,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Powder",
@@ -21766,8 +22140,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Simple Fill",
@@ -21778,8 +22152,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Simple Fill",
@@ -21800,8 +22174,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "White Outline",
@@ -21812,8 +22186,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "White Outline",
@@ -21834,8 +22208,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Subtle Effect",
@@ -21846,8 +22220,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Subtle Effect",
@@ -21868,8 +22242,8 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Sunset Scene",
@@ -21880,8 +22254,8 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
           "label": "Sunset Scene",
@@ -22038,10 +22412,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Table Cell Alignment",
           "controlType": "RibbonComboBox",
           "layout": "Medium"
@@ -22050,10 +22424,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Table Cell Alignment",
           "controlType": "RibbonComboBox",
           "layout": "Medium"
@@ -22072,10 +22446,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Table Cell Border",
           "controlType": "RibbonComboBox",
           "layout": "Medium"
@@ -22084,10 +22458,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Table Cell Border",
           "controlType": "RibbonComboBox",
           "layout": "Medium"
@@ -22106,10 +22480,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Table Cell Fill",
           "controlType": "RibbonComboBox",
           "layout": "Medium"
@@ -22118,10 +22492,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Table Cell Fill",
           "controlType": "RibbonComboBox",
           "layout": "Medium"
@@ -22140,10 +22514,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Cell Insets",
           "controlType": "RibbonComboBox",
           "layout": "Medium"
@@ -22152,10 +22526,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Cell Insets",
           "controlType": "RibbonComboBox",
           "layout": "Medium"
@@ -22174,10 +22548,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Row Height",
           "controlType": "RibbonComboBox",
           "layout": "Medium"
@@ -22186,10 +22560,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Row Height",
           "controlType": "RibbonComboBox",
           "layout": "Medium"
@@ -22208,10 +22582,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Banded Columns",
           "controlType": "RibbonToggleButton",
           "layout": "Small"
@@ -22220,10 +22594,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Banded Columns",
           "controlType": "RibbonToggleButton",
           "layout": "Small"
@@ -22242,10 +22616,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Banded Rows",
           "controlType": "RibbonToggleButton",
           "layout": "Small"
@@ -22254,10 +22628,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Banded Rows",
           "controlType": "RibbonToggleButton",
           "layout": "Small"
@@ -22276,10 +22650,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Delete Column",
           "controlType": "RibbonButton",
           "layout": "Medium"
@@ -22288,10 +22662,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Delete Column",
           "controlType": "RibbonButton",
           "layout": "Medium"
@@ -22310,10 +22684,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Delete Row",
           "controlType": "RibbonButton",
           "layout": "Medium"
@@ -22322,10 +22696,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Delete Row",
           "controlType": "RibbonButton",
           "layout": "Medium"
@@ -22344,10 +22718,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Distribute Columns",
           "controlType": "RibbonButton",
           "layout": "Medium"
@@ -22356,10 +22730,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Distribute Columns",
           "controlType": "RibbonButton",
           "layout": "Medium"
@@ -22378,10 +22752,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Distribute Rows",
           "controlType": "RibbonButton",
           "layout": "Medium"
@@ -22390,10 +22764,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Distribute Rows",
           "controlType": "RibbonButton",
           "layout": "Medium"
@@ -22412,10 +22786,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "First Column",
           "controlType": "RibbonToggleButton",
           "layout": "Small"
@@ -22424,10 +22798,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "First Column",
           "controlType": "RibbonToggleButton",
           "layout": "Small"
@@ -22446,10 +22820,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Header Row",
           "controlType": "RibbonToggleButton",
           "layout": "Small"
@@ -22458,10 +22832,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Header Row",
           "controlType": "RibbonToggleButton",
           "layout": "Small"
@@ -22480,10 +22854,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Insert Column Left",
           "controlType": "RibbonButton",
           "layout": "Medium"
@@ -22492,10 +22866,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Insert Column Left",
           "controlType": "RibbonButton",
           "layout": "Medium"
@@ -22514,10 +22888,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Insert Column Right",
           "controlType": "RibbonButton",
           "layout": "Medium"
@@ -22526,10 +22900,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Insert Column Right",
           "controlType": "RibbonButton",
           "layout": "Medium"
@@ -22548,10 +22922,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Insert Row Above",
           "controlType": "RibbonButton",
           "layout": "Medium"
@@ -22560,10 +22934,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Insert Row Above",
           "controlType": "RibbonButton",
           "layout": "Medium"
@@ -22582,10 +22956,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Insert Row Below",
           "controlType": "RibbonButton",
           "layout": "Medium"
@@ -22594,10 +22968,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Insert Row Below",
           "controlType": "RibbonButton",
           "layout": "Medium"
@@ -22616,10 +22990,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Last Column",
           "controlType": "RibbonToggleButton",
           "layout": "Small"
@@ -22628,10 +23002,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Last Column",
           "controlType": "RibbonToggleButton",
           "layout": "Small"
@@ -22650,10 +23024,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Total Row",
           "controlType": "RibbonToggleButton",
           "layout": "Small"
@@ -22662,10 +23036,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Total Row",
           "controlType": "RibbonToggleButton",
           "layout": "Small"
@@ -22684,10 +23058,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Merge Cells",
           "controlType": "RibbonButton",
           "layout": "Medium"
@@ -22696,10 +23070,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Merge Cells",
           "controlType": "RibbonButton",
           "layout": "Medium"
@@ -22718,10 +23092,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Split Cell",
           "controlType": "RibbonButton",
           "layout": "Medium"
@@ -22730,13 +23104,47 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-layout",
+          "group": "Tables",
           "label": "Split Cell",
           "controlType": "RibbonButton",
           "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.test-crash-reporting",
+      "label": "Test Crash Reporting",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "help",
+          "tab": "Help",
+          "groupId": "support",
+          "group": "Support",
+          "label": "Test Crash Reporting",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "help",
+          "tab": "Help",
+          "groupId": "support",
+          "group": "Support",
+          "label": "Test Crash Reporting",
+          "controlType": "RibbonButton",
+          "layout": "Large"
         }
       ]
     },
@@ -22752,10 +23160,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "text-format",
+          "tab": "Text Format",
+          "groupId": "text-layout",
+          "group": "Text",
           "label": "Text Autofit",
           "controlType": "RibbonComboBox",
           "layout": "Medium"
@@ -22764,10 +23172,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "text-format",
+          "tab": "Text Format",
+          "groupId": "text-layout",
+          "group": "Text",
           "label": "Text Autofit",
           "controlType": "RibbonComboBox",
           "layout": "Medium"
@@ -22820,10 +23228,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "text-format",
+          "tab": "Text Format",
+          "groupId": "text-layout",
+          "group": "Text",
           "label": "Column Spacing",
           "controlType": "RibbonComboBox",
           "layout": "Medium"
@@ -22832,10 +23240,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "text-format",
+          "tab": "Text Format",
+          "groupId": "text-layout",
+          "group": "Text",
           "label": "Column Spacing",
           "controlType": "RibbonComboBox",
           "layout": "Medium"
@@ -22854,10 +23262,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "text-format",
+          "tab": "Text Format",
+          "groupId": "text-layout",
+          "group": "Text",
           "label": "Text Columns",
           "controlType": "RibbonComboBox",
           "layout": "Medium"
@@ -22866,10 +23274,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "text-format",
+          "tab": "Text Format",
+          "groupId": "text-layout",
+          "group": "Text",
           "label": "Text Columns",
           "controlType": "RibbonComboBox",
           "layout": "Medium"
@@ -22888,10 +23296,10 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "text-format",
+          "tab": "Text Format",
+          "groupId": "text-layout",
+          "group": "Text",
           "label": "Text Direction",
           "controlType": "RibbonComboBox",
           "layout": "Medium"
@@ -22900,10 +23308,10 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "font",
-          "group": "Font",
+          "tabId": "text-format",
+          "tab": "Text Format",
+          "groupId": "text-layout",
+          "group": "Text",
           "label": "Text Direction",
           "controlType": "RibbonComboBox",
           "layout": "Medium"
@@ -25257,6 +25665,74 @@
       ]
     },
     {
+      "commandId": "freep.view.normal",
+      "label": "Normal",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "presentation-views",
+          "group": "Presentation Views",
+          "label": "Normal",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "presentation-views",
+          "group": "Presentation Views",
+          "label": "Normal",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.view.notes-page",
+      "label": "Notes Page",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "presentation-views",
+          "group": "Presentation Views",
+          "label": "Notes Page",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "presentation-views",
+          "group": "Presentation Views",
+          "label": "Notes Page",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ]
+    },
+    {
       "commandId": "freep.view.selection-pane",
       "label": "Selection Pane",
       "wpfPresent": true,
@@ -25355,6 +25831,74 @@
           "label": "Guides",
           "controlType": "RibbonToggleButton",
           "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.view.show.notes",
+      "label": "Notes",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "show",
+          "group": "Show",
+          "label": "Notes",
+          "controlType": "RibbonToggleButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "show",
+          "group": "Show",
+          "label": "Notes",
+          "controlType": "RibbonToggleButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.view.slide-sorter",
+      "label": "Slide Sorter",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "presentation-views",
+          "group": "Presentation Views",
+          "label": "Slide Sorter",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "presentation-views",
+          "group": "Presentation Views",
+          "label": "Slide Sorter",
+          "controlType": "RibbonButton",
+          "layout": "Large"
         }
       ]
     },

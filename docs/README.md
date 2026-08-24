@@ -54,6 +54,9 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [release/test-distribution.md](release/test-distribution.md) - test-suite distribution, default agent verification path, separate UI lane, diagnostics plan, and tester-release workflow.
 - [release/app-platform-publish-lanes.md](release/app-platform-publish-lanes.md) - canonical per-app and full-suite portable/installer artifact map for Windows, Linux, and macOS.
 - [release/public-preview-readiness.md](release/public-preview-readiness.md) - suite-wide certificate-independent, crash-analytics, feedback, packaging, and deferred-signing release gate.
+- [release/public-preview-operations.md](release/public-preview-operations.md) - clean-machine acceptance, staged promotion, rollback/replacement, incident handling, and evidence-retention runbook.
+- [release/public-preview-decision-record-template.md](release/public-preview-decision-record-template.md) - per-candidate identity, verification, policy review, signing status, and go/no-go evidence template.
+- [release/public-preview-release-notes-template.md](release/public-preview-release-notes-template.md) - versioned artifact, unsigned-preview, privacy, install/update/uninstall, support, and correction-status release-note template.
 - [release/macos-signing-notarization.md](release/macos-signing-notarization.md) - hosted macOS app preview artifact retrieval, Developer ID signing, and notarization runbook.
 - [release/tester-release-checklist.md](release/tester-release-checklist.md) - release-gate and public-preview accessibility checklist for tester builds.
 
