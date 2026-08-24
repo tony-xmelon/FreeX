@@ -359,15 +359,15 @@
                  {
                      "app":  "FreeW",
                      "commandInventory":  {
-                                              "totalCommands":  946,
+                                              "totalCommands":  951,
                                               "bothProfiles":  708,
                                               "wpfProfileOnly":  2,
-                                              "avaloniaProfileOnly":  236,
-                                              "missingWpfProfile":  236,
+                                              "avaloniaProfileOnly":  241,
+                                              "missingWpfProfile":  241,
                                               "missingAvaloniaProfile":  2,
                                               "actionableMissingWpf":  0,
                                               "actionableMissingAvalonia":  0,
-                                              "profileShapeOnly":  233,
+                                              "profileShapeOnly":  238,
                                               "commandIdAliases":  0,
                                               "platformOnly":  5,
                                               "deferred":  0,
@@ -509,8 +509,8 @@
                  {
                      "app":  "FreeP",
                      "commandInventory":  {
-                                              "totalCommands":  706,
-                                              "bothProfiles":  706,
+                                              "totalCommands":  707,
+                                              "bothProfiles":  707,
                                               "wpfOnly":  0,
                                               "avaloniaOnly":  0,
                                               "actionableMissingWpf":  0,
