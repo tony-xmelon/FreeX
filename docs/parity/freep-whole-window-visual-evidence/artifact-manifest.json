@@ -48,7 +48,7 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Host/MainWindow.cs",
-                       "sha256":  "593f0ef86928eab0a2ee01f33a8a334b2d68c51d153c8a5bf7c3193377004bb4"
+                       "sha256":  "c8eabeba47ee5cbaefa3dfe4ce220642a0230d44057adb1b9c20b01f237b61b7"
                    },
                    {
                        "path":  "freep/TestSupport/VisualEvidence.Wpf/MainWindow.VisualCaptureAdapter.cs",
