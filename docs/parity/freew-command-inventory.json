@@ -125,15 +125,15 @@
     }
   ],
   "summary": {
-    "totalCommands": 932,
-    "both": 694,
+    "totalCommands": 946,
+    "both": 708,
     "wpfOnly": 2,
     "avaloniaOnly": 236,
     "missingWpf": 236,
     "missingAvalonia": 2,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 694,
+    "sharedProfile": 708,
     "profileShapeOnly": 233,
     "commandIdAliases": 0,
     "platformOnly": 5,
@@ -19206,6 +19206,594 @@
       }
     },
     {
+      "commandId": "freew.layout-bring-forward",
+      "label": "Bring Forward",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Bring Forward",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Bring Forward",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.layout-flip-horizontal",
+      "label": "Flip Horizontal",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Flip Horizontal",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Flip Horizontal",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.layout-flip-vertical",
+      "label": "Flip Vertical",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Flip Vertical",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Flip Vertical",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.layout-rotate",
+      "label": "Rotate",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Rotate",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Rotate",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.layout-rotate-left90",
+      "label": "Rotate Left 90°",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Rotate Left 90°",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Rotate Left 90°",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.layout-rotate-right90",
+      "label": "Rotate Right 90°",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Rotate Right 90°",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Rotate Right 90°",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.layout-send-backward",
+      "label": "Send Backward",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Send Backward",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Send Backward",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.layout-wrap",
+      "label": "Wrap Text",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Wrap Text",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Wrap Text",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.layout-wrap-behind",
+      "label": "Behind Text",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Behind Text",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Behind Text",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.layout-wrap-front",
+      "label": "In Front of Text",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "In Front of Text",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "In Front of Text",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.layout-wrap-inline",
+      "label": "In Line with Text",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "In Line with Text",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "In Line with Text",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.layout-wrap-square",
+      "label": "Square",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Square",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Square",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.layout-wrap-tight",
+      "label": "Tight",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Tight",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Tight",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.layout-wrap-top-bottom",
+      "label": "Top and Bottom",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Top and Bottom",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Top and Bottom",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
       "commandId": "freew.legal-notices",
       "label": "Legal Notices",
       "wpfPresent": true,
@@ -22525,6 +23113,16 @@
         },
         {
           "profile": "WPF",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Group",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        },
+        {
+          "profile": "WPF",
           "tabId": "picture-format",
           "tab": "Picture Format",
           "groupId": "picture-arrange",
@@ -22540,6 +23138,16 @@
           "tabId": "drawing-format",
           "tab": "Drawing Format",
           "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Group",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        },
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
           "group": "Arrange",
           "label": "Group",
           "controlType": "RibbonButton",
@@ -22587,6 +23195,16 @@
         },
         {
           "profile": "WPF",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Ungroup",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        },
+        {
+          "profile": "WPF",
           "tabId": "picture-format",
           "tab": "Picture Format",
           "groupId": "picture-arrange",
@@ -22602,6 +23220,16 @@
           "tabId": "drawing-format",
           "tab": "Drawing Format",
           "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Ungroup",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        },
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
           "group": "Arrange",
           "label": "Ungroup",
           "controlType": "RibbonButton",
@@ -37830,7 +38458,7 @@
       "behaviorEvidence": {
         "evidenceId": "freew.table-insertion.shared-workflow",
         "slice": "Insert table command behavior",
-        "summary": "The shared insertion workflow maps the 2 Ã— 2 menu choice and primary Table face to one command for both renderers.",
+        "summary": "The shared insertion workflow maps the 2 × 2 menu choice and primary Table face to one command for both renderers.",
         "wpfEvidence": {
           "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
           "test": "TableInsertionRibbonWorkflowTests.EditorFamilyBuilderReceivesTheSameCanonicalAndAdapterCommands"
@@ -37874,7 +38502,7 @@
       "behaviorEvidence": {
         "evidenceId": "freew.table-insertion.shared-workflow",
         "slice": "Insert table command behavior",
-        "summary": "The shared insertion workflow maps the 3 Ã— 3 menu choice and legacy Table route to one command for both renderers.",
+        "summary": "The shared insertion workflow maps the 3 × 3 menu choice and legacy Table route to one command for both renderers.",
         "wpfEvidence": {
           "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
           "test": "TableInsertionRibbonWorkflowTests.EditorFamilyBuilderReceivesTheSameCanonicalAndAdapterCommands"
@@ -37918,7 +38546,7 @@
       "behaviorEvidence": {
         "evidenceId": "freew.table-insertion.shared-workflow",
         "slice": "Insert table command behavior",
-        "summary": "The shared insertion workflow inserts a 4 Ã— 4 table through the same renderer port in both hosts.",
+        "summary": "The shared insertion workflow inserts a 4 × 4 table through the same renderer port in both hosts.",
         "wpfEvidence": {
           "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
           "test": "TableInsertionRibbonWorkflowTests.EditorFamilyBuilderReceivesTheSameCanonicalAndAdapterCommands"
@@ -37962,7 +38590,7 @@
       "behaviorEvidence": {
         "evidenceId": "freew.table-insertion.shared-workflow",
         "slice": "Insert table command behavior",
-        "summary": "The shared insertion workflow inserts a 5 Ã— 2 table through the same renderer port in both hosts.",
+        "summary": "The shared insertion workflow inserts a 5 × 2 table through the same renderer port in both hosts.",
         "wpfEvidence": {
           "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
           "test": "TableInsertionRibbonWorkflowTests.EditorFamilyBuilderReceivesTheSameCanonicalAndAdapterCommands"
