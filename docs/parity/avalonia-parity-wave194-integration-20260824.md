@@ -2,7 +2,7 @@
 
 Date: 2026-08-24
 Tested source commit: `f2aab993242fa6a6cc49d67c4b7770c23ce4c067`
-Cumulative app slices: **582**, pending final integration gates
+Cumulative app slices: **582**, accepted after final integration gates
 
 This is an acceptance-only dashboard and evidence refresh. It does not change
 the tested source commit, product code, or app behavior. The dashboard keeps
@@ -94,14 +94,9 @@ the later decoy, rejects the internal assignment, verifies Wave191-193 retained
 hashes **11/11, 11/11, 18/18**, verifies Wave194 **20 evidence plus 12
 provenance/validation**, and found FreeP and FreeW clean.
 
-## Pending integration gates
+## Integration gates
 
-The following exact results must be recorded before Wave194 can be marked
-accepted:
-
-- Repository preflight at the tested source commit.
-
-Completed integration gates:
+All final integration gates passed at the tested source commit.
 
 - Final independent review: passed with no findings; all source-guard and
   evidence checks above were verified.
@@ -117,8 +112,16 @@ Completed integration gates:
   skipped; Presentation 5,465/1; Core.IO 5,841/56; Core Model 6,317/41;
   Formula 5,199/7; Calc 1,982/24; Integration 661/1.
 
-Repository preflight remains the only pending gate. No visual parity claim is
-made by this provisional acceptance unit.
+- Repository preflight: passed with exit 0 using
+  `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1`.
+  It validated **292 JSON**, **306 XML-backed**, and **13,862 text** files for
+  conflict markers; **117 PowerShell scripts**, **10 workflows**, **160 project
+  files**, **124 solution entries**, **32 default-test entries**, **51 FreeW
+  entries**, and **42 FreeP entries**. Linux packaging passed, and generated
+  docs/dashboard plus FreeW/FreeP inventories/evidence were current.
+
+Wave194 is now accepted at 582 cumulative app slices. No visual parity claim is
+made by this functional/evidence acceptance record.
 
 ## Acceptance boundary
 
