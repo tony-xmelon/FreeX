@@ -1,737 +1,733 @@
 {
-    "schemaVersion":  1,
-    "generatedBy":  "tools/Generate-FreePDialogPaneParityInventory.ps1",
-    "inventoryMethod":  "Explicit semantic trigger contracts validated against WPF and Avalonia command, keyboard, context-action, and startup source tokens; no class-name pairing or filename similarity matching.",
-    "summary":  {
-                    "routeCount":  21,
-                    "behaviorAligned":  20,
-                    "behaviorAlignedHostShapeDiffers":  1,
-                    "productGaps":  0,
-                    "routesWithExistingEvidence":  19,
-                    "routesWithCommittedPairedScreenshots":  19,
-                    "residualVisualOnlyWorkItems":  1
-                },
-    "routes":  [
-                   {
-                       "id":  "startup.slide-pane",
-                       "area":  "Slide thumbnails and sections",
-                       "triggers":  [
-                                        "Main window construction",
-                                        "slide selection",
-                                        "slide/section context menu"
-                                    ],
-                       "wpfSurface":  "Persistent left SlidePane",
-                       "avaloniaSurface":  "Persistent left ListBox pane",
-                       "modality":  "persistent",
-                       "lifecycle":  "Created with the editor; selection, drag cancellation, context-menu Escape, and editor rebuild are host managed.",
-                       "validation":  "Shared drag, section, and context-action planners reject invalid targets.",
-                       "resultApplication":  "EditingSession slide/section commands; refreshes pane and canvas.",
-                       "sharedPolicy":  "SlidePanePlanner; SlideSectionPlanner; FreePContextMenuCatalog",
-                       "wpfSources":  [
-                                          "freep/FreeP.App.Host/SlidePane.cs",
-                                          "freep/FreeP.App.Host/MainWindow.cs"
-                                      ],
-                       "avaloniaSources":  [
-                                               "freep/FreeP.App.Avalonia/MainWindow.cs"
-                                           ],
-                       "tests":  [
-                                     "freep/FreeP.App.Host.Tests/SlidePaneTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/KeyboardContextParityTests.cs"
-                                 ],
-                       "existingVisualEvidence":  [
-                                                      "docs/parity/freep-slide-pane-thumbnail-render-evidence-2026-07-04.md",
-                                                      "docs/parity/freep-slide-pane-thumbnail-chrome-evidence-2026-07-04.md",
-                                                      "tools/FreeP.RenderCompare/SlidePaneThumbnailEvidence.cs",
-                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
-                                                  ],
-                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
-                       "status":  "behavior-aligned",
-                       "notes":  ""
-                   },
-                   {
-                       "id":  "startup.notes-pane",
-                       "area":  "Slide notes",
-                       "triggers":  [
-                                        "Main window construction",
-                                        "current slide change"
-                                    ],
-                       "wpfSurface":  "Persistent notes editor",
-                       "avaloniaSurface":  "Persistent notes TextBox",
-                       "modality":  "persistent",
-                       "lifecycle":  "Always available; content refresh is suppressed during host-driven updates.",
-                       "validation":  "No submission validation; empty notes are valid.",
-                       "resultApplication":  "EditingSession.SetNotes through host text-change routing.",
-                       "sharedPolicy":  "Presentation slide notes model and EditingSession",
-                       "wpfSources":  [
-                                          "freep/FreeP.App.Host/MainWindow.cs"
-                                      ],
-                       "avaloniaSources":  [
-                                               "freep/FreeP.App.Avalonia/MainWindow.cs"
-                                           ],
-                       "tests":  [
-                                     "freep/FreeP.App.Host.Tests/NotesSlideTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
-                                 ],
-                       "existingVisualEvidence":  [
-                                                      "docs/parity/freep-comments-review-accessibility-evidence-inventory-2026-07-05.md",
-                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
-                                                  ],
-                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
-                       "status":  "behavior-aligned",
-                       "notes":  ""
-                   },
-                   {
-                       "id":  "insert.table-picker",
-                       "area":  "Insert table dimensions",
-                       "triggers":  [
-                                        "freep.insert-table-3x3 ribbon command"
-                                    ],
-                       "wpfSurface":  "Inline dimension choice overlay",
-                       "avaloniaSurface":  "Inline dimension choice overlay",
-                       "modality":  "nonmodal choice overlay",
-                       "lifecycle":  "Choice applies and closes; clicking another picker route replaces the overlay.",
-                       "validation":  "TableInsertionPickerPlanner bounds the offered row/column choices.",
-                       "resultApplication":  "TableInsertionPickerPlanner.TryApplyChoice -\u003e EditingSession.",
-                       "sharedPolicy":  "TableInsertionPickerPlanner",
-                       "wpfSources":  [
-                                          "freep/FreeP.App.Host/MainWindow.cs"
-                                      ],
-                       "avaloniaSources":  [
-                                               "freep/FreeP.App.Avalonia/MainWindow.cs"
-                                           ],
-                       "tests":  [
-                                     "freep/FreeP.App.Host.Tests/RibbonEditorCompleteness5BTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs",
-                                     "freep/FreeP.App.Presentation.Tests/TableInsertionPickerPlannerTests.cs"
-                                 ],
-                       "existingVisualEvidence":  [
-                                                      "docs/parity/freep-table-picker-workflow-2026-07-02.md",
-                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
-                                                  ],
-                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
-                       "status":  "behavior-aligned",
-                       "notes":  ""
-                   },
-                   {
-                       "id":  "design.layout-picker",
-                       "area":  "Slide layout choice",
-                       "triggers":  [
-                                        "freep.layout ribbon command",
-                                        "Design layout host intent"
-                                    ],
-                       "wpfSurface":  "Inline grouped layout picker",
-                       "avaloniaSurface":  "Inline grouped layout picker",
-                       "modality":  "nonmodal choice overlay",
-                       "lifecycle":  "Choice applies and closes; no implicit/default layout is applied before selection.",
-                       "validation":  "Only enabled PresentationLayoutChoice entries apply.",
-                       "resultApplication":  "PresentationDesignCommandPlanner.TryApplyLayoutChoice -\u003e EditingSession.",
-                       "sharedPolicy":  "PresentationDesignCommandPlanner",
-                       "wpfSources":  [
-                                          "freep/FreeP.App.Host/MainWindow.cs"
-                                      ],
-                       "avaloniaSources":  [
-                                               "freep/FreeP.App.Avalonia/MainWindow.cs"
-                                           ],
-                       "tests":  [
-                                     "freep/FreeP.App.Host.Tests/RibbonEditorCompleteness5BTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs",
-                                     "freep/FreeP.App.Presentation.Tests/PresentationDesignCommandPlannerTests.cs"
-                                 ],
-                       "existingVisualEvidence":  [
-                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
-                                                  ],
-                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
-                       "status":  "behavior-aligned",
-                       "notes":  ""
-                   },
-                   {
-                       "id":  "design.slide-size",
-                       "area":  "Custom slide size",
-                       "triggers":  [
-                                        "freep.slide-size-custom ribbon command"
-                                    ],
-                       "wpfSurface":  "Slide Size Window",
-                       "avaloniaSurface":  "Slide Size Window",
-                       "modality":  "modal owner-centered",
-                       "lifecycle":  "OK is default; Cancel, Escape, and title-bar close do not apply; invalid OK remains open; valid OK closes.",
-                       "validation":  "SlideSizeDialogPlanner validates numeric, positive, and minimum dimensions and identifies the focus field.",
-                       "resultApplication":  "SlideSizeDialogPlanner.TryApplyResult -\u003e undoable EditingSession.SetSlideSize.",
-                       "sharedPolicy":  "SlideSizeDialogPlanner; shared WPF/Avalonia dialog chrome",
-                       "wpfSources":  [
-                                          "freep/FreeP.App.Host/SlideSizeDialog.cs",
-                                          "freep/FreeP.App.Host/MainWindow.cs"
-                                      ],
-                       "avaloniaSources":  [
-                                               "freep/FreeP.App.Avalonia/SlideSizeDialog.cs",
-                                               "freep/FreeP.App.Avalonia/MainWindow.cs"
-                                           ],
-                       "tests":  [
-                                     "freep/FreeP.App.Host.Tests/SlideSizeDialogTests.cs",
-                                     "freep/FreeP.App.Host.Tests/DialogLifecycleParityTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/DialogLifecycleParityTests.cs",
-                                     "freep/FreeP.App.Presentation.Tests/SlideSizeDialogPlannerTests.cs"
-                                 ],
-                       "existingVisualEvidence":  [
-                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
-                                                  ],
-                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
-                       "status":  "behavior-aligned",
-                       "notes":  ""
-                   },
-                   {
-                       "id":  "insert.header-footer",
-                       "area":  "Header, footer, date/time, and slide number",
-                       "triggers":  [
-                                        "freep.header-footer",
-                                        "freep.date-time",
-                                        "freep.slide-number"
-                                    ],
-                       "wpfSurface":  "Header and Footer Window",
-                       "avaloniaSurface":  "Header and Footer Window",
-                       "modality":  "modal owner-centered",
-                       "lifecycle":  "Apply is default; Apply to All is an explicit alternate result; Cancel, Escape, and close do not mutate.",
-                       "validation":  "Shared planner validates target slides and normalizes date-field choices.",
-                       "resultApplication":  "HeaderFooterCommandPlanner.TryApply -\u003e undoable ApplyHeaderFooterCommand.",
-                       "sharedPolicy":  "HeaderFooterCommandPlanner; shared WPF/Avalonia dialog chrome",
-                       "wpfSources":  [
-                                          "freep/FreeP.App.Host/HeaderFooterDialog.cs",
-                                          "freep/FreeP.App.Host/MainWindow.cs"
-                                      ],
-                       "avaloniaSources":  [
-                                               "freep/FreeP.App.Avalonia/HeaderFooterDialog.cs",
-                                               "freep/FreeP.App.Avalonia/MainWindow.cs"
-                                           ],
-                       "tests":  [
-                                     "freep/FreeP.App.Host.Tests/HeaderFooterDialogTests.cs",
-                                     "freep/FreeP.App.Host.Tests/DialogLifecycleParityTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/HeaderFooterCommandRoutingTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/DialogLifecycleParityTests.cs"
-                                 ],
-                       "existingVisualEvidence":  [
-                                                      "docs/parity/freep-header-footer-options-2026-07-06.md",
-                                                      "docs/parity/freep-header-footer-placeholder-creation-2026-07-05.md",
-                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
-                                                  ],
-                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
-                       "status":  "behavior-aligned",
-                       "notes":  ""
-                   },
-                   {
-                       "id":  "home.find-replace",
-                       "area":  "Find and Replace",
-                       "triggers":  [
-                                        "freep.find",
-                                        "freep.replace",
-                                        "Ctrl+F",
-                                        "Ctrl+H"
-                                    ],
-                       "wpfSurface":  "Reusable Find/Replace Window",
-                       "avaloniaSurface":  "Reusable Find/Replace Window",
-                       "modality":  "modeless owned window",
-                       "lifecycle":  "One instance is reused and switched between Find/Replace modes; Close, Escape, owner close, and presentation replacement close it.",
-                       "validation":  "Shared policy disables empty-query search/replace and reports no-match/no-replacement status.",
-                       "resultApplication":  "EditingSession.FindAll/NavigateTo/ReplaceOne/ReplaceAll; host refresh callback updates canvas and slide pane.",
-                       "sharedPolicy":  "PresentationWorkareaSession; FindReplaceDialogPlanner; FindReplaceDialogPolicy",
-                       "wpfSources":  [
-                                          "freep/FreeP.App.Host/FindReplaceDialog.cs",
-                                          "freep/FreeP.App.Host/MainWindow.cs"
-                                      ],
-                       "avaloniaSources":  [
-                                               "freep/FreeP.App.Avalonia/FindReplaceDialog.cs",
-                                               "freep/FreeP.App.Avalonia/MainWindow.cs"
-                                           ],
-                       "tests":  [
-                                     "freep/FreeP.App.Host.Tests/FindReplaceDialogPolicySourceTests.cs",
-                                     "freep/FreeP.App.Host.Tests/DialogLifecycleParityTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/DialogLifecycleParityTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/KeyboardContextParityTests.cs"
-                                 ],
-                       "existingVisualEvidence":  [
-                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
-                                                  ],
-                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
-                       "status":  "behavior-aligned",
-                       "notes":  ""
-                   },
-                   {
-                       "id":  "insert.hyperlink",
-                       "area":  "Insert or edit hyperlink",
-                       "triggers":  [
-                                        "freep.insert-link"
-                                    ],
-                       "wpfSurface":  "Hyperlink Window",
-                       "avaloniaSurface":  "Hyperlink Window",
-                       "modality":  "modal owner-centered",
-                       "lifecycle":  "OK is default; Cancel/Escape/close return no result; invalid OK remains open.",
-                       "validation":  "HyperlinkDialogPlanner validates URL versus target-slide choice and focus field.",
-                       "resultApplication":  "HyperlinkDialogPlanner.BuildApplyPlan -\u003e EditingSession.SetShapeHyperlink only when ShouldApply.",
-                       "sharedPolicy":  "HyperlinkDialogPlanner",
-                       "wpfSources":  [
-                                          "freep/FreeP.App.Host/HyperlinkDialog.cs",
-                                          "freep/FreeP.App.Host/MainWindow.cs"
-                                      ],
-                       "avaloniaSources":  [
-                                               "freep/FreeP.App.Avalonia/HyperlinkDialog.cs",
-                                               "freep/FreeP.App.Avalonia/MainWindow.cs"
-                                           ],
-                       "tests":  [
-                                     "freep/FreeP.App.Host.Tests/HyperlinkDialogTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/HyperlinkDialogTests.cs",
-                                     "freep/FreeP.App.Presentation.Tests/HyperlinkDialogPlannerTests.cs"
-                                 ],
-                       "existingVisualEvidence":  [
-                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
-                                                  ],
-                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
-                       "status":  "behavior-aligned",
-                       "notes":  ""
-                   },
-                   {
-                       "id":  "chart.edit-data",
-                       "area":  "Chart data editing",
-                       "triggers":  [
-                                        "freep.chart.edit-data"
-                                    ],
-                       "wpfSurface":  "Chart Data Window",
-                       "avaloniaSurface":  "Chart Data Window",
-                       "modality":  "modal owner-centered",
-                       "lifecycle":  "OK commits and closes; Cancel/Escape/close discard the working values.",
-                       "validation":  "ChartDataDialogPlanner parses rectangular chart data and returns cell-level errors.",
-                       "resultApplication":  "EditingSession.ReplaceChartData from the validated commit plan.",
-                       "sharedPolicy":  "ChartDataDialogPlanner",
-                       "wpfSources":  [
-                                          "freep/FreeP.App.Host/ChartDataDialog.cs",
-                                          "freep/FreeP.App.Host/MainWindow.cs"
-                                      ],
-                       "avaloniaSources":  [
-                                               "freep/FreeP.App.Avalonia/ChartDataDialog.cs",
-                                               "freep/FreeP.App.Avalonia/MainWindow.cs"
-                                           ],
-                       "tests":  [
-                                     "freep/FreeP.App.Host.Tests/ChartDataDialogTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/ChartDataDialogTests.cs",
-                                     "freep/FreeP.App.Presentation.Tests/ChartDataDialogPlannerTests.cs"
-                                 ],
-                       "existingVisualEvidence":  [
-                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
-                                                  ],
-                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
-                       "status":  "behavior-aligned",
-                       "notes":  ""
-                   },
-                   {
-                       "id":  "slideshow.custom-shows",
-                       "area":  "Custom show authoring",
-                       "triggers":  [
-                                        "freep.slideshow.custom-shows"
-                                    ],
-                       "wpfSurface":  "Custom Shows Window",
-                       "avaloniaSurface":  "Custom Shows Window",
-                       "modality":  "modal owner-centered",
-                       "lifecycle":  "Create/rename/update/delete remain in the dialog; Start Show closes; Close/Escape exits without an implicit mutation.",
-                       "validation":  "SlideShowCustomShowPlanner validates names, selection, and reorder targets.",
-                       "resultApplication":  "Shared custom-show mutation/session planners update the presentation.",
-                       "sharedPolicy":  "SlideShowCustomShowPlanner; SlideShowCustomShowSessionPlanner",
-                       "wpfSources":  [
-                                          "freep/FreeP.App.Host/CustomShowDialog.cs",
-                                          "freep/FreeP.App.Host/MainWindow.cs"
-                                      ],
-                       "avaloniaSources":  [
-                                               "freep/FreeP.App.Avalonia/CustomShowDialog.cs",
-                                               "freep/FreeP.App.Avalonia/MainWindow.cs"
-                                           ],
-                       "tests":  [
-                                     "freep/FreeP.App.Host.Tests/SlideShowTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/SlideShowWindowHeadlessTests.cs",
-                                     "freep/FreeP.App.Presentation.Tests/SlideShowCustomShowPlannerTests.cs"
-                                 ],
-                       "existingVisualEvidence":  [
-                                                      "docs/parity/freep-custom-show-drag-reorder-2026-07-13.md",
-                                                      "docs/parity/freep-custom-show-launch-plan-2026-07-04.md",
-                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
-                                                  ],
-                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
-                       "status":  "behavior-aligned",
-                       "notes":  ""
-                   },
-                   {
-                       "id":  "review.comments-pane",
-                       "area":  "Comments",
-                       "triggers":  [
-                                        "freep.review.comments"
-                                    ],
-                       "wpfSurface":  "Docked comments pane",
-                       "avaloniaSurface":  "Docked comments pane",
-                       "modality":  "modeless pane",
-                       "lifecycle":  "Command shows/refreshes; pane actions mutate or navigate; pane close is explicit.",
-                       "validation":  "PresentationReviewWorkflowPlanner action enablement and mention validation.",
-                       "resultApplication":  "PresentationReviewWorkflowSession applies reply/delete/resolve/reopen/navigation and refreshes both hosts.",
-                       "sharedPolicy":  "PresentationReviewWorkflowSession; PresentationReviewWorkflowPlanner",
-                       "wpfSources":  [
-                                          "freep/FreeP.App.Host/MainWindow.cs"
-                                      ],
-                       "avaloniaSources":  [
-                                               "freep/FreeP.App.Avalonia/MainWindow.cs"
-                                           ],
-                       "tests":  [
-                                     "freep/FreeP.App.Host.Tests/SectionsCommentsTests.cs",
-                                     "freep/FreeP.App.Host.Tests/DialogLifecycleParityTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/DialogLifecycleParityTests.cs",
-                                     "freep/FreeP.App.Presentation.Tests/PresentationReviewWorkflowSessionTests.cs"
-                                 ],
-                       "existingVisualEvidence":  [
-                                                      "docs/parity/freep-comments-review-accessibility-evidence-inventory-2026-07-05.md",
-                                                      "docs/parity/freep-comments-review-navigation-2026-07-03.md",
-                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
-                                                  ],
-                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
-                       "status":  "behavior-aligned",
-                       "notes":  ""
-                   },
-                   {
-                       "id":  "review.accessibility-pane",
-                       "area":  "Accessibility checker",
-                       "triggers":  [
-                                        "freep.review.accessibility"
-                                    ],
-                       "wpfSurface":  "Docked accessibility checker pane",
-                       "avaloniaSurface":  "Docked accessibility checker pane",
-                       "modality":  "modeless pane",
-                       "lifecycle":  "Command rebuilds and shows; row selection/navigation and row actions keep the pane live; close hides it.",
-                       "validation":  "Shared row action plans expose enabled state and required selection.",
-                       "resultApplication":  "Accessibility row actions route to title, alt-text, table, hyperlink, and media workflows.",
-                       "sharedPolicy":  "PresentationReviewWorkflowPlanner accessibility plans",
-                       "wpfSources":  [
-                                          "freep/FreeP.App.Host/MainWindow.cs"
-                                      ],
-                       "avaloniaSources":  [
-                                               "freep/FreeP.App.Avalonia/MainWindow.cs"
-                                           ],
-                       "tests":  [
-                                     "freep/FreeP.App.Host.Tests/SectionsCommentsTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
-                                 ],
-                       "existingVisualEvidence":  [
-                                                      "docs/parity/freep-accessibility-checker-navigation-2026-07-14.md",
-                                                      "docs/parity/freep-accessibility-table-structure-review-2026-07-13.md",
-                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
-                                                  ],
-                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
-                       "status":  "behavior-aligned",
-                       "notes":  ""
-                   },
-                   {
-                       "id":  "review.alt-text-pane",
-                       "area":  "Alternative text",
-                       "triggers":  [
-                                        "freep.review.alt-text",
-                                        "selected-object context action",
-                                        "accessibility checker row action"
-                                    ],
-                       "wpfSurface":  "Docked Alt Text pane",
-                       "avaloniaSurface":  "Docked Alt Text pane",
-                       "modality":  "modeless pane",
-                       "lifecycle":  "Apply mutates and remains available; Close hides; decorative state disables inappropriate text entry.",
-                       "validation":  "Shared alt-text request/mutation plans validate selection and decorative state.",
-                       "resultApplication":  "PresentationReviewWorkflowSession.ApplyAltText.",
-                       "sharedPolicy":  "PresentationReviewWorkflowPlanner",
-                       "wpfSources":  [
-                                          "freep/FreeP.App.Host/MainWindow.cs"
-                                      ],
-                       "avaloniaSources":  [
-                                               "freep/FreeP.App.Avalonia/MainWindow.cs"
-                                           ],
-                       "tests":  [
-                                     "freep/FreeP.App.Host.Tests/SectionsCommentsTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
-                                 ],
-                       "existingVisualEvidence":  [
-                                                      "docs/parity/freep-comments-review-accessibility-evidence-inventory-2026-07-05.md",
-                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
-                                                  ],
-                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
-                       "status":  "behavior-aligned",
-                       "notes":  ""
-                   },
-                   {
-                       "id":  "review.reading-order-pane",
-                       "area":  "Reading order",
-                       "triggers":  [
-                                        "freep.review.reading-order"
-                                    ],
-                       "wpfSurface":  "Docked reading order pane",
-                       "avaloniaSurface":  "Docked reading order pane",
-                       "modality":  "modeless pane",
-                       "lifecycle":  "Selection and move actions keep pane state synchronized; close hides without mutation.",
-                       "validation":  "Shared action plans disable first/last moves and require a selected shape.",
-                       "resultApplication":  "PresentationReviewWorkflowSession move/select plans -\u003e EditingSession.",
-                       "sharedPolicy":  "PresentationReviewWorkflowPlanner",
-                       "wpfSources":  [
-                                          "freep/FreeP.App.Host/MainWindow.cs"
-                                      ],
-                       "avaloniaSources":  [
-                                               "freep/FreeP.App.Avalonia/MainWindow.cs"
-                                           ],
-                       "tests":  [
-                                     "freep/FreeP.App.Host.Tests/SectionsCommentsTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
-                                 ],
-                       "existingVisualEvidence":  [
-                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
-                                                  ],
-                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
-                       "status":  "behavior-aligned",
-                       "notes":  ""
-                   },
-                   {
-                       "id":  "review.proofing-pane",
-                       "area":  "Proofing",
-                       "triggers":  [
-                                        "freep.review.proofing"
-                                    ],
-                       "wpfSurface":  "Docked proofing pane",
-                       "avaloniaSurface":  "Docked proofing pane",
-                       "modality":  "modeless pane",
-                       "lifecycle":  "Issue selection and correction/ignore actions refresh the pane; close hides.",
-                       "validation":  "Shared execution and action plans require an active issue and valid suggestion.",
-                       "resultApplication":  "PresentationReviewWorkflowSession correction/ignore/dictionary actions.",
-                       "sharedPolicy":  "PresentationReviewWorkflowPlanner; PresentationReviewWorkflowSession",
-                       "wpfSources":  [
-                                          "freep/FreeP.App.Host/MainWindow.cs"
-                                      ],
-                       "avaloniaSources":  [
-                                               "freep/FreeP.App.Avalonia/MainWindow.cs"
-                                           ],
-                       "tests":  [
-                                     "freep/FreeP.App.Host.Tests/SectionsCommentsTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
-                                 ],
-                       "existingVisualEvidence":  [
-                                                      "docs/parity/freep-proofing-ignore-actions-2026-07-13.md",
-                                                      "docs/parity/freep-proofing-add-to-dictionary-2026-07-13.md",
-                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
-                                                  ],
-                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
-                       "status":  "behavior-aligned",
-                       "notes":  ""
-                   },
-                   {
-                       "id":  "accessibility.media-caption-pane",
-                       "area":  "Media captions",
-                       "triggers":  [
-                                        "Accessibility checker media-caption row action"
-                                    ],
-                       "wpfSurface":  "Docked media captions pane",
-                       "avaloniaSurface":  "Docked media captions pane",
-                       "modality":  "modeless pane",
-                       "lifecycle":  "Create/replace/delete are explicit; close hides; selection changes rebuild the working plan.",
-                       "validation":  "PresentationMediaTranscriptPlanner validates selected media and caption payload fields.",
-                       "resultApplication":  "Shared caption track mutation plans update presentation media relationships.",
-                       "sharedPolicy":  "PresentationMediaTranscriptPlanner",
-                       "wpfSources":  [
-                                          "freep/FreeP.App.Host/MainWindow.cs"
-                                      ],
-                       "avaloniaSources":  [
-                                               "freep/FreeP.App.Avalonia/MainWindow.cs"
-                                           ],
-                       "tests":  [
-                                     "freep/FreeP.App.Host.Tests/MediaFieldsTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs",
-                                     "freep/FreeP.App.Presentation.Tests/PresentationMediaTranscriptPlannerTests.cs"
-                                 ],
-                       "existingVisualEvidence":  [
-                                                      "docs/parity/freep-visible-media-caption-authoring-2026-07-13.md",
-                                                      "docs/parity/freep-media-caption-ttml-sidecar-retention-2026-07-14.md",
-                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
-                                                  ],
-                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
-                       "status":  "behavior-aligned",
-                       "notes":  ""
-                   },
-                   {
-                       "id":  "context.smartart-text-pane",
-                       "area":  "SmartArt text",
-                       "triggers":  [
-                                        "Selected SmartArt context action"
-                                    ],
-                       "wpfSurface":  "Docked SmartArt text pane",
-                       "avaloniaSurface":  "Docked SmartArt text pane",
-                       "modality":  "modeless pane",
-                       "lifecycle":  "Apply writes the outline; keyboard routes edit hierarchy; Close hides.",
-                       "validation":  "SmartArtEditingPlanner validates selected model nodes and keyboard routes.",
-                       "resultApplication":  "Shared SmartArt edit/apply/cache regeneration plans update the selected SmartArt.",
-                       "sharedPolicy":  "SmartArtEditingPlanner",
-                       "wpfSources":  [
-                                          "freep/FreeP.App.Host/MainWindow.cs"
-                                      ],
-                       "avaloniaSources":  [
-                                               "freep/FreeP.App.Avalonia/MainWindow.cs"
-                                           ],
-                       "tests":  [
-                                     "freep/FreeP.App.Host.Tests/SmartArtTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs",
-                                     "freep/FreeP.App.Presentation.Tests/SmartArtEditingPlannerTests.cs"
-                                 ],
-                       "existingVisualEvidence":  [
-                                                      "docs/parity/freep-smartart-text-pane-hosts-2026-07-14.md",
-                                                      "docs/parity/freep-smartart-text-pane-keyboard-routing-2026-07-14.md",
-                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
-                                                  ],
-                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
-                       "status":  "behavior-aligned",
-                       "notes":  ""
-                   },
-                   {
-                       "id":  "animations.animation-pane",
-                       "area":  "Animation timeline and options",
-                       "triggers":  [
-                                        "freep.anim.pane"
-                                    ],
-                       "wpfSurface":  "Docked AnimationPane control",
-                       "avaloniaSurface":  "Docked animation pane realization",
-                       "modality":  "modeless toggle pane",
-                       "lifecycle":  "Toggle shows/hides; selection and timing/effect edits refresh; preview remains explicit.",
-                       "validation":  "AnimationPanePlanner action/timing/effect plans validate selected animation and option values.",
-                       "resultApplication":  "Shared animation mutation plans -\u003e EditingSession; preview routes to slideshow host.",
-                       "sharedPolicy":  "AnimationPanePlanner; PresentationAnimationCommandPlanner",
-                       "wpfSources":  [
-                                          "freep/FreeP.App.Host/AnimationPane.cs",
-                                          "freep/FreeP.App.Host/MainWindow.cs"
-                                      ],
-                       "avaloniaSources":  [
-                                               "freep/FreeP.App.Avalonia/MainWindow.cs"
-                                           ],
-                       "tests":  [
-                                     "freep/FreeP.App.Host.Tests/AnimationPaneTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs",
-                                     "freep/FreeP.App.Presentation.Tests/AnimationPanePlannerTests.cs"
-                                 ],
-                       "existingVisualEvidence":  [
-                                                      "docs/parity/freep-animation-pane-workflow-depth-2026-07-06.md",
-                                                      "docs/parity/freep-animation-pane-playback-workflow-evidence-2026-07-14.md",
-                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
-                                                  ],
-                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
-                       "status":  "behavior-aligned",
-                       "notes":  ""
-                   },
-                   {
-                       "id":  "file.print-options",
-                       "area":  "Print options",
-                       "triggers":  [
-                                        "File \u003e Print",
-                                        "freep.file.print",
-                                        "Ctrl+P"
-                                    ],
-                       "wpfSurface":  "Backstage Print pane",
-                       "avaloniaSurface":  "Backstage Print pane plus keyboard/ribbon print-options pane",
-                       "modality":  "modeless app pane",
-                       "lifecycle":  "Backstage close/Escape dismisses; option choices are explicit and no native print handoff occurs without capability.",
-                       "validation":  "PresentationPrintBackstagePlanner exposes availability and disabled reasons.",
-                       "resultApplication":  "Shared print request/option plans build preview/package/native-handoff descriptors.",
-                       "sharedPolicy":  "PresentationPrintBackstagePlanner; PresentationExportPlanner",
-                       "wpfSources":  [
-                                          "freep/FreeP.App.Host/Backstage/BackstageView.cs",
-                                          "freep/FreeP.App.Host/MainWindow.cs"
-                                      ],
-                       "avaloniaSources":  [
-                                               "freep/FreeP.App.Avalonia/Backstage/BackstageView.cs",
-                                               "freep/FreeP.App.Avalonia/MainWindow.cs"
-                                           ],
-                       "tests":  [
-                                     "freep/FreeP.App.Host.Tests/ExportPlannerTests.Dialog.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs",
-                                     "freep/FreeP.App.Presentation.Tests/PresentationPrintBackstagePlannerTests.cs"
-                                 ],
-                       "existingVisualEvidence":  [
-                                                      "docs/parity/freep-print-output-option-choice-ui-2026-07-03.md",
-                                                      "docs/parity/freep-export-backstage-evidence-2026-07-05.md",
-                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
-                                                  ],
-                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
-                       "status":  "behavior-aligned-host-shape-differs",
-                       "notes":  "Avalonia has an additional compact print-options pane for direct command/keyboard routing; shared option and result policy is the same."
-                   },
-                   {
-                       "id":  "file.open-picker",
-                       "area":  "Open presentation",
-                       "triggers":  [
-                                        "File \u003e Open",
-                                        "freep.file.open",
-                                        "Ctrl+O"
-                                    ],
-                       "wpfSurface":  "Native Windows open dialog",
-                       "avaloniaSurface":  "Platform storage-provider open picker",
-                       "modality":  "native modal",
-                       "lifecycle":  "Cancel returns no path and does not replace the presentation; valid selection loads and closes stale modeless Find/Replace.",
-                       "validation":  "PresentationFileDialogPlanner and persistence workflow validate supported extension and load outcome.",
-                       "resultApplication":  "PresentationFilePersistenceWorkflow opens PPTX/FXP and rebuilds EditingSession.",
-                       "sharedPolicy":  "PresentationFileDialogPlanner; PresentationFilePersistenceWorkflow; shared file dialog descriptors",
-                       "wpfSources":  [
-                                          "freep/FreeP.App.Host/FileCommands.cs",
-                                          "freep/FreeP.App.Host/MainWindow.cs"
-                                      ],
-                       "avaloniaSources":  [
-                                               "freep/FreeP.App.Avalonia/MainWindow.cs"
-                                           ],
-                       "tests":  [
-                                     "freep/FreeP.App.Host.Tests/FileLifecycleTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/FileLifecycleWorkflowSourceTests.cs",
-                                     "freep/FreeP.App.Presentation.Tests/PresentationFileDialogPlannerTests.cs"
-                                 ],
-                       "existingVisualEvidence":  [
-
-                                                  ],
-                       "visualEvidenceStatus":  "native platform visual; exact cross-platform pixel parity is not applicable",
-                       "status":  "behavior-aligned",
-                       "notes":  ""
-                   },
-                   {
-                       "id":  "file.save-as-picker",
-                       "area":  "Save presentation as",
-                       "triggers":  [
-                                        "File \u003e Save As",
-                                        "freep.file.save-as",
-                                        "Ctrl+Shift+S"
-                                    ],
-                       "wpfSurface":  "Native Windows save dialog",
-                       "avaloniaSurface":  "Platform storage-provider save picker",
-                       "modality":  "native modal",
-                       "lifecycle":  "Cancel preserves path/dirty state; accepted selection resolves format and writes before updating path/state.",
-                       "validation":  "PresentationFileDialogPlanner resolves extension/format; persistence workflow reports write failures without claiming success.",
-                       "resultApplication":  "PresentationFilePersistenceWorkflow saves PPTX/FXP and updates recent/path/dirty state.",
-                       "sharedPolicy":  "PresentationFileDialogPlanner; PresentationFilePersistenceWorkflow; shared file dialog descriptors",
-                       "wpfSources":  [
-                                          "freep/FreeP.App.Host/FileCommands.cs",
-                                          "freep/FreeP.App.Host/MainWindow.cs"
-                                      ],
-                       "avaloniaSources":  [
-                                               "freep/FreeP.App.Avalonia/MainWindow.cs"
-                                           ],
-                       "tests":  [
-                                     "freep/FreeP.App.Host.Tests/FileLifecycleTests.cs",
-                                     "freep/FreeP.App.Avalonia.Tests/FileLifecycleWorkflowSourceTests.cs",
-                                     "freep/FreeP.App.Presentation.Tests/PresentationFileDialogPlannerTests.cs"
-                                 ],
-                       "existingVisualEvidence":  [
-
-                                                  ],
-                       "visualEvidenceStatus":  "native platform visual; exact cross-platform pixel parity is not applicable",
-                       "status":  "behavior-aligned",
-                       "notes":  ""
-                   }
-               ],
-    "residualVisualOnlyWork":  [
-                                   {
-                                       "id":  "freep-native-picker-human-evidence",
-                                       "routes":  [
-                                                      "file.open-picker",
-                                                      "file.save-as-picker"
-                                                  ],
-                                       "exactWork":  "Record platform-specific human smoke evidence for cancel, extension selection, overwrite/error handling, and focus return; do not use pixel equality across native picker implementations."
-                                   }
-                               ]
+  "schemaVersion": 1,
+  "generatedBy": "tools/Generate-FreePDialogPaneParityInventory.ps1",
+  "inventoryMethod": "Explicit semantic trigger contracts validated against WPF and Avalonia command, keyboard, context-action, and startup source tokens; no class-name pairing or filename similarity matching.",
+  "summary": {
+    "routeCount": 21,
+    "behaviorAligned": 20,
+    "behaviorAlignedHostShapeDiffers": 1,
+    "productGaps": 0,
+    "routesWithExistingEvidence": 19,
+    "routesWithCommittedPairedScreenshots": 19,
+    "residualVisualOnlyWorkItems": 1
+  },
+  "routes": [
+    {
+      "id": "startup.slide-pane",
+      "area": "Slide thumbnails and sections",
+      "triggers": [
+        "Main window construction",
+        "slide selection",
+        "slide/section context menu"
+      ],
+      "wpfSurface": "Persistent left SlidePane",
+      "avaloniaSurface": "Persistent left ListBox pane",
+      "modality": "persistent",
+      "lifecycle": "Created with the editor; selection, drag cancellation, context-menu Escape, and editor rebuild are host managed.",
+      "validation": "Shared drag, section, and context-action planners reject invalid targets.",
+      "resultApplication": "EditingSession slide/section commands; refreshes pane and canvas.",
+      "sharedPolicy": "SlidePanePlanner; SlideSectionPlanner; FreePContextMenuCatalog",
+      "wpfSources": [
+        "freep/FreeP.App.Host/SlidePane.cs",
+        "freep/FreeP.App.Host/MainWindow.cs"
+      ],
+      "avaloniaSources": [
+        "freep/FreeP.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freep/FreeP.App.Host.Tests/SlidePaneTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/KeyboardContextParityTests.cs"
+      ],
+      "existingVisualEvidence": [
+        "docs/parity/freep-slide-pane-thumbnail-render-evidence-2026-07-04.md",
+        "docs/parity/freep-slide-pane-thumbnail-chrome-evidence-2026-07-04.md",
+        "tools/FreeP.RenderCompare/SlidePaneThumbnailEvidence.cs",
+        "docs/parity/freep-dialog-pane-visual-evidence/report.md"
+      ],
+      "visualEvidenceStatus": "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
+      "status": "behavior-aligned",
+      "notes": ""
+    },
+    {
+      "id": "startup.notes-pane",
+      "area": "Slide notes",
+      "triggers": [
+        "Main window construction",
+        "current slide change"
+      ],
+      "wpfSurface": "Persistent notes editor",
+      "avaloniaSurface": "Persistent notes TextBox",
+      "modality": "persistent",
+      "lifecycle": "Always available; content refresh is suppressed during host-driven updates.",
+      "validation": "No submission validation; empty notes are valid.",
+      "resultApplication": "EditingSession.SetNotes through host text-change routing.",
+      "sharedPolicy": "Presentation slide notes model and EditingSession",
+      "wpfSources": [
+        "freep/FreeP.App.Host/MainWindow.cs"
+      ],
+      "avaloniaSources": [
+        "freep/FreeP.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freep/FreeP.App.Host.Tests/NotesSlideTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
+      ],
+      "existingVisualEvidence": [
+        "docs/parity/freep-comments-review-accessibility-evidence-inventory-2026-07-05.md",
+        "docs/parity/freep-dialog-pane-visual-evidence/report.md"
+      ],
+      "visualEvidenceStatus": "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
+      "status": "behavior-aligned",
+      "notes": ""
+    },
+    {
+      "id": "insert.table-picker",
+      "area": "Insert table dimensions",
+      "triggers": [
+        "freep.insert-table-3x3 ribbon command"
+      ],
+      "wpfSurface": "Inline dimension choice overlay",
+      "avaloniaSurface": "Inline dimension choice overlay",
+      "modality": "nonmodal choice overlay",
+      "lifecycle": "Choice applies and closes; clicking another picker route replaces the overlay.",
+      "validation": "TableInsertionPickerPlanner bounds the offered row/column choices.",
+      "resultApplication": "TableInsertionPickerPlanner.TryApplyChoice -> EditingSession.",
+      "sharedPolicy": "TableInsertionPickerPlanner",
+      "wpfSources": [
+        "freep/FreeP.App.Host/MainWindow.cs"
+      ],
+      "avaloniaSources": [
+        "freep/FreeP.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freep/FreeP.App.Host.Tests/RibbonEditorCompleteness5BTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs",
+        "freep/FreeP.App.Presentation.Tests/TableInsertionPickerPlannerTests.cs"
+      ],
+      "existingVisualEvidence": [
+        "docs/parity/freep-table-picker-workflow-2026-07-02.md",
+        "docs/parity/freep-dialog-pane-visual-evidence/report.md"
+      ],
+      "visualEvidenceStatus": "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
+      "status": "behavior-aligned",
+      "notes": ""
+    },
+    {
+      "id": "design.layout-picker",
+      "area": "Slide layout choice",
+      "triggers": [
+        "freep.layout ribbon command",
+        "Design layout host intent"
+      ],
+      "wpfSurface": "Inline grouped layout picker",
+      "avaloniaSurface": "Inline grouped layout picker",
+      "modality": "nonmodal choice overlay",
+      "lifecycle": "Choice applies and closes; no implicit/default layout is applied before selection.",
+      "validation": "Only enabled PresentationLayoutChoice entries apply.",
+      "resultApplication": "PresentationDesignCommandPlanner.TryApplyLayoutChoice -> EditingSession.",
+      "sharedPolicy": "PresentationDesignCommandPlanner",
+      "wpfSources": [
+        "freep/FreeP.App.Host/MainWindow.cs"
+      ],
+      "avaloniaSources": [
+        "freep/FreeP.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freep/FreeP.App.Host.Tests/RibbonEditorCompleteness5BTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs",
+        "freep/FreeP.App.Presentation.Tests/PresentationDesignCommandPlannerTests.cs"
+      ],
+      "existingVisualEvidence": [
+        "docs/parity/freep-dialog-pane-visual-evidence/report.md"
+      ],
+      "visualEvidenceStatus": "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
+      "status": "behavior-aligned",
+      "notes": ""
+    },
+    {
+      "id": "design.slide-size",
+      "area": "Custom slide size",
+      "triggers": [
+        "freep.slide-size-custom ribbon command"
+      ],
+      "wpfSurface": "Slide Size Window",
+      "avaloniaSurface": "Slide Size Window",
+      "modality": "modal owner-centered",
+      "lifecycle": "OK is default; Cancel, Escape, and title-bar close do not apply; invalid OK remains open; valid OK closes.",
+      "validation": "SlideSizeDialogPlanner validates numeric, positive, and minimum dimensions and identifies the focus field.",
+      "resultApplication": "SlideSizeDialogPlanner.TryApplyResult -> undoable EditingSession.SetSlideSize.",
+      "sharedPolicy": "SlideSizeDialogPlanner; shared WPF/Avalonia dialog chrome",
+      "wpfSources": [
+        "freep/FreeP.App.Host/SlideSizeDialog.cs",
+        "freep/FreeP.App.Host/MainWindow.cs"
+      ],
+      "avaloniaSources": [
+        "freep/FreeP.App.Avalonia/SlideSizeDialog.cs",
+        "freep/FreeP.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freep/FreeP.App.Host.Tests/SlideSizeDialogTests.cs",
+        "freep/FreeP.App.Host.Tests/DialogLifecycleParityTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/DialogLifecycleParityTests.cs",
+        "freep/FreeP.App.Presentation.Tests/SlideSizeDialogPlannerTests.cs"
+      ],
+      "existingVisualEvidence": [
+        "docs/parity/freep-dialog-pane-visual-evidence/report.md"
+      ],
+      "visualEvidenceStatus": "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
+      "status": "behavior-aligned",
+      "notes": ""
+    },
+    {
+      "id": "insert.header-footer",
+      "area": "Header, footer, date/time, and slide number",
+      "triggers": [
+        "freep.header-footer",
+        "freep.date-time",
+        "freep.slide-number"
+      ],
+      "wpfSurface": "Header and Footer Window",
+      "avaloniaSurface": "Header and Footer Window",
+      "modality": "modal owner-centered",
+      "lifecycle": "Apply is default; Apply to All is an explicit alternate result; Cancel, Escape, and close do not mutate.",
+      "validation": "Shared planner validates target slides and normalizes date-field choices.",
+      "resultApplication": "HeaderFooterCommandPlanner.TryApply -> undoable ApplyHeaderFooterCommand.",
+      "sharedPolicy": "HeaderFooterCommandPlanner; shared WPF/Avalonia dialog chrome",
+      "wpfSources": [
+        "freep/FreeP.App.Host/HeaderFooterDialog.cs",
+        "freep/FreeP.App.Host/MainWindow.cs"
+      ],
+      "avaloniaSources": [
+        "freep/FreeP.App.Avalonia/HeaderFooterDialog.cs",
+        "freep/FreeP.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freep/FreeP.App.Host.Tests/HeaderFooterDialogTests.cs",
+        "freep/FreeP.App.Host.Tests/DialogLifecycleParityTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/HeaderFooterCommandRoutingTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/DialogLifecycleParityTests.cs"
+      ],
+      "existingVisualEvidence": [
+        "docs/parity/freep-header-footer-options-2026-07-06.md",
+        "docs/parity/freep-header-footer-placeholder-creation-2026-07-05.md",
+        "docs/parity/freep-dialog-pane-visual-evidence/report.md"
+      ],
+      "visualEvidenceStatus": "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
+      "status": "behavior-aligned",
+      "notes": ""
+    },
+    {
+      "id": "home.find-replace",
+      "area": "Find and Replace",
+      "triggers": [
+        "freep.find",
+        "freep.replace",
+        "Ctrl+F",
+        "Ctrl+H"
+      ],
+      "wpfSurface": "Reusable Find/Replace Window",
+      "avaloniaSurface": "Reusable Find/Replace Window",
+      "modality": "modeless owned window",
+      "lifecycle": "One instance is reused and switched between Find/Replace modes; Close, Escape, owner close, and presentation replacement close it.",
+      "validation": "Shared policy disables empty-query search/replace and reports no-match/no-replacement status.",
+      "resultApplication": "EditingSession.FindAll/NavigateTo/ReplaceOne/ReplaceAll; host refresh callback updates canvas and slide pane.",
+      "sharedPolicy": "PresentationWorkareaSession; FindReplaceDialogPlanner; FindReplaceDialogPolicy",
+      "wpfSources": [
+        "freep/FreeP.App.Host/FindReplaceDialog.cs",
+        "freep/FreeP.App.Host/MainWindow.cs"
+      ],
+      "avaloniaSources": [
+        "freep/FreeP.App.Avalonia/FindReplaceDialog.cs",
+        "freep/FreeP.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freep/FreeP.App.Host.Tests/FindReplaceDialogPolicySourceTests.cs",
+        "freep/FreeP.App.Host.Tests/DialogLifecycleParityTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/DialogLifecycleParityTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/KeyboardContextParityTests.cs"
+      ],
+      "existingVisualEvidence": [
+        "docs/parity/freep-dialog-pane-visual-evidence/report.md"
+      ],
+      "visualEvidenceStatus": "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
+      "status": "behavior-aligned",
+      "notes": ""
+    },
+    {
+      "id": "insert.hyperlink",
+      "area": "Insert or edit hyperlink",
+      "triggers": [
+        "freep.insert-link"
+      ],
+      "wpfSurface": "Hyperlink Window",
+      "avaloniaSurface": "Hyperlink Window",
+      "modality": "modal owner-centered",
+      "lifecycle": "OK is default; Cancel/Escape/close return no result; invalid OK remains open.",
+      "validation": "HyperlinkDialogPlanner validates URL versus target-slide choice and focus field.",
+      "resultApplication": "HyperlinkDialogPlanner.BuildApplyPlan -> EditingSession.SetShapeHyperlink only when ShouldApply.",
+      "sharedPolicy": "HyperlinkDialogPlanner",
+      "wpfSources": [
+        "freep/FreeP.App.Host/HyperlinkDialog.cs",
+        "freep/FreeP.App.Host/MainWindow.cs"
+      ],
+      "avaloniaSources": [
+        "freep/FreeP.App.Avalonia/HyperlinkDialog.cs",
+        "freep/FreeP.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freep/FreeP.App.Host.Tests/HyperlinkDialogTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/HyperlinkDialogTests.cs",
+        "freep/FreeP.App.Presentation.Tests/HyperlinkDialogPlannerTests.cs"
+      ],
+      "existingVisualEvidence": [
+        "docs/parity/freep-dialog-pane-visual-evidence/report.md"
+      ],
+      "visualEvidenceStatus": "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
+      "status": "behavior-aligned",
+      "notes": ""
+    },
+    {
+      "id": "chart.edit-data",
+      "area": "Chart data editing",
+      "triggers": [
+        "freep.chart.edit-data"
+      ],
+      "wpfSurface": "Chart Data Window",
+      "avaloniaSurface": "Chart Data Window",
+      "modality": "modal owner-centered",
+      "lifecycle": "OK commits and closes; Cancel/Escape/close discard the working values.",
+      "validation": "ChartDataDialogPlanner parses rectangular chart data and returns cell-level errors.",
+      "resultApplication": "EditingSession.ReplaceChartData from the validated commit plan.",
+      "sharedPolicy": "ChartDataDialogPlanner",
+      "wpfSources": [
+        "freep/FreeP.App.Host/ChartDataDialog.cs",
+        "freep/FreeP.App.Host/MainWindow.cs"
+      ],
+      "avaloniaSources": [
+        "freep/FreeP.App.Avalonia/ChartDataDialog.cs",
+        "freep/FreeP.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freep/FreeP.App.Host.Tests/ChartDataDialogTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/ChartDataDialogTests.cs",
+        "freep/FreeP.App.Presentation.Tests/ChartDataDialogPlannerTests.cs"
+      ],
+      "existingVisualEvidence": [
+        "docs/parity/freep-dialog-pane-visual-evidence/report.md"
+      ],
+      "visualEvidenceStatus": "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
+      "status": "behavior-aligned",
+      "notes": ""
+    },
+    {
+      "id": "slideshow.custom-shows",
+      "area": "Custom show authoring",
+      "triggers": [
+        "freep.slideshow.custom-shows"
+      ],
+      "wpfSurface": "Custom Shows Window",
+      "avaloniaSurface": "Custom Shows Window",
+      "modality": "modal owner-centered",
+      "lifecycle": "Create/rename/update/delete remain in the dialog; Start Show closes; Close/Escape exits without an implicit mutation.",
+      "validation": "SlideShowCustomShowPlanner validates names, selection, and reorder targets.",
+      "resultApplication": "Shared custom-show mutation/session planners update the presentation.",
+      "sharedPolicy": "SlideShowCustomShowPlanner; SlideShowCustomShowSessionPlanner",
+      "wpfSources": [
+        "freep/FreeP.App.Host/CustomShowDialog.cs",
+        "freep/FreeP.App.Host/MainWindow.cs"
+      ],
+      "avaloniaSources": [
+        "freep/FreeP.App.Avalonia/CustomShowDialog.cs",
+        "freep/FreeP.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freep/FreeP.App.Host.Tests/SlideShowTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/SlideShowWindowHeadlessTests.cs",
+        "freep/FreeP.App.Presentation.Tests/SlideShowCustomShowPlannerTests.cs"
+      ],
+      "existingVisualEvidence": [
+        "docs/parity/freep-custom-show-drag-reorder-2026-07-13.md",
+        "docs/parity/freep-custom-show-launch-plan-2026-07-04.md",
+        "docs/parity/freep-dialog-pane-visual-evidence/report.md"
+      ],
+      "visualEvidenceStatus": "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
+      "status": "behavior-aligned",
+      "notes": ""
+    },
+    {
+      "id": "review.comments-pane",
+      "area": "Comments",
+      "triggers": [
+        "freep.review.comments"
+      ],
+      "wpfSurface": "Docked comments pane",
+      "avaloniaSurface": "Docked comments pane",
+      "modality": "modeless pane",
+      "lifecycle": "Command shows/refreshes; pane actions mutate or navigate; pane close is explicit.",
+      "validation": "PresentationReviewWorkflowPlanner action enablement and mention validation.",
+      "resultApplication": "PresentationReviewWorkflowSession applies reply/delete/resolve/reopen/navigation and refreshes both hosts.",
+      "sharedPolicy": "PresentationReviewWorkflowSession; PresentationReviewWorkflowPlanner",
+      "wpfSources": [
+        "freep/FreeP.App.Host/MainWindow.cs"
+      ],
+      "avaloniaSources": [
+        "freep/FreeP.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freep/FreeP.App.Host.Tests/SectionsCommentsTests.cs",
+        "freep/FreeP.App.Host.Tests/DialogLifecycleParityTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/DialogLifecycleParityTests.cs",
+        "freep/FreeP.App.Presentation.Tests/PresentationReviewWorkflowSessionTests.cs"
+      ],
+      "existingVisualEvidence": [
+        "docs/parity/freep-comments-review-accessibility-evidence-inventory-2026-07-05.md",
+        "docs/parity/freep-comments-review-navigation-2026-07-03.md",
+        "docs/parity/freep-dialog-pane-visual-evidence/report.md"
+      ],
+      "visualEvidenceStatus": "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
+      "status": "behavior-aligned",
+      "notes": ""
+    },
+    {
+      "id": "review.accessibility-pane",
+      "area": "Accessibility checker",
+      "triggers": [
+        "freep.review.accessibility"
+      ],
+      "wpfSurface": "Docked accessibility checker pane",
+      "avaloniaSurface": "Docked accessibility checker pane",
+      "modality": "modeless pane",
+      "lifecycle": "Command rebuilds and shows; row selection/navigation and row actions keep the pane live; close hides it.",
+      "validation": "Shared row action plans expose enabled state and required selection.",
+      "resultApplication": "Accessibility row actions route to title, alt-text, table, hyperlink, and media workflows.",
+      "sharedPolicy": "PresentationReviewWorkflowPlanner accessibility plans",
+      "wpfSources": [
+        "freep/FreeP.App.Host/MainWindow.cs"
+      ],
+      "avaloniaSources": [
+        "freep/FreeP.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freep/FreeP.App.Host.Tests/SectionsCommentsTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
+      ],
+      "existingVisualEvidence": [
+        "docs/parity/freep-accessibility-checker-navigation-2026-07-14.md",
+        "docs/parity/freep-accessibility-table-structure-review-2026-07-13.md",
+        "docs/parity/freep-dialog-pane-visual-evidence/report.md"
+      ],
+      "visualEvidenceStatus": "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
+      "status": "behavior-aligned",
+      "notes": ""
+    },
+    {
+      "id": "review.alt-text-pane",
+      "area": "Alternative text",
+      "triggers": [
+        "freep.review.alt-text",
+        "selected-object context action",
+        "accessibility checker row action"
+      ],
+      "wpfSurface": "Docked Alt Text pane",
+      "avaloniaSurface": "Docked Alt Text pane",
+      "modality": "modeless pane",
+      "lifecycle": "Apply mutates and remains available; Close hides; decorative state disables inappropriate text entry.",
+      "validation": "Shared alt-text request/mutation plans validate selection and decorative state.",
+      "resultApplication": "PresentationReviewWorkflowSession.ApplyAltText.",
+      "sharedPolicy": "PresentationReviewWorkflowPlanner",
+      "wpfSources": [
+        "freep/FreeP.App.Host/MainWindow.cs"
+      ],
+      "avaloniaSources": [
+        "freep/FreeP.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freep/FreeP.App.Host.Tests/SectionsCommentsTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
+      ],
+      "existingVisualEvidence": [
+        "docs/parity/freep-comments-review-accessibility-evidence-inventory-2026-07-05.md",
+        "docs/parity/freep-dialog-pane-visual-evidence/report.md"
+      ],
+      "visualEvidenceStatus": "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
+      "status": "behavior-aligned",
+      "notes": ""
+    },
+    {
+      "id": "review.reading-order-pane",
+      "area": "Reading order",
+      "triggers": [
+        "freep.review.reading-order"
+      ],
+      "wpfSurface": "Docked reading order pane",
+      "avaloniaSurface": "Docked reading order pane",
+      "modality": "modeless pane",
+      "lifecycle": "Selection and move actions keep pane state synchronized; close hides without mutation.",
+      "validation": "Shared action plans disable first/last moves and require a selected shape.",
+      "resultApplication": "PresentationReviewWorkflowSession move/select plans -> EditingSession.",
+      "sharedPolicy": "PresentationReviewWorkflowPlanner",
+      "wpfSources": [
+        "freep/FreeP.App.Host/MainWindow.cs"
+      ],
+      "avaloniaSources": [
+        "freep/FreeP.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freep/FreeP.App.Host.Tests/SectionsCommentsTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
+      ],
+      "existingVisualEvidence": [
+        "docs/parity/freep-dialog-pane-visual-evidence/report.md"
+      ],
+      "visualEvidenceStatus": "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
+      "status": "behavior-aligned",
+      "notes": ""
+    },
+    {
+      "id": "review.proofing-pane",
+      "area": "Proofing",
+      "triggers": [
+        "freep.review.proofing"
+      ],
+      "wpfSurface": "Docked proofing pane",
+      "avaloniaSurface": "Docked proofing pane",
+      "modality": "modeless pane",
+      "lifecycle": "Issue selection and correction/ignore actions refresh the pane; close hides.",
+      "validation": "Shared execution and action plans require an active issue and valid suggestion.",
+      "resultApplication": "PresentationReviewWorkflowSession correction/ignore/dictionary actions.",
+      "sharedPolicy": "PresentationReviewWorkflowPlanner; PresentationReviewWorkflowSession",
+      "wpfSources": [
+        "freep/FreeP.App.Host/MainWindow.cs"
+      ],
+      "avaloniaSources": [
+        "freep/FreeP.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freep/FreeP.App.Host.Tests/SectionsCommentsTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
+      ],
+      "existingVisualEvidence": [
+        "docs/parity/freep-proofing-ignore-actions-2026-07-13.md",
+        "docs/parity/freep-proofing-add-to-dictionary-2026-07-13.md",
+        "docs/parity/freep-dialog-pane-visual-evidence/report.md"
+      ],
+      "visualEvidenceStatus": "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
+      "status": "behavior-aligned",
+      "notes": ""
+    },
+    {
+      "id": "accessibility.media-caption-pane",
+      "area": "Media captions",
+      "triggers": [
+        "Accessibility checker media-caption row action"
+      ],
+      "wpfSurface": "Docked media captions pane",
+      "avaloniaSurface": "Docked media captions pane",
+      "modality": "modeless pane",
+      "lifecycle": "Create/replace/delete are explicit; close hides; selection changes rebuild the working plan.",
+      "validation": "PresentationMediaTranscriptPlanner validates selected media and caption payload fields.",
+      "resultApplication": "Shared caption track mutation plans update presentation media relationships.",
+      "sharedPolicy": "PresentationMediaTranscriptPlanner",
+      "wpfSources": [
+        "freep/FreeP.App.Host/MainWindow.cs"
+      ],
+      "avaloniaSources": [
+        "freep/FreeP.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freep/FreeP.App.Host.Tests/MediaFieldsTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs",
+        "freep/FreeP.App.Presentation.Tests/PresentationMediaTranscriptPlannerTests.cs"
+      ],
+      "existingVisualEvidence": [
+        "docs/parity/freep-visible-media-caption-authoring-2026-07-13.md",
+        "docs/parity/freep-media-caption-ttml-sidecar-retention-2026-07-14.md",
+        "docs/parity/freep-dialog-pane-visual-evidence/report.md"
+      ],
+      "visualEvidenceStatus": "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
+      "status": "behavior-aligned",
+      "notes": ""
+    },
+    {
+      "id": "context.smartart-text-pane",
+      "area": "SmartArt text",
+      "triggers": [
+        "Selected SmartArt context action"
+      ],
+      "wpfSurface": "Docked SmartArt text pane",
+      "avaloniaSurface": "Docked SmartArt text pane",
+      "modality": "modeless pane",
+      "lifecycle": "Apply writes the outline; keyboard routes edit hierarchy; Close hides.",
+      "validation": "SmartArtEditingPlanner validates selected model nodes and keyboard routes.",
+      "resultApplication": "Shared SmartArt edit/apply/cache regeneration plans update the selected SmartArt.",
+      "sharedPolicy": "SmartArtEditingPlanner",
+      "wpfSources": [
+        "freep/FreeP.App.Host/MainWindow.cs"
+      ],
+      "avaloniaSources": [
+        "freep/FreeP.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs",
+        "freep/FreeP.App.Presentation.Tests/SmartArtEditingPlannerTests.cs"
+      ],
+      "existingVisualEvidence": [
+        "docs/parity/freep-smartart-text-pane-hosts-2026-07-14.md",
+        "docs/parity/freep-smartart-text-pane-keyboard-routing-2026-07-14.md",
+        "docs/parity/freep-dialog-pane-visual-evidence/report.md"
+      ],
+      "visualEvidenceStatus": "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
+      "status": "behavior-aligned",
+      "notes": ""
+    },
+    {
+      "id": "animations.animation-pane",
+      "area": "Animation timeline and options",
+      "triggers": [
+        "freep.anim.pane"
+      ],
+      "wpfSurface": "Docked AnimationPane control",
+      "avaloniaSurface": "Docked animation pane realization",
+      "modality": "modeless toggle pane",
+      "lifecycle": "Toggle shows/hides; selection and timing/effect edits refresh; preview remains explicit.",
+      "validation": "AnimationPanePlanner action/timing/effect plans validate selected animation and option values.",
+      "resultApplication": "Shared animation mutation plans -> EditingSession; preview routes to slideshow host.",
+      "sharedPolicy": "AnimationPanePlanner; PresentationAnimationCommandPlanner",
+      "wpfSources": [
+        "freep/FreeP.App.Host/AnimationPane.cs",
+        "freep/FreeP.App.Host/MainWindow.cs"
+      ],
+      "avaloniaSources": [
+        "freep/FreeP.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freep/FreeP.App.Host.Tests/AnimationPaneTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs",
+        "freep/FreeP.App.Presentation.Tests/AnimationPanePlannerTests.cs"
+      ],
+      "existingVisualEvidence": [
+        "docs/parity/freep-animation-pane-workflow-depth-2026-07-06.md",
+        "docs/parity/freep-animation-pane-playback-workflow-evidence-2026-07-14.md",
+        "docs/parity/freep-dialog-pane-visual-evidence/report.md"
+      ],
+      "visualEvidenceStatus": "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
+      "status": "behavior-aligned",
+      "notes": ""
+    },
+    {
+      "id": "file.print-options",
+      "area": "Print options",
+      "triggers": [
+        "File > Print",
+        "freep.file.print",
+        "Ctrl+P"
+      ],
+      "wpfSurface": "Backstage Print pane",
+      "avaloniaSurface": "Backstage Print pane plus keyboard/ribbon print-options pane",
+      "modality": "modeless app pane",
+      "lifecycle": "Backstage close/Escape dismisses; option choices are explicit and no native print handoff occurs without capability.",
+      "validation": "PresentationPrintBackstagePlanner exposes availability and disabled reasons.",
+      "resultApplication": "Shared print request/option plans build preview/package/native-handoff descriptors.",
+      "sharedPolicy": "PresentationPrintBackstagePlanner; PresentationExportPlanner",
+      "wpfSources": [
+        "freep/FreeP.App.Host/Backstage/BackstageView.cs",
+        "freep/FreeP.App.Host/MainWindow.cs"
+      ],
+      "avaloniaSources": [
+        "freep/FreeP.App.Avalonia/Backstage/BackstageView.cs",
+        "freep/FreeP.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freep/FreeP.App.Host.Tests/ExportPlannerTests.Dialog.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs",
+        "freep/FreeP.App.Presentation.Tests/PresentationPrintBackstagePlannerTests.cs"
+      ],
+      "existingVisualEvidence": [
+        "docs/parity/freep-print-output-option-choice-ui-2026-07-03.md",
+        "docs/parity/freep-export-backstage-evidence-2026-07-05.md",
+        "docs/parity/freep-dialog-pane-visual-evidence/report.md"
+      ],
+      "visualEvidenceStatus": "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
+      "status": "behavior-aligned-host-shape-differs",
+      "notes": "Avalonia has an additional compact print-options pane for direct command/keyboard routing; shared option and result policy is the same."
+    },
+    {
+      "id": "file.open-picker",
+      "area": "Open presentation",
+      "triggers": [
+        "File > Open",
+        "freep.file.open",
+        "Ctrl+O"
+      ],
+      "wpfSurface": "Native Windows open dialog",
+      "avaloniaSurface": "Platform storage-provider open picker",
+      "modality": "native modal",
+      "lifecycle": "Cancel returns no path and does not replace the presentation; valid selection loads and closes stale modeless Find/Replace.",
+      "validation": "PresentationFileDialogPlanner and persistence workflow validate supported extension and load outcome.",
+      "resultApplication": "PresentationFilePersistenceWorkflow opens PPTX/FXP and rebuilds EditingSession.",
+      "sharedPolicy": "PresentationFileDialogPlanner; PresentationFilePersistenceWorkflow; shared file dialog descriptors",
+      "wpfSources": [
+        "freep/FreeP.App.Host/FileCommands.cs",
+        "freep/FreeP.App.Host/MainWindow.cs"
+      ],
+      "avaloniaSources": [
+        "freep/FreeP.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freep/FreeP.App.Host.Tests/FileLifecycleTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/FileLifecycleWorkflowSourceTests.cs",
+        "freep/FreeP.App.Presentation.Tests/PresentationFileDialogPlannerTests.cs"
+      ],
+      "existingVisualEvidence": [],
+      "visualEvidenceStatus": "native platform visual; exact cross-platform pixel parity is not applicable",
+      "status": "behavior-aligned",
+      "notes": ""
+    },
+    {
+      "id": "file.save-as-picker",
+      "area": "Save presentation as",
+      "triggers": [
+        "File > Save As",
+        "freep.file.save-as",
+        "Ctrl+Shift+S"
+      ],
+      "wpfSurface": "Native Windows save dialog",
+      "avaloniaSurface": "Platform storage-provider save picker",
+      "modality": "native modal",
+      "lifecycle": "Cancel preserves path/dirty state; accepted selection resolves format and writes before updating path/state.",
+      "validation": "PresentationFileDialogPlanner resolves extension/format; persistence workflow reports write failures without claiming success.",
+      "resultApplication": "PresentationFilePersistenceWorkflow saves PPTX/FXP and updates recent/path/dirty state.",
+      "sharedPolicy": "PresentationFileDialogPlanner; PresentationFilePersistenceWorkflow; shared file dialog descriptors",
+      "wpfSources": [
+        "freep/FreeP.App.Host/FileCommands.cs",
+        "freep/FreeP.App.Host/MainWindow.cs"
+      ],
+      "avaloniaSources": [
+        "freep/FreeP.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freep/FreeP.App.Host.Tests/FileLifecycleTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/FileLifecycleWorkflowSourceTests.cs",
+        "freep/FreeP.App.Presentation.Tests/PresentationFileDialogPlannerTests.cs"
+      ],
+      "existingVisualEvidence": [],
+      "visualEvidenceStatus": "native platform visual; exact cross-platform pixel parity is not applicable",
+      "status": "behavior-aligned",
+      "notes": ""
+    }
+  ],
+  "residualVisualOnlyWork": [
+    {
+      "id": "freep-native-picker-human-evidence",
+      "routes": [
+        "file.open-picker",
+        "file.save-as-picker"
+      ],
+      "exactWork": "Record platform-specific human smoke evidence for cancel, extension selection, overwrite/error handling, and focus return; do not use pixel equality across native picker implementations."
+    }
+  ]
 }

@@ -1,453 +1,443 @@
-﻿{
-    "schema":  "freex.parity.conditional-format-opened-state-evidence.v1",
-    "generatedBy":  "tools/Generate-ConditionalFormatOpenedStateEvidence.ps1",
-    "source":  "docs/parity/functional-parity-classification.json",
-    "summary":  {
-                    "conditionalFormatPopupGalleryRows":  38,
-                    "conditionalFormatPopupCatalogItems":  38,
-                    "captureTargets":  3,
-                    "completeOpenedStateCaptureTargets":  0,
-                    "missingOrIncompleteOpenedStateCaptureTargets":  3,
-                    "openedStateStatus":  "needs-paired-opened-state-capture"
-                },
-    "captureTargets":  [
-                           {
-                               "id":  "excel.conditional-formatting-gallery.opened",
-                               "subject":  "excel",
-                               "scenario":  "excel-conditional-formatting-gallery",
-                               "expectedOpenedState":  "Excel Home \u003e Conditional Formatting opened popup/gallery",
-                               "runnerCommand":  ".\\tools\\Invoke-ForegroundCapture.ps1 -Scenario excel-conditional-formatting-gallery",
-                               "requiredEnvironment":  "Windows desktop session with Microsoft Excel COM registered and foreground focus allowed.",
-                               "manifestPath":  "tools\\foreground-captures\\excel-conditional-formatting-gallery\\excel-conditional-formatting-gallery_manifest.json",
-                               "captureStatus":  "blocked",
-                               "screenshotPath":  "",
-                               "screenshotExists":  false,
-                               "retentionStatus":  "blocked-or-incomplete",
-                               "blockReason":  "exception: Excel.Application COM ProgID is not available.",
-                               "blockerCategory":  "excel-com-unavailable",
-                               "manifestValidationStatus":  "valid",
-                               "manifestValidationErrors":  [
-
-                                                            ],
-                               "nextCaptureAction":  "Rerun .\\tools\\Invoke-ForegroundCapture.ps1 -Scenario excel-conditional-formatting-gallery on a Windows desktop where Microsoft Excel COM is installed and registered.",
-                               "lastAttemptedAtUtc":  "2026-07-02T10:24:18.0743536+00:00",
-                               "manifestSubject":  "excel",
-                               "manifestScenario":  "excel-conditional-formatting-gallery",
-                               "manifestMatchesTarget":  true,
-                               "environmentSnapshotStatus":  "captured",
-                               "environmentSummary":  "windows=True; interactive=True; session=1; arch=X64",
-                               "fallbackEvidence":  [
-
-                                                    ],
-                               "fallbackEvidenceNote":  ""
-                           },
-                           {
-                               "id":  "wpf.conditional-formatting-gallery.opened",
-                               "subject":  "wpf",
-                               "scenario":  "freex-conditional-formatting-gallery",
-                               "expectedOpenedState":  "FreeX WPF Home \u003e Conditional Formatting opened popup/gallery",
-                               "runnerCommand":  ".\\tools\\Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe \u003cRelease FreeX.App.Host.exe\u003e",
-                               "requiredEnvironment":  "Windows desktop session with built Release WPF host and foreground focus allowed.",
-                               "manifestPath":  "tools\\foreground-captures\\freex-conditional-formatting-gallery\\freex-conditional-formatting-gallery_manifest.json",
-                               "captureStatus":  "blocked",
-                               "screenshotPath":  "",
-                               "screenshotExists":  false,
-                               "retentionStatus":  "blocked-or-incomplete",
-                               "blockReason":  "foreground-guard-failed: Foreground guard failed during before-input.",
-                               "blockerCategory":  "foreground-focus-unavailable",
-                               "manifestValidationStatus":  "valid",
-                               "manifestValidationErrors":  [
-
-                                                            ],
-                               "nextCaptureAction":  "Rerun .\\tools\\Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe \u003cRelease FreeX.App.Host.exe\u003e from an unlocked interactive desktop where the launched window can become foreground.",
-                               "lastAttemptedAtUtc":  "2026-07-02T11:17:01.3075269+00:00",
-                               "manifestSubject":  "freex",
-                               "manifestScenario":  "freex-conditional-formatting-gallery",
-                               "manifestMatchesTarget":  true,
-                               "environmentSnapshotStatus":  "captured",
-                               "environmentSummary":  "windows=True; interactive=True; session=1; arch=X64",
-                               "fallbackEvidence":  [
-
-                                                    ],
-                               "fallbackEvidenceNote":  ""
-                           },
-                           {
-                               "id":  "avalonia.conditional-formatting-gallery.opened",
-                               "subject":  "avalonia",
-                               "scenario":  "avalonia-conditional-formatting-gallery",
-                               "expectedOpenedState":  "FreeX Avalonia Home \u003e Conditional Formatting opened popup/gallery",
-                               "runnerCommand":  ".\\tools\\Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe \u003cRelease FreeX.exe\u003e",
-                               "requiredEnvironment":  "Windows desktop session with built Release Avalonia app and foreground focus allowed.",
-                               "manifestPath":  "tools\\foreground-captures\\avalonia-conditional-formatting-gallery\\avalonia-conditional-formatting-gallery_manifest.json",
-                               "captureStatus":  "blocked",
-                               "screenshotPath":  "",
-                               "screenshotExists":  false,
-                               "retentionStatus":  "blocked-or-incomplete",
-                               "blockReason":  "foreground-guard-failed: Foreground guard failed during before-input.",
-                               "blockerCategory":  "foreground-focus-unavailable",
-                               "manifestValidationStatus":  "valid",
-                               "manifestValidationErrors":  [
-
-                                                            ],
-                               "nextCaptureAction":  "Rerun .\\tools\\Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe \u003cRelease FreeX.exe\u003e from an unlocked interactive desktop where the launched window can become foreground.",
-                               "lastAttemptedAtUtc":  "2026-07-02T11:17:16.3684841+00:00",
-                               "manifestSubject":  "avalonia",
-                               "manifestScenario":  "avalonia-conditional-formatting-gallery",
-                               "manifestMatchesTarget":  true,
-                               "environmentSnapshotStatus":  "captured",
-                               "environmentSummary":  "windows=True; interactive=True; session=1; arch=X64",
-                               "fallbackEvidence":  [
-                                                        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ConditionalFormatNewRule.png"
-                                                    ],
-                               "fallbackEvidenceNote":  "Existing Avalonia dialog route evidence is retained for dialog parity, but it is not opened popup/gallery evidence."
-                           }
-                       ],
-    "blockerCategories":  [
-                              {
-                                  "category":  "excel-com-unavailable",
-                                  "count":  1
-                              },
-                              {
-                                  "category":  "foreground-focus-unavailable",
-                                  "count":  2
-                              }
-                          ],
-    "operatorChecklist":  [
-                              {
-                                  "phase":  "build",
-                                  "command":  "dotnet build FreeX.slnx --configuration Release",
-                                  "purpose":  "Produces the Release WPF and Avalonia executables referenced by the FreeX capture commands."
-                              },
-                              {
-                                  "phase":  "preflight",
-                                  "command":  ".\\tools\\Invoke-ForegroundCapture.ps1 -EnvironmentPreflight",
-                                  "purpose":  "Emits machine-readable readiness diagnostics for Windows foreground focus, Release executables, and Microsoft Excel COM before foreground input."
-                              },
-                              {
-                                  "phase":  "capture:excel",
-                                  "command":  ".\\tools\\Invoke-ForegroundCapture.ps1 -Scenario excel-conditional-formatting-gallery",
-                                  "purpose":  "Run from an unlocked foreground desktop; keep blocked manifests if the environment cannot produce a real opened-state PNG."
-                              },
-                              {
-                                  "phase":  "capture:wpf",
-                                  "command":  ".\\tools\\Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe \u003cRelease FreeX.App.Host.exe\u003e",
-                                  "purpose":  "Run from an unlocked foreground desktop; keep blocked manifests if the environment cannot produce a real opened-state PNG."
-                              },
-                              {
-                                  "phase":  "capture:avalonia",
-                                  "command":  ".\\tools\\Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe \u003cRelease FreeX.exe\u003e",
-                                  "purpose":  "Run from an unlocked foreground desktop; keep blocked manifests if the environment cannot produce a real opened-state PNG."
-                              },
-                              {
-                                  "phase":  "refresh",
-                                  "command":  ".\\tools\\Generate-ConditionalFormatOpenedStateEvidence.ps1; .\\tools\\Generate-ConditionalFormatOpenedStateEvidence.ps1 -Check",
-                                  "purpose":  "Refreshes and verifies this report after the real manifests and PNGs are committed under tools/foreground-captures/\u003cscenario\u003e/."
-                              }
-                          ],
-    "rows":  [
-                 {
-                     "id":  "3 Arrows",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "3 Arrows (Gray)",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "3 Flags",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "3 Signs",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "3 Symbols",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "3 Symbols (Uncircled)",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "3 Traffic Lights",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "3 Traffic Lights (Rimmed)",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "4 Arrows",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "4 Arrows (Gray)",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "4 Ratings",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "4 Red To Black",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "4 Traffic Lights",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "5 Arrows",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "5 Arrows (Gray)",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "5 Boxes",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "5 Quarters",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "5 Ratings",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "A Date Occurring",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "Above Average",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "Below Average",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "Between",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "Bottom 10 Items",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "Bottom 10%",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "Clear Rules",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "Color Scales",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "Data Bars",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "Duplicate Values",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "Equal To",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "Greater Than",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "Less Than",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "Manage Rules",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "More Rules",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "New Formula Rule",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "New Rule",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "Text that Contains",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "Top 10 Items",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 },
-                 {
-                     "id":  "Top 10%",
-                     "tab":  "Home",
-                     "group":  "Styles",
-                     "classification":  "runtime-catalog-item",
-                     "runtimeCatalogBacked":  true,
-                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
-                 }
-             ]
+{
+  "schema": "freex.parity.conditional-format-opened-state-evidence.v1",
+  "generatedBy": "tools/Generate-ConditionalFormatOpenedStateEvidence.ps1",
+  "source": "docs/parity/functional-parity-classification.json",
+  "summary": {
+    "conditionalFormatPopupGalleryRows": 38,
+    "conditionalFormatPopupCatalogItems": 38,
+    "captureTargets": 3,
+    "completeOpenedStateCaptureTargets": 0,
+    "missingOrIncompleteOpenedStateCaptureTargets": 3,
+    "openedStateStatus": "needs-paired-opened-state-capture"
+  },
+  "captureTargets": [
+    {
+      "id": "excel.conditional-formatting-gallery.opened",
+      "subject": "excel",
+      "scenario": "excel-conditional-formatting-gallery",
+      "expectedOpenedState": "Excel Home > Conditional Formatting opened popup/gallery",
+      "runnerCommand": ".\\tools\\Invoke-ForegroundCapture.ps1 -Scenario excel-conditional-formatting-gallery",
+      "requiredEnvironment": "Windows desktop session with Microsoft Excel COM registered and foreground focus allowed.",
+      "manifestPath": "tools\\foreground-captures\\excel-conditional-formatting-gallery\\excel-conditional-formatting-gallery_manifest.json",
+      "captureStatus": "blocked",
+      "screenshotPath": "",
+      "screenshotExists": false,
+      "retentionStatus": "blocked-or-incomplete",
+      "blockReason": "exception: Excel.Application COM ProgID is not available.",
+      "blockerCategory": "excel-com-unavailable",
+      "manifestValidationStatus": "valid",
+      "manifestValidationErrors": [],
+      "nextCaptureAction": "Rerun .\\tools\\Invoke-ForegroundCapture.ps1 -Scenario excel-conditional-formatting-gallery on a Windows desktop where Microsoft Excel COM is installed and registered.",
+      "lastAttemptedAtUtc": "07/02/2026 13:24:18",
+      "manifestSubject": "excel",
+      "manifestScenario": "excel-conditional-formatting-gallery",
+      "manifestMatchesTarget": true,
+      "environmentSnapshotStatus": "captured",
+      "environmentSummary": "windows=True; interactive=True; session=1; arch=X64",
+      "fallbackEvidence": [],
+      "fallbackEvidenceNote": ""
+    },
+    {
+      "id": "wpf.conditional-formatting-gallery.opened",
+      "subject": "wpf",
+      "scenario": "freex-conditional-formatting-gallery",
+      "expectedOpenedState": "FreeX WPF Home > Conditional Formatting opened popup/gallery",
+      "runnerCommand": ".\\tools\\Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe <Release FreeX.App.Host.exe>",
+      "requiredEnvironment": "Windows desktop session with built Release WPF host and foreground focus allowed.",
+      "manifestPath": "tools\\foreground-captures\\freex-conditional-formatting-gallery\\freex-conditional-formatting-gallery_manifest.json",
+      "captureStatus": "blocked",
+      "screenshotPath": "",
+      "screenshotExists": false,
+      "retentionStatus": "blocked-or-incomplete",
+      "blockReason": "foreground-guard-failed: Foreground guard failed during before-input.",
+      "blockerCategory": "foreground-focus-unavailable",
+      "manifestValidationStatus": "valid",
+      "manifestValidationErrors": [],
+      "nextCaptureAction": "Rerun .\\tools\\Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe <Release FreeX.App.Host.exe> from an unlocked interactive desktop where the launched window can become foreground.",
+      "lastAttemptedAtUtc": "07/02/2026 14:17:01",
+      "manifestSubject": "freex",
+      "manifestScenario": "freex-conditional-formatting-gallery",
+      "manifestMatchesTarget": true,
+      "environmentSnapshotStatus": "captured",
+      "environmentSummary": "windows=True; interactive=True; session=1; arch=X64",
+      "fallbackEvidence": [],
+      "fallbackEvidenceNote": ""
+    },
+    {
+      "id": "avalonia.conditional-formatting-gallery.opened",
+      "subject": "avalonia",
+      "scenario": "avalonia-conditional-formatting-gallery",
+      "expectedOpenedState": "FreeX Avalonia Home > Conditional Formatting opened popup/gallery",
+      "runnerCommand": ".\\tools\\Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe <Release FreeX.exe>",
+      "requiredEnvironment": "Windows desktop session with built Release Avalonia app and foreground focus allowed.",
+      "manifestPath": "tools\\foreground-captures\\avalonia-conditional-formatting-gallery\\avalonia-conditional-formatting-gallery_manifest.json",
+      "captureStatus": "blocked",
+      "screenshotPath": "",
+      "screenshotExists": false,
+      "retentionStatus": "blocked-or-incomplete",
+      "blockReason": "foreground-guard-failed: Foreground guard failed during before-input.",
+      "blockerCategory": "foreground-focus-unavailable",
+      "manifestValidationStatus": "valid",
+      "manifestValidationErrors": [],
+      "nextCaptureAction": "Rerun .\\tools\\Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe <Release FreeX.exe> from an unlocked interactive desktop where the launched window can become foreground.",
+      "lastAttemptedAtUtc": "07/02/2026 14:17:16",
+      "manifestSubject": "avalonia",
+      "manifestScenario": "avalonia-conditional-formatting-gallery",
+      "manifestMatchesTarget": true,
+      "environmentSnapshotStatus": "captured",
+      "environmentSummary": "windows=True; interactive=True; session=1; arch=X64",
+      "fallbackEvidence": [
+        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ConditionalFormatNewRule.png"
+      ],
+      "fallbackEvidenceNote": "Existing Avalonia dialog route evidence is retained for dialog parity, but it is not opened popup/gallery evidence."
+    }
+  ],
+  "blockerCategories": [
+    {
+      "category": "excel-com-unavailable",
+      "count": 1
+    },
+    {
+      "category": "foreground-focus-unavailable",
+      "count": 2
+    }
+  ],
+  "operatorChecklist": [
+    {
+      "phase": "build",
+      "command": "dotnet build FreeX.slnx --configuration Release",
+      "purpose": "Produces the Release WPF and Avalonia executables referenced by the FreeX capture commands."
+    },
+    {
+      "phase": "preflight",
+      "command": ".\\tools\\Invoke-ForegroundCapture.ps1 -EnvironmentPreflight",
+      "purpose": "Emits machine-readable readiness diagnostics for Windows foreground focus, Release executables, and Microsoft Excel COM before foreground input."
+    },
+    {
+      "phase": "capture:excel",
+      "command": ".\\tools\\Invoke-ForegroundCapture.ps1 -Scenario excel-conditional-formatting-gallery",
+      "purpose": "Run from an unlocked foreground desktop; keep blocked manifests if the environment cannot produce a real opened-state PNG."
+    },
+    {
+      "phase": "capture:wpf",
+      "command": ".\\tools\\Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe <Release FreeX.App.Host.exe>",
+      "purpose": "Run from an unlocked foreground desktop; keep blocked manifests if the environment cannot produce a real opened-state PNG."
+    },
+    {
+      "phase": "capture:avalonia",
+      "command": ".\\tools\\Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe <Release FreeX.exe>",
+      "purpose": "Run from an unlocked foreground desktop; keep blocked manifests if the environment cannot produce a real opened-state PNG."
+    },
+    {
+      "phase": "refresh",
+      "command": ".\\tools\\Generate-ConditionalFormatOpenedStateEvidence.ps1; .\\tools\\Generate-ConditionalFormatOpenedStateEvidence.ps1 -Check",
+      "purpose": "Refreshes and verifies this report after the real manifests and PNGs are committed under tools/foreground-captures/<scenario>/."
+    }
+  ],
+  "rows": [
+    {
+      "id": "3 Arrows",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "3 Arrows (Gray)",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "3 Flags",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "3 Signs",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "3 Symbols",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "3 Symbols (Uncircled)",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "3 Traffic Lights",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "3 Traffic Lights (Rimmed)",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "4 Arrows",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "4 Arrows (Gray)",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "4 Ratings",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "4 Red To Black",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "4 Traffic Lights",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "5 Arrows",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "5 Arrows (Gray)",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "5 Boxes",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "5 Quarters",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "5 Ratings",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "A Date Occurring",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "Above Average",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "Below Average",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "Between",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "Bottom 10 Items",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "Bottom 10%",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "Clear Rules",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "Color Scales",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "Data Bars",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "Duplicate Values",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "Equal To",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "Greater Than",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "Less Than",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "Manage Rules",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "More Rules",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "New Formula Rule",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "New Rule",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "Text that Contains",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "Top 10 Items",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    },
+    {
+      "id": "Top 10%",
+      "tab": "Home",
+      "group": "Styles",
+      "classification": "runtime-catalog-item",
+      "runtimeCatalogBacked": true,
+      "openedStateEvidenceStatus": "needs-paired-opened-state-capture"
+    }
+  ]
 }
