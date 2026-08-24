@@ -1,232 +1,232 @@
 {
-    "schemaVersion":  1,
-    "generatedBy":  "tools/Generate-FreeWPageLayoutDialogParityEvidence.ps1",
-    "inventoryMethod":  "Eight explicit page-layout and paragraph-composition contracts validated against current WPF and Avalonia source tokens.",
-    "summary":  {
-                    "workflowCount":  8,
-                    "behaviorAligned":  8,
-                    "functionalParityGaps":  0,
-                    "remainingVisualOrNativeLimitations":  2,
-                    "sharedNonParityLimitations":  0
-                },
-    "sourceSets":  {
-                       "wpf":  [
-                                   "freew\\FreeW.App.Host\\Ribbon\\FreeWRibbonCommands.cs",
-                                   "freew\\FreeW.App.Host\\Editing\\DocumentView.cs",
-                                   "freew\\FreeW.App.Host\\PageSetupDialog.cs",
-                                   "freew\\FreeW.App.Host\\ParagraphBreaksDialog.cs",
-                                   "freew\\FreeW.App.Host\\ParagraphIndentDialog.cs",
-                                   "freew\\FreeW.App.Host\\ColumnsDialog.cs",
-                                   "freew\\FreeW.App.Host\\CustomParagraphSpacingDialog.cs",
-                                   "freew\\FreeW.App.Host\\DropCapOptionsDialog.cs",
-                                   "freew\\FreeW.App.Host\\HyphenationOptionsDialog.cs",
-                                   "freew\\FreeW.App.Host\\ManualHyphenationDialog.cs",
-                                   "freew\\FreeW.App.Host\\LineNumberOptionsDialog.cs",
-                                   "freew\\FreeW.Ribbon.Definitions\\FreeWRibbon.cs"
-                               ],
-                       "avalonia":  [
-                                        "freew\\FreeW.App.Avalonia\\MainWindow.cs",
-                                        "freew\\FreeW.App.Avalonia\\Ribbon\\FreeWAvaloniaRibbonCommands.cs",
-                                        "freew\\FreeW.App.Avalonia\\Editing\\DocumentView.cs",
-                                        "freew\\FreeW.App.Avalonia\\PageSetupDialog.cs",
-                                        "freew\\FreeW.App.Avalonia\\ParagraphDialog.cs",
-                                        "freew\\FreeW.App.Avalonia\\PageLayoutDialogs.cs",
-                                        "freew\\FreeW.Ribbon.Definitions\\FreeWCanonicalRibbonTabs.cs"
-                                    ]
-                   },
-    "workflows":  [
-                      {
-                          "id":  "layout.page-setup",
-                          "routes":  [
-                                         "freew.margins",
-                                         "freew.custom-margins",
-                                         "freew.orientation",
-                                         "freew.size",
-                                         "freew.more-paper-sizes",
-                                         "freew.page-setup"
-                                     ],
-                          "surface":  "WPF-authoritative Margins/Paper/Layout tabs plus quick geometry routes",
-                          "lifecycle":  "Owner-modal; OK applies once; Cancel, Escape, and window close return no result; Layout launchers defer to backed routes.",
-                          "validation":  "PageSetupDialogPlanner validates non-negative margins/distances and positive geometry.",
-                          "resultApplication":  "PageLayoutCommandPlanner applies the full result through one SetPageSettingsCommand and one layout refresh.",
-                          "sharedPolicy":  "PageSetupDialogPlanner; PageLayoutCommandPlanner",
-                          "tests":  [
-                                        "freew/FreeW.App.Presentation.Tests/PageLayoutCommandPlannerTests.cs",
-                                        "freew/FreeW.App.Presentation.Tests/ManualHyphenationPlannerTests.cs",
-                                        "freew/FreeW.Core.Model.Tests/ApplyManualHyphenationCommandTests.cs",
-                                        "freew/FreeW.App.Host.Tests/PageLayoutDialogParityTests.cs",
-                                        "freew/FreeW.App.Avalonia.Tests/PageLayoutDialogParityTests.cs"
-                                    ],
-                          "status":  "behavior-aligned"
-                      },
-                      {
-                          "id":  "layout.columns",
-                          "routes":  [
-                                         "freew.columns",
-                                         "freew.columns-one",
-                                         "freew.columns-two",
-                                         "freew.columns-three",
-                                         "freew.columns-left",
-                                         "freew.columns-right",
-                                         "freew.columns-more"
-                                     ],
-                          "surface":  "Columns presets and owner-modal More Columns dialog",
-                          "lifecycle":  "Preset routes apply immediately; dialog OK applies once; Cancel, Escape, and close do not mutate.",
-                          "validation":  "ColumnsDialogPlanner validates count 1-12 and non-negative spacing and owns unequal-width presets.",
-                          "resultApplication":  "The selected page settings are committed through one undoable page-settings command.",
-                          "sharedPolicy":  "ColumnsDialogPlanner; PageLayoutCommandPlanner",
-                          "tests":  [
-                                        "freew/FreeW.App.Presentation.Tests/PageLayoutCommandPlannerTests.cs",
-                                        "freew/FreeW.App.Presentation.Tests/ManualHyphenationPlannerTests.cs",
-                                        "freew/FreeW.Core.Model.Tests/ApplyManualHyphenationCommandTests.cs",
-                                        "freew/FreeW.App.Host.Tests/PageLayoutDialogParityTests.cs",
-                                        "freew/FreeW.App.Avalonia.Tests/PageLayoutDialogParityTests.cs"
-                                    ],
-                          "status":  "behavior-aligned"
-                      },
-                      {
-                          "id":  "layout.breaks",
-                          "routes":  [
-                                         "freew.page-break",
-                                         "freew.column-break",
-                                         "freew.section-break-next-page",
-                                         "freew.section-break-continuous",
-                                         "freew.section-break-even-page",
-                                         "freew.section-break-odd-page"
-                                     ],
-                          "surface":  "Immediate page, column, and section break menu routes",
-                          "lifecycle":  "Each route inserts one backed break at the current selection or caret; no dialog is involved.",
-                          "validation":  "SectionBreakKind constrains section modes and editor insertion guards the active selection.",
-                          "resultApplication":  "One document command inserts each break and invalidates layout.",
-                          "sharedPolicy":  "Core break model and editor command bus",
-                          "tests":  [
-                                        "freew/FreeW.App.Avalonia.Tests/PageSetupDialogTests.cs",
-                                        "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs"
-                                    ],
-                          "status":  "behavior-aligned"
-                      },
-                      {
-                          "id":  "layout.paragraph-composition",
-                          "routes":  [
-                                         "freew.indent-left",
-                                         "freew.indent-right",
-                                         "freew.space-before",
-                                         "freew.space-after",
-                                         "freew.line-spacing",
-                                         "freew.paragraph-dialog"
-                                     ],
-                          "surface":  "Layout Paragraph controls and two-tab Paragraph dialog",
-                          "lifecycle":  "Dialog OK applies all indents, spacing, and pagination flags once to selected paragraphs; Cancel, Escape, and close do not mutate.",
-                          "validation":  "ParagraphBreaksDialogPlanner owns parsing and pagination result construction.",
-                          "resultApplication":  "Selection-scoped formatting is grouped into one undo entry and rerendered.",
-                          "sharedPolicy":  "ParagraphBreaksDialogPlanner",
-                          "tests":  [
-                                        "freew/FreeW.App.Avalonia.Tests/FontAndParagraphDialogTests.cs",
-                                        "freew/FreeW.App.Host.Tests/HomeDialogDepthTests.cs"
-                                    ],
-                          "status":  "behavior-aligned"
-                      },
-                      {
-                          "id":  "design.custom-paragraph-spacing",
-                          "routes":  [
-                                         "freew.custom-paragraph-spacing"
-                                     ],
-                          "surface":  "Owner-modal Custom Paragraph Spacing dialog from Design",
-                          "lifecycle":  "Default button accepts; Cancel, Escape, and close return null; invalid OK remains open and focuses the failing field.",
-                          "validation":  "CustomParagraphSpacingDialogPlanner owns ranges, field-specific errors, and spacing-set construction.",
-                          "resultApplication":  "The accepted document spacing set applies through the existing document-wide spacing command.",
-                          "sharedPolicy":  "CustomParagraphSpacingDialogPlanner",
-                          "tests":  [
-                                        "freew/FreeW.App.Presentation.Tests/PageLayoutCommandPlannerTests.cs",
-                                        "freew/FreeW.App.Presentation.Tests/ManualHyphenationPlannerTests.cs",
-                                        "freew/FreeW.Core.Model.Tests/ApplyManualHyphenationCommandTests.cs",
-                                        "freew/FreeW.App.Host.Tests/PageLayoutDialogParityTests.cs",
-                                        "freew/FreeW.App.Avalonia.Tests/PageLayoutDialogParityTests.cs"
-                                    ],
-                          "status":  "behavior-aligned"
-                      },
-                      {
-                          "id":  "insert.drop-cap-options",
-                          "routes":  [
-                                         "freew.drop-cap",
-                                         "freew.drop-cap-dropped",
-                                         "freew.drop-cap-in-margin",
-                                         "freew.drop-cap-none",
-                                         "freew.drop-cap-options"
-                                     ],
-                          "surface":  "Drop Cap presets and owner-modal Drop Cap Options dialog",
-                          "lifecycle":  "Default button accepts; Cancel, Escape, and close return null; focus starts on lines-to-drop.",
-                          "validation":  "DropCapOptionsDialogPlanner owns position mapping, defaults, and bounded lines/distance.",
-                          "resultApplication":  "Accepted position applies or clears the current paragraph drop cap in one selection-scoped command.",
-                          "sharedPolicy":  "DropCapOptionsDialogPlanner; DropCap model helper",
-                          "tests":  [
-                                        "freew/FreeW.App.Presentation.Tests/PageLayoutCommandPlannerTests.cs",
-                                        "freew/FreeW.App.Presentation.Tests/ManualHyphenationPlannerTests.cs",
-                                        "freew/FreeW.Core.Model.Tests/ApplyManualHyphenationCommandTests.cs",
-                                        "freew/FreeW.App.Host.Tests/PageLayoutDialogParityTests.cs",
-                                        "freew/FreeW.App.Avalonia.Tests/PageLayoutDialogParityTests.cs"
-                                    ],
-                          "status":  "behavior-aligned"
-                      },
-                      {
-                          "id":  "layout.hyphenation",
-                          "routes":  [
-                                         "freew.hyphenation",
-                                         "freew.hyphenation-none",
-                                         "freew.hyphenation-auto",
-                                         "freew.hyphenation-manual",
-                                         "freew.hyphenation-options"
-                                     ],
-                          "surface":  "Checked None/Automatic modes, owner-modal per-word manual review, and owner-modal options",
-                          "lifecycle":  "Mode routes apply immediately; manual review presents Yes/No/Cancel for each candidate; options OK applies once; Cancel, Escape, and close preserve already accepted manual choices without changing automatic mode.",
-                          "validation":  "HyphenationOptionsDialogPlanner validates zone and consecutive-limit values; ManualHyphenationPlanner owns candidate order and valid break positions.",
-                          "resultApplication":  "Backed settings apply through one undoable page-settings command; accepted manual breaks apply as one undoable U+00AD body-text command.",
-                          "sharedPolicy":  "HyphenationOptionsDialogPlanner; ManualHyphenationPlanner; ApplyManualHyphenationCommand",
-                          "tests":  [
-                                        "freew/FreeW.App.Presentation.Tests/PageLayoutCommandPlannerTests.cs",
-                                        "freew/FreeW.App.Presentation.Tests/ManualHyphenationPlannerTests.cs",
-                                        "freew/FreeW.Core.Model.Tests/ApplyManualHyphenationCommandTests.cs",
-                                        "freew/FreeW.App.Host.Tests/PageLayoutDialogParityTests.cs",
-                                        "freew/FreeW.App.Avalonia.Tests/PageLayoutDialogParityTests.cs"
-                                    ],
-                          "status":  "behavior-aligned"
-                      },
-                      {
-                          "id":  "layout.line-numbering",
-                          "routes":  [
-                                         "freew.line-numbers",
-                                         "freew.line-numbers-none",
-                                         "freew.line-numbers-continuous",
-                                         "freew.line-numbers-restart-page",
-                                         "freew.line-numbers-options"
-                                     ],
-                          "surface":  "Checked line-number modes and owner-modal options",
-                          "lifecycle":  "Mode routes apply immediately; options OK applies once; Cancel, Escape, and close do not mutate.",
-                          "validation":  "LineNumberOptionsDialogPlanner validates positive Start At and Count By values.",
-                          "resultApplication":  "Mode, start, and count apply through one undoable page-settings command and one layout refresh.",
-                          "sharedPolicy":  "LineNumberOptionsDialogPlanner; PageLayoutCommandPlanner",
-                          "tests":  [
-                                        "freew/FreeW.App.Presentation.Tests/PageLayoutCommandPlannerTests.cs",
-                                        "freew/FreeW.App.Presentation.Tests/ManualHyphenationPlannerTests.cs",
-                                        "freew/FreeW.Core.Model.Tests/ApplyManualHyphenationCommandTests.cs",
-                                        "freew/FreeW.App.Host.Tests/PageLayoutDialogParityTests.cs",
-                                        "freew/FreeW.App.Avalonia.Tests/PageLayoutDialogParityTests.cs"
-                                    ],
-                          "status":  "behavior-aligned"
-                      }
-                  ],
-    "remainingLimitations":  [
-                                 {
-                                     "id":  "paired-opened-state-pixels",
-                                     "kind":  "visual-evidence",
-                                     "parityGap":  false,
-                                     "exactWork":  "Capture matching WPF/Avalonia opened, populated, validation, and cancel states at 96 DPI to compare exact dimensions, tab geometry, focus cues, clipping, and nonblank pixels."
-                                 },
-                                 {
-                                     "id":  "platform-native-window-metrics",
-                                     "kind":  "native-rendering",
-                                     "parityGap":  false,
-                                     "exactWork":  "OS window chrome, native font shaping, focus rectangles, and message presentation remain toolkit/platform rendered and are not expected to be pixel-identical."
-                                 }
-                             ]
+  "schemaVersion": 1,
+  "generatedBy": "tools/Generate-FreeWPageLayoutDialogParityEvidence.ps1",
+  "inventoryMethod": "Eight explicit page-layout and paragraph-composition contracts validated against current WPF and Avalonia source tokens.",
+  "summary": {
+    "workflowCount": 8,
+    "behaviorAligned": 8,
+    "functionalParityGaps": 0,
+    "remainingVisualOrNativeLimitations": 2,
+    "sharedNonParityLimitations": 0
+  },
+  "sourceSets": {
+    "wpf": [
+      "freew\\FreeW.App.Host\\Ribbon\\FreeWRibbonCommands.cs",
+      "freew\\FreeW.App.Host\\Editing\\DocumentView.cs",
+      "freew\\FreeW.App.Host\\PageSetupDialog.cs",
+      "freew\\FreeW.App.Host\\ParagraphBreaksDialog.cs",
+      "freew\\FreeW.App.Host\\ParagraphIndentDialog.cs",
+      "freew\\FreeW.App.Host\\ColumnsDialog.cs",
+      "freew\\FreeW.App.Host\\CustomParagraphSpacingDialog.cs",
+      "freew\\FreeW.App.Host\\DropCapOptionsDialog.cs",
+      "freew\\FreeW.App.Host\\HyphenationOptionsDialog.cs",
+      "freew\\FreeW.App.Host\\ManualHyphenationDialog.cs",
+      "freew\\FreeW.App.Host\\LineNumberOptionsDialog.cs",
+      "freew\\FreeW.Ribbon.Definitions\\FreeWRibbon.cs"
+    ],
+    "avalonia": [
+      "freew\\FreeW.App.Avalonia\\MainWindow.cs",
+      "freew\\FreeW.App.Avalonia\\Ribbon\\FreeWAvaloniaRibbonCommands.cs",
+      "freew\\FreeW.App.Avalonia\\Editing\\DocumentView.cs",
+      "freew\\FreeW.App.Avalonia\\PageSetupDialog.cs",
+      "freew\\FreeW.App.Avalonia\\ParagraphDialog.cs",
+      "freew\\FreeW.App.Avalonia\\PageLayoutDialogs.cs",
+      "freew\\FreeW.Ribbon.Definitions\\FreeWCanonicalRibbonTabs.cs"
+    ]
+  },
+  "workflows": [
+    {
+      "id": "layout.page-setup",
+      "routes": [
+        "freew.margins",
+        "freew.custom-margins",
+        "freew.orientation",
+        "freew.size",
+        "freew.more-paper-sizes",
+        "freew.page-setup"
+      ],
+      "surface": "WPF-authoritative Margins/Paper/Layout tabs plus quick geometry routes",
+      "lifecycle": "Owner-modal; OK applies once; Cancel, Escape, and window close return no result; Layout launchers defer to backed routes.",
+      "validation": "PageSetupDialogPlanner validates non-negative margins/distances and positive geometry.",
+      "resultApplication": "PageLayoutCommandPlanner applies the full result through one SetPageSettingsCommand and one layout refresh.",
+      "sharedPolicy": "PageSetupDialogPlanner; PageLayoutCommandPlanner",
+      "tests": [
+        "freew/FreeW.App.Presentation.Tests/PageLayoutCommandPlannerTests.cs",
+        "freew/FreeW.App.Presentation.Tests/ManualHyphenationPlannerTests.cs",
+        "freew/FreeW.Core.Model.Tests/ApplyManualHyphenationCommandTests.cs",
+        "freew/FreeW.App.Host.Tests/PageLayoutDialogParityTests.cs",
+        "freew/FreeW.App.Avalonia.Tests/PageLayoutDialogParityTests.cs"
+      ],
+      "status": "behavior-aligned"
+    },
+    {
+      "id": "layout.columns",
+      "routes": [
+        "freew.columns",
+        "freew.columns-one",
+        "freew.columns-two",
+        "freew.columns-three",
+        "freew.columns-left",
+        "freew.columns-right",
+        "freew.columns-more"
+      ],
+      "surface": "Columns presets and owner-modal More Columns dialog",
+      "lifecycle": "Preset routes apply immediately; dialog OK applies once; Cancel, Escape, and close do not mutate.",
+      "validation": "ColumnsDialogPlanner validates count 1-12 and non-negative spacing and owns unequal-width presets.",
+      "resultApplication": "The selected page settings are committed through one undoable page-settings command.",
+      "sharedPolicy": "ColumnsDialogPlanner; PageLayoutCommandPlanner",
+      "tests": [
+        "freew/FreeW.App.Presentation.Tests/PageLayoutCommandPlannerTests.cs",
+        "freew/FreeW.App.Presentation.Tests/ManualHyphenationPlannerTests.cs",
+        "freew/FreeW.Core.Model.Tests/ApplyManualHyphenationCommandTests.cs",
+        "freew/FreeW.App.Host.Tests/PageLayoutDialogParityTests.cs",
+        "freew/FreeW.App.Avalonia.Tests/PageLayoutDialogParityTests.cs"
+      ],
+      "status": "behavior-aligned"
+    },
+    {
+      "id": "layout.breaks",
+      "routes": [
+        "freew.page-break",
+        "freew.column-break",
+        "freew.section-break-next-page",
+        "freew.section-break-continuous",
+        "freew.section-break-even-page",
+        "freew.section-break-odd-page"
+      ],
+      "surface": "Immediate page, column, and section break menu routes",
+      "lifecycle": "Each route inserts one backed break at the current selection or caret; no dialog is involved.",
+      "validation": "SectionBreakKind constrains section modes and editor insertion guards the active selection.",
+      "resultApplication": "One document command inserts each break and invalidates layout.",
+      "sharedPolicy": "Core break model and editor command bus",
+      "tests": [
+        "freew/FreeW.App.Avalonia.Tests/PageSetupDialogTests.cs",
+        "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs"
+      ],
+      "status": "behavior-aligned"
+    },
+    {
+      "id": "layout.paragraph-composition",
+      "routes": [
+        "freew.indent-left",
+        "freew.indent-right",
+        "freew.space-before",
+        "freew.space-after",
+        "freew.line-spacing",
+        "freew.paragraph-dialog"
+      ],
+      "surface": "Layout Paragraph controls and two-tab Paragraph dialog",
+      "lifecycle": "Dialog OK applies all indents, spacing, and pagination flags once to selected paragraphs; Cancel, Escape, and close do not mutate.",
+      "validation": "ParagraphBreaksDialogPlanner owns parsing and pagination result construction.",
+      "resultApplication": "Selection-scoped formatting is grouped into one undo entry and rerendered.",
+      "sharedPolicy": "ParagraphBreaksDialogPlanner",
+      "tests": [
+        "freew/FreeW.App.Avalonia.Tests/FontAndParagraphDialogTests.cs",
+        "freew/FreeW.App.Host.Tests/HomeDialogDepthTests.cs"
+      ],
+      "status": "behavior-aligned"
+    },
+    {
+      "id": "design.custom-paragraph-spacing",
+      "routes": [
+        "freew.custom-paragraph-spacing"
+      ],
+      "surface": "Owner-modal Custom Paragraph Spacing dialog from Design",
+      "lifecycle": "Default button accepts; Cancel, Escape, and close return null; invalid OK remains open and focuses the failing field.",
+      "validation": "CustomParagraphSpacingDialogPlanner owns ranges, field-specific errors, and spacing-set construction.",
+      "resultApplication": "The accepted document spacing set applies through the existing document-wide spacing command.",
+      "sharedPolicy": "CustomParagraphSpacingDialogPlanner",
+      "tests": [
+        "freew/FreeW.App.Presentation.Tests/PageLayoutCommandPlannerTests.cs",
+        "freew/FreeW.App.Presentation.Tests/ManualHyphenationPlannerTests.cs",
+        "freew/FreeW.Core.Model.Tests/ApplyManualHyphenationCommandTests.cs",
+        "freew/FreeW.App.Host.Tests/PageLayoutDialogParityTests.cs",
+        "freew/FreeW.App.Avalonia.Tests/PageLayoutDialogParityTests.cs"
+      ],
+      "status": "behavior-aligned"
+    },
+    {
+      "id": "insert.drop-cap-options",
+      "routes": [
+        "freew.drop-cap",
+        "freew.drop-cap-dropped",
+        "freew.drop-cap-in-margin",
+        "freew.drop-cap-none",
+        "freew.drop-cap-options"
+      ],
+      "surface": "Drop Cap presets and owner-modal Drop Cap Options dialog",
+      "lifecycle": "Default button accepts; Cancel, Escape, and close return null; focus starts on lines-to-drop.",
+      "validation": "DropCapOptionsDialogPlanner owns position mapping, defaults, and bounded lines/distance.",
+      "resultApplication": "Accepted position applies or clears the current paragraph drop cap in one selection-scoped command.",
+      "sharedPolicy": "DropCapOptionsDialogPlanner; DropCap model helper",
+      "tests": [
+        "freew/FreeW.App.Presentation.Tests/PageLayoutCommandPlannerTests.cs",
+        "freew/FreeW.App.Presentation.Tests/ManualHyphenationPlannerTests.cs",
+        "freew/FreeW.Core.Model.Tests/ApplyManualHyphenationCommandTests.cs",
+        "freew/FreeW.App.Host.Tests/PageLayoutDialogParityTests.cs",
+        "freew/FreeW.App.Avalonia.Tests/PageLayoutDialogParityTests.cs"
+      ],
+      "status": "behavior-aligned"
+    },
+    {
+      "id": "layout.hyphenation",
+      "routes": [
+        "freew.hyphenation",
+        "freew.hyphenation-none",
+        "freew.hyphenation-auto",
+        "freew.hyphenation-manual",
+        "freew.hyphenation-options"
+      ],
+      "surface": "Checked None/Automatic modes, owner-modal per-word manual review, and owner-modal options",
+      "lifecycle": "Mode routes apply immediately; manual review presents Yes/No/Cancel for each candidate; options OK applies once; Cancel, Escape, and close preserve already accepted manual choices without changing automatic mode.",
+      "validation": "HyphenationOptionsDialogPlanner validates zone and consecutive-limit values; ManualHyphenationPlanner owns candidate order and valid break positions.",
+      "resultApplication": "Backed settings apply through one undoable page-settings command; accepted manual breaks apply as one undoable U+00AD body-text command.",
+      "sharedPolicy": "HyphenationOptionsDialogPlanner; ManualHyphenationPlanner; ApplyManualHyphenationCommand",
+      "tests": [
+        "freew/FreeW.App.Presentation.Tests/PageLayoutCommandPlannerTests.cs",
+        "freew/FreeW.App.Presentation.Tests/ManualHyphenationPlannerTests.cs",
+        "freew/FreeW.Core.Model.Tests/ApplyManualHyphenationCommandTests.cs",
+        "freew/FreeW.App.Host.Tests/PageLayoutDialogParityTests.cs",
+        "freew/FreeW.App.Avalonia.Tests/PageLayoutDialogParityTests.cs"
+      ],
+      "status": "behavior-aligned"
+    },
+    {
+      "id": "layout.line-numbering",
+      "routes": [
+        "freew.line-numbers",
+        "freew.line-numbers-none",
+        "freew.line-numbers-continuous",
+        "freew.line-numbers-restart-page",
+        "freew.line-numbers-options"
+      ],
+      "surface": "Checked line-number modes and owner-modal options",
+      "lifecycle": "Mode routes apply immediately; options OK applies once; Cancel, Escape, and close do not mutate.",
+      "validation": "LineNumberOptionsDialogPlanner validates positive Start At and Count By values.",
+      "resultApplication": "Mode, start, and count apply through one undoable page-settings command and one layout refresh.",
+      "sharedPolicy": "LineNumberOptionsDialogPlanner; PageLayoutCommandPlanner",
+      "tests": [
+        "freew/FreeW.App.Presentation.Tests/PageLayoutCommandPlannerTests.cs",
+        "freew/FreeW.App.Presentation.Tests/ManualHyphenationPlannerTests.cs",
+        "freew/FreeW.Core.Model.Tests/ApplyManualHyphenationCommandTests.cs",
+        "freew/FreeW.App.Host.Tests/PageLayoutDialogParityTests.cs",
+        "freew/FreeW.App.Avalonia.Tests/PageLayoutDialogParityTests.cs"
+      ],
+      "status": "behavior-aligned"
+    }
+  ],
+  "remainingLimitations": [
+    {
+      "id": "paired-opened-state-pixels",
+      "kind": "visual-evidence",
+      "parityGap": false,
+      "exactWork": "Capture matching WPF/Avalonia opened, populated, validation, and cancel states at 96 DPI to compare exact dimensions, tab geometry, focus cues, clipping, and nonblank pixels."
+    },
+    {
+      "id": "platform-native-window-metrics",
+      "kind": "native-rendering",
+      "parityGap": false,
+      "exactWork": "OS window chrome, native font shaping, focus rectangles, and message presentation remain toolkit/platform rendered and are not expected to be pixel-identical."
+    }
+  ]
 }

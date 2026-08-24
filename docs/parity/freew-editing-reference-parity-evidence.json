@@ -1,231 +1,231 @@
 {
-    "schemaVersion":  1,
-    "generatedBy":  "tools/Generate-FreeWEditingReferenceParityEvidence.ps1",
-    "inventoryMethod":  "Explicit seven-workflow semantic and lifecycle contracts validated against current WPF and Avalonia source tokens.",
-    "summary":  {
-                    "workflowCount":  7,
-                    "behaviorAligned":  7,
-                    "functionalGaps":  0,
-                    "remainingVisualOrHumanEvidenceItems":  2
-                },
-    "workflows":  [
-                      {
-                          "id":  "references.notes",
-                          "triggers":  [
-                                           "freew.insert-footnote",
-                                           "freew.insert-endnote",
-                                           "freew.show-notes",
-                                           "freew.next/previous-footnote",
-                                           "freew.next/previous-endnote",
-                                           "freew.footnote-endnote-options"
-                                       ],
-                          "wpfSurface":  "Bottom Notes pane plus insertion and numbering-options dialogs",
-                          "avaloniaSurface":  "Bottom Notes pane plus insertion and numbering-options dialogs",
-                          "modality":  "modeless pane; owner-centered modal prompts",
-                          "lifecycle":  "Insertion applies only after nonempty OK; the pane toggles, selects, loads rich content, and keeps Apply/Delete explicit; note navigation wraps; cancel/close do not mutate.",
-                          "validation":  "Shared numbering planner validates all six footnote/endnote format, start, and restart values.",
-                          "resultApplication":  "Insertion, pane edit/delete, and six-value options apply through document commands; Avalonia edit/delete/options are one-step undoable and invalidate layout.",
-                          "sharedPolicy":  "FootnoteEndnoteOptionsDialogPlanner; NoteReferenceRibbonWorkflow; note model and navigation contracts",
-                          "wpfSources":  [
-                                             "freew/FreeW.App.Host/MainWindow.cs",
-                                             "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs",
-                                             "freew/FreeW.App.Host/Editing/DocumentView.cs"
-                                         ],
-                          "avaloniaSources":  [
-                                                  "freew/FreeW.App.Avalonia/MainWindow.cs",
-                                                  "freew/FreeW.App.Avalonia/NotesPane.cs",
-                                                  "freew/FreeW.App.Avalonia/Editing/DocumentView.cs"
-                                              ],
-                          "tests":  [
-                                        "freew/FreeW.App.Host.Tests/EditableNotesPaneTests.cs",
-                                        "freew/FreeW.App.Avalonia.Tests/EditingReferenceParityTests.cs"
-                                    ],
-                          "status":  "behavior-aligned"
-                      },
-                      {
-                          "id":  "insert.date-time",
-                          "triggers":  [
-                                           "freew.date-time"
-                                       ],
-                          "wpfSurface":  "Date and Time dialog with five culture-derived choices and automatic-update option",
-                          "avaloniaSurface":  "Date and Time dialog with five culture-derived choices and automatic-update option",
-                          "modality":  "owner-centered modal",
-                          "lifecycle":  "One DateTime and CurrentCulture are captured before opening; OK inserts the selected static value or DATE/TIME complex field; cancel, Escape, and close are no-ops.",
-                          "validation":  "Choice index is constrained to the five generated formats; DATE versus TIME follows the selected format.",
-                          "resultApplication":  "Static text inserts the captured display value; automatic update inserts the matching complex-field instruction with the same cached result.",
-                          "sharedPolicy":  "Culture-derived date/time format contract",
-                          "wpfSources":  [
-                                             "freew/FreeW.App.Host/DateTimeDialog.cs",
-                                             "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs"
-                                         ],
-                          "avaloniaSources":  [
-                                                  "freew/FreeW.App.Avalonia/DateTimeDialog.cs",
-                                                  "freew/FreeW.App.Avalonia/MainWindow.cs"
-                                              ],
-                          "tests":  [
-                                        "freew/FreeW.App.Host.Tests/ComplexFieldEditorTests.cs",
-                                        "freew/FreeW.App.Avalonia.Tests/EditingReferenceParityTests.cs"
-                                    ],
-                          "status":  "behavior-aligned"
-                      },
-                      {
-                          "id":  "layout.text-to-table",
-                          "triggers":  [
-                                           "freew.text-to-table"
-                                       ],
-                          "wpfSurface":  "Delimiter choice dialog over selected paragraphs",
-                          "avaloniaSurface":  "Delimiter choice dialog over selected paragraphs",
-                          "modality":  "owner-centered modal",
-                          "lifecycle":  "Tab/comma/semicolon choice converts all selected paragraphs; cancel, Escape, and close do not mutate.",
-                          "validation":  "TableTextConversionDialogPlanner supplies supported delimiters and default choice; ragged rows are preserved by the shared conversion model.",
-                          "resultApplication":  "One replace-blocks command creates the table, places the caret in the first cell, and undoes in one step.",
-                          "sharedPolicy":  "TableTextConversionDialogPlanner; TextTableConvert",
-                          "wpfSources":  [
-                                             "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs",
-                                             "freew/FreeW.App.Host/TableTextConversionDialog.cs",
-                                             "freew/FreeW.App.Host/Editing/DocumentView.cs"
-                                         ],
-                          "avaloniaSources":  [
-                                                  "freew/FreeW.App.Avalonia/ImageAndTableConversionDialogs.cs",
-                                                  "freew/FreeW.App.Avalonia/MainWindow.cs",
-                                                  "freew/FreeW.App.Avalonia/Editing/DocumentView.cs"
-                                              ],
-                          "tests":  [
-                                        "freew/FreeW.App.Host.Tests/ImageAndTableConversionParityTests.cs",
-                                        "freew/FreeW.App.Avalonia.Tests/EditingReferenceParityTests.cs"
-                                    ],
-                          "status":  "behavior-aligned"
-                      },
-                      {
-                          "id":  "references.table-of-authorities",
-                          "triggers":  [
-                                           "freew.table-of-authorities",
-                                           "freew.table-of-authorities-refresh"
-                                       ],
-                          "wpfSurface":  "Table of Authorities options dialog",
-                          "avaloniaSurface":  "Table of Authorities options dialog",
-                          "modality":  "owner-centered modal",
-                          "lifecycle":  "OK applies planner-built options; cancel, Escape, and close do not insert; refresh rebuilds the existing region with WPF-equivalent defaults.",
-                          "validation":  "Shared planner owns category, passim, formatting, and tab-leader choices.",
-                          "resultApplication":  "Shared region planner inserts or refreshes the authority paragraphs and page references through the editor command bus.",
-                          "sharedPolicy":  "TableOfAuthoritiesDialogPlanner; TableOfAuthoritiesRegionPlanner",
-                          "wpfSources":  [
-                                             "freew/FreeW.App.Host/TableOfAuthoritiesDialog.cs",
-                                             "freew/FreeW.App.Host/Editing/DocumentView.cs"
-                                         ],
-                          "avaloniaSources":  [
-                                                  "freew/FreeW.App.Avalonia/TableOfAuthoritiesDialog.cs",
-                                                  "freew/FreeW.App.Avalonia/MainWindow.cs",
-                                                  "freew/FreeW.App.Avalonia/Editing/DocumentView.cs"
-                                              ],
-                          "tests":  [
-                                        "freew/FreeW.App.Host.Tests/TableOfAuthoritiesDialogTests.cs",
-                                        "freew/FreeW.App.Avalonia.Tests/EditingReferenceParityTests.cs"
-                                    ],
-                          "status":  "behavior-aligned"
-                      },
-                      {
-                          "id":  "home.multilevel-list",
-                          "triggers":  [
-                                           "freew.multilevel-define"
-                                       ],
-                          "wpfSurface":  "Define Multilevel List dialog",
-                          "avaloniaSurface":  "Define Multilevel List dialog",
-                          "modality":  "owner-centered modal",
-                          "lifecycle":  "Current level formats seed the dialog; invalid OK remains open and focuses the failed start value; valid OK applies; cancel, Escape, and close do not mutate.",
-                          "validation":  "Shared planner owns number-format choices, current-state projection, positive start validation, and result construction.",
-                          "resultApplication":  "The selected starts and number formats update the document multilevel definition through one undoable command.",
-                          "sharedPolicy":  "MultilevelListDialogPlanner",
-                          "wpfSources":  [
-                                             "freew/FreeW.App.Host/MultilevelListDialog.cs"
-                                         ],
-                          "avaloniaSources":  [
-                                                  "freew/FreeW.App.Avalonia/MultilevelListDialog.cs",
-                                                  "freew/FreeW.App.Avalonia/MainWindow.cs"
-                                              ],
-                          "tests":  [
-                                        "freew/FreeW.App.Host.Tests/HomeDialogDepthTests.cs",
-                                        "freew/FreeW.App.Presentation.Tests/Dialogs/MultilevelListDialogPlannerTests.cs",
-                                        "freew/FreeW.App.Avalonia.Tests/EditingReferenceParityTests.cs"
-                                    ],
-                          "status":  "behavior-aligned"
-                      },
-                      {
-                          "id":  "insert.bookmark-manager",
-                          "triggers":  [
-                                           "freew.bookmark-manager"
-                                       ],
-                          "wpfSurface":  "Bookmark Manager dialog with Go To, Delete, and refreshed selection",
-                          "avaloniaSurface":  "Bookmark Manager dialog with Go To, Delete, and refreshed selection",
-                          "modality":  "owner-centered modal",
-                          "lifecycle":  "The list is refreshed from document order; Go To moves to the selected bookmark; Delete refreshes and retains a valid selection; close does not mutate.",
-                          "validation":  "Actions require a selected bookmark; the existing freew.bookmark Add/Go dialog remains separate.",
-                          "resultApplication":  "Go To moves the caret; Avalonia Delete uses an undoable bookmark-removal command and refreshes the manager list.",
-                          "sharedPolicy":  "Bookmarks list/location model",
-                          "wpfSources":  [
-                                             "freew/FreeW.App.Host/BookmarkManagerDialog.cs"
-                                         ],
-                          "avaloniaSources":  [
-                                                  "freew/FreeW.App.Avalonia/BookmarkManagerDialog.cs",
-                                                  "freew/FreeW.App.Avalonia/MainWindow.cs",
-                                                  "freew/FreeW.App.Avalonia/Editing/DocumentView.cs"
-                                              ],
-                          "tests":  [
-                                        "freew/FreeW.App.Host.Tests/HomeDialogDepthTests.cs",
-                                        "freew/FreeW.App.Avalonia.Tests/EditingReferenceParityTests.cs"
-                                    ],
-                          "status":  "behavior-aligned"
-                      },
-                      {
-                          "id":  "review.thesaurus",
-                          "triggers":  [
-                                           "freew.thesaurus",
-                                           "Shift+F7"
-                                       ],
-                          "wpfSurface":  "Modeless right Thesaurus pane",
-                          "avaloniaSurface":  "Modeless right Thesaurus pane",
-                          "modality":  "modeless toggle pane",
-                          "lifecycle":  "Ribbon or Shift+F7 toggles the pane; showing and caret refresh rebuild lookup results; Replace edits the caret word and refreshes; Copy is asynchronous in Avalonia.",
-                          "validation":  "Shared presentation planner normalizes the caret word and supplies sense/action rows and empty-result status.",
-                          "resultApplication":  "Replace routes through the editor command bus; Copy writes only to the platform clipboard and does not mutate the document.",
-                          "sharedPolicy":  "ThesaurusPresentationPlanner; ThesaurusLookup",
-                          "wpfSources":  [
-                                             "freew/FreeW.App.Host/ThesaurusPane.cs",
-                                             "freew/FreeW.App.Host/MainWindow.cs"
-                                         ],
-                          "avaloniaSources":  [
-                                                  "freew/FreeW.App.Avalonia/ThesaurusPane.cs",
-                                                  "freew/FreeW.App.Avalonia/MainWindow.cs"
-                                              ],
-                          "tests":  [
-                                        "freew/FreeW.App.Host.Tests/ThesaurusAndBalloonsTests.cs",
-                                        "freew/FreeW.App.Avalonia.Tests/EditingReferenceParityTests.cs"
-                                    ],
-                          "status":  "behavior-aligned"
-                      }
-                  ],
-    "remainingGaps":  [
-                          {
-                              "id":  "paired-app-surface-captures",
-                              "kind":  "visual-evidence",
-                              "workflows":  [
-                                                "references.notes",
-                                                "insert.date-time",
-                                                "layout.text-to-table",
-                                                "references.table-of-authorities",
-                                                "home.multilevel-list",
-                                                "insert.bookmark-manager",
-                                                "review.thesaurus"
-                                            ],
-                              "exactWork":  "Capture matching WPF/Avalonia opened, populated, validation, and cancel states at 96 DPI; compare dimensions, focus, enabled/default controls, pane docking, overflow, and nonblank pixels."
-                          },
-                          {
-                              "id":  "native-clipboard-focus-smoke",
-                              "kind":  "human-smoke",
-                              "workflows":  [
-                                                "review.thesaurus"
-                                            ],
-                              "exactWork":  "Confirm asynchronous Copy reaches the native clipboard and focus returns after Replace on a packaged desktop run; platform clipboard behavior is not suitable for pixel equivalence."
-                          }
-                      ]
+  "schemaVersion": 1,
+  "generatedBy": "tools/Generate-FreeWEditingReferenceParityEvidence.ps1",
+  "inventoryMethod": "Explicit seven-workflow semantic and lifecycle contracts validated against current WPF and Avalonia source tokens.",
+  "summary": {
+    "workflowCount": 7,
+    "behaviorAligned": 7,
+    "functionalGaps": 0,
+    "remainingVisualOrHumanEvidenceItems": 2
+  },
+  "workflows": [
+    {
+      "id": "references.notes",
+      "triggers": [
+        "freew.insert-footnote",
+        "freew.insert-endnote",
+        "freew.show-notes",
+        "freew.next/previous-footnote",
+        "freew.next/previous-endnote",
+        "freew.footnote-endnote-options"
+      ],
+      "wpfSurface": "Bottom Notes pane plus insertion and numbering-options dialogs",
+      "avaloniaSurface": "Bottom Notes pane plus insertion and numbering-options dialogs",
+      "modality": "modeless pane; owner-centered modal prompts",
+      "lifecycle": "Insertion applies only after nonempty OK; the pane toggles, selects, loads rich content, and keeps Apply/Delete explicit; note navigation wraps; cancel/close do not mutate.",
+      "validation": "Shared numbering planner validates all six footnote/endnote format, start, and restart values.",
+      "resultApplication": "Insertion, pane edit/delete, and six-value options apply through document commands; Avalonia edit/delete/options are one-step undoable and invalidate layout.",
+      "sharedPolicy": "FootnoteEndnoteOptionsDialogPlanner; NoteReferenceRibbonWorkflow; note model and navigation contracts",
+      "wpfSources": [
+        "freew/FreeW.App.Host/MainWindow.cs",
+        "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs",
+        "freew/FreeW.App.Host/Editing/DocumentView.cs"
+      ],
+      "avaloniaSources": [
+        "freew/FreeW.App.Avalonia/MainWindow.cs",
+        "freew/FreeW.App.Avalonia/NotesPane.cs",
+        "freew/FreeW.App.Avalonia/Editing/DocumentView.cs"
+      ],
+      "tests": [
+        "freew/FreeW.App.Host.Tests/EditableNotesPaneTests.cs",
+        "freew/FreeW.App.Avalonia.Tests/EditingReferenceParityTests.cs"
+      ],
+      "status": "behavior-aligned"
+    },
+    {
+      "id": "insert.date-time",
+      "triggers": [
+        "freew.date-time"
+      ],
+      "wpfSurface": "Date and Time dialog with five culture-derived choices and automatic-update option",
+      "avaloniaSurface": "Date and Time dialog with five culture-derived choices and automatic-update option",
+      "modality": "owner-centered modal",
+      "lifecycle": "One DateTime and CurrentCulture are captured before opening; OK inserts the selected static value or DATE/TIME complex field; cancel, Escape, and close are no-ops.",
+      "validation": "Choice index is constrained to the five generated formats; DATE versus TIME follows the selected format.",
+      "resultApplication": "Static text inserts the captured display value; automatic update inserts the matching complex-field instruction with the same cached result.",
+      "sharedPolicy": "Culture-derived date/time format contract",
+      "wpfSources": [
+        "freew/FreeW.App.Host/DateTimeDialog.cs",
+        "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs"
+      ],
+      "avaloniaSources": [
+        "freew/FreeW.App.Avalonia/DateTimeDialog.cs",
+        "freew/FreeW.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freew/FreeW.App.Host.Tests/ComplexFieldEditorTests.cs",
+        "freew/FreeW.App.Avalonia.Tests/EditingReferenceParityTests.cs"
+      ],
+      "status": "behavior-aligned"
+    },
+    {
+      "id": "layout.text-to-table",
+      "triggers": [
+        "freew.text-to-table"
+      ],
+      "wpfSurface": "Delimiter choice dialog over selected paragraphs",
+      "avaloniaSurface": "Delimiter choice dialog over selected paragraphs",
+      "modality": "owner-centered modal",
+      "lifecycle": "Tab/comma/semicolon choice converts all selected paragraphs; cancel, Escape, and close do not mutate.",
+      "validation": "TableTextConversionDialogPlanner supplies supported delimiters and default choice; ragged rows are preserved by the shared conversion model.",
+      "resultApplication": "One replace-blocks command creates the table, places the caret in the first cell, and undoes in one step.",
+      "sharedPolicy": "TableTextConversionDialogPlanner; TextTableConvert",
+      "wpfSources": [
+        "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs",
+        "freew/FreeW.App.Host/TableTextConversionDialog.cs",
+        "freew/FreeW.App.Host/Editing/DocumentView.cs"
+      ],
+      "avaloniaSources": [
+        "freew/FreeW.App.Avalonia/ImageAndTableConversionDialogs.cs",
+        "freew/FreeW.App.Avalonia/MainWindow.cs",
+        "freew/FreeW.App.Avalonia/Editing/DocumentView.cs"
+      ],
+      "tests": [
+        "freew/FreeW.App.Host.Tests/ImageAndTableConversionParityTests.cs",
+        "freew/FreeW.App.Avalonia.Tests/EditingReferenceParityTests.cs"
+      ],
+      "status": "behavior-aligned"
+    },
+    {
+      "id": "references.table-of-authorities",
+      "triggers": [
+        "freew.table-of-authorities",
+        "freew.table-of-authorities-refresh"
+      ],
+      "wpfSurface": "Table of Authorities options dialog",
+      "avaloniaSurface": "Table of Authorities options dialog",
+      "modality": "owner-centered modal",
+      "lifecycle": "OK applies planner-built options; cancel, Escape, and close do not insert; refresh rebuilds the existing region with WPF-equivalent defaults.",
+      "validation": "Shared planner owns category, passim, formatting, and tab-leader choices.",
+      "resultApplication": "Shared region planner inserts or refreshes the authority paragraphs and page references through the editor command bus.",
+      "sharedPolicy": "TableOfAuthoritiesDialogPlanner; TableOfAuthoritiesRegionPlanner",
+      "wpfSources": [
+        "freew/FreeW.App.Host/TableOfAuthoritiesDialog.cs",
+        "freew/FreeW.App.Host/Editing/DocumentView.cs"
+      ],
+      "avaloniaSources": [
+        "freew/FreeW.App.Avalonia/TableOfAuthoritiesDialog.cs",
+        "freew/FreeW.App.Avalonia/MainWindow.cs",
+        "freew/FreeW.App.Avalonia/Editing/DocumentView.cs"
+      ],
+      "tests": [
+        "freew/FreeW.App.Host.Tests/TableOfAuthoritiesDialogTests.cs",
+        "freew/FreeW.App.Avalonia.Tests/EditingReferenceParityTests.cs"
+      ],
+      "status": "behavior-aligned"
+    },
+    {
+      "id": "home.multilevel-list",
+      "triggers": [
+        "freew.multilevel-define"
+      ],
+      "wpfSurface": "Define Multilevel List dialog",
+      "avaloniaSurface": "Define Multilevel List dialog",
+      "modality": "owner-centered modal",
+      "lifecycle": "Current level formats seed the dialog; invalid OK remains open and focuses the failed start value; valid OK applies; cancel, Escape, and close do not mutate.",
+      "validation": "Shared planner owns number-format choices, current-state projection, positive start validation, and result construction.",
+      "resultApplication": "The selected starts and number formats update the document multilevel definition through one undoable command.",
+      "sharedPolicy": "MultilevelListDialogPlanner",
+      "wpfSources": [
+        "freew/FreeW.App.Host/MultilevelListDialog.cs"
+      ],
+      "avaloniaSources": [
+        "freew/FreeW.App.Avalonia/MultilevelListDialog.cs",
+        "freew/FreeW.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freew/FreeW.App.Host.Tests/HomeDialogDepthTests.cs",
+        "freew/FreeW.App.Presentation.Tests/Dialogs/MultilevelListDialogPlannerTests.cs",
+        "freew/FreeW.App.Avalonia.Tests/EditingReferenceParityTests.cs"
+      ],
+      "status": "behavior-aligned"
+    },
+    {
+      "id": "insert.bookmark-manager",
+      "triggers": [
+        "freew.bookmark-manager"
+      ],
+      "wpfSurface": "Bookmark Manager dialog with Go To, Delete, and refreshed selection",
+      "avaloniaSurface": "Bookmark Manager dialog with Go To, Delete, and refreshed selection",
+      "modality": "owner-centered modal",
+      "lifecycle": "The list is refreshed from document order; Go To moves to the selected bookmark; Delete refreshes and retains a valid selection; close does not mutate.",
+      "validation": "Actions require a selected bookmark; the existing freew.bookmark Add/Go dialog remains separate.",
+      "resultApplication": "Go To moves the caret; Avalonia Delete uses an undoable bookmark-removal command and refreshes the manager list.",
+      "sharedPolicy": "Bookmarks list/location model",
+      "wpfSources": [
+        "freew/FreeW.App.Host/BookmarkManagerDialog.cs"
+      ],
+      "avaloniaSources": [
+        "freew/FreeW.App.Avalonia/BookmarkManagerDialog.cs",
+        "freew/FreeW.App.Avalonia/MainWindow.cs",
+        "freew/FreeW.App.Avalonia/Editing/DocumentView.cs"
+      ],
+      "tests": [
+        "freew/FreeW.App.Host.Tests/HomeDialogDepthTests.cs",
+        "freew/FreeW.App.Avalonia.Tests/EditingReferenceParityTests.cs"
+      ],
+      "status": "behavior-aligned"
+    },
+    {
+      "id": "review.thesaurus",
+      "triggers": [
+        "freew.thesaurus",
+        "Shift+F7"
+      ],
+      "wpfSurface": "Modeless right Thesaurus pane",
+      "avaloniaSurface": "Modeless right Thesaurus pane",
+      "modality": "modeless toggle pane",
+      "lifecycle": "Ribbon or Shift+F7 toggles the pane; showing and caret refresh rebuild lookup results; Replace edits the caret word and refreshes; Copy is asynchronous in Avalonia.",
+      "validation": "Shared presentation planner normalizes the caret word and supplies sense/action rows and empty-result status.",
+      "resultApplication": "Replace routes through the editor command bus; Copy writes only to the platform clipboard and does not mutate the document.",
+      "sharedPolicy": "ThesaurusPresentationPlanner; ThesaurusLookup",
+      "wpfSources": [
+        "freew/FreeW.App.Host/ThesaurusPane.cs",
+        "freew/FreeW.App.Host/MainWindow.cs"
+      ],
+      "avaloniaSources": [
+        "freew/FreeW.App.Avalonia/ThesaurusPane.cs",
+        "freew/FreeW.App.Avalonia/MainWindow.cs"
+      ],
+      "tests": [
+        "freew/FreeW.App.Host.Tests/ThesaurusAndBalloonsTests.cs",
+        "freew/FreeW.App.Avalonia.Tests/EditingReferenceParityTests.cs"
+      ],
+      "status": "behavior-aligned"
+    }
+  ],
+  "remainingGaps": [
+    {
+      "id": "paired-app-surface-captures",
+      "kind": "visual-evidence",
+      "workflows": [
+        "references.notes",
+        "insert.date-time",
+        "layout.text-to-table",
+        "references.table-of-authorities",
+        "home.multilevel-list",
+        "insert.bookmark-manager",
+        "review.thesaurus"
+      ],
+      "exactWork": "Capture matching WPF/Avalonia opened, populated, validation, and cancel states at 96 DPI; compare dimensions, focus, enabled/default controls, pane docking, overflow, and nonblank pixels."
+    },
+    {
+      "id": "native-clipboard-focus-smoke",
+      "kind": "human-smoke",
+      "workflows": [
+        "review.thesaurus"
+      ],
+      "exactWork": "Confirm asynchronous Copy reaches the native clipboard and focus returns after Replace on a packaged desktop run; platform clipboard behavior is not suitable for pixel equivalence."
+    }
+  ]
 }
