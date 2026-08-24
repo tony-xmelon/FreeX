@@ -88,22 +88,37 @@ Avalonia project **2,193/2,193**, and focused project build **0/0**. There was
 no runtime harness or evidence change.
 
 The prior final no-findings review is superseded by this source advancement.
-Final independent review, Release build, default lane, and repository
-preflight are all reopened pending post-remediation results.
+Final independent review found no findings. The reviewer verified that f2a
+structurally scopes the color function before the mixed-type function, accepts
+the later decoy, rejects the internal assignment, verifies Wave191-193 retained
+hashes **11/11, 11/11, 18/18**, verifies Wave194 **20 evidence plus 12
+provenance/validation**, and found FreeP and FreeW clean.
 
 ## Pending integration gates
 
 The following exact results must be recorded before Wave194 can be marked
 accepted:
 
-- Final independent review after the source-guard remediation.
-- Full Release build at the tested source commit.
-- Final default non-UI test lane and authoritative project totals.
 - Repository preflight at the tested source commit.
 
-Until those results are supplied, the generated dashboard intentionally reports
-Wave194 as `pending-final-integration-gates`. No visual parity claim is made by
-this pending acceptance unit.
+Completed integration gates:
+
+- Final independent review: passed with no findings; all source-guard and
+  evidence checks above were verified.
+- Full Release build: passed with 0 warnings and 0 errors, elapsed
+  `00:13:58.57`, using `dotnet build FreeX.slnx --configuration Release
+  --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false
+  /nr:false -m:1`.
+- Final default non-UI lane: exited 0 with **43,427 passed, 134 skipped/not-run,
+  0 failed, 43,561 total**. There were 25 unique TRX files plus 31 additional
+  passed captures overwritten into the shared capture TRX path across seven
+  capture assemblies. Key totals: FreeP Avalonia 724/0; FreeP Host 2,409/0;
+  FreeP Presentation 5,468/0; FreeX Avalonia 2,193/0; Host Logic 1,490 passed/4
+  skipped; Presentation 5,465/1; Core.IO 5,841/56; Core Model 6,317/41;
+  Formula 5,199/7; Calc 1,982/24; Integration 661/1.
+
+Repository preflight remains the only pending gate. No visual parity claim is
+made by this provisional acceptance unit.
 
 ## Acceptance boundary
 
