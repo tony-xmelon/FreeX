@@ -10,13 +10,13 @@ Gap classifications are generated from explicit rule order: shared-profile, comm
 
 | Total | Both profiles | WPF profile only | Avalonia profile only | Missing WPF profile | Missing Avalonia profile | Actionable missing WPF | Actionable missing Avalonia |
 |---:|---:|---:|---:|---:|---:|---:|---:|
-| 946 | 708 | 2 | 236 | 236 | 2 | 0 | 0 |
+| 951 | 708 | 2 | 241 | 241 | 2 | 0 | 0 |
 
 ## Classification Counts
 
 | Shared profile | Profile-shape only | Command-id aliases | Platform-only | Deferred | Actionable gaps | Behavior evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|
-| 708 | 233 | 0 | 5 | 0 | 0 | 506 |
+| 708 | 238 | 0 | 5 | 0 | 0 | 506 |
 
 ## Classification Rules
 
@@ -438,6 +438,11 @@ Gap classifications are generated from explicit rule order: shared-profile, comm
 | `freew.layout-bring-forward` | Bring Forward | Yes | Yes | none | shared-profile | shared-profile | shared-profile | layout/arrange (RibbonButton; Medium) | layout/arrange (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.layout-flip-horizontal` | Flip Horizontal | Yes | Yes | none | shared-profile | shared-profile | shared-profile | layout/arrange (RibbonMenuItem; Menu) | layout/arrange (RibbonMenuItem; Menu) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.layout-flip-vertical` | Flip Vertical | Yes | Yes | none | shared-profile | shared-profile | shared-profile | layout/arrange (RibbonMenuItem; Menu) | layout/arrange (RibbonMenuItem; Menu) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
+| `freew.layout-position` | Position | No | Yes | WPF | avalonia-profile-only | profile-shape-only | profile-shape-only | - | layout/arrange (RibbonDropdown; Medium) | WPF definition source<br>Avalonia definition source | - | Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence. |
+| `freew.layout-position-column-paragraph` | Column, Paragraph | No | Yes | WPF | avalonia-profile-only | profile-shape-only | profile-shape-only | - | layout/arrange (RibbonMenuItem; Menu) | - | - | Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence. |
+| `freew.layout-position-margin-paragraph` | Margin, Paragraph | No | Yes | WPF | avalonia-profile-only | profile-shape-only | profile-shape-only | - | layout/arrange (RibbonMenuItem; Menu) | - | - | Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence. |
+| `freew.layout-position-page-paragraph` | Page, Paragraph | No | Yes | WPF | avalonia-profile-only | profile-shape-only | profile-shape-only | - | layout/arrange (RibbonMenuItem; Menu) | - | - | Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence. |
+| `freew.layout-position-page-top` | Page Top | No | Yes | WPF | avalonia-profile-only | profile-shape-only | profile-shape-only | - | layout/arrange (RibbonMenuItem; Menu) | - | - | Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence. |
 | `freew.layout-rotate` | Rotate | Yes | Yes | none | shared-profile | shared-profile | shared-profile | layout/arrange (RibbonDropdown; Medium) | layout/arrange (RibbonDropdown; Medium) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.layout-rotate-left90` | Rotate Left 90° | Yes | Yes | none | shared-profile | shared-profile | shared-profile | layout/arrange (RibbonMenuItem; Menu) | layout/arrange (RibbonMenuItem; Menu) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.layout-rotate-right90` | Rotate Right 90° | Yes | Yes | none | shared-profile | shared-profile | shared-profile | layout/arrange (RibbonMenuItem; Menu) | layout/arrange (RibbonMenuItem; Menu) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |

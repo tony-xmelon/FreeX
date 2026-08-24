@@ -125,16 +125,16 @@
     }
   ],
   "summary": {
-    "totalCommands": 946,
+    "totalCommands": 951,
     "both": 708,
     "wpfOnly": 2,
-    "avaloniaOnly": 236,
-    "missingWpf": 236,
+    "avaloniaOnly": 241,
+    "missingWpf": 241,
     "missingAvalonia": 2,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
     "sharedProfile": 708,
-    "profileShapeOnly": 233,
+    "profileShapeOnly": 238,
     "commandIdAliases": 0,
     "platformOnly": 5,
     "deferred": 0,
@@ -19332,6 +19332,161 @@
       }
     },
     {
+      "commandId": "freew.layout-position",
+      "label": "Position",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Position",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.layout-position-column-paragraph",
+      "label": "Column, Paragraph",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Column, Paragraph",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.layout-position-margin-paragraph",
+      "label": "Margin, Paragraph",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Margin, Paragraph",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.layout-position-page-paragraph",
+      "label": "Page, Paragraph",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Page, Paragraph",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.layout-position-page-top",
+      "label": "Page Top",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Page Top",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
       "commandId": "freew.layout-rotate",
       "label": "Rotate",
       "wpfPresent": true,
@@ -38458,7 +38613,7 @@
       "behaviorEvidence": {
         "evidenceId": "freew.table-insertion.shared-workflow",
         "slice": "Insert table command behavior",
-        "summary": "The shared insertion workflow maps the 2 × 2 menu choice and primary Table face to one command for both renderers.",
+        "summary": "The shared insertion workflow maps the 2 Ã— 2 menu choice and primary Table face to one command for both renderers.",
         "wpfEvidence": {
           "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
           "test": "TableInsertionRibbonWorkflowTests.EditorFamilyBuilderReceivesTheSameCanonicalAndAdapterCommands"
@@ -38502,7 +38657,7 @@
       "behaviorEvidence": {
         "evidenceId": "freew.table-insertion.shared-workflow",
         "slice": "Insert table command behavior",
-        "summary": "The shared insertion workflow maps the 3 × 3 menu choice and legacy Table route to one command for both renderers.",
+        "summary": "The shared insertion workflow maps the 3 Ã— 3 menu choice and legacy Table route to one command for both renderers.",
         "wpfEvidence": {
           "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
           "test": "TableInsertionRibbonWorkflowTests.EditorFamilyBuilderReceivesTheSameCanonicalAndAdapterCommands"
@@ -38546,7 +38701,7 @@
       "behaviorEvidence": {
         "evidenceId": "freew.table-insertion.shared-workflow",
         "slice": "Insert table command behavior",
-        "summary": "The shared insertion workflow inserts a 4 × 4 table through the same renderer port in both hosts.",
+        "summary": "The shared insertion workflow inserts a 4 Ã— 4 table through the same renderer port in both hosts.",
         "wpfEvidence": {
           "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
           "test": "TableInsertionRibbonWorkflowTests.EditorFamilyBuilderReceivesTheSameCanonicalAndAdapterCommands"
@@ -38590,7 +38745,7 @@
       "behaviorEvidence": {
         "evidenceId": "freew.table-insertion.shared-workflow",
         "slice": "Insert table command behavior",
-        "summary": "The shared insertion workflow inserts a 5 × 2 table through the same renderer port in both hosts.",
+        "summary": "The shared insertion workflow inserts a 5 Ã— 2 table through the same renderer port in both hosts.",
         "wpfEvidence": {
           "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
           "test": "TableInsertionRibbonWorkflowTests.EditorFamilyBuilderReceivesTheSameCanonicalAndAdapterCommands"
