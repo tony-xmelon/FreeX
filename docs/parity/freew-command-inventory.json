@@ -125,15 +125,15 @@
     }
   ],
   "summary": {
-    "totalCommands": 931,
-    "both": 693,
+    "totalCommands": 932,
+    "both": 694,
     "wpfOnly": 2,
     "avaloniaOnly": 236,
     "missingWpf": 236,
     "missingAvalonia": 2,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 693,
+    "sharedProfile": 694,
     "profileShapeOnly": 233,
     "commandIdAliases": 0,
     "platformOnly": 5,
@@ -40268,6 +40268,48 @@
           "groupId": "paragraph",
           "group": "Paragraph",
           "label": "Tabs",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.test-crash-reporting",
+      "label": "Test Crash Reporting",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "help",
+          "tab": "Help",
+          "groupId": "help",
+          "group": "Help",
+          "label": "Test Crash Reporting",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "help",
+          "tab": "Help",
+          "groupId": "help",
+          "group": "Help",
+          "label": "Test Crash Reporting",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }

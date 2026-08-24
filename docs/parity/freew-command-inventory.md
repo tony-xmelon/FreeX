@@ -10,13 +10,13 @@ Gap classifications are generated from explicit rule order: shared-profile, comm
 
 | Total | Both profiles | WPF profile only | Avalonia profile only | Missing WPF profile | Missing Avalonia profile | Actionable missing WPF | Actionable missing Avalonia |
 |---:|---:|---:|---:|---:|---:|---:|---:|
-| 931 | 693 | 2 | 236 | 236 | 2 | 0 | 0 |
+| 932 | 694 | 2 | 236 | 236 | 2 | 0 | 0 |
 
 ## Classification Counts
 
 | Shared profile | Profile-shape only | Command-id aliases | Platform-only | Deferred | Actionable gaps | Behavior evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|
-| 693 | 233 | 0 | 5 | 0 | 0 | 506 |
+| 694 | 233 | 0 | 5 | 0 | 0 | 506 |
 
 ## Classification Rules
 
@@ -878,6 +878,7 @@ Gap classifications are generated from explicit rule order: shared-profile, comm
 | `freew.table-to-text` | Table to Text | Yes | Yes | none | shared-profile | shared-profile | shared-profile | layout/data (RibbonButton; Medium)<br>table-layout/table-data (RibbonButton; Medium) | layout/data (RibbonButton; Medium)<br>table-layout/table-data (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source | Command host parity: ImageAndTableConversionParityTests.TableToTextHostRoute_UsesSharedConverterAndUndoRestoresTable<br>CommandParityCropTableToTextTests.TableToTextRegistryRoute_MatchesCaretEnablementMutationSelectionAndUndo | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.table-view-gridlines` | View Gridlines | Yes | Yes | none | shared-profile | shared-profile | shared-profile | table-layout/table-table (RibbonButton; Medium) | table-layout/table-select (RibbonToggleButton; Medium) | WPF definition source<br>Avalonia definition source | Table editing command behavior: TableEditingRibbonWorkflowTests.SharedWorkflowOwnsAutoFitAlignmentAndTextDirectionMappings<br>TableEditingRibbonWorkflowTests.BothRenderersDelegateTableEditingPolicyToSharedPresentation | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.tabs-dialog` | Tabs | Yes | Yes | none | shared-profile | shared-profile | shared-profile | home/paragraph (RibbonButton; Small)<br>layout/paragraph (RibbonButton; Small) | home/paragraph (RibbonButton; Small)<br>layout/paragraph (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
+| `freew.test-crash-reporting` | Test Crash Reporting | Yes | Yes | none | shared-profile | shared-profile | shared-profile | help/help (RibbonButton; Large) | help/help (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.text-to-table` | Text to Table | Yes | Yes | none | shared-profile | shared-profile | shared-profile | layout/data (RibbonButton; Medium) | layout/data (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.textbox-quote` | Quote | Yes | Yes | none | shared-profile | shared-profile | shared-profile | insert/text (RibbonMenuItem; Menu) | insert/text (RibbonMenuItem; Menu) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.textbox-sidebar` | Sidebar (Banded) | Yes | Yes | none | shared-profile | shared-profile | shared-profile | insert/text (RibbonMenuItem; Menu) | insert/text (RibbonMenuItem; Menu) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |

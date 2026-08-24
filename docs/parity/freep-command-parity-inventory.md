@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 691 | 691 | 0 | 0 | 0 | 0 | 0 | 0 | 691 | 0 | 0 | 0 | 0 | 110 |
+| 693 | 693 | 0 | 0 | 0 | 0 | 0 | 0 | 693 | 0 | 0 | 0 | 0 | 110 |
 
 ## Workflow Evidence
 
@@ -343,6 +343,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.chart.series-options` | Series Options | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.text-options` | Text Options | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.copy` | Copy | Yes | Yes | none | shared | home/clipboard (RibbonButton) | home/clipboard (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.copy-diagnostics` | Copy Diagnostics | Yes | Yes | none | shared | help/support (RibbonButton) | help/support (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.cut` | Cut | Yes | Yes | none | shared | home/clipboard (RibbonButton) | home/clipboard (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.date-time` | Date & Time | Yes | Yes | none | shared | insert/text (RibbonButton) | insert/text (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.delete-slide` | Delete Slide | Yes | Yes | none | shared | home/slides (RibbonButton) | home/slides (RibbonButton) | Available in both generated FreeP ribbon profiles. |
@@ -739,6 +740,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.table.last-row` | Total Row | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.table.merge-cells` | Merge Cells | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.table.split-cell` | Split Cell | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.test-crash-reporting` | Test Crash Reporting | Yes | Yes | none | shared | help/support (RibbonButton) | help/support (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.text-autofit` | Text Autofit | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
 | `freep.text-box` | Text Box | Yes | Yes | none | shared | insert/text (RibbonButton) | insert/text (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.text-column-spacing` | Column Spacing | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
