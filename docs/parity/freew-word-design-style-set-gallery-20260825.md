@@ -2,8 +2,8 @@
 
 ## Scope
 
-This visual-parity slice covers the WPF FreeW Design tab at the 1280px Word
-reference width. Ink/Draw behavior and map-chart fidelity remain explicitly
+This visual-parity slice covers the WPF and Avalonia FreeW Design tabs at the
+1280px Word reference width. Ink/Draw behavior and map-chart fidelity remain explicitly
 out of scope for the wider parity effort.
 
 ## Reference and correction
@@ -22,6 +22,11 @@ all ten backed style sets in a compact menu, making the Design ribbon sparse.
 
 The implementation preserves the existing hover-preview, cancel-preview, and
 apply callbacks; no new model or external dependency is required.
+
+Avalonia now uses the same hierarchy: a compact Themes chooser, eight direct
+style-set previews, a More Style Sets menu, and the existing Colors, Fonts,
+Paragraph Spacing, and Effects catalogs. Its headless capture is
+`artifacts/ux-parity-freew-avalonia-design-20260825/revised/shell-1280x900-design.png`.
 
 ## Evidence
 
