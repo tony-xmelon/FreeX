@@ -62,16 +62,16 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
-| dialog.DataTable | 360x210 | 360x210 | 540x315 px @ 144 DPI vs 360x210 px @ 120 DPI |  |  | 0.101 | 0.043 | 0.006 | 0.051 |
-| dialog.ChangeChartType | 640x390 | 640x390 | 960x585 px @ 144 DPI vs 640x390 px @ 120 DPI |  |  | 0.077 | 0.046 | 0.005 | 0.027 |
-| dialog.InsertHyperlink | 560x300 | 560x300 | 840x450 px @ 144 DPI vs 560x300 px @ 120 DPI |  |  | 0.075 | 0.034 | 0.007 | 0.034 |
-| dialog.AccessibilityChecker | 360x520 | 360x520 | 360x520 px @ 96 DPI vs 360x520 px @ 120 DPI |  |  | 0.067 | 0.044 | 0.001 | 0.021 |
-| dialog.GoTo | 420x320 | 420x320 | 420x320 px @ 96 DPI vs 420x320 px @ 120 DPI |  |  | 0.066 | 0.027 | 0.011 | 0.028 |
-| dialog.PageSetup.Sheet | 600x560 | 600x560 | 600x560 px @ 96 DPI vs 600x560 px @ 120 DPI |  |  | 0.066 | 0.038 | 0.004 | 0.023 |
-| dialog.ConditionalFormatManage | 560x420 | 560x420 | 840x630 px @ 144 DPI vs 560x420 px @ 120 DPI |  |  | 0.065 | 0.035 | 0.001 | 0.028 |
-| dialog.WatchWindow | 760x320 | 760x320 | 760x320 px @ 96 DPI vs 760x320 px @ 120 DPI |  |  | 0.065 | 0.027 | 0.009 | 0.029 |
-| dialog.ScenarioManager | 360x420 | 360x420 | 540x630 px @ 144 DPI vs 360x420 px @ 120 DPI |  |  | 0.063 | 0.042 | 0.005 | 0.016 |
-| dialog.RenameSheet | 340x150 | 340x150 | 510x225 px @ 144 DPI vs 340x150 px @ 120 DPI |  |  | 0.062 | 0.045 | 0.003 | 0.015 |
+| dialog.DataTable | 360x210 | 360x210 | 540x315 px @ 144 DPI vs 360x210 px @ 96 DPI |  |  | 0.101 | 0.043 | 0.006 | 0.051 |
+| dialog.ChangeChartType | 640x390 | 640x390 | 960x585 px @ 144 DPI vs 640x390 px @ 96 DPI |  |  | 0.077 | 0.046 | 0.005 | 0.027 |
+| dialog.InsertHyperlink | 560x300 | 560x300 | 840x450 px @ 144 DPI vs 560x300 px @ 96 DPI |  |  | 0.075 | 0.034 | 0.007 | 0.034 |
+| dialog.AccessibilityChecker | 360x520 | 360x520 | 360x520 px @ 96 DPI vs 360x520 px @ 96 DPI |  |  | 0.067 | 0.044 | 0.001 | 0.021 |
+| dialog.GoTo | 420x320 | 420x320 | 420x320 px @ 96 DPI vs 420x320 px @ 96 DPI |  |  | 0.066 | 0.027 | 0.011 | 0.028 |
+| dialog.PageSetup.Sheet | 600x560 | 600x560 | 600x560 px @ 96 DPI vs 600x560 px @ 96 DPI |  |  | 0.066 | 0.038 | 0.004 | 0.023 |
+| dialog.ConditionalFormatManage | 560x420 | 560x420 | 840x630 px @ 144 DPI vs 560x420 px @ 96 DPI |  |  | 0.065 | 0.035 | 0.001 | 0.028 |
+| dialog.WatchWindow | 760x320 | 760x320 | 760x320 px @ 96 DPI vs 760x320 px @ 96 DPI |  |  | 0.065 | 0.027 | 0.009 | 0.029 |
+| dialog.ScenarioManager | 360x420 | 360x420 | 540x630 px @ 144 DPI vs 360x420 px @ 96 DPI |  |  | 0.063 | 0.042 | 0.005 | 0.016 |
+| dialog.RenameSheet | 340x150 | 340x150 | 510x225 px @ 144 DPI vs 340x150 px @ 96 DPI |  |  | 0.062 | 0.045 | 0.003 | 0.015 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -89,100 +89,100 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 
 | Surface id | WPF PNG | WPF logical size | WPF raw PNG | WPF nonblank | Avalonia PNG | Avalonia logical size | Avalonia raw PNG | Avalonia nonblank | Dimension match | Score |
 | --- | --- | ---: | ---: | --- | --- | ---: | ---: | --- | --- | ---: |
-| dialog.About | dialog.About.png | 560x420 | 560x420 px @ 96 DPI | True | dialog.About.png | 560x420 | 560x420 px @ 120 DPI | True | True | 0.056 |
-| dialog.AccessibilityChecker | dialog.AccessibilityChecker.png | 360x520 | 360x520 px @ 96 DPI | True | dialog.AccessibilityChecker.png | 360x520 | 360x520 px @ 120 DPI | True | True | 0.067 |
-| dialog.AddWatch | dialog.AddWatch.png | 360x170 | 360x170 px @ 96 DPI | True | dialog.AddWatch.png | 360x170 | 360x170 px @ 120 DPI | True | True | 0.036 |
-| dialog.AdvancedFilter | dialog.AdvancedFilter.png | 420x340 | 630x510 px @ 144 DPI | True | dialog.AdvancedFilter.png | 420x340 | 420x340 px @ 120 DPI | True | True | 0.057 |
-| dialog.AllowEditRanges | dialog.AllowEditRanges.png | 430x420 | 430x420 px @ 96 DPI | True | dialog.AllowEditRanges.png | 430x420 | 430x420 px @ 120 DPI | True | True | 0.023 |
-| dialog.AutoFilter | dialog.AutoFilter.png | 312x436.689 | 468x655 px @ 144 DPI | True | dialog.AutoFilter.png | 312x437 | 312x437 px @ 120 DPI | True | True | 0.054 |
-| dialog.ChangeChartType | dialog.ChangeChartType.png | 640x390 | 960x585 px @ 144 DPI | True | dialog.ChangeChartType.png | 640x390 | 640x390 px @ 120 DPI | True | True | 0.077 |
-| dialog.ConditionalFormatManage | dialog.ConditionalFormatManage.png | 560x420 | 840x630 px @ 144 DPI | True | dialog.ConditionalFormatManage.png | 560x420 | 560x420 px @ 120 DPI | True | True | 0.065 |
-| dialog.ConditionalFormatNewRule | dialog.ConditionalFormatNewRule.png | 634.256x334 | 634x334 px @ 96 DPI | True | dialog.ConditionalFormatNewRule.png | 634x334 | 634x334 px @ 120 DPI | True | True | 0.046 |
-| dialog.Consolidate | dialog.Consolidate.png | 380x420 | 380x420 px @ 96 DPI | True | dialog.Consolidate.png | 380x420 | 380x420 px @ 120 DPI | True | True | 0.031 |
-| dialog.CreateTable | dialog.CreateTable.png | 360x190 | 360x190 px @ 96 DPI | True | dialog.CreateTable.png | 360x190 | 360x190 px @ 120 DPI | True | True | 0.045 |
-| dialog.CustomViews | dialog.CustomViews.png | 640x360 | 960x540 px @ 144 DPI | True | dialog.CustomViews.png | 640x360 | 640x360 px @ 120 DPI | True | True | 0.058 |
-| dialog.DataTable | dialog.DataTable.png | 360x210 | 540x315 px @ 144 DPI | True | dialog.DataTable.png | 360x210 | 360x210 px @ 120 DPI | True | True | 0.101 |
-| dialog.DataValidation | dialog.DataValidation.png | 520x560 | 780x840 px @ 144 DPI | True | dialog.DataValidation.png | 520x560 | 520x560 px @ 120 DPI | True | True | 0.059 |
-| dialog.ErrorChecking | dialog.ErrorChecking.png | 720x420 | 720x420 px @ 96 DPI | True | dialog.ErrorChecking.png | 720x420 | 720x420 px @ 120 DPI | True | True | 0.047 |
-| dialog.EvaluateFormula | dialog.EvaluateFormula.png | 600x360 | 600x360 px @ 96 DPI | True | dialog.EvaluateFormula.png | 600x360 | 600x360 px @ 120 DPI | True | True | 0.025 |
-| dialog.ExportOptions | dialog.ExportOptions.png | 430x552 | 430x552 px @ 96 DPI | True | dialog.ExportOptions.png | 430x552 | 430x552 px @ 120 DPI | True | True | 0.058 |
-| dialog.FindReplace | dialog.FindReplace.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.png | 720x430 | 720x430 px @ 120 DPI | True | True | 0.054 |
-| dialog.FindReplace.Find | dialog.FindReplace.Find.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.Find.png | 720x430 | 720x430 px @ 120 DPI | True | True | 0.054 |
-| dialog.FindReplace.Replace | dialog.FindReplace.Replace.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.Replace.png | 720x430 | 720x430 px @ 120 DPI | True | True | 0.053 |
-| dialog.ForecastSheet | dialog.ForecastSheet.png | 320x150 | 480x225 px @ 144 DPI | True | dialog.ForecastSheet.png | 320x150 | 320x150 px @ 120 DPI | True | True | 0.057 |
-| dialog.FormatCells | dialog.FormatCells.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.png | 620x540 | 620x540 px @ 120 DPI | True | True | 0.029 |
-| dialog.FormatCells.Alignment | dialog.FormatCells.Alignment.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Alignment.png | 620x540 | 620x540 px @ 120 DPI | True | True | 0.024 |
-| dialog.FormatCells.Border | dialog.FormatCells.Border.png | 620x597 | 620x597 px @ 96 DPI | True | dialog.FormatCells.Border.png | 620x597 | 620x597 px @ 120 DPI | True | True | 0.033 |
-| dialog.FormatCells.Fill | dialog.FormatCells.Fill.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Fill.png | 620x540 | 620x540 px @ 120 DPI | True | True | 0.046 |
-| dialog.FormatCells.Font | dialog.FormatCells.Font.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Font.png | 620x540 | 620x540 px @ 120 DPI | True | True | 0.059 |
-| dialog.FormatCells.Number | dialog.FormatCells.Number.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Number.png | 620x540 | 620x540 px @ 120 DPI | True | True | 0.029 |
-| dialog.FormatCells.Protection | dialog.FormatCells.Protection.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Protection.png | 620x540 | 620x540 px @ 120 DPI | True | True | 0.015 |
-| dialog.FormatChartArea | dialog.FormatChartArea.png | 420x590 | 630x885 px @ 144 DPI | True | dialog.FormatChartArea.png | 420x590 | 420x590 px @ 120 DPI | True | True | 0.060 |
-| dialog.GoalSeek | dialog.GoalSeek.png | 380x210 | 380x210 px @ 96 DPI | True | dialog.GoalSeek.png | 380x210 | 380x210 px @ 120 DPI | True | True | 0.054 |
-| dialog.GoalSeekStatus | dialog.GoalSeekStatus.png | 380x190 | 380x190 px @ 96 DPI | True | dialog.GoalSeekStatus.png | 380x190 | 380x190 px @ 120 DPI | True | True | 0.037 |
-| dialog.GoTo | dialog.GoTo.png | 420x320 | 420x320 px @ 96 DPI | True | dialog.GoTo.png | 420x320 | 420x320 px @ 120 DPI | True | True | 0.066 |
-| dialog.GoToSpecial | dialog.GoToSpecial.png | 430x438 | 430x438 px @ 96 DPI | True | dialog.GoToSpecial.png | 430x438 | 430x438 px @ 120 DPI | True | True | 0.034 |
-| dialog.HeaderFooterDialog | dialog.HeaderFooterDialog.png | 760x600 | 760x600 px @ 96 DPI | True | dialog.HeaderFooterDialog.png | 760x600 | 760x600 px @ 120 DPI | True | True | 0.034 |
-| dialog.InsertHyperlink | dialog.InsertHyperlink.png | 560x300 | 840x450 px @ 144 DPI | True | dialog.InsertHyperlink.png | 560x300 | 560x300 px @ 120 DPI | True | True | 0.075 |
-| dialog.InsertSlicer | dialog.InsertSlicer.png | 410x270 | 615x405 px @ 144 DPI | True | dialog.InsertSlicer.png | 410x270 | 410x270 px @ 120 DPI | True | True | 0.046 |
-| dialog.InsertTimeline | dialog.InsertTimeline.png | 410x270 | 615x405 px @ 144 DPI | True | dialog.InsertTimeline.png | 410x270 | 410x270 px @ 120 DPI | True | True | 0.040 |
-| dialog.LegalNotices | dialog.LegalNotices.png | 840x620 | 1260x930 px @ 144 DPI | True | dialog.LegalNotices.png | 840x620 | 840x620 px @ 120 DPI | True | True | 0.030 |
-| dialog.OpenWorkbook | dialog.OpenWorkbook.png | 640x420 | 640x420 px @ 96 DPI | True | dialog.OpenWorkbook.png | 640x420 | 640x420 px @ 120 DPI | True | True | 0.034 |
-| dialog.Options | dialog.Options.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.png | 744x521 | 744x521 px @ 120 DPI | True | True | 0.032 |
-| dialog.Options.AddIns | dialog.Options.AddIns.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.AddIns.png | 744x521 | 744x521 px @ 120 DPI | True | True | 0.013 |
-| dialog.Options.Advanced | dialog.Options.Advanced.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.Advanced.png | 744x521 | 744x521 px @ 120 DPI | True | True | 0.041 |
-| dialog.Options.CustomizeRibbon | dialog.Options.CustomizeRibbon.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.CustomizeRibbon.png | 744x521 | 744x521 px @ 120 DPI | True | True | 0.024 |
-| dialog.Options.EaseOfAccess | dialog.Options.EaseOfAccess.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.EaseOfAccess.png | 744x521 | 744x521 px @ 120 DPI | True | True | 0.013 |
-| dialog.Options.Formulas | dialog.Options.Formulas.png | 744x777 | 744x777 px @ 96 DPI | True | dialog.Options.Formulas.png | 744x777 | 744x777 px @ 120 DPI | True | True | 0.045 |
-| dialog.Options.General | dialog.Options.General.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.General.png | 744x521 | 744x521 px @ 120 DPI | True | True | 0.032 |
-| dialog.Options.Language | dialog.Options.Language.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.Language.png | 744x521 | 744x521 px @ 120 DPI | True | True | 0.021 |
-| dialog.Options.Proofing | dialog.Options.Proofing.png | 744.301x521 | 744x521 px @ 96 DPI | True | dialog.Options.Proofing.png | 744x521 | 744x521 px @ 120 DPI | True | True | 0.042 |
-| dialog.Options.QuickAccessToolbar | dialog.Options.QuickAccessToolbar.png | 744.301x521 | 744x521 px @ 96 DPI | True | dialog.Options.QuickAccessToolbar.png | 744x521 | 744x521 px @ 120 DPI | True | True | 0.047 |
-| dialog.Options.Save | dialog.Options.Save.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.Save.png | 744x521 | 744x521 px @ 120 DPI | True | True | 0.022 |
-| dialog.Options.TrustCenter | dialog.Options.TrustCenter.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.TrustCenter.png | 744x521 | 744x521 px @ 120 DPI | True | True | 0.030 |
-| dialog.Options.View | dialog.Options.View.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.View.png | 744x521 | 744x521 px @ 120 DPI | True | True | 0.014 |
-| dialog.PageSetup | dialog.PageSetup.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.png | 600x560 | 600x560 px @ 120 DPI | True | True | 0.056 |
-| dialog.PageSetup.HeaderFooter | dialog.PageSetup.HeaderFooter.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.HeaderFooter.png | 600x560 | 600x560 px @ 120 DPI | True | True | 0.050 |
-| dialog.PageSetup.Margins | dialog.PageSetup.Margins.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.Margins.png | 600x560 | 600x560 px @ 120 DPI | True | True | 0.040 |
-| dialog.PageSetup.Page | dialog.PageSetup.Page.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.Page.png | 600x560 | 600x560 px @ 120 DPI | True | True | 0.056 |
-| dialog.PageSetup.Sheet | dialog.PageSetup.Sheet.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.Sheet.png | 600x560 | 600x560 px @ 120 DPI | True | True | 0.066 |
-| dialog.PivotFieldFilter | dialog.PivotFieldFilter.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.png | 380x470 | 380x470 px @ 120 DPI | True | True | 0.040 |
-| dialog.PivotFieldFilter.LabelFilters | dialog.PivotFieldFilter.LabelFilters.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.LabelFilters.png | 380x470 | 380x470 px @ 120 DPI | True | True | 0.022 |
-| dialog.PivotFieldFilter.SelectItems | dialog.PivotFieldFilter.SelectItems.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.SelectItems.png | 380x470 | 380x470 px @ 120 DPI | True | True | 0.040 |
-| dialog.PivotFieldFilter.ValueFilters | dialog.PivotFieldFilter.ValueFilters.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.ValueFilters.png | 380x470 | 380x470 px @ 120 DPI | True | True | 0.020 |
-| dialog.PivotTableOptions | dialog.PivotTableOptions.png | 520x676 | 520x676 px @ 96 DPI | True | dialog.PivotTableOptions.png | 520x676 | 520x676 px @ 120 DPI | True | True | 0.046 |
-| dialog.PivotTableOptions.AltText | dialog.PivotTableOptions.AltText.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.AltText.png | 520x500 | 520x500 px @ 120 DPI | True | True | 0.039 |
-| dialog.PivotTableOptions.Data | dialog.PivotTableOptions.Data.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.Data.png | 520x500 | 520x500 px @ 120 DPI | True | True | 0.059 |
-| dialog.PivotTableOptions.Display | dialog.PivotTableOptions.Display.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.Display.png | 520x500 | 520x500 px @ 120 DPI | True | True | 0.059 |
-| dialog.PivotTableOptions.LayoutAndFormat | dialog.PivotTableOptions.LayoutAndFormat.png | 520x676 | 520x676 px @ 96 DPI | True | dialog.PivotTableOptions.LayoutAndFormat.png | 520x676 | 520x676 px @ 120 DPI | True | True | 0.046 |
-| dialog.PivotTableOptions.Printing | dialog.PivotTableOptions.Printing.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.Printing.png | 520x500 | 520x500 px @ 120 DPI | True | True | 0.041 |
-| dialog.PivotTableOptions.TotalsAndFilters | dialog.PivotTableOptions.TotalsAndFilters.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.TotalsAndFilters.png | 520x500 | 520x500 px @ 120 DPI | True | True | 0.045 |
-| dialog.PivotValueFieldSettings | dialog.PivotValueFieldSettings.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.png | 430x430 | 430x430 px @ 120 DPI | True | True | 0.030 |
-| dialog.PivotValueFieldSettings.NumberFormat | dialog.PivotValueFieldSettings.NumberFormat.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.NumberFormat.png | 430x430 | 430x430 px @ 120 DPI | True | True | 0.034 |
-| dialog.PivotValueFieldSettings.ShowValuesAs | dialog.PivotValueFieldSettings.ShowValuesAs.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.ShowValuesAs.png | 430x430 | 430x430 px @ 120 DPI | True | True | 0.032 |
-| dialog.PivotValueFieldSettings.SummarizeValuesBy | dialog.PivotValueFieldSettings.SummarizeValuesBy.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.SummarizeValuesBy.png | 430x430 | 430x430 px @ 120 DPI | True | True | 0.030 |
-| dialog.PrintPreview | dialog.PrintPreview.png | 1120x700 | 1120x700 px @ 96 DPI | True | dialog.PrintPreview.png | 1120x700 | 1120x700 px @ 120 DPI | True | True | 0.040 |
-| dialog.ProtectSheet | dialog.ProtectSheet.png | 430x540 | 645x810 px @ 144 DPI | True | dialog.ProtectSheet.png | 430x540 | 430x540 px @ 120 DPI | True | True | 0.045 |
-| dialog.ProtectWorkbook | dialog.ProtectWorkbook.png | 380x250 | 380x250 px @ 96 DPI | True | dialog.ProtectWorkbook.png | 380x250 | 380x250 px @ 120 DPI | True | True | 0.042 |
-| dialog.RecommendedPivotTables | dialog.RecommendedPivotTables.png | 560x340 | 840x510 px @ 144 DPI | True | dialog.RecommendedPivotTables.png | 560x340 | 560x340 px @ 120 DPI | True | True | 0.044 |
-| dialog.RemoveDuplicates | dialog.RemoveDuplicates.png | 360x360 | 360x360 px @ 96 DPI | True | dialog.RemoveDuplicates.png | 360x360 | 360x360 px @ 120 DPI | True | True | 0.057 |
-| dialog.RenameSheet | dialog.RenameSheet.png | 340x150 | 510x225 px @ 144 DPI | True | dialog.RenameSheet.png | 340x150 | 340x150 px @ 120 DPI | True | True | 0.062 |
-| dialog.SaveAsWorkbook | dialog.SaveAsWorkbook.png | 640x420 | 640x420 px @ 96 DPI | True | dialog.SaveAsWorkbook.png | 640x420 | 640x420 px @ 120 DPI | True | True | 0.036 |
-| dialog.ScenarioManager | dialog.ScenarioManager.png | 360x420 | 540x630 px @ 144 DPI | True | dialog.ScenarioManager.png | 360x420 | 360x420 px @ 120 DPI | True | True | 0.063 |
-| dialog.SelectDataSource | dialog.SelectDataSource.png | 620x500 | 930x750 px @ 144 DPI | True | dialog.SelectDataSource.png | 620x500 | 620x500 px @ 120 DPI | True | True | 0.029 |
-| dialog.SelectionPane | dialog.SelectionPane.png | 520x440 | 520x440 px @ 96 DPI | True | dialog.SelectionPane.png | 520x440 | 520x440 px @ 120 DPI | True | True | 0.044 |
-| dialog.ShapeEffects | dialog.ShapeEffects.png | 380x190 | 570x285 px @ 144 DPI | True | dialog.ShapeEffects.png | 380x190 | 380x190 px @ 120 DPI | True | True | 0.032 |
-| dialog.ShapeGradient | dialog.ShapeGradient.png | 500x300 | 500x300 px @ 96 DPI | True | dialog.ShapeGradient.png | 500x300 | 500x300 px @ 120 DPI | True | True | 0.055 |
-| dialog.Sort | dialog.Sort.png | 760x500 | 760x500 px @ 96 DPI | True | dialog.Sort.png | 760x500 | 760x500 px @ 120 DPI | True | True | 0.042 |
-| dialog.SortOptions | dialog.SortOptions.png | 330x260 | 495x390 px @ 144 DPI | True | dialog.SortOptions.png | 330x260 | 330x260 px @ 120 DPI | True | True | 0.049 |
-| dialog.Sparkline | dialog.Sparkline.png | 380x280 | 380x280 px @ 96 DPI | True | dialog.Sparkline.png | 380x280 | 380x280 px @ 120 DPI | True | True | 0.055 |
-| dialog.Subtotal | dialog.Subtotal.png | 380x390 | 380x390 px @ 96 DPI | True | dialog.Subtotal.png | 380x390 | 380x390 px @ 120 DPI | True | True | 0.038 |
-| dialog.SymbolPicker | dialog.SymbolPicker.png | 840x620 | 840x620 px @ 96 DPI | True | dialog.SymbolPicker.png | 840x620 | 840x620 px @ 120 DPI | True | True | 0.036 |
-| dialog.TextToColumns | dialog.TextToColumns.png | 560x560 | 560x560 px @ 96 DPI | True | dialog.TextToColumns.png | 560x560 | 560x560 px @ 120 DPI | True | True | 0.032 |
-| dialog.UnhideSheet | dialog.UnhideSheet.png | 340x160 | 510x240 px @ 144 DPI | True | dialog.UnhideSheet.png | 340x160 | 340x160 px @ 120 DPI | True | True | 0.041 |
-| dialog.WatchWindow | dialog.WatchWindow.png | 760x320 | 760x320 px @ 96 DPI | True | dialog.WatchWindow.png | 760x320 | 760x320 px @ 120 DPI | True | True | 0.065 |
-| dialog.WorkbookStatistics | dialog.WorkbookStatistics.png | 500x560 | 500x560 px @ 96 DPI | True | dialog.WorkbookStatistics.png | 500x560 | 500x560 px @ 120 DPI | True | True | 0.050 |
-| dialog.Zoom | dialog.Zoom.png | 300x240 | 300x240 px @ 96 DPI | True | dialog.Zoom.png | 300x240 | 300x240 px @ 120 DPI | True | True | 0.035 |
+| dialog.About | dialog.About.png | 560x420 | 560x420 px @ 96 DPI | True | dialog.About.png | 560x420 | 560x420 px @ 96 DPI | True | True | 0.056 |
+| dialog.AccessibilityChecker | dialog.AccessibilityChecker.png | 360x520 | 360x520 px @ 96 DPI | True | dialog.AccessibilityChecker.png | 360x520 | 360x520 px @ 96 DPI | True | True | 0.067 |
+| dialog.AddWatch | dialog.AddWatch.png | 360x170 | 360x170 px @ 96 DPI | True | dialog.AddWatch.png | 360x170 | 360x170 px @ 96 DPI | True | True | 0.036 |
+| dialog.AdvancedFilter | dialog.AdvancedFilter.png | 420x340 | 630x510 px @ 144 DPI | True | dialog.AdvancedFilter.png | 420x340 | 420x340 px @ 96 DPI | True | True | 0.057 |
+| dialog.AllowEditRanges | dialog.AllowEditRanges.png | 430x420 | 430x420 px @ 96 DPI | True | dialog.AllowEditRanges.png | 430x420 | 430x420 px @ 96 DPI | True | True | 0.023 |
+| dialog.AutoFilter | dialog.AutoFilter.png | 312x436.689 | 468x655 px @ 144 DPI | True | dialog.AutoFilter.png | 312x437 | 312x437 px @ 96 DPI | True | True | 0.054 |
+| dialog.ChangeChartType | dialog.ChangeChartType.png | 640x390 | 960x585 px @ 144 DPI | True | dialog.ChangeChartType.png | 640x390 | 640x390 px @ 96 DPI | True | True | 0.077 |
+| dialog.ConditionalFormatManage | dialog.ConditionalFormatManage.png | 560x420 | 840x630 px @ 144 DPI | True | dialog.ConditionalFormatManage.png | 560x420 | 560x420 px @ 96 DPI | True | True | 0.065 |
+| dialog.ConditionalFormatNewRule | dialog.ConditionalFormatNewRule.png | 634.256x334 | 634x334 px @ 96 DPI | True | dialog.ConditionalFormatNewRule.png | 634x334 | 634x334 px @ 96 DPI | True | True | 0.046 |
+| dialog.Consolidate | dialog.Consolidate.png | 380x420 | 380x420 px @ 96 DPI | True | dialog.Consolidate.png | 380x420 | 380x420 px @ 96 DPI | True | True | 0.031 |
+| dialog.CreateTable | dialog.CreateTable.png | 360x190 | 360x190 px @ 96 DPI | True | dialog.CreateTable.png | 360x190 | 360x190 px @ 96 DPI | True | True | 0.045 |
+| dialog.CustomViews | dialog.CustomViews.png | 640x360 | 960x540 px @ 144 DPI | True | dialog.CustomViews.png | 640x360 | 640x360 px @ 96 DPI | True | True | 0.058 |
+| dialog.DataTable | dialog.DataTable.png | 360x210 | 540x315 px @ 144 DPI | True | dialog.DataTable.png | 360x210 | 360x210 px @ 96 DPI | True | True | 0.101 |
+| dialog.DataValidation | dialog.DataValidation.png | 520x560 | 780x840 px @ 144 DPI | True | dialog.DataValidation.png | 520x560 | 520x560 px @ 96 DPI | True | True | 0.059 |
+| dialog.ErrorChecking | dialog.ErrorChecking.png | 720x420 | 720x420 px @ 96 DPI | True | dialog.ErrorChecking.png | 720x420 | 720x420 px @ 96 DPI | True | True | 0.047 |
+| dialog.EvaluateFormula | dialog.EvaluateFormula.png | 600x360 | 600x360 px @ 96 DPI | True | dialog.EvaluateFormula.png | 600x360 | 600x360 px @ 96 DPI | True | True | 0.025 |
+| dialog.ExportOptions | dialog.ExportOptions.png | 430x552 | 430x552 px @ 96 DPI | True | dialog.ExportOptions.png | 430x552 | 430x552 px @ 96 DPI | True | True | 0.058 |
+| dialog.FindReplace | dialog.FindReplace.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.054 |
+| dialog.FindReplace.Find | dialog.FindReplace.Find.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.Find.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.054 |
+| dialog.FindReplace.Replace | dialog.FindReplace.Replace.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.Replace.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.053 |
+| dialog.ForecastSheet | dialog.ForecastSheet.png | 320x150 | 480x225 px @ 144 DPI | True | dialog.ForecastSheet.png | 320x150 | 320x150 px @ 96 DPI | True | True | 0.057 |
+| dialog.FormatCells | dialog.FormatCells.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.png | 620x540 | 620x540 px @ 96 DPI | True | True | 0.029 |
+| dialog.FormatCells.Alignment | dialog.FormatCells.Alignment.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Alignment.png | 620x540 | 620x540 px @ 96 DPI | True | True | 0.024 |
+| dialog.FormatCells.Border | dialog.FormatCells.Border.png | 620x597 | 620x597 px @ 96 DPI | True | dialog.FormatCells.Border.png | 620x597 | 620x597 px @ 96 DPI | True | True | 0.033 |
+| dialog.FormatCells.Fill | dialog.FormatCells.Fill.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Fill.png | 620x540 | 620x540 px @ 96 DPI | True | True | 0.046 |
+| dialog.FormatCells.Font | dialog.FormatCells.Font.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Font.png | 620x540 | 620x540 px @ 96 DPI | True | True | 0.059 |
+| dialog.FormatCells.Number | dialog.FormatCells.Number.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Number.png | 620x540 | 620x540 px @ 96 DPI | True | True | 0.029 |
+| dialog.FormatCells.Protection | dialog.FormatCells.Protection.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Protection.png | 620x540 | 620x540 px @ 96 DPI | True | True | 0.015 |
+| dialog.FormatChartArea | dialog.FormatChartArea.png | 420x590 | 630x885 px @ 144 DPI | True | dialog.FormatChartArea.png | 420x590 | 420x590 px @ 96 DPI | True | True | 0.060 |
+| dialog.GoalSeek | dialog.GoalSeek.png | 380x210 | 380x210 px @ 96 DPI | True | dialog.GoalSeek.png | 380x210 | 380x210 px @ 96 DPI | True | True | 0.054 |
+| dialog.GoalSeekStatus | dialog.GoalSeekStatus.png | 380x190 | 380x190 px @ 96 DPI | True | dialog.GoalSeekStatus.png | 380x190 | 380x190 px @ 96 DPI | True | True | 0.037 |
+| dialog.GoTo | dialog.GoTo.png | 420x320 | 420x320 px @ 96 DPI | True | dialog.GoTo.png | 420x320 | 420x320 px @ 96 DPI | True | True | 0.066 |
+| dialog.GoToSpecial | dialog.GoToSpecial.png | 430x438 | 430x438 px @ 96 DPI | True | dialog.GoToSpecial.png | 430x438 | 430x438 px @ 96 DPI | True | True | 0.034 |
+| dialog.HeaderFooterDialog | dialog.HeaderFooterDialog.png | 760x600 | 760x600 px @ 96 DPI | True | dialog.HeaderFooterDialog.png | 760x600 | 760x600 px @ 96 DPI | True | True | 0.034 |
+| dialog.InsertHyperlink | dialog.InsertHyperlink.png | 560x300 | 840x450 px @ 144 DPI | True | dialog.InsertHyperlink.png | 560x300 | 560x300 px @ 96 DPI | True | True | 0.075 |
+| dialog.InsertSlicer | dialog.InsertSlicer.png | 410x270 | 615x405 px @ 144 DPI | True | dialog.InsertSlicer.png | 410x270 | 410x270 px @ 96 DPI | True | True | 0.046 |
+| dialog.InsertTimeline | dialog.InsertTimeline.png | 410x270 | 615x405 px @ 144 DPI | True | dialog.InsertTimeline.png | 410x270 | 410x270 px @ 96 DPI | True | True | 0.040 |
+| dialog.LegalNotices | dialog.LegalNotices.png | 840x620 | 1260x930 px @ 144 DPI | True | dialog.LegalNotices.png | 840x620 | 840x620 px @ 96 DPI | True | True | 0.030 |
+| dialog.OpenWorkbook | dialog.OpenWorkbook.png | 640x420 | 640x420 px @ 96 DPI | True | dialog.OpenWorkbook.png | 640x420 | 640x420 px @ 96 DPI | True | True | 0.034 |
+| dialog.Options | dialog.Options.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.032 |
+| dialog.Options.AddIns | dialog.Options.AddIns.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.AddIns.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.013 |
+| dialog.Options.Advanced | dialog.Options.Advanced.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.Advanced.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.041 |
+| dialog.Options.CustomizeRibbon | dialog.Options.CustomizeRibbon.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.CustomizeRibbon.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.024 |
+| dialog.Options.EaseOfAccess | dialog.Options.EaseOfAccess.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.EaseOfAccess.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.013 |
+| dialog.Options.Formulas | dialog.Options.Formulas.png | 744x777 | 744x777 px @ 96 DPI | True | dialog.Options.Formulas.png | 744x777 | 744x777 px @ 96 DPI | True | True | 0.045 |
+| dialog.Options.General | dialog.Options.General.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.General.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.032 |
+| dialog.Options.Language | dialog.Options.Language.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.Language.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.021 |
+| dialog.Options.Proofing | dialog.Options.Proofing.png | 744.301x521 | 744x521 px @ 96 DPI | True | dialog.Options.Proofing.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.042 |
+| dialog.Options.QuickAccessToolbar | dialog.Options.QuickAccessToolbar.png | 744.301x521 | 744x521 px @ 96 DPI | True | dialog.Options.QuickAccessToolbar.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.047 |
+| dialog.Options.Save | dialog.Options.Save.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.Save.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.022 |
+| dialog.Options.TrustCenter | dialog.Options.TrustCenter.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.TrustCenter.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.030 |
+| dialog.Options.View | dialog.Options.View.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.View.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.014 |
+| dialog.PageSetup | dialog.PageSetup.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.056 |
+| dialog.PageSetup.HeaderFooter | dialog.PageSetup.HeaderFooter.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.HeaderFooter.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.050 |
+| dialog.PageSetup.Margins | dialog.PageSetup.Margins.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.Margins.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.040 |
+| dialog.PageSetup.Page | dialog.PageSetup.Page.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.Page.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.056 |
+| dialog.PageSetup.Sheet | dialog.PageSetup.Sheet.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.Sheet.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.066 |
+| dialog.PivotFieldFilter | dialog.PivotFieldFilter.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.png | 380x470 | 380x470 px @ 96 DPI | True | True | 0.040 |
+| dialog.PivotFieldFilter.LabelFilters | dialog.PivotFieldFilter.LabelFilters.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.LabelFilters.png | 380x470 | 380x470 px @ 96 DPI | True | True | 0.022 |
+| dialog.PivotFieldFilter.SelectItems | dialog.PivotFieldFilter.SelectItems.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.SelectItems.png | 380x470 | 380x470 px @ 96 DPI | True | True | 0.040 |
+| dialog.PivotFieldFilter.ValueFilters | dialog.PivotFieldFilter.ValueFilters.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.ValueFilters.png | 380x470 | 380x470 px @ 96 DPI | True | True | 0.020 |
+| dialog.PivotTableOptions | dialog.PivotTableOptions.png | 520x676 | 520x676 px @ 96 DPI | True | dialog.PivotTableOptions.png | 520x676 | 520x676 px @ 96 DPI | True | True | 0.046 |
+| dialog.PivotTableOptions.AltText | dialog.PivotTableOptions.AltText.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.AltText.png | 520x500 | 520x500 px @ 96 DPI | True | True | 0.039 |
+| dialog.PivotTableOptions.Data | dialog.PivotTableOptions.Data.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.Data.png | 520x500 | 520x500 px @ 96 DPI | True | True | 0.059 |
+| dialog.PivotTableOptions.Display | dialog.PivotTableOptions.Display.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.Display.png | 520x500 | 520x500 px @ 96 DPI | True | True | 0.059 |
+| dialog.PivotTableOptions.LayoutAndFormat | dialog.PivotTableOptions.LayoutAndFormat.png | 520x676 | 520x676 px @ 96 DPI | True | dialog.PivotTableOptions.LayoutAndFormat.png | 520x676 | 520x676 px @ 96 DPI | True | True | 0.046 |
+| dialog.PivotTableOptions.Printing | dialog.PivotTableOptions.Printing.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.Printing.png | 520x500 | 520x500 px @ 96 DPI | True | True | 0.041 |
+| dialog.PivotTableOptions.TotalsAndFilters | dialog.PivotTableOptions.TotalsAndFilters.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.TotalsAndFilters.png | 520x500 | 520x500 px @ 96 DPI | True | True | 0.045 |
+| dialog.PivotValueFieldSettings | dialog.PivotValueFieldSettings.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.030 |
+| dialog.PivotValueFieldSettings.NumberFormat | dialog.PivotValueFieldSettings.NumberFormat.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.NumberFormat.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.034 |
+| dialog.PivotValueFieldSettings.ShowValuesAs | dialog.PivotValueFieldSettings.ShowValuesAs.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.ShowValuesAs.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.032 |
+| dialog.PivotValueFieldSettings.SummarizeValuesBy | dialog.PivotValueFieldSettings.SummarizeValuesBy.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.SummarizeValuesBy.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.030 |
+| dialog.PrintPreview | dialog.PrintPreview.png | 1120x700 | 1120x700 px @ 96 DPI | True | dialog.PrintPreview.png | 1120x700 | 1120x700 px @ 96 DPI | True | True | 0.040 |
+| dialog.ProtectSheet | dialog.ProtectSheet.png | 430x540 | 645x810 px @ 144 DPI | True | dialog.ProtectSheet.png | 430x540 | 430x540 px @ 96 DPI | True | True | 0.045 |
+| dialog.ProtectWorkbook | dialog.ProtectWorkbook.png | 380x250 | 380x250 px @ 96 DPI | True | dialog.ProtectWorkbook.png | 380x250 | 380x250 px @ 96 DPI | True | True | 0.042 |
+| dialog.RecommendedPivotTables | dialog.RecommendedPivotTables.png | 560x340 | 840x510 px @ 144 DPI | True | dialog.RecommendedPivotTables.png | 560x340 | 560x340 px @ 96 DPI | True | True | 0.044 |
+| dialog.RemoveDuplicates | dialog.RemoveDuplicates.png | 360x360 | 360x360 px @ 96 DPI | True | dialog.RemoveDuplicates.png | 360x360 | 360x360 px @ 96 DPI | True | True | 0.057 |
+| dialog.RenameSheet | dialog.RenameSheet.png | 340x150 | 510x225 px @ 144 DPI | True | dialog.RenameSheet.png | 340x150 | 340x150 px @ 96 DPI | True | True | 0.062 |
+| dialog.SaveAsWorkbook | dialog.SaveAsWorkbook.png | 640x420 | 640x420 px @ 96 DPI | True | dialog.SaveAsWorkbook.png | 640x420 | 640x420 px @ 96 DPI | True | True | 0.036 |
+| dialog.ScenarioManager | dialog.ScenarioManager.png | 360x420 | 540x630 px @ 144 DPI | True | dialog.ScenarioManager.png | 360x420 | 360x420 px @ 96 DPI | True | True | 0.063 |
+| dialog.SelectDataSource | dialog.SelectDataSource.png | 620x500 | 930x750 px @ 144 DPI | True | dialog.SelectDataSource.png | 620x500 | 620x500 px @ 96 DPI | True | True | 0.029 |
+| dialog.SelectionPane | dialog.SelectionPane.png | 520x440 | 520x440 px @ 96 DPI | True | dialog.SelectionPane.png | 520x440 | 520x440 px @ 96 DPI | True | True | 0.044 |
+| dialog.ShapeEffects | dialog.ShapeEffects.png | 380x190 | 570x285 px @ 144 DPI | True | dialog.ShapeEffects.png | 380x190 | 380x190 px @ 96 DPI | True | True | 0.032 |
+| dialog.ShapeGradient | dialog.ShapeGradient.png | 500x300 | 500x300 px @ 96 DPI | True | dialog.ShapeGradient.png | 500x300 | 500x300 px @ 96 DPI | True | True | 0.055 |
+| dialog.Sort | dialog.Sort.png | 760x500 | 760x500 px @ 96 DPI | True | dialog.Sort.png | 760x500 | 760x500 px @ 96 DPI | True | True | 0.042 |
+| dialog.SortOptions | dialog.SortOptions.png | 330x260 | 495x390 px @ 144 DPI | True | dialog.SortOptions.png | 330x260 | 330x260 px @ 96 DPI | True | True | 0.049 |
+| dialog.Sparkline | dialog.Sparkline.png | 380x280 | 380x280 px @ 96 DPI | True | dialog.Sparkline.png | 380x280 | 380x280 px @ 96 DPI | True | True | 0.055 |
+| dialog.Subtotal | dialog.Subtotal.png | 380x390 | 380x390 px @ 96 DPI | True | dialog.Subtotal.png | 380x390 | 380x390 px @ 96 DPI | True | True | 0.038 |
+| dialog.SymbolPicker | dialog.SymbolPicker.png | 840x620 | 840x620 px @ 96 DPI | True | dialog.SymbolPicker.png | 840x620 | 840x620 px @ 96 DPI | True | True | 0.036 |
+| dialog.TextToColumns | dialog.TextToColumns.png | 560x560 | 560x560 px @ 96 DPI | True | dialog.TextToColumns.png | 560x560 | 560x560 px @ 96 DPI | True | True | 0.032 |
+| dialog.UnhideSheet | dialog.UnhideSheet.png | 340x160 | 510x240 px @ 144 DPI | True | dialog.UnhideSheet.png | 340x160 | 340x160 px @ 96 DPI | True | True | 0.041 |
+| dialog.WatchWindow | dialog.WatchWindow.png | 760x320 | 760x320 px @ 96 DPI | True | dialog.WatchWindow.png | 760x320 | 760x320 px @ 96 DPI | True | True | 0.065 |
+| dialog.WorkbookStatistics | dialog.WorkbookStatistics.png | 500x560 | 500x560 px @ 96 DPI | True | dialog.WorkbookStatistics.png | 500x560 | 500x560 px @ 96 DPI | True | True | 0.050 |
+| dialog.Zoom | dialog.Zoom.png | 300x240 | 300x240 px @ 96 DPI | True | dialog.Zoom.png | 300x240 | 300x240 px @ 96 DPI | True | True | 0.035 |
 
 ## Avalonia-Manifest-Only Screenshot Surfaces
 
