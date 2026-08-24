@@ -1,20 +1,24 @@
 ﻿{
     "schema":  "freex.parity.cross-app-dashboard.v3",
-    "wave":  193,
-    "cumulativeAppSlices":  579,
+    "wave":  194,
+    "cumulativeAppSlices":  582,
     "cumulativeAppSlicesStatus":  "accepted-final-integration-gates",
     "integrationGateStatus":  "accepted",
     "pendingIntegrationGates":  [
 
                                 ],
     "integrationGateEvidence":  {
-                                    "testedSourceCommit":  "615b53f474dfa1849ae965018d890cba4a138d42",
+                                    "testedSourceCommit":  "f2aab993242fa6a6cc49d67c4b7770c23ce4c067",
                                     "acceptanceRefreshNote":  "This dashboard/report is an acceptance-only documentation/tooling refresh; it does not alter the tested source commit.",
-                                    "independentReview":  "Passed: independent review found no findings after dashboard and source-guard remediations.",
-                                    "repositoryPreflight":  "Passed at tested source commit 615b53f474dfa1849ae965018d890cba4a138d42: 288 JSON, 306 XML-backed, and 13,845 text files conflict scanned.",
-                                    "fullReleaseBuild":  "Passed at tested source commit 615b53f474dfa1849ae965018d890cba4a138d42: dotnet build FreeX.slnx --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 passed with 0 warnings and 0 errors.",
-                                    "defaultNonUiTestLane":  "Passed: final default lane exit 0 with Core.IO 5,839 passed/56 skipped, Avalonia 2,182 passed, Host Logic 1,490 passed/4 skipped, FreeP Presentation 5,466 passed, and FreeP Avalonia 724 passed.",
-                                    "sourceTestRemediation":  "The initial default lane exposed three source-test regressions; remediation fixed all three, and focused reruns passed."
+                                    "initialIndependentReview":  "Recorded: the initial independent review found two P2 findings: FreeX crop/readiness/transition and physical click geometry were duplicated instead of consuming one contract; FreeP topology evidence did not pin the complete source PPTX and initially over-attributed the residual.",
+                                    "reviewRemediation":  "Completed at prior source: FreeX uses one authoritative mixed-type geometry contract with mutation coverage and reachable-source provenance; FreeP topology schema v3 pins the complete PPTX SHA-256 and describes the remaining residual as unresolved. Reopened after source advancement because the color-geometry guard required remediation.",
+                                    "independentReview":  "Passed: final independent review found no findings. Reviewer verified f2a structurally scopes the color function before the mixed-type function, accepts the later decoy, rejects the internal assignment, verifies Wave191-193 retained hashes 11/11, 11/11, and 18/18, verifies Wave194 20 evidence plus 12 provenance/validation, and found FreeP and FreeW clean.",
+                                    "repositoryPreflight":  "Passed at tested source commit f2aab993242fa6a6cc49d67c4b7770c23ce4c067: powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\\Test-RepositoryPreflight.ps1 exited 0. Validated 292 JSON files, 306 XML-backed files, and 13,862 text files for conflict markers; 117 PowerShell scripts, 10 workflows, 160 project files, 124 solution entries, 32 default-test entries, 51 FreeW entries, and 42 FreeP entries; Linux packaging passed; generated docs/dashboard and FreeW/FreeP inventories/evidence all current.",
+                                    "fullReleaseBuild":  "Passed at tested source commit f2aab993242fa6a6cc49d67c4b7770c23ce4c067: dotnet build FreeX.slnx --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 passed with 0 warnings and 0 errors; elapsed 00:13:58.57.",
+                                    "defaultNonUiTestLane":  "Passed at tested source commit f2aab993242fa6a6cc49d67c4b7770c23ce4c067: dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --logger \"trx;LogFileName=default-tests-wave194-final.trx\" exited 0 with 43,427 passed, 134 skipped/not-run, 0 failed, 43,561 total. 25 unique TRX files plus 31 additional passed captures overwritten into the shared capture TRX path across seven capture assemblies. Key totals: FreeP Avalonia 724/0; FreeP Host 2,409/0; FreeP Presentation 5,468/0; FreeX Avalonia 2,193/0; Host Logic 1,490 passed/4 skipped; Presentation 5,465/1; Core.IO 5,841/56; Core Model 6,317/41; Formula 5,199/7; Calc 1,982/24; Integration 661/1. Initial failed lane and remediation remain documented.",
+                                    "initialDefaultLane":  "Exited 1 solely because the Wave191/192/193 color-geometry guard was bounded through a later selector and counted Wave194 mixed_type_target_click_x_offset; at that pre-remediation source FreeX Avalonia reported 2,188 passed, 3 failed, 2,191 total.",
+                                    "sourceTestRemediation":  "Remediation commit f2aab993242fa6a6cc49d67c4b7770c23ce4c067 structurally scopes the old guard to probe_autofilter_color_persistence_physical and adds isolation and inside-function mutation tests.",
+                                    "workerVerification":  "Passed: failing classes 11/11, full color lane 17/17, Wave194 9/9, full Avalonia project 2,193/2,193, focused project build 0/0; no runtime harness or evidence change."
                                 },
     "scopeBoundary":  "Generated counts prove command/profile routing, route and artifact coverage, screenshot manifest coverage, and DPI-normalized size comparability only. They do not prove visual parity, workflow completeness, or pixel-level equivalence. High-delta paired screenshot candidates, physical/no-COM limitations, and authoritative Microsoft Office baseline availability remain explicitly separate from coverage metrics.",
     "sources":  [
@@ -47,6 +51,9 @@
                     "docs/parity/avalonia-parity-wave193-freex-autofilter-no-fill-20260823.md",
                     "docs/parity/evidence/wave193-freex-autofilter-no-fill-20260823/physical-result.json",
                     "docs/parity/evidence/wave193-freex-autofilter-no-fill-20260823/manifest.json",
+                    "docs/parity/avalonia-parity-wave194-freex-autofilter-mixed-type-20260823.md",
+                    "docs/parity/evidence/wave194-freex-autofilter-mixed-type-20260823/physical-result.json",
+                    "docs/parity/evidence/wave194-freex-autofilter-mixed-type-20260823/manifest.json",
                     "docs/parity/freew-command-inventory.json",
                     "docs/parity/freew-dialog-harness/freew_dialog_route_inventory.json",
                     "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json",
@@ -64,6 +71,7 @@
                     "docs/parity/avalonia-parity-wave191-freew-font-template-20260823.md",
                     "docs/parity/avalonia-parity-wave192-freew-font-checkbox-20260823.md",
                     "docs/parity/avalonia-parity-wave193-freew-font-checkbox-glyph-20260823.md",
+                    "docs/parity/avalonia-parity-wave194-freew-font-action-border-20260824.md",
                     "docs/parity/freep-command-parity-inventory.json",
                     "docs/parity/freep-dialog-pane-visual-evidence/summary.json",
                     "docs/parity/freep-dialog-pane-visual-evidence/artifact-manifest.json",
@@ -92,7 +100,9 @@
                     "docs/parity/avalonia-parity-wave193-freep-render-residual-20260823.md",
                     "docs/parity/evidence/avalonia-parity-wave193-freep-evidence-20260823/metrics.json",
                     "docs/parity/evidence/avalonia-parity-wave193-freep-evidence-20260823/references.json",
-                    "docs/parity/evidence/avalonia-parity-wave193-freep-evidence-20260823/images.json"
+                    "docs/parity/evidence/avalonia-parity-wave193-freep-evidence-20260823/images.json",
+                    "docs/parity/freep-wave194-deck17-slide02-topology-20260823.md",
+                    "docs/parity/evidence/freep-wave194-deck17-slide02-topology-20260823/topology.json"
                 ],
     "apps":  [
                  {
@@ -184,7 +194,10 @@
                                                                   "docs/parity/evidence/wave192-freex-autofilter-font-color-20260823/manifest.json",
                                                                   "docs/parity/avalonia-parity-wave193-freex-autofilter-no-fill-20260823.md",
                                                                   "docs/parity/evidence/wave193-freex-autofilter-no-fill-20260823/physical-result.json",
-                                                                  "docs/parity/evidence/wave193-freex-autofilter-no-fill-20260823/manifest.json"
+                                                                  "docs/parity/evidence/wave193-freex-autofilter-no-fill-20260823/manifest.json",
+                                                                  "docs/parity/avalonia-parity-wave194-freex-autofilter-mixed-type-20260823.md",
+                                                                  "docs/parity/evidence/wave194-freex-autofilter-mixed-type-20260823/physical-result.json",
+                                                                  "docs/parity/evidence/wave194-freex-autofilter-mixed-type-20260823/manifest.json"
                                                               ],
                                               "routeCoverage":  {
                                                                     "inventoryRouteCount":  57,
@@ -279,6 +292,36 @@
                                                                                                        "summary":  "popup-open 1905 changed pixels (minimum 300); popup-dismissed 1905 changed pixels (minimum 300); restoration 0 changed pixels (maximum 100); click acknowledged"
                                                                                                    },
                                                                        "wave193PackageSemantics":  "SourcePatch retained for the no-row-delta criterion-only case; package colorFilter/DXF semantics are verified after save and reopen.",
+                                                                       "wave194":  {
+                                                                                       "status":  "passed",
+                                                                                       "physicalPassed":  1,
+                                                                                       "physicalTotal":  1,
+                                                                                       "focusedAvaloniaGuardPassed":  9,
+                                                                                       "focusedAvaloniaGuardTotal":  9,
+                                                                                       "focusedPresentationPassed":  1,
+                                                                                       "focusedPresentationTotal":  1,
+                                                                                       "focusedCoreIoPassed":  2,
+                                                                                       "focusedCoreIoTotal":  2,
+                                                                                       "evidenceArtifactCount":  20,
+                                                                                       "evidenceArtifactExpectedCount":  20,
+                                                                                       "reachableProvenanceFileCount":  10,
+                                                                                       "validationFileCount":  2,
+                                                                                       "geometry":  {
+                                                                                                        "bounds":  "97,589,260,18",
+                                                                                                        "click":  "103,598",
+                                                                                                        "contract":  "One authoritative geometry contract is consumed by crop, readiness/transition checks, and the actual physical click; mutation guards reject hard-coded or unreachable substitutes."
+                                                                                                    },
+                                                                                       "visibleReadback":  "42,\u002742,",
+                                                                                       "semanticReadback":  "Number,NumericText",
+                                                                                       "recalculation":  "5-\u003e2",
+                                                                                       "package":  "ref=A1:B7|colId=0|filters=42|blank=|hidden=4,5,6,7|A2-type=n|A2=42|A3-type=inlineStr|A3=42|A6-style=1|A6=45292|C1-formula=SUBTOTAL(103,A2:A7)|C1=2",
+                                                                                       "reopenedVisibleReadback":  "42,\u002742,",
+                                                                                       "reopenedSemanticReadback":  "Number,NumericText",
+                                                                                       "reachableProvenanceSourceCommit":  "ddacd9c15132fa3d3c6efc997adad8472e539432",
+                                                                                       "physicalCaptureSourceCommit":  "bbcccc8237e862cebddd8fde7c4a270ee17198f8",
+                                                                                       "evidenceUnchangedAfterGeometryRemediation":  true,
+                                                                                       "claimBoundary":  "Bounded physical Linux/X11 evidence for one mixed-type AutoFilter workflow; it does not establish complete AutoFilter or Excel visual parity."
+                                                                                   },
                                                                        "limitations":  [
                                                                                            "The 2026-08-16 interactive run captured 36 foreground ribbon states for each of Excel, WPF, and Avalonia, including Draw at all four widths, plus six guarded Excel popup/dialog surfaces. The 27 fixed-viewport triage rows average 13.937% RGB delta for WPF and 15.639% for Avalonia versus Excel; nine maximized rows are coverage-only, not an acceptance threshold.",
                                                                                            "The ribbon harness creates a blank workbook before tab discovery so the enabled Draw tab is materialized; the current manifest records no unavailable-tab skips.",
@@ -292,6 +335,8 @@
                                                                                            "The production Linux X11 font-color AutoFilter save/reopen lane passes 1/1. It pixel-gates and selects the rendered #00B050 font swatch, retains North/East, reopens through the identity-checked production picker, reads semantic A4=East, and independently verifies cellColor=0 with DXF font FF00B050. Four rendered captures, the saved package, and hash-verified source/image provenance are committed.",
                                                                                            "The production Linux X11 No Fill AutoFilter save/reopen lane passes 1/1. It selects the rendered No Fill swatch, proves popup-open and popup-dismissed transitions at 1905/1905 changed pixels, restores the pre-popup target at 0 changed pixels, retains South/West, verifies the empty-DXF colorFilter package semantics, and reopens with matching rendered and semantic state. The committed Wave193 manifest contains 18/18 artifacts and 9/9 provenance files.",
                                                                                            "Wave193 focused source/evidence coverage is 3/3 Avalonia guards and 8/8 Core.IO guards; the package tests retain SourcePatch semantics when a criterion-only change produces no row-visibility delta.",
+                                                                                           "Wave194 adds one physical mixed-type AutoFilter workflow at 1/1: Select All is cleared, numeric 42 is selected, SUBTOTAL changes 5 -\u003e 2, visible/readback is 42,\u002742,, semantic labels are Number,NumericText, and save/reopen preserves the exact package contract.",
+                                                                                           "Wave194 retains 20/20 evidence artifacts, 10/10 reachable provenance files, and 2/2 current validation files. Geometry is 97,589,260,18 with click 103,598, consumed through one authoritative contract; physical evidence bytes are unchanged by the geometry remediation.",
                                                                                            "The current-source range corpus retains 35 Avalonia grid captures: eight charts, seven cell styles, and 20 native PivotTable surfaces. These are renderer coverage evidence, not raw-pixel Office acceptance rows.",
                                                                                            "The committed COM range references cover nine chart ranges, seven native cell-style ranges, and 29 pivot-table ranges; they are distinct from the 2026-08-16 interactive foreground evidence (36 Excel ribbon states including Draw and six popup/dialog tours). The associated current-session ribbon comparison has 27 provisional fixed-viewport rows for each host: WPF averages 13.937% RGB delta and Avalonia averages 15.639% versus Excel. These are triage metrics, not visual-parity acceptance results."
                                                                                        ]
@@ -306,7 +351,7 @@
                                                                                        },
                                               "claimBoundary":  "Coverage, manifest pairing, and DPI-normalized size comparability only; do not read these fields as visual parity."
                                           },
-                     "nextSlice":  "Command/dialog route coverage is complete for the generated inputs: all 0 pseudo-gallery rows are catalog-backed in classifier evidence (0 conditional-format rows over 38 runtime catalog items, 0 font/border rows, and 0 accounting-symbol rows), and dialog screenshot evidence has 94 paired WPF/Avalonia manifest surface ids with 0 Avalonia-only ids. This is coverage and size-comparability evidence, not visual parity. The paired screenshots retain 0 unresolved high-delta visual review candidates at triage score \u003e= 0.4 (highest 0.100622); keep those candidates separate from 0 scale-aware dimension mismatch rows and 21 raw PNG pixel dimension mismatches. Production Linux evidence now covers Name Box (1/1 visual, 8/8 interaction), AutoFilter apply/change/clear recalculation (1/1), sort/save/reopen persistence (1/1), text-criteria save/reopen persistence (2/2), numeric Greater Than/Equals persistence (2/2), date criteria (2/2), fill-color save/reopen (1/1), font-color save/reopen (1/1), and No Fill save/reopen persistence (1/1) with popup-open/popup-dismissed/restoration transition evidence and 18/18 retained artifacts. Extend physical verification to mixed-type, multi-column, and color criteria change/clear workflows."
+                     "nextSlice":  "Command/dialog route coverage is complete for the generated inputs: all 0 pseudo-gallery rows are catalog-backed in classifier evidence (0 conditional-format rows over 38 runtime catalog items, 0 font/border rows, and 0 accounting-symbol rows), and dialog screenshot evidence has 94 paired WPF/Avalonia manifest surface ids with 0 Avalonia-only ids. This is coverage and size-comparability evidence, not visual parity. The paired screenshots retain 0 unresolved high-delta visual review candidates at triage score \u003e= 0.4 (highest 0.100622); keep those candidates separate from 0 scale-aware dimension mismatch rows and 21 raw PNG pixel dimension mismatches. Production Linux evidence now covers Name Box (1/1 visual, 8/8 interaction), AutoFilter apply/change/clear recalculation (1/1), sort/save/reopen persistence (1/1), text-criteria save/reopen persistence (2/2), numeric Greater Than/Equals persistence (2/2), date criteria (2/2), fill-color save/reopen (1/1), font-color save/reopen (1/1), No Fill save/reopen persistence (1/1), and mixed-type value persistence (1/1). Wave194 retains 20/20 artifacts and one authoritative geometry contract. Extend physical verification to multi-column and color criteria change/clear workflows."
                  },
                  {
                      "app":  "FreeW",
@@ -343,7 +388,8 @@
                                                                   "docs/parity/avalonia-parity-wave190-freew-visual-20260823.md",
                                                                   "docs/parity/avalonia-parity-wave191-freew-font-template-20260823.md",
                                                                   "docs/parity/avalonia-parity-wave192-freew-font-checkbox-20260823.md",
-                                                                  "docs/parity/avalonia-parity-wave193-freew-font-checkbox-glyph-20260823.md"
+                                                                  "docs/parity/avalonia-parity-wave193-freew-font-checkbox-glyph-20260823.md",
+                                                                  "docs/parity/avalonia-parity-wave194-freew-font-action-border-20260824.md"
                                                               ],
                                               "canonicalComparison":  {
                                                                           "kind":  "canonical-inputs-only",
@@ -356,9 +402,9 @@
                                                               "aggregateDelta":  -1335,
                                                               "relativeImprovement":  0.0390396537606738,
                                                               "changedPixelsByState":  {
-                                                                                           "initial":  10782,
-                                                                                           "populated":  10939,
-                                                                                           "validationError":  11140
+                                                                                           "initial":  10599,
+                                                                                           "populated":  10756,
+                                                                                           "validationError":  10957
                                                                                        },
                                                               "perStateImprovement":  445,
                                                               "paintedBounds":  "421 x 321",
@@ -366,6 +412,25 @@
                                                               "nonFontRowsChanged":  0,
                                                               "classificationTotals":  "141 mismatch / 80 pass / 70 extension",
                                                               "retainedPolicy":  "shared opt-in 14px checkbox indicator, +1px vertical offset, #EBEBEB/#F6F6F6 frame; the 1px stroke probe was a no-op and was removed."
+                                                          },
+                                              "wave194":  {
+                                                              "sourceRevision":  "932b83881429565399548f4bcd0457daf0100df8",
+                                                              "baselineAggregateChangedPixels":  32861,
+                                                              "aggregateChangedPixels":  32312,
+                                                              "aggregateDelta":  -549,
+                                                              "relativeImprovement":  0.016712006337408245,
+                                                              "changedPixelsByState":  {
+                                                                                           "initial":  10599,
+                                                                                           "populated":  10756,
+                                                                                           "validationError":  10957
+                                                                                       },
+                                                              "perStateImprovement":  183,
+                                                              "paintedBounds":  "421 x 321",
+                                                              "nonFontRowsCompared":  288,
+                                                              "nonFontRowsChanged":  0,
+                                                              "classificationTotals":  "141 mismatch / 80 pass / 70 extension",
+                                                              "correction":  "Avalonia Font action-button border changed from #707070 to #C8C8C8 to match WPF; no other rows changed.",
+                                                              "claimBoundary":  "Canonical FreeW Font-dialog WPF/Avalonia evidence only; remaining text/control raster differences do not establish Word visual parity."
                                                           },
                                               "routeCoverage":  {
                                                                     "inventoryScenarioCount":  512,
@@ -421,6 +486,7 @@
                                                                                            "Wave192 aligns the Font route\u0027s checkbox/effect-lane registration and measured trailing margins. The three-state aggregate falls from 36053 to 34196 changed pixels, a further 5.1508% reduction; all states improve, exact 421 x 321 painted bounds remain stable, and all three remain genuine mismatches.",
                                                                                            "Wave193 aligns the shared Font checkbox native frame. The three-state aggregate falls from 34196 to 32861 changed pixels, a further 3.9040% reduction; each state improves by 445 pixels, exact 421 x 321 painted bounds remain stable, and the 1px stroke probe was a no-op and was removed.",
                                                                                            "Wave193\u0027s tracked Font provenance binds all three states and six host captures to dimensions, painted bounds, exact canonical comparison rows, source hashes, and external capture-manifest identities. Only the three Font rows changed; all 288 non-Font rows remain unchanged. The external PNGs remain uncommitted and require the capture hosts for pixel reproduction.",
+                                                                                           "Wave194 changes only the Avalonia Font action-button border to the WPF-style #C8C8C8 value. Aggregate changed pixels fall from 32861 to 32312, a delta of -549 and relative improvement 1.6712%; each of the three states improves by 183 pixels, painted bounds remain 421 x 321, and all 288 non-Font rows remain unchanged.",
                                                                                            "Avalonia-only route/state rows are reported separately and are outside the WPF-authority pairing set.",
                                                                                            "Word reference PNGs are available for triage, but this current-source capture cohort has 94 failed and 3 skipped comparisons; it is not a Word visual-parity claim."
                                                                                        ]
@@ -435,7 +501,7 @@
                                                                                        },
                                               "claimBoundary":  "Route and evidence-row coverage only; paired comparison rows and mismatch classifications do not establish Word visual parity."
                                           },
-                     "nextSlice":  "A committed current-source Word PNG baseline bundle is available for 99 comparable rows, but 94 comparisons remain outside tolerance. Font dialog captures now improve from 61396 to 32861 aggregate changed pixels across Waves188-193 and match WPF painted bounds; continue with the remaining native checkbox/glyph raster tail, action-row/tab template edges, Legal Notices glyph/template tail, or the next classified pagination, drawing/object, chart, table, or WordArt residual."
+                     "nextSlice":  "A committed current-source Word PNG baseline bundle is available for 99 comparable rows, but 94 comparisons remain outside tolerance. Font dialog captures now improve from 61396 to 32312 aggregate changed pixels across Waves188-194 and match WPF painted bounds; continue with the remaining native checkbox/glyph raster tail, tab-template edges, Legal Notices glyph/template tail, or the next classified pagination, drawing/object, chart, table, or WordArt residual."
                  },
                  {
                      "app":  "FreeP",
@@ -481,7 +547,9 @@
                                                                   "docs/parity/avalonia-parity-wave193-freep-render-residual-20260823.md",
                                                                   "docs/parity/evidence/avalonia-parity-wave193-freep-evidence-20260823/metrics.json",
                                                                   "docs/parity/evidence/avalonia-parity-wave193-freep-evidence-20260823/references.json",
-                                                                  "docs/parity/evidence/avalonia-parity-wave193-freep-evidence-20260823/images.json"
+                                                                  "docs/parity/evidence/avalonia-parity-wave193-freep-evidence-20260823/images.json",
+                                                                  "docs/parity/freep-wave194-deck17-slide02-topology-20260823.md",
+                                                                  "docs/parity/evidence/freep-wave194-deck17-slide02-topology-20260823/topology.json"
                                                               ],
                                               "routeCoverage":  {
                                                                     "laneEntries":  [
@@ -575,6 +643,36 @@
                                                                        "fullRenderArtifactsRetained":  false,
                                                                        "claim":  "Retained proof covers 53 rows, 53 Office references, and 6 target images. The 106/106 renders and 159/159 comparisons are worker-run full-render results and their non-target PNGs are not retained."
                                                                    },
+                                              "wave194Topology":  {
+                                                                      "status":  "no-runtime-change-retained",
+                                                                      "schema":  "freep.parity.wave194.deck17-slide02.topology.v3",
+                                                                      "sourceRevision":  "bb454fbc7d4d8b4588a4d2ed0adec678527e3936",
+                                                                      "sourceCorpusPath":  "tools/FreeP.RenderCompare/corpus/17-bullets-autofit.pptx",
+                                                                      "sourceCorpusSha256":  "f4fc0c9e3d048cac3e0c7fe3d929029238448ff05281be542df105a46c6c88ea",
+                                                                      "sourceCorpusHashScope":  "entire raw file bytes",
+                                                                      "title":  {
+                                                                                    "autoFitKind":  "Shape",
+                                                                                    "effectiveFontFamily":  "Aptos Display",
+                                                                                    "effectiveFontSizePt":  28
+                                                                                },
+                                                                      "body":  {
+                                                                                   "autoFitKind":  "None",
+                                                                                   "effectiveFontFamily":  "Aptos",
+                                                                                   "effectiveFontSizePt":  18,
+                                                                                   "paragraphCount":  8
+                                                                               },
+                                                                      "retainedMetrics":  {
+                                                                                              "rendererOutputs":  106,
+                                                                                              "comparisons":  159,
+                                                                                              "wpfOfficeAverage":  1.0309,
+                                                                                              "avaloniaOfficeAverage":  0.9962,
+                                                                                              "wpfAvaloniaAverage":  0.6097,
+                                                                                              "targetAvaloniaOffice":  2.536,
+                                                                                              "targetWpfAvalonia":  2.9091
+                                                                                          },
+                                                                      "residualClaim":  "The topology evidence rules out the investigated structural, autofit, and theme-inheritance hypotheses; the remaining render residual is unresolved and is not attributed to host fonts or raster behavior.",
+                                                                      "claimBoundary":  "Pinned Office topology and retained comparison metrics only; no PowerPoint visual-parity claim is made."
+                                                                  },
                                               "physicalEvidence":  {
                                                                        "status":  "available-app-and-native-office-chrome",
                                                                        "captureMode":  "visible app-owned render targets with scenario-isolated processes plus guarded native PowerPoint ribbon capture",
@@ -614,7 +712,7 @@
                                                                                        },
                                               "claimBoundary":  "Route/scenario coverage, committed PNG manifests, and local WPF/Avalonia comparison results only; no PowerPoint visual-parity claim is made."
                                           },
-                     "nextSlice":  "The tracked PowerPoint corpus has 53 COM-exported reference slides across 27 ready decks, with 0 deck missing references. Wave193 retains no runtime change: its fresh worker run produced 106/106 renders and 159/159 comparisons, while retained proof covers 53 rows, 53 Office references, and 6 images. The aggregate remains 1.0309% / 0.9962% / 0.6097% WPF/Office, Avalonia/Office, and WPF/Avalonia, with the next executable existing-corpus residual at deck17 slide02: 2.5360% Avalonia/Office and 2.9091% WPF/Avalonia."
+                     "nextSlice":  "The tracked PowerPoint corpus has 53 COM-exported reference slides across 27 ready decks, with 0 deck missing references. Wave194 makes no runtime rendering change: topology evidence pins the complete deck17 slide02 source at f4fc0c9e3d048cac3e0c7fe3d929029238448ff05281be542df105a46c6c88ea, records Aptos Display and Aptos theme-resolved fonts, and leaves the residual unresolved. Continue renderer-level evidence against the existing corpus rather than introducing fixture-specific correction."
                  }
              ]
 }
