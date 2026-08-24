@@ -10,8 +10,8 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 
 | Metric | Count |
 |---|---:|
-| Total commands | 574 |
-| PARITY (both) | 568 |
+| Total commands | 575 |
+| PARITY (both) | 569 |
 | AVALONIA-MISSING | 0 |
 | WPF-MISSING | 6 |
 | BOTH-MISSING | 0 |
@@ -190,6 +190,7 @@ See `functional-parity-classification.md` for the prioritized implementation lis
 | help.feedback | Help | Help | yes | yes | PARITY |
 | help.legalNotices | Help | Help | yes | yes | PARITY |
 | help.online | Help | Help | yes | yes | PARITY |
+| help.testCrashReporting | Help | Help | yes | yes | PARITY |
 | Align Left | Alignment | Home | yes | yes | PARITY |
 | Align Right | Alignment | Home | yes | yes | PARITY |
 | Angle Clockwise | Alignment | Home | yes | yes | PARITY |

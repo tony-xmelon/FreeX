@@ -14,10 +14,10 @@
                       "avalonia":  "Avalonia headless Skia (UseHeadlessDrawing=false)"
                   },
     "sourceSha256":  {
-                         "freew/tools/FreeW.RibbonShot/Program.cs":  "bde41959da0f2ed44cc5d7c45300080bc3cb7dc5874ffc66014ec90782515c0f",
+                         "freew/tools/FreeW.RibbonShot/Program.cs":  "8f8f7db9e03745e136a78ce1c552f9770cfda629cca8c83cec9915188d3203c3",
                          "freew/tools/FreeW.ShellVisualHarness.Avalonia/Program.cs":  "34dd75e8b50ac33e2c1a72ac98b6ced0e3925129a816282056a47d1381882807",
-                         "freew/FreeW.App.Host/MainWindow.cs":  "1a4d615167cab2441d01b392d6206e1d913dc10097aae9560240c22fb4fede2f",
-                         "freew/FreeW.App.Avalonia/MainWindow.cs":  "ba88bc699a0dda189f50ffed3c5b3e363f72b40e213ef17d27e55b47ca2ecc24"
+                         "freew/FreeW.App.Host/MainWindow.cs":  "0cf21e75c2bd080d4deb09d82e054e3bd4bfbab716efce959d6b7d9ae3d7d7ac",
+                         "freew/FreeW.App.Avalonia/MainWindow.cs":  "ef8acdd4747a783101c04591ce23217f5577140145026b13783d2674d2ce9584"
                      },
     "pairedStaticChrome":  [
                                {

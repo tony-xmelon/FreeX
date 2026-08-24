@@ -105,8 +105,8 @@
                                             "excluded":  23
                                         },
                      "functionalMatrix":  {
-                                              "totalCommands":  574,
-                                              "parity":  568,
+                                              "totalCommands":  575,
+                                              "parity":  569,
                                               "avaloniaMissing":  0,
                                               "wpfMissing":  6,
                                               "bothMissing":  0,
@@ -311,8 +311,8 @@
                  {
                      "app":  "FreeW",
                      "commandInventory":  {
-                                              "totalCommands":  931,
-                                              "bothProfiles":  693,
+                                              "totalCommands":  932,
+                                              "bothProfiles":  694,
                                               "wpfProfileOnly":  2,
                                               "avaloniaProfileOnly":  236,
                                               "missingWpfProfile":  236,
@@ -440,8 +440,8 @@
                  {
                      "app":  "FreeP",
                      "commandInventory":  {
-                                              "totalCommands":  691,
-                                              "bothProfiles":  691,
+                                              "totalCommands":  693,
+                                              "bothProfiles":  693,
                                               "wpfOnly":  0,
                                               "avaloniaOnly":  0,
                                               "actionableMissingWpf":  0,

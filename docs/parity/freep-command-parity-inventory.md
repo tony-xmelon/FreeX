@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 691 | 691 | 0 | 0 | 0 | 0 | 0 | 0 | 691 | 0 | 0 | 0 | 0 | 110 |
+| 693 | 693 | 0 | 0 | 0 | 0 | 0 | 0 | 693 | 0 | 0 | 0 | 0 | 110 |
 
 ## Workflow Evidence
 
@@ -343,6 +343,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.chart.series-options` | Series Options | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.text-options` | Text Options | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.copy` | Copy | Yes | Yes | none | shared | home/clipboard (RibbonButton) | home/clipboard (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.copy-diagnostics` | Copy Diagnostics | Yes | Yes | none | shared | help/support (RibbonButton) | help/support (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.cut` | Cut | Yes | Yes | none | shared | home/clipboard (RibbonButton) | home/clipboard (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.date-time` | Date & Time | Yes | Yes | none | shared | insert/text (RibbonButton) | insert/text (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.delete-slide` | Delete Slide | Yes | Yes | none | shared | home/slides (RibbonButton) | home/slides (RibbonButton) | Available in both generated FreeP ribbon profiles. |
@@ -718,32 +719,33 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.strikethrough` | Strikethrough | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.subscript` | Subscript | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.superscript` | Superscript | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.table-cell-anchor` | Table Cell Alignment | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
-| `freep.table-cell-border` | Table Cell Border | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
-| `freep.table-cell-fill` | Table Cell Fill | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
-| `freep.table-cell-inset` | Cell Insets | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
-| `freep.table-row-height` | Row Height | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
-| `freep.table.banded-columns` | Banded Columns | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.table.banded-rows` | Banded Rows | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.table.delete-column` | Delete Column | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.table.delete-row` | Delete Row | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.table.distribute-columns` | Distribute Columns | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.table.distribute-rows` | Distribute Rows | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.table.first-column` | First Column | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.table.first-row` | Header Row | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.table.insert-column-left` | Insert Column Left | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.table.insert-column-right` | Insert Column Right | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.table.insert-row-above` | Insert Row Above | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.table.insert-row-below` | Insert Row Below | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.table.last-column` | Last Column | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.table.last-row` | Total Row | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.table.merge-cells` | Merge Cells | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.table.split-cell` | Split Cell | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.text-autofit` | Text Autofit | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
+| `freep.table-cell-anchor` | Table Cell Alignment | Yes | Yes | none | shared | home/table-layout (RibbonComboBox) | home/table-layout (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
+| `freep.table-cell-border` | Table Cell Border | Yes | Yes | none | shared | home/table-layout (RibbonComboBox) | home/table-layout (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
+| `freep.table-cell-fill` | Table Cell Fill | Yes | Yes | none | shared | home/table-layout (RibbonComboBox) | home/table-layout (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
+| `freep.table-cell-inset` | Cell Insets | Yes | Yes | none | shared | home/table-layout (RibbonComboBox) | home/table-layout (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
+| `freep.table-row-height` | Row Height | Yes | Yes | none | shared | home/table-layout (RibbonComboBox) | home/table-layout (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.banded-columns` | Banded Columns | Yes | Yes | none | shared | home/table-layout (RibbonToggleButton) | home/table-layout (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.banded-rows` | Banded Rows | Yes | Yes | none | shared | home/table-layout (RibbonToggleButton) | home/table-layout (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.delete-column` | Delete Column | Yes | Yes | none | shared | home/table-layout (RibbonButton) | home/table-layout (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.delete-row` | Delete Row | Yes | Yes | none | shared | home/table-layout (RibbonButton) | home/table-layout (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.distribute-columns` | Distribute Columns | Yes | Yes | none | shared | home/table-layout (RibbonButton) | home/table-layout (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.distribute-rows` | Distribute Rows | Yes | Yes | none | shared | home/table-layout (RibbonButton) | home/table-layout (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.first-column` | First Column | Yes | Yes | none | shared | home/table-layout (RibbonToggleButton) | home/table-layout (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.first-row` | Header Row | Yes | Yes | none | shared | home/table-layout (RibbonToggleButton) | home/table-layout (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.insert-column-left` | Insert Column Left | Yes | Yes | none | shared | home/table-layout (RibbonButton) | home/table-layout (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.insert-column-right` | Insert Column Right | Yes | Yes | none | shared | home/table-layout (RibbonButton) | home/table-layout (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.insert-row-above` | Insert Row Above | Yes | Yes | none | shared | home/table-layout (RibbonButton) | home/table-layout (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.insert-row-below` | Insert Row Below | Yes | Yes | none | shared | home/table-layout (RibbonButton) | home/table-layout (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.last-column` | Last Column | Yes | Yes | none | shared | home/table-layout (RibbonToggleButton) | home/table-layout (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.last-row` | Total Row | Yes | Yes | none | shared | home/table-layout (RibbonToggleButton) | home/table-layout (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.merge-cells` | Merge Cells | Yes | Yes | none | shared | home/table-layout (RibbonButton) | home/table-layout (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.split-cell` | Split Cell | Yes | Yes | none | shared | home/table-layout (RibbonButton) | home/table-layout (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.test-crash-reporting` | Test Crash Reporting | Yes | Yes | none | shared | help/support (RibbonButton) | help/support (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.text-autofit` | Text Autofit | Yes | Yes | none | shared | home/text-layout (RibbonComboBox) | home/text-layout (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
 | `freep.text-box` | Text Box | Yes | Yes | none | shared | insert/text (RibbonButton) | insert/text (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.text-column-spacing` | Column Spacing | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
-| `freep.text-columns` | Text Columns | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
-| `freep.text-direction` | Text Direction | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
+| `freep.text-column-spacing` | Column Spacing | Yes | Yes | none | shared | home/text-layout (RibbonComboBox) | home/text-layout (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
+| `freep.text-columns` | Text Columns | Yes | Yes | none | shared | home/text-layout (RibbonComboBox) | home/text-layout (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
+| `freep.text-direction` | Text Direction | Yes | Yes | none | shared | home/text-layout (RibbonComboBox) | home/text-layout (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
 | `freep.theme.berlin` | Berlin | Yes | Yes | none | shared | design/themes (RibbonButton) | design/themes (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.theme.facet` | Facet | Yes | Yes | none | shared | design/themes (RibbonButton) | design/themes (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.theme.ion` | Ion | Yes | Yes | none | shared | design/themes (RibbonButton) | design/themes (RibbonButton) | Available in both generated FreeP ribbon profiles. |
