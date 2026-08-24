@@ -1081,7 +1081,7 @@
     },
     {
       "commandId": "freew.building-blocks-organizer",
-      "label": "Building Blocks Organizer",
+      "label": "Building Blocks Organizer…",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "profileSurface": "both",
@@ -1091,16 +1091,6 @@
       "gapClassificationRule": "shared-profile",
       "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "text",
-          "group": "Text",
-          "label": "Building Blocks Organizer",
-          "controlType": "RibbonButton",
-          "layout": "Small"
-        },
         {
           "profile": "WPF",
           "tabId": "insert",
@@ -9837,7 +9827,7 @@
     },
     {
       "commandId": "freew.field",
-      "label": "Field",
+      "label": "Field…",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "profileSurface": "both",
@@ -9847,16 +9837,6 @@
       "gapClassificationRule": "shared-profile",
       "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "text",
-          "group": "Text",
-          "label": "Field",
-          "controlType": "RibbonButton",
-          "layout": "Small"
-        },
         {
           "profile": "WPF",
           "tabId": "insert",
@@ -26637,7 +26617,7 @@
     },
     {
       "commandId": "freew.save-quickpart",
-      "label": "Save Selection",
+      "label": "Save Selection to Quick Part Gallery…",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "profileSurface": "both",
@@ -26647,16 +26627,6 @@
       "gapClassificationRule": "shared-profile",
       "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "text",
-          "group": "Text",
-          "label": "Save Selection",
-          "controlType": "RibbonButton",
-          "layout": "Small"
-        },
         {
           "profile": "WPF",
           "tabId": "insert",
@@ -31094,7 +31064,7 @@
           "group": "Text",
           "label": "Text Box",
           "controlType": "RibbonDropdown",
-          "layout": "Small"
+          "layout": "Large"
         }
       ],
       "avaloniaLocations": [
@@ -42000,8 +41970,8 @@
           "groupId": "text",
           "group": "Text",
           "label": "Toggle Field Codes",
-          "controlType": "RibbonButton",
-          "layout": "Small"
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ],
       "avaloniaLocations": [
@@ -42262,8 +42232,8 @@
           "groupId": "text",
           "group": "Text",
           "label": "Update Fields",
-          "controlType": "RibbonButton",
-          "layout": "Small"
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ],
       "avaloniaLocations": [
