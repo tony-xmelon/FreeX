@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedBy": "tools/Generate-FreePWholeWindowVisualEvidenceManifest.ps1",
-  "evidenceGeneratedAtUtc": "2026-08-25T08:37:40.3296607+03:00",
+  "evidenceGeneratedAtUtc": "2026-08-25T09:16:57.9820713+03:00",
   "scenarioCount": 36,
   "pairedCaptureCount": 36,
   "passCount": 0,
@@ -52,7 +52,7 @@
     },
     {
       "path": "freep/TestSupport/VisualEvidence.Wpf/MainWindow.VisualCaptureAdapter.cs",
-      "sha256": "f131230412827d8b6fbb005874745f6c95282296ef50dc348ddea60c62823d30"
+      "sha256": "e4eb3cdd5a6d1d484fd85c90aa047b7985fcd5878df2eb5cff168bd1b979a88d"
     },
     {
       "path": "freep/TestSupport/VisualEvidence.Avalonia/AvaloniaWholeWindowVisualEvidenceCapture.cs",
@@ -68,7 +68,7 @@
     },
     {
       "path": "freep/TestSupport/VisualEvidence.Avalonia/MainWindow.VisualCaptureAdapter.cs",
-      "sha256": "1a1dbd6ff4f913c4f54ada4da6b39476fc698fe900d92e91849b220540db1672"
+      "sha256": "869e7f4efab0031c95668e249ec5137f67b59861b8c8903d1439d129c68fd1d1"
     },
     {
       "path": "freep/FreeP.App.Rendering.Wpf/InCanvasTextEditor.cs",
@@ -128,8 +128,8 @@
     },
     {
       "path": "avalonia/client/backstage.account.png",
-      "bytes": 56687,
-      "sha256": "2ae6e78b40c55655427c6483ea37735087e3746d77c8d9047c8e52f24cf1ccfa"
+      "bytes": 57053,
+      "sha256": "7d382d141a4e626a2c352ee21cde5f734f63fc96c74e5743dbf7d61908da0efe"
     },
     {
       "path": "avalonia/client/backstage.export.png",
@@ -308,8 +308,8 @@
     },
     {
       "path": "avalonia/full/backstage.account.png",
-      "bytes": 56687,
-      "sha256": "2ae6e78b40c55655427c6483ea37735087e3746d77c8d9047c8e52f24cf1ccfa"
+      "bytes": 57053,
+      "sha256": "7d382d141a4e626a2c352ee21cde5f734f63fc96c74e5743dbf7d61908da0efe"
     },
     {
       "path": "avalonia/full/backstage.export.png",
@@ -479,7 +479,7 @@
     {
       "path": "avalonia/manifest.json",
       "bytes": 144945,
-      "sha256": "4732c10595d968df0da961000ed61c7d50b2981cf705ecf736951f3767957799"
+      "sha256": "f63a7a3987c1f79a006e9095dcb5b2ce7f65f2c573645d72ebb99ea2c6e20a79"
     },
     {
       "path": "diff/accessibility.media-caption-pane.png",
@@ -493,8 +493,8 @@
     },
     {
       "path": "diff/backstage.account.png",
-      "bytes": 71424,
-      "sha256": "8c1b9136bd3589b2cddb1b1bc37fa40a17a6d6c9bd8d0fc545cfc14cc6c0142f"
+      "bytes": 71502,
+      "sha256": "a9335f5ca27e82584674ce49b19b679ca34f031730be14062e5b4d07e3c400b5"
     },
     {
       "path": "diff/backstage.export.png",
@@ -533,8 +533,8 @@
     },
     {
       "path": "diff/editor.rich-text-caret.png",
-      "bytes": 96511,
-      "sha256": "a54f8a5f188fc09697711b3f03772c1a1be75f11252f716ba10eb0359f956a7f"
+      "bytes": 96606,
+      "sha256": "9b34ca8db28c21f007454d14fc7d8e15ccd8863bb86270d04ab35f3c13d10123"
     },
     {
       "path": "diff/editor.rich-text-selection.avalonia-selection.png",
@@ -543,18 +543,18 @@
     },
     {
       "path": "diff/editor.rich-text-selection.png",
-      "bytes": 96091,
-      "sha256": "c7e17e6d5da268122988a06508b7dc2c70daabb44fe7b82a2e5a9801e361c9b9"
+      "bytes": 95118,
+      "sha256": "204f6afec2e367f99c85515088dd2715a9731e4db221c170ba074f5f77c006e5"
     },
     {
       "path": "diff/editor.rich-text-selection.selection.png",
-      "bytes": 10915,
-      "sha256": "8aa0be3755b6e3b680db8e2f8d1888c0901e6f5d8a16ffff3e053bc836e5b084"
+      "bytes": 6263,
+      "sha256": "2d860301a0f39956dcbde499596154dcc6c44016301da15bc0c1643e74950862"
     },
     {
       "path": "diff/editor.rich-text-selection.wpf-selection.png",
-      "bytes": 3969,
-      "sha256": "47b24e3b8710b9d704f255acac206d1688c7f302712ea7e066f8c2bbe5511865"
+      "bytes": 4793,
+      "sha256": "3813c345112e868d110399fc5e8c11244d63c6ac3e31e83e49d447c79891880b"
     },
     {
       "path": "diff/review.accessibility-pane.png",
@@ -678,18 +678,18 @@
     },
     {
       "path": "report.html",
-      "bytes": 62375,
-      "sha256": "e19708399cb56487b37764001ffa8e73a7b1036fb24d7ab9f68adcffdb6c619a"
+      "bytes": 62195,
+      "sha256": "c272f65fe8556e061653057e9e7eaa461ebd7ac7aca44e21753be825ab20062a"
     },
     {
       "path": "report.md",
-      "bytes": 28328,
-      "sha256": "ebc06bd270007e6ea59e1ec13f43766d38391c28434bdf17467fbaf530475d90"
+      "bytes": 28123,
+      "sha256": "288b5c7cd0566fa32d4e6c9abb61c985a90392abc911efa9b143b72d6a5f0b77"
     },
     {
       "path": "summary.json",
-      "bytes": 432520,
-      "sha256": "f014df04098b3ba37fb5485575cdf578566c204b9ed3b42d01ac84dcb29387a2"
+      "bytes": 432327,
+      "sha256": "83cc83462b9cf2948e1c355aca56afbac6e13a922c65917c9982ec42b920a376"
     },
     {
       "path": "wpf/client/accessibility.media-caption-pane.png",
@@ -703,8 +703,8 @@
     },
     {
       "path": "wpf/client/backstage.account.png",
-      "bytes": 38976,
-      "sha256": "7a43ca98868a83dc6d641f597b7588e99cf907168c44ea23295adbe6c5f5b163"
+      "bytes": 39025,
+      "sha256": "0e451a29caf3a1a004101ee7f1d49b47f3806e6f3d0dfc014afa4e545bae4a63"
     },
     {
       "path": "wpf/client/backstage.export.png",
@@ -743,13 +743,13 @@
     },
     {
       "path": "wpf/client/editor.rich-text-caret.png",
-      "bytes": 61875,
-      "sha256": "97cbaafeaf48e28ba8d95f11fd2f0c0adf37381ef24f59de9b907f1489448014"
+      "bytes": 62581,
+      "sha256": "4818677ebbbff3fd3721c15db6d5fc4b73c5595ef8ff01636a930c1d8d05ebd8"
     },
     {
       "path": "wpf/client/editor.rich-text-selection.png",
-      "bytes": 62305,
-      "sha256": "a197609c0c086f28de9ebe346742b7a4f6e5a0c765a7cab2dfe4808c9d8048e8"
+      "bytes": 63409,
+      "sha256": "08fa436f2a1addfed3472c11e7780d049a0fb91bee941a28de3973a5f61ad7fb"
     },
     {
       "path": "wpf/client/review.accessibility-pane.png",
@@ -883,8 +883,8 @@
     },
     {
       "path": "wpf/full/backstage.account.png",
-      "bytes": 38976,
-      "sha256": "7a43ca98868a83dc6d641f597b7588e99cf907168c44ea23295adbe6c5f5b163"
+      "bytes": 39025,
+      "sha256": "0e451a29caf3a1a004101ee7f1d49b47f3806e6f3d0dfc014afa4e545bae4a63"
     },
     {
       "path": "wpf/full/backstage.export.png",
@@ -923,13 +923,13 @@
     },
     {
       "path": "wpf/full/editor.rich-text-caret.png",
-      "bytes": 61875,
-      "sha256": "97cbaafeaf48e28ba8d95f11fd2f0c0adf37381ef24f59de9b907f1489448014"
+      "bytes": 62581,
+      "sha256": "4818677ebbbff3fd3721c15db6d5fc4b73c5595ef8ff01636a930c1d8d05ebd8"
     },
     {
       "path": "wpf/full/editor.rich-text-selection.png",
-      "bytes": 62305,
-      "sha256": "a197609c0c086f28de9ebe346742b7a4f6e5a0c765a7cab2dfe4808c9d8048e8"
+      "bytes": 63409,
+      "sha256": "08fa436f2a1addfed3472c11e7780d049a0fb91bee941a28de3973a5f61ad7fb"
     },
     {
       "path": "wpf/full/review.accessibility-pane.png",
@@ -1053,8 +1053,8 @@
     },
     {
       "path": "wpf/manifest.json",
-      "bytes": 145658,
-      "sha256": "07dd86d744e4b3c6745df4b732f84b1efb8c3b581b647f97ec5d9f8429281f16"
+      "bytes": 145657,
+      "sha256": "3088711f3cf5388fcc534749e226b6e2c0ad3d3963fb49c14b6301d024f04548"
     }
   ]
 }

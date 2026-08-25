@@ -1,6 +1,6 @@
 # FreeP Paired Whole-Window Visual Evidence
 
-Generated `2026-08-25T05:37:40.3296607+00:00` from independently activated WPF and Avalonia app processes.
+Generated `2026-08-25T06:16:57.9820713+00:00` from independently activated WPF and Avalonia app processes.
 
 - Scenarios: 36
 - Paired captures: 36
@@ -24,7 +24,6 @@ Generated `2026-08-25T05:37:40.3296607+00:00` from independently activated WPF a
 | app-owned-titlebar-raster | 36 |
 | contextual-tab-strip | 17 |
 | ribbon-tab-strip | 17 |
-| rich-editor-selection-geometry | 1 |
 | rich-editor-selection-pixel-threshold | 1 |
 
 ## Scenarios
@@ -91,7 +90,7 @@ Generated `2026-08-25T05:37:40.3296607+00:00` from independently activated WPF a
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
 |  | Detail |  |  |  |  |  |  | Visible ribbon tab order differs between hosts. |
 |  | Detail |  |  |  |  |  |  | Visible contextual ribbon tabs differ between hosts. |
-| backstage.account | BackstagePane | mismatch | app-owned-titlebar-raster, contextual-tab-strip, ribbon-tab-strip | 2.90 % | 2.97 | 1 | n/a | [WPF full](wpf/full/backstage.account.png) / [Avalonia full](avalonia/full/backstage.account.png) / [WPF client](wpf/client/backstage.account.png) / [Avalonia client](avalonia/client/backstage.account.png) / [diff](diff/backstage.account.png) |
+| backstage.account | BackstagePane | mismatch | app-owned-titlebar-raster, contextual-tab-strip, ribbon-tab-strip | 2.89 % | 2.95 | 1 | n/a | [WPF full](wpf/full/backstage.account.png) / [Avalonia full](avalonia/full/backstage.account.png) / [WPF client](wpf/client/backstage.account.png) / [Avalonia client](avalonia/client/backstage.account.png) / [diff](diff/backstage.account.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
 |  | Detail |  |  |  |  |  |  | Visible ribbon tab order differs between hosts. |
@@ -127,14 +126,13 @@ Generated `2026-08-25T05:37:40.3296607+00:00` from independently activated WPF a
 | workspace.slide-master | WorkspaceRegion | mismatch | app-owned-titlebar-raster | 8.25 % | 6.07 | 1 | n/a | [WPF full](wpf/full/workspace.slide-master.png) / [Avalonia full](avalonia/full/workspace.slide-master.png) / [WPF client](wpf/client/workspace.slide-master.png) / [Avalonia client](avalonia/client/workspace.slide-master.png) / [diff](diff/workspace.slide-master.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
-| editor.rich-text-selection | RichEditorOverlay | mismatch | app-owned-titlebar-raster, contextual-tab-strip, ribbon-tab-strip, rich-editor-selection-geometry, rich-editor-selection-pixel-threshold | 10.97 % | 8.24 | 4 | 49.58 % | [WPF full](wpf/full/editor.rich-text-selection.png) / [Avalonia full](avalonia/full/editor.rich-text-selection.png) / [WPF client](wpf/client/editor.rich-text-selection.png) / [Avalonia client](avalonia/client/editor.rich-text-selection.png) / [diff](diff/editor.rich-text-selection.png) / [selection diff](diff/editor.rich-text-selection.selection.png) |
+| editor.rich-text-selection | RichEditorOverlay | mismatch | app-owned-titlebar-raster, contextual-tab-strip, ribbon-tab-strip, rich-editor-selection-pixel-threshold | 10.31 % | 7.74 | 4 | 21.86 % | [WPF full](wpf/full/editor.rich-text-selection.png) / [Avalonia full](avalonia/full/editor.rich-text-selection.png) / [WPF client](wpf/client/editor.rich-text-selection.png) / [Avalonia client](avalonia/client/editor.rich-text-selection.png) / [diff](diff/editor.rich-text-selection.png) / [selection diff](diff/editor.rich-text-selection.selection.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
 |  | Detail |  |  |  |  |  |  | Visible ribbon tab order differs between hosts. |
 |  | Detail |  |  |  |  |  |  | Visible contextual ribbon tabs differ between hosts. |
-|  | Detail |  |  |  |  |  |  | Rich-editor selection bounds differ: WPF 457.9,244.7 190.7x55.8; Avalonia 382.9,267.2 250.4x73.6. |
-|  | Detail |  |  |  |  |  |  | Rich-editor selection threshold failed: changed 49.58 % (max 20 %), mean channel delta 33.08 (max 18.00), perceptual hash distance 17 (max 18). |
-| editor.rich-text-caret | RichEditorOverlay | mismatch | app-owned-titlebar-raster, contextual-tab-strip, ribbon-tab-strip | 10.38 % | 8.04 | 4 | n/a | [WPF full](wpf/full/editor.rich-text-caret.png) / [Avalonia full](avalonia/full/editor.rich-text-caret.png) / [WPF client](wpf/client/editor.rich-text-caret.png) / [Avalonia client](avalonia/client/editor.rich-text-caret.png) / [diff](diff/editor.rich-text-caret.png) |
+|  | Detail |  |  |  |  |  |  | Rich-editor selection threshold failed: changed 21.86 % (max 20 %), mean channel delta 13.74 (max 18.00), perceptual hash distance 10 (max 18). |
+| editor.rich-text-caret | RichEditorOverlay | mismatch | app-owned-titlebar-raster, contextual-tab-strip, ribbon-tab-strip | 10.36 % | 7.97 | 4 | n/a | [WPF full](wpf/full/editor.rich-text-caret.png) / [Avalonia full](avalonia/full/editor.rich-text-caret.png) / [WPF client](wpf/client/editor.rich-text-caret.png) / [Avalonia client](avalonia/client/editor.rich-text-caret.png) / [diff](diff/editor.rich-text-caret.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
 |  | Detail |  |  |  |  |  |  | Visible ribbon tab order differs between hosts. |

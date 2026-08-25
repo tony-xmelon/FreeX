@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-08-25T05:37:40.3296607\u002B00:00",
+  "generatedAtUtc": "2026-08-25T06:16:57.9820713\u002B00:00",
   "scenarioCount": 36,
   "pairedCaptureCount": 36,
   "passCount": 0,
@@ -22,7 +22,6 @@
     "app-owned-titlebar-raster": 36,
     "contextual-tab-strip": 17,
     "ribbon-tab-strip": 17,
-    "rich-editor-selection-geometry": 1,
     "rich-editor-selection-pixel-threshold": 1
   },
   "wpf": {
@@ -32,7 +31,7 @@
     "targetDpi": 96,
     "logicalClientWidth": 1280,
     "logicalClientHeight": 760,
-    "generatedAtUtc": "2026-08-25T05:36:23.7280712\u002B00:00",
+    "generatedAtUtc": "2026-08-25T06:15:41.3203585\u002B00:00",
     "captures": [
       {
         "scenarioId": "startup.slide",
@@ -2239,8 +2238,8 @@
         "sourceDpiX": 120,
         "sourceDpiY": 120,
         "nonBackgroundPixelCount": 930445,
-        "fullImageSha256": "7a43ca98868a83dc6d641f597b7588e99cf907168c44ea23295adbe6c5f5b163",
-        "clientImageSha256": "7a43ca98868a83dc6d641f597b7588e99cf907168c44ea23295adbe6c5f5b163",
+        "fullImageSha256": "0e451a29caf3a1a004101ee7f1d49b47f3806e6f3d0dfc014afa4e545bae4a63",
+        "clientImageSha256": "0e451a29caf3a1a004101ee7f1d49b47f3806e6f3d0dfc014afa4e545bae4a63",
         "semanticState": {
           "scenarioId": "backstage.account",
           "host": "wpf",
@@ -3634,9 +3633,9 @@
         "dpiY": 96,
         "sourceDpiX": 120,
         "sourceDpiY": 120,
-        "nonBackgroundPixelCount": 893378,
-        "fullImageSha256": "a197609c0c086f28de9ebe346742b7a4f6e5a0c765a7cab2dfe4808c9d8048e8",
-        "clientImageSha256": "a197609c0c086f28de9ebe346742b7a4f6e5a0c765a7cab2dfe4808c9d8048e8",
+        "nonBackgroundPixelCount": 893377,
+        "fullImageSha256": "08fa436f2a1addfed3472c11e7780d049a0fb91bee941a28de3973a5f61ad7fb",
+        "clientImageSha256": "08fa436f2a1addfed3472c11e7780d049a0fb91bee941a28de3973a5f61ad7fb",
         "semanticState": {
           "scenarioId": "editor.rich-text-selection",
           "host": "wpf",
@@ -3770,10 +3769,10 @@
             "selectionEnd": 35,
             "selectedText": "revenue review highlights",
             "bounds": {
-              "x": 457.94755555555554,
-              "y": 244.74127734033246,
-              "width": 190.7354913969087,
-              "height": 55.825021872265964,
+              "x": 382.39200000000005,
+              "y": 266.6135433070866,
+              "width": 250.51968503937007,
+              "height": 73.32283464566929,
               "isVisible": true
             }
           }
@@ -3794,9 +3793,9 @@
         "dpiY": 96,
         "sourceDpiX": 120,
         "sourceDpiY": 120,
-        "nonBackgroundPixelCount": 893333,
-        "fullImageSha256": "97cbaafeaf48e28ba8d95f11fd2f0c0adf37381ef24f59de9b907f1489448014",
-        "clientImageSha256": "97cbaafeaf48e28ba8d95f11fd2f0c0adf37381ef24f59de9b907f1489448014",
+        "nonBackgroundPixelCount": 893346,
+        "fullImageSha256": "4818677ebbbff3fd3721c15db6d5fc4b73c5595ef8ff01636a930c1d8d05ebd8",
+        "clientImageSha256": "4818677ebbbff3fd3721c15db6d5fc4b73c5595ef8ff01636a930c1d8d05ebd8",
         "semanticState": {
           "scenarioId": "editor.rich-text-caret",
           "host": "wpf",
@@ -5080,7 +5079,7 @@
     "targetDpi": 96,
     "logicalClientWidth": 1280,
     "logicalClientHeight": 760,
-    "generatedAtUtc": "2026-08-25T05:37:35.9816015\u002B00:00",
+    "generatedAtUtc": "2026-08-25T06:16:54.1743440\u002B00:00",
     "captures": [
       {
         "scenarioId": "startup.slide",
@@ -7268,9 +7267,9 @@
         "dpiY": 96,
         "sourceDpiX": 96,
         "sourceDpiY": 96,
-        "nonBackgroundPixelCount": 929489,
-        "fullImageSha256": "2ae6e78b40c55655427c6483ea37735087e3746d77c8d9047c8e52f24cf1ccfa",
-        "clientImageSha256": "2ae6e78b40c55655427c6483ea37735087e3746d77c8d9047c8e52f24cf1ccfa",
+        "nonBackgroundPixelCount": 929493,
+        "fullImageSha256": "7d382d141a4e626a2c352ee21cde5f734f63fc96c74e5743dbf7d61908da0efe",
+        "clientImageSha256": "7d382d141a4e626a2c352ee21cde5f734f63fc96c74e5743dbf7d61908da0efe",
         "semanticState": {
           "scenarioId": "backstage.account",
           "host": "avalonia",
@@ -11401,9 +11400,9 @@
         "avaloniaPixelHeight": 760,
         "normalizedWidth": 1280,
         "normalizedHeight": 760,
-        "changedPixelRatio": 0.029021381578947368,
-        "foregroundChangedPixelRatio": 0.02902170974383962,
-        "meanChannelDelta": 2.965169956140351,
+        "changedPixelRatio": 0.028885690789473683,
+        "foregroundChangedPixelRatio": 0.028886017420016057,
+        "meanChannelDelta": 2.9518760279605263,
         "maxChannelDelta": 255,
         "perceptualHashDistance": 1,
         "wpfPerceptualHash": "0000000000020000",
@@ -11413,9 +11412,9 @@
         "maximumPerceptualHashDistance": 18,
         "thresholdPassed": true,
         "heatmapPath": "diff/backstage.account.png",
-        "wpfImageSha256": "7a43ca98868a83dc6d641f597b7588e99cf907168c44ea23295adbe6c5f5b163",
-        "avaloniaImageSha256": "2ae6e78b40c55655427c6483ea37735087e3746d77c8d9047c8e52f24cf1ccfa",
-        "heatmapSha256": "8c1b9136bd3589b2cddb1b1bc37fa40a17a6d6c9bd8d0fc545cfc14cc6c0142f"
+        "wpfImageSha256": "0e451a29caf3a1a004101ee7f1d49b47f3806e6f3d0dfc014afa4e545bae4a63",
+        "avaloniaImageSha256": "7d382d141a4e626a2c352ee21cde5f734f63fc96c74e5743dbf7d61908da0efe",
+        "heatmapSha256": "a9335f5ca27e82584674ce49b19b679ca34f031730be14062e5b4d07e3c400b5"
       },
       "selectionPixelMetrics": null,
       "wpfContentValidation": {
@@ -11425,10 +11424,10 @@
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
         "nearBlackPixelRatio": 0,
-        "meanLuminance": 224.61447329046015,
+        "meanLuminance": 224.62208225427594,
         "luminanceRange": 224,
-        "luminanceStandardDeviation": 71.95927595384993,
-        "edgePixelRatio": 0.020478001644736843,
+        "luminanceStandardDeviation": 71.95459291285361,
+        "edgePixelRatio": 0.020440995065789475,
         "isValid": true,
         "failures": []
       },
@@ -11439,10 +11438,10 @@
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
         "nearBlackPixelRatio": 3.0838815789473684E-06,
-        "meanLuminance": 224.65077635069423,
+        "meanLuminance": 224.65636813420576,
         "luminanceRange": 255,
-        "luminanceStandardDeviation": 71.57776910476429,
-        "edgePixelRatio": 0.02541735197368421,
+        "luminanceStandardDeviation": 71.57720624240206,
+        "edgePixelRatio": 0.025347450657894736,
         "isValid": true,
         "failures": []
       },
@@ -12199,7 +12198,6 @@
         "app-owned-titlebar-raster",
         "contextual-tab-strip",
         "ribbon-tab-strip",
-        "rich-editor-selection-geometry",
         "rich-editor-selection-pixel-threshold"
       ],
       "details": [
@@ -12207,8 +12205,7 @@
         "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%).",
         "Visible ribbon tab order differs between hosts.",
         "Visible contextual ribbon tabs differ between hosts.",
-        "Rich-editor selection bounds differ: WPF 457.9,244.7 190.7x55.8; Avalonia 382.9,267.2 250.4x73.6.",
-        "Rich-editor selection threshold failed: changed 49.58 % (max 20 %), mean channel delta 33.08 (max 18.00), perceptual hash distance 17 (max 18)."
+        "Rich-editor selection threshold failed: changed 21.86 % (max 20 %), mean channel delta 13.74 (max 18.00), perceptual hash distance 10 (max 18)."
       ],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
@@ -12217,9 +12214,9 @@
         "avaloniaPixelHeight": 760,
         "normalizedWidth": 1280,
         "normalizedHeight": 760,
-        "changedPixelRatio": 0.10971114309210526,
-        "foregroundChangedPixelRatio": 0.10971114309210526,
-        "meanChannelDelta": 8.238264802631578,
+        "changedPixelRatio": 0.10314864309210527,
+        "foregroundChangedPixelRatio": 0.10314864309210527,
+        "meanChannelDelta": 7.74053282620614,
         "maxChannelDelta": 255,
         "perceptualHashDistance": 4,
         "wpfPerceptualHash": "0080919584812005",
@@ -12229,32 +12226,32 @@
         "maximumPerceptualHashDistance": 18,
         "thresholdPassed": true,
         "heatmapPath": "diff/editor.rich-text-selection.png",
-        "wpfImageSha256": "a197609c0c086f28de9ebe346742b7a4f6e5a0c765a7cab2dfe4808c9d8048e8",
+        "wpfImageSha256": "08fa436f2a1addfed3472c11e7780d049a0fb91bee941a28de3973a5f61ad7fb",
         "avaloniaImageSha256": "8bcc9098d4932edb80d8916101f01f77348411b1cd102407f410c43279ae0531",
-        "heatmapSha256": "c7e17e6d5da268122988a06508b7dc2c70daabb44fe7b82a2e5a9801e361c9b9"
+        "heatmapSha256": "204f6afec2e367f99c85515088dd2715a9731e4db221c170ba074f5f77c006e5"
       },
       "selectionPixelMetrics": {
-        "wpfPixelWidth": 192,
-        "wpfPixelHeight": 57,
+        "wpfPixelWidth": 251,
+        "wpfPixelHeight": 74,
         "avaloniaPixelWidth": 252,
         "avaloniaPixelHeight": 74,
         "normalizedWidth": 252,
         "normalizedHeight": 74,
-        "changedPixelRatio": 0.49576362076362074,
-        "foregroundChangedPixelRatio": 0.42942961165048543,
-        "meanChannelDelta": 33.081831831831835,
-        "maxChannelDelta": 255,
-        "perceptualHashDistance": 17,
-        "wpfPerceptualHash": "00202200205d2000",
+        "changedPixelRatio": 0.21857571857571859,
+        "foregroundChangedPixelRatio": 0.21575803239868682,
+        "meanChannelDelta": 13.742581867581867,
+        "maxChannelDelta": 253,
+        "perceptualHashDistance": 10,
+        "wpfPerceptualHash": "4000000000f25182",
         "avaloniaPerceptualHash": "0101010000aa0102",
         "maximumChangedPixelRatio": 0.2,
         "maximumMeanChannelDelta": 18,
         "maximumPerceptualHashDistance": 18,
         "thresholdPassed": false,
         "heatmapPath": "diff/editor.rich-text-selection.selection.png",
-        "wpfImageSha256": "47b24e3b8710b9d704f255acac206d1688c7f302712ea7e066f8c2bbe5511865",
+        "wpfImageSha256": "3813c345112e868d110399fc5e8c11244d63c6ac3e31e83e49d447c79891880b",
         "avaloniaImageSha256": "13ba598d6d42c5fa7e6a87152faafeca568b85db66c3c9c1a50390bfebbaf244",
-        "heatmapSha256": "8aa0be3755b6e3b680db8e2f8d1888c0901e6f5d8a16ffff3e053bc836e5b084"
+        "heatmapSha256": "2d860301a0f39956dcbde499596154dcc6c44016301da15bc0c1643e74950862"
       },
       "wpfContentValidation": {
         "width": 1280,
@@ -12262,11 +12259,11 @@
         "meanAlpha": 1,
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
-        "nearBlackPixelRatio": 0.0027323190789473686,
-        "meanLuminance": 224.3569314932033,
+        "nearBlackPixelRatio": 0.0030232319078947367,
+        "meanLuminance": 224.25277748107237,
         "luminanceRange": 255,
-        "luminanceStandardDeviation": 55.135136785033595,
-        "edgePixelRatio": 0.06949115953947368,
+        "luminanceStandardDeviation": 55.29142322629733,
+        "edgePixelRatio": 0.06993318256578947,
         "isValid": true,
         "failures": []
       },
@@ -12323,9 +12320,9 @@
         "avaloniaPixelHeight": 760,
         "normalizedWidth": 1280,
         "normalizedHeight": 760,
-        "changedPixelRatio": 0.10378083881578948,
-        "foregroundChangedPixelRatio": 0.10378083881578948,
-        "meanChannelDelta": 8.035325863486841,
+        "changedPixelRatio": 0.10355263157894737,
+        "foregroundChangedPixelRatio": 0.10355263157894737,
+        "meanChannelDelta": 7.970087376644737,
         "maxChannelDelta": 255,
         "perceptualHashDistance": 4,
         "wpfPerceptualHash": "0080919584812005",
@@ -12335,9 +12332,9 @@
         "maximumPerceptualHashDistance": 18,
         "thresholdPassed": true,
         "heatmapPath": "diff/editor.rich-text-caret.png",
-        "wpfImageSha256": "97cbaafeaf48e28ba8d95f11fd2f0c0adf37381ef24f59de9b907f1489448014",
+        "wpfImageSha256": "4818677ebbbff3fd3721c15db6d5fc4b73c5595ef8ff01636a930c1d8d05ebd8",
         "avaloniaImageSha256": "a074cb3a5e10746708704f4845c388ec5e4b7a0bb8fa680308b85cafa85ba89e",
-        "heatmapSha256": "a54f8a5f188fc09697711b3f03772c1a1be75f11252f716ba10eb0359f956a7f"
+        "heatmapSha256": "9b34ca8db28c21f007454d14fc7d8e15ccd8863bb86270d04ab35f3c13d10123"
       },
       "selectionPixelMetrics": null,
       "wpfContentValidation": {
@@ -12346,11 +12343,11 @@
         "meanAlpha": 1,
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
-        "nearBlackPixelRatio": 0.003260690789473684,
-        "meanLuminance": 224.51932728882664,
+        "nearBlackPixelRatio": 0.0033336759868421053,
+        "meanLuminance": 224.44650862003525,
         "luminanceRange": 255,
-        "luminanceStandardDeviation": 55.34335226772395,
-        "edgePixelRatio": 0.06958778782894737,
+        "luminanceStandardDeviation": 55.42643783967466,
+        "edgePixelRatio": 0.07013877467105263,
         "isValid": true,
         "failures": []
       },
