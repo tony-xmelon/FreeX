@@ -1,7 +1,7 @@
 {
   "schema": "freex.freew.shell-visual-capture.v1",
   "renderer": "Avalonia headless Skia (UseHeadlessDrawing=false)",
-  "capturedUtc": "2026-08-24T22:46:24.2453204+00:00",
+  "capturedUtc": "2026-08-25T06:51:23.1804199+00:00",
   "widths": [
     1500,
     1100,
@@ -29,14 +29,6 @@
     {
       "width": 1500,
       "height": 720,
-      "tabName": "layout",
-      "tabId": "layout",
-      "fileName": "shell-1500x720-layout.png",
-      "fixture": "static"
-    },
-    {
-      "width": 1500,
-      "height": 720,
       "tabName": "design",
       "tabId": "design",
       "fileName": "shell-1500x720-design.png",
@@ -45,25 +37,9 @@
     {
       "width": 1500,
       "height": 720,
-      "tabName": "view",
-      "tabId": "view",
-      "fileName": "shell-1500x720-view.png",
-      "fixture": "static"
-    },
-    {
-      "width": 1500,
-      "height": 720,
-      "tabName": "review",
-      "tabId": "review",
-      "fileName": "shell-1500x720-review.png",
-      "fixture": "static"
-    },
-    {
-      "width": 1500,
-      "height": 720,
-      "tabName": "developer",
-      "tabId": "developer",
-      "fileName": "shell-1500x720-developer.png",
+      "tabName": "layout",
+      "tabId": "layout",
+      "fileName": "shell-1500x720-layout.png",
       "fixture": "static"
     },
     {
@@ -85,9 +61,33 @@
     {
       "width": 1500,
       "height": 720,
+      "tabName": "review",
+      "tabId": "review",
+      "fileName": "shell-1500x720-review.png",
+      "fixture": "static"
+    },
+    {
+      "width": 1500,
+      "height": 720,
+      "tabName": "view",
+      "tabId": "view",
+      "fileName": "shell-1500x720-view.png",
+      "fixture": "static"
+    },
+    {
+      "width": 1500,
+      "height": 720,
       "tabName": "help",
       "tabId": "help",
       "fileName": "shell-1500x720-help.png",
+      "fixture": "static"
+    },
+    {
+      "width": 1500,
+      "height": 720,
+      "tabName": "developer",
+      "tabId": "developer",
+      "fileName": "shell-1500x720-developer.png",
       "fixture": "static"
     },
     {
@@ -173,14 +173,6 @@
     {
       "width": 1100,
       "height": 720,
-      "tabName": "layout",
-      "tabId": "layout",
-      "fileName": "shell-1100x720-layout.png",
-      "fixture": "static"
-    },
-    {
-      "width": 1100,
-      "height": 720,
       "tabName": "design",
       "tabId": "design",
       "fileName": "shell-1100x720-design.png",
@@ -189,25 +181,9 @@
     {
       "width": 1100,
       "height": 720,
-      "tabName": "view",
-      "tabId": "view",
-      "fileName": "shell-1100x720-view.png",
-      "fixture": "static"
-    },
-    {
-      "width": 1100,
-      "height": 720,
-      "tabName": "review",
-      "tabId": "review",
-      "fileName": "shell-1100x720-review.png",
-      "fixture": "static"
-    },
-    {
-      "width": 1100,
-      "height": 720,
-      "tabName": "developer",
-      "tabId": "developer",
-      "fileName": "shell-1100x720-developer.png",
+      "tabName": "layout",
+      "tabId": "layout",
+      "fileName": "shell-1100x720-layout.png",
       "fixture": "static"
     },
     {
@@ -229,9 +205,33 @@
     {
       "width": 1100,
       "height": 720,
+      "tabName": "review",
+      "tabId": "review",
+      "fileName": "shell-1100x720-review.png",
+      "fixture": "static"
+    },
+    {
+      "width": 1100,
+      "height": 720,
+      "tabName": "view",
+      "tabId": "view",
+      "fileName": "shell-1100x720-view.png",
+      "fixture": "static"
+    },
+    {
+      "width": 1100,
+      "height": 720,
       "tabName": "help",
       "tabId": "help",
       "fileName": "shell-1100x720-help.png",
+      "fixture": "static"
+    },
+    {
+      "width": 1100,
+      "height": 720,
+      "tabName": "developer",
+      "tabId": "developer",
+      "fileName": "shell-1100x720-developer.png",
       "fixture": "static"
     },
     {
@@ -317,14 +317,6 @@
     {
       "width": 900,
       "height": 720,
-      "tabName": "layout",
-      "tabId": "layout",
-      "fileName": "shell-900x720-layout.png",
-      "fixture": "static"
-    },
-    {
-      "width": 900,
-      "height": 720,
       "tabName": "design",
       "tabId": "design",
       "fileName": "shell-900x720-design.png",
@@ -333,25 +325,9 @@
     {
       "width": 900,
       "height": 720,
-      "tabName": "view",
-      "tabId": "view",
-      "fileName": "shell-900x720-view.png",
-      "fixture": "static"
-    },
-    {
-      "width": 900,
-      "height": 720,
-      "tabName": "review",
-      "tabId": "review",
-      "fileName": "shell-900x720-review.png",
-      "fixture": "static"
-    },
-    {
-      "width": 900,
-      "height": 720,
-      "tabName": "developer",
-      "tabId": "developer",
-      "fileName": "shell-900x720-developer.png",
+      "tabName": "layout",
+      "tabId": "layout",
+      "fileName": "shell-900x720-layout.png",
       "fixture": "static"
     },
     {
@@ -373,9 +349,33 @@
     {
       "width": 900,
       "height": 720,
+      "tabName": "review",
+      "tabId": "review",
+      "fileName": "shell-900x720-review.png",
+      "fixture": "static"
+    },
+    {
+      "width": 900,
+      "height": 720,
+      "tabName": "view",
+      "tabId": "view",
+      "fileName": "shell-900x720-view.png",
+      "fixture": "static"
+    },
+    {
+      "width": 900,
+      "height": 720,
       "tabName": "help",
       "tabId": "help",
       "fileName": "shell-900x720-help.png",
+      "fixture": "static"
+    },
+    {
+      "width": 900,
+      "height": 720,
+      "tabName": "developer",
+      "tabId": "developer",
+      "fileName": "shell-900x720-developer.png",
       "fixture": "static"
     },
     {
@@ -461,14 +461,6 @@
     {
       "width": 750,
       "height": 720,
-      "tabName": "layout",
-      "tabId": "layout",
-      "fileName": "shell-750x720-layout.png",
-      "fixture": "static"
-    },
-    {
-      "width": 750,
-      "height": 720,
       "tabName": "design",
       "tabId": "design",
       "fileName": "shell-750x720-design.png",
@@ -477,25 +469,9 @@
     {
       "width": 750,
       "height": 720,
-      "tabName": "view",
-      "tabId": "view",
-      "fileName": "shell-750x720-view.png",
-      "fixture": "static"
-    },
-    {
-      "width": 750,
-      "height": 720,
-      "tabName": "review",
-      "tabId": "review",
-      "fileName": "shell-750x720-review.png",
-      "fixture": "static"
-    },
-    {
-      "width": 750,
-      "height": 720,
-      "tabName": "developer",
-      "tabId": "developer",
-      "fileName": "shell-750x720-developer.png",
+      "tabName": "layout",
+      "tabId": "layout",
+      "fileName": "shell-750x720-layout.png",
       "fixture": "static"
     },
     {
@@ -517,9 +493,33 @@
     {
       "width": 750,
       "height": 720,
+      "tabName": "review",
+      "tabId": "review",
+      "fileName": "shell-750x720-review.png",
+      "fixture": "static"
+    },
+    {
+      "width": 750,
+      "height": 720,
+      "tabName": "view",
+      "tabId": "view",
+      "fileName": "shell-750x720-view.png",
+      "fixture": "static"
+    },
+    {
+      "width": 750,
+      "height": 720,
       "tabName": "help",
       "tabId": "help",
       "fileName": "shell-750x720-help.png",
+      "fixture": "static"
+    },
+    {
+      "width": 750,
+      "height": 720,
+      "tabName": "developer",
+      "tabId": "developer",
+      "fileName": "shell-750x720-developer.png",
       "fixture": "static"
     },
     {
