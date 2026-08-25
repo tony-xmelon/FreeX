@@ -1,9 +1,13 @@
 # Avalonia/WPF Parity Wave 194 Integration
 
 Date: 2026-08-25
-Tested source commit: `8624e6d1f4bce133a3685d99f366e668491ea33f`
+Tested source commit: `e4f40ebcaadc624421b9c0a985330100f10af8df`
 Cumulative app slices: **582** (**194 per app**)
 Unprocessed slices: **0**
+
+The **582 cumulative app slices / 194 per app** remain the processed Wave194
+accounting. Later wave feature commits are included in the tested source above;
+they do not add or reinterpret Wave194 slices.
 
 This is an acceptance-only dashboard and evidence refresh. It does not change
 the tested source commit, product code, or app behavior. Functional/source
@@ -49,9 +53,8 @@ complete AutoFilter or Excel visual parity.
 
 ### FreeW
 
-The current generated inventory records **952** commands, **731** both-profile
-rows, **216** profile-shape-only rows, and **0** actionable gaps. The current
-dialog comparison manifest contains **291 rows**:
+The current generated inventory records **954** commands, **733** both-profile
+rows, **0** actionable gaps, and current visual evidence contains **291 rows**:
 
 | Classification | Count |
 |---|---:|
@@ -78,11 +81,13 @@ and control raster differences do not establish Word visual parity.
 
 ### FreeP
 
-The generated command inventory records **708/708** both-profile commands and
-**0** actionable gaps. Current app-owned visual evidence records **33/33**
+The generated command inventory records **715/715** both-profile commands,
+**0** actionable missing WPF routes, **0** actionable missing Avalonia routes,
+and **0** actionable gaps. Current app-owned visual evidence records **33/33**
 whole-window scenarios, **28/28** dialog scenarios, **28/28** native
 PowerPoint chrome references, **32** responsive WPF/Avalonia pairs (**64**
-captures), and **61/61** paired local WPF/Avalonia comparisons.
+captures), and **61/61** paired local WPF/Avalonia comparisons (**61** passes,
+**0** mismatches).
 
 No runtime change is made. Wave194 records schema v3 topology evidence for
 deck17 slide02 and pins the complete source corpus file
@@ -108,24 +113,24 @@ FreeP Surface3D static sign-off is clean, but a fresh independent final
 cross-app acceptance review of the current tested source is still pending.
 
 The current integration branch is anchored to
-`8624e6d1f4bce133a3685d99f366e668491ea33f`. This refresh does not expand the
+`e4f40ebcaadc624421b9c0a985330100f10af8df`. This refresh does not expand the
 acceptance allowlist or reinterpret visual mismatch rows as functional gaps.
 
 ## Integration gates
 
 All supplied final integration gates passed at tested source commit
-`8624e6d1f4bce133a3685d99f366e668491ea33f`.
+`e4f40ebcaadc624421b9c0a985330100f10af8df`.
 
 - Repository preflight: passed with exit code 0 using
   `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1`;
-  **294 JSON**, **309 XML-backed**, **125 PowerShell scripts**, **10 test
-  gates/48 assigned projects**, **13,922 conflict-marker files**, and all
-  generated docs/evidence current.
+  **294 JSON**, **309 XML-backed**, **125 PowerShell scripts**, **11 GitHub
+  workflows**, **10 test gates/48 assigned projects**, **13,951 conflict-marker
+  files**, and all generated docs/evidence current; elapsed **00:03:10.419**.
 - Full Release build: `dotnet build FreeX.slnx --configuration Release -m:1`
-  passed with **0 warnings and 0 errors** in **00:06:14.37**.
+  passed with **0 warnings and 0 errors** in **00:08:44.581**.
 - Final default non-UI lane: **31 unique TRXs** and matching console
-  aggregation, with **43,485 passed**, **134 intentional skips**, **0 failed**,
-  **43,619 total**.
+  aggregation, with **43,505 passed**, **134 intentional skips**, **0 failed**,
+  **43,639 total**, elapsed **00:17:18.449**.
 - Focused current FreeP evidence: ChartRenderPlanner **264/264**, FreeP
   Presentation **5,496/5,496**, host **2,418/2,418**, Avalonia **724/724**,
   ribbon definitions **34/34**, responsive evidence **64/64**, localization
@@ -134,7 +139,9 @@ All supplied final integration gates passed at tested source commit
 This documentation refresh records the supplied gate results and does not rerun
 the full build or default lane.
 
-Wave194 is accepted at 582 cumulative app slices, with zero unprocessed slices.
+Wave194 is accepted at 582 cumulative app slices, with zero unprocessed slices;
+this is the processed Wave194 accounting and later feature commits included in
+the tested source do not increase it.
 Functional/source parity evidence is complete for the generated command/profile
 and focused-gate surfaces, while visual mismatch evidence remains explicitly
 open as described above. No 100% visual parity claim is made.
@@ -142,7 +149,7 @@ open as described above. No 100% visual parity claim is made.
 ## Acceptance boundary
 
 The git-aware acceptance boundary is re-anchored to the tested source commit
-`8624e6d1f4bce133a3685d99f366e668491ea33f`. Only the Wave194 report, generated
+`e4f40ebcaadc624421b9c0a985330100f10af8df`. Only the Wave194 report, generated
 dashboard artifacts, dashboard generator, dashboard behavior guard, and the
 existing dashboard guard test are allowlisted for this refresh. Product code,
 app tests, physical evidence, and other source drift remain rejected.
