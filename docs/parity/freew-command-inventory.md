@@ -10,13 +10,13 @@ Gap classifications are generated from explicit rule order: shared-profile, comm
 
 | Total | Both profiles | WPF profile only | Avalonia profile only | Missing WPF profile | Missing Avalonia profile | Actionable missing WPF | Actionable missing Avalonia |
 |---:|---:|---:|---:|---:|---:|---:|---:|
-| 952 | 731 | 2 | 219 | 219 | 2 | 0 | 0 |
+| 953 | 732 | 2 | 219 | 219 | 2 | 0 | 0 |
 
 ## Classification Counts
 
 | Shared profile | Profile-shape only | Command-id aliases | Platform-only | Deferred | Actionable gaps | Behavior evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|
-| 731 | 216 | 0 | 5 | 0 | 0 | 506 |
+| 732 | 216 | 0 | 5 | 0 | 0 | 506 |
 
 ## Classification Rules
 
@@ -235,6 +235,7 @@ Gap classifications are generated from explicit rule order: shared-profile, comm
 | `freew.feedback` | Feedback | Yes | Yes | none | shared-profile | shared-profile | shared-profile | help/help (RibbonButton; Large) | help/help (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source | WPF Help shell variance: FreeWRibbonParityTests.HelpTab_ExposesOnlyBackedFreeWLocalSupportCommands<br>RibbonAndDocumentTests.Avalonia_file_shell_and_WPF_authority_legal_notice_commands_are_backed | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.field` | Field… | Yes | Yes | none | shared-profile | shared-profile | shared-profile | insert/text (RibbonMenuItem; Menu) | insert/text (RibbonButton; Small)<br>insert/text (RibbonMenuItem; Menu) | WPF definition source<br>Avalonia definition source<br>WPF registry source | Final command parity: FinalFiveCommandParityTests.InsertTextCommands_UseSharedQuickPartAndFieldBehavior<br>FinalFiveCommandParityTests.InsertTextCommands_UseSharedQuickPartAndFieldBehavior | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.find` | Find | Yes | Yes | none | shared-profile | shared-profile | shared-profile | home/editing (RibbonButton; Medium) | home/editing (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
+| `freew.focus` | Focus | Yes | Yes | none | shared-profile | shared-profile | shared-profile | view/immersive (RibbonToggleButton; Medium) | view/immersive (RibbonToggleButton; Medium) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.font-color` | Font Colour | Yes | Yes | none | shared-profile | shared-profile | shared-profile | home/font (RibbonButton; Small) | home/font (RibbonDropdown; Medium) | WPF definition source<br>Avalonia definition source<br>Avalonia registry source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.font-color.automatic` | Automatic | No | Yes | WPF | avalonia-profile-only | profile-shape-only | profile-shape-only | - | home/font (RibbonMenuItem; Menu) | - | Formatting gallery command behavior: FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads<br>FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation | Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence. |
 | `freew.font-color.black` | Black | No | Yes | WPF | avalonia-profile-only | profile-shape-only | profile-shape-only | - | home/font (RibbonMenuItem; Menu) | - | Formatting gallery command behavior: FormattingGalleryRibbonWorkflowTests.SharedMappingsPrepareThenApplyExactCatalogPayloads<br>FormattingGalleryRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateFormattingGalleryIdentityToPresentation | Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence. |
