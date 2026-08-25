@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 710 | 710 | 0 | 0 | 0 | 0 | 0 | 0 | 710 | 0 | 0 | 0 | 0 | 110 |
+| 713 | 713 | 0 | 0 | 0 | 0 | 0 | 0 | 713 | 0 | 0 | 0 | 0 | 110 |
 
 ## Workflow Evidence
 
@@ -825,7 +825,10 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.underline` | Underline | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.undo` | Undo | Yes | Yes | none | shared | home/edit (RibbonButton) | home/edit (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.video` | Video | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.view.arrange-all` | Arrange All | Yes | Yes | none | shared | view/window (RibbonButton) | view/window (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.view.cascade-windows` | Cascade Windows | Yes | Yes | none | shared | view/window (RibbonButton) | view/window (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.view.fit-to-window` | Fit to Window | Yes | Yes | none | shared | view/zoom (RibbonButton) | view/zoom (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.view.new-window` | New Window | Yes | Yes | none | shared | view/window (RibbonButton) | view/window (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.view.normal` | Normal | Yes | Yes | none | shared | view/presentation-views (RibbonButton) | view/presentation-views (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.view.notes-page` | Notes Page | Yes | Yes | none | shared | view/presentation-views (RibbonButton) | view/presentation-views (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.view.outline` | Outline View | Yes | Yes | none | shared | view/presentation-views (RibbonButton) | view/presentation-views (RibbonButton) | Available in both generated FreeP ribbon profiles. |
