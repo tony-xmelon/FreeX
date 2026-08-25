@@ -1,7 +1,7 @@
 # Avalonia/WPF Parity Wave 194 Integration
 
-Date: 2026-08-24
-Tested source commit: `659e851fb2cadec5061a726a1622a7d75c304626`
+Date: 2026-08-25
+Tested source commit: `8624e6d1f4bce133a3685d99f366e668491ea33f`
 Cumulative app slices: **582** (**194 per app**)
 Unprocessed slices: **0**
 
@@ -59,10 +59,12 @@ dialog comparison manifest contains **291 rows**:
 | Genuine visual mismatch | 141 |
 | Avalonia extension | 70 |
 
-The 221 paired rows therefore contain 80 local comparison passes and 141
-genuine visual mismatches. The 70 Avalonia extensions are reported separately
-because they have no WPF authority row. This is functional/source coverage
-plus visual evidence; it is not a Word visual-parity claim.
+The **221** paired rows therefore contain **80** local comparison passes and
+**141** genuine visual mismatches. The **70** Avalonia extensions are reported
+separately because they have no WPF authority row. The current shell evidence
+contains **40** paired static captures, **32** paired contextual captures, and
+**36** native Word ribbon references. This is functional/source coverage plus
+visual evidence; it is not a Word visual-parity claim.
 
 The Avalonia Font dialog action-button border now uses the WPF-style `#C8C8C8`
 value. The aggregate changed-pixel count improves from **32,861** to
@@ -76,11 +78,11 @@ and control raster differences do not establish Word visual parity.
 
 ### FreeP
 
-The generated command inventory records **707/707** both-profile commands and
+The generated command inventory records **708/708** both-profile commands and
 **0** actionable gaps. Current app-owned visual evidence records **33/33**
 whole-window scenarios, **28/28** dialog scenarios, **28/28** native
-PowerPoint chrome references, and **61/61** paired local WPF/Avalonia
-comparisons.
+PowerPoint chrome references, **32** responsive WPF/Avalonia pairs (**64**
+captures), and **61/61** paired local WPF/Avalonia comparisons.
 
 No runtime change is made. Wave194 records schema v3 topology evidence for
 deck17 slide02 and pins the complete source corpus file
@@ -101,30 +103,33 @@ The retained review remediations remain valid: FreeX uses one authoritative
 mixed-type geometry contract with mutation coverage and reachable-source
 provenance. FreeP topology schema v3 pins the complete PPTX and describes its
 remaining rendering residual as unresolved. The prior final independent review
-is superseded by the Surface3D elevation-legend merge; a fresh independent
-review of the current tested source is pending.
+is superseded by the later FreeP Surface3D hardening. The supplied current
+FreeP Surface3D static sign-off is clean, but a fresh independent final
+cross-app acceptance review of the current tested source is still pending.
 
 The current integration branch is anchored to
-`659e851fb2cadec5061a726a1622a7d75c304626`. This refresh does not expand the
+`8624e6d1f4bce133a3685d99f366e668491ea33f`. This refresh does not expand the
 acceptance allowlist or reinterpret visual mismatch rows as functional gaps.
 
 ## Integration gates
 
 All supplied final integration gates passed at tested source commit
-`659e851fb2cadec5061a726a1622a7d75c304626`.
+`8624e6d1f4bce133a3685d99f366e668491ea33f`.
 
 - Repository preflight: passed with exit code 0 using
-  `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1`.
+  `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1`;
+  **294 JSON**, **309 XML-backed**, **125 PowerShell scripts**, **10 test
+  gates/48 assigned projects**, **13,922 conflict-marker files**, and all
+  generated docs/evidence current.
 - Full Release build: `dotnet build FreeX.slnx --configuration Release -m:1`
-  passed with **0 warnings and 0 errors** in **00:06:05.76**.
+  passed with **0 warnings and 0 errors** in **00:06:14.37**.
 - Final default non-UI lane: **31 unique TRXs** and matching console
-  aggregation, with **43,466 passed**, **134 intentional skips**, **0 failed**,
-  **43,600 total**.
-- Focused post-merge evidence: FreeW Avalonia **2,175/2,175**, FreeW host
-  **1,835/1,835**, FreeW Presentation **2,892/2,892**, FreeW Ribbon
-  definitions **62/62**; FreeP Avalonia **724/724**, FreeP host **2,416/2,416**,
-  FreeP Presentation **5,482/5,482**, retention **2/2**, and
-  ChartRenderPlanner **250/250**.
+  aggregation, with **43,485 passed**, **134 intentional skips**, **0 failed**,
+  **43,619 total**.
+- Focused current FreeP evidence: ChartRenderPlanner **264/264**, FreeP
+  Presentation **5,496/5,496**, host **2,418/2,418**, Avalonia **724/724**,
+  ribbon definitions **34/34**, responsive evidence **64/64**, localization
+  focused **1/1**, resources **14/14**, and Hide Slide assertions **2/2**.
 
 This documentation refresh records the supplied gate results and does not rerun
 the full build or default lane.
@@ -137,7 +142,7 @@ open as described above. No 100% visual parity claim is made.
 ## Acceptance boundary
 
 The git-aware acceptance boundary is re-anchored to the tested source commit
-`659e851fb2cadec5061a726a1622a7d75c304626`. Only the Wave194 report, generated
+`8624e6d1f4bce133a3685d99f366e668491ea33f`. Only the Wave194 report, generated
 dashboard artifacts, dashboard generator, dashboard behavior guard, and the
 existing dashboard guard test are allowlisted for this refresh. Product code,
 app tests, physical evidence, and other source drift remain rejected.
