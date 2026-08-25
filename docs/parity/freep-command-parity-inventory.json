@@ -4,15 +4,15 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia) plus freep/FreeP.App.Presentation SmartArtLayoutPreset",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 715,
-    "both": 715,
+    "totalCommands": 718,
+    "both": 718,
     "wpfOnly": 0,
     "avaloniaOnly": 0,
     "missingWpf": 0,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 715,
+    "shared": 718,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 0,
@@ -25699,6 +25699,40 @@
       ]
     },
     {
+      "commandId": "freep.view.black-and-white",
+      "label": "Black and White",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "color-grayscale",
+          "group": "Color/Grayscale",
+          "label": "Black and White",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "color-grayscale",
+          "group": "Color/Grayscale",
+          "label": "Black and White",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
       "commandId": "freep.view.cascade-windows",
       "label": "Cascade Windows",
       "wpfPresent": true,
@@ -25733,6 +25767,40 @@
       ]
     },
     {
+      "commandId": "freep.view.color",
+      "label": "Color",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "color-grayscale",
+          "group": "Color/Grayscale",
+          "label": "Color",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "color-grayscale",
+          "group": "Color/Grayscale",
+          "label": "Color",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
       "commandId": "freep.view.fit-to-window",
       "label": "Fit to Window",
       "wpfPresent": true,
@@ -25761,6 +25829,40 @@
           "groupId": "zoom",
           "group": "Zoom",
           "label": "Fit to Window",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.view.grayscale",
+      "label": "Grayscale",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "color-grayscale",
+          "group": "Color/Grayscale",
+          "label": "Grayscale",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "color-grayscale",
+          "group": "Color/Grayscale",
+          "label": "Grayscale",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
