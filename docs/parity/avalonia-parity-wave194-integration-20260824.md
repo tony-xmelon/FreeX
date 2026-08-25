@@ -109,8 +109,8 @@ mixed-type geometry contract with mutation coverage and reachable-source
 provenance. FreeP topology schema v3 pins the complete PPTX and describes its
 remaining rendering residual as unresolved. The prior final independent review
 is superseded by the later FreeP Surface3D hardening. The supplied current
-FreeP Surface3D static sign-off is clean, but a fresh independent final
-cross-app acceptance review of the current tested source is still pending.
+FreeP Surface3D static sign-off is clean, but the independent final cross-app
+acceptance review of the current tested source is **remediation-awaiting-recheck**.
 
 The current integration branch is anchored to
 `e4f40ebcaadc624421b9c0a985330100f10af8df`. This refresh does not expand the
@@ -127,10 +127,12 @@ All supplied final integration gates passed at tested source commit
   workflows**, **10 test gates/48 assigned projects**, **13,951 conflict-marker
   files**, and all generated docs/evidence current; elapsed **00:03:10.419**.
 - Full Release build: `dotnet build FreeX.slnx --configuration Release -m:1`
-  passed with **0 warnings and 0 errors** in **00:08:44.581**.
+  passed with **0 warnings and 0 errors**; MSBuild-retained `Time Elapsed
+  00:08:44.31`; wrapper stopwatch **00:08:44.581**.
 - Final default non-UI lane: **31 unique TRXs** and matching console
   aggregation, with **43,505 passed**, **134 intentional skips**, **0 failed**,
-  **43,639 total**, elapsed **00:17:18.449**.
+  **43,639 total**; wrapper stopwatch **00:17:18.449**; independently parsed
+  31-TRX timestamp span **00:17:17.5738434**.
 - Focused current FreeP evidence: ChartRenderPlanner **264/264**, FreeP
   Presentation **5,496/5,496**, host **2,418/2,418**, Avalonia **724/724**,
   ribbon definitions **34/34**, responsive evidence **64/64**, localization
