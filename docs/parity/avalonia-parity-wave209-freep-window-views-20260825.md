@@ -20,8 +20,9 @@ The WPF host uses the system work area, while the Avalonia host uses its
 display work area and the existing DPI-bound translation helper. Slide show,
 presenter, and dialog windows are excluded.
 
-Switch Windows remains deferred: it needs a dynamic window registry and menu
-surface rather than a static ribbon definition.
+Switch Windows was subsequently completed in
+`avalonia-parity-wave212-freep-switch-windows-20260825.md` using a live native
+window-menu surface rather than a static ribbon definition.
 
 ## Evidence
 

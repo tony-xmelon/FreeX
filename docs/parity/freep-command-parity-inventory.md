@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 713 | 713 | 0 | 0 | 0 | 0 | 0 | 0 | 713 | 0 | 0 | 0 | 0 | 110 |
+| 715 | 715 | 0 | 0 | 0 | 0 | 0 | 0 | 715 | 0 | 0 | 0 | 0 | 110 |
 
 ## Workflow Evidence
 
@@ -837,7 +837,9 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.view.show.gridlines` | Gridlines | Yes | Yes | none | shared | view/show (RibbonToggleButton) | view/show (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.view.show.guides` | Guides | Yes | Yes | none | shared | view/show (RibbonToggleButton) | view/show (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.view.show.notes` | Notes | Yes | Yes | none | shared | view/show (RibbonToggleButton) | view/show (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.view.show.ruler` | Ruler | Yes | Yes | none | shared | view/show (RibbonToggleButton) | view/show (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.view.slide-sorter` | Slide Sorter | Yes | Yes | none | shared | view/presentation-views (RibbonButton) | view/presentation-views (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.view.switch-windows` | Switch Windows | Yes | Yes | none | shared | view/window (RibbonButton) | view/window (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.view.zoom` | Zoom... | Yes | Yes | none | shared | view/zoom (RibbonButton) | view/zoom (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.zoom.cover-image` | Set Zoom Cover Image | Yes | Yes | none | shared | insert/links (RibbonButton) | insert/links (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.zoom.format` | Zoom Format | Yes | Yes | none | shared | insert/links (RibbonButton) | insert/links (RibbonButton) | Available in both generated FreeP ribbon profiles. |
