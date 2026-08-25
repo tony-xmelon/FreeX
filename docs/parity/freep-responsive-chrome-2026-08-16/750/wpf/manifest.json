@@ -5,7 +5,7 @@
   "targetDpi": 96,
   "logicalClientWidth": 750,
   "logicalClientHeight": 760,
-  "generatedAtUtc": "2026-08-25T06:21:12.0367481\u002B00:00",
+  "generatedAtUtc": "2026-08-25T07:57:09.2279988\u002B00:00",
   "captures": [
     {
       "scenarioId": "ribbon.view",
@@ -19,11 +19,11 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
-      "nonBackgroundPixelCount": 517909,
-      "fullImageSha256": "9db1dbcb21b0078a82be1aa7a6fdb9374fc61702aad844721d3633dfeb2e317b",
-      "clientImageSha256": "9db1dbcb21b0078a82be1aa7a6fdb9374fc61702aad844721d3633dfeb2e317b",
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
+      "nonBackgroundPixelCount": 517896,
+      "fullImageSha256": "3c0ccd4ce4a3f74c39404422c365598f56510bb73669fad00252d27938d3a739",
+      "clientImageSha256": "14f408f50e559b5a803029fab9ed4a724cf1e011193ef84e6ec39dc429f25efa",
       "semanticState": {
         "scenarioId": "ribbon.view",
         "host": "wpf",
@@ -64,14 +64,14 @@
         "titleBarBounds": {
           "x": 0,
           "y": 0,
-          "width": 750,
+          "width": 750.4000000000001,
           "height": 34,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
           "y": 34,
-          "width": 750,
+          "width": 750.4000000000001,
           "height": 122.96000000000001,
           "isVisible": true
         },
@@ -85,21 +85,21 @@
         "canvasBounds": {
           "x": 180,
           "y": 156.96,
-          "width": 570,
+          "width": 570.4000000000001,
           "height": 517.04,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
           "y": 674,
-          "width": 570,
+          "width": 570.4000000000001,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
           "y": 734,
-          "width": 750,
+          "width": 750.4000000000001,
           "height": 26,
           "isVisible": true
         },
