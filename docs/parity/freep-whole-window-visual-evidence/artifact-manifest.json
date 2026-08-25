@@ -64,7 +64,7 @@
     },
     {
       "path": "freep/FreeP.App.Avalonia/MainWindow.cs",
-      "sha256": "d6fb37df804b0d298827a12549552139b958fac60e1c29321499895d2db13d57"
+      "sha256": "f252a42cb7b71a20fa157d215ab71fa1545881e2aed4a91455193e8d1d3a8f2d"
     },
     {
       "path": "freep/TestSupport/VisualEvidence.Avalonia/MainWindow.VisualCaptureAdapter.cs",
