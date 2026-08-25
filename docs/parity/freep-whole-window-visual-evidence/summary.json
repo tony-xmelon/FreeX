@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-08-25T05:37:40.3296607\u002B00:00",
+  "generatedAtUtc": "2026-08-25T06:38:45.7624662\u002B00:00",
   "scenarioCount": 36,
   "pairedCaptureCount": 36,
   "passCount": 0,
@@ -20,9 +20,6 @@
   },
   "mismatchCategoryCounts": {
     "app-owned-titlebar-raster": 36,
-    "contextual-tab-strip": 17,
-    "ribbon-tab-strip": 17,
-    "rich-editor-selection-geometry": 1,
     "rich-editor-selection-pixel-threshold": 1
   },
   "wpf": {
@@ -32,7 +29,7 @@
     "targetDpi": 96,
     "logicalClientWidth": 1280,
     "logicalClientHeight": 760,
-    "generatedAtUtc": "2026-08-25T05:36:23.7280712\u002B00:00",
+    "generatedAtUtc": "2026-08-25T06:37:29.1034009\u002B00:00",
     "captures": [
       {
         "scenarioId": "startup.slide",
@@ -2239,8 +2236,8 @@
         "sourceDpiX": 120,
         "sourceDpiY": 120,
         "nonBackgroundPixelCount": 930445,
-        "fullImageSha256": "7a43ca98868a83dc6d641f597b7588e99cf907168c44ea23295adbe6c5f5b163",
-        "clientImageSha256": "7a43ca98868a83dc6d641f597b7588e99cf907168c44ea23295adbe6c5f5b163",
+        "fullImageSha256": "0e451a29caf3a1a004101ee7f1d49b47f3806e6f3d0dfc014afa4e545bae4a63",
+        "clientImageSha256": "0e451a29caf3a1a004101ee7f1d49b47f3806e6f3d0dfc014afa4e545bae4a63",
         "semanticState": {
           "scenarioId": "backstage.account",
           "host": "wpf",
@@ -3634,9 +3631,9 @@
         "dpiY": 96,
         "sourceDpiX": 120,
         "sourceDpiY": 120,
-        "nonBackgroundPixelCount": 893378,
-        "fullImageSha256": "a197609c0c086f28de9ebe346742b7a4f6e5a0c765a7cab2dfe4808c9d8048e8",
-        "clientImageSha256": "a197609c0c086f28de9ebe346742b7a4f6e5a0c765a7cab2dfe4808c9d8048e8",
+        "nonBackgroundPixelCount": 893377,
+        "fullImageSha256": "08fa436f2a1addfed3472c11e7780d049a0fb91bee941a28de3973a5f61ad7fb",
+        "clientImageSha256": "08fa436f2a1addfed3472c11e7780d049a0fb91bee941a28de3973a5f61ad7fb",
         "semanticState": {
           "scenarioId": "editor.rich-text-selection",
           "host": "wpf",
@@ -3770,10 +3767,10 @@
             "selectionEnd": 35,
             "selectedText": "revenue review highlights",
             "bounds": {
-              "x": 457.94755555555554,
-              "y": 244.74127734033246,
-              "width": 190.7354913969087,
-              "height": 55.825021872265964,
+              "x": 382.39200000000005,
+              "y": 266.6135433070866,
+              "width": 250.51968503937007,
+              "height": 73.32283464566929,
               "isVisible": true
             }
           }
@@ -3794,9 +3791,9 @@
         "dpiY": 96,
         "sourceDpiX": 120,
         "sourceDpiY": 120,
-        "nonBackgroundPixelCount": 893333,
-        "fullImageSha256": "97cbaafeaf48e28ba8d95f11fd2f0c0adf37381ef24f59de9b907f1489448014",
-        "clientImageSha256": "97cbaafeaf48e28ba8d95f11fd2f0c0adf37381ef24f59de9b907f1489448014",
+        "nonBackgroundPixelCount": 893346,
+        "fullImageSha256": "4818677ebbbff3fd3721c15db6d5fc4b73c5595ef8ff01636a930c1d8d05ebd8",
+        "clientImageSha256": "4818677ebbbff3fd3721c15db6d5fc4b73c5595ef8ff01636a930c1d8d05ebd8",
         "semanticState": {
           "scenarioId": "editor.rich-text-caret",
           "host": "wpf",
@@ -5080,7 +5077,7 @@
     "targetDpi": 96,
     "logicalClientWidth": 1280,
     "logicalClientHeight": 760,
-    "generatedAtUtc": "2026-08-25T05:37:35.9816015\u002B00:00",
+    "generatedAtUtc": "2026-08-25T06:38:40.9463556\u002B00:00",
     "captures": [
       {
         "scenarioId": "startup.slide",
@@ -6470,9 +6467,12 @@
             "slide-show",
             "review",
             "view",
-            "help"
+            "help",
+            "text-format"
           ],
-          "visibleContextualTabIds": [],
+          "visibleContextualTabIds": [
+            "text-format"
+          ],
           "backstageOpen": true,
           "backstagePane": "Info",
           "focusedRole": "",
@@ -6607,9 +6607,12 @@
             "slide-show",
             "review",
             "view",
-            "help"
+            "help",
+            "text-format"
           ],
-          "visibleContextualTabIds": [],
+          "visibleContextualTabIds": [
+            "text-format"
+          ],
           "backstageOpen": true,
           "backstagePane": "Recent",
           "focusedRole": "",
@@ -6744,9 +6747,12 @@
             "slide-show",
             "review",
             "view",
-            "help"
+            "help",
+            "text-format"
           ],
-          "visibleContextualTabIds": [],
+          "visibleContextualTabIds": [
+            "text-format"
+          ],
           "backstageOpen": true,
           "backstagePane": "New from template",
           "focusedRole": "",
@@ -6881,9 +6887,12 @@
             "slide-show",
             "review",
             "view",
-            "help"
+            "help",
+            "text-format"
           ],
-          "visibleContextualTabIds": [],
+          "visibleContextualTabIds": [
+            "text-format"
+          ],
           "backstageOpen": true,
           "backstagePane": "Print",
           "focusedRole": "",
@@ -7018,9 +7027,12 @@
             "slide-show",
             "review",
             "view",
-            "help"
+            "help",
+            "text-format"
           ],
-          "visibleContextualTabIds": [],
+          "visibleContextualTabIds": [
+            "text-format"
+          ],
           "backstageOpen": true,
           "backstagePane": "Export",
           "focusedRole": "",
@@ -7155,9 +7167,12 @@
             "slide-show",
             "review",
             "view",
-            "help"
+            "help",
+            "text-format"
           ],
-          "visibleContextualTabIds": [],
+          "visibleContextualTabIds": [
+            "text-format"
+          ],
           "backstageOpen": true,
           "backstagePane": "Options",
           "focusedRole": "",
@@ -7268,9 +7283,9 @@
         "dpiY": 96,
         "sourceDpiX": 96,
         "sourceDpiY": 96,
-        "nonBackgroundPixelCount": 929489,
-        "fullImageSha256": "2ae6e78b40c55655427c6483ea37735087e3746d77c8d9047c8e52f24cf1ccfa",
-        "clientImageSha256": "2ae6e78b40c55655427c6483ea37735087e3746d77c8d9047c8e52f24cf1ccfa",
+        "nonBackgroundPixelCount": 929484,
+        "fullImageSha256": "8d61e840c918f176ae3100169a37499183a453baeef077d4f41db9da2275b969",
+        "clientImageSha256": "8d61e840c918f176ae3100169a37499183a453baeef077d4f41db9da2275b969",
         "semanticState": {
           "scenarioId": "backstage.account",
           "host": "avalonia",
@@ -7292,9 +7307,12 @@
             "slide-show",
             "review",
             "view",
-            "help"
+            "help",
+            "text-format"
           ],
-          "visibleContextualTabIds": [],
+          "visibleContextualTabIds": [
+            "text-format"
+          ],
           "backstageOpen": true,
           "backstagePane": "Account",
           "focusedRole": "",
@@ -7540,9 +7558,9 @@
         "dpiY": 96,
         "sourceDpiX": 96,
         "sourceDpiY": 96,
-        "nonBackgroundPixelCount": 880685,
-        "fullImageSha256": "28ee85b04cf1be0f7d2caf1cf18958621f49937a4915031ad4c5e25d92f5da9c",
-        "clientImageSha256": "28ee85b04cf1be0f7d2caf1cf18958621f49937a4915031ad4c5e25d92f5da9c",
+        "nonBackgroundPixelCount": 879040,
+        "fullImageSha256": "981cfd907a96e7348637a2e5fa1a510f88950b583c365e1908c724dce2a469b8",
+        "clientImageSha256": "981cfd907a96e7348637a2e5fa1a510f88950b583c365e1908c724dce2a469b8",
         "semanticState": {
           "scenarioId": "view.gridlines-guides",
           "host": "avalonia",
@@ -7564,9 +7582,12 @@
             "slide-show",
             "review",
             "view",
-            "help"
+            "help",
+            "text-format"
           ],
-          "visibleContextualTabIds": [],
+          "visibleContextualTabIds": [
+            "text-format"
+          ],
           "backstageOpen": false,
           "backstagePane": "",
           "focusedRole": "",
@@ -7682,9 +7703,9 @@
         "dpiY": 96,
         "sourceDpiX": 96,
         "sourceDpiY": 96,
-        "nonBackgroundPixelCount": 880621,
-        "fullImageSha256": "92f5fdde2e55b85a63986d42347b3909e53df9a640361602954fe713cecbdda2",
-        "clientImageSha256": "92f5fdde2e55b85a63986d42347b3909e53df9a640361602954fe713cecbdda2",
+        "nonBackgroundPixelCount": 878976,
+        "fullImageSha256": "88e69c6eac530fc23ef54b722143f4a21870ac760919406e0c17a706f4beaefd",
+        "clientImageSha256": "88e69c6eac530fc23ef54b722143f4a21870ac760919406e0c17a706f4beaefd",
         "semanticState": {
           "scenarioId": "view.clean-canvas",
           "host": "avalonia",
@@ -7706,9 +7727,12 @@
             "slide-show",
             "review",
             "view",
-            "help"
+            "help",
+            "text-format"
           ],
-          "visibleContextualTabIds": [],
+          "visibleContextualTabIds": [
+            "text-format"
+          ],
           "backstageOpen": false,
           "backstagePane": "",
           "focusedRole": "",
@@ -8655,9 +8679,9 @@
         "dpiY": 96,
         "sourceDpiX": 96,
         "sourceDpiY": 96,
-        "nonBackgroundPixelCount": 881020,
-        "fullImageSha256": "8bcc9098d4932edb80d8916101f01f77348411b1cd102407f410c43279ae0531",
-        "clientImageSha256": "8bcc9098d4932edb80d8916101f01f77348411b1cd102407f410c43279ae0531",
+        "nonBackgroundPixelCount": 879375,
+        "fullImageSha256": "cc69285e48ab26d81955299841a35f3a1ad6f1dc4336f90996903bb451d5817e",
+        "clientImageSha256": "cc69285e48ab26d81955299841a35f3a1ad6f1dc4336f90996903bb451d5817e",
         "semanticState": {
           "scenarioId": "editor.rich-text-selection",
           "host": "avalonia",
@@ -8679,9 +8703,12 @@
             "slide-show",
             "review",
             "view",
-            "help"
+            "help",
+            "text-format"
           ],
-          "visibleContextualTabIds": [],
+          "visibleContextualTabIds": [
+            "text-format"
+          ],
           "backstageOpen": false,
           "backstagePane": "",
           "focusedRole": "textbox",
@@ -8812,9 +8839,9 @@
         "dpiY": 96,
         "sourceDpiX": 96,
         "sourceDpiY": 96,
-        "nonBackgroundPixelCount": 881021,
-        "fullImageSha256": "a074cb3a5e10746708704f4845c388ec5e4b7a0bb8fa680308b85cafa85ba89e",
-        "clientImageSha256": "a074cb3a5e10746708704f4845c388ec5e4b7a0bb8fa680308b85cafa85ba89e",
+        "nonBackgroundPixelCount": 879376,
+        "fullImageSha256": "6c9814a0c45f4105061539150b184dad4d9bb4ca6c01f7e6536af62df482b234",
+        "clientImageSha256": "6c9814a0c45f4105061539150b184dad4d9bb4ca6c01f7e6536af62df482b234",
         "semanticState": {
           "scenarioId": "editor.rich-text-caret",
           "host": "avalonia",
@@ -8836,9 +8863,12 @@
             "slide-show",
             "review",
             "view",
-            "help"
+            "help",
+            "text-format"
           ],
-          "visibleContextualTabIds": [],
+          "visibleContextualTabIds": [
+            "text-format"
+          ],
           "backstageOpen": false,
           "backstagePane": "",
           "focusedRole": "textbox",
@@ -8969,9 +8999,9 @@
         "dpiY": 96,
         "sourceDpiX": 96,
         "sourceDpiY": 96,
-        "nonBackgroundPixelCount": 880447,
-        "fullImageSha256": "b1877c4468c225f12e0cee4d029410c2a5eeacc9d99dbd5a119424ff3bd8dafa",
-        "clientImageSha256": "b1877c4468c225f12e0cee4d029410c2a5eeacc9d99dbd5a119424ff3bd8dafa",
+        "nonBackgroundPixelCount": 878802,
+        "fullImageSha256": "a4f406faeae2749b4105e1bec93215a738706e612e5d802e2acc40d427eb2d18",
+        "clientImageSha256": "a4f406faeae2749b4105e1bec93215a738706e612e5d802e2acc40d427eb2d18",
         "semanticState": {
           "scenarioId": "review.comments-pane",
           "host": "avalonia",
@@ -8993,9 +9023,12 @@
             "slide-show",
             "review",
             "view",
-            "help"
+            "help",
+            "text-format"
           ],
-          "visibleContextualTabIds": [],
+          "visibleContextualTabIds": [
+            "text-format"
+          ],
           "backstageOpen": false,
           "backstagePane": "",
           "focusedRole": "",
@@ -9247,9 +9280,9 @@
         "dpiY": 96,
         "sourceDpiX": 96,
         "sourceDpiY": 96,
-        "nonBackgroundPixelCount": 886790,
-        "fullImageSha256": "6f035fb3febfbb5e0c23b5251838a895f17a6940b0eb16d40f693d532041317f",
-        "clientImageSha256": "6f035fb3febfbb5e0c23b5251838a895f17a6940b0eb16d40f693d532041317f",
+        "nonBackgroundPixelCount": 885145,
+        "fullImageSha256": "1053d1175cb0e88fa87a5d6c53ba41ae4011cae5c5ebcf892ad56e11dd0f7e43",
+        "clientImageSha256": "1053d1175cb0e88fa87a5d6c53ba41ae4011cae5c5ebcf892ad56e11dd0f7e43",
         "semanticState": {
           "scenarioId": "review.alt-text-pane",
           "host": "avalonia",
@@ -9271,9 +9304,12 @@
             "slide-show",
             "review",
             "view",
-            "help"
+            "help",
+            "text-format"
           ],
-          "visibleContextualTabIds": [],
+          "visibleContextualTabIds": [
+            "text-format"
+          ],
           "backstageOpen": false,
           "backstagePane": "",
           "focusedRole": "",
@@ -9386,9 +9422,9 @@
         "dpiY": 96,
         "sourceDpiX": 96,
         "sourceDpiY": 96,
-        "nonBackgroundPixelCount": 884628,
-        "fullImageSha256": "c883e5e07286003e32da9dba7750106ac59f7704d5b59c509793a9dc958ab18e",
-        "clientImageSha256": "c883e5e07286003e32da9dba7750106ac59f7704d5b59c509793a9dc958ab18e",
+        "nonBackgroundPixelCount": 882983,
+        "fullImageSha256": "b35a04881dd4c1a53c467fa8704d5f0ac68a821a38a7bbccbbc6fd7aeaa21975",
+        "clientImageSha256": "b35a04881dd4c1a53c467fa8704d5f0ac68a821a38a7bbccbbc6fd7aeaa21975",
         "semanticState": {
           "scenarioId": "review.reading-order-pane",
           "host": "avalonia",
@@ -9410,9 +9446,12 @@
             "slide-show",
             "review",
             "view",
-            "help"
+            "help",
+            "text-format"
           ],
-          "visibleContextualTabIds": [],
+          "visibleContextualTabIds": [
+            "text-format"
+          ],
           "backstageOpen": false,
           "backstagePane": "",
           "focusedRole": "",
@@ -9525,9 +9564,9 @@
         "dpiY": 96,
         "sourceDpiX": 96,
         "sourceDpiY": 96,
-        "nonBackgroundPixelCount": 886812,
-        "fullImageSha256": "6b1465b08c7f8a0804f4eea80b63b3e7e8811209dea6f1be14d6ededd4942d00",
-        "clientImageSha256": "6b1465b08c7f8a0804f4eea80b63b3e7e8811209dea6f1be14d6ededd4942d00",
+        "nonBackgroundPixelCount": 885167,
+        "fullImageSha256": "406e12f4816e9aa41dbebcd8ce7a0558eed1cb6c0288d68cfc77b8f1db10a13b",
+        "clientImageSha256": "406e12f4816e9aa41dbebcd8ce7a0558eed1cb6c0288d68cfc77b8f1db10a13b",
         "semanticState": {
           "scenarioId": "review.proofing-pane",
           "host": "avalonia",
@@ -9549,9 +9588,12 @@
             "slide-show",
             "review",
             "view",
-            "help"
+            "help",
+            "text-format"
           ],
-          "visibleContextualTabIds": [],
+          "visibleContextualTabIds": [
+            "text-format"
+          ],
           "backstageOpen": false,
           "backstagePane": "",
           "focusedRole": "",
@@ -9803,9 +9845,9 @@
         "dpiY": 96,
         "sourceDpiX": 96,
         "sourceDpiY": 96,
-        "nonBackgroundPixelCount": 885927,
-        "fullImageSha256": "fd2259c0cc42bd01b5f34481bcdc53f41934ff98ec35f54c0ac8befbd680fc17",
-        "clientImageSha256": "fd2259c0cc42bd01b5f34481bcdc53f41934ff98ec35f54c0ac8befbd680fc17",
+        "nonBackgroundPixelCount": 883761,
+        "fullImageSha256": "43843ab93dd67343d3186957ccb8757c88feb0a10000a1c8d549bfdf010d08a6",
+        "clientImageSha256": "43843ab93dd67343d3186957ccb8757c88feb0a10000a1c8d549bfdf010d08a6",
         "semanticState": {
           "scenarioId": "context.smartart-text-pane",
           "host": "avalonia",
@@ -9827,9 +9869,12 @@
             "slide-show",
             "review",
             "view",
-            "help"
+            "help",
+            "smartart-design"
           ],
-          "visibleContextualTabIds": [],
+          "visibleContextualTabIds": [
+            "smartart-design"
+          ],
           "backstageOpen": false,
           "backstagePane": "",
           "focusedRole": "",
@@ -9942,9 +9987,9 @@
         "dpiY": 96,
         "sourceDpiX": 96,
         "sourceDpiY": 96,
-        "nonBackgroundPixelCount": 886411,
-        "fullImageSha256": "b3a05354ef40daf622f5789339ca02b5dba78e38a8307de7d79299780abb4fca",
-        "clientImageSha256": "b3a05354ef40daf622f5789339ca02b5dba78e38a8307de7d79299780abb4fca",
+        "nonBackgroundPixelCount": 884766,
+        "fullImageSha256": "d568292f1408e1c95816136c1351e82ff954ba1e128f619fea832e5f37bcd71e",
+        "clientImageSha256": "d568292f1408e1c95816136c1351e82ff954ba1e128f619fea832e5f37bcd71e",
         "semanticState": {
           "scenarioId": "animations.animation-pane",
           "host": "avalonia",
@@ -9966,9 +10011,12 @@
             "slide-show",
             "review",
             "view",
-            "help"
+            "help",
+            "text-format"
           ],
-          "visibleContextualTabIds": [],
+          "visibleContextualTabIds": [
+            "text-format"
+          ],
           "backstageOpen": false,
           "backstagePane": "",
           "focusedRole": "",
@@ -10880,15 +10928,11 @@
       "wpfClientImagePath": "wpf/client/backstage.info.png",
       "avaloniaClientImagePath": "avalonia/client/backstage.info.png",
       "mismatchCategories": [
-        "app-owned-titlebar-raster",
-        "contextual-tab-strip",
-        "ribbon-tab-strip"
+        "app-owned-titlebar-raster"
       ],
       "details": [
         "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%).",
-        "Visible ribbon tab order differs between hosts.",
-        "Visible contextual ribbon tabs differ between hosts."
+        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
       ],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
@@ -10964,15 +11008,11 @@
       "wpfClientImagePath": "wpf/client/backstage.recent.png",
       "avaloniaClientImagePath": "avalonia/client/backstage.recent.png",
       "mismatchCategories": [
-        "app-owned-titlebar-raster",
-        "contextual-tab-strip",
-        "ribbon-tab-strip"
+        "app-owned-titlebar-raster"
       ],
       "details": [
         "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%).",
-        "Visible ribbon tab order differs between hosts.",
-        "Visible contextual ribbon tabs differ between hosts."
+        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
       ],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
@@ -11048,15 +11088,11 @@
       "wpfClientImagePath": "wpf/client/backstage.new-from-template.png",
       "avaloniaClientImagePath": "avalonia/client/backstage.new-from-template.png",
       "mismatchCategories": [
-        "app-owned-titlebar-raster",
-        "contextual-tab-strip",
-        "ribbon-tab-strip"
+        "app-owned-titlebar-raster"
       ],
       "details": [
         "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%).",
-        "Visible ribbon tab order differs between hosts.",
-        "Visible contextual ribbon tabs differ between hosts."
+        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
       ],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
@@ -11132,15 +11168,11 @@
       "wpfClientImagePath": "wpf/client/backstage.print.png",
       "avaloniaClientImagePath": "avalonia/client/backstage.print.png",
       "mismatchCategories": [
-        "app-owned-titlebar-raster",
-        "contextual-tab-strip",
-        "ribbon-tab-strip"
+        "app-owned-titlebar-raster"
       ],
       "details": [
         "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%).",
-        "Visible ribbon tab order differs between hosts.",
-        "Visible contextual ribbon tabs differ between hosts."
+        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
       ],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
@@ -11216,15 +11248,11 @@
       "wpfClientImagePath": "wpf/client/backstage.export.png",
       "avaloniaClientImagePath": "avalonia/client/backstage.export.png",
       "mismatchCategories": [
-        "app-owned-titlebar-raster",
-        "contextual-tab-strip",
-        "ribbon-tab-strip"
+        "app-owned-titlebar-raster"
       ],
       "details": [
         "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%).",
-        "Visible ribbon tab order differs between hosts.",
-        "Visible contextual ribbon tabs differ between hosts."
+        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
       ],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
@@ -11300,15 +11328,11 @@
       "wpfClientImagePath": "wpf/client/backstage.options.png",
       "avaloniaClientImagePath": "avalonia/client/backstage.options.png",
       "mismatchCategories": [
-        "app-owned-titlebar-raster",
-        "contextual-tab-strip",
-        "ribbon-tab-strip"
+        "app-owned-titlebar-raster"
       ],
       "details": [
         "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%).",
-        "Visible ribbon tab order differs between hosts.",
-        "Visible contextual ribbon tabs differ between hosts."
+        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
       ],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
@@ -11384,15 +11408,11 @@
       "wpfClientImagePath": "wpf/client/backstage.account.png",
       "avaloniaClientImagePath": "avalonia/client/backstage.account.png",
       "mismatchCategories": [
-        "app-owned-titlebar-raster",
-        "contextual-tab-strip",
-        "ribbon-tab-strip"
+        "app-owned-titlebar-raster"
       ],
       "details": [
         "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%).",
-        "Visible ribbon tab order differs between hosts.",
-        "Visible contextual ribbon tabs differ between hosts."
+        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
       ],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
@@ -11401,9 +11421,9 @@
         "avaloniaPixelHeight": 760,
         "normalizedWidth": 1280,
         "normalizedHeight": 760,
-        "changedPixelRatio": 0.029021381578947368,
-        "foregroundChangedPixelRatio": 0.02902170974383962,
-        "meanChannelDelta": 2.965169956140351,
+        "changedPixelRatio": 0.028953536184210527,
+        "foregroundChangedPixelRatio": 0.02895386358192784,
+        "meanChannelDelta": 2.9548026315789473,
         "maxChannelDelta": 255,
         "perceptualHashDistance": 1,
         "wpfPerceptualHash": "0000000000020000",
@@ -11413,9 +11433,9 @@
         "maximumPerceptualHashDistance": 18,
         "thresholdPassed": true,
         "heatmapPath": "diff/backstage.account.png",
-        "wpfImageSha256": "7a43ca98868a83dc6d641f597b7588e99cf907168c44ea23295adbe6c5f5b163",
-        "avaloniaImageSha256": "2ae6e78b40c55655427c6483ea37735087e3746d77c8d9047c8e52f24cf1ccfa",
-        "heatmapSha256": "8c1b9136bd3589b2cddb1b1bc37fa40a17a6d6c9bd8d0fc545cfc14cc6c0142f"
+        "wpfImageSha256": "0e451a29caf3a1a004101ee7f1d49b47f3806e6f3d0dfc014afa4e545bae4a63",
+        "avaloniaImageSha256": "8d61e840c918f176ae3100169a37499183a453baeef077d4f41db9da2275b969",
+        "heatmapSha256": "0670f4ac28afd974e9383312b410e60583830bf98c1d0843ee84168762250646"
       },
       "selectionPixelMetrics": null,
       "wpfContentValidation": {
@@ -11425,10 +11445,10 @@
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
         "nearBlackPixelRatio": 0,
-        "meanLuminance": 224.61447329046015,
+        "meanLuminance": 224.62208225427594,
         "luminanceRange": 224,
-        "luminanceStandardDeviation": 71.95927595384993,
-        "edgePixelRatio": 0.020478001644736843,
+        "luminanceStandardDeviation": 71.95459291285361,
+        "edgePixelRatio": 0.020440995065789475,
         "isValid": true,
         "failures": []
       },
@@ -11439,10 +11459,10 @@
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
         "nearBlackPixelRatio": 3.0838815789473684E-06,
-        "meanLuminance": 224.65077635069423,
+        "meanLuminance": 224.65301875303817,
         "luminanceRange": 255,
-        "luminanceStandardDeviation": 71.57776910476429,
-        "edgePixelRatio": 0.02541735197368421,
+        "luminanceStandardDeviation": 71.57739960989608,
+        "edgePixelRatio": 0.02534950657894737,
         "isValid": true,
         "failures": []
       },
@@ -11548,15 +11568,11 @@
       "wpfClientImagePath": "wpf/client/view.gridlines-guides.png",
       "avaloniaClientImagePath": "avalonia/client/view.gridlines-guides.png",
       "mismatchCategories": [
-        "app-owned-titlebar-raster",
-        "contextual-tab-strip",
-        "ribbon-tab-strip"
+        "app-owned-titlebar-raster"
       ],
       "details": [
         "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%).",
-        "Visible ribbon tab order differs between hosts.",
-        "Visible contextual ribbon tabs differ between hosts."
+        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
       ],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
@@ -11565,9 +11581,9 @@
         "avaloniaPixelHeight": 760,
         "normalizedWidth": 1280,
         "normalizedHeight": 760,
-        "changedPixelRatio": 0.11014494243421052,
-        "foregroundChangedPixelRatio": 0.11014494243421052,
-        "meanChannelDelta": 8.367064487390351,
+        "changedPixelRatio": 0.11032483552631579,
+        "foregroundChangedPixelRatio": 0.11032483552631579,
+        "meanChannelDelta": 8.39051637883772,
         "maxChannelDelta": 255,
         "perceptualHashDistance": 3,
         "wpfPerceptualHash": "0080919584810005",
@@ -11578,8 +11594,8 @@
         "thresholdPassed": true,
         "heatmapPath": "diff/view.gridlines-guides.png",
         "wpfImageSha256": "9c9682868c468ef973a6b3e6da11443ec9be8d833988e8b6d1eb95eeffc3bed4",
-        "avaloniaImageSha256": "28ee85b04cf1be0f7d2caf1cf18958621f49937a4915031ad4c5e25d92f5da9c",
-        "heatmapSha256": "c1c33b2c1ddc7021164a2ce58cf9db6a32fbf71667697484a2d2d3bd1c90efe9"
+        "avaloniaImageSha256": "981cfd907a96e7348637a2e5fa1a510f88950b583c365e1908c724dce2a469b8",
+        "heatmapSha256": "6b2596a7c2ded772049739b470ff59f0ce5228eb41a57339a26a3b32181d1ffd"
       },
       "selectionPixelMetrics": null,
       "wpfContentValidation": {
@@ -11603,10 +11619,10 @@
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
         "nearBlackPixelRatio": 0.0013240131578947368,
-        "meanLuminance": 226.95801592165495,
+        "meanLuminance": 226.9197137444337,
         "luminanceRange": 255,
-        "luminanceStandardDeviation": 53.51576578884873,
-        "edgePixelRatio": 0.06227282072368421,
+        "luminanceStandardDeviation": 53.53285078937514,
+        "edgePixelRatio": 0.06264185855263157,
         "isValid": true,
         "failures": []
       },
@@ -11632,15 +11648,11 @@
       "wpfClientImagePath": "wpf/client/view.clean-canvas.png",
       "avaloniaClientImagePath": "avalonia/client/view.clean-canvas.png",
       "mismatchCategories": [
-        "app-owned-titlebar-raster",
-        "contextual-tab-strip",
-        "ribbon-tab-strip"
+        "app-owned-titlebar-raster"
       ],
       "details": [
         "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%).",
-        "Visible ribbon tab order differs between hosts.",
-        "Visible contextual ribbon tabs differ between hosts."
+        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
       ],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
@@ -11649,9 +11661,9 @@
         "avaloniaPixelHeight": 760,
         "normalizedWidth": 1280,
         "normalizedHeight": 760,
-        "changedPixelRatio": 0.10893811677631579,
-        "foregroundChangedPixelRatio": 0.10893811677631579,
-        "meanChannelDelta": 8.285300849780702,
+        "changedPixelRatio": 0.10911800986842106,
+        "foregroundChangedPixelRatio": 0.10911800986842106,
+        "meanChannelDelta": 8.308752741228071,
         "maxChannelDelta": 255,
         "perceptualHashDistance": 3,
         "wpfPerceptualHash": "0080919584810005",
@@ -11662,8 +11674,8 @@
         "thresholdPassed": true,
         "heatmapPath": "diff/view.clean-canvas.png",
         "wpfImageSha256": "a2b07f965790891da6641db43cf8b0b6af1cc3074c752baa5830feee16234e57",
-        "avaloniaImageSha256": "92f5fdde2e55b85a63986d42347b3909e53df9a640361602954fe713cecbdda2",
-        "heatmapSha256": "daebdbb4e52bfe1e7cf0ac5567f82c68d16d47002058837cb0f396dcec9b4aa9"
+        "avaloniaImageSha256": "88e69c6eac530fc23ef54b722143f4a21870ac760919406e0c17a706f4beaefd",
+        "heatmapSha256": "59e3d8175d5116c626b216e3ea5ebd562ee97a5b25f28bb887d23bd8cea73e6c"
       },
       "selectionPixelMetrics": null,
       "wpfContentValidation": {
@@ -11687,10 +11699,10 @@
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
         "nearBlackPixelRatio": 0.0013240131578947368,
-        "meanLuminance": 227.13318268049716,
+        "meanLuminance": 227.09488050327676,
         "luminanceRange": 255,
-        "luminanceStandardDeviation": 53.50000560876289,
-        "edgePixelRatio": 0.06151521381578948,
+        "luminanceStandardDeviation": 53.51722100730299,
+        "edgePixelRatio": 0.06188425164473684,
         "isValid": true,
         "failures": []
       },
@@ -12197,18 +12209,12 @@
       "avaloniaClientImagePath": "avalonia/client/editor.rich-text-selection.png",
       "mismatchCategories": [
         "app-owned-titlebar-raster",
-        "contextual-tab-strip",
-        "ribbon-tab-strip",
-        "rich-editor-selection-geometry",
         "rich-editor-selection-pixel-threshold"
       ],
       "details": [
         "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
         "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%).",
-        "Visible ribbon tab order differs between hosts.",
-        "Visible contextual ribbon tabs differ between hosts.",
-        "Rich-editor selection bounds differ: WPF 457.9,244.7 190.7x55.8; Avalonia 382.9,267.2 250.4x73.6.",
-        "Rich-editor selection threshold failed: changed 49.58 % (max 20 %), mean channel delta 33.08 (max 18.00), perceptual hash distance 17 (max 18)."
+        "Rich-editor selection threshold failed: changed 21.86 % (max 20 %), mean channel delta 13.74 (max 18.00), perceptual hash distance 10 (max 18)."
       ],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
@@ -12217,9 +12223,9 @@
         "avaloniaPixelHeight": 760,
         "normalizedWidth": 1280,
         "normalizedHeight": 760,
-        "changedPixelRatio": 0.10971114309210526,
-        "foregroundChangedPixelRatio": 0.10971114309210526,
-        "meanChannelDelta": 8.238264802631578,
+        "changedPixelRatio": 0.10332853618421052,
+        "foregroundChangedPixelRatio": 0.10332853618421052,
+        "meanChannelDelta": 7.763984717653509,
         "maxChannelDelta": 255,
         "perceptualHashDistance": 4,
         "wpfPerceptualHash": "0080919584812005",
@@ -12229,32 +12235,32 @@
         "maximumPerceptualHashDistance": 18,
         "thresholdPassed": true,
         "heatmapPath": "diff/editor.rich-text-selection.png",
-        "wpfImageSha256": "a197609c0c086f28de9ebe346742b7a4f6e5a0c765a7cab2dfe4808c9d8048e8",
-        "avaloniaImageSha256": "8bcc9098d4932edb80d8916101f01f77348411b1cd102407f410c43279ae0531",
-        "heatmapSha256": "c7e17e6d5da268122988a06508b7dc2c70daabb44fe7b82a2e5a9801e361c9b9"
+        "wpfImageSha256": "08fa436f2a1addfed3472c11e7780d049a0fb91bee941a28de3973a5f61ad7fb",
+        "avaloniaImageSha256": "cc69285e48ab26d81955299841a35f3a1ad6f1dc4336f90996903bb451d5817e",
+        "heatmapSha256": "fec0742e1f251ad132e7f77d2a4bbfd47dcbe222508ff2182c12758d5831f515"
       },
       "selectionPixelMetrics": {
-        "wpfPixelWidth": 192,
-        "wpfPixelHeight": 57,
+        "wpfPixelWidth": 251,
+        "wpfPixelHeight": 74,
         "avaloniaPixelWidth": 252,
         "avaloniaPixelHeight": 74,
         "normalizedWidth": 252,
         "normalizedHeight": 74,
-        "changedPixelRatio": 0.49576362076362074,
-        "foregroundChangedPixelRatio": 0.42942961165048543,
-        "meanChannelDelta": 33.081831831831835,
-        "maxChannelDelta": 255,
-        "perceptualHashDistance": 17,
-        "wpfPerceptualHash": "00202200205d2000",
+        "changedPixelRatio": 0.21857571857571859,
+        "foregroundChangedPixelRatio": 0.21575803239868682,
+        "meanChannelDelta": 13.742581867581867,
+        "maxChannelDelta": 253,
+        "perceptualHashDistance": 10,
+        "wpfPerceptualHash": "4000000000f25182",
         "avaloniaPerceptualHash": "0101010000aa0102",
         "maximumChangedPixelRatio": 0.2,
         "maximumMeanChannelDelta": 18,
         "maximumPerceptualHashDistance": 18,
         "thresholdPassed": false,
         "heatmapPath": "diff/editor.rich-text-selection.selection.png",
-        "wpfImageSha256": "47b24e3b8710b9d704f255acac206d1688c7f302712ea7e066f8c2bbe5511865",
+        "wpfImageSha256": "3813c345112e868d110399fc5e8c11244d63c6ac3e31e83e49d447c79891880b",
         "avaloniaImageSha256": "13ba598d6d42c5fa7e6a87152faafeca568b85db66c3c9c1a50390bfebbaf244",
-        "heatmapSha256": "8aa0be3755b6e3b680db8e2f8d1888c0901e6f5d8a16ffff3e053bc836e5b084"
+        "heatmapSha256": "2d860301a0f39956dcbde499596154dcc6c44016301da15bc0c1643e74950862"
       },
       "wpfContentValidation": {
         "width": 1280,
@@ -12262,11 +12268,11 @@
         "meanAlpha": 1,
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
-        "nearBlackPixelRatio": 0.0027323190789473686,
-        "meanLuminance": 224.3569314932033,
+        "nearBlackPixelRatio": 0.0030232319078947367,
+        "meanLuminance": 224.25277748107237,
         "luminanceRange": 255,
-        "luminanceStandardDeviation": 55.135136785033595,
-        "edgePixelRatio": 0.06949115953947368,
+        "luminanceStandardDeviation": 55.29142322629733,
+        "edgePixelRatio": 0.06993318256578947,
         "isValid": true,
         "failures": []
       },
@@ -12277,10 +12283,10 @@
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
         "nearBlackPixelRatio": 0.0016724917763157896,
-        "meanLuminance": 227.1640580670293,
+        "meanLuminance": 227.12575588980891,
         "luminanceRange": 255,
-        "luminanceStandardDeviation": 53.468015121963695,
-        "edgePixelRatio": 0.05809724506578948,
+        "luminanceStandardDeviation": 53.4852629280109,
+        "edgePixelRatio": 0.05846628289473684,
         "isValid": true,
         "failures": []
       },
@@ -12306,15 +12312,11 @@
       "wpfClientImagePath": "wpf/client/editor.rich-text-caret.png",
       "avaloniaClientImagePath": "avalonia/client/editor.rich-text-caret.png",
       "mismatchCategories": [
-        "app-owned-titlebar-raster",
-        "contextual-tab-strip",
-        "ribbon-tab-strip"
+        "app-owned-titlebar-raster"
       ],
       "details": [
         "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%).",
-        "Visible ribbon tab order differs between hosts.",
-        "Visible contextual ribbon tabs differ between hosts."
+        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
       ],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
@@ -12323,9 +12325,9 @@
         "avaloniaPixelHeight": 760,
         "normalizedWidth": 1280,
         "normalizedHeight": 760,
-        "changedPixelRatio": 0.10378083881578948,
-        "foregroundChangedPixelRatio": 0.10378083881578948,
-        "meanChannelDelta": 8.035325863486841,
+        "changedPixelRatio": 0.10373252467105264,
+        "foregroundChangedPixelRatio": 0.10373252467105264,
+        "meanChannelDelta": 7.993539268092105,
         "maxChannelDelta": 255,
         "perceptualHashDistance": 4,
         "wpfPerceptualHash": "0080919584812005",
@@ -12335,9 +12337,9 @@
         "maximumPerceptualHashDistance": 18,
         "thresholdPassed": true,
         "heatmapPath": "diff/editor.rich-text-caret.png",
-        "wpfImageSha256": "97cbaafeaf48e28ba8d95f11fd2f0c0adf37381ef24f59de9b907f1489448014",
-        "avaloniaImageSha256": "a074cb3a5e10746708704f4845c388ec5e4b7a0bb8fa680308b85cafa85ba89e",
-        "heatmapSha256": "a54f8a5f188fc09697711b3f03772c1a1be75f11252f716ba10eb0359f956a7f"
+        "wpfImageSha256": "4818677ebbbff3fd3721c15db6d5fc4b73c5595ef8ff01636a930c1d8d05ebd8",
+        "avaloniaImageSha256": "6c9814a0c45f4105061539150b184dad4d9bb4ca6c01f7e6536af62df482b234",
+        "heatmapSha256": "b72391019432ed5708a3cd19c4e74b6ded816ee451d7fa25ff067bceaad8f4a6"
       },
       "selectionPixelMetrics": null,
       "wpfContentValidation": {
@@ -12346,11 +12348,11 @@
         "meanAlpha": 1,
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
-        "nearBlackPixelRatio": 0.003260690789473684,
-        "meanLuminance": 224.51932728882664,
+        "nearBlackPixelRatio": 0.0033336759868421053,
+        "meanLuminance": 224.44650862003525,
         "luminanceRange": 255,
-        "luminanceStandardDeviation": 55.34335226772395,
-        "edgePixelRatio": 0.06958778782894737,
+        "luminanceStandardDeviation": 55.42643783967466,
+        "edgePixelRatio": 0.07013877467105263,
         "isValid": true,
         "failures": []
       },
@@ -12361,10 +12363,10 @@
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
         "nearBlackPixelRatio": 0.0019767680921052634,
-        "meanLuminance": 227.4038173926723,
+        "meanLuminance": 227.36551521545192,
         "luminanceRange": 255,
-        "luminanceStandardDeviation": 53.55361998887269,
-        "edgePixelRatio": 0.05739823190789474,
+        "luminanceStandardDeviation": 53.57101165664938,
+        "edgePixelRatio": 0.057767269736842104,
         "isValid": true,
         "failures": []
       },
@@ -12390,15 +12392,11 @@
       "wpfClientImagePath": "wpf/client/review.comments-pane.png",
       "avaloniaClientImagePath": "avalonia/client/review.comments-pane.png",
       "mismatchCategories": [
-        "app-owned-titlebar-raster",
-        "contextual-tab-strip",
-        "ribbon-tab-strip"
+        "app-owned-titlebar-raster"
       ],
       "details": [
         "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%).",
-        "Visible ribbon tab order differs between hosts.",
-        "Visible contextual ribbon tabs differ between hosts."
+        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
       ],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
@@ -12407,9 +12405,9 @@
         "avaloniaPixelHeight": 760,
         "normalizedWidth": 1280,
         "normalizedHeight": 760,
-        "changedPixelRatio": 0.1343359375,
-        "foregroundChangedPixelRatio": 0.1343359375,
-        "meanChannelDelta": 10.199388363486841,
+        "changedPixelRatio": 0.13451583059210526,
+        "foregroundChangedPixelRatio": 0.13451583059210526,
+        "meanChannelDelta": 10.22284025493421,
         "maxChannelDelta": 255,
         "perceptualHashDistance": 6,
         "wpfPerceptualHash": "0000414524412005",
@@ -12420,8 +12418,8 @@
         "thresholdPassed": true,
         "heatmapPath": "diff/review.comments-pane.png",
         "wpfImageSha256": "dc22ae6c1e391d9afacc3a61ebe94bb60c63b332366d05e8f59b4fdc6c079a56",
-        "avaloniaImageSha256": "b1877c4468c225f12e0cee4d029410c2a5eeacc9d99dbd5a119424ff3bd8dafa",
-        "heatmapSha256": "a22f1f18dabd970c0f21fef8fbb82363e93c06f9e565bdff62e01a34bd773dae"
+        "avaloniaImageSha256": "a4f406faeae2749b4105e1bec93215a738706e612e5d802e2acc40d427eb2d18",
+        "heatmapSha256": "3efd91020fa64b92c6037481b76495ab014682caa5b11c1e42e5b59f826178f0"
       },
       "selectionPixelMetrics": null,
       "wpfContentValidation": {
@@ -12445,10 +12443,10 @@
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
         "nearBlackPixelRatio": 0.0011122532894736843,
-        "meanLuminance": 227.906919799309,
+        "meanLuminance": 227.86861762208864,
         "luminanceRange": 255,
-        "luminanceStandardDeviation": 48.939050353531854,
-        "edgePixelRatio": 0.07092208059210527,
+        "luminanceStandardDeviation": 48.95847490828206,
+        "edgePixelRatio": 0.07129111842105264,
         "isValid": true,
         "failures": []
       },
@@ -12554,15 +12552,11 @@
       "wpfClientImagePath": "wpf/client/review.alt-text-pane.png",
       "avaloniaClientImagePath": "avalonia/client/review.alt-text-pane.png",
       "mismatchCategories": [
-        "app-owned-titlebar-raster",
-        "contextual-tab-strip",
-        "ribbon-tab-strip"
+        "app-owned-titlebar-raster"
       ],
       "details": [
         "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%).",
-        "Visible ribbon tab order differs between hosts.",
-        "Visible contextual ribbon tabs differ between hosts."
+        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
       ],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
@@ -12571,9 +12565,9 @@
         "avaloniaPixelHeight": 760,
         "normalizedWidth": 1280,
         "normalizedHeight": 760,
-        "changedPixelRatio": 0.1123108552631579,
-        "foregroundChangedPixelRatio": 0.1123110861658844,
-        "meanChannelDelta": 8.769523711622806,
+        "changedPixelRatio": 0.11249074835526315,
+        "foregroundChangedPixelRatio": 0.11249097962783641,
+        "meanChannelDelta": 8.792975603070175,
         "maxChannelDelta": 255,
         "perceptualHashDistance": 7,
         "wpfPerceptualHash": "0000050b04012005",
@@ -12584,8 +12578,8 @@
         "thresholdPassed": true,
         "heatmapPath": "diff/review.alt-text-pane.png",
         "wpfImageSha256": "4a20e79227d6ec7b990c7affa18b2eb043f0f75a56893f628d3eecf7517d4c03",
-        "avaloniaImageSha256": "6f035fb3febfbb5e0c23b5251838a895f17a6940b0eb16d40f693d532041317f",
-        "heatmapSha256": "54dde7f54523fd81008bb20c122014be18393230157931e700d3e97f7852c460"
+        "avaloniaImageSha256": "1053d1175cb0e88fa87a5d6c53ba41ae4011cae5c5ebcf892ad56e11dd0f7e43",
+        "heatmapSha256": "5f8685a0ca52d2dcd5afcf38c65052f3274cb0f3b775cb42d539957161731b99"
       },
       "selectionPixelMetrics": null,
       "wpfContentValidation": {
@@ -12609,10 +12603,10 @@
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
         "nearBlackPixelRatio": 0.0017650082236842105,
-        "meanLuminance": 230.3640857891856,
+        "meanLuminance": 230.3257836119648,
         "luminanceRange": 255,
-        "luminanceStandardDeviation": 54.0193041511072,
-        "edgePixelRatio": 0.06944901315789474,
+        "luminanceStandardDeviation": 54.03864419490733,
+        "edgePixelRatio": 0.0698180509868421,
         "isValid": true,
         "failures": []
       },
@@ -12638,15 +12632,11 @@
       "wpfClientImagePath": "wpf/client/review.reading-order-pane.png",
       "avaloniaClientImagePath": "avalonia/client/review.reading-order-pane.png",
       "mismatchCategories": [
-        "app-owned-titlebar-raster",
-        "contextual-tab-strip",
-        "ribbon-tab-strip"
+        "app-owned-titlebar-raster"
       ],
       "details": [
         "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%).",
-        "Visible ribbon tab order differs between hosts.",
-        "Visible contextual ribbon tabs differ between hosts."
+        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
       ],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
@@ -12655,9 +12645,9 @@
         "avaloniaPixelHeight": 760,
         "normalizedWidth": 1280,
         "normalizedHeight": 760,
-        "changedPixelRatio": 0.11842208059210527,
-        "foregroundChangedPixelRatio": 0.11842208059210527,
-        "meanChannelDelta": 9.569228686951755,
+        "changedPixelRatio": 0.11860197368421052,
+        "foregroundChangedPixelRatio": 0.11860197368421052,
+        "meanChannelDelta": 9.592680578399122,
         "maxChannelDelta": 255,
         "perceptualHashDistance": 4,
         "wpfPerceptualHash": "4000051324a12005",
@@ -12668,8 +12658,8 @@
         "thresholdPassed": true,
         "heatmapPath": "diff/review.reading-order-pane.png",
         "wpfImageSha256": "437f314502226d593b2897cdd86b986a5cfdfaa5775f8a5de97bda3077e7b372",
-        "avaloniaImageSha256": "c883e5e07286003e32da9dba7750106ac59f7704d5b59c509793a9dc958ab18e",
-        "heatmapSha256": "6e2dd0e71953c18c40055b2e1e59ddf92a2c236c84afec26f2a6d4f979ed4446"
+        "avaloniaImageSha256": "b35a04881dd4c1a53c467fa8704d5f0ac68a821a38a7bbccbbc6fd7aeaa21975",
+        "heatmapSha256": "fc0ac74b6501b279b2d5ce9558e9c1995addf92f82a0ba59267cd4bcf5235977"
       },
       "selectionPixelMetrics": null,
       "wpfContentValidation": {
@@ -12693,10 +12683,10 @@
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
         "nearBlackPixelRatio": 0.0018431332236842105,
-        "meanLuminance": 229.03031742068495,
+        "meanLuminance": 228.9920152434638,
         "luminanceRange": 255,
-        "luminanceStandardDeviation": 53.4112828775625,
-        "edgePixelRatio": 0.0819592927631579,
+        "luminanceStandardDeviation": 53.42988687631802,
+        "edgePixelRatio": 0.08232833059210526,
         "isValid": true,
         "failures": []
       },
@@ -12722,15 +12712,11 @@
       "wpfClientImagePath": "wpf/client/review.proofing-pane.png",
       "avaloniaClientImagePath": "avalonia/client/review.proofing-pane.png",
       "mismatchCategories": [
-        "app-owned-titlebar-raster",
-        "contextual-tab-strip",
-        "ribbon-tab-strip"
+        "app-owned-titlebar-raster"
       ],
       "details": [
         "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%).",
-        "Visible ribbon tab order differs between hosts.",
-        "Visible contextual ribbon tabs differ between hosts."
+        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
       ],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
@@ -12739,9 +12725,9 @@
         "avaloniaPixelHeight": 760,
         "normalizedWidth": 1280,
         "normalizedHeight": 760,
-        "changedPixelRatio": 0.10163856907894737,
-        "foregroundChangedPixelRatio": 0.10163856907894737,
-        "meanChannelDelta": 7.795352590460526,
+        "changedPixelRatio": 0.10181846217105263,
+        "foregroundChangedPixelRatio": 0.10181846217105263,
+        "meanChannelDelta": 7.818804481907895,
         "maxChannelDelta": 255,
         "perceptualHashDistance": 4,
         "wpfPerceptualHash": "0000051324212005",
@@ -12752,8 +12738,8 @@
         "thresholdPassed": true,
         "heatmapPath": "diff/review.proofing-pane.png",
         "wpfImageSha256": "a83506f38051ee71f20ce30d31b6f429888c9f47b3eec28ea5fcf6414fd89664",
-        "avaloniaImageSha256": "6b1465b08c7f8a0804f4eea80b63b3e7e8811209dea6f1be14d6ededd4942d00",
-        "heatmapSha256": "935b25012798b035467a945d2ace8f7c32c0c9d211c6a544cbd88e23145157d6"
+        "avaloniaImageSha256": "406e12f4816e9aa41dbebcd8ce7a0558eed1cb6c0288d68cfc77b8f1db10a13b",
+        "heatmapSha256": "e88628a8c198e0c7663ae8578a1116a078351d6a77e01010f5d725f0388e9644"
       },
       "selectionPixelMetrics": null,
       "wpfContentValidation": {
@@ -12777,10 +12763,10 @@
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
         "nearBlackPixelRatio": 0.0015162417763157894,
-        "meanLuminance": 231.4812002680251,
+        "meanLuminance": 231.44289809080473,
         "luminanceRange": 255,
-        "luminanceStandardDeviation": 52.72008631004979,
-        "edgePixelRatio": 0.06126953125,
+        "luminanceStandardDeviation": 52.740714081498304,
+        "edgePixelRatio": 0.06163856907894737,
         "isValid": true,
         "failures": []
       },
@@ -12886,15 +12872,11 @@
       "wpfClientImagePath": "wpf/client/context.smartart-text-pane.png",
       "avaloniaClientImagePath": "avalonia/client/context.smartart-text-pane.png",
       "mismatchCategories": [
-        "app-owned-titlebar-raster",
-        "contextual-tab-strip",
-        "ribbon-tab-strip"
+        "app-owned-titlebar-raster"
       ],
       "details": [
         "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%).",
-        "Visible ribbon tab order differs between hosts.",
-        "Visible contextual ribbon tabs differ between hosts."
+        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
       ],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
@@ -12903,9 +12885,9 @@
         "avaloniaPixelHeight": 760,
         "normalizedWidth": 1280,
         "normalizedHeight": 760,
-        "changedPixelRatio": 0.13137952302631578,
-        "foregroundChangedPixelRatio": 0.13137952302631578,
-        "meanChannelDelta": 10.168263774671052,
+        "changedPixelRatio": 0.13163548519736842,
+        "foregroundChangedPixelRatio": 0.13163548519736842,
+        "meanChannelDelta": 10.202567502741228,
         "maxChannelDelta": 255,
         "perceptualHashDistance": 3,
         "wpfPerceptualHash": "4040051320212005",
@@ -12916,8 +12898,8 @@
         "thresholdPassed": true,
         "heatmapPath": "diff/context.smartart-text-pane.png",
         "wpfImageSha256": "553733fcec1eb43b0d6d759b876030ad332ef1ba6270f2304060246e02e1436f",
-        "avaloniaImageSha256": "fd2259c0cc42bd01b5f34481bcdc53f41934ff98ec35f54c0ac8befbd680fc17",
-        "heatmapSha256": "fd8ad3ee805cb1c59338931cb4940da63faf6bb74e1edd3b01d8ae2c5363bd29"
+        "avaloniaImageSha256": "43843ab93dd67343d3186957ccb8757c88feb0a10000a1c8d549bfdf010d08a6",
+        "heatmapSha256": "7a2cee7b3bac399356c2d55842e30647df9d51e75cbc278d1e7c7b41786e4810"
       },
       "selectionPixelMetrics": null,
       "wpfContentValidation": {
@@ -12941,10 +12923,10 @@
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
         "nearBlackPixelRatio": 0.0018061266447368422,
-        "meanLuminance": 229.26382305585196,
+        "meanLuminance": 229.20908098759435,
         "luminanceRange": 255,
-        "luminanceStandardDeviation": 53.689107597550766,
-        "edgePixelRatio": 0.07663137335526315,
+        "luminanceStandardDeviation": 53.71568492759503,
+        "edgePixelRatio": 0.07716591282894737,
         "isValid": true,
         "failures": []
       },
@@ -12970,15 +12952,11 @@
       "wpfClientImagePath": "wpf/client/animations.animation-pane.png",
       "avaloniaClientImagePath": "avalonia/client/animations.animation-pane.png",
       "mismatchCategories": [
-        "app-owned-titlebar-raster",
-        "contextual-tab-strip",
-        "ribbon-tab-strip"
+        "app-owned-titlebar-raster"
       ],
       "details": [
         "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%).",
-        "Visible ribbon tab order differs between hosts.",
-        "Visible contextual ribbon tabs differ between hosts."
+        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
       ],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
@@ -12987,9 +12965,9 @@
         "avaloniaPixelHeight": 760,
         "normalizedWidth": 1280,
         "normalizedHeight": 760,
-        "changedPixelRatio": 0.10165090460526316,
-        "foregroundChangedPixelRatio": 0.10165090460526316,
-        "meanChannelDelta": 7.694926329495614,
+        "changedPixelRatio": 0.10183079769736843,
+        "foregroundChangedPixelRatio": 0.10183079769736843,
+        "meanChannelDelta": 7.7183782209429825,
         "maxChannelDelta": 255,
         "perceptualHashDistance": 7,
         "wpfPerceptualHash": "4040414b44c18405",
@@ -13000,8 +12978,8 @@
         "thresholdPassed": true,
         "heatmapPath": "diff/animations.animation-pane.png",
         "wpfImageSha256": "66d45f5e12bf99ef5505300a45485d3bb685ee80a2330c81e8fc0c6d6347620d",
-        "avaloniaImageSha256": "b3a05354ef40daf622f5789339ca02b5dba78e38a8307de7d79299780abb4fca",
-        "heatmapSha256": "b254a528c8f415f96e73ba8ca4d25ca91369c3cbcbba41b590824c8d9e3e6064"
+        "avaloniaImageSha256": "d568292f1408e1c95816136c1351e82ff954ba1e128f619fea832e5f37bcd71e",
+        "heatmapSha256": "77f758e2cc1b779e33a751392fd44649460e971727129accd89c7522f81f87c4"
       },
       "selectionPixelMetrics": null,
       "wpfContentValidation": {
@@ -13025,10 +13003,10 @@
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
         "nearBlackPixelRatio": 0.001011513157894737,
-        "meanLuminance": 227.78035379697522,
+        "meanLuminance": 227.74205161975527,
         "luminanceRange": 255,
-        "luminanceStandardDeviation": 54.55686043037849,
-        "edgePixelRatio": 0.055650699013157896,
+        "luminanceStandardDeviation": 54.5741966532888,
+        "edgePixelRatio": 0.05601973684210526,
         "isValid": true,
         "failures": []
       },

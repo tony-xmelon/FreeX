@@ -5,7 +5,7 @@
   "targetDpi": 96,
   "logicalClientWidth": 1280,
   "logicalClientHeight": 760,
-  "generatedAtUtc": "2026-08-25T05:36:23.7280712\u002B00:00",
+  "generatedAtUtc": "2026-08-25T06:37:29.1034009\u002B00:00",
   "captures": [
     {
       "scenarioId": "startup.slide",
@@ -2212,8 +2212,8 @@
       "sourceDpiX": 120,
       "sourceDpiY": 120,
       "nonBackgroundPixelCount": 930445,
-      "fullImageSha256": "7a43ca98868a83dc6d641f597b7588e99cf907168c44ea23295adbe6c5f5b163",
-      "clientImageSha256": "7a43ca98868a83dc6d641f597b7588e99cf907168c44ea23295adbe6c5f5b163",
+      "fullImageSha256": "0e451a29caf3a1a004101ee7f1d49b47f3806e6f3d0dfc014afa4e545bae4a63",
+      "clientImageSha256": "0e451a29caf3a1a004101ee7f1d49b47f3806e6f3d0dfc014afa4e545bae4a63",
       "semanticState": {
         "scenarioId": "backstage.account",
         "host": "wpf",
@@ -3607,9 +3607,9 @@
       "dpiY": 96,
       "sourceDpiX": 120,
       "sourceDpiY": 120,
-      "nonBackgroundPixelCount": 893378,
-      "fullImageSha256": "a197609c0c086f28de9ebe346742b7a4f6e5a0c765a7cab2dfe4808c9d8048e8",
-      "clientImageSha256": "a197609c0c086f28de9ebe346742b7a4f6e5a0c765a7cab2dfe4808c9d8048e8",
+      "nonBackgroundPixelCount": 893377,
+      "fullImageSha256": "08fa436f2a1addfed3472c11e7780d049a0fb91bee941a28de3973a5f61ad7fb",
+      "clientImageSha256": "08fa436f2a1addfed3472c11e7780d049a0fb91bee941a28de3973a5f61ad7fb",
       "semanticState": {
         "scenarioId": "editor.rich-text-selection",
         "host": "wpf",
@@ -3743,10 +3743,10 @@
           "selectionEnd": 35,
           "selectedText": "revenue review highlights",
           "bounds": {
-            "x": 457.94755555555554,
-            "y": 244.74127734033246,
-            "width": 190.7354913969087,
-            "height": 55.825021872265964,
+            "x": 382.39200000000005,
+            "y": 266.6135433070866,
+            "width": 250.51968503937007,
+            "height": 73.32283464566929,
             "isVisible": true
           }
         }
@@ -3767,9 +3767,9 @@
       "dpiY": 96,
       "sourceDpiX": 120,
       "sourceDpiY": 120,
-      "nonBackgroundPixelCount": 893333,
-      "fullImageSha256": "97cbaafeaf48e28ba8d95f11fd2f0c0adf37381ef24f59de9b907f1489448014",
-      "clientImageSha256": "97cbaafeaf48e28ba8d95f11fd2f0c0adf37381ef24f59de9b907f1489448014",
+      "nonBackgroundPixelCount": 893346,
+      "fullImageSha256": "4818677ebbbff3fd3721c15db6d5fc4b73c5595ef8ff01636a930c1d8d05ebd8",
+      "clientImageSha256": "4818677ebbbff3fd3721c15db6d5fc4b73c5595ef8ff01636a930c1d8d05ebd8",
       "semanticState": {
         "scenarioId": "editor.rich-text-caret",
         "host": "wpf",
