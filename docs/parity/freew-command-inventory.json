@@ -125,15 +125,15 @@
     }
   ],
   "summary": {
-    "totalCommands": 953,
-    "both": 732,
+    "totalCommands": 954,
+    "both": 733,
     "wpfOnly": 2,
     "avaloniaOnly": 219,
     "missingWpf": 219,
     "missingAvalonia": 2,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 732,
+    "sharedProfile": 733,
     "profileShapeOnly": 216,
     "commandIdAliases": 0,
     "platformOnly": 5,
@@ -37709,6 +37709,48 @@
           "path": "freew/FreeW.App.Presentation.Tests/FontEffectRibbonWorkflowTests.cs",
           "test": "FontEffectRibbonWorkflowTests.BothRenderersDelegateFontEffectMappingToSharedPresentation"
         }
+      }
+    },
+    {
+      "commandId": "freew.switch-windows",
+      "label": "Switch Windows",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "window",
+          "group": "Window",
+          "label": "Switch Windows",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "window",
+          "group": "Window",
+          "label": "Switch Windows",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {

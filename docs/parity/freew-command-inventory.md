@@ -10,13 +10,13 @@ Gap classifications are generated from explicit rule order: shared-profile, comm
 
 | Total | Both profiles | WPF profile only | Avalonia profile only | Missing WPF profile | Missing Avalonia profile | Actionable missing WPF | Actionable missing Avalonia |
 |---:|---:|---:|---:|---:|---:|---:|---:|
-| 953 | 732 | 2 | 219 | 219 | 2 | 0 | 0 |
+| 954 | 733 | 2 | 219 | 219 | 2 | 0 | 0 |
 
 ## Classification Counts
 
 | Shared profile | Profile-shape only | Command-id aliases | Platform-only | Deferred | Actionable gaps | Behavior evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|
-| 732 | 216 | 0 | 5 | 0 | 0 | 506 |
+| 733 | 216 | 0 | 5 | 0 | 0 | 506 |
 
 ## Classification Rules
 
@@ -827,6 +827,7 @@ Gap classifications are generated from explicit rule order: shared-profile, comm
 | `freew.styles-gallery` | Styles | No | Yes | WPF | avalonia-profile-only | profile-shape-only | profile-shape-only | - | home/styles (RibbonDropdown; Medium) | WPF definition source<br>Avalonia definition source<br>Avalonia registry source | - | Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence. |
 | `freew.subscript` | Subscript | Yes | Yes | none | shared-profile | shared-profile | shared-profile | home/font (RibbonButton; Small) | home/font (RibbonToggleButton; Medium) | WPF definition source<br>Avalonia definition source | Font effect command behavior: FontEffectRibbonWorkflowTests.StatefulNativeFontCommandsKeepTheirStateAndExecutionBehavior<br>FontEffectRibbonWorkflowTests.BothRenderersDelegateFontEffectMappingToSharedPresentation | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.superscript` | Superscript | Yes | Yes | none | shared-profile | shared-profile | shared-profile | home/font (RibbonButton; Small) | home/font (RibbonToggleButton; Medium) | WPF definition source<br>Avalonia definition source | Font effect command behavior: FontEffectRibbonWorkflowTests.StatefulNativeFontCommandsKeepTheirStateAndExecutionBehavior<br>FontEffectRibbonWorkflowTests.BothRenderersDelegateFontEffectMappingToSharedPresentation | Command is present in both compiled FreeW ribbon profiles. |
+| `freew.switch-windows` | Switch Windows | Yes | Yes | none | shared-profile | shared-profile | shared-profile | view/window (RibbonButton; Medium) | view/window (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.symbol` | Symbol | Yes | Yes | none | shared-profile | shared-profile | shared-profile | insert/symbols (RibbonSplitButton; Medium) | insert/symbols (RibbonSplitButton; Medium) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.symbol.arrow-left` | ←   Left Arrow | Yes | Yes | none | shared-profile | shared-profile | shared-profile | insert/symbols (RibbonMenuItem; Menu) | insert/symbols (RibbonMenuItem; Menu) | WPF registry source<br>Avalonia registry source | Symbol palette command behavior: SymbolRibbonWorkflowTests.SharedMappingsPrepareThenInsertExactCatalogPayloads<br>SymbolRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateSymbolIdentityToPresentation | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.symbol.arrow-right` | →   Right Arrow | Yes | Yes | none | shared-profile | shared-profile | shared-profile | insert/symbols (RibbonMenuItem; Menu) | insert/symbols (RibbonMenuItem; Menu) | WPF registry source<br>Avalonia registry source | Symbol palette command behavior: SymbolRibbonWorkflowTests.SharedMappingsPrepareThenInsertExactCatalogPayloads<br>SymbolRibbonWorkflowTests.BothRenderersAndDefinitionsDelegateSymbolIdentityToPresentation | Command is present in both compiled FreeW ribbon profiles. |
