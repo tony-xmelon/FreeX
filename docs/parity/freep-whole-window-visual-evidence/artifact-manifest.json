@@ -56,7 +56,7 @@
     },
     {
       "path": "freep/TestSupport/VisualEvidence.Avalonia/AvaloniaWholeWindowVisualEvidenceCapture.cs",
-      "sha256": "5a86c9c23b57a8697919699fa988122c1f2db23c3e67cf1b14cbf59c5895f2c5"
+      "sha256": "48908f5f362f190f6479844885efef9ea0bad8f240de3d166944e681896fffb1"
     },
     {
       "path": "freep/TestSupport/VisualEvidence.Avalonia/AvaloniaWholeWindowVisualEvidenceCoordinator.cs",
@@ -64,7 +64,7 @@
     },
     {
       "path": "freep/FreeP.App.Avalonia/MainWindow.cs",
-      "sha256": "c55cc011eb4dd822e77fcdd8ed0fa56ee5b56e6e99747b40f12ba09643f77dc5"
+      "sha256": "d0f7cafcddbc72656c43e178f63e5275f0d17464797c004fbd7d2c2be52e73da"
     },
     {
       "path": "freep/TestSupport/VisualEvidence.Avalonia/MainWindow.VisualCaptureAdapter.cs",
@@ -104,7 +104,7 @@
     },
     {
       "path": "shared/Free.Shared.Ribbon.Avalonia/AvaloniaRibbonRenderer.cs",
-      "sha256": "9d4df622c66e3974edf2e083334105452ba1db24ded5ec971d8623be9009966c"
+      "sha256": "ce0dfc31a127b12d0566ef513d1d9056ff883aba233b1625d997a81cdc02dfca"
     },
     {
       "path": "tools/FreeP.RenderCompare/WholeWindowVisualEvidence.cs",

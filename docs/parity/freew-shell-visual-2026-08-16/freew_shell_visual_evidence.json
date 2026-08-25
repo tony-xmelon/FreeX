@@ -17,7 +17,10 @@
     "freew/tools/FreeW.RibbonShot/Program.cs": "9046984a626976e6310db6e46c46f871b7a04a7c5996c2a393cbfe4413253263",
     "freew/tools/FreeW.ShellVisualHarness.Avalonia/Program.cs": "d5afad56fbe19492bc7766edae0e6743095c10d6ec3b4e84968fcdb91853a46f",
     "freew/FreeW.App.Host/MainWindow.cs": "e13ae53e6b4bf3a7777af4405df983ccdba666e6e1ca5558fa40fb1a61488dba",
-    "freew/FreeW.App.Avalonia/MainWindow.cs": "4b6695001c9e3383946542d2f6a4a9911dd3acb034954963926c2dbb9b439c09",
+    "freew/FreeW.App.Avalonia/MainWindow.cs": "8c33b14cd4a8020013e8daf98c3e55739ff9a7abff4980a797e8841bc84e29fd",
+    "freew/FreeW.Ribbon.Definitions/FreeWRibbonCapabilities.cs": "4ee976434d9af64f38dc61d2dcfe39864d8c5395eaae1b3498a826e96f00cc09",
+    "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.Ordinary.cs": "a3b783a13b6519c98e5ee9fabae068edd377c9350cb81b2c18129f4a4b265c48",
+    "shared/Free.Shared.Shell.Avalonia/SisterAppWindowFrameBuilder.cs": "61b09b6d198c40c6e5c84412aded3044b00360950d7bdd088744333f83854387",
     "freew/FreeW.App.Host/Ribbon/StylesGallery.cs": "0b0a8e95387f1271f7353d69c4602466a89deb7e729aab6a88fe1ef15e13e4a0",
     "freew/FreeW.App.Host/Ribbon/ThemeGallery.cs": "3051c42ff34be027e9fc1cbea519f8806fc876ce9c594a3dbeb3d7ae1e1e7ae8",
     "freew/FreeW.App.Host/Ribbon/TableStylesGallery.cs": "5db6140034814801af124fa33aa4736bb97a0c759909f1542efd70604466fa84",
@@ -38,7 +41,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1500/ribbon-1-Home.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1500x720-home.png",
       "wpfSha256": "444b0fc977f0a68c718446bfec263a6311d629bf2b57daa5ff863082788934cc",
-      "avaloniaSha256": "734b989bf06d4ce2b301b7e9bde82caed280b76d89dee94c7b6fb8232b516a9f",
+      "avaloniaSha256": "e65963e5f205a08132e40f3e55983e2228098befac5c1afb80ad72c06b0b6bf7",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -49,7 +52,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1500/ribbon-2-Insert.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1500x720-insert.png",
       "wpfSha256": "69ee436d11beea7f857c6fef11c51d0a015369e2740f23bbe869b267eb1177a0",
-      "avaloniaSha256": "66b986f456b42b8eada286246f2225433486c6e6506aaf9fd31cc95d52ad6daf",
+      "avaloniaSha256": "36c6c0bb9bd30882f9e67882f133d6f96e31d85bf4748b12b7d735def23d7e3a",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -60,7 +63,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1500/ribbon-3-Design.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1500x720-design.png",
       "wpfSha256": "46c14a6041c6971e2416386b23ffa7f3114954279d4de0aa871598970f6f6697",
-      "avaloniaSha256": "1eaca92fbc9d30d841251ffef6efe3c4d4c136e6a5b1ee2668e363f4c9d6c8a1",
+      "avaloniaSha256": "85f829c2be33d73b556f8a55a3df3fb6e22d359ec56cd6f5de5a59a6cba12e92",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -71,7 +74,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1500/ribbon-4-Layout.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1500x720-layout.png",
       "wpfSha256": "732c5f050010c0b01077b36a0bcba64a6d5d14931b0ac57b78c956b3d7d642da",
-      "avaloniaSha256": "4ad09a6ab6afebed23913d496c9d1fc9708a329006bddd91629ee2d9607c51d8",
+      "avaloniaSha256": "1d6079c48d28ad60b90b3a3f2ca0bf088f85a246f0afc57648010b413f985656",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -82,7 +85,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1500/ribbon-5-References.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1500x720-references.png",
       "wpfSha256": "7383e533d62bed1e1092af32edf5912c5ecb2274d87a0777a0368d3611b02bdd",
-      "avaloniaSha256": "318874ad83ca07fc8e0ee52c3bc19205d2a17c94aa3ac5ec967a12a4c6fbdd98",
+      "avaloniaSha256": "b9f1224ef87532de47bd7dd55382c73c96abe3279698c31bda4ac6fd17250a87",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -93,7 +96,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1500/ribbon-6-Mailings.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1500x720-mailings.png",
       "wpfSha256": "bf4f2faea6049afe34baa972f54fdf78c04187d37749dc5fe3c07b265b6d110d",
-      "avaloniaSha256": "db44eca1652c8970d197384a9380ea92c68dfaa354af38b8b5b2e8a44bff8349",
+      "avaloniaSha256": "2e1bf6ddcf5744f767a7e497e8dae8c072edc1311d644f1b87b79132dfb3cfa4",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -104,7 +107,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1500/ribbon-7-Review.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1500x720-review.png",
       "wpfSha256": "df4f36d1b7e70749bc820f5675c63b641d0aaff0a6a3f8e9dbaa17c5230ac290",
-      "avaloniaSha256": "8e848fb3aa72df1e2b907ec6b1feb3957d418d248d0ff23b948bfb2aeb9d62b6",
+      "avaloniaSha256": "5f545259ed9b0bedb832a3620fabaf61de17c1f198ab33278c893489ebff85df",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -115,7 +118,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1500/ribbon-8-View.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1500x720-view.png",
       "wpfSha256": "363e4b5a5e76d316c0c177c39d821d96cc31971b2a3160eb6e451e897da4def1",
-      "avaloniaSha256": "a3b09b80323a4352aecb5202f149e15dd4da156e412086e47cff98ffeccbe443",
+      "avaloniaSha256": "971924abd94e8bab23ba1d2279663586a612bf87a8a5952a73c4f8dcd1c4af60",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -126,7 +129,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1500/ribbon-9-Help.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1500x720-help.png",
       "wpfSha256": "7a105f45bc87de290c81f7ba8607bb307e6f9d58a8e08815c0d59b8ba8c8282a",
-      "avaloniaSha256": "dc0c620dd742caf8b7e5b748eda438bf16b03f167138517253a68372ab10ec7b",
+      "avaloniaSha256": "f093fb7b20bbb9bb5c02c0df86ecd5b9473d431c4a1e7cc25dda5402773a3062",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -137,7 +140,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1500/ribbon-10-Developer.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1500x720-developer.png",
       "wpfSha256": "6a11a23242569fa2a7d3650e8deb8352a19dfeb4219d5aeb82ac04d31cd7bc35",
-      "avaloniaSha256": "b2428e3e6ec741ee08eccad3a0d5875a7c88cda963f6cb4e809a66a176895cf9",
+      "avaloniaSha256": "4ab05bbbbfaf47d28a32525b772c01084f1b2e49a6f0f2265655b522969ea4f1",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -148,7 +151,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1100/ribbon-1-Home.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1100x720-home.png",
       "wpfSha256": "c81cce1b254b4eab3a39a843e315173b6f58bc382e40251d522f2e265adc839b",
-      "avaloniaSha256": "39d82ea11927952ce1791b11703bd6b2ddc16fa5cd60c94724c01511b8981a7b",
+      "avaloniaSha256": "71e962adf7289e31b5512e4d49e47e544eaff87a880fb55f2bc2fd793522f58b",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -159,7 +162,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1100/ribbon-2-Insert.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1100x720-insert.png",
       "wpfSha256": "abbf2208a1112f1d15413d5cf99a268708bb636b55f63c9c55554521c8b5d27a",
-      "avaloniaSha256": "0772bd15491d51a745ef7a01006cddd5dfa043a8c59687ab5fa56eb93a3d89b4",
+      "avaloniaSha256": "6d1b3055828b0569a0af1b1dc9bde65632b71f95656b383a9d567820621e53c1",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -170,7 +173,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1100/ribbon-3-Design.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1100x720-design.png",
       "wpfSha256": "3379c109210d3c5102dcbde5456a61707cfd6d65476ac2b59ad30ea0d83bf897",
-      "avaloniaSha256": "a4f77de66bc1e65933958c2f6af341c1409de8308bee632df0125318e35b2716",
+      "avaloniaSha256": "9d687fa713cfbf6da90777de8fd7ae14694601ac8d4f94e80a74a74e2f963549",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -181,7 +184,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1100/ribbon-4-Layout.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1100x720-layout.png",
       "wpfSha256": "190b52b8c455512070029b4407ee1a67037744bf8f8cdc334d3c9a56e2002ed6",
-      "avaloniaSha256": "b6ec033de13069aabd6b0e6b691e90832eaa0d0b876c5b8420593f62b34dcf22",
+      "avaloniaSha256": "731a131ec6c4d17fbd59fa88948d8ad6f433477067f94e13b09a8188e867265a",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -192,7 +195,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1100/ribbon-5-References.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1100x720-references.png",
       "wpfSha256": "a65da8debece52c5f9b52b3e4cf282e8c426c3500ec20106388c5029fc5b5f45",
-      "avaloniaSha256": "dbf2bd2109d635d0a5ef26c7bd85dbcef372dc7ed63e7b2a7a7b3a53547671c4",
+      "avaloniaSha256": "eb7d8f5167d5e964ad58b12d5a1115b56217a254309fe0bec66bbab979b7d10f",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -203,7 +206,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1100/ribbon-6-Mailings.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1100x720-mailings.png",
       "wpfSha256": "00bbccd10084988911981a2e2685f312701d6c8886278cb489fbe290328d994d",
-      "avaloniaSha256": "5449226bb6c8253a04eade13b53ec11c7308cfab7a9db84d18eff05240f32a23",
+      "avaloniaSha256": "929f112321840cf739071b7646effb86941714b74adda1fce8b63d6df105113e",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -214,7 +217,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1100/ribbon-7-Review.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1100x720-review.png",
       "wpfSha256": "e8918f0f4e1b43d0956e5a11009129d0bb363f63a82b4455511ee29e03703455",
-      "avaloniaSha256": "21a62738d6a66aa082126f7983b0340a3e6b392d0a78a1083f099d902f2c4475",
+      "avaloniaSha256": "a52c7b8281567a1549b8aa8d2dd7ac5608d5f3c8be0e2ba2a21c987cc0c7f1ea",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -225,7 +228,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1100/ribbon-8-View.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1100x720-view.png",
       "wpfSha256": "afd4e947e2607fa80519a2a91d9265e8557e1002767878f25c2fa280c7850825",
-      "avaloniaSha256": "588329d14a7bd369961324f6b225cba0cdf27c20088b7ac19caa7ca154c79a4b",
+      "avaloniaSha256": "3ccb8cd00012528479b84cd255436f780ffaa127fdedf94e93b5d1cf9ea8fdb5",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -236,7 +239,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1100/ribbon-9-Help.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1100x720-help.png",
       "wpfSha256": "0a90b97d34a5f87561c9b3bff9fc9bef344f6ef35268599f530dba01b94f05b0",
-      "avaloniaSha256": "0e8bbce20a41b3ca4f7d6c19237e62846232f8e06996e84551b58331f6173b68",
+      "avaloniaSha256": "83668c3056b8b7a363b696f469168e442cb999633a63946a6f3b17159e652ec2",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -247,7 +250,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1100/ribbon-10-Developer.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1100x720-developer.png",
       "wpfSha256": "ecdb52d6456ce151ce6cbb112f47c4722f7d6da872a33fefcec9d95c4e2f1c35",
-      "avaloniaSha256": "4d8d7c7b39fb007ee637d80a2ff2067c355723d3a481c32ab1a9ed61280ab960",
+      "avaloniaSha256": "ed540d533aa12bd3fddd353892db63f2b24603a84e852efd038b5b6e9d16d0d9",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -258,7 +261,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/900/ribbon-1-Home.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-900x720-home.png",
       "wpfSha256": "be53c48d7508a831b78f4d1512ccecd8b9fa94c0133be852ebff08fbbd16f6f9",
-      "avaloniaSha256": "371eeaf883f5ebbf03f147b405bf32819f0246355dd1f596c00d67b2823e6756",
+      "avaloniaSha256": "01425086df48f77d239e29900ab2da95af4366302ecc971887125f07c5eb407c",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -269,7 +272,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/900/ribbon-2-Insert.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-900x720-insert.png",
       "wpfSha256": "1541db7a68d12f08caa22eab458cee65f7293b33f2cfe7511952ee39244c75cf",
-      "avaloniaSha256": "0e1ebcbaca444190691d0914ed4aa090f077ea07c7e8af09d35765fbdadf2d4b",
+      "avaloniaSha256": "8e36d3fdfabce30e547294533ec62321a2989215b65c1806b3f650135b4bb72d",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -280,7 +283,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/900/ribbon-3-Design.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-900x720-design.png",
       "wpfSha256": "59db11f2b02e6ec15fe99df1bf871cf3f02caadea4ec9bbef48ce05ecfabbfc7",
-      "avaloniaSha256": "e8d3a3b5fa60ce5f41a50bd736f30fa913be63711752d37204cf750d8fa0da0e",
+      "avaloniaSha256": "5585fbfbe607ba4de0d645b7671acd02cfdd472c568911628f237be73c8928df",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -291,7 +294,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/900/ribbon-4-Layout.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-900x720-layout.png",
       "wpfSha256": "2c523406cc4fa85b5db133ff9774f02db9ddb2aaf93a3ecbda23a4a9b5e61ca9",
-      "avaloniaSha256": "20051da6cfc2cc2c12aa59c61f902ad413bf105ae8bc09a40ce59f0808057525",
+      "avaloniaSha256": "3a58f090535af0132a00e9deab7b3fdc3f8bbe38a1d6308bd053abed1a4fc765",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -302,7 +305,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/900/ribbon-5-References.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-900x720-references.png",
       "wpfSha256": "73a44ccd71504b6d43e6e1496d871d127c7e76393c50e954d9059267f65bdee6",
-      "avaloniaSha256": "25a5a7e017fe4a795748b392116adc151a17391e8f8a747ff76d74de09d6399c",
+      "avaloniaSha256": "4cdaf40ee534a9b0aa465c519a7ded92bca235845a64d5261347e35932a9df85",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -313,7 +316,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/900/ribbon-6-Mailings.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-900x720-mailings.png",
       "wpfSha256": "8bc7601111413c769e01ec4d6d8f1ea9470e0d1a03ec2e0c3532cb71898c0082",
-      "avaloniaSha256": "4c2cb8febf0d63a00f285ab27c19d9f5a6e41a8ff445e5c028e885c76d9195b4",
+      "avaloniaSha256": "57b8e761e202085b13bbfa4f5b073d19c28c31d6e5912e76011b7287440fc956",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -324,7 +327,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/900/ribbon-7-Review.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-900x720-review.png",
       "wpfSha256": "1d3e3d96ede5bb3c544e151f6c24cc061a51a420cbfbe16a4a6236a14a7bd872",
-      "avaloniaSha256": "df25a425b18890cd3e1ccf8f38813fc8a465df128323cc8d3f907ef6d8556ad2",
+      "avaloniaSha256": "9fd5233a09fb6394d8d051cac686e1a05ecc0d3e505be632a0490a032ddfbf11",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -335,7 +338,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/900/ribbon-8-View.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-900x720-view.png",
       "wpfSha256": "49667f03ba46be7a0b3ff2a354b7fc40e823facc3731b6e44a501be09646680d",
-      "avaloniaSha256": "df652ee2195dfab7cfa60e2dc62d85739a347439db6252e53ff59d7214271057",
+      "avaloniaSha256": "443dabc71b782c238615ef2971383083add7a15b363843508f2f52dff4330336",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -346,7 +349,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/900/ribbon-9-Help.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-900x720-help.png",
       "wpfSha256": "67454ab87e7742c82621821c19250ab0499c6e394ee1f4a440c0b6912b8ec573",
-      "avaloniaSha256": "dccf5044dcc5874639697fb91416a7b00aeb432dfd4306c7bed6636b39321e25",
+      "avaloniaSha256": "902da0aa6a704abf98739e4824c49ea813152ca26db275fe64818fda184a6d59",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -357,7 +360,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/900/ribbon-10-Developer.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-900x720-developer.png",
       "wpfSha256": "9630d3cea3a6db9b2e8a3788f722f4c25f77985c4b4ceee049985a106275bb14",
-      "avaloniaSha256": "ff40e02c42564d4fa77b39b28fbdc532844be7ce2323bc1a4f3dfe8c710438f2",
+      "avaloniaSha256": "e4a5b007ded5cf17df7d5e83941dcc2be3f73c83f1ac51aa57f333689b6793e2",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -368,7 +371,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/750/ribbon-1-Home.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-750x720-home.png",
       "wpfSha256": "aa7265450810d876bb89560bf8497b1ab184388a63ec225089bf1a90a8fd5597",
-      "avaloniaSha256": "18bad6120d39851281104953efec50bdf91ae1cab66b39030cd38c0d12c37487",
+      "avaloniaSha256": "1200cc016dc227e38b9459bf5cd1fc1a713ab3f5bcbb54edcda9286b28bb1cc3",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -379,7 +382,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/750/ribbon-2-Insert.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-750x720-insert.png",
       "wpfSha256": "3f36f3af0c7993d44abb131cbde84f7bea20369c0e59b5c38b61b385bea7b457",
-      "avaloniaSha256": "9e615ef36e0eda4ac55d043f8d0ab44842be20ad78c1381941fa7df45b7d6af4",
+      "avaloniaSha256": "3708aad48da1eef008460b3f730e7ed74bee1d878430f5116fffbdab34a0d44c",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -390,7 +393,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/750/ribbon-3-Design.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-750x720-design.png",
       "wpfSha256": "165f5c02991ad8904c4d956d19b037c7e1dc3fa94e0fd2ccd60139c62ca2a54c",
-      "avaloniaSha256": "5b258677c70c5c268fa884a375236afe4d16bf93333eb69c658a19927b876713",
+      "avaloniaSha256": "60e63fae982a3c70c7d37b91039c2a9a8159870d9a67dd86e7b79d34f35e785b",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -401,7 +404,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/750/ribbon-4-Layout.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-750x720-layout.png",
       "wpfSha256": "7a46b2724997aecdaed87fc74b3a2fd684df68fb2b21fce3093e4c273864900a",
-      "avaloniaSha256": "bfb3c1a7fbdbdc6a6c6c30ad8a1a781415b2a8ad2b13553541872ecb3e7a7116",
+      "avaloniaSha256": "b522c79f30a8100c4b38f154e313cbe65f0de386475197fca01a08f35e315c31",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -412,7 +415,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/750/ribbon-5-References.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-750x720-references.png",
       "wpfSha256": "3e9ed3b324a201602e0135e994c0c965af88febbafb5c315243d3d91592f744f",
-      "avaloniaSha256": "48ad255dce18dbb088ba35eb70eefa4e303dd4772755eed98a3fba2faf79a2dc",
+      "avaloniaSha256": "5bedade7d8b4618f22a71bda60aa18fe1e265a8888de7d1eaa2dcb35a9f30d6e",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -423,7 +426,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/750/ribbon-6-Mailings.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-750x720-mailings.png",
       "wpfSha256": "1605658de927fc7c65bc94088e2d10ad80d4a70fbda1c909d26d042036bca8d8",
-      "avaloniaSha256": "a92c99b27e2ce54bfa7c35b95428c51f7c5882e28efb6932ff85bec77a99d3fb",
+      "avaloniaSha256": "9c300e3a1b324daa6a4d148228957bb49c18b1d21f70502e9aeacf450f2f3712",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -434,7 +437,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/750/ribbon-7-Review.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-750x720-review.png",
       "wpfSha256": "95f004170b97c9569b7b6d758b8dd830ff69d5fe56211900205efa13f815a343",
-      "avaloniaSha256": "53f48ba665d7ce8b00707a20e30995138abc3130b63ba4558e4a5d1df96ffcc4",
+      "avaloniaSha256": "31056e64a311f4193bbae1baed868b3b005700287d52d3fd0622dceeecccba16",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -445,7 +448,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/750/ribbon-8-View.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-750x720-view.png",
       "wpfSha256": "fde87d6c43b3bd1eab4e9295dc753c9cb14688a26c9b8024b1838fa907e91b43",
-      "avaloniaSha256": "b09627cf58503e3d079a9313da51d84345c677df2d567cb137f48fe2a85cd98b",
+      "avaloniaSha256": "9943e87a96d187255035c81539585295d08172de9c177238e67f6c4cdac7a757",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -456,7 +459,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/750/ribbon-9-Help.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-750x720-help.png",
       "wpfSha256": "f16303ccac75e71aa028464104abeee30e6e2a62c111487159d0f909e05ebc59",
-      "avaloniaSha256": "781eac18f72ca13bf283d2112c20ce649a58aa0ec3d1f2c98c6482ad2b251976",
+      "avaloniaSha256": "6df5eaca2b4fa2939f51d1178138d3fc312c8bf31d704d8071398ed7d19a1c98",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -467,7 +470,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/750/ribbon-10-Developer.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-750x720-developer.png",
       "wpfSha256": "c4971e2b18df10d16d0e5d2a955b674169d31b6844edc28965a139ba2e53bf31",
-      "avaloniaSha256": "056053156717b58196b0c4a4e3ffbe0c9d264a106c81ee18a256b70163888c07",
+      "avaloniaSha256": "827517e07e051cb50497e55ed1d04d49d66298853a7760d7b78b321dc454c7a4",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     }
   ],
@@ -483,7 +486,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1500/ribbon-11-Drawing Format.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1500x720-context-drawing-format.png",
       "wpfSha256": "a78d00f5ed2a95809bb870008af26f9a56f51474066b3bd5508c5e4d35f49a7b",
-      "avaloniaSha256": "e8b69cc4763ed381c5b83dbf0dc5674be9eb12bfa747f286cfb23d88f75214a5",
+      "avaloniaSha256": "31e40b329b7e11b0cb17a9f6917a37fc2d16d2618ac165153fc2e7448ef48cdb",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -497,7 +500,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1500/ribbon-12-Picture Format.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1500x720-context-picture-format.png",
       "wpfSha256": "6451c787fe7dc998ef61dfc72cff5233a2399a3288d3ce8911485381433e6a6e",
-      "avaloniaSha256": "248814c4ef90f414ca170fba37d93816317654739dc2788360e0c45e307e19cc",
+      "avaloniaSha256": "7263eb41f0e0a7832b0d2fed3367b1dd3d16d35da6e3dc9b02260901654a41f5",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -511,7 +514,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1500/ribbon-13-Chart Design.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1500x720-context-chart-design.png",
       "wpfSha256": "cb5bf11c296c728ce97f21099b2d97e3ea2300edb8911cf905f73bae5ad34f4e",
-      "avaloniaSha256": "7d708147dcc1962e412f3e292d4c5306778fd49a79cdb944f635dfcb078ca940",
+      "avaloniaSha256": "910c705981150a197a2e75387c8f43a0ec5116e691d60ba9fbbb90f7771cacd7",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -525,7 +528,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1500/ribbon-14-Chart Format.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1500x720-context-chart-format.png",
       "wpfSha256": "0aa4afcde715faad1557a7ae28c52a156c284d3291934ccdd5e613996dcb4efa",
-      "avaloniaSha256": "5c818ad6bce3417c2cf3b23dd8cc579c45f74dcfd284d06733f4d0e9ad8657a0",
+      "avaloniaSha256": "34f7018ec4655a71349aca279ea013af00436ba20f28cef035790c5b3d8572da",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -539,7 +542,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1500/ribbon-15-SmartArt Design.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1500x720-context-smartart-design.png",
       "wpfSha256": "483386f8467f572ddfe318fc479185132fc9ea2abfc812f934ddfd12df142baf",
-      "avaloniaSha256": "b2f401f915ade0e660b986f20f6d9f3a34f108dd2ee3e09c3f84d9e05cf3cc5d",
+      "avaloniaSha256": "3497d45d21fae0642cbe396025133e9a89df120f91d5abfed749f1cd529c14a6",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -553,7 +556,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1500/ribbon-16-Table Design.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1500x720-context-table-design.png",
       "wpfSha256": "0fe58274649cedad19e4634ecec63f74c7737508400c0ca3ce81b2e640c2fc6c",
-      "avaloniaSha256": "35c518aee5bba70e66c428a2a92f5e3365c147e37175b5307857f131c056661a",
+      "avaloniaSha256": "2d19d05db8ddcc19a379626ddac02f60784d71e4707974f2b098b589af218944",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -567,7 +570,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1500/ribbon-17-Table Layout.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1500x720-context-table-layout.png",
       "wpfSha256": "58385634d9bc03ce842908f4fab766a4e150634540b00dac9e1d62fd4bf90839",
-      "avaloniaSha256": "01926647501251cd1b86ea4104ac9efacd4c8674fbb5051a6077ac012615337b",
+      "avaloniaSha256": "d5b855d00e71a2cb9dca47f00b1d793681930c83491267485153149ed7557f56",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -581,7 +584,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1500/ribbon-18-Design.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1500x720-context-header-footer-design.png",
       "wpfSha256": "5e712b77919d0c2cd2dfbc7b33ab52ca4d602ca25661c069c417a6a0643ea5ff",
-      "avaloniaSha256": "6fca545d568d8b5ff11f4439e6df4e756b643149e0341847677b25179cf8be7e",
+      "avaloniaSha256": "32dbe6adb4db56a20bf9c2e63f8397cbfb3ca104ffac70161f3665326e836c24",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -595,7 +598,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1100/ribbon-11-Drawing Format.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1100x720-context-drawing-format.png",
       "wpfSha256": "e06278123e1e1554671f37f3a9d961166457022b17b66054fe3e123a3e84b097",
-      "avaloniaSha256": "affd4dfef636a128197e41f54e145dbba20103a9c834883891dbb6d89a6f414b",
+      "avaloniaSha256": "85f0fe3868e5a87d7074c3ba764aa28c00438869974b8e3e4ffe435da8925bb8",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -609,7 +612,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1100/ribbon-12-Picture Format.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1100x720-context-picture-format.png",
       "wpfSha256": "25530ad919d7d29e21f7b97591ef73801b44c5c251bff5482e719d797314ec30",
-      "avaloniaSha256": "33c71d0eb2eb334d3fb791ceef3c850797ef522061ceffff742048e195a5be7e",
+      "avaloniaSha256": "a0b7e6111af7837fe67fd0965b8cc82ddff2e582153f514dc0a49c8a12f89c18",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -623,7 +626,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1100/ribbon-13-Chart Design.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1100x720-context-chart-design.png",
       "wpfSha256": "6ade5d284d42fc55832347b2c9073f7c513e2a1714a58772ba27280ffd39bbae",
-      "avaloniaSha256": "0e3cf480c04ae53136331882ae0f77802c38a85c75d302bee32d88ebc6c64792",
+      "avaloniaSha256": "b941872c408a4804f8e48c602de25983f6db19aa5656494207691c114ae93ca0",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -637,7 +640,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1100/ribbon-14-Chart Format.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1100x720-context-chart-format.png",
       "wpfSha256": "e06232ea6e73c9f38ad9e81d38c62316c3d78963f774508883f87cc461118d1d",
-      "avaloniaSha256": "bee9a3f265fc53ebb017a72be97f9b8b026c19470cee8b072b2b8187c8e521e6",
+      "avaloniaSha256": "df2c20fc8b63896608211ab1b29bc52afc03d7495c0f673fc64873b01a8504cc",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -651,7 +654,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1100/ribbon-15-SmartArt Design.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1100x720-context-smartart-design.png",
       "wpfSha256": "3dc8b6f7f1647fa9606417664e2c282247a6755a5d7893f01671ca852f347a96",
-      "avaloniaSha256": "3060b49c58855447e3e14849a2c35e9747974d840978b1d0aaaaf52ed534d30d",
+      "avaloniaSha256": "58fa9ae45d77878a79639bce0bcf635ecdc1bf8804bee183f0185f8222f5f52d",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -665,7 +668,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1100/ribbon-16-Table Design.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1100x720-context-table-design.png",
       "wpfSha256": "c5d89b48976b9462341a6a12f60461aacd3fe3fb61839d71e115c96b4c071ae3",
-      "avaloniaSha256": "6e2f977b2400233a1192faea3755f992422656f4857290377ded68aee4c4dbfc",
+      "avaloniaSha256": "795135d72ec43ccd994ecdf150939dbc121028aef0e5b6fbefa6e25107563108",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -679,7 +682,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1100/ribbon-17-Table Layout.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1100x720-context-table-layout.png",
       "wpfSha256": "747b5c9acf4883f33a061e1fbe2d48ccf26e2f05d8c1d74c939de23f41a7b5d6",
-      "avaloniaSha256": "56e5cf58ed98bf74076995ed53d0262fb7d81c0d49bccab4174e6d2801ccc0d1",
+      "avaloniaSha256": "7bba2f116958f99ac2c39e1c80f91e6be70f8bf8c94a0bf15ea3c361c8aeb3a5",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -693,7 +696,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1100/ribbon-18-Design.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1100x720-context-header-footer-design.png",
       "wpfSha256": "39201149a515f63fd7b3f75f29013d320e6147114932d3859da9744e7341dcfc",
-      "avaloniaSha256": "4606f7b41145358746976c29586d2dcc3011e4162ec7d4ca708f186f557db073",
+      "avaloniaSha256": "7685c3a92643161ef079b0ff13123a52fafb1c397cd1792a91178313a6d9b482",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -707,7 +710,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/900/ribbon-11-Drawing Format.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-900x720-context-drawing-format.png",
       "wpfSha256": "95ecffa4b755ae775f4b9275aaa8e2dd565d7b2a0a5a05046fa7d1ec97071d5a",
-      "avaloniaSha256": "afac2dae54bc205c86d1634f9bc60fc3d8d9bfe793999339ca6a2e1da1811d3b",
+      "avaloniaSha256": "cdf23b2d5d34594625885d2429d6769daae237378a1721654b8bbad5f5df6f9b",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -721,7 +724,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/900/ribbon-12-Picture Format.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-900x720-context-picture-format.png",
       "wpfSha256": "da3cd59621100925bfd5835a13c9e96bb470fafd82adc9943a1ed863133847b0",
-      "avaloniaSha256": "8b7a669025b9053be4ddda59e4e2600483b3483bcd6c7f870b6d69a79b611c59",
+      "avaloniaSha256": "0126d4b144d1fa1b5b3bcee9d5b7af76786c84e0dbd8a10804e131c99e9e695f",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -735,7 +738,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/900/ribbon-13-Chart Design.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-900x720-context-chart-design.png",
       "wpfSha256": "568ee33c930123fae536367c1ca4fc8259466c3f950c37c04da01c2d91b924e9",
-      "avaloniaSha256": "7be750172ea92a85cd74dc53d11a38108909c8f42a130344113849f1508c3bc1",
+      "avaloniaSha256": "ee7e8478cf6b926a0b90f35befece2d220b9d0f20a8b29d323265349981a9ad8",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -749,7 +752,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/900/ribbon-14-Chart Format.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-900x720-context-chart-format.png",
       "wpfSha256": "762eba2ae5d53c9adc22433846c023fac718fa37456dbe2a2d4834c555b59e89",
-      "avaloniaSha256": "3377094aaaaef6248b63dc9908f66d1ad55a2a08d455c8e23d6533612a2f6299",
+      "avaloniaSha256": "aecee3984a6cb668a346ed0884371466c65d4d335e5eb26c461d0ac56715d901",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -763,7 +766,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/900/ribbon-15-SmartArt Design.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-900x720-context-smartart-design.png",
       "wpfSha256": "a54b1b26bbbfb4d9cad43fedb122652a23274480de2b020349053b1f19b163a8",
-      "avaloniaSha256": "258bebcbfe40ce9b9ad021360682f56f6bccabd99bd6b7dde6e8b6c07b31904c",
+      "avaloniaSha256": "bb586ae63e2d9e40dbb528a6ffec68861b9d103887f0e3fdff8ed6d804b03502",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -777,7 +780,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/900/ribbon-16-Table Design.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-900x720-context-table-design.png",
       "wpfSha256": "529782ddb6651270dcdb27c3aed8d54a49619020dbf4d0a349e58999fe3105c9",
-      "avaloniaSha256": "a77a00c6f900d3f4fe7c165c51fdf9bf11e430484e86faa7a09bd5be0f5fb85f",
+      "avaloniaSha256": "39cdf6d58564ffe74b4212e1c2af617f6ee69af345f0e656153112fdb3eab657",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -791,7 +794,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/900/ribbon-17-Table Layout.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-900x720-context-table-layout.png",
       "wpfSha256": "0463aff43f7e36b9a60be2a83abca0dd53b6a93609584d9622b004134806a6d9",
-      "avaloniaSha256": "2e17f4c7d0e1e1a42e416ae2f0cd72cc47c2342539b055f460669a28a9b7619c",
+      "avaloniaSha256": "4dd12bee6582f6e0640afd454b093fbbb01a48f195b06394dc08ca91a7548cdc",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -805,7 +808,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/900/ribbon-18-Design.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-900x720-context-header-footer-design.png",
       "wpfSha256": "1c18e537117d508298a1e4c23424c06e47ca821cde81452fd4463ac27c6dbf86",
-      "avaloniaSha256": "5fef80e5678685a41119211682553376e9af79249bc99bc90287b85b149cab8d",
+      "avaloniaSha256": "c3d7d6cd49bff46f0edeea2a67068722dc0c8d0a89acd5b05ead747fadf91a1a",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -819,7 +822,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/750/ribbon-11-Drawing Format.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-750x720-context-drawing-format.png",
       "wpfSha256": "cf5c67c0a96004d2059b8fe68b44ec52cea6ed02effe4c63fe2ec225625eee5e",
-      "avaloniaSha256": "c6d4b0c21af664c2db4cc07d323e24b683f60ee7e77a5a1f49d7da64f2bde456",
+      "avaloniaSha256": "3db5f1ea1c84d4178711028d9a7db86fe89a8830e63723f92c131d4bbcba764f",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -833,7 +836,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/750/ribbon-12-Picture Format.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-750x720-context-picture-format.png",
       "wpfSha256": "0b3f3cd5fa09d6bfa8d6e671000d805d284e5468d99a054d1b7fdccf3d244f77",
-      "avaloniaSha256": "4ad45268f3bc73855de44494113f4d32560e1ebb77789d22053f2eef2e8fff95",
+      "avaloniaSha256": "7b0100ca5500f10a33154e12f3511be9062566184b27696acc88762d179cd4fd",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -847,7 +850,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/750/ribbon-13-Chart Design.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-750x720-context-chart-design.png",
       "wpfSha256": "d7d3346dbeb7f4a2d74861c3e9f240c29b88ac38ea0714168f5863efd348db01",
-      "avaloniaSha256": "358bdad488217dd1d09f8213f87a0e1f16d7eacec5f50dd0b0a2878d3e6d12f5",
+      "avaloniaSha256": "da074c9737b2549bcd17d2c0da5ebb80462c2eb404185710c162b15194d78e07",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -861,7 +864,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/750/ribbon-14-Chart Format.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-750x720-context-chart-format.png",
       "wpfSha256": "373a44c095eedbfa771fccfb0b9081049db3898e8d37dc0e44abd560f246b597",
-      "avaloniaSha256": "9e6d4371edf9a4063d2b705290c7a943a211142ddec7e98c9dda6ded055f026a",
+      "avaloniaSha256": "d350fcfa5c34a183423316e81245b25e3efcd571402bfd8ad59d92081fb600ca",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -875,7 +878,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/750/ribbon-15-SmartArt Design.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-750x720-context-smartart-design.png",
       "wpfSha256": "5cc348a6283fa8e7a05144bb21b54251dc89e04455b391362b355233f28f5441",
-      "avaloniaSha256": "0aeddeb7512d318f21172127e55eff75c7f15fa4aa3226a76e8ca8181f6b3fe9",
+      "avaloniaSha256": "aeb71f921551fe6e0c614a458ec532c241386af596c80b526664acc6ae0a5f98",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -889,7 +892,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/750/ribbon-16-Table Design.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-750x720-context-table-design.png",
       "wpfSha256": "e74480c02e932603c1a45a446741b0e5cda12f8de9356789ac11f25a97f6bc69",
-      "avaloniaSha256": "8929185445381f6d214f4a08d36a04d3cb07ae22b65321d34ab04d1d7f894560",
+      "avaloniaSha256": "d826ec180821d8ee25c1b9a64fffa99358139677910ed906c15d5c6fe19f83b9",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -903,7 +906,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/750/ribbon-17-Table Layout.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-750x720-context-table-layout.png",
       "wpfSha256": "7370a7d31546d3121bee9b4e6e118ccc5631580cab346f7524c111e2913e894b",
-      "avaloniaSha256": "387f1d7456d50d93e65a0cd3b90e6bae07b1b99af9fd9d40d8f8960b9f54adeb",
+      "avaloniaSha256": "7719ed74ee2d2c871f8e695eb1a3a72fc88adfdebf717a8909251d457c1e012a",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     },
     {
@@ -917,7 +920,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/750/ribbon-18-Design.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-750x720-context-header-footer-design.png",
       "wpfSha256": "dd1e08e817df59dd700dcd12c192842375f6527b0f01d41d2199ea0ed75580bb",
-      "avaloniaSha256": "571af5dfcf1cd7464f15c7d006d468ee804e2886e910c10414734f3215040fcc",
+      "avaloniaSha256": "6113e4ecb0e3934acbb0070dbcfe69a0ae207edda216ec8c6f1baf5e37059d35",
       "note": "Both hosts render the contextual ribbon state. WPF uses its established visible-tab driver; Avalonia activates the named state through a real editor fixture before the shell frame is captured. No pixel pass/fail is inferred because host chrome remains structurally different."
     }
   ],

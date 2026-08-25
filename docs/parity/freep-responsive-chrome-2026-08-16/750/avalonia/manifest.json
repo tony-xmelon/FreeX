@@ -5,7 +5,7 @@
   "targetDpi": 96,
   "logicalClientWidth": 750,
   "logicalClientHeight": 760,
-  "generatedAtUtc": "2026-08-25T08:21:10.4537643\u002B00:00",
+  "generatedAtUtc": "2026-08-25T10:07:57.3635234\u002B00:00",
   "captures": [
     {
       "scenarioId": "ribbon.view",
@@ -21,9 +21,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 506125,
-      "fullImageSha256": "a484cc5a95534b6ca8ca52b074fb268c2a5abe17b62d7afd3e34e081a7dc7ae1",
-      "clientImageSha256": "aa5eea2e475a34dcf7503924f4e347e0baf17984dd040a8034b2d5bc989a6408",
+      "nonBackgroundPixelCount": 507044,
+      "fullImageSha256": "77f41c5a2ab9cb39e7a6c1eb11e60472b8682821324bccb797718ffb45686ab4",
+      "clientImageSha256": "c8e54f5190846143e714bdb7c097eca6901bab01c02af3004034c411a8417014",
       "semanticState": {
         "scenarioId": "ribbon.view",
         "host": "avalonia",
@@ -64,14 +64,14 @@
         "titleBarBounds": {
           "x": 0,
           "y": 0,
-          "width": 800,
+          "width": 750.4,
           "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
           "y": 34.4,
-          "width": 800,
+          "width": 750.4,
           "height": 123.2,
           "isVisible": true
         },
@@ -85,21 +85,21 @@
         "canvasBounds": {
           "x": 180,
           "y": 157.6,
-          "width": 620,
+          "width": 570.4,
           "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
           "y": 673.6,
-          "width": 620,
+          "width": 570.4,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
           "y": 733.6,
-          "width": 800,
+          "width": 750.4,
           "height": 26.4,
           "isVisible": true
         },

@@ -27546,6 +27546,16 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "formatting",
+          "group": "Formatting",
+          "label": "Reveal Formatting",
+          "controlType": "RibbonToggleButton",
+          "layout": "Medium"
+        },
+        {
+          "profile": "Avalonia",
           "tabId": "view",
           "tab": "View",
           "groupId": "show",
