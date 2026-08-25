@@ -478,8 +478,8 @@
     },
     {
       "path": "avalonia/manifest.json",
-      "bytes": 145990,
-      "sha256": "b9ee8013d33280b990dc41b676857b72f8ba798260ab282f660079888411650d"
+      "bytes": 140943,
+      "sha256": "574b5bcb509c5d9ccfa165998ca90fd016c1d32946b1f4f63c16e666b1948dd7"
     },
     {
       "path": "diff/accessibility.media-caption-pane.png",
@@ -678,18 +678,18 @@
     },
     {
       "path": "report.html",
-      "bytes": 50475,
-      "sha256": "e89b5e24dfeb4f752ba912d08319a8f98ae44316bdf902e9a446f29ee2e774a0"
+      "bytes": 50248,
+      "sha256": "d04be3b75aeec33800654c805f8a1e159c9e265c3a720a9338cbc7efe159c419"
     },
     {
       "path": "report.md",
-      "bytes": 14072,
-      "sha256": "b402e54735dc86c8a72e06539abf1f8860e725f8a6a6f9d60c72484dc41adef6"
+      "bytes": 14006,
+      "sha256": "9ccb617fc4e0e342ca4daadd3d5aa62e6fc74824257158ce03520151493acb29"
     },
     {
       "path": "summary.json",
-      "bytes": 427606,
-      "sha256": "4b372b2426e690f1cedb89fda85aa834360022d81356388e29bcddf9e1523ccd"
+      "bytes": 414605,
+      "sha256": "4c6c4e5426e12ac0a2698455a9279978a2066b7e29c7bf745a92dfa2e24f17df"
     },
     {
       "path": "wpf/client/accessibility.media-caption-pane.png",
@@ -1053,8 +1053,8 @@
     },
     {
       "path": "wpf/manifest.json",
-      "bytes": 145657,
-      "sha256": "ca3baacc84215890512803df3d0832aacd62c6cc81ca3d630983b9f1fae6d1d1"
+      "bytes": 140610,
+      "sha256": "18dd5d09779e5b60adfb7c32581ac94534118b2b301673ce61477b8721aee7ee"
     }
   ]
 }

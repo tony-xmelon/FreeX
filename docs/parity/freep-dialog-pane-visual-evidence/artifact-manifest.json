@@ -103,8 +103,8 @@
     },
     {
       "path": "avalonia/manifest.json",
-      "bytes": 127474,
-      "sha256": "0b0806c0512eee51712048e2517efcb205207261c5e27ba486a037cfbfe6e0cc"
+      "bytes": 122995,
+      "sha256": "d4a1a21eddf057d5698e46e053a2af677ab303e7f57bebed06d75437be821d82"
     },
     {
       "path": "avalonia/review.accessibility-pane.seeded.png",
@@ -428,18 +428,18 @@
     },
     {
       "path": "report.html",
-      "bytes": 35638,
-      "sha256": "622cc1cc233d67fc8937e3276f32cf42ff9db9422bc098ed793414179c05a55c"
+      "bytes": 35487,
+      "sha256": "1a765f2a9bc3715484bd8585b6f6f976a91fe7a4bacfec0f31a3a0aba956fe98"
     },
     {
       "path": "report.md",
-      "bytes": 16753,
-      "sha256": "ade6ecb38f558ce6ebbb76e5b5972a5e66f23ce2cdba04e17c1a41fc507c8fc6"
+      "bytes": 16709,
+      "sha256": "20684ef17575b5a35f502bb97e3ef632b4d051f50e44d3e18e54c87a36fd2389"
     },
     {
       "path": "summary.json",
-      "bytes": 344046,
-      "sha256": "d3d2e412be8f74bff5218c128bc3ea8a613a4d15a4b3ca38ec029081a5d38666"
+      "bytes": 333528,
+      "sha256": "1f4da74da857e2f84fab87de9358958bd75d22224fe51e68877b55c7202559f4"
     },
     {
       "path": "wpf/accessibility.media-caption-pane.seeded.png",
@@ -533,8 +533,8 @@
     },
     {
       "path": "wpf/manifest.json",
-      "bytes": 128032,
-      "sha256": "bf3fdda631e03f658e6421da813493f60a57fd55be7c89cc1c068343b7857e7c"
+      "bytes": 123553,
+      "sha256": "3292db575966b0117f461665191f3a25845277d8b280346a5aecbd6dd0660b00"
     },
     {
       "path": "wpf/review.accessibility-pane.seeded.png",
