@@ -353,8 +353,8 @@
     {
       "app": "FreeW",
       "commandInventory": {
-        "totalCommands": 953,
-        "bothProfiles": 732,
+        "totalCommands": 954,
+        "bothProfiles": 733,
         "wpfProfileOnly": 2,
         "avaloniaProfileOnly": 219,
         "missingWpfProfile": 219,
