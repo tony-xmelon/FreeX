@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-08-25T06:38:45.7624662\u002B00:00",
+  "generatedAtUtc": "2026-08-25T06:46:23.9081940\u002B00:00",
   "scenarioCount": 36,
   "pairedCaptureCount": 36,
-  "passCount": 0,
-  "mismatchCount": 36,
+  "passCount": 35,
+  "mismatchCount": 1,
   "limitationCount": 0,
   "duplicateCaptureCount": 0,
   "declaredContextualTabCount": 2,
@@ -19,7 +19,6 @@
     "AuxiliaryPane": 8
   },
   "mismatchCategoryCounts": {
-    "app-owned-titlebar-raster": 36,
     "rich-editor-selection-pixel-threshold": 1
   },
   "wpf": {
@@ -29,7 +28,7 @@
     "targetDpi": 96,
     "logicalClientWidth": 1280,
     "logicalClientHeight": 760,
-    "generatedAtUtc": "2026-08-25T06:37:29.1034009\u002B00:00",
+    "generatedAtUtc": "2026-08-25T06:45:04.8909800\u002B00:00",
     "captures": [
       {
         "scenarioId": "startup.slide",
@@ -5077,7 +5076,7 @@
     "targetDpi": 96,
     "logicalClientWidth": 1280,
     "logicalClientHeight": 760,
-    "generatedAtUtc": "2026-08-25T06:38:40.9463556\u002B00:00",
+    "generatedAtUtc": "2026-08-25T06:46:19.0918248\u002B00:00",
     "captures": [
       {
         "scenarioId": "startup.slide",
@@ -10122,18 +10121,13 @@
     {
       "scenarioId": "startup.slide",
       "kind": "startup",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/startup.slide.png",
       "avaloniaFullImagePath": "avalonia/full/startup.slide.png",
       "wpfClientImagePath": "wpf/client/startup.slide.png",
       "avaloniaClientImagePath": "avalonia/client/startup.slide.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -10190,30 +10184,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "startup.notes",
       "kind": "startup",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/startup.notes.png",
       "avaloniaFullImagePath": "avalonia/full/startup.notes.png",
       "wpfClientImagePath": "wpf/client/startup.notes.png",
       "avaloniaClientImagePath": "avalonia/client/startup.notes.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -10270,30 +10259,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "ribbon.home",
       "kind": "staticRibbonTab",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/ribbon.home.png",
       "avaloniaFullImagePath": "avalonia/full/ribbon.home.png",
       "wpfClientImagePath": "wpf/client/ribbon.home.png",
       "avaloniaClientImagePath": "avalonia/client/ribbon.home.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -10350,30 +10334,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "ribbon.insert",
       "kind": "staticRibbonTab",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/ribbon.insert.png",
       "avaloniaFullImagePath": "avalonia/full/ribbon.insert.png",
       "wpfClientImagePath": "wpf/client/ribbon.insert.png",
       "avaloniaClientImagePath": "avalonia/client/ribbon.insert.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -10430,30 +10409,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "ribbon.design",
       "kind": "staticRibbonTab",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/ribbon.design.png",
       "avaloniaFullImagePath": "avalonia/full/ribbon.design.png",
       "wpfClientImagePath": "wpf/client/ribbon.design.png",
       "avaloniaClientImagePath": "avalonia/client/ribbon.design.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -10510,30 +10484,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "ribbon.transitions",
       "kind": "staticRibbonTab",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/ribbon.transitions.png",
       "avaloniaFullImagePath": "avalonia/full/ribbon.transitions.png",
       "wpfClientImagePath": "wpf/client/ribbon.transitions.png",
       "avaloniaClientImagePath": "avalonia/client/ribbon.transitions.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -10590,30 +10559,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "ribbon.animations",
       "kind": "staticRibbonTab",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/ribbon.animations.png",
       "avaloniaFullImagePath": "avalonia/full/ribbon.animations.png",
       "wpfClientImagePath": "wpf/client/ribbon.animations.png",
       "avaloniaClientImagePath": "avalonia/client/ribbon.animations.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -10670,30 +10634,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "ribbon.slide-show",
       "kind": "staticRibbonTab",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/ribbon.slide-show.png",
       "avaloniaFullImagePath": "avalonia/full/ribbon.slide-show.png",
       "wpfClientImagePath": "wpf/client/ribbon.slide-show.png",
       "avaloniaClientImagePath": "avalonia/client/ribbon.slide-show.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -10750,30 +10709,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "ribbon.review",
       "kind": "staticRibbonTab",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/ribbon.review.png",
       "avaloniaFullImagePath": "avalonia/full/ribbon.review.png",
       "wpfClientImagePath": "wpf/client/ribbon.review.png",
       "avaloniaClientImagePath": "avalonia/client/ribbon.review.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -10830,30 +10784,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "ribbon.view",
       "kind": "staticRibbonTab",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/ribbon.view.png",
       "avaloniaFullImagePath": "avalonia/full/ribbon.view.png",
       "wpfClientImagePath": "wpf/client/ribbon.view.png",
       "avaloniaClientImagePath": "avalonia/client/ribbon.view.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -10910,30 +10859,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "backstage.info",
       "kind": "backstagePane",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/backstage.info.png",
       "avaloniaFullImagePath": "avalonia/full/backstage.info.png",
       "wpfClientImagePath": "wpf/client/backstage.info.png",
       "avaloniaClientImagePath": "avalonia/client/backstage.info.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -10990,30 +10934,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "backstage.recent",
       "kind": "backstagePane",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/backstage.recent.png",
       "avaloniaFullImagePath": "avalonia/full/backstage.recent.png",
       "wpfClientImagePath": "wpf/client/backstage.recent.png",
       "avaloniaClientImagePath": "avalonia/client/backstage.recent.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -11070,30 +11009,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "backstage.new-from-template",
       "kind": "backstagePane",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/backstage.new-from-template.png",
       "avaloniaFullImagePath": "avalonia/full/backstage.new-from-template.png",
       "wpfClientImagePath": "wpf/client/backstage.new-from-template.png",
       "avaloniaClientImagePath": "avalonia/client/backstage.new-from-template.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -11150,30 +11084,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "backstage.print",
       "kind": "backstagePane",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/backstage.print.png",
       "avaloniaFullImagePath": "avalonia/full/backstage.print.png",
       "wpfClientImagePath": "wpf/client/backstage.print.png",
       "avaloniaClientImagePath": "avalonia/client/backstage.print.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -11230,30 +11159,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "backstage.export",
       "kind": "backstagePane",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/backstage.export.png",
       "avaloniaFullImagePath": "avalonia/full/backstage.export.png",
       "wpfClientImagePath": "wpf/client/backstage.export.png",
       "avaloniaClientImagePath": "avalonia/client/backstage.export.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -11310,30 +11234,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "backstage.options",
       "kind": "backstagePane",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/backstage.options.png",
       "avaloniaFullImagePath": "avalonia/full/backstage.options.png",
       "wpfClientImagePath": "wpf/client/backstage.options.png",
       "avaloniaClientImagePath": "avalonia/client/backstage.options.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -11390,30 +11309,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "backstage.account",
       "kind": "backstagePane",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/backstage.account.png",
       "avaloniaFullImagePath": "avalonia/full/backstage.account.png",
       "wpfClientImagePath": "wpf/client/backstage.account.png",
       "avaloniaClientImagePath": "avalonia/client/backstage.account.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -11470,30 +11384,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "status.slide-2",
       "kind": "statusBar",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/status.slide-2.png",
       "avaloniaFullImagePath": "avalonia/full/status.slide-2.png",
       "wpfClientImagePath": "wpf/client/status.slide-2.png",
       "avaloniaClientImagePath": "avalonia/client/status.slide-2.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -11550,30 +11459,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "view.gridlines-guides",
       "kind": "viewState",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/view.gridlines-guides.png",
       "avaloniaFullImagePath": "avalonia/full/view.gridlines-guides.png",
       "wpfClientImagePath": "wpf/client/view.gridlines-guides.png",
       "avaloniaClientImagePath": "avalonia/client/view.gridlines-guides.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -11630,30 +11534,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "view.clean-canvas",
       "kind": "viewState",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/view.clean-canvas.png",
       "avaloniaFullImagePath": "avalonia/full/view.clean-canvas.png",
       "wpfClientImagePath": "wpf/client/view.clean-canvas.png",
       "avaloniaClientImagePath": "avalonia/client/view.clean-canvas.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -11710,30 +11609,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "view.zoom-fit",
       "kind": "viewState",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/view.zoom-fit.png",
       "avaloniaFullImagePath": "avalonia/full/view.zoom-fit.png",
       "wpfClientImagePath": "wpf/client/view.zoom-fit.png",
       "avaloniaClientImagePath": "avalonia/client/view.zoom-fit.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -11790,30 +11684,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "view.zoom-200",
       "kind": "viewState",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/view.zoom-200.png",
       "avaloniaFullImagePath": "avalonia/full/view.zoom-200.png",
       "wpfClientImagePath": "wpf/client/view.zoom-200.png",
       "avaloniaClientImagePath": "avalonia/client/view.zoom-200.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -11870,30 +11759,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "workspace.slide-pane",
       "kind": "workspaceRegion",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/workspace.slide-pane.png",
       "avaloniaFullImagePath": "avalonia/full/workspace.slide-pane.png",
       "wpfClientImagePath": "wpf/client/workspace.slide-pane.png",
       "avaloniaClientImagePath": "avalonia/client/workspace.slide-pane.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -11950,30 +11834,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "workspace.notes-pane",
       "kind": "workspaceRegion",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/workspace.notes-pane.png",
       "avaloniaFullImagePath": "avalonia/full/workspace.notes-pane.png",
       "wpfClientImagePath": "wpf/client/workspace.notes-pane.png",
       "avaloniaClientImagePath": "avalonia/client/workspace.notes-pane.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -12030,30 +11909,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "workspace.canvas",
       "kind": "workspaceRegion",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/workspace.canvas.png",
       "avaloniaFullImagePath": "avalonia/full/workspace.canvas.png",
       "wpfClientImagePath": "wpf/client/workspace.canvas.png",
       "avaloniaClientImagePath": "avalonia/client/workspace.canvas.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -12110,30 +11984,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "workspace.slide-master",
       "kind": "workspaceRegion",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/workspace.slide-master.png",
       "avaloniaFullImagePath": "avalonia/full/workspace.slide-master.png",
       "wpfClientImagePath": "wpf/client/workspace.slide-master.png",
       "avaloniaClientImagePath": "avalonia/client/workspace.slide-master.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -12190,13 +12059,13 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
@@ -12208,12 +12077,9 @@
       "wpfClientImagePath": "wpf/client/editor.rich-text-selection.png",
       "avaloniaClientImagePath": "avalonia/client/editor.rich-text-selection.png",
       "mismatchCategories": [
-        "app-owned-titlebar-raster",
         "rich-editor-selection-pixel-threshold"
       ],
       "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%).",
         "Rich-editor selection threshold failed: changed 21.86 % (max 20 %), mean channel delta 13.74 (max 18.00), perceptual hash distance 10 (max 18)."
       ],
       "pixelMetrics": {
@@ -12294,30 +12160,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "editor.rich-text-caret",
       "kind": "richEditorOverlay",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/editor.rich-text-caret.png",
       "avaloniaFullImagePath": "avalonia/full/editor.rich-text-caret.png",
       "wpfClientImagePath": "wpf/client/editor.rich-text-caret.png",
       "avaloniaClientImagePath": "avalonia/client/editor.rich-text-caret.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -12374,30 +12235,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "review.comments-pane",
       "kind": "auxiliaryPane",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/review.comments-pane.png",
       "avaloniaFullImagePath": "avalonia/full/review.comments-pane.png",
       "wpfClientImagePath": "wpf/client/review.comments-pane.png",
       "avaloniaClientImagePath": "avalonia/client/review.comments-pane.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -12454,30 +12310,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "review.accessibility-pane",
       "kind": "auxiliaryPane",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/review.accessibility-pane.png",
       "avaloniaFullImagePath": "avalonia/full/review.accessibility-pane.png",
       "wpfClientImagePath": "wpf/client/review.accessibility-pane.png",
       "avaloniaClientImagePath": "avalonia/client/review.accessibility-pane.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -12534,30 +12385,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "review.alt-text-pane",
       "kind": "auxiliaryPane",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/review.alt-text-pane.png",
       "avaloniaFullImagePath": "avalonia/full/review.alt-text-pane.png",
       "wpfClientImagePath": "wpf/client/review.alt-text-pane.png",
       "avaloniaClientImagePath": "avalonia/client/review.alt-text-pane.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -12614,30 +12460,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "review.reading-order-pane",
       "kind": "auxiliaryPane",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/review.reading-order-pane.png",
       "avaloniaFullImagePath": "avalonia/full/review.reading-order-pane.png",
       "wpfClientImagePath": "wpf/client/review.reading-order-pane.png",
       "avaloniaClientImagePath": "avalonia/client/review.reading-order-pane.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -12694,30 +12535,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "review.proofing-pane",
       "kind": "auxiliaryPane",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/review.proofing-pane.png",
       "avaloniaFullImagePath": "avalonia/full/review.proofing-pane.png",
       "wpfClientImagePath": "wpf/client/review.proofing-pane.png",
       "avaloniaClientImagePath": "avalonia/client/review.proofing-pane.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -12774,30 +12610,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "accessibility.media-caption-pane",
       "kind": "auxiliaryPane",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/accessibility.media-caption-pane.png",
       "avaloniaFullImagePath": "avalonia/full/accessibility.media-caption-pane.png",
       "wpfClientImagePath": "wpf/client/accessibility.media-caption-pane.png",
       "avaloniaClientImagePath": "avalonia/client/accessibility.media-caption-pane.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -12854,30 +12685,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "context.smartart-text-pane",
       "kind": "auxiliaryPane",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/context.smartart-text-pane.png",
       "avaloniaFullImagePath": "avalonia/full/context.smartart-text-pane.png",
       "wpfClientImagePath": "wpf/client/context.smartart-text-pane.png",
       "avaloniaClientImagePath": "avalonia/client/context.smartart-text-pane.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -12934,30 +12760,25 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     },
     {
       "scenarioId": "animations.animation-pane",
       "kind": "auxiliaryPane",
-      "classification": "mismatch",
+      "classification": "pass",
       "wpfFullImagePath": "wpf/full/animations.animation-pane.png",
       "avaloniaFullImagePath": "avalonia/full/animations.animation-pane.png",
       "wpfClientImagePath": "wpf/client/animations.animation-pane.png",
       "avaloniaClientImagePath": "avalonia/client/animations.animation-pane.png",
-      "mismatchCategories": [
-        "app-owned-titlebar-raster"
-      ],
-      "details": [
-        "WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%).",
-        "Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%)."
-      ],
+      "mismatchCategories": [],
+      "details": [],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
         "wpfPixelHeight": 760,
@@ -13014,13 +12835,13 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
-        "isValid": false
+        "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
-        "isValid": false
+        "isValid": true
       }
     }
   ],

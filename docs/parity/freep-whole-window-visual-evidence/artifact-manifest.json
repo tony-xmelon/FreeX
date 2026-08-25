@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "generatedBy": "tools/Generate-FreePWholeWindowVisualEvidenceManifest.ps1",
-  "evidenceGeneratedAtUtc": "2026-08-25T09:38:45.7624662+03:00",
+  "evidenceGeneratedAtUtc": "2026-08-25T09:46:23.908194+03:00",
   "scenarioCount": 36,
   "pairedCaptureCount": 36,
-  "passCount": 0,
-  "mismatchCount": 36,
+  "passCount": 35,
+  "mismatchCount": 1,
   "limitationCount": 0,
   "duplicateCaptureCount": 0,
   "fullPngCount": 72,
@@ -108,11 +108,11 @@
     },
     {
       "path": "tools/FreeP.RenderCompare/WholeWindowVisualEvidence.cs",
-      "sha256": "2bfc8b284f2f142571d629dbe87a7d4f8982640f59b74b583c99251f15042eca"
+      "sha256": "a17d5b622ef7bcc4a94c01b05420d869f13a0b8f27d0809450f24022a75ae000"
     },
     {
       "path": "tools/FreeP.RenderCompare/ImageDiff.cs",
-      "sha256": "a9b433c0e9931ca26e46a040ecc386fa477ad51a216b310eea5463aaf890d396"
+      "sha256": "7af46d7013488c54f126a5f75f2e840bcc6c87a9175def22b253e6a81c5b8435"
     }
   ],
   "files": [
@@ -479,7 +479,7 @@
     {
       "path": "avalonia/manifest.json",
       "bytes": 145990,
-      "sha256": "a9b5f6b1022bad50acdc603e14e3feac1cfb978497d53a3fd1f2527c3f33fb45"
+      "sha256": "b9ee8013d33280b990dc41b676857b72f8ba798260ab282f660079888411650d"
     },
     {
       "path": "diff/accessibility.media-caption-pane.png",
@@ -678,18 +678,18 @@
     },
     {
       "path": "report.html",
-      "bytes": 59464,
-      "sha256": "d700dadb333a20612d6d3e6ec016f52cda13b39ccf9e9292144d8e21e98ca141"
+      "bytes": 50475,
+      "sha256": "e89b5e24dfeb4f752ba912d08319a8f98ae44316bdf902e9a446f29ee2e774a0"
     },
     {
       "path": "report.md",
-      "bytes": 24478,
-      "sha256": "bc1615512f62f06c2b7c42b0d600b9242e1f5d98b4f3a674c21200b6b01e9544"
+      "bytes": 14072,
+      "sha256": "0ec252544cb032cc659a2b20d2248e08f20e509ad619123fef0be75718385d8c"
     },
     {
       "path": "summary.json",
-      "bytes": 430254,
-      "sha256": "5fa36260ecc41db9b49c6b1776eb3d4d584becd459230fcf620670f5e0df5ce0"
+      "bytes": 420334,
+      "sha256": "116bcc6b46376d8c067883a4f3c7b7d224c226456646ee6d652b8bb4b298eb79"
     },
     {
       "path": "wpf/client/accessibility.media-caption-pane.png",
@@ -1054,7 +1054,7 @@
     {
       "path": "wpf/manifest.json",
       "bytes": 145657,
-      "sha256": "72a6a8c06b6124169d5db8ccdec59ed2660483686e5fe2f99e925a55f87bddbe"
+      "sha256": "ca3baacc84215890512803df3d0832aacd62c6cc81ca3d630983b9f1fae6d1d1"
     }
   ]
 }
