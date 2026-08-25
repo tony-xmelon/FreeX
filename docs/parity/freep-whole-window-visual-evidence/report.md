@@ -1,6 +1,6 @@
 # FreeP Paired Whole-Window Visual Evidence
 
-Generated `2026-08-25T06:16:57.9820713+00:00` from independently activated WPF and Avalonia app processes.
+Generated `2026-08-25T06:38:45.7624662+00:00` from independently activated WPF and Avalonia app processes.
 
 - Scenarios: 36
 - Paired captures: 36
@@ -22,8 +22,6 @@ Generated `2026-08-25T06:16:57.9820713+00:00` from independently activated WPF a
 | Category | Scenarios |
 |---|---:|
 | app-owned-titlebar-raster | 36 |
-| contextual-tab-strip | 17 |
-| ribbon-tab-strip | 17 |
 | rich-editor-selection-pixel-threshold | 1 |
 
 ## Scenarios
@@ -60,54 +58,36 @@ Generated `2026-08-25T06:16:57.9820713+00:00` from independently activated WPF a
 | ribbon.view | StaticRibbonTab | mismatch | app-owned-titlebar-raster | 10.64 % | 8.07 | 2 | n/a | [WPF full](wpf/full/ribbon.view.png) / [Avalonia full](avalonia/full/ribbon.view.png) / [WPF client](wpf/client/ribbon.view.png) / [Avalonia client](avalonia/client/ribbon.view.png) / [diff](diff/ribbon.view.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
-| backstage.info | BackstagePane | mismatch | app-owned-titlebar-raster, contextual-tab-strip, ribbon-tab-strip | 1.50 % | 1.59 | 0 | n/a | [WPF full](wpf/full/backstage.info.png) / [Avalonia full](avalonia/full/backstage.info.png) / [WPF client](wpf/client/backstage.info.png) / [Avalonia client](avalonia/client/backstage.info.png) / [diff](diff/backstage.info.png) |
+| backstage.info | BackstagePane | mismatch | app-owned-titlebar-raster | 1.50 % | 1.59 | 0 | n/a | [WPF full](wpf/full/backstage.info.png) / [Avalonia full](avalonia/full/backstage.info.png) / [WPF client](wpf/client/backstage.info.png) / [Avalonia client](avalonia/client/backstage.info.png) / [diff](diff/backstage.info.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
-|  | Detail |  |  |  |  |  |  | Visible ribbon tab order differs between hosts. |
-|  | Detail |  |  |  |  |  |  | Visible contextual ribbon tabs differ between hosts. |
-| backstage.recent | BackstagePane | mismatch | app-owned-titlebar-raster, contextual-tab-strip, ribbon-tab-strip | 2.20 % | 1.99 | 0 | n/a | [WPF full](wpf/full/backstage.recent.png) / [Avalonia full](avalonia/full/backstage.recent.png) / [WPF client](wpf/client/backstage.recent.png) / [Avalonia client](avalonia/client/backstage.recent.png) / [diff](diff/backstage.recent.png) |
+| backstage.recent | BackstagePane | mismatch | app-owned-titlebar-raster | 2.20 % | 1.99 | 0 | n/a | [WPF full](wpf/full/backstage.recent.png) / [Avalonia full](avalonia/full/backstage.recent.png) / [WPF client](wpf/client/backstage.recent.png) / [Avalonia client](avalonia/client/backstage.recent.png) / [diff](diff/backstage.recent.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
-|  | Detail |  |  |  |  |  |  | Visible ribbon tab order differs between hosts. |
-|  | Detail |  |  |  |  |  |  | Visible contextual ribbon tabs differ between hosts. |
-| backstage.new-from-template | BackstagePane | mismatch | app-owned-titlebar-raster, contextual-tab-strip, ribbon-tab-strip | 1.51 % | 1.46 | 0 | n/a | [WPF full](wpf/full/backstage.new-from-template.png) / [Avalonia full](avalonia/full/backstage.new-from-template.png) / [WPF client](wpf/client/backstage.new-from-template.png) / [Avalonia client](avalonia/client/backstage.new-from-template.png) / [diff](diff/backstage.new-from-template.png) |
+| backstage.new-from-template | BackstagePane | mismatch | app-owned-titlebar-raster | 1.51 % | 1.46 | 0 | n/a | [WPF full](wpf/full/backstage.new-from-template.png) / [Avalonia full](avalonia/full/backstage.new-from-template.png) / [WPF client](wpf/client/backstage.new-from-template.png) / [Avalonia client](avalonia/client/backstage.new-from-template.png) / [diff](diff/backstage.new-from-template.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
-|  | Detail |  |  |  |  |  |  | Visible ribbon tab order differs between hosts. |
-|  | Detail |  |  |  |  |  |  | Visible contextual ribbon tabs differ between hosts. |
-| backstage.print | BackstagePane | mismatch | app-owned-titlebar-raster, contextual-tab-strip, ribbon-tab-strip | 5.82 % | 5.37 | 5 | n/a | [WPF full](wpf/full/backstage.print.png) / [Avalonia full](avalonia/full/backstage.print.png) / [WPF client](wpf/client/backstage.print.png) / [Avalonia client](avalonia/client/backstage.print.png) / [diff](diff/backstage.print.png) |
+| backstage.print | BackstagePane | mismatch | app-owned-titlebar-raster | 5.82 % | 5.37 | 5 | n/a | [WPF full](wpf/full/backstage.print.png) / [Avalonia full](avalonia/full/backstage.print.png) / [WPF client](wpf/client/backstage.print.png) / [Avalonia client](avalonia/client/backstage.print.png) / [diff](diff/backstage.print.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
-|  | Detail |  |  |  |  |  |  | Visible ribbon tab order differs between hosts. |
-|  | Detail |  |  |  |  |  |  | Visible contextual ribbon tabs differ between hosts. |
-| backstage.export | BackstagePane | mismatch | app-owned-titlebar-raster, contextual-tab-strip, ribbon-tab-strip | 2.72 % | 2.68 | 0 | n/a | [WPF full](wpf/full/backstage.export.png) / [Avalonia full](avalonia/full/backstage.export.png) / [WPF client](wpf/client/backstage.export.png) / [Avalonia client](avalonia/client/backstage.export.png) / [diff](diff/backstage.export.png) |
+| backstage.export | BackstagePane | mismatch | app-owned-titlebar-raster | 2.72 % | 2.68 | 0 | n/a | [WPF full](wpf/full/backstage.export.png) / [Avalonia full](avalonia/full/backstage.export.png) / [WPF client](wpf/client/backstage.export.png) / [Avalonia client](avalonia/client/backstage.export.png) / [diff](diff/backstage.export.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
-|  | Detail |  |  |  |  |  |  | Visible ribbon tab order differs between hosts. |
-|  | Detail |  |  |  |  |  |  | Visible contextual ribbon tabs differ between hosts. |
-| backstage.options | BackstagePane | mismatch | app-owned-titlebar-raster, contextual-tab-strip, ribbon-tab-strip | 2.10 % | 2.00 | 1 | n/a | [WPF full](wpf/full/backstage.options.png) / [Avalonia full](avalonia/full/backstage.options.png) / [WPF client](wpf/client/backstage.options.png) / [Avalonia client](avalonia/client/backstage.options.png) / [diff](diff/backstage.options.png) |
+| backstage.options | BackstagePane | mismatch | app-owned-titlebar-raster | 2.10 % | 2.00 | 1 | n/a | [WPF full](wpf/full/backstage.options.png) / [Avalonia full](avalonia/full/backstage.options.png) / [WPF client](wpf/client/backstage.options.png) / [Avalonia client](avalonia/client/backstage.options.png) / [diff](diff/backstage.options.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
-|  | Detail |  |  |  |  |  |  | Visible ribbon tab order differs between hosts. |
-|  | Detail |  |  |  |  |  |  | Visible contextual ribbon tabs differ between hosts. |
-| backstage.account | BackstagePane | mismatch | app-owned-titlebar-raster, contextual-tab-strip, ribbon-tab-strip | 2.89 % | 2.95 | 1 | n/a | [WPF full](wpf/full/backstage.account.png) / [Avalonia full](avalonia/full/backstage.account.png) / [WPF client](wpf/client/backstage.account.png) / [Avalonia client](avalonia/client/backstage.account.png) / [diff](diff/backstage.account.png) |
+| backstage.account | BackstagePane | mismatch | app-owned-titlebar-raster | 2.90 % | 2.95 | 1 | n/a | [WPF full](wpf/full/backstage.account.png) / [Avalonia full](avalonia/full/backstage.account.png) / [WPF client](wpf/client/backstage.account.png) / [Avalonia client](avalonia/client/backstage.account.png) / [diff](diff/backstage.account.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
-|  | Detail |  |  |  |  |  |  | Visible ribbon tab order differs between hosts. |
-|  | Detail |  |  |  |  |  |  | Visible contextual ribbon tabs differ between hosts. |
 | status.slide-2 | StatusBar | mismatch | app-owned-titlebar-raster | 9.01 % | 6.64 | 3 | n/a | [WPF full](wpf/full/status.slide-2.png) / [Avalonia full](avalonia/full/status.slide-2.png) / [WPF client](wpf/client/status.slide-2.png) / [Avalonia client](avalonia/client/status.slide-2.png) / [diff](diff/status.slide-2.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
-| view.gridlines-guides | ViewState | mismatch | app-owned-titlebar-raster, contextual-tab-strip, ribbon-tab-strip | 11.01 % | 8.37 | 3 | n/a | [WPF full](wpf/full/view.gridlines-guides.png) / [Avalonia full](avalonia/full/view.gridlines-guides.png) / [WPF client](wpf/client/view.gridlines-guides.png) / [Avalonia client](avalonia/client/view.gridlines-guides.png) / [diff](diff/view.gridlines-guides.png) |
+| view.gridlines-guides | ViewState | mismatch | app-owned-titlebar-raster | 11.03 % | 8.39 | 3 | n/a | [WPF full](wpf/full/view.gridlines-guides.png) / [Avalonia full](avalonia/full/view.gridlines-guides.png) / [WPF client](wpf/client/view.gridlines-guides.png) / [Avalonia client](avalonia/client/view.gridlines-guides.png) / [diff](diff/view.gridlines-guides.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
-|  | Detail |  |  |  |  |  |  | Visible ribbon tab order differs between hosts. |
-|  | Detail |  |  |  |  |  |  | Visible contextual ribbon tabs differ between hosts. |
-| view.clean-canvas | ViewState | mismatch | app-owned-titlebar-raster, contextual-tab-strip, ribbon-tab-strip | 10.89 % | 8.29 | 3 | n/a | [WPF full](wpf/full/view.clean-canvas.png) / [Avalonia full](avalonia/full/view.clean-canvas.png) / [WPF client](wpf/client/view.clean-canvas.png) / [Avalonia client](avalonia/client/view.clean-canvas.png) / [diff](diff/view.clean-canvas.png) |
+| view.clean-canvas | ViewState | mismatch | app-owned-titlebar-raster | 10.91 % | 8.31 | 3 | n/a | [WPF full](wpf/full/view.clean-canvas.png) / [Avalonia full](avalonia/full/view.clean-canvas.png) / [WPF client](wpf/client/view.clean-canvas.png) / [Avalonia client](avalonia/client/view.clean-canvas.png) / [diff](diff/view.clean-canvas.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
-|  | Detail |  |  |  |  |  |  | Visible ribbon tab order differs between hosts. |
-|  | Detail |  |  |  |  |  |  | Visible contextual ribbon tabs differ between hosts. |
 | view.zoom-fit | ViewState | mismatch | app-owned-titlebar-raster | 11.19 % | 8.46 | 2 | n/a | [WPF full](wpf/full/view.zoom-fit.png) / [Avalonia full](avalonia/full/view.zoom-fit.png) / [WPF client](wpf/client/view.zoom-fit.png) / [Avalonia client](avalonia/client/view.zoom-fit.png) / [diff](diff/view.zoom-fit.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
@@ -126,50 +106,34 @@ Generated `2026-08-25T06:16:57.9820713+00:00` from independently activated WPF a
 | workspace.slide-master | WorkspaceRegion | mismatch | app-owned-titlebar-raster | 8.25 % | 6.07 | 1 | n/a | [WPF full](wpf/full/workspace.slide-master.png) / [Avalonia full](avalonia/full/workspace.slide-master.png) / [WPF client](wpf/client/workspace.slide-master.png) / [Avalonia client](avalonia/client/workspace.slide-master.png) / [diff](diff/workspace.slide-master.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
-| editor.rich-text-selection | RichEditorOverlay | mismatch | app-owned-titlebar-raster, contextual-tab-strip, ribbon-tab-strip, rich-editor-selection-pixel-threshold | 10.31 % | 7.74 | 4 | 21.86 % | [WPF full](wpf/full/editor.rich-text-selection.png) / [Avalonia full](avalonia/full/editor.rich-text-selection.png) / [WPF client](wpf/client/editor.rich-text-selection.png) / [Avalonia client](avalonia/client/editor.rich-text-selection.png) / [diff](diff/editor.rich-text-selection.png) / [selection diff](diff/editor.rich-text-selection.selection.png) |
+| editor.rich-text-selection | RichEditorOverlay | mismatch | app-owned-titlebar-raster, rich-editor-selection-pixel-threshold | 10.33 % | 7.76 | 4 | 21.86 % | [WPF full](wpf/full/editor.rich-text-selection.png) / [Avalonia full](avalonia/full/editor.rich-text-selection.png) / [WPF client](wpf/client/editor.rich-text-selection.png) / [Avalonia client](avalonia/client/editor.rich-text-selection.png) / [diff](diff/editor.rich-text-selection.png) / [selection diff](diff/editor.rich-text-selection.selection.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
-|  | Detail |  |  |  |  |  |  | Visible ribbon tab order differs between hosts. |
-|  | Detail |  |  |  |  |  |  | Visible contextual ribbon tabs differ between hosts. |
 |  | Detail |  |  |  |  |  |  | Rich-editor selection threshold failed: changed 21.86 % (max 20 %), mean channel delta 13.74 (max 18.00), perceptual hash distance 10 (max 18). |
-| editor.rich-text-caret | RichEditorOverlay | mismatch | app-owned-titlebar-raster, contextual-tab-strip, ribbon-tab-strip | 10.36 % | 7.97 | 4 | n/a | [WPF full](wpf/full/editor.rich-text-caret.png) / [Avalonia full](avalonia/full/editor.rich-text-caret.png) / [WPF client](wpf/client/editor.rich-text-caret.png) / [Avalonia client](avalonia/client/editor.rich-text-caret.png) / [diff](diff/editor.rich-text-caret.png) |
+| editor.rich-text-caret | RichEditorOverlay | mismatch | app-owned-titlebar-raster | 10.37 % | 7.99 | 4 | n/a | [WPF full](wpf/full/editor.rich-text-caret.png) / [Avalonia full](avalonia/full/editor.rich-text-caret.png) / [WPF client](wpf/client/editor.rich-text-caret.png) / [Avalonia client](avalonia/client/editor.rich-text-caret.png) / [diff](diff/editor.rich-text-caret.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
-|  | Detail |  |  |  |  |  |  | Visible ribbon tab order differs between hosts. |
-|  | Detail |  |  |  |  |  |  | Visible contextual ribbon tabs differ between hosts. |
-| review.comments-pane | AuxiliaryPane | mismatch | app-owned-titlebar-raster, contextual-tab-strip, ribbon-tab-strip | 13.43 % | 10.20 | 6 | n/a | [WPF full](wpf/full/review.comments-pane.png) / [Avalonia full](avalonia/full/review.comments-pane.png) / [WPF client](wpf/client/review.comments-pane.png) / [Avalonia client](avalonia/client/review.comments-pane.png) / [diff](diff/review.comments-pane.png) |
+| review.comments-pane | AuxiliaryPane | mismatch | app-owned-titlebar-raster | 13.45 % | 10.22 | 6 | n/a | [WPF full](wpf/full/review.comments-pane.png) / [Avalonia full](avalonia/full/review.comments-pane.png) / [WPF client](wpf/client/review.comments-pane.png) / [Avalonia client](avalonia/client/review.comments-pane.png) / [diff](diff/review.comments-pane.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
-|  | Detail |  |  |  |  |  |  | Visible ribbon tab order differs between hosts. |
-|  | Detail |  |  |  |  |  |  | Visible contextual ribbon tabs differ between hosts. |
 | review.accessibility-pane | AuxiliaryPane | mismatch | app-owned-titlebar-raster | 11.26 % | 8.92 | 5 | n/a | [WPF full](wpf/full/review.accessibility-pane.png) / [Avalonia full](avalonia/full/review.accessibility-pane.png) / [WPF client](wpf/client/review.accessibility-pane.png) / [Avalonia client](avalonia/client/review.accessibility-pane.png) / [diff](diff/review.accessibility-pane.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
-| review.alt-text-pane | AuxiliaryPane | mismatch | app-owned-titlebar-raster, contextual-tab-strip, ribbon-tab-strip | 11.23 % | 8.77 | 7 | n/a | [WPF full](wpf/full/review.alt-text-pane.png) / [Avalonia full](avalonia/full/review.alt-text-pane.png) / [WPF client](wpf/client/review.alt-text-pane.png) / [Avalonia client](avalonia/client/review.alt-text-pane.png) / [diff](diff/review.alt-text-pane.png) |
+| review.alt-text-pane | AuxiliaryPane | mismatch | app-owned-titlebar-raster | 11.25 % | 8.79 | 7 | n/a | [WPF full](wpf/full/review.alt-text-pane.png) / [Avalonia full](avalonia/full/review.alt-text-pane.png) / [WPF client](wpf/client/review.alt-text-pane.png) / [Avalonia client](avalonia/client/review.alt-text-pane.png) / [diff](diff/review.alt-text-pane.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
-|  | Detail |  |  |  |  |  |  | Visible ribbon tab order differs between hosts. |
-|  | Detail |  |  |  |  |  |  | Visible contextual ribbon tabs differ between hosts. |
-| review.reading-order-pane | AuxiliaryPane | mismatch | app-owned-titlebar-raster, contextual-tab-strip, ribbon-tab-strip | 11.84 % | 9.57 | 4 | n/a | [WPF full](wpf/full/review.reading-order-pane.png) / [Avalonia full](avalonia/full/review.reading-order-pane.png) / [WPF client](wpf/client/review.reading-order-pane.png) / [Avalonia client](avalonia/client/review.reading-order-pane.png) / [diff](diff/review.reading-order-pane.png) |
+| review.reading-order-pane | AuxiliaryPane | mismatch | app-owned-titlebar-raster | 11.86 % | 9.59 | 4 | n/a | [WPF full](wpf/full/review.reading-order-pane.png) / [Avalonia full](avalonia/full/review.reading-order-pane.png) / [WPF client](wpf/client/review.reading-order-pane.png) / [Avalonia client](avalonia/client/review.reading-order-pane.png) / [diff](diff/review.reading-order-pane.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
-|  | Detail |  |  |  |  |  |  | Visible ribbon tab order differs between hosts. |
-|  | Detail |  |  |  |  |  |  | Visible contextual ribbon tabs differ between hosts. |
-| review.proofing-pane | AuxiliaryPane | mismatch | app-owned-titlebar-raster, contextual-tab-strip, ribbon-tab-strip | 10.16 % | 7.80 | 4 | n/a | [WPF full](wpf/full/review.proofing-pane.png) / [Avalonia full](avalonia/full/review.proofing-pane.png) / [WPF client](wpf/client/review.proofing-pane.png) / [Avalonia client](avalonia/client/review.proofing-pane.png) / [diff](diff/review.proofing-pane.png) |
+| review.proofing-pane | AuxiliaryPane | mismatch | app-owned-titlebar-raster | 10.18 % | 7.82 | 4 | n/a | [WPF full](wpf/full/review.proofing-pane.png) / [Avalonia full](avalonia/full/review.proofing-pane.png) / [WPF client](wpf/client/review.proofing-pane.png) / [Avalonia client](avalonia/client/review.proofing-pane.png) / [diff](diff/review.proofing-pane.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
-|  | Detail |  |  |  |  |  |  | Visible ribbon tab order differs between hosts. |
-|  | Detail |  |  |  |  |  |  | Visible contextual ribbon tabs differ between hosts. |
 | accessibility.media-caption-pane | AuxiliaryPane | mismatch | app-owned-titlebar-raster | 12.29 % | 10.03 | 3 | n/a | [WPF full](wpf/full/accessibility.media-caption-pane.png) / [Avalonia full](avalonia/full/accessibility.media-caption-pane.png) / [WPF client](wpf/client/accessibility.media-caption-pane.png) / [Avalonia client](avalonia/client/accessibility.media-caption-pane.png) / [diff](diff/accessibility.media-caption-pane.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
-| context.smartart-text-pane | AuxiliaryPane | mismatch | app-owned-titlebar-raster, contextual-tab-strip, ribbon-tab-strip | 13.14 % | 10.17 | 3 | n/a | [WPF full](wpf/full/context.smartart-text-pane.png) / [Avalonia full](avalonia/full/context.smartart-text-pane.png) / [WPF client](wpf/client/context.smartart-text-pane.png) / [Avalonia client](avalonia/client/context.smartart-text-pane.png) / [diff](diff/context.smartart-text-pane.png) |
+| context.smartart-text-pane | AuxiliaryPane | mismatch | app-owned-titlebar-raster | 13.16 % | 10.20 | 3 | n/a | [WPF full](wpf/full/context.smartart-text-pane.png) / [Avalonia full](avalonia/full/context.smartart-text-pane.png) / [WPF client](wpf/client/context.smartart-text-pane.png) / [Avalonia client](avalonia/client/context.smartart-text-pane.png) / [diff](diff/context.smartart-text-pane.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
-|  | Detail |  |  |  |  |  |  | Visible ribbon tab order differs between hosts. |
-|  | Detail |  |  |  |  |  |  | Visible contextual ribbon tabs differ between hosts. |
-| animations.animation-pane | AuxiliaryPane | mismatch | app-owned-titlebar-raster, contextual-tab-strip, ribbon-tab-strip | 10.17 % | 7.69 | 7 | n/a | [WPF full](wpf/full/animations.animation-pane.png) / [Avalonia full](avalonia/full/animations.animation-pane.png) / [WPF client](wpf/client/animations.animation-pane.png) / [Avalonia client](avalonia/client/animations.animation-pane.png) / [diff](diff/animations.animation-pane.png) |
+| animations.animation-pane | AuxiliaryPane | mismatch | app-owned-titlebar-raster | 10.18 % | 7.72 | 7 | n/a | [WPF full](wpf/full/animations.animation-pane.png) / [Avalonia full](avalonia/full/animations.animation-pane.png) / [WPF client](wpf/client/animations.animation-pane.png) / [Avalonia client](avalonia/client/animations.animation-pane.png) / [diff](diff/animations.animation-pane.png) |
 |  | Detail |  |  |  |  |  |  | WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.2%). |
 |  | Detail |  |  |  |  |  |  | Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.1%). |
-|  | Detail |  |  |  |  |  |  | Visible ribbon tab order differs between hosts. |
-|  | Detail |  |  |  |  |  |  | Visible contextual ribbon tabs differ between hosts. |

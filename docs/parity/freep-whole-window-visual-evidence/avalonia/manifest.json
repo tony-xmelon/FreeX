@@ -5,7 +5,7 @@
   "targetDpi": 96,
   "logicalClientWidth": 1280,
   "logicalClientHeight": 760,
-  "generatedAtUtc": "2026-08-25T06:16:54.1743440\u002B00:00",
+  "generatedAtUtc": "2026-08-25T06:38:40.9463556\u002B00:00",
   "captures": [
     {
       "scenarioId": "startup.slide",
@@ -1395,9 +1395,12 @@
           "slide-show",
           "review",
           "view",
-          "help"
+          "help",
+          "text-format"
         ],
-        "visibleContextualTabIds": [],
+        "visibleContextualTabIds": [
+          "text-format"
+        ],
         "backstageOpen": true,
         "backstagePane": "Info",
         "focusedRole": "",
@@ -1532,9 +1535,12 @@
           "slide-show",
           "review",
           "view",
-          "help"
+          "help",
+          "text-format"
         ],
-        "visibleContextualTabIds": [],
+        "visibleContextualTabIds": [
+          "text-format"
+        ],
         "backstageOpen": true,
         "backstagePane": "Recent",
         "focusedRole": "",
@@ -1669,9 +1675,12 @@
           "slide-show",
           "review",
           "view",
-          "help"
+          "help",
+          "text-format"
         ],
-        "visibleContextualTabIds": [],
+        "visibleContextualTabIds": [
+          "text-format"
+        ],
         "backstageOpen": true,
         "backstagePane": "New from template",
         "focusedRole": "",
@@ -1806,9 +1815,12 @@
           "slide-show",
           "review",
           "view",
-          "help"
+          "help",
+          "text-format"
         ],
-        "visibleContextualTabIds": [],
+        "visibleContextualTabIds": [
+          "text-format"
+        ],
         "backstageOpen": true,
         "backstagePane": "Print",
         "focusedRole": "",
@@ -1943,9 +1955,12 @@
           "slide-show",
           "review",
           "view",
-          "help"
+          "help",
+          "text-format"
         ],
-        "visibleContextualTabIds": [],
+        "visibleContextualTabIds": [
+          "text-format"
+        ],
         "backstageOpen": true,
         "backstagePane": "Export",
         "focusedRole": "",
@@ -2080,9 +2095,12 @@
           "slide-show",
           "review",
           "view",
-          "help"
+          "help",
+          "text-format"
         ],
-        "visibleContextualTabIds": [],
+        "visibleContextualTabIds": [
+          "text-format"
+        ],
         "backstageOpen": true,
         "backstagePane": "Options",
         "focusedRole": "",
@@ -2193,9 +2211,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 929493,
-      "fullImageSha256": "7d382d141a4e626a2c352ee21cde5f734f63fc96c74e5743dbf7d61908da0efe",
-      "clientImageSha256": "7d382d141a4e626a2c352ee21cde5f734f63fc96c74e5743dbf7d61908da0efe",
+      "nonBackgroundPixelCount": 929484,
+      "fullImageSha256": "8d61e840c918f176ae3100169a37499183a453baeef077d4f41db9da2275b969",
+      "clientImageSha256": "8d61e840c918f176ae3100169a37499183a453baeef077d4f41db9da2275b969",
       "semanticState": {
         "scenarioId": "backstage.account",
         "host": "avalonia",
@@ -2217,9 +2235,12 @@
           "slide-show",
           "review",
           "view",
-          "help"
+          "help",
+          "text-format"
         ],
-        "visibleContextualTabIds": [],
+        "visibleContextualTabIds": [
+          "text-format"
+        ],
         "backstageOpen": true,
         "backstagePane": "Account",
         "focusedRole": "",
@@ -2465,9 +2486,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 880685,
-      "fullImageSha256": "28ee85b04cf1be0f7d2caf1cf18958621f49937a4915031ad4c5e25d92f5da9c",
-      "clientImageSha256": "28ee85b04cf1be0f7d2caf1cf18958621f49937a4915031ad4c5e25d92f5da9c",
+      "nonBackgroundPixelCount": 879040,
+      "fullImageSha256": "981cfd907a96e7348637a2e5fa1a510f88950b583c365e1908c724dce2a469b8",
+      "clientImageSha256": "981cfd907a96e7348637a2e5fa1a510f88950b583c365e1908c724dce2a469b8",
       "semanticState": {
         "scenarioId": "view.gridlines-guides",
         "host": "avalonia",
@@ -2489,9 +2510,12 @@
           "slide-show",
           "review",
           "view",
-          "help"
+          "help",
+          "text-format"
         ],
-        "visibleContextualTabIds": [],
+        "visibleContextualTabIds": [
+          "text-format"
+        ],
         "backstageOpen": false,
         "backstagePane": "",
         "focusedRole": "",
@@ -2607,9 +2631,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 880621,
-      "fullImageSha256": "92f5fdde2e55b85a63986d42347b3909e53df9a640361602954fe713cecbdda2",
-      "clientImageSha256": "92f5fdde2e55b85a63986d42347b3909e53df9a640361602954fe713cecbdda2",
+      "nonBackgroundPixelCount": 878976,
+      "fullImageSha256": "88e69c6eac530fc23ef54b722143f4a21870ac760919406e0c17a706f4beaefd",
+      "clientImageSha256": "88e69c6eac530fc23ef54b722143f4a21870ac760919406e0c17a706f4beaefd",
       "semanticState": {
         "scenarioId": "view.clean-canvas",
         "host": "avalonia",
@@ -2631,9 +2655,12 @@
           "slide-show",
           "review",
           "view",
-          "help"
+          "help",
+          "text-format"
         ],
-        "visibleContextualTabIds": [],
+        "visibleContextualTabIds": [
+          "text-format"
+        ],
         "backstageOpen": false,
         "backstagePane": "",
         "focusedRole": "",
@@ -3580,9 +3607,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 881020,
-      "fullImageSha256": "8bcc9098d4932edb80d8916101f01f77348411b1cd102407f410c43279ae0531",
-      "clientImageSha256": "8bcc9098d4932edb80d8916101f01f77348411b1cd102407f410c43279ae0531",
+      "nonBackgroundPixelCount": 879375,
+      "fullImageSha256": "cc69285e48ab26d81955299841a35f3a1ad6f1dc4336f90996903bb451d5817e",
+      "clientImageSha256": "cc69285e48ab26d81955299841a35f3a1ad6f1dc4336f90996903bb451d5817e",
       "semanticState": {
         "scenarioId": "editor.rich-text-selection",
         "host": "avalonia",
@@ -3604,9 +3631,12 @@
           "slide-show",
           "review",
           "view",
-          "help"
+          "help",
+          "text-format"
         ],
-        "visibleContextualTabIds": [],
+        "visibleContextualTabIds": [
+          "text-format"
+        ],
         "backstageOpen": false,
         "backstagePane": "",
         "focusedRole": "textbox",
@@ -3737,9 +3767,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 881021,
-      "fullImageSha256": "a074cb3a5e10746708704f4845c388ec5e4b7a0bb8fa680308b85cafa85ba89e",
-      "clientImageSha256": "a074cb3a5e10746708704f4845c388ec5e4b7a0bb8fa680308b85cafa85ba89e",
+      "nonBackgroundPixelCount": 879376,
+      "fullImageSha256": "6c9814a0c45f4105061539150b184dad4d9bb4ca6c01f7e6536af62df482b234",
+      "clientImageSha256": "6c9814a0c45f4105061539150b184dad4d9bb4ca6c01f7e6536af62df482b234",
       "semanticState": {
         "scenarioId": "editor.rich-text-caret",
         "host": "avalonia",
@@ -3761,9 +3791,12 @@
           "slide-show",
           "review",
           "view",
-          "help"
+          "help",
+          "text-format"
         ],
-        "visibleContextualTabIds": [],
+        "visibleContextualTabIds": [
+          "text-format"
+        ],
         "backstageOpen": false,
         "backstagePane": "",
         "focusedRole": "textbox",
@@ -3894,9 +3927,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 880447,
-      "fullImageSha256": "b1877c4468c225f12e0cee4d029410c2a5eeacc9d99dbd5a119424ff3bd8dafa",
-      "clientImageSha256": "b1877c4468c225f12e0cee4d029410c2a5eeacc9d99dbd5a119424ff3bd8dafa",
+      "nonBackgroundPixelCount": 878802,
+      "fullImageSha256": "a4f406faeae2749b4105e1bec93215a738706e612e5d802e2acc40d427eb2d18",
+      "clientImageSha256": "a4f406faeae2749b4105e1bec93215a738706e612e5d802e2acc40d427eb2d18",
       "semanticState": {
         "scenarioId": "review.comments-pane",
         "host": "avalonia",
@@ -3918,9 +3951,12 @@
           "slide-show",
           "review",
           "view",
-          "help"
+          "help",
+          "text-format"
         ],
-        "visibleContextualTabIds": [],
+        "visibleContextualTabIds": [
+          "text-format"
+        ],
         "backstageOpen": false,
         "backstagePane": "",
         "focusedRole": "",
@@ -4172,9 +4208,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 886790,
-      "fullImageSha256": "6f035fb3febfbb5e0c23b5251838a895f17a6940b0eb16d40f693d532041317f",
-      "clientImageSha256": "6f035fb3febfbb5e0c23b5251838a895f17a6940b0eb16d40f693d532041317f",
+      "nonBackgroundPixelCount": 885145,
+      "fullImageSha256": "1053d1175cb0e88fa87a5d6c53ba41ae4011cae5c5ebcf892ad56e11dd0f7e43",
+      "clientImageSha256": "1053d1175cb0e88fa87a5d6c53ba41ae4011cae5c5ebcf892ad56e11dd0f7e43",
       "semanticState": {
         "scenarioId": "review.alt-text-pane",
         "host": "avalonia",
@@ -4196,9 +4232,12 @@
           "slide-show",
           "review",
           "view",
-          "help"
+          "help",
+          "text-format"
         ],
-        "visibleContextualTabIds": [],
+        "visibleContextualTabIds": [
+          "text-format"
+        ],
         "backstageOpen": false,
         "backstagePane": "",
         "focusedRole": "",
@@ -4311,9 +4350,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 884628,
-      "fullImageSha256": "c883e5e07286003e32da9dba7750106ac59f7704d5b59c509793a9dc958ab18e",
-      "clientImageSha256": "c883e5e07286003e32da9dba7750106ac59f7704d5b59c509793a9dc958ab18e",
+      "nonBackgroundPixelCount": 882983,
+      "fullImageSha256": "b35a04881dd4c1a53c467fa8704d5f0ac68a821a38a7bbccbbc6fd7aeaa21975",
+      "clientImageSha256": "b35a04881dd4c1a53c467fa8704d5f0ac68a821a38a7bbccbbc6fd7aeaa21975",
       "semanticState": {
         "scenarioId": "review.reading-order-pane",
         "host": "avalonia",
@@ -4335,9 +4374,12 @@
           "slide-show",
           "review",
           "view",
-          "help"
+          "help",
+          "text-format"
         ],
-        "visibleContextualTabIds": [],
+        "visibleContextualTabIds": [
+          "text-format"
+        ],
         "backstageOpen": false,
         "backstagePane": "",
         "focusedRole": "",
@@ -4450,9 +4492,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 886812,
-      "fullImageSha256": "6b1465b08c7f8a0804f4eea80b63b3e7e8811209dea6f1be14d6ededd4942d00",
-      "clientImageSha256": "6b1465b08c7f8a0804f4eea80b63b3e7e8811209dea6f1be14d6ededd4942d00",
+      "nonBackgroundPixelCount": 885167,
+      "fullImageSha256": "406e12f4816e9aa41dbebcd8ce7a0558eed1cb6c0288d68cfc77b8f1db10a13b",
+      "clientImageSha256": "406e12f4816e9aa41dbebcd8ce7a0558eed1cb6c0288d68cfc77b8f1db10a13b",
       "semanticState": {
         "scenarioId": "review.proofing-pane",
         "host": "avalonia",
@@ -4474,9 +4516,12 @@
           "slide-show",
           "review",
           "view",
-          "help"
+          "help",
+          "text-format"
         ],
-        "visibleContextualTabIds": [],
+        "visibleContextualTabIds": [
+          "text-format"
+        ],
         "backstageOpen": false,
         "backstagePane": "",
         "focusedRole": "",
@@ -4728,9 +4773,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 885927,
-      "fullImageSha256": "fd2259c0cc42bd01b5f34481bcdc53f41934ff98ec35f54c0ac8befbd680fc17",
-      "clientImageSha256": "fd2259c0cc42bd01b5f34481bcdc53f41934ff98ec35f54c0ac8befbd680fc17",
+      "nonBackgroundPixelCount": 883761,
+      "fullImageSha256": "43843ab93dd67343d3186957ccb8757c88feb0a10000a1c8d549bfdf010d08a6",
+      "clientImageSha256": "43843ab93dd67343d3186957ccb8757c88feb0a10000a1c8d549bfdf010d08a6",
       "semanticState": {
         "scenarioId": "context.smartart-text-pane",
         "host": "avalonia",
@@ -4752,9 +4797,12 @@
           "slide-show",
           "review",
           "view",
-          "help"
+          "help",
+          "smartart-design"
         ],
-        "visibleContextualTabIds": [],
+        "visibleContextualTabIds": [
+          "smartart-design"
+        ],
         "backstageOpen": false,
         "backstagePane": "",
         "focusedRole": "",
@@ -4867,9 +4915,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 886411,
-      "fullImageSha256": "b3a05354ef40daf622f5789339ca02b5dba78e38a8307de7d79299780abb4fca",
-      "clientImageSha256": "b3a05354ef40daf622f5789339ca02b5dba78e38a8307de7d79299780abb4fca",
+      "nonBackgroundPixelCount": 884766,
+      "fullImageSha256": "d568292f1408e1c95816136c1351e82ff954ba1e128f619fea832e5f37bcd71e",
+      "clientImageSha256": "d568292f1408e1c95816136c1351e82ff954ba1e128f619fea832e5f37bcd71e",
       "semanticState": {
         "scenarioId": "animations.animation-pane",
         "host": "avalonia",
@@ -4891,9 +4939,12 @@
           "slide-show",
           "review",
           "view",
-          "help"
+          "help",
+          "text-format"
         ],
-        "visibleContextualTabIds": [],
+        "visibleContextualTabIds": [
+          "text-format"
+        ],
         "backstageOpen": false,
         "backstagePane": "",
         "focusedRole": "",
