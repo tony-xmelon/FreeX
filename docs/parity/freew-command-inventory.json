@@ -125,15 +125,15 @@
     }
   ],
   "summary": {
-    "totalCommands": 952,
-    "both": 731,
+    "totalCommands": 953,
+    "both": 732,
     "wpfOnly": 2,
     "avaloniaOnly": 219,
     "missingWpf": 219,
     "missingAvalonia": 2,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 731,
+    "sharedProfile": 732,
     "profileShapeOnly": 216,
     "commandIdAliases": 0,
     "platformOnly": 5,
@@ -10153,6 +10153,48 @@
           "group": "Editing",
           "label": "Find",
           "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.focus",
+      "label": "Focus",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "immersive",
+          "group": "Immersive",
+          "label": "Focus",
+          "controlType": "RibbonToggleButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "immersive",
+          "group": "Immersive",
+          "label": "Focus",
+          "controlType": "RibbonToggleButton",
           "layout": "Medium"
         }
       ],
