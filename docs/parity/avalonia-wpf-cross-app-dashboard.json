@@ -612,8 +612,8 @@
         },
         "pairedEvidence": {
           "pairedScenarioCount": 64,
-          "passCount": 28,
-          "mismatchCount": 36,
+          "passCount": 63,
+          "mismatchCount": 1,
           "limitationCount": 0,
           "duplicateCaptureCount": 0,
           "evidenceClassification": "paired WPF/Avalonia app-owned dialog/pane and whole-window render evidence; pass counts are local comparison-gate results, not Microsoft Office parity"
