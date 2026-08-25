@@ -5,7 +5,7 @@
   "targetDpi": 96,
   "logicalClientWidth": 1280,
   "logicalClientHeight": 760,
-  "generatedAtUtc": "2026-08-25T05:19:50.8210279\u002B00:00",
+  "generatedAtUtc": "2026-08-25T07:55:50.8453872\u002B00:00",
   "captures": [
     {
       "scenarioId": "ribbon.view",
@@ -21,9 +21,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 880685,
-      "fullImageSha256": "0cced0c498ce2d1169343b263660ac114c8b3aa5effcfd74a2e1152c03b36877",
-      "clientImageSha256": "0cced0c498ce2d1169343b263660ac114c8b3aa5effcfd74a2e1152c03b36877",
+      "nonBackgroundPixelCount": 880882,
+      "fullImageSha256": "dba1dfac175b9d5c8f347d81d667b98ed67cb7ba64d25820e18519c20495f6ad",
+      "clientImageSha256": "dba1dfac175b9d5c8f347d81d667b98ed67cb7ba64d25820e18519c20495f6ad",
       "semanticState": {
         "scenarioId": "ribbon.view",
         "host": "avalonia",
