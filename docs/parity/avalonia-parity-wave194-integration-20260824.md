@@ -109,8 +109,11 @@ mixed-type geometry contract with mutation coverage and reachable-source
 provenance. FreeP topology schema v3 pins the complete PPTX and describes its
 remaining rendering residual as unresolved. The prior final independent review
 is superseded by the later FreeP Surface3D hardening. The supplied current
-FreeP Surface3D static sign-off is clean, but the independent final cross-app
-acceptance review of the current tested source is **remediation-awaiting-recheck**.
+FreeP Surface3D static sign-off is clean, and the clean independent final
+cross-app acceptance review of the current tested source is **passed**. The
+recheck remediated both P3 acceptance findings: Desktop PowerShell host
+determinism and elapsed-time provenance. This status update does not alter the
+tested-source boundary, counts, timings, or visual claim boundaries.
 
 The current integration branch is anchored to
 `e4f40ebcaadc624421b9c0a985330100f10af8df`. This refresh does not expand the
