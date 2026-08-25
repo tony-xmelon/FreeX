@@ -320,7 +320,7 @@
             "package": "ref=A1:B7|colId=0|filters=42|blank=|hidden=4,5,6,7|A2-type=n|A2=42|A3-type=inlineStr|A3=42|A6-style=1|A6=45292|C1-formula=SUBTOTAL(103,A2:A7)|C1=2",
             "reopenedVisibleReadback": "42,'42,",
             "reopenedSemanticReadback": "Number,NumericText",
-            "reachableProvenanceSourceCommit": "ddacd9c15132fa3d3c6efc997adad8472e539432",
+            "reachableProvenanceSourceCommit": "e4f40ebcaadc624421b9c0a985330100f10af8df",
             "physicalCaptureSourceCommit": "bbcccc8237e862cebddd8fde7c4a270ee17198f8",
             "evidenceUnchangedAfterGeometryRemediation": true,
             "claimBoundary": "Bounded physical Linux/X11 evidence for one mixed-type AutoFilter workflow; it does not establish complete AutoFilter or Excel visual parity."

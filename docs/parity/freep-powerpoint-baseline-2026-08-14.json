@@ -18,5 +18,5 @@
     "sha256MatchesLatestCapture": 53
   },
   "currentSourceRecalibration": "docs/parity/freep-powerpoint-recalibration-2026-08-15.json",
-  "provenance": "The original 43 tracked corpus/pptx-ref PNGs were verified against the 2026-08-14 PowerPoint COM capture. On 2026-08-20, the invalid hand-authored 15-smartart-grouped-list fixture was replaced with a PowerPoint-authored native SmartArt deck, and PowerPoint COM exported its ten 1280x720 reference PNGs. The resulting 53-slide cohort is complete; this fixture repair was performed from source revision 71d317e0d8."
+  "provenance": "The original 43 tracked corpus/pptx-ref PNGs were verified against the 2026-08-14 PowerPoint COM capture. On 2026-08-20, the invalid hand-authored 15-smartart-grouped-list fixture was replaced with a PowerPoint-authored native SmartArt deck, and PowerPoint COM exported its ten 1280x720 reference PNGs. The resulting 53-slide cohort is complete; this fixture repair was performed from source revision 63ee48e370."
 }

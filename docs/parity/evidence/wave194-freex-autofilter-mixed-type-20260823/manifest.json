@@ -3,9 +3,9 @@
   "wave": 194,
   "status": "passed",
   "branch": "codex/parity-wave194-freex-20260823",
-  "sourceCommit": "ddacd9c15132fa3d3c6efc997adad8472e539432",
+  "sourceCommit": "e4f40ebcaadc624421b9c0a985330100f10af8df",
   "sourceBoundary": {
-    "integrationCommit": "d94a20c0002f3e5dc4fbd88c3ad2634b5d0defdb",
+    "integrationCommit": "e4f40ebcaadc624421b9c0a985330100f10af8df",
     "relationship": "ancestor",
     "hashBinding": "canonical-lf worktree and git-show source commit"
   },
@@ -65,7 +65,7 @@
   ],
   "provenanceFiles": [
     { "path": "tools/LinuxInteractiveDocker/run-freex-input-probes.sh", "sha256": "0173bd6d209a0796bb8206c2dc42c1bcfc7b44271a7b8b7ff194a8704a3c16e8" },
-    { "path": "tools/Run-FreeXLinuxInteractionValidation.ps1", "sha256": "d5c394f66a2cd15b7704b415ed16a925d06428c2c54f2506e6e25a1586c00383" },
+    { "path": "tools/Run-FreeXLinuxInteractionValidation.ps1", "sha256": "bc9d181528b018c4904bbd2defdb06e0165b47b101fbb6ae98a0ec7c47ae7f9f" },
     { "path": "tools/LinuxInteractiveDocker/New-FreeXWave194AutoFilterMixedTypeFixture.ps1", "sha256": "71a0a4216f9e1462edb87df91bd52e4d1ad1fe38f690435e3754667593565697" },
     { "path": "src/FreeX.App.Avalonia/MainWindow.AutoFilter.cs", "sha256": "ec55dbcb09b9a5fb050dae31b55d1b9d99f077bf905cbecd29cfdc86bfb4a6d3" },
     { "path": "src/FreeX.App.Presentation/Filtering/AutoFilterChecklistPlanner.cs", "sha256": "8f626d66d61f352823e0fb4c87ba421222fb5be28f2451fc3abbf3e886ae6172" },
