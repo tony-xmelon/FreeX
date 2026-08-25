@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-08-25T06:46:23.9081940\u002B00:00",
+  "generatedAtUtc": "2026-08-25T07:26:12.9558053\u002B00:00",
   "scenarioCount": 36,
   "pairedCaptureCount": 36,
   "passCount": 35,
@@ -10184,12 +10184,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -10259,12 +10263,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -10334,12 +10342,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -10409,12 +10421,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -10484,12 +10500,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -10559,12 +10579,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -10634,12 +10658,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -10709,12 +10737,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -10784,12 +10816,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -10859,12 +10895,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -10934,12 +10974,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -11009,12 +11053,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -11084,12 +11132,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -11159,12 +11211,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -11234,12 +11290,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -11309,12 +11369,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -11384,12 +11448,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -11459,12 +11527,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -11534,12 +11606,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -11609,12 +11685,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -11684,12 +11764,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -11759,12 +11843,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -11834,12 +11922,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -11909,12 +12001,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -11984,12 +12080,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -12059,12 +12159,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -12160,12 +12264,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -12235,12 +12343,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -12310,12 +12422,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -12385,12 +12501,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -12460,12 +12580,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -12535,12 +12659,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -12610,12 +12738,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -12685,12 +12817,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -12760,12 +12896,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     },
@@ -12835,12 +12975,16 @@
         "sampledPixelCount": 43520,
         "accentPixelCount": 94,
         "accentPixelRatio": 0.0021599264705882354,
+        "neutralCaptionPixelCount": 42276,
+        "neutralCaptionPixelRatio": 0.9714154411764706,
         "isValid": true
       },
       "avaloniaTitleBarRasterValidation": {
         "sampledPixelCount": 44800,
         "accentPixelCount": 46,
         "accentPixelRatio": 0.0010267857142857142,
+        "neutralCaptionPixelCount": 42719,
+        "neutralCaptionPixelRatio": 0.9535491071428571,
         "isValid": true
       }
     }

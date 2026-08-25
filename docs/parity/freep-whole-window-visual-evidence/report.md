@@ -1,6 +1,6 @@
 # FreeP Paired Whole-Window Visual Evidence
 
-Generated `2026-08-25T06:46:23.9081940+00:00` from independently activated WPF and Avalonia app processes.
+Generated `2026-08-25T07:26:12.9558053+00:00` from independently activated WPF and Avalonia app processes.
 
 - Scenarios: 36
 - Paired captures: 36
