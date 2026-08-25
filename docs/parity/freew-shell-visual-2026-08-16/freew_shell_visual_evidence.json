@@ -16,8 +16,8 @@
   "sourceSha256": {
     "freew/tools/FreeW.RibbonShot/Program.cs": "a4d98971884526dfe74aeb5ba216a22411e1410f2caa0c2baf2c405ae42c96a5",
     "freew/tools/FreeW.ShellVisualHarness.Avalonia/Program.cs": "34dd75e8b50ac33e2c1a72ac98b6ced0e3925129a816282056a47d1381882807",
-    "freew/FreeW.App.Host/MainWindow.cs": "271b6f4d5d76e42e25a50f231b5b21e7e67b5898e7e0f655b1ae8eb4b5b94abe",
-    "freew/FreeW.App.Avalonia/MainWindow.cs": "6d3d042ce02f59b67fff3ec5700991cd481608351830a2f13414d8ad737a4cf2",
+    "freew/FreeW.App.Host/MainWindow.cs": "e0351f88298e6de647f5f009e0712a3acc53c2b60ae014e8030da224c731fcef",
+    "freew/FreeW.App.Avalonia/MainWindow.cs": "ac75cbb7bc2266c8d5010ac7d3431e6e033a0bcd0cd49921b202ff3b5d322244",
     "freew/FreeW.App.Host/Ribbon/StylesGallery.cs": "0b0a8e95387f1271f7353d69c4602466a89deb7e729aab6a88fe1ef15e13e4a0",
     "freew/FreeW.App.Host/Ribbon/ThemeGallery.cs": "3051c42ff34be027e9fc1cbea519f8806fc876ce9c594a3dbeb3d7ae1e1e7ae8",
     "freew/FreeW.App.Host/Ribbon/TableStylesGallery.cs": "5db6140034814801af124fa33aa4736bb97a0c759909f1542efd70604466fa84",
