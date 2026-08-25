@@ -503,8 +503,8 @@
     {
       "app": "FreeP",
       "commandInventory": {
-        "totalCommands": 710,
-        "bothProfiles": 710,
+        "totalCommands": 713,
+        "bothProfiles": 713,
         "wpfOnly": 0,
         "avaloniaOnly": 0,
         "actionableMissingWpf": 0,
