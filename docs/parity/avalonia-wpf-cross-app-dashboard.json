@@ -566,12 +566,12 @@
               "lane": "whole-window",
               "routeInventoryCount": null,
               "routeInventoryAvailable": false,
-              "renderedScenarioCount": 33,
-              "pairedScenarioCount": 33
+              "renderedScenarioCount": 36,
+              "pairedScenarioCount": 36
             }
           ],
-          "renderedScenarioCount": 61,
-          "pairedScenarioCount": 61,
+          "renderedScenarioCount": 64,
+          "pairedScenarioCount": 64,
           "routeCountBoundary": "Dialog route count is authoritative; whole-window source supplies scenario coverage but no separate route inventory."
         },
         "artifactCoverage": {
@@ -591,29 +591,29 @@
               "lane": "whole-window",
               "routeInventoryCount": null,
               "routeInventoryAvailable": false,
-              "renderedScenarioCount": 33,
-              "pairedCaptureCount": 33,
-              "wpfFullPngCount": 33,
-              "avaloniaFullPngCount": 33,
-              "wpfClientPngCount": 33,
-              "avaloniaClientPngCount": 33,
-              "diffPngCount": 36,
-              "fullPngCount": 66,
-              "clientPngCount": 66,
-              "pngCount": 168,
-              "fileCount": 173
+              "renderedScenarioCount": 36,
+              "pairedCaptureCount": 36,
+              "wpfFullPngCount": 36,
+              "avaloniaFullPngCount": 36,
+              "wpfClientPngCount": 36,
+              "avaloniaClientPngCount": 36,
+              "diffPngCount": 39,
+              "fullPngCount": 72,
+              "clientPngCount": 72,
+              "pngCount": 183,
+              "fileCount": 188
             }
           ],
-          "wpfPngCount": 107,
-          "avaloniaPngCount": 107,
-          "diffPngCount": 77,
-          "pngCount": 291,
-          "fileCount": 301
+          "wpfPngCount": 113,
+          "avaloniaPngCount": 113,
+          "diffPngCount": 80,
+          "pngCount": 306,
+          "fileCount": 316
         },
         "pairedEvidence": {
-          "pairedScenarioCount": 61,
-          "passCount": 61,
-          "mismatchCount": 0,
+          "pairedScenarioCount": 64,
+          "passCount": 28,
+          "mismatchCount": 36,
           "limitationCount": 0,
           "duplicateCaptureCount": 0,
           "evidenceClassification": "paired WPF/Avalonia app-owned dialog/pane and whole-window render evidence; pass counts are local comparison-gate results, not Microsoft Office parity"
