@@ -1,7 +1,7 @@
 # Avalonia/WPF Parity Wave 194 Integration
 
 Date: 2026-08-26
-Tested source commit: `dd17f21fd06bd03aa0b3f151de311affa01adcbe`
+Tested source commit: `f7cbd8cbe3f1ac5fbaf14da1c2cacc1a3fb7bf3f`
 Cumulative app slices: **582** (**194 per app**)
 Unprocessed slices: **0**
 
@@ -117,30 +117,31 @@ that the independent review passed. This status update does not alter the
 tested-source boundary, counts, timings, or visual claim boundaries.
 
 The current integration branch is anchored to
-`dd17f21fd06bd03aa0b3f151de311affa01adcbe`. This refresh does not expand the
+`f7cbd8cbe3f1ac5fbaf14da1c2cacc1a3fb7bf3f`. This refresh does not expand the
 acceptance allowlist or reinterpret visual mismatch rows as functional gaps.
 
 ## Integration gates
 
 All supplied Release, default-lane, focused-test, and repository integration
 gates passed at tested source commit
-`dd17f21fd06bd03aa0b3f151de311affa01adcbe`; independent review remains
+`f7cbd8cbe3f1ac5fbaf14da1c2cacc1a3fb7bf3f`; independent review remains
 pending.
 
 - Repository preflight: passed with exit code 0 using
   `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1`
-  with isolated SDK `C:\Users\anton\.dotnet-codex-10.0.400`; **294 JSON**,
-  **310 XML-backed**, **126 PowerShell scripts**, **11 GitHub workflows**,
-  **12 test gates/48 assigned projects**, **13,994 conflict-marker files**,
-  and all generated docs/evidence current; elapsed **00:03:23.3371196**.
+  with isolated SDK `C:\Users\anton\.dotnet-codex-10.0.400` and Git Bash first
+  on `PATH`; **294 JSON**, **310 XML-backed**, **127 PowerShell scripts**,
+  **11 GitHub workflows**, **12 test gates/48 assigned projects**,
+  **13,996 conflict-marker files**, and all generated docs/evidence current;
+  elapsed **00:01:55.8304515**.
 - Full Release build: `dotnet build FreeX.slnx --configuration Release -m:1`
   passed with **0 warnings and 0 errors**; MSBuild-retained `Time Elapsed
-  00:13:46.21`; wrapper stopwatch **00:13:46.4785808**.
+  00:09:49.19`; wrapper stopwatch **00:09:49.4386774**.
 - Final default non-UI lane: **31 unique TRXs** and matching console
   aggregation, with **43,548 passed**, **134 intentional skips**, **0 failed**,
-  **43,682 total**; wrapper stopwatch **00:17:37.4967641**; independently
-  parsed 31-TRX timestamp span **12:41:31.975 to 12:59:08.603 (+03:00)**;
-  duration **00:17:36.628**.
+  **43,682 total**; wrapper stopwatch **00:16:54.2974514**; independently
+  parsed 31-TRX timestamp span **14:03:31.8502271 to 14:20:25.1692656
+  (+03:00)**; duration **00:16:53.3190385**.
 - Independent review: **pending** until a later independent final cross-app
   acceptance review; no passed-review claim is made by this refresh.
 - Focused current FreeP evidence: ChartRenderPlanner **264/264**, FreeP
@@ -162,7 +163,7 @@ open as described above. No 100% visual parity claim is made.
 ## Acceptance boundary
 
 The git-aware acceptance boundary is re-anchored to the tested source commit
-`dd17f21fd06bd03aa0b3f151de311affa01adcbe`. Only the Wave194 report, generated
+`f7cbd8cbe3f1ac5fbaf14da1c2cacc1a3fb7bf3f`. Only the Wave194 report, generated
 dashboard artifacts, dashboard generator, dashboard behavior guard, and the
 existing dashboard guard test are allowlisted for this refresh. Product code,
 app tests, physical evidence, and other source drift remain rejected.
