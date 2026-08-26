@@ -109,11 +109,13 @@ mixed-type geometry contract with mutation coverage and reachable-source
 provenance. FreeP topology schema v3 pins the complete PPTX and describes its
 remaining rendering residual as unresolved. The prior final independent review
 is superseded by the later FreeP Surface3D hardening. The supplied current
-FreeP Surface3D static sign-off is clean, and an independent final cross-app
-acceptance review of the current tested source remains **pending** until later.
+FreeP Surface3D static sign-off is clean, and this independent final cross-app
+acceptance review of the current tested source completed in an isolated
+worktree at integration head `2ee42a45efd651ad9ad1c015403d788570ae02d9` with
+no findings.
 The retained review remediation history includes the Desktop PowerShell host
 determinism and elapsed-time provenance findings; this refresh does not claim
-that the independent review passed. This status update does not alter the
+that the documentation refresh rebuilt the tested source. This status update does not alter the
 tested-source boundary, counts, timings, or visual claim boundaries.
 
 The current integration branch is anchored to
@@ -124,8 +126,8 @@ acceptance allowlist or reinterpret visual mismatch rows as functional gaps.
 
 All supplied Release, default-lane, focused-test, and repository integration
 gates passed at tested source commit
-`f7cbd8cbe3f1ac5fbaf14da1c2cacc1a3fb7bf3f`; independent review remains
-pending.
+`f7cbd8cbe3f1ac5fbaf14da1c2cacc1a3fb7bf3f`; independent review passed with no
+findings at integration head `2ee42a45efd651ad9ad1c015403d788570ae02d9`.
 
 - Repository preflight: passed with exit code 0 using
   `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1`
@@ -142,8 +144,9 @@ pending.
   **43,682 total**; wrapper stopwatch **00:16:54.2974514**; independently
   parsed 31-TRX timestamp span **14:03:31.8502271 to 14:20:25.1692656
   (+03:00)**; duration **00:16:53.3190385**.
-- Independent review: **pending** until a later independent final cross-app
-  acceptance review; no passed-review claim is made by this refresh.
+- Independent review: **passed with no findings** at integration head
+  `2ee42a45efd651ad9ad1c015403d788570ae02d9`; all source/test evidence remains
+  anchored to tested source commit `f7cbd8cbe3f1ac5fbaf14da1c2cacc1a3fb7bf3f`.
 - Focused current FreeP evidence: ChartRenderPlanner **264/264**, FreeP
   Presentation **5,496/5,496**, host **2,418/2,418**, Avalonia **724/724**,
   ribbon definitions **34/34**, responsive evidence **64/64**, localization
