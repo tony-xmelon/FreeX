@@ -1,7 +1,7 @@
 # Avalonia/WPF Parity Wave 194 Integration
 
-Date: 2026-08-25
-Tested source commit: `e4f40ebcaadc624421b9c0a985330100f10af8df`
+Date: 2026-08-26
+Tested source commit: `dd17f21fd06bd03aa0b3f151de311affa01adcbe`
 Cumulative app slices: **582** (**194 per app**)
 Unprocessed slices: **0**
 
@@ -109,40 +109,48 @@ mixed-type geometry contract with mutation coverage and reachable-source
 provenance. FreeP topology schema v3 pins the complete PPTX and describes its
 remaining rendering residual as unresolved. The prior final independent review
 is superseded by the later FreeP Surface3D hardening. The supplied current
-FreeP Surface3D static sign-off is clean, and the clean independent final
-cross-app acceptance review of the current tested source is **passed**. The
-recheck remediated both P3 acceptance findings: Desktop PowerShell host
-determinism and elapsed-time provenance. This status update does not alter the
+FreeP Surface3D static sign-off is clean, and an independent final cross-app
+acceptance review of the current tested source remains **pending** until later.
+The retained review remediation history includes the Desktop PowerShell host
+determinism and elapsed-time provenance findings; this refresh does not claim
+that the independent review passed. This status update does not alter the
 tested-source boundary, counts, timings, or visual claim boundaries.
 
 The current integration branch is anchored to
-`e4f40ebcaadc624421b9c0a985330100f10af8df`. This refresh does not expand the
+`dd17f21fd06bd03aa0b3f151de311affa01adcbe`. This refresh does not expand the
 acceptance allowlist or reinterpret visual mismatch rows as functional gaps.
 
 ## Integration gates
 
-All supplied final integration gates passed at tested source commit
-`e4f40ebcaadc624421b9c0a985330100f10af8df`.
+All supplied Release, default-lane, focused-test, and repository integration
+gates passed at tested source commit
+`dd17f21fd06bd03aa0b3f151de311affa01adcbe`; independent review remains
+pending.
 
 - Repository preflight: passed with exit code 0 using
-  `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1`;
-  **294 JSON**, **309 XML-backed**, **125 PowerShell scripts**, **11 GitHub
-  workflows**, **10 test gates/48 assigned projects**, **13,951 conflict-marker
-  files**, and all generated docs/evidence current; elapsed **00:03:10.419**.
+  `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1`
+  with isolated SDK `C:\Users\anton\.dotnet-codex-10.0.400`; **294 JSON**,
+  **310 XML-backed**, **126 PowerShell scripts**, **11 GitHub workflows**,
+  **12 test gates/48 assigned projects**, **13,994 conflict-marker files**,
+  and all generated docs/evidence current; elapsed **00:03:23.3371196**.
 - Full Release build: `dotnet build FreeX.slnx --configuration Release -m:1`
   passed with **0 warnings and 0 errors**; MSBuild-retained `Time Elapsed
-  00:08:44.31`; wrapper stopwatch **00:08:44.581**.
+  00:13:46.21`; wrapper stopwatch **00:13:46.4785808**.
 - Final default non-UI lane: **31 unique TRXs** and matching console
-  aggregation, with **43,505 passed**, **134 intentional skips**, **0 failed**,
-  **43,639 total**; wrapper stopwatch **00:17:18.449**; independently parsed
-  31-TRX timestamp span **00:17:17.5738434**.
+  aggregation, with **43,548 passed**, **134 intentional skips**, **0 failed**,
+  **43,682 total**; wrapper stopwatch **00:17:37.4967641**; independently
+  parsed 31-TRX timestamp span **12:41:31.975 to 12:59:08.603 (+03:00)**;
+  duration **00:17:36.628**.
+- Independent review: **pending** until a later independent final cross-app
+  acceptance review; no passed-review claim is made by this refresh.
 - Focused current FreeP evidence: ChartRenderPlanner **264/264**, FreeP
   Presentation **5,496/5,496**, host **2,418/2,418**, Avalonia **724/724**,
   ribbon definitions **34/34**, responsive evidence **64/64**, localization
   focused **1/1**, resources **14/14**, and Hide Slide assertions **2/2**.
 
-This documentation refresh records the supplied gate results and does not rerun
-the full build or default lane.
+This documentation refresh records the supplied Release/default-lane results
+and the current authoritative preflight rerun; it does not rerun the full build
+or default lane.
 
 Wave194 is accepted at 582 cumulative app slices, with zero unprocessed slices;
 this is the processed Wave194 accounting and later feature commits included in
@@ -154,7 +162,7 @@ open as described above. No 100% visual parity claim is made.
 ## Acceptance boundary
 
 The git-aware acceptance boundary is re-anchored to the tested source commit
-`e4f40ebcaadc624421b9c0a985330100f10af8df`. Only the Wave194 report, generated
+`dd17f21fd06bd03aa0b3f151de311affa01adcbe`. Only the Wave194 report, generated
 dashboard artifacts, dashboard generator, dashboard behavior guard, and the
 existing dashboard guard test are allowlisted for this refresh. Product code,
 app tests, physical evidence, and other source drift remain rejected.
