@@ -1,8 +1,8 @@
 {
   "schema": "freex.parity.functional.v1",
   "summary": {
-    "totalCommands": 575,
-    "parity": 569,
+    "totalCommands": 573,
+    "parity": 567,
     "avaloniaMissing": 0,
     "wpfMissing": 6,
     "bothMissing": 0,
@@ -294,8 +294,6 @@
     { "id": "Page Break Preview", "tab": "View", "group": "Workbook Views", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Page Layout", "tab": "View", "group": "Workbook Views", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Page Orientation", "tab": "Page Layout", "group": "Page Setup", "wpf": true, "avalonia": true, "status": "PARITY" },
-    { "id": "Page Setup", "tab": "Page Layout", "group": "Page Setup", "wpf": true, "avalonia": true, "status": "PARITY" },
-    { "id": "Page Setup dialog", "tab": "Page Layout", "group": "Page Setup", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Paper Size", "tab": "Page Layout", "group": "Page Setup", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Paste", "tab": "Home", "group": "Clipboard", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Paste Formatting", "tab": "Home", "group": "Clipboard", "wpf": true, "avalonia": true, "status": "PARITY" },

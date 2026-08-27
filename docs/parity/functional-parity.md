@@ -10,8 +10,8 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 
 | Metric | Count |
 |---|---:|
-| Total commands | 575 |
-| PARITY (both) | 569 |
+| Total commands | 573 |
+| PARITY (both) | 567 |
 | AVALONIA-MISSING | 0 |
 | WPF-MISSING | 6 |
 | BOTH-MISSING | 0 |
@@ -463,8 +463,6 @@ See `functional-parity-classification.md` for the prioritized implementation lis
 | Breaks | Page Setup | Page Layout | yes | yes | PARITY |
 | Margins | Page Setup | Page Layout | yes | yes | PARITY |
 | Page Orientation | Page Setup | Page Layout | yes | yes | PARITY |
-| Page Setup | Page Setup | Page Layout | yes | yes | PARITY |
-| Page Setup dialog | Page Setup | Page Layout | yes | yes | PARITY |
 | Paper Size | Page Setup | Page Layout | yes | yes | PARITY |
 | Print Area | Page Setup | Page Layout | yes | yes | PARITY |
 | Print Titles | Page Setup | Page Layout | yes | yes | PARITY |
