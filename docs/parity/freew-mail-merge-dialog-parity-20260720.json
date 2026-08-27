@@ -22,7 +22,7 @@
   "sourceSha256": {
     "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs": "ed4f780d35e3adc82ffe5332925321cf21f9800a3477e99867cb5a05dae08e73",
     "freew/FreeW.App.Avalonia/MailMergeDialogs.cs": "f3c1feff2df8542f83d8ac06f085d15c35cf48fab64eac629bc87e294f2ca0f9",
-    "freew/FreeW.App.Avalonia/MainWindow.cs": "9ede26c48af741ce5aa16975832fb0ce519e4ad9e5c86584e077d2d8b94802fc",
+    "freew/FreeW.App.Avalonia/MainWindow.cs": "7835af2e017c02ef0049a5167085521898fa38facb7f952a19c89686da3ad5a5",
     "freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs": "0afe87cd1801254e9c08ea7c8c2f6be986a8828d94a25560a18bc2bb1db4538f",
     "freew/FreeW.Ribbon.Definitions/FreeWRibbon.cs": "b677dc00c1f57487b84bbfa8f62bb2936c3d880094bb8df15df4adf1559266e9",
     "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.cs": "fba1e7733a5be2e7257a2f408d5a0e77f38e473b5086da92828996b383b3b27d",
