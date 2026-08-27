@@ -1,6 +1,6 @@
-﻿# FreeW Media Dialog Parity Inventory
+# FreeW Media Dialog Parity Inventory
 
-Generated: 2026-08-27T15:10:53.6810209Z
+Generated: 2026-08-27T15:45:04.1293466Z
 
 Routes: 14 | Shell-wired: 14 | Shell follow-ups: 0
 
