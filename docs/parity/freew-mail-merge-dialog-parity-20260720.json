@@ -20,10 +20,10 @@
     "freew/FreeW.App.Avalonia.Tests/MailMergeDialogSurfaceTests.cs"
   ],
   "sourceSha256": {
-    "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs": "ed4f780d35e3adc82ffe5332925321cf21f9800a3477e99867cb5a05dae08e73",
+    "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs": "45e103b0e0a46207a17332ecdae691b42e91c5a77f90e9ffd69e0c008ff8f053",
     "freew/FreeW.App.Avalonia/MailMergeDialogs.cs": "f3c1feff2df8542f83d8ac06f085d15c35cf48fab64eac629bc87e294f2ca0f9",
-    "freew/FreeW.App.Avalonia/MainWindow.cs": "7835af2e017c02ef0049a5167085521898fa38facb7f952a19c89686da3ad5a5",
-    "freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs": "0afe87cd1801254e9c08ea7c8c2f6be986a8828d94a25560a18bc2bb1db4538f",
+    "freew/FreeW.App.Avalonia/MainWindow.cs": "4b978aa14201e7732014340e3c4f8271df3a4c19d411a5dba00fd12588a67e5a",
+    "freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs": "ddf547d667aa11285b34a11d1137c9c86908192c2ad186b25940d6178cfe1c2d",
     "freew/FreeW.Ribbon.Definitions/FreeWRibbon.cs": "b677dc00c1f57487b84bbfa8f62bb2936c3d880094bb8df15df4adf1559266e9",
     "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.cs": "fba1e7733a5be2e7257a2f408d5a0e77f38e473b5086da92828996b383b3b27d",
     "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.Ordinary.cs": "e68b3af17a13208bde91ad1b345689d68797c1d1e6ad28fbc55d2b1dd4e2ca0c",
