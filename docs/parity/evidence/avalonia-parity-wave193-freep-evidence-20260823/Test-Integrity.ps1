@@ -1,12 +1,12 @@
 $ErrorActionPreference = "Stop"
 
 $evidenceRoot = $PSScriptRoot
-$repoRoot = (Resolve-Path (Join-Path $evidenceRoot "..\..\..\..")).Path
+$repoRoot = (Resolve-Path (Join-Path $evidenceRoot "../../../..")).Path
 $metrics = Get-Content -LiteralPath (Join-Path $evidenceRoot "metrics.json") -Raw | ConvertFrom-Json
 $probes = Get-Content -LiteralPath (Join-Path $evidenceRoot "probes.json") -Raw | ConvertFrom-Json
 $images = Get-Content -LiteralPath (Join-Path $evidenceRoot "images.json") -Raw | ConvertFrom-Json
 $references = Get-Content -LiteralPath (Join-Path $evidenceRoot "references.json") -Raw | ConvertFrom-Json
-$wave192 = Get-Content -LiteralPath (Join-Path $repoRoot "docs\parity\evidence\avalonia-parity-wave192-freep-evidence-20260823\metrics.json") -Raw | ConvertFrom-Json
+$wave192 = Get-Content -LiteralPath (Join-Path $repoRoot "docs/parity/evidence/avalonia-parity-wave192-freep-evidence-20260823/metrics.json") -Raw | ConvertFrom-Json
 
 function Fail([string]$message) {
     throw "FreeP Wave193 evidence integrity failed: $message"
@@ -151,7 +151,7 @@ foreach ($image in $imageProperties) {
 }
 
 $officeCopyHash = (Get-FileHash -LiteralPath (Join-Path $evidenceRoot "office-slide-02.png") -Algorithm SHA256).Hash.ToLowerInvariant()
-$officeAuthorityHash = (Get-FileHash -LiteralPath (Join-Path $repoRoot "tools\FreeP.RenderCompare\corpus\pptx-ref\17-bullets-autofit\slide-02.png") -Algorithm SHA256).Hash.ToLowerInvariant()
+$officeAuthorityHash = (Get-FileHash -LiteralPath (Join-Path $repoRoot "tools/FreeP.RenderCompare/corpus/pptx-ref/17-bullets-autofit/slide-02.png") -Algorithm SHA256).Hash.ToLowerInvariant()
 Assert-Equal $officeCopyHash $officeAuthorityHash "retained target Office authority copy"
 
 Write-Output "FreeP Wave193 evidence integrity passed."

@@ -1,7 +1,7 @@
-﻿# FreeW Design Dialog Parity Evidence
+# FreeW Design Dialog Parity Evidence
 
-Generated at UTC: 2026-07-20T07:03:05.4046465Z
-Source commit: `b6babad309e68003fd71a6dc2fd148cf109be677`
+Generated at UTC: 2026-08-27T00:09:37.8350567Z
+Source commit: `d88b40b34b9de21388cd06dd12f558492396c299`
 Schema: `freew.design-dialog-parity.v1`
 
 Routes: 11 total; 10 complete; 0 remaining in the owned dialog/planner scope; 0 shell gaps recorded.
@@ -26,25 +26,28 @@ Generate-FreeWDesignDialogParityEvidence.ps1 -Check recomputes SHA-256 for every
 
 | Source | SHA-256 |
 |---|---|
-| freew/FreeW.App.Avalonia.Tests/DesignDialogParityTests.cs | c325696ca4d51abe9a27a01a8405d7aa251097ce0b31cefc4598294b332b1217 |
-| freew/FreeW.App.Avalonia.Tests/DesignTabTests.cs | 48074f93f0151ce08d4f08c85375d8dfee652f8ac36f381d9718a19f1271b4ac |
-| freew/FreeW.App.Avalonia.Tests/PageLayoutDialogParityTests.cs | 426bc4d44f345352868efa6aefe6686e95a7b310a7e98158e4c1aaca5690213d |
-| freew/FreeW.App.Avalonia.Tests/WatermarkDialogTests.cs | 832492d3075f13214c561fd33e998feef2d154197482d3db146124d17bc4e449 |
-| freew/FreeW.App.Avalonia/DesignDialogParity.cs | 4a8beb39af5aa1e811805d1c05fc1e527fa0c9192ad97bb10bc48be130f98adc |
-| freew/FreeW.App.Avalonia/DesignDialogs.cs | da52f17927afff1138cced9ca93414cca23c5ed29829ddeab47a07e25a570ada |
-| freew/FreeW.App.Avalonia/MainWindow.cs | fff207e3a56c7de6c2149d3cb97982e7f524ee04b2807ecf11175cca39854ee4 |
-| freew/FreeW.App.Avalonia/PageLayoutDialogs.cs | 5521a16a1eae56c6f02d8f779a29c6f5eaac166d98e1d7898fdd108501f7e900 |
-| freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs | 77d97789c9f76ffdaf9804be7c7bafa63f8c687647dcca80496da3f280069992 |
-| freew/FreeW.App.Host.Tests/DesignDialogParitySourceTests.cs | 5d4947ddfad1c13e669655ecc73871f405f678c8683d5070adf8d7287abd613c |
-| freew/FreeW.App.Host.Tests/DocumentEffectRenderingTests.cs | c2a5787dec308aa987236facc571ccd24f5149d209632e84ca63569e643c2ecf |
-| freew/FreeW.App.Host/BordersAndShadingDialog.cs | 521607d92464e2d784a643be5f6cccd5f761be932fca2b7fe5cc892e6665cc9c |
-| freew/FreeW.App.Host/CustomizeThemeColorsDialog.cs | 24f91b2d001f9afd8f154c776ab8ed1f341ef5a91f0e8a274a4d28d2f2de8bcf |
-| freew/FreeW.App.Host/CustomizeThemeFontsDialog.cs | d4383b13c069f2b11f8d32a15b65d951b4f0f96e39980ea2df96d6f6c0053964 |
-| freew/FreeW.App.Host/CustomParagraphSpacingDialog.cs | 20afb847c38092f3fedd03a2a4f7d530d6311b962729790dcd74edc50647297f |
-| freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs | 61dab3c16e5e5637bb5d69d0116144f3969f076691ee0664e723bbc0d6e05fc3 |
-| freew/FreeW.App.Host/Ribbon/ThemeGallery.cs | c190ac2a56ad4f373319f27b4140e4be309d901032fcc7e6cf5fe026b96815e9 |
-| freew/FreeW.App.Host/WatermarkOptionsDialog.cs | 03f4a60b77482836ef7b99933f86ab57c0cbca4b42192358754e14519a509611 |
-| freew/FreeW.App.Presentation.Tests/BordersAndShadingDialogPlannerTests.cs | 67b81c58af54ee31e5b34eef1039dfb3c9c153daf6ae8f88f8e0ff2c952536c3 |
-| freew/FreeW.App.Presentation.Tests/DesignDialogPlannerTests.cs | 92f89291c7e28f3199bd0e2763d15fc9efd974c34a5d10ed4f4ede30def4ad46 |
-| freew/FreeW.App.Presentation/Dialogs/BordersAndShadingDialogPlanner.cs | 7ce9b8fbda22ac3bee1aaf1cc1ccbc0203af355094ccbfc4e5f7bc1d52792350 |
-| freew/FreeW.Ribbon.Definitions/FreeWAvaloniaRibbonDefinition.cs | 7db9c365f6c2ed0ed8939e8c2456d9238e4c270ca538cd39299cc4e928aee375 |
+| freew/FreeW.App.Avalonia.Tests/DesignDialogParityTests.cs | c74fce34135f318f7a44fe12bfa307e2cbfb6af23bd97bbca94b129454faecfc |
+| freew/FreeW.App.Avalonia.Tests/DesignTabTests.cs | d5c4a95749131447b08b113aaccdae4e3802464b84cceb6a3de0c4e3b55296b8 |
+| freew/FreeW.App.Avalonia.Tests/PageLayoutDialogParityTests.cs | 32b7a4cf6b80137ceb9acb870e5c2a4438134682c343169f29bc98590589b076 |
+| freew/FreeW.App.Avalonia.Tests/WatermarkDialogTests.cs | 494e761ced2486f5c1d4b8bb21431681a0ddd07c57eb27d48283b7ee68818009 |
+| freew/FreeW.App.Avalonia/DesignDialogParity.cs | 04f4dee8b5df042b7d2c12b51cf74d6ea6076e74f51f74e7df3c47bcb972df2a |
+| freew/FreeW.App.Avalonia/DesignDialogs.cs | 4c5c900eae09074731a717318726d6598bf8be818bfc73e224067de980515c83 |
+| freew/FreeW.App.Avalonia/MainWindow.cs | 8c33b14cd4a8020013e8daf98c3e55739ff9a7abff4980a797e8841bc84e29fd |
+| freew/FreeW.App.Avalonia/PageLayoutDialogs.cs | 80582ee46bb94bf7e4fd970203ad14cb5e1d0343b35b1e0c09108096e7da8acb |
+| freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs | d7846f6812fe1a88fe7c48d7d05e7857b0c08ff906775190b736284090ab38a1 |
+| freew/FreeW.App.Host.Tests/DesignDialogParitySourceTests.cs | 002b0f0a69d7dd5abf3a1edad00d4255e4579b5d41ae679864720628cf98431a |
+| freew/FreeW.App.Host.Tests/DocumentEffectRenderingTests.cs | d43e591b224ac58e590792fd8ff68f976997d1e62fb0fe8c381f9cfe75b5613e |
+| freew/FreeW.App.Host/BordersAndShadingDialog.cs | c345e1b36924ee1bdddd3c7d748411caf0a7eab98b471208cd24f0c2e3c19cff |
+| freew/FreeW.App.Host/CustomizeThemeColorsDialog.cs | a5968fa0e585053c665420a1e16aa0942282629e1a44dd104dcfb267fe9155a2 |
+| freew/FreeW.App.Host/CustomizeThemeFontsDialog.cs | dddf9f1295f6b1f6225b8aa063aa3b3cd6ee90f61d324568b586e98f42f8d778 |
+| freew/FreeW.App.Host/CustomParagraphSpacingDialog.cs | 2a7e1abeb8738e90961754d0a72db0c129358c762eb6e69bf9c61065b8cf73ae |
+| freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs | 0b0e6dfc972dca9d46bca30ad10f18c64c9511e302cb82b79d76d17ef5cf11d3 |
+| freew/FreeW.App.Host/Ribbon/ThemeGallery.cs | 43d2b07282998111971e081ad7c31273d636bb2be774a9ed66c256b2714d7c22 |
+| freew/FreeW.App.Host/WatermarkOptionsDialog.cs | a14e6f98364a50e52762a0e12aa28ff68e4454bc5913f353eaf389b4c058e004 |
+| freew/FreeW.App.Presentation.Tests/BordersAndShadingDialogPlannerTests.cs | ef4cc2c81520f1e7ab06f5369017f57714835078281ba988af221da1f9b6a796 |
+| freew/FreeW.App.Presentation.Tests/DesignDialogPlannerTests.cs | d01e3eb66a24c0cbd4b3bf8af11a9b31c376e0d5a3f2c04f71368ed3e4c5699b |
+| freew/FreeW.App.Presentation/Dialogs/BordersAndShadingDialogPlanner.cs | af6b6b84159973751c66a445d2fc903123eb201ab1628f9386e48f479eec0e98 |
+| freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.Contextual.cs | a67b7ee5a6820f507ec4e76f36e8d5bc7e9eb85323110e5418f6c3ac94e9b0f8 |
+| freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.cs | 3ce9d4278c3114abc79b658843a66c019691b5e15822530f7df7de8c043ce742 |
+| freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.Ordinary.cs | 55e79d8d169e592a678f1a40c9fb8d91570a8d77f410db3129969394a3de7ca0 |
+| freew/FreeW.Ribbon.Definitions/FreeWRibbon.cs | b39b8a1042e544e24ee051be18733a85f2572b1a15b5fe4be79e467a0f3011db |

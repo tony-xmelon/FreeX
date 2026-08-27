@@ -1,7 +1,7 @@
 $ErrorActionPreference = "Stop"
 
 $evidenceRoot = $PSScriptRoot
-$repoRoot = (Resolve-Path (Join-Path $evidenceRoot "..\..\..\..")).Path
+$repoRoot = (Resolve-Path (Join-Path $evidenceRoot "../../../..")).Path
 $metrics = Get-Content -LiteralPath (Join-Path $evidenceRoot "metrics.json") -Raw | ConvertFrom-Json
 $references = Get-Content -LiteralPath (Join-Path $evidenceRoot "references.json") -Raw | ConvertFrom-Json
 
@@ -262,7 +262,7 @@ foreach ($reference in $referenceRows) {
         Fail "references[$key].path '$path' does not map to its deck/slide key '$expectedPath'."
     }
     $relativePath = "$referenceRoot/$path"
-    $absolutePath = Join-Path $repoRoot ($relativePath -replace "/", "\")
+    $absolutePath = Join-Path $repoRoot $relativePath
     if (-not (Test-Path -LiteralPath $absolutePath -PathType Leaf)) {
         Fail "committed PowerPoint reference is missing: '$relativePath'."
     }

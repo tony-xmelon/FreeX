@@ -18,7 +18,7 @@
       "expectedOpenedState": "Excel Home > Conditional Formatting opened popup/gallery",
       "runnerCommand": ".\\tools\\Invoke-ForegroundCapture.ps1 -Scenario excel-conditional-formatting-gallery",
       "requiredEnvironment": "Windows desktop session with Microsoft Excel COM registered and foreground focus allowed.",
-      "manifestPath": "tools\\foreground-captures\\excel-conditional-formatting-gallery\\excel-conditional-formatting-gallery_manifest.json",
+      "manifestPath": "tools/foreground-captures/excel-conditional-formatting-gallery/excel-conditional-formatting-gallery_manifest.json",
       "captureStatus": "blocked",
       "screenshotPath": "",
       "screenshotExists": false,
@@ -44,7 +44,7 @@
       "expectedOpenedState": "FreeX WPF Home > Conditional Formatting opened popup/gallery",
       "runnerCommand": ".\\tools\\Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe <Release FreeX.App.Host.exe>",
       "requiredEnvironment": "Windows desktop session with built Release WPF host and foreground focus allowed.",
-      "manifestPath": "tools\\foreground-captures\\freex-conditional-formatting-gallery\\freex-conditional-formatting-gallery_manifest.json",
+      "manifestPath": "tools/foreground-captures/freex-conditional-formatting-gallery/freex-conditional-formatting-gallery_manifest.json",
       "captureStatus": "blocked",
       "screenshotPath": "",
       "screenshotExists": false,
@@ -70,7 +70,7 @@
       "expectedOpenedState": "FreeX Avalonia Home > Conditional Formatting opened popup/gallery",
       "runnerCommand": ".\\tools\\Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe <Release FreeX.exe>",
       "requiredEnvironment": "Windows desktop session with built Release Avalonia app and foreground focus allowed.",
-      "manifestPath": "tools\\foreground-captures\\avalonia-conditional-formatting-gallery\\avalonia-conditional-formatting-gallery_manifest.json",
+      "manifestPath": "tools/foreground-captures/avalonia-conditional-formatting-gallery/avalonia-conditional-formatting-gallery_manifest.json",
       "captureStatus": "blocked",
       "screenshotPath": "",
       "screenshotExists": false,
@@ -87,7 +87,7 @@
       "environmentSnapshotStatus": "captured",
       "environmentSummary": "windows=True; interactive=True; session=1; arch=X64",
       "fallbackEvidence": [
-        "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ConditionalFormatNewRule.png"
+        "docs/parity/dialog-visual-assets/avalonia-capture/dialog.ConditionalFormatNewRule.png"
       ],
       "fallbackEvidenceNote": "Existing Avalonia dialog route evidence is retained for dialog parity, but it is not opened popup/gallery evidence."
     }

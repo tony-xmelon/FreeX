@@ -6,7 +6,7 @@
 #>
 $ErrorActionPreference = 'Stop'
 $src  = $PSScriptRoot
-$dest = Join-Path $env:USERPROFILE '.claude\skills\transfer-session'
+$dest = Join-Path $env:USERPROFILE '.claude/skills/transfer-session'
 New-Item -ItemType Directory -Force -Path $dest | Out-Null
 foreach ($f in 'SKILL.md','transfer-session.ps1') {
   $p = Join-Path $src $f

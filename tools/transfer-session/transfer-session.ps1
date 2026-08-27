@@ -29,6 +29,7 @@ param(
   [string]$BundleZip
 )
 $ErrorActionPreference = 'Stop'
+. (Join-Path $PSScriptRoot '../ToolScriptSupport.ps1')
 function Info($m){ Write-Host "[transfer-session] $m" }
 function Die($m){ Write-Error "[transfer-session] $m"; exit 1 }
 
@@ -36,8 +37,10 @@ function Die($m){ Write-Error "[transfer-session] $m"; exit 1 }
 function Get-Rclone {
   $c = Get-Command rclone -ErrorAction SilentlyContinue
   if ($c) { return $c.Source }
-  $cands = @("$env:LOCALAPPDATA\Microsoft\WinGet\Links\rclone.exe") +
-    (Get-ChildItem "$env:LOCALAPPDATA\Microsoft\WinGet\Packages\Rclone.Rclone*\*\rclone.exe" -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName)
+  $cands = if ((Test-ToolIsWindows) -and -not [string]::IsNullOrWhiteSpace($env:LOCALAPPDATA)) {
+    @((Join-Path $env:LOCALAPPDATA 'Microsoft/WinGet/Links/rclone.exe')) +
+      @(Get-ChildItem (Join-Path $env:LOCALAPPDATA 'Microsoft/WinGet/Packages/Rclone.Rclone*/*/rclone.exe') -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName)
+  } else { @() }
   foreach ($p in $cands) { if ($p -and (Test-Path $p)) { return $p } }
   return $null
 }
@@ -71,7 +74,7 @@ function Test-Prereqs([string]$remote){
   return $true
 }
 
-$ProjectsBase = Join-Path $env:USERPROFILE '.claude\projects'
+$ProjectsBase = Join-Path $env:USERPROFILE '.claude/projects'
 $SkillDir     = $PSScriptRoot                      # this skill's own folder (for self-propagation)
 
 # Encode an absolute path the way Claude Code names its project dir: ':' '\' '/' -> '-'.
@@ -113,21 +116,25 @@ if ($Mode -eq 'push') {
   if (-not $projDir) { Die "Could not find $SessionId.jsonl under $ProjectsBase." }
   $repoAbs = (Resolve-Path $RepoRoot).Path
 
-  $stage = Join-Path $env:TEMP "transfer-session-$SessionId"
+  $stage = Join-Path ([IO.Path]::GetTempPath()) "transfer-session-$SessionId"
   if (Test-Path $stage){ Remove-Item $stage -Recurse -Force }
-  New-Item -ItemType Directory -Force -Path "$stage\session","$stage\memory","$stage\assets","$stage\skill" | Out-Null
+  $stageSession = Join-Path $stage 'session'
+  $stageMemory = Join-Path $stage 'memory'
+  $stageAssets = Join-Path $stage 'assets'
+  $stageSkill = Join-Path $stage 'skill'
+  New-Item -ItemType Directory -Force -Path $stageSession, $stageMemory, $stageAssets, $stageSkill | Out-Null
 
   Info "session  : $SessionId"
   Info "projDir  : $projDir"
-  Copy-Item (Join-Path $projDir "$SessionId.jsonl") "$stage\session\" -Force
-  if (Test-Path (Join-Path $projDir $SessionId)) { Copy-Item (Join-Path $projDir $SessionId) "$stage\session\$SessionId" -Recurse -Force }
-  if (Test-Path (Join-Path $projDir 'memory')) { Copy-Item (Join-Path $projDir 'memory\*') "$stage\memory\" -Recurse -Force -ErrorAction SilentlyContinue }
-  Copy-Item "$SkillDir\*" "$stage\skill\" -Recurse -Force -ErrorAction SilentlyContinue
+  Copy-Item (Join-Path $projDir "$SessionId.jsonl") $stageSession -Force
+  if (Test-Path (Join-Path $projDir $SessionId)) { Copy-Item (Join-Path $projDir $SessionId) (Join-Path $stageSession $SessionId) -Recurse -Force }
+  if (Test-Path (Join-Path $projDir 'memory')) { Copy-Item (Join-Path $projDir 'memory/*') $stageMemory -Recurse -Force -ErrorAction SilentlyContinue }
+  Copy-Item (Join-Path $SkillDir '*') $stageSkill -Recurse -Force -ErrorAction SilentlyContinue
 
   # local-only assets from manifest: lines `SRC` or `SRC => DEST` (# comments). SRC repo-relative or absolute.
   # DEST (restore target) repo-relative or absolute; env vars like %USERPROFILE% are expanded on pull.
   $assetMap = @()
-  $manifest = Join-Path $repoAbs '.claude\transfer-session.assets'
+  $manifest = Join-Path $repoAbs '.claude/transfer-session.assets'
   if (Test-Path $manifest) {
     Get-Content $manifest | ForEach-Object {
       $line = $_.Trim(); if (-not $line -or $line.StartsWith('#')) { return }
@@ -136,9 +143,9 @@ if ($Mode -eq 'push') {
       $srcAbs = if ([System.IO.Path]::IsPathRooted($src)) { $src } else { Join-Path $repoAbs $src }
       if (-not (Test-Path $srcAbs)) { Info "  asset MISSING (skipped): $src"; return }
       $name = Split-Path $srcAbs -Leaf
-      $stageRel = "assets\$name"
-      Copy-Item $srcAbs "$stage\$stageRel" -Recurse -Force
-      $assetMap += [pscustomobject]@{ stage = ($stageRel -replace '\\','/'); dest = $dest }
+      $stageRel = "assets/$name"
+      Copy-Item $srcAbs (Join-Path $stage $stageRel) -Recurse -Force
+      $assetMap += [pscustomobject]@{ stage = $stageRel; dest = $dest }
       Info "  asset    : $src -> $dest"
     }
   } else { Info "no assets manifest at $manifest (session+memory only)" }
@@ -153,11 +160,11 @@ if ($Mode -eq 'push') {
     gitRemote        = $gitRemote
     gitCommit        = $gitCommit
     assets           = $assetMap
-  } | ConvertTo-Json -Depth 6 | Set-Content "$stage\meta.json" -Encoding UTF8
+  } | ConvertTo-Json -Depth 6 | Set-Content (Join-Path $stage 'meta.json') -Encoding UTF8
 
-  $zip = Join-Path $env:TEMP "transfer-session-$SessionId.zip"
+  $zip = Join-Path ([IO.Path]::GetTempPath()) "transfer-session-$SessionId.zip"
   if (Test-Path $zip){ Remove-Item $zip -Force }
-  Compress-Archive -Path "$stage\*" -DestinationPath $zip -CompressionLevel Optimal
+  Compress-Archive -Path (Join-Path $stage '*') -DestinationPath $zip -CompressionLevel Optimal
   $zipLen = (Get-Item $zip).Length
   $mb = [math]::Round($zipLen/1MB,2)
   Info "bundle   : $zip ($mb MB)"
@@ -182,12 +189,12 @@ if ($Mode -eq 'push') {
 # ============================== PULL ==============================
 if ($Mode -eq 'pull') {
   $repoAbs = (Resolve-Path $RepoRoot).Path
-  $work = Join-Path $env:TEMP "transfer-session-pull-$([guid]::NewGuid().ToString('N').Substring(0,8))"
+  $work = Join-Path ([IO.Path]::GetTempPath()) "transfer-session-pull-$([guid]::NewGuid().ToString('N').Substring(0,8))"
   New-Item -ItemType Directory -Force -Path $work | Out-Null
 
   if ($BundleZip) {
     if (-not (Test-Path $BundleZip)) { Die "BundleZip not found: $BundleZip" }
-    Copy-Item $BundleZip "$work\bundle.zip" -Force
+    Copy-Item $BundleZip (Join-Path $work 'bundle.zip') -Force
   } else {
     Write-Host "[transfer-session] preflight:"
     if (-not (Test-Prereqs $Remote)) { Die "preflight failed - fix the [FAIL] item(s) above, or pass -BundleZip <downloaded.zip> to skip rclone." }
@@ -208,14 +215,14 @@ if ($Mode -eq 'pull') {
     Info "downloading $Remote`:$DriveRoot/$SessionId/ ..."
     & $rclone copy "$Remote`:$DriveRoot/$SessionId/" $work
     if ($LASTEXITCODE -ne 0) { Die "rclone download failed (exit $LASTEXITCODE)." }
-    $z = Get-ChildItem "$work\*.zip" | Select-Object -First 1
+    $z = Get-ChildItem (Join-Path $work '*.zip') | Select-Object -First 1
     if (-not $z) { Die "No .zip downloaded." }
-    Move-Item $z.FullName "$work\bundle.zip" -Force
+    Move-Item $z.FullName (Join-Path $work 'bundle.zip') -Force
   }
 
   $ext = Join-Path $work 'extract'
-  Expand-Archive "$work\bundle.zip" $ext -Force
-  $meta = Get-Content "$ext\meta.json" -Raw | ConvertFrom-Json
+  Expand-Archive (Join-Path $work 'bundle.zip') $ext -Force
+  $meta = Get-Content (Join-Path $ext 'meta.json') -Raw | ConvertFrom-Json
   $sid  = $meta.sessionId
   Info "restoring session $sid (from repo $($meta.sourceRepoPath), git $($meta.gitCommit))"
 
@@ -235,14 +242,14 @@ if ($Mode -eq 'pull') {
   foreach ($leaf in $cands) {
     $destProj = Join-Path $ProjectsBase $leaf
     New-Item -ItemType Directory -Force -Path (Join-Path $destProj 'memory') | Out-Null
-    Copy-Item "$ext\session\$sid.jsonl" $destProj -Force
-    if (Test-Path "$ext\session\$sid") { Copy-Item "$ext\session\$sid" (Join-Path $destProj $sid) -Recurse -Force }
-    if (Test-Path "$ext\memory") { Copy-Item "$ext\memory\*" (Join-Path $destProj 'memory') -Recurse -Force -ErrorAction SilentlyContinue }
+    Copy-Item (Join-Path $ext "session/$sid.jsonl") $destProj -Force
+    if (Test-Path (Join-Path $ext "session/$sid")) { Copy-Item (Join-Path $ext "session/$sid") (Join-Path $destProj $sid) -Recurse -Force }
+    if (Test-Path (Join-Path $ext 'memory')) { Copy-Item (Join-Path $ext 'memory/*') (Join-Path $destProj 'memory') -Recurse -Force -ErrorAction SilentlyContinue }
     Info "  restored transcript+memory -> $destProj"
   }
 
   foreach ($a in $meta.assets) {
-    $srcA = Join-Path $ext ($a.stage -replace '/','\')
+    $srcA = Join-Path $ext ([string]$a.stage)
     if (-not (Test-Path $srcA)) { Info "  asset missing in bundle: $($a.stage)"; continue }
     $dest = [Environment]::ExpandEnvironmentVariables($a.dest)
     if (-not [System.IO.Path]::IsPathRooted($dest)) { $dest = Join-Path $repoAbs $dest }
@@ -251,10 +258,10 @@ if ($Mode -eq 'pull') {
     Info "  asset -> $dest"
   }
 
-  if (Test-Path "$ext\skill\transfer-session.ps1") {
-    $skillDest = Join-Path $env:USERPROFILE '.claude\skills\transfer-session'
+  if (Test-Path (Join-Path $ext 'skill/transfer-session.ps1')) {
+    $skillDest = Join-Path $env:USERPROFILE '.claude/skills/transfer-session'
     New-Item -ItemType Directory -Force -Path $skillDest | Out-Null
-    Copy-Item "$ext\skill\*" $skillDest -Recurse -Force
+    Copy-Item (Join-Path $ext 'skill/*') $skillDest -Recurse -Force
     Info "  skill installed -> $skillDest"
   }
 

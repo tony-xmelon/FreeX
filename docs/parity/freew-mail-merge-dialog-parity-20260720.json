@@ -1,169 +1,175 @@
 {
-    "schema":  "freex.freew.mail-merge-dialog-parity.v1",
-    "authority":  "FreeW.App.Host WPF dialog and command behavior",
-    "generatedInputs":  [
-                            "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs",
-                            "freew/FreeW.App.Avalonia/MailMergeDialogs.cs",
-                            "freew/FreeW.App.Avalonia/MainWindow.cs",
-                            "freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs",
-                            "freew/FreeW.Ribbon.Definitions/FreeWAvaloniaRibbonDefinition.cs",
-                            "freew/FreeW.App.Presentation/Ribbon/MailMergeDialogPlanners.cs",
-                            "freew/FreeW.App.Presentation/Ribbon/MailMergeFinishPlanner.cs",
-                            "freew/FreeW.App.Presentation/Ribbon/MailingsEnvelopeLabelPlanner.cs",
-                            "freew/FreeW.App.Presentation/Ribbon/MailMergeMatchFieldsDialogPlanner.cs",
-                            "freew/FreeW.App.Presentation/Ribbon/MailMergeRecipientFilterSortPlanner.cs",
-                            "freew/FreeW.App.Presentation/Ribbon/MailMergePreviewNavigationPlanner.cs",
-                            "freew/FreeW.App.Presentation.Tests/MailMergeDialogPlannerTests.cs",
-                            "freew/FreeW.App.Avalonia.Tests/MailMergeDialogSurfaceTests.cs"
-                        ],
-    "sourceSha256":  {
-                         "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs":  "61dab3c16e5e5637bb5d69d0116144f3969f076691ee0664e723bbc0d6e05fc3",
-                         "freew/FreeW.App.Avalonia/MailMergeDialogs.cs":  "c9bf74ba09033b18ec28ff7fc74acf8385c6a05740052c81c09d0487886c9d9c",
-                         "freew/FreeW.App.Avalonia/MainWindow.cs":  "fff207e3a56c7de6c2149d3cb97982e7f524ee04b2807ecf11175cca39854ee4",
-                         "freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs":  "77d97789c9f76ffdaf9804be7c7bafa63f8c687647dcca80496da3f280069992",
-                         "freew/FreeW.Ribbon.Definitions/FreeWAvaloniaRibbonDefinition.cs":  "7db9c365f6c2ed0ed8939e8c2456d9238e4c270ca538cd39299cc4e928aee375",
-                         "freew/FreeW.App.Presentation/Ribbon/MailMergeDialogPlanners.cs":  "d2ca6dc98a27922994747116d53b348ea4492b3015b134577666dfb54c99861c",
-                         "freew/FreeW.App.Presentation/Ribbon/MailMergeFinishPlanner.cs":  "22c5a7652dcb9d7ccad08191328d7c295ee133c57522ebc70badade2199e050b",
-                         "freew/FreeW.App.Presentation/Ribbon/MailingsEnvelopeLabelPlanner.cs":  "f44192c488c6f25a5953e3b0f9cd396c8a70c0566073ec82191f5c880d6be1ec",
-                         "freew/FreeW.App.Presentation/Ribbon/MailMergeMatchFieldsDialogPlanner.cs":  "6fd1ba5b49969cfed8f687cb94aa2c35d03058a4bbc942f9d3de9818e4818c8f",
-                         "freew/FreeW.App.Presentation/Ribbon/MailMergeRecipientFilterSortPlanner.cs":  "010f0c2037748b411cd32baee49589bcbbb8c5e744788eb6ae1340f0a8278391",
-                         "freew/FreeW.App.Presentation/Ribbon/MailMergePreviewNavigationPlanner.cs":  "8dadd71762b5fd19902d1cee534bd78f02ec02431c970a53994c03ec370177c2",
-                         "freew/FreeW.App.Presentation.Tests/MailMergeDialogPlannerTests.cs":  "096a029e481e3657cfbf8a4d6f240f3368277a7e2fc179cbf44e56e1bf645aec",
-                         "freew/FreeW.App.Avalonia.Tests/MailMergeDialogSurfaceTests.cs":  "7eebb93a95e8e8e11cd7b558e0d4909f686ef75c9d93b2add263e3c276015763"
-                     },
-    "ownershipBoundary":  [
-                              "MainWindow and ribbon command/definition routes are included in the integration fingerprints.",
-                              "Backstage, page-layout/media/design, and shared shell routes remain outside this mail-merge inventory."
-                          ],
-    "surfaces":  [
-                     {
-                         "name":  "Envelopes",
-                         "wpfAuthority":  "EnvelopeSetupDialog",
-                         "avaloniaSurface":  "AskEnvelopeAsync",
-                         "sharedPolicy":  "CreateEnvelopeDialogPlan/PlanEnvelope",
-                         "status":  "implemented",
-                         "shellWiringGap":  ""
-                     },
-                     {
-                         "name":  "Labels",
-                         "wpfAuthority":  "LabelSetupDialog",
-                         "avaloniaSurface":  "AskLabelsAsync",
-                         "sharedPolicy":  "CreateLabelDialogPlan/PlanLabel",
-                         "status":  "implemented",
-                         "shellWiringGap":  ""
-                     },
-                     {
-                         "name":  "Start Mail Merge/type selection",
-                         "wpfAuthority":  "SetMergeModeCommand choices",
-                         "avaloniaSurface":  "AskStartMailMergeAsync",
-                         "sharedPolicy":  "MailMergeStartDialogPlanner",
-                         "status":  "implemented",
-                         "shellWiringGap":  ""
-                     },
-                     {
-                         "name":  "Select/Edit Recipients",
-                         "wpfAuthority":  "MergeDataDialog",
-                         "avaloniaSurface":  "AskRecipientCsvAsync",
-                         "sharedPolicy":  "MailMergeRecipientDialogPlanner",
-                         "status":  "implemented",
-                         "shellWiringGap":  ""
-                     },
-                     {
-                         "name":  "Address Block",
-                         "wpfAuthority":  "InsertAddressBlockCommand (direct insertion, no modal)",
-                         "avaloniaSurface":  "MailMergeInsertionPlanner plus existing engine action",
-                         "sharedPolicy":  "MailMergeInsertionPlanner",
-                         "status":  "implemented",
-                         "shellWiringGap":  ""
-                     },
-                     {
-                         "name":  "Greeting Line",
-                         "wpfAuthority":  "InsertGreetingLineCommand (direct insertion, no modal)",
-                         "avaloniaSurface":  "MailMergeInsertionPlanner plus existing engine action",
-                         "sharedPolicy":  "MailMergeInsertionPlanner",
-                         "status":  "implemented",
-                         "shellWiringGap":  ""
-                     },
-                     {
-                         "name":  "Insert Merge Field",
-                         "wpfAuthority":  "InsertMergeFieldCommand",
-                         "avaloniaSurface":  "AskMergeFieldNameAsync",
-                         "sharedPolicy":  "MailMergeInsertionPlanner",
-                         "status":  "implemented",
-                         "shellWiringGap":  ""
-                     },
-                     {
-                         "name":  "Rules",
-                         "wpfAuthority":  "MergeRuleIfDialog/MergeRuleCondDialog/MergeRulePromptDialog/MergeRuleAskSetDialog",
-                         "avaloniaSurface":  "AskMergeRuleIfAsync/AskMergeRuleConditionAsync/AskMergeRulePromptAsync/AskMergeRuleNameValueAsync",
-                         "sharedPolicy":  "MailMergeRuleDialogPlanner",
-                         "status":  "implemented",
-                         "shellWiringGap":  ""
-                     },
-                     {
-                         "name":  "Match Fields",
-                         "wpfAuthority":  "MatchFieldsDialog",
-                         "avaloniaSurface":  "AskMatchFieldsAsync",
-                         "sharedPolicy":  "MailMergeMatchFieldsDialogPlanner",
-                         "status":  "implemented",
-                         "shellWiringGap":  ""
-                     },
-                     {
-                         "name":  "Filter and Sort Recipients",
-                         "wpfAuthority":  "FilterSortRecipientsDialog",
-                         "avaloniaSurface":  "AskFilterSortRecipientsAsync",
-                         "sharedPolicy":  "MailMergeFilterSortDialogPlanner",
-                         "status":  "implemented",
-                         "shellWiringGap":  ""
-                     },
-                     {
-                         "name":  "Update Labels",
-                         "wpfAuthority":  "LabelsCommand label-cell population",
-                         "avaloniaSurface":  "Existing engine ApplyDefaultLabels",
-                         "sharedPolicy":  "MailingsEnvelopeLabelPlanner",
-                         "status":  "implemented",
-                         "shellWiringGap":  ""
-                     },
-                     {
-                         "name":  "Preview Results",
-                         "wpfAuthority":  "PreviewNavigationDialog",
-                         "avaloniaSurface":  "AskPreviewNavigationAsync",
-                         "sharedPolicy":  "MailMergePreviewDialogPlanner",
-                         "status":  "implemented",
-                         "shellWiringGap":  ""
-                     },
-                     {
-                         "name":  "Find Recipient",
-                         "wpfAuthority":  "WPF preview recipient search gap; explicit parity addition",
-                         "avaloniaSurface":  "AskFindRecipientAsync",
-                         "sharedPolicy":  "MailMergeFindRecipientPlanner",
-                         "status":  "implemented",
-                         "shellWiringGap":  ""
-                     },
-                     {
-                         "name":  "Check for Errors",
-                         "wpfAuthority":  "Word Mailings check-for-errors three-mode contract",
-                         "avaloniaSurface":  "AskCheckForErrorsAsync",
-                         "sharedPolicy":  "MailMergeCheckForErrorsPlanner",
-                         "status":  "implemented",
-                         "shellWiringGap":  ""
-                     },
-                     {
-                         "name":  "Finish and Merge destination/options",
-                         "wpfAuthority":  "FinishMergeCommand plus MailMergeFinishPlanner",
-                         "avaloniaSurface":  "AskFinishMergeAsync",
-                         "sharedPolicy":  "MailMergeFinishPlanner.CreateDialogPlan/Plan",
-                         "status":  "implemented",
-                         "shellWiringGap":  ""
-                     },
-                     {
-                         "name":  "Send E-mail Messages",
-                         "wpfAuthority":  "EmailMergeDialog",
-                         "avaloniaSurface":  "AskEmailMergeDeliveryAsync",
-                         "sharedPolicy":  "MailMergeEmailDeliveryPlanner",
-                         "status":  "implemented",
-                         "shellWiringGap":  ""
-                     }
-                 ],
-    "freshnessCheck":  "Run tools/Generate-FreeWMailMergeDialogParityEvidence.ps1 -Check; nonzero means generated JSON/Markdown no longer matches current source hashes."
+  "schema": "freex.freew.mail-merge-dialog-parity.v1",
+  "authority": "FreeW.App.Host WPF dialog and command behavior",
+  "generatedInputs": [
+    "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs",
+    "freew/FreeW.App.Avalonia/MailMergeDialogs.cs",
+    "freew/FreeW.App.Avalonia/MainWindow.cs",
+    "freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs",
+    "freew/FreeW.Ribbon.Definitions/FreeWRibbon.cs",
+    "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.cs",
+    "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.Ordinary.cs",
+    "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.Contextual.cs",
+    "freew/FreeW.App.Presentation/Ribbon/MailMergeDialogPlanners.cs",
+    "freew/FreeW.App.Presentation/Ribbon/MailMergeFinishPlanner.cs",
+    "freew/FreeW.App.Presentation/Ribbon/MailingsEnvelopeLabelPlanner.cs",
+    "freew/FreeW.App.Presentation/Ribbon/MailMergeMatchFieldsDialogPlanner.cs",
+    "freew/FreeW.App.Presentation/Ribbon/MailMergeRecipientFilterSortPlanner.cs",
+    "freew/FreeW.App.Presentation/Ribbon/MailMergePreviewNavigationPlanner.cs",
+    "freew/FreeW.App.Presentation.Tests/MailMergeDialogPlannerTests.cs",
+    "freew/FreeW.App.Avalonia.Tests/MailMergeDialogSurfaceTests.cs"
+  ],
+  "sourceSha256": {
+    "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs": "0b0e6dfc972dca9d46bca30ad10f18c64c9511e302cb82b79d76d17ef5cf11d3",
+    "freew/FreeW.App.Avalonia/MailMergeDialogs.cs": "04b458e8628245ad09b5e60f9dbda2b897e998c2202253615bee66463606ac56",
+    "freew/FreeW.App.Avalonia/MainWindow.cs": "8c33b14cd4a8020013e8daf98c3e55739ff9a7abff4980a797e8841bc84e29fd",
+    "freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs": "d7846f6812fe1a88fe7c48d7d05e7857b0c08ff906775190b736284090ab38a1",
+    "freew/FreeW.Ribbon.Definitions/FreeWRibbon.cs": "b39b8a1042e544e24ee051be18733a85f2572b1a15b5fe4be79e467a0f3011db",
+    "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.cs": "3ce9d4278c3114abc79b658843a66c019691b5e15822530f7df7de8c043ce742",
+    "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.Ordinary.cs": "55e79d8d169e592a678f1a40c9fb8d91570a8d77f410db3129969394a3de7ca0",
+    "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.Contextual.cs": "a67b7ee5a6820f507ec4e76f36e8d5bc7e9eb85323110e5418f6c3ac94e9b0f8",
+    "freew/FreeW.App.Presentation/Ribbon/MailMergeDialogPlanners.cs": "376a3cd22a5f6ec05dbeafb079392f705fe89cfb8318d2023b97cea3284978dc",
+    "freew/FreeW.App.Presentation/Ribbon/MailMergeFinishPlanner.cs": "6be669f0f42208f2ab71b6321bffc7301ef0b79d2070a4ae5501a58283716570",
+    "freew/FreeW.App.Presentation/Ribbon/MailingsEnvelopeLabelPlanner.cs": "f44192c488c6f25a5953e3b0f9cd396c8a70c0566073ec82191f5c880d6be1ec",
+    "freew/FreeW.App.Presentation/Ribbon/MailMergeMatchFieldsDialogPlanner.cs": "631ada492e96fc5907a6a22db4679b92dad3dffe078d89e2e0d3dc07c6fa72b3",
+    "freew/FreeW.App.Presentation/Ribbon/MailMergeRecipientFilterSortPlanner.cs": "010f0c2037748b411cd32baee49589bcbbb8c5e744788eb6ae1340f0a8278391",
+    "freew/FreeW.App.Presentation/Ribbon/MailMergePreviewNavigationPlanner.cs": "8dadd71762b5fd19902d1cee534bd78f02ec02431c970a53994c03ec370177c2",
+    "freew/FreeW.App.Presentation.Tests/MailMergeDialogPlannerTests.cs": "c170bfb5ea2d9b856f88284754c25e2b93a339c097258086545edad58433a068",
+    "freew/FreeW.App.Avalonia.Tests/MailMergeDialogSurfaceTests.cs": "ba20a0372ace3bead4de028d4a4c4784fca1e3260d1abf6f39109ba42130fab3"
+  },
+  "ownershipBoundary": [
+    "MainWindow and ribbon command/definition routes are included in the integration fingerprints.",
+    "Backstage, page-layout/media/design, and shared shell routes remain outside this mail-merge inventory."
+  ],
+  "surfaces": [
+    {
+      "name": "Envelopes",
+      "wpfAuthority": "EnvelopeSetupDialog",
+      "avaloniaSurface": "AskEnvelopeAsync",
+      "sharedPolicy": "CreateEnvelopeDialogPlan/PlanEnvelope",
+      "status": "implemented",
+      "shellWiringGap": ""
+    },
+    {
+      "name": "Labels",
+      "wpfAuthority": "LabelSetupDialog",
+      "avaloniaSurface": "AskLabelsAsync",
+      "sharedPolicy": "CreateLabelDialogPlan/PlanLabel",
+      "status": "implemented",
+      "shellWiringGap": ""
+    },
+    {
+      "name": "Start Mail Merge/type selection",
+      "wpfAuthority": "SetMergeModeCommand choices",
+      "avaloniaSurface": "AskStartMailMergeAsync",
+      "sharedPolicy": "MailMergeStartDialogPlanner",
+      "status": "implemented",
+      "shellWiringGap": ""
+    },
+    {
+      "name": "Select/Edit Recipients",
+      "wpfAuthority": "MergeDataDialog",
+      "avaloniaSurface": "AskRecipientCsvAsync",
+      "sharedPolicy": "MailMergeRecipientDialogPlanner",
+      "status": "implemented",
+      "shellWiringGap": ""
+    },
+    {
+      "name": "Address Block",
+      "wpfAuthority": "InsertAddressBlockCommand (direct insertion, no modal)",
+      "avaloniaSurface": "MailMergeInsertionPlanner plus existing engine action",
+      "sharedPolicy": "MailMergeInsertionPlanner",
+      "status": "implemented",
+      "shellWiringGap": ""
+    },
+    {
+      "name": "Greeting Line",
+      "wpfAuthority": "InsertGreetingLineCommand (direct insertion, no modal)",
+      "avaloniaSurface": "MailMergeInsertionPlanner plus existing engine action",
+      "sharedPolicy": "MailMergeInsertionPlanner",
+      "status": "implemented",
+      "shellWiringGap": ""
+    },
+    {
+      "name": "Insert Merge Field",
+      "wpfAuthority": "InsertMergeFieldCommand",
+      "avaloniaSurface": "AskMergeFieldNameAsync",
+      "sharedPolicy": "MailMergeInsertionPlanner",
+      "status": "implemented",
+      "shellWiringGap": ""
+    },
+    {
+      "name": "Rules",
+      "wpfAuthority": "MergeRuleIfDialog/MergeRuleCondDialog/MergeRulePromptDialog/MergeRuleAskSetDialog",
+      "avaloniaSurface": "AskMergeRuleIfAsync/AskMergeRuleConditionAsync/AskMergeRulePromptAsync/AskMergeRuleNameValueAsync",
+      "sharedPolicy": "MailMergeRuleDialogPlanner",
+      "status": "implemented",
+      "shellWiringGap": ""
+    },
+    {
+      "name": "Match Fields",
+      "wpfAuthority": "MatchFieldsDialog",
+      "avaloniaSurface": "AskMatchFieldsAsync",
+      "sharedPolicy": "MailMergeMatchFieldsDialogPlanner",
+      "status": "implemented",
+      "shellWiringGap": ""
+    },
+    {
+      "name": "Filter and Sort Recipients",
+      "wpfAuthority": "FilterSortRecipientsDialog",
+      "avaloniaSurface": "AskFilterSortRecipientsAsync",
+      "sharedPolicy": "MailMergeFilterSortDialogPlanner",
+      "status": "implemented",
+      "shellWiringGap": ""
+    },
+    {
+      "name": "Update Labels",
+      "wpfAuthority": "LabelsCommand label-cell population",
+      "avaloniaSurface": "Existing engine ApplyDefaultLabels",
+      "sharedPolicy": "MailingsEnvelopeLabelPlanner",
+      "status": "implemented",
+      "shellWiringGap": ""
+    },
+    {
+      "name": "Preview Results",
+      "wpfAuthority": "PreviewNavigationDialog",
+      "avaloniaSurface": "AskPreviewNavigationAsync",
+      "sharedPolicy": "MailMergePreviewDialogPlanner",
+      "status": "implemented",
+      "shellWiringGap": ""
+    },
+    {
+      "name": "Find Recipient",
+      "wpfAuthority": "WPF preview recipient search gap; explicit parity addition",
+      "avaloniaSurface": "AskFindRecipientAsync",
+      "sharedPolicy": "MailMergeFindRecipientPlanner",
+      "status": "implemented",
+      "shellWiringGap": ""
+    },
+    {
+      "name": "Check for Errors",
+      "wpfAuthority": "Word Mailings check-for-errors three-mode contract",
+      "avaloniaSurface": "AskCheckForErrorsAsync",
+      "sharedPolicy": "MailMergeCheckForErrorsPlanner",
+      "status": "implemented",
+      "shellWiringGap": ""
+    },
+    {
+      "name": "Finish and Merge destination/options",
+      "wpfAuthority": "FinishMergeCommand plus MailMergeFinishPlanner",
+      "avaloniaSurface": "AskFinishMergeAsync",
+      "sharedPolicy": "MailMergeFinishPlanner.CreateDialogPlan/Plan",
+      "status": "implemented",
+      "shellWiringGap": ""
+    },
+    {
+      "name": "Send E-mail Messages",
+      "wpfAuthority": "EmailMergeDialog",
+      "avaloniaSurface": "AskEmailMergeDeliveryAsync",
+      "sharedPolicy": "MailMergeEmailDeliveryPlanner",
+      "status": "implemented",
+      "shellWiringGap": ""
+    }
+  ],
+  "freshnessCheck": "Run tools/Generate-FreeWMailMergeDialogParityEvidence.ps1 -Check; nonzero means generated JSON/Markdown no longer matches current source hashes."
 }

@@ -6,10 +6,10 @@ This deterministic triage report compares checked-in WPF and Avalonia capture PN
 
 Sources:
 
-- docs\parity\dialog-parity-inventory.json
-- docs\parity\dialog-visual-assets\wpf-capture\manifest.json
-- docs\parity\dialog-visual-assets\avalonia-capture\manifest.json
-- docs\parity\dialog-visual-evidence-summary.json
+- docs/parity/dialog-parity-inventory.json
+- docs/parity/dialog-visual-assets/wpf-capture/manifest.json
+- docs/parity/dialog-visual-assets/avalonia-capture/manifest.json
+- docs/parity/dialog-visual-evidence-summary.json
 
 ## Current inventory rollup
 
