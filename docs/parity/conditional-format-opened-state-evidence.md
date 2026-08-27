@@ -29,28 +29,28 @@ Manifest validation contract: every committed manifest must match the expected S
 
 | Target | Subject | Scenario | Status | Category | Manifest validation | Environment snapshot | Last attempt UTC | PNG | Blocker | Next action |
 |---|---|---|---|---|---|---|---|---|---|---|
-| excel.conditional-formatting-gallery.opened | excel | excel-conditional-formatting-gallery | blocked-or-incomplete | excel-com-unavailable | valid | windows=True; interactive=True; session=1; arch=X64 | 2026-07-02T10:24:18.0743536Z |  | exception: Excel.Application COM ProgID is not available. | Rerun .\tools\Invoke-ForegroundCapture.ps1 -Scenario excel-conditional-formatting-gallery on a Windows desktop where Microsoft Excel COM is installed and registered. |
-| wpf.conditional-formatting-gallery.opened | wpf | freex-conditional-formatting-gallery | blocked-or-incomplete | foreground-focus-unavailable | valid | windows=True; interactive=True; session=1; arch=X64 | 2026-07-02T11:17:01.3075269Z |  | foreground-guard-failed: Foreground guard failed during before-input. | Rerun .\tools\Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe <Release FreeX.App.Host.exe> from an unlocked interactive desktop where the launched window can become foreground. |
-| avalonia.conditional-formatting-gallery.opened | avalonia | avalonia-conditional-formatting-gallery | blocked-or-incomplete | foreground-focus-unavailable | valid | windows=True; interactive=True; session=1; arch=X64 | 2026-07-02T11:17:16.3684841Z |  | foreground-guard-failed: Foreground guard failed during before-input. | Rerun .\tools\Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe <Release FreeX.exe> from an unlocked interactive desktop where the launched window can become foreground. |
+| excel.conditional-formatting-gallery.opened | excel | excel-conditional-formatting-gallery | blocked-or-incomplete | excel-com-unavailable | valid | windows=True; interactive=True; session=1; arch=X64 | 2026-07-02T10:24:18.0743536Z |  | exception: Excel.Application COM ProgID is not available. | Rerun ./tools/Invoke-ForegroundCapture.ps1 -Scenario excel-conditional-formatting-gallery on a Windows desktop where Microsoft Excel COM is installed and registered. |
+| wpf.conditional-formatting-gallery.opened | wpf | freex-conditional-formatting-gallery | blocked-or-incomplete | foreground-focus-unavailable | valid | windows=True; interactive=True; session=1; arch=X64 | 2026-07-02T11:17:01.3075269Z |  | foreground-guard-failed: Foreground guard failed during before-input. | Rerun ./tools/Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe <Release FreeX.App.Host.exe> from an unlocked interactive desktop where the launched window can become foreground. |
+| avalonia.conditional-formatting-gallery.opened | avalonia | avalonia-conditional-formatting-gallery | blocked-or-incomplete | foreground-focus-unavailable | valid | windows=True; interactive=True; session=1; arch=X64 | 2026-07-02T11:17:16.3684841Z |  | foreground-guard-failed: Foreground guard failed during before-input. | Rerun ./tools/Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe <Release FreeX.exe> from an unlocked interactive desktop where the launched window can become foreground. |
 
 ## Capture Commands
 
 | Target | Command | Required environment |
 |---|---|---|
-| excel.conditional-formatting-gallery.opened | `.\tools\Invoke-ForegroundCapture.ps1 -Scenario excel-conditional-formatting-gallery` | Windows desktop session with Microsoft Excel COM registered and foreground focus allowed. |
-| wpf.conditional-formatting-gallery.opened | `.\tools\Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe <Release FreeX.App.Host.exe>` | Windows desktop session with built Release WPF host and foreground focus allowed. |
-| avalonia.conditional-formatting-gallery.opened | `.\tools\Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe <Release FreeX.exe>` | Windows desktop session with built Release Avalonia app and foreground focus allowed. |
+| excel.conditional-formatting-gallery.opened | `./tools/Invoke-ForegroundCapture.ps1 -Scenario excel-conditional-formatting-gallery` | Windows desktop session with Microsoft Excel COM registered and foreground focus allowed. |
+| wpf.conditional-formatting-gallery.opened | `./tools/Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe <Release FreeX.App.Host.exe>` | Windows desktop session with built Release WPF host and foreground focus allowed. |
+| avalonia.conditional-formatting-gallery.opened | `./tools/Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe <Release FreeX.exe>` | Windows desktop session with built Release Avalonia app and foreground focus allowed. |
 
 ## Operator Checklist
 
 | Phase | Command | Purpose |
 |---|---|---|
 | build | `dotnet build FreeX.slnx --configuration Release` | Produces the Release WPF and Avalonia executables referenced by the FreeX capture commands. |
-| preflight | `.\tools\Invoke-ForegroundCapture.ps1 -EnvironmentPreflight` | Emits machine-readable readiness diagnostics for Windows foreground focus, Release executables, and Microsoft Excel COM before foreground input. |
-| capture:excel | `.\tools\Invoke-ForegroundCapture.ps1 -Scenario excel-conditional-formatting-gallery` | Run from an unlocked foreground desktop; keep blocked manifests if the environment cannot produce a real opened-state PNG. |
-| capture:wpf | `.\tools\Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe <Release FreeX.App.Host.exe>` | Run from an unlocked foreground desktop; keep blocked manifests if the environment cannot produce a real opened-state PNG. |
-| capture:avalonia | `.\tools\Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe <Release FreeX.exe>` | Run from an unlocked foreground desktop; keep blocked manifests if the environment cannot produce a real opened-state PNG. |
-| refresh | `.\tools\Generate-ConditionalFormatOpenedStateEvidence.ps1; .\tools\Generate-ConditionalFormatOpenedStateEvidence.ps1 -Check` | Refreshes and verifies this report after the real manifests and PNGs are committed under tools/foreground-captures/<scenario>/. |
+| preflight | `./tools/Invoke-ForegroundCapture.ps1 -EnvironmentPreflight` | Emits machine-readable readiness diagnostics for Windows foreground focus, Release executables, and Microsoft Excel COM before foreground input. |
+| capture:excel | `./tools/Invoke-ForegroundCapture.ps1 -Scenario excel-conditional-formatting-gallery` | Run from an unlocked foreground desktop; keep blocked manifests if the environment cannot produce a real opened-state PNG. |
+| capture:wpf | `./tools/Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe <Release FreeX.App.Host.exe>` | Run from an unlocked foreground desktop; keep blocked manifests if the environment cannot produce a real opened-state PNG. |
+| capture:avalonia | `./tools/Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe <Release FreeX.exe>` | Run from an unlocked foreground desktop; keep blocked manifests if the environment cannot produce a real opened-state PNG. |
+| refresh | `./tools/Generate-ConditionalFormatOpenedStateEvidence.ps1; ./tools/Generate-ConditionalFormatOpenedStateEvidence.ps1 -Check` | Refreshes and verifies this report after the real manifests and PNGs are committed under tools/foreground-captures/<scenario>/. |
 
 ## Classifier Rows
 

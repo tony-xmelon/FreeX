@@ -16,7 +16,7 @@
       "subject": "excel",
       "scenario": "excel-conditional-formatting-gallery",
       "expectedOpenedState": "Excel Home > Conditional Formatting opened popup/gallery",
-      "runnerCommand": ".\\tools\\Invoke-ForegroundCapture.ps1 -Scenario excel-conditional-formatting-gallery",
+      "runnerCommand": "./tools/Invoke-ForegroundCapture.ps1 -Scenario excel-conditional-formatting-gallery",
       "requiredEnvironment": "Windows desktop session with Microsoft Excel COM registered and foreground focus allowed.",
       "manifestPath": "tools/foreground-captures/excel-conditional-formatting-gallery/excel-conditional-formatting-gallery_manifest.json",
       "captureStatus": "blocked",
@@ -27,7 +27,7 @@
       "blockerCategory": "excel-com-unavailable",
       "manifestValidationStatus": "valid",
       "manifestValidationErrors": [],
-      "nextCaptureAction": "Rerun .\\tools\\Invoke-ForegroundCapture.ps1 -Scenario excel-conditional-formatting-gallery on a Windows desktop where Microsoft Excel COM is installed and registered.",
+      "nextCaptureAction": "Rerun ./tools/Invoke-ForegroundCapture.ps1 -Scenario excel-conditional-formatting-gallery on a Windows desktop where Microsoft Excel COM is installed and registered.",
       "lastAttemptedAtUtc": "2026-07-02T10:24:18.0743536Z",
       "manifestSubject": "excel",
       "manifestScenario": "excel-conditional-formatting-gallery",
@@ -42,7 +42,7 @@
       "subject": "wpf",
       "scenario": "freex-conditional-formatting-gallery",
       "expectedOpenedState": "FreeX WPF Home > Conditional Formatting opened popup/gallery",
-      "runnerCommand": ".\\tools\\Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe <Release FreeX.App.Host.exe>",
+      "runnerCommand": "./tools/Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe <Release FreeX.App.Host.exe>",
       "requiredEnvironment": "Windows desktop session with built Release WPF host and foreground focus allowed.",
       "manifestPath": "tools/foreground-captures/freex-conditional-formatting-gallery/freex-conditional-formatting-gallery_manifest.json",
       "captureStatus": "blocked",
@@ -53,7 +53,7 @@
       "blockerCategory": "foreground-focus-unavailable",
       "manifestValidationStatus": "valid",
       "manifestValidationErrors": [],
-      "nextCaptureAction": "Rerun .\\tools\\Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe <Release FreeX.App.Host.exe> from an unlocked interactive desktop where the launched window can become foreground.",
+      "nextCaptureAction": "Rerun ./tools/Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe <Release FreeX.App.Host.exe> from an unlocked interactive desktop where the launched window can become foreground.",
       "lastAttemptedAtUtc": "2026-07-02T11:17:01.3075269Z",
       "manifestSubject": "freex",
       "manifestScenario": "freex-conditional-formatting-gallery",
@@ -68,7 +68,7 @@
       "subject": "avalonia",
       "scenario": "avalonia-conditional-formatting-gallery",
       "expectedOpenedState": "FreeX Avalonia Home > Conditional Formatting opened popup/gallery",
-      "runnerCommand": ".\\tools\\Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe <Release FreeX.exe>",
+      "runnerCommand": "./tools/Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe <Release FreeX.exe>",
       "requiredEnvironment": "Windows desktop session with built Release Avalonia app and foreground focus allowed.",
       "manifestPath": "tools/foreground-captures/avalonia-conditional-formatting-gallery/avalonia-conditional-formatting-gallery_manifest.json",
       "captureStatus": "blocked",
@@ -79,7 +79,7 @@
       "blockerCategory": "foreground-focus-unavailable",
       "manifestValidationStatus": "valid",
       "manifestValidationErrors": [],
-      "nextCaptureAction": "Rerun .\\tools\\Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe <Release FreeX.exe> from an unlocked interactive desktop where the launched window can become foreground.",
+      "nextCaptureAction": "Rerun ./tools/Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe <Release FreeX.exe> from an unlocked interactive desktop where the launched window can become foreground.",
       "lastAttemptedAtUtc": "2026-07-02T11:17:16.3684841Z",
       "manifestSubject": "avalonia",
       "manifestScenario": "avalonia-conditional-formatting-gallery",
@@ -110,27 +110,27 @@
     },
     {
       "phase": "preflight",
-      "command": ".\\tools\\Invoke-ForegroundCapture.ps1 -EnvironmentPreflight",
+      "command": "./tools/Invoke-ForegroundCapture.ps1 -EnvironmentPreflight",
       "purpose": "Emits machine-readable readiness diagnostics for Windows foreground focus, Release executables, and Microsoft Excel COM before foreground input."
     },
     {
       "phase": "capture:excel",
-      "command": ".\\tools\\Invoke-ForegroundCapture.ps1 -Scenario excel-conditional-formatting-gallery",
+      "command": "./tools/Invoke-ForegroundCapture.ps1 -Scenario excel-conditional-formatting-gallery",
       "purpose": "Run from an unlocked foreground desktop; keep blocked manifests if the environment cannot produce a real opened-state PNG."
     },
     {
       "phase": "capture:wpf",
-      "command": ".\\tools\\Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe <Release FreeX.App.Host.exe>",
+      "command": "./tools/Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe <Release FreeX.App.Host.exe>",
       "purpose": "Run from an unlocked foreground desktop; keep blocked manifests if the environment cannot produce a real opened-state PNG."
     },
     {
       "phase": "capture:avalonia",
-      "command": ".\\tools\\Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe <Release FreeX.exe>",
+      "command": "./tools/Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe <Release FreeX.exe>",
       "purpose": "Run from an unlocked foreground desktop; keep blocked manifests if the environment cannot produce a real opened-state PNG."
     },
     {
       "phase": "refresh",
-      "command": ".\\tools\\Generate-ConditionalFormatOpenedStateEvidence.ps1; .\\tools\\Generate-ConditionalFormatOpenedStateEvidence.ps1 -Check",
+      "command": "./tools/Generate-ConditionalFormatOpenedStateEvidence.ps1; ./tools/Generate-ConditionalFormatOpenedStateEvidence.ps1 -Check",
       "purpose": "Refreshes and verifies this report after the real manifests and PNGs are committed under tools/foreground-captures/<scenario>/."
     }
   ],
