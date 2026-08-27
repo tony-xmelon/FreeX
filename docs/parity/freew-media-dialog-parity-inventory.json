@@ -11,7 +11,7 @@
   "routeCount": 14,
   "wiredCount": 14,
   "shellFollowUpCount": 0,
-  "generatedAtUtc": "2026-08-27T00:10:36.4960546Z",
+  "generatedAtUtc": "2026-08-27T01:53:15.3184889Z",
   "routes": [
     {
       "id": "image-adjust",
@@ -23,8 +23,8 @@
       "status": "implemented-and-wired",
       "shellWired": true,
       "followUp": "",
-      "wpfSha256": "130DBEF1BABBBA888B64C3A9FEDF8FB6E1BBDF13BB85241160C13139F8FEE5A0",
-      "avaloniaSha256": "BE051ADF80E2EA8FF172D01579FB0E754342F91064D6E9A79479A99F65AB776C"
+      "wpfSha256": "fb3c13a225deebab45694e69c91bacbc3d160cbedbf00812739f514e01880382",
+      "avaloniaSha256": "c0762c0ec6b1d5aa5678b5466a60d9980d87cb37cf031a661ef73ea744f12464"
     },
     {
       "id": "image-border",
@@ -36,8 +36,8 @@
       "status": "implemented-and-wired",
       "shellWired": true,
       "followUp": "",
-      "wpfSha256": "BF37E361B2F99CE4217EC7D17288C270244D7413780E4A8AA0245DBF14FF5662",
-      "avaloniaSha256": "F7A65FE3341DAE459F1118A4E78AF6F0F832E88710DFEE4EB497AD7E1E1B3C5A"
+      "wpfSha256": "46fefddf65d6ba931c7d437dff16212db23708c121f6784da51ae89509de69c9",
+      "avaloniaSha256": "b1a6508b2383ec0ec296d9b08a7271de5bff8b451678c8da76ed276fef72d50d"
     },
     {
       "id": "image-crop",
@@ -49,8 +49,8 @@
       "status": "implemented-and-wired",
       "shellWired": true,
       "followUp": "",
-      "wpfSha256": "7F67C6999926889244C9DE7DD7EB8CF15B0FB50A7AC14CA4D77F039628D92F34",
-      "avaloniaSha256": "E403C92CAC63205572FBC9550F16AE0BBD856D63DA1DD9EB752FD70C347F7DD3"
+      "wpfSha256": "32c66ec40008a9e3523bf3d4d7f917caa0a8101526b8a3ba27a17a2b46c005c5",
+      "avaloniaSha256": "cd54fdecb2dbeee6676ed7f39c94ae977eeec0b43d64c1836f08b48f3f154e2a"
     },
     {
       "id": "image-position",
@@ -62,8 +62,8 @@
       "status": "implemented-and-wired",
       "shellWired": true,
       "followUp": "",
-      "wpfSha256": "F0C5CADEDEB2DFEAE6CD691911DE1E350DF5A8EA0B20D9B9D1C766659981F2CF",
-      "avaloniaSha256": "BE051ADF80E2EA8FF172D01579FB0E754342F91064D6E9A79479A99F65AB776C"
+      "wpfSha256": "9426781064916d1b3e7c9dd9cc42bc588eb3522fa43dd893eb9dc43740aa1644",
+      "avaloniaSha256": "c0762c0ec6b1d5aa5678b5466a60d9980d87cb37cf031a661ef73ea744f12464"
     },
     {
       "id": "image-size",
@@ -75,8 +75,8 @@
       "status": "implemented-and-wired",
       "shellWired": true,
       "followUp": "",
-      "wpfSha256": "EF04664215FE4A88E07D19850DE82036744EAABAC802B1A90407C3B1F08458C4",
-      "avaloniaSha256": "F7A65FE3341DAE459F1118A4E78AF6F0F832E88710DFEE4EB497AD7E1E1B3C5A"
+      "wpfSha256": "bb71b5ad28374b100d6fcf5b404ee8bc958fe71c964bb67d181f9e3e4f75f2ba",
+      "avaloniaSha256": "b1a6508b2383ec0ec296d9b08a7271de5bff8b451678c8da76ed276fef72d50d"
     },
     {
       "id": "image-alt-text",
@@ -88,8 +88,8 @@
       "status": "implemented-and-wired",
       "shellWired": true,
       "followUp": "Keep the existing WPF TextPrompt and Avalonia ImageAltTextDialog launchers under shell ownership.",
-      "wpfSha256": "0B0E6DFC972DCA9D46BCA30AD10F18C64C9511E302CB82B79D76D17EF5CF11D3",
-      "avaloniaSha256": "F7A65FE3341DAE459F1118A4E78AF6F0F832E88710DFEE4EB497AD7E1E1B3C5A"
+      "wpfSha256": "51bbe6c1934ef0efa7e477c08a66cd0eb5fc3ce9705cd0aaf27157e379677b0f",
+      "avaloniaSha256": "b1a6508b2383ec0ec296d9b08a7271de5bff8b451678c8da76ed276fef72d50d"
     },
     {
       "id": "image-table-conversion",
@@ -101,8 +101,8 @@
       "status": "implemented-and-wired",
       "shellWired": true,
       "followUp": "Keep the existing Avalonia conversion launchers under MainWindow ownership.",
-      "wpfSha256": "0B0E6DFC972DCA9D46BCA30AD10F18C64C9511E302CB82B79D76D17EF5CF11D3",
-      "avaloniaSha256": "E403C92CAC63205572FBC9550F16AE0BBD856D63DA1DD9EB752FD70C347F7DD3"
+      "wpfSha256": "51bbe6c1934ef0efa7e477c08a66cd0eb5fc3ce9705cd0aaf27157e379677b0f",
+      "avaloniaSha256": "cd54fdecb2dbeee6676ed7f39c94ae977eeec0b43d64c1836f08b48f3f154e2a"
     },
     {
       "id": "insert-chart",
@@ -114,8 +114,8 @@
       "status": "implemented-and-wired",
       "shellWired": true,
       "followUp": "",
-      "wpfSha256": "9F9E1478E8A29624C2FDB664576976FDE1C3EBDA423D8DC6FB2B0EC01B10C387",
-      "avaloniaSha256": "BE051ADF80E2EA8FF172D01579FB0E754342F91064D6E9A79479A99F65AB776C"
+      "wpfSha256": "ec75ef692bf5c88615ee540bc79068d460032eab8359c2f329b14cdc2708bcef",
+      "avaloniaSha256": "c0762c0ec6b1d5aa5678b5466a60d9980d87cb37cf031a661ef73ea744f12464"
     },
     {
       "id": "chart-title",
@@ -127,8 +127,8 @@
       "status": "implemented-and-wired",
       "shellWired": true,
       "followUp": "",
-      "wpfSha256": "CB2476F2E57CD8F34040443FBA7B6B4D8EB3601BF2A230CF10ACB88113CEC80F",
-      "avaloniaSha256": "BE051ADF80E2EA8FF172D01579FB0E754342F91064D6E9A79479A99F65AB776C"
+      "wpfSha256": "97fc7cf34083b967b1ed983739538ee5e00bd4b54446b8a040f365080e0070a5",
+      "avaloniaSha256": "c0762c0ec6b1d5aa5678b5466a60d9980d87cb37cf031a661ef73ea744f12464"
     },
     {
       "id": "chart-axis-titles",
@@ -140,8 +140,8 @@
       "status": "implemented-and-wired",
       "shellWired": true,
       "followUp": "",
-      "wpfSha256": "4A1F5D802606C873492F8AC3CFE87D33F8972A2B764BAD615B0E570A7259A23B",
-      "avaloniaSha256": "BE051ADF80E2EA8FF172D01579FB0E754342F91064D6E9A79479A99F65AB776C"
+      "wpfSha256": "7923ce30d9b0becece49c68c98e2fe3576acd7fc8b5c0eb76866c74287ed6611",
+      "avaloniaSha256": "c0762c0ec6b1d5aa5678b5466a60d9980d87cb37cf031a661ef73ea744f12464"
     },
     {
       "id": "chart-size",
@@ -153,8 +153,8 @@
       "status": "implemented-and-wired",
       "shellWired": true,
       "followUp": "",
-      "wpfSha256": "033E31355FDE3D0FB77E30CE1993D5DA2EC33C79F4349D19CB097E8D2EC04572",
-      "avaloniaSha256": "BE051ADF80E2EA8FF172D01579FB0E754342F91064D6E9A79479A99F65AB776C"
+      "wpfSha256": "c3e42965ee1f68863e7d0e76d07045659a112d083ca673f86d2ec0bd122e1a11",
+      "avaloniaSha256": "c0762c0ec6b1d5aa5678b5466a60d9980d87cb37cf031a661ef73ea744f12464"
     },
     {
       "id": "insert-smartart",
@@ -166,8 +166,8 @@
       "status": "implemented-and-wired",
       "shellWired": true,
       "followUp": "",
-      "wpfSha256": "BFE559BD31471292429692950EBDB0320B91FCA3C0A20E33EE66116FF37D70D5",
-      "avaloniaSha256": "BE051ADF80E2EA8FF172D01579FB0E754342F91064D6E9A79479A99F65AB776C"
+      "wpfSha256": "f56bf617739288ebed2cf3ae6116a2a956d6c125916728e26494542b12586f68",
+      "avaloniaSha256": "c0762c0ec6b1d5aa5678b5466a60d9980d87cb37cf031a661ef73ea744f12464"
     },
     {
       "id": "smartart-edit",
@@ -179,8 +179,8 @@
       "status": "implemented-and-wired",
       "shellWired": true,
       "followUp": "",
-      "wpfSha256": "BFE559BD31471292429692950EBDB0320B91FCA3C0A20E33EE66116FF37D70D5",
-      "avaloniaSha256": "846073933F8314669F46CD66A33DDD70302641D771CA8DEF57A86CED60462A86"
+      "wpfSha256": "f56bf617739288ebed2cf3ae6116a2a956d6c125916728e26494542b12586f68",
+      "avaloniaSha256": "ec62e639be65770309c90656fc6162fbeee1fb3e0f0f94e3683fcac3912cc2e2"
     },
     {
       "id": "icon-picker",
@@ -192,8 +192,8 @@
       "status": "implemented-and-wired",
       "shellWired": true,
       "followUp": "",
-      "wpfSha256": "38472E453E5BD9B152509E96B0A85970A44BF56F2101B942D8AA44D8F6E8EEB8",
-      "avaloniaSha256": "FD489CC05F0D8AD43FBCC7CFBF7F603C429A95140C36A72F526999FEA8C6B9E0"
+      "wpfSha256": "0382f7a5a58dbc091cbeaf72ac02fbe77a38c1c4e0b375c835a99a175ce4d26f",
+      "avaloniaSha256": "7775b2401fd4834027fe675a3c076435e9778d3e4487cf02ca3c4ebf61957c19"
     }
   ]
 }
