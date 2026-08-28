@@ -8,7 +8,7 @@ The route is intentionally checked against the WPF handler and the shared `Workb
 
 ## Verification
 
-- Focused Avalonia tests: 18 passed, 0 failed.
+- Focused Avalonia tests: 22 passed, 0 failed after the Linux F24 alias review fix.
 - Production Docker/X11 probe: 1 passed, 0 failed.
 - Saved package evidence: `style-id=1|font-id=1|bold=true` with `save-clean=true`.
 - Interaction report: `artifacts/linux-interactive/freex/interaction-validation/20260828T215917Z/interaction-validation.json`.

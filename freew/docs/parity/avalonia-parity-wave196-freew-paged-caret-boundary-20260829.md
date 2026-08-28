@@ -21,6 +21,6 @@ After this fix, Avalonia emits a zero-width sentinel at the post-break content b
 resolve to page 2 (one-based), column breaks remain on page 1 in the next column, and both positions have
 usable caret geometry. The model text and zero-width break runs are unchanged.
 
-Focused regression: `DocumentViewHeadlessTests.TrailingInlineFlowBreak_PlacesCaretOnThePostBreakPageOrColumn`.
+Focused regressions: `DocumentViewHeadlessTests.TrailingInlineFlowBreak_PlacesCaretOnThePostBreakPageOrColumn` and `DocumentViewHeadlessTests.ConsecutiveTrailingInlineFlowBreaks_PlaceCaretAtTheFinalPostBreakBoundary`. These two source regressions cover both single and consecutive trailing-break boundaries (2/2 focused cases).
 WPF source inspection confirms the matching break semantics are native paginator/page-boundary behavior;
 the Avalonia sentinel makes its live caret geometry agree at the boundary where no following glyph exists.
