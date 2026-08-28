@@ -80,7 +80,7 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaInCanvasTextEditor.cs",
-                       "sha256":  "48d572c3a0fdc7456107445b06ca691b27c4998abd1992a6f75f1120ae7c051c"
+                       "sha256":  "49793dae712c276f51024111e6aff9d2142379a7921191483a758bed20f4d35a"
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaRichTextEditor.cs",
