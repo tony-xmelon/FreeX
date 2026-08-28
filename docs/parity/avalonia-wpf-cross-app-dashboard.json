@@ -2,33 +2,42 @@
   "schema": "freex.parity.cross-app-dashboard.v3",
   "wave": 196,
   "cumulativeAppSlices": 588,
-  "cumulativeAppSlicesStatus": "pending-local-gates",
-  "integrationGateStatus": "pending-local-gates",
-  "pendingIntegrationGates": [
-    "repository-preflight",
-    "full-release-build"
-  ],
+  "cumulativeAppSlicesStatus": "accepted-local-gates",
+  "integrationGateStatus": "accepted-local-gates",
+  "pendingIntegrationGates": [],
   "integrationGateEvidence": {
-    "status": "pending-local-gates",
-    "acceptanceStatus": "not-accepted",
-    "pendingIntegrationGates": [
+    "status": "accepted-local-gates",
+    "acceptanceStatus": "accepted-local-gates",
+    "testedSourceCommit": "100f4aea399e3bc9d194c15cf962ded7d0cf3772",
+    "acceptanceRefreshNote": "This dashboard/report is an acceptance-only documentation/tooling refresh; it does not alter the tested source commit.",
+    "pendingIntegrationGates": [],
+    "acceptedLocalGates": [
       "repository-preflight",
       "full-release-build"
     ],
+    "acceptanceRefreshAllowedPaths": [
+      "tools/Generate-CrossAppParityDashboard.ps1",
+      "tools/Test-CrossAppParityDashboard.ps1",
+      "tests/FreeX.App.Host.Tests/CrossAppParityDashboardTests.cs",
+      "docs/parity/avalonia-wpf-cross-app-dashboard.json",
+      "docs/parity/avalonia-wpf-cross-app-dashboard.md",
+      "docs/parity/avalonia-parity-wave196-cross-app-integration-20260829.md"
+    ],
     "sliceAccounting": "Wave 196 is three app slices, one each for FreeX, FreeW, and FreeP; cumulative accounting is 588 app slices (196 per app).",
-    "currentEvidence": "Wave196 evidence is recorded from committed app-specific notes, source tests, and the FreeP image/metrics bundle; it remains separate from local integration gates.",
+    "currentEvidence": "Wave196 evidence is recorded from committed app-specific notes, source tests, and the FreeP image/metrics bundle; local repository preflight and full Release build acceptance is recorded separately below.",
     "localGatePolicy": "Per AGENTS.md, repository preflight and the full Release build are the local branch gates. The manifest-driven integration suite and UI/render/release-only gates are delegated to GitHub after main is pushed.",
     "delegatedGitHubGates": [
       "manifest-driven-integration-suite",
       "ui-render-release-workflow"
     ],
     "delegatedGitHubGateStatus": "not-run-locally",
-    "gateBoundary": "Wave196 local integration gates are pending; no acceptance SHA or full-parity claim is recorded.",
-    "repositoryPreflight": "Pending: tools/Test-RepositoryPreflight.ps1 has not yet been run for the Wave196 integration boundary.",
-    "fullReleaseBuild": "Pending: dotnet build FreeX.slnx --configuration Release has not yet been run for the Wave196 integration boundary.",
-    "focusedTests": "Committed Wave196 evidence: FreeX production ribbon-formatting probe 1/1 with 22/22 focused source tests; FreeW two trailing flow-break caret regressions (including consecutive breaks); FreeP deck17 light-hinting metrics and image hashes. These facts are evidence coverage, not local integration acceptance.",
-    "independentReviewStatus": "pending",
-    "independentReview": "No Wave196 integration acceptance review has been run.",
+    "gateBoundary": "Wave196 local acceptance records only the exact tested source commit 100f4aea399e3bc9d194c15cf962ded7d0cf3772 and the six allowlisted acceptance/report paths; delegated GitHub gates are not claimed as locally run and full Avalonia/WPF parity is not claimed.",
+    "repositoryPreflight": "Passed at tested source commit 100f4aea399e3bc9d194c15cf962ded7d0cf3772: tools/Test-RepositoryPreflight.ps1 repository preflight passed in Mode All with exit code 0.",
+    "fullReleaseBuild": "Passed at tested source commit 100f4aea399e3bc9d194c15cf962ded7d0cf3772: dotnet build FreeX.slnx --configuration Release passed with 0 warnings and 0 errors; elapsed 00:10:12.82.",
+    "fullReleaseBuildElapsed": "00:10:12.82",
+    "focusedTests": "Passed at tested source commit 100f4aea399e3bc9d194c15cf962ded7d0cf3772: FreeX focused 22/22; FreeW focused 2/2; FreeP renderer/evidence 10/10 and resolved model 1/1.",
+    "independentReviewStatus": "passed",
+    "independentReview": "Passed: independent review found two Wave196 issues; both were fixed and retested. This acceptance refresh preserves the exact tested-source boundary and does not claim any delegated GitHub gate or full parity.",
     "portabilityCorrection": "Committed portability correction is included in the generator and focused dashboard test; it normalizes repository paths to forward slashes.",
     "historicalWave195Acceptance": {
       "status": "accepted-local-gates",
@@ -418,7 +427,7 @@
             "productionDockerX11": "The committed production Docker/X11 probe passes the Home ribbon Bold key-tip route and persists bold=true in the saved XLSX package.",
             "persistedStyle": "style-id=1|font-id=1|bold=true",
             "saveClean": true,
-            "claimBoundary": "Committed FreeX production Linux/X11 and source-test evidence for one ribbon-formatting workflow; local integration gates remain pending and this does not establish complete FreeX or visual parity."
+            "claimBoundary": "Committed FreeX production Linux/X11 and source-test evidence for one ribbon-formatting workflow; accepted local integration gates do not establish complete FreeX or visual parity."
           },
           "limitations": [
             "The 2026-08-16 interactive run captured 36 foreground ribbon states for each of Excel, WPF, and Avalonia, including Draw at all four widths, plus six guarded Excel popup/dialog surfaces. The 27 fixed-viewport triage rows average 13.937% RGB delta for WPF and 15.639% for Avalonia versus Excel; nine maximized rows are coverage-only, not an acceptance threshold.",
@@ -563,7 +572,7 @@
           "focusedSourceTestsTotal": 2,
           "oracle": "A trailing inline page break places the caret on the following page; a trailing inline column break places it in the next column on the current page, with non-zero caret geometry.",
           "consecutiveBreakCoverage": true,
-          "claimBoundary": "Committed FreeW Avalonia source-test and exact-oracle evidence for trailing inline flow-break caret placement; local integration gates remain pending and this does not establish complete FreeW or visual parity."
+          "claimBoundary": "Committed FreeW Avalonia source-test and exact-oracle evidence for trailing inline flow-break caret placement; accepted local integration gates do not establish complete FreeW or visual parity."
         },
         "routeCoverage": {
           "inventoryScenarioCount": 512,
@@ -634,7 +643,7 @@
         },
         "claimBoundary": "Route and evidence-row coverage only; paired comparison rows and mismatch classifications do not establish Word visual parity."
       },
-      "nextSlice": "Wave196 records two trailing inline flow-break caret regressions in Avalonia, including consecutive breaks; local gates remain pending. The canonical FreeW catalog remains 291 rows: 80 pass, 141 genuine visual mismatches, and 70 Avalonia extensions. Continue with the remaining native checkbox/glyph raster tail, tab-template edges, or the next classified pagination, drawing/object, chart, table, or WordArt residual."
+      "nextSlice": "Wave196 records two trailing inline flow-break caret regressions in Avalonia, including consecutive breaks; local gates are accepted. The canonical FreeW catalog remains 291 rows: 80 pass, 141 genuine visual mismatches, and 70 Avalonia extensions. Continue with the remaining native checkbox/glyph raster tail, tab-template edges, or the next classified pagination, drawing/object, chart, table, or WordArt residual."
     },
     {
       "app": "FreeP",
@@ -857,7 +866,7 @@
           "wpfAvaloniaDelta": -0.0336,
           "controlUnchanged": true,
           "imageHashCount": 4,
-          "claimBoundary": "Committed FreeP deck17 slide02 renderer evidence for a scoped Aptos fallback hinting correction; local integration gates remain pending and this does not establish complete FreeP or visual parity."
+          "claimBoundary": "Committed FreeP deck17 slide02 renderer evidence for a scoped Aptos fallback hinting correction; accepted local integration gates do not establish complete FreeP or visual parity."
         },
         "physicalEvidence": {
           "status": "available-app-and-native-office-chrome",
@@ -898,7 +907,7 @@
         },
         "claimBoundary": "Route/scenario coverage, committed PNG manifests, and local WPF/Avalonia comparison results only; no PowerPoint visual-parity claim is made."
       },
-      "nextSlice": "Wave196 records a scoped deck17 slide02 Aptos fallback hinting correction: Avalonia/Office changes from 2.536% to 2.482% and WPF/Avalonia from 2.9091% to 2.8755%; local gates remain pending. The native Office residual remains unresolved; continue renderer-level evidence against the existing corpus rather than introducing fixture-specific correction."
+      "nextSlice": "Wave196 records a scoped deck17 slide02 Aptos fallback hinting correction: Avalonia/Office changes from 2.536% to 2.482% and WPF/Avalonia from 2.9091% to 2.8755%; local gates are accepted. The native Office residual remains unresolved; continue renderer-level evidence against the existing corpus rather than introducing fixture-specific correction."
     }
   ]
 }

@@ -39,12 +39,26 @@ renderer measurement, not complete PowerPoint or visual parity.
 
 ## Integration Status
 
-Wave196 local integration gates are **pending**. The repository preflight and full
-Release build are the local branch gates required by `AGENTS.md`; both remain
-pending in this dashboard. The delegated manifest-driven integration and
-UI/render/release-only workflows are not claimed as locally run. No Wave196
-tested-source or acceptance SHA is recorded, and this note does not claim full
-parity.
+Wave196 local integration gates are **accepted-local-gates** against the exact
+tested source commit
+`100f4aea399e3bc9d194c15cf962ded7d0cf3772`. Repository preflight passed in Mode
+All; `dotnet build FreeX.slnx --configuration Release` passed with 0 warnings
+and 0 errors in 00:10:12.82. Focused evidence passed for FreeX 22/22, FreeW 2/2,
+FreeP renderer/evidence 10/10, and the FreeP resolved model 1/1. Independent
+review found two issues and both were fixed and retested.
+
+The acceptance refresh is restricted to exactly these six report/tooling paths:
+
+- `tools/Generate-CrossAppParityDashboard.ps1`
+- `tools/Test-CrossAppParityDashboard.ps1`
+- `tests/FreeX.App.Host.Tests/CrossAppParityDashboardTests.cs`
+- `docs/parity/avalonia-wpf-cross-app-dashboard.json`
+- `docs/parity/avalonia-wpf-cross-app-dashboard.md`
+- `docs/parity/avalonia-parity-wave196-cross-app-integration-20260829.md`
+
+There are zero pending local gates. The delegated manifest-driven integration
+and UI/render/release-only workflows are not claimed as locally run, and this
+note does not claim full Avalonia/WPF parity.
 
 The cross-platform portability correction is included in the dashboard generator
 and its focused host test: repository paths use forward slashes so the generated
