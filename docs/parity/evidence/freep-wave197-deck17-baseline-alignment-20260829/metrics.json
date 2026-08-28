@@ -1,0 +1,39 @@
+{
+  "schema": "freep.parity.wave197.deck17-baseline-alignment.v1",
+  "date": "2026-08-29",
+  "status": "candidate-refuted",
+  "candidate": {
+    "id": "avalonia-fixed-aptos-baseline-aligned",
+    "description": "Use Avalonia aligned baseline pixels for the existing fixed-size Aptos fallback route.",
+    "scope": "fixed-size single-column no-autofit non-bullet 18pt Aptos body fallback",
+    "acceptedBaselinePixelAlignment": "Unaligned",
+    "candidateBaselinePixelAlignment": "Aligned",
+    "outcome": "rejected-preserve-unaligned-raster"
+  },
+  "measurements": {
+    "slide01Control": {
+      "avaloniaOffice": 0.8339,
+      "candidateAvaloniaOffice": 0.8339,
+      "candidateChangedPercent": 0.0,
+      "candidateMaxChannel": 0,
+      "candidateMatchesAcceptedPng": true
+    },
+    "slide02Target": {
+      "acceptedAvaloniaOffice": 2.4820,
+      "candidateAvaloniaOffice": 2.5116,
+      "deltaPercentagePoints": 0.0296,
+      "acceptedWpfAvalonia": 2.8755,
+      "candidateWpfAvalonia": 2.9053,
+      "pairDeltaPercentagePoints": 0.0298,
+      "acceptedWpfOffice": 3.0587,
+      "candidateWpfOffice": 3.0587
+    }
+  },
+  "imageIntegrity": {
+    "candidateAvaloniaSlide01Sha256": "b839f25ffd749e7238633488ff3f8eaabf054ecfd5805426ce0115c27fee4200",
+    "acceptedAvaloniaSlide01Sha256": "b839f25ffd749e7238633488ff3f8eaabf054ecfd5805426ce0115c27fee4200",
+    "candidateAvaloniaSlide02Sha256": "3faee960ff25fa4c543d9c8d3834fa212bccbf5a8ad5b65add54e331cdbceeb7",
+    "acceptedAvaloniaSlide02Sha256": "69c173388fec6bae29525e5041e837dd384b70b099f796ceb31e605d879ea621"
+  },
+  "interpretation": "Baseline pixel alignment is a general raster semantic, but it worsens the target while leaving the unrelated control unchanged. The accepted unaligned setting is retained; the residual remains font fallback and glyph raster variation rather than paragraph placement."
+}
