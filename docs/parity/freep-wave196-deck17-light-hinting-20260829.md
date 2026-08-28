@@ -1,7 +1,7 @@
 # FreeP Wave196 deck17 light-hinting correction
 
-Date: 2026-08-29  
-Base revision: `ef7c2de4348ee09276f444662d678ce80a03281e`  
+Date: 2026-08-29
+Base revision: `ef7c2de4348ee09276f444662d678ce80a03281e`
 Corpus: `17-bullets-autofit.pptx`, 1280x720
 
 ## Decision
