@@ -70,6 +70,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [parity/command-inventory.json](parity/command-inventory.json) - generated command inventory source.
 - [testing/ui-test-catalog.md](testing/ui-test-catalog.md) - append-only UI command/interaction catalog, coverage log, findings log, and smoke evidence index.
 - [testing/ui-session-architecture.md](testing/ui-session-architecture.md) - reusable versus fresh WPF window ownership, reset contracts, Avalonia isolation, and validation guidance.
+- [testing/streamlined-release-pipeline.md](testing/streamlined-release-pipeline.md) - single-owner CI, CodeQL, and publication gates with immutable-SHA reuse instead of repeated source testing.
 
 ## Formats And Fidelity
 
