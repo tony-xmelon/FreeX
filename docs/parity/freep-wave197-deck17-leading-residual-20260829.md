@@ -1,7 +1,7 @@
 # FreeP Wave197 deck17 leading residual
 
-Date: 2026-08-29  
-Source revision: `a43d86c885`  
+Date: 2026-08-29
+Source revision: `a43d86c885`
 Corpus: `17-bullets-autofit.pptx`, 1280x720
 
 ## Candidate
