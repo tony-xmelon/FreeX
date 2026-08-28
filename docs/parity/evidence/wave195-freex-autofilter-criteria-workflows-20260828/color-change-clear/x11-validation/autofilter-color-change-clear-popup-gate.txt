@@ -1,0 +1,8 @@
+schema-version=1
+green-menu-open=true
+green-swatch-gate=true
+yellow-menu-open=true
+yellow-swatch-gate=true
+clear-menu-open=true
+change-clear-gate=true
+
