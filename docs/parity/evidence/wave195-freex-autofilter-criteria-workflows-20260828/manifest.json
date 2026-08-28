@@ -7,8 +7,22 @@
   "shell": "avalonia",
   "validationMode": "physical-only",
   "claimBoundary": "Bounded production FreeX Avalonia Linux X11 evidence for the two named XLSX fixtures and retained sessions; not exhaustive parity or WPF evidence.",
-  "captureSourceCommit": "c8609b78c4a0483e65f55a8eb3da1b61893e86ec",
-  "packagingBaseCommit": "9237dec9b1461b2f0cb78c7c631b6121bcd9506a",
+  "appPayloadSourceCommit": "c8609b78c4a0483e65f55a8eb3da1b61893e86ec",
+  "captureHarnessEquivalentCommit": "686788f0b5c6d8e5eb7c00fade87cdb9666567e0",
+  "captureHarnessEquivalentFiles": [
+    {
+      "path": "tools/LinuxInteractiveDocker/run-freex-input-probes.sh",
+      "commit": "686788f0b5c6d8e5eb7c00fade87cdb9666567e0",
+      "gitBlob": "c0901cca5165aadae0dba5c21b0622221ef768ee"
+    },
+    {
+      "path": "tools/Run-FreeXLinuxInteractionValidation.ps1",
+      "commit": "686788f0b5c6d8e5eb7c00fade87cdb9666567e0",
+      "gitBlob": "9d601d93430e3799cc232fb1e9d0136390f6653a"
+    }
+  ],
+  "postCaptureCleanupCommit": "9237dec9b1461b2f0cb78c7c631b6121bcd9506a",
+  "packagingBaseCommit": "af4b6ee52ff5bbda746bf0597c89bd5a7fcf4649",
   "originMainAtPackaging": "c08f020d5c51f995d4bd2414c900991eec582076",
   "hashPolicy": {
     "canonical-lf": "SHA-256 of strict UTF-8 text after CRLF and lone CR are normalized to LF",
@@ -29,7 +43,8 @@
       "runnerReportId": "20260828T135447Z",
       "selector": "autofilter-multi-column-persistence",
       "resultId": "autofilter-multi-column-criteria-change-clear-physical",
-      "sourceCommit": "c8609b78c4a0483e65f55a8eb3da1b61893e86ec",
+      "appPayloadSourceCommit": "c8609b78c4a0483e65f55a8eb3da1b61893e86ec",
+      "captureHarnessEquivalentCommit": "686788f0b5c6d8e5eb7c00fade87cdb9666567e0",
       "payloadFingerprint": "90d5c1e625e33149dd9fbda49be5a6d45a3bac3307885dcc66d37faecf3e60b2",
       "payloadFileCount": 778,
       "appImageId": "sha256:e7cd3c44db99e49771d84429a87699b6e160f3fed9b925c3ae3f0504f95a68e0",
@@ -42,7 +57,8 @@
       "runnerReportId": "20260828T140028Z",
       "selector": "autofilter-color-change-clear-persistence",
       "resultId": "autofilter-color-criteria-change-clear-physical",
-      "sourceCommit": "c8609b78c4a0483e65f55a8eb3da1b61893e86ec",
+      "appPayloadSourceCommit": "c8609b78c4a0483e65f55a8eb3da1b61893e86ec",
+      "captureHarnessEquivalentCommit": "686788f0b5c6d8e5eb7c00fade87cdb9666567e0",
       "payloadFingerprint": "90d5c1e625e33149dd9fbda49be5a6d45a3bac3307885dcc66d37faecf3e60b2",
       "payloadFileCount": 778,
       "appImageId": "sha256:241789748b034be33ea35727aacfdf562ccf7a608b9edbee86a8bd7312acb78b",
@@ -424,7 +440,7 @@
     {
       "path": "README.md",
       "hashMode": "canonical-lf",
-      "sha256": "3b3381d5ed2e47d9ae2d2a6a9b2c9dde7adfc1d487829d6233b83a4e522188ef"
+      "sha256": "4410816b1b9171f5bf4cbdc24eceba2b9573e4f95a84aa8dde36deb1ba7873cc"
     }
   ]
 }

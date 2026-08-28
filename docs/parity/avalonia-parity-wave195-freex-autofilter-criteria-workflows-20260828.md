@@ -35,6 +35,8 @@ cleared-package=ref=A1:B5|columns=
 
 ## Provenance and Boundary
 
+Provenance distinction: the raw runner reports' `sourceCommit` is the app/payload source commit `c8609b78c4a0483e65f55a8eb3da1b61893e86ec`. The strengthened reload-witness probe and runner used by these captures are pinned to capture-equivalent commit `686788f0b5c6d8e5eb7c00fade87cdb9666567e0`: probe Git blob `c0901cca5165aadae0dba5c21b0622221ef768ee` and runner Git blob `9d601d93430e3799cc232fb1e9d0136390f6653a`. The later clipboard cleanup commit `9237dec9b1461b2f0cb78c7c631b6121bcd9506a` was not part of capture, and `af4b6ee52ff5bbda746bf0597c89bd5a7fcf4649` is the packaging base.
+
 The retained runner provenance identifies source commit `c8609b78c4a0483e65f55a8eb3da1b61893e86ec`, payload fingerprint `90d5c1e625e33149dd9fbda49be5a6d45a3bac3307885dcc66d37faecf3e60b2`, payload file count `778`, and app image IDs `sha256:e7cd3c44db99e49771d84429a87699b6e160f3fed9b925c3ae3f0504f95a68e0` and `sha256:241789748b034be33ea35727aacfdf562ccf7a608b9edbee86a8bd7312acb78b`.
 
 This is bounded physical evidence for production FreeX Avalonia on Linux, not a claim of exhaustive parity or WPF execution. It does not cover other dashboards, other applications, untested filter types, or the later clipboard-consumer cleanup change. No product, harness, shared dashboard, or generator code is changed by this evidence-only slice.

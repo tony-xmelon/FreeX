@@ -1,8 +1,9 @@
 schema-version=2
 status=passed
-capture-source-commit=c8609b78c4a0483e65f55a8eb3da1b61893e86ec
-packaging-base-commit=9237dec9b1461b2f0cb78c7c631b6121bcd9506a
-origin-main-at-packaging=c08f020d5c51f995d4bd2414c900991eec582076
+app-payload-source-commit=c8609b78c4a0483e65f55a8eb3da1b61893e86ec
+capture-harness-equivalent-commit=686788f0b5c6d8e5eb7c00fade87cdb9666567e0
+post-capture-cleanup-commit=9237dec9b1461b2f0cb78c7c631b6121bcd9506a
+packaging-base-commit=af4b6ee52ff5bbda746bf0597c89bd5a7fcf4649
 color-change-clear/run-report/interaction-validation.html|mode=canonical-lf|sha256=9ce3c3a744d99f36e58202aeea6423cf7a78e96e78da20891493964a9d78b725|match=True
 color-change-clear/run-report/interaction-validation.json|mode=canonical-lf|sha256=3b51f98e02b7856b825916690b56857913c429e9b020b9e52ee17dd0ef205867|match=True
 color-change-clear/run-report/resume-provenance.json|mode=canonical-lf|sha256=5de1306fe17bbc9b6bfdf1c559ed33f52596d89c3b731da382ad26a5c94df376|match=True
@@ -77,4 +78,4 @@ multi-column/x11-validation/selection-multi-region-visible-4.png|mode=raw|sha256
 multi-column/x11-validation/selection-multi-region-visible-5.png|mode=raw|sha256=ffe0e4f29348f6d189bc2834010e94ceca8a300a068d294083c000f2fa4562cc|match=True
 multi-column/x11-validation/selection-multi-region-visible-6.png|mode=raw|sha256=260a31d80a7e6adab2184994aa19f93d88837f1131e88b06ce9b5d04b7548eef|match=True
 multi-column/x11-validation/x11-input-results.json|mode=canonical-lf|sha256=d114b61715ffaa691a8712b2b9704d4e95dd9f51a8e05023127bbe0ed6c57b88|match=True
-README.md|mode=canonical-lf|sha256=3b3381d5ed2e47d9ae2d2a6a9b2c9dde7adfc1d487829d6233b83a4e522188ef|match=True
+README.md|mode=canonical-lf|sha256=4410816b1b9171f5bf4cbdc24eceba2b9573e4f95a84aa8dde36deb1ba7873cc|match=True

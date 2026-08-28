@@ -2,6 +2,8 @@
 
 This directory is a canonical evidence bundle for two retained production Linux Avalonia Docker/X11 sessions. The sessions were not rerun for packaging.
 
+The raw runner reports are preserved unchanged. Their `sourceCommit` value, `c8609b78c4a0483e65f55a8eb3da1b61893e86ec`, identifies the app/payload source recorded by the runner. The strengthened reload-witness probe and runner state used for the captures is pinned separately to capture-equivalent commit `686788f0b5c6d8e5eb7c00fade87cdb9666567e0`; the exact probe and runner Git blob IDs are recorded in `manifest.json`. The later clipboard-consumer cleanup commit `9237dec9b1461b2f0cb78c7c631b6121bcd9506a` was after capture and was not physically exercised. `packagingBaseCommit` records the pre-correction evidence commit `af4b6ee52ff5bbda746bf0597c89bd5a7fcf4649`.
+
 ## Sessions
 
 - `multi-column/`: session `20260828T135519236Z`, selector `autofilter-multi-column-persistence`, runner report `20260828T135447Z`.
