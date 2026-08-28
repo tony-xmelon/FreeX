@@ -2,9 +2,16 @@
 
 Wave196 adds the first production FreeX Avalonia Docker/X11 probe for a ribbon command that mutates workbook state.
 
-The focused `ribbon-formatting` selector opens a deterministic XLSX fixture, selects `A1`, enters the Home ribbon through the real key-tip sequence `Alt`, `H`, `1`, and saves through the production application. The probe reads the saved XLSX package and requires the target cell's style to reference a font containing `<b/>`. Screenshots capture the before, key-tip, and after states alongside `ribbon-home-bold-keytip-postcondition.txt`.
+The focused `ribbon-formatting` selector opens a deterministic XLSX fixture, selects `A1`, enters the Home ribbon through the real key-tip sequence `Alt`, `H`, `1`, and saves through the production Shift+F12 application shortcut. The X11 driver holds Shift explicitly around F12, while the Avalonia shortcut adapter also recognizes Linux's logical `F24` alias whenever the backend does not identify the packet as physical F12. That normalization reconstructs the same Shift+F12 Save route WPF exposes without changing plain physical F12 Save As or Ctrl+F12 Open. The probe reads the saved XLSX package and requires the target cell's style to reference a font containing `<b/>`. Screenshots capture the before, key-tip, and after states alongside `ribbon-home-bold-keytip-postcondition.txt`.
 
 The route is intentionally checked against the WPF handler and the shared `WorkbookFormatRibbonCommands.Bold` implementation. This keeps the evidence about actual Avalonia input and persistence while preserving the existing shared command contract.
+
+## Verification
+
+- Focused Avalonia tests: 18 passed, 0 failed.
+- Production Docker/X11 probe: 1 passed, 0 failed.
+- Saved package evidence: `style-id=1|font-id=1|bold=true` with `save-clean=true`.
+- Interaction report: `artifacts/linux-interactive/freex/interaction-validation/20260828T215917Z/interaction-validation.json`.
 
 Run from the repository root:
 
