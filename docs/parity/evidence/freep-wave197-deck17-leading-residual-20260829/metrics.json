@@ -1,0 +1,44 @@
+{
+  "schema": "freep.parity.wave197.deck17-leading-residual.v1",
+  "date": "2026-08-29",
+  "status": "candidate-refuted",
+  "sourceRevision": "a43d86c885",
+  "target": {
+    "deck": "17-bullets-autofit",
+    "slide": "slide-02",
+    "width": 1280,
+    "height": 720,
+    "officeReference": "tools/FreeP.RenderCompare/corpus/pptx-ref/17-bullets-autofit/slide-02.png",
+    "officeReferenceSha256": "2828a7a3ced739e6b5b36f53aa7309df35ceb8c7f898b7bf8fb29480ab012ee5"
+  },
+  "candidate": {
+    "id": "avalonia-fixed-aptos-scale-line-height",
+    "description": "Apply the accepted 0.930 Aptos fallback optical scale to paragraph leading as well as glyph size.",
+    "scope": "fixed-size single-column no-autofit non-bullet 18pt Aptos body fallback",
+    "glyphScale": 0.93,
+    "currentAuthoredFontSizePt": 18.0,
+    "currentLineHeightDip": 28.8,
+    "candidateLineHeightDip": 26.784,
+    "candidateFinalBaselineDriftDip": 30.24,
+    "outcome": "rejected-preserve-body-cadence"
+  },
+  "observedGeometry": {
+    "officeBodyBandStarts": [117, 146, 175, 204, 232, 261, 290, 319, 348, 376, 405, 434, 463, 492, 520, 549],
+    "avaloniaBodyBandStarts": [117, 146, 175, 204, 232, 261, 290, 319, 348, 376, 405, 434, 463, 492, 520, 549],
+    "maxBandStartDeltaPx": 0,
+    "interpretation": "The retained Office and Wave196 Avalonia images agree on every body ink-band start. Scaling leading would move the final band by 30.24 px and cannot explain the residual without breaking stable layout."
+  },
+  "controls": {
+    "slide01BeforeAfterAvaloniaChangedPercent": 0.0,
+    "slide01BeforeAfterAvaloniaMaxChannel": 0,
+    "wave196AvaloniaOfficeSlide02": 2.482,
+    "wave196WpfAvaloniaSlide02": 2.8755
+  },
+  "retainedEvidence": [
+    "docs/parity/evidence/freep-wave196-deck17-light-hinting-20260829/metrics.json",
+    "docs/parity/evidence/freep-wave196-deck17-light-hinting-20260829/avalonia-slide-02.png",
+    "tools/FreeP.RenderCompare/corpus/pptx-ref/17-bullets-autofit/slide-02.png",
+    "docs/parity/freep-wave177-bullets-autofit-renderer-audit-20260822.md",
+    "docs/parity/avalonia-parity-wave193-freep-render-residual-20260823.md"
+  ]
+}
