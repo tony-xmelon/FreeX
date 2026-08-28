@@ -6,21 +6,22 @@
   "integrationGateStatus": "pending",
   "pendingIntegrationGates": [
     "repository-preflight",
-    "full-release-build",
-    "default-non-ui-test-lane",
-    "integration-review"
+    "full-release-build"
   ],
   "integrationGateEvidence": {
     "status": "pending",
     "pendingIntegrationGates": [
       "repository-preflight",
-      "full-release-build",
-      "default-non-ui-test-lane",
-      "integration-review"
+      "full-release-build"
     ],
     "sliceAccounting": "Wave 195 is three app slices, one each for FreeX, FreeW, and FreeP; cumulative accounting is 585 app slices (195 per app).",
     "currentEvidence": "Wave195 evidence is recorded from committed app-specific artifacts and remains separate from the parent-run integration gates.",
-    "gateBoundary": "Wave195 is pending and not accepted until the parent runs and records the integration gates; no timings or passing results are inferred here.",
+    "localGatePolicy": "Per AGENTS.md, repository preflight and the full Release build are the local branch gates. The manifest-driven integration suite and UI/render/release-only gates are delegated to GitHub after main is pushed.",
+    "delegatedGitHubGates": [
+      "manifest-driven-integration-suite",
+      "ui-render-release-workflow"
+    ],
+    "gateBoundary": "Wave195 is pending and not accepted until the parent supplies final exact-head acceptance facts for the local and delegated gates; no timings or passing results are inferred here.",
     "historicalWave194Acceptance": {
       "testedSourceCommit": "f7cbd8cbe3f1ac5fbaf14da1c2cacc1a3fb7bf3f",
       "acceptanceRefreshNote": "This dashboard/report is an acceptance-only documentation/tooling refresh; it does not alter the tested source commit.",
@@ -483,7 +484,7 @@
           "legalNoticesChangedPixels": 324253,
           "legalNoticesAggregateDelta": -683,
           "nonLegalRowsStructurallyUnchanged": 285,
-          "correction": "Fresh current-source Legal Notices evidence is refreshed for six states; aggregate changed pixels fall from 324936 to 324253, a delta of -683, while 285 non-Legal rows remain structurally unchanged.",
+          "correction": "Fresh current-source Legal Notices evidence is refreshed for 6 states; aggregate changed pixels fall from 324936 to 324253, a delta of -683, while 285 non-Legal rows remain structurally unchanged.",
           "classificationBoundary": "The canonical catalog remains 291 rows: 80 pass, 141 genuine visual mismatches, and 70 Avalonia extensions.",
           "claimBoundary": "Canonical FreeW WPF/Avalonia evidence only; the Legal Notices improvement does not establish Word visual parity."
         },
@@ -556,7 +557,7 @@
         },
         "claimBoundary": "Route and evidence-row coverage only; paired comparison rows and mismatch classifications do not establish Word visual parity."
       },
-      "nextSlice": "Wave195 keeps the canonical FreeW catalog at 291 rows: 80 pass, 141 genuine visual mismatches, and 70 Avalonia extensions. The six-state Legal Notices aggregate improves from 324936 to 324253 changed pixels (delta -683), with 285 non-Legal rows structurally unchanged. Continue with the remaining native checkbox/glyph raster tail, tab-template edges, or the next classified pagination, drawing/object, chart, table, or WordArt residual."
+      "nextSlice": "Wave195 keeps the canonical FreeW catalog at 291 rows: 80 pass, 141 genuine visual mismatches, and 70 Avalonia extensions. The 6-state Legal Notices aggregate improves from 324936 to 324253 changed pixels (delta -683), with 285 non-Legal rows structurally unchanged. Continue with the remaining native checkbox/glyph raster tail, tab-template edges, or the next classified pagination, drawing/object, chart, table, or WordArt residual."
     },
     {
       "app": "FreeP",
