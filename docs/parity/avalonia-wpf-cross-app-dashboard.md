@@ -40,7 +40,7 @@ Wave195 local integration gates are **accepted**. It records three app slices an
 - Pending local gates: none; repository preflight and full Release build passed
 - Delegated GitHub gates: manifest-driven-integration-suite, ui-render-release-workflow (not-run-locally)
 - Tested/reviewed source commit: `feff4d47c02d57112c6cb191bcc85e1d60ea4e06`
-- Repository preflight: Passed at tested source commit feff4d47c02d57112c6cb191bcc85e1d60ea4e06: powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\\Test-RepositoryPreflight.ps1 exited 0; all repository preflight checks passed.
+- Repository preflight: Passed at tested source commit feff4d47c02d57112c6cb191bcc85e1d60ea4e06: powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/Test-RepositoryPreflight.ps1 exited 0; all repository preflight checks passed.
 - Full Release build: Passed at tested source commit feff4d47c02d57112c6cb191bcc85e1d60ea4e06: dotnet build FreeX.slnx --configuration Release passed with 0 warnings and 0 errors; elapsed 00:05:22.96.
 - Focused/evidence facts: Passed at tested source commit feff4d47c02d57112c6cb191bcc85e1d60ea4e06: FreeX Wave195 physical 2/2 workflows with 75 artifacts, 58 PNGs, and 2 reload witnesses; FreeW canonical 291 rows with 80 pass, 141 genuine visual mismatches, and 70 Avalonia extensions; FreeP whole-window 36/36 and combined 64/64 with zero local-threshold mismatch.
 - Historical Wave194 reintegration: The current integration branch is anchored to tested source commit f7cbd8cbe3f1ac5fbaf14da1c2cacc1a3fb7bf3f; the acceptance refresh records only evidence from that tested source and does not claim that the documentation commit itself was rebuilt.
