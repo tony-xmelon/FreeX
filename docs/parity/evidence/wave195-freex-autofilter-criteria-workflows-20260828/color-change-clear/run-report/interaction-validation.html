@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>FreeX Linux interaction validation</title>
+<style>
+body{font:13px Segoe UI,Arial,sans-serif;margin:24px;color:#202124}h1{font-size:22px}table{border-collapse:collapse;width:100%}
+th,td{border:1px solid #d0d5da;padding:6px 8px;text-align:left;vertical-align:top}th{background:#eef1f4;position:sticky;top:0}
+tr.failed{background:#fde7e9}tr.skipped{background:#fff4ce}tr.passed td:first-child{color:#107c10;font-weight:600}
+</style></head><body><h1>FreeX Linux interaction validation</h1><p><strong>passed</strong>: 1 &nbsp; <strong>total</strong>: 1</p>
+<h2>Physical X11 input</h2><p><strong>passed</strong>: 1 &nbsp; <strong>failed</strong>: 0 &nbsp; <strong>total</strong>: 1</p>
+<p>Geometry calibration: <strong>passed</strong>;
+A1=(29,236); cell=64x20; selection=#217346. <a href="x11-validation/x11-input-results.json">Manifest and evidence</a></p>
+<p><input id="query" type="search" placeholder="Filter interactions" style="width:320px;padding:6px">
+<select id="status" style="padding:6px"><option value="">All statuses</option><option>passed</option><option>failed</option><option>skipped</option></select>
+<select id="category" style="padding:6px"><option value="">All categories</option><option value='x11-input'>x11-input</option></select>
+<span id="visibleCount"></span></p>
+<table><thead><tr><th>Status</th><th>Category</th><th>Interaction</th><th>Evidence level</th><th>Evidence</th><th>Note</th></tr></thead>
+<tbody><tr class='passed'><td>passed</td><td>x11-input</td><td>autofilter-color-criteria-change-clear-physical</td><td>physical-x11-input</td><td>autofilter-color-change-clear-green-menu-open.png;autofilter-color-change-clear-green-applied.png;autofilter-color-change-clear-yellow-menu-open.png;autofilter-color-change-clear-yellow-applied.png;autofilter-color-change-clear-clear-menu-open.png;autofilter-color-change-clear-cleared.png;autofilter-color-change-clear-reload-witness-unsaved.png;autofilter-color-change-clear-reload-discard-prompt.png;autofilter-color-change-clear-reopened.png;autofilter-color-change-clear-popup-gate.txt;autofilter-color-change-clear-postcondition.txt</td><td>Physical production X11 color filtering applied a rendered green criterion, changed it to yellow, cleared the criterion, saved each state, and reopened the cleared workbook.</td></tr></tbody></table>
+<script>
+const rows=[...document.querySelectorAll('tbody tr')], q=document.querySelector('#query'), s=document.querySelector('#status'), c=document.querySelector('#category'), n=document.querySelector('#visibleCount');
+function filter(){let shown=0; for(const row of rows){const ok=(!q.value||row.textContent.toLowerCase().includes(q.value.toLowerCase()))&&(!s.value||row.cells[0].textContent===s.value)&&(!c.value||row.cells[1].textContent===c.value);row.hidden=!ok;if(ok)shown++;}n.textContent=shown+' of '+rows.length+' rows';}
+q.addEventListener('input',filter);s.addEventListener('change',filter);c.addEventListener('change',filter);filter();
+</script></body></html>

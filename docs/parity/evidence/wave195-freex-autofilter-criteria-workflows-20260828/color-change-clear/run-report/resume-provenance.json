@@ -1,0 +1,11 @@
+{
+  "runnerSchemaVersion": 2,
+  "app": "FreeX",
+  "platform": "linux",
+  "shell": "avalonia",
+  "sourceCommit": "c8609b78c4a0483e65f55a8eb3da1b61893e86ec",
+  "payloadFingerprint": "90d5c1e625e33149dd9fbda49be5a6d45a3bac3307885dcc66d37faecf3e60b2",
+  "payloadFileCount": 778,
+  "appImageReference": "freex-linux-interactive-app-freex-759eefeeb978:current",
+  "appImageId": "sha256:241789748b034be33ea35727aacfdf562ccf7a608b9edbee86a8bd7312acb78b"
+}
