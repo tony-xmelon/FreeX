@@ -24,26 +24,26 @@
   "trackedInputs": {
     "inventory": {
       "path": "docs/parity/freew-dialog-harness/freew_dialog_evidence_inventory.json",
-      "sha256": "003c2bbc5ffba75187ecc7b0d7986428c952e0e7b8c91fa04454b01bc1d6a8d7"
+      "sha256": "fc23f6ddd3f2a3befefebaf03d1bf03abd4a9fd976d9ceda45dc73e18dc9a400"
     },
     "comparison": {
       "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json",
-      "sha256": "a387eb05bfdba67aea58d1ea6a391eee929061d8708e22f6d5a25c708939626d"
+      "sha256": "41630f87dcfd0e038b3a738c6c7fc20ad5c29a64304d0187ed461f2786150c32"
     },
     "freshnessSidecar": {
       "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_freshness.json",
-      "sha256": "7531ea9da8a0172dc1b050ccaa343d30766938e95dba33dd4641b2272d7bfbd8"
+      "sha256": "1fe5cbafdce0f6a624ec632db8e6726db12ba5d078827701ae686d60fc45025e"
     }
   },
   "captureArtifacts": {
     "wpf": {
       "path": "artifacts/wave194-freew-font-final/wpf/wpf_dialog_capture_manifest.json",
-      "sha256": "629cd8062ea00b69283b54bd6ea8e769a24957ad22ea5f9566994ef231038121",
+      "sha256": "0f63ba1642d0477057abf5f20b2050d205e121cc89b6f26c8b9196458a4225ec",
       "tracked": false
     },
     "avalonia": {
       "path": "artifacts/wave194-freew-font-final/avalonia/avalonia_dialog_capture_manifest.json",
-      "sha256": "a3a7933d670dfbb39d4fb95d9671debd7f662ce4122a187729cdeebed1dc9d46",
+      "sha256": "9638db75d05b90245d0c2f3146c7a82d411d0d52b33167e6214d1695a009c156",
       "tracked": false
     }
   },
@@ -76,6 +76,18 @@
     "relativeImprovement": 0.016712006337408244,
     "nonFontRowsCompared": 288,
     "nonFontRowsChanged": 0
+  },
+  "canonicalComparisonEvolution": {
+    "nonFontRowsChangedSinceSourceRevision": 6,
+    "changedNonFontScenarioIds": [
+      "legal-notices.initial",
+      "legal-notices.tab-legal-notices",
+      "legal-notices.tab-privacy-notice",
+      "legal-notices.tab-project-license",
+      "legal-notices.tab-third-party-license-texts",
+      "legal-notices.tab-third-party-notices"
+    ],
+    "reason": "Wave195 integrated the refreshed Legal Notices route into the canonical comparison after the Wave194 Font capture; the historical Font capture contract remains 0 of 288 non-Font rows changed."
   },
   "captureArtifactPolicy": {
     "externalArtifactsTracked": false,
@@ -149,10 +161,10 @@
       "captureArtifact": {
         "kind": "external-capture-manifest-containing-row",
         "path": "artifacts/wave194-freew-font-final/wpf/wpf_dialog_capture_manifest.json",
-        "sha256": "629cd8062ea00b69283b54bd6ea8e769a24957ad22ea5f9566994ef231038121",
+        "sha256": "0f63ba1642d0477057abf5f20b2050d205e121cc89b6f26c8b9196458a4225ec",
         "tracked": false
       },
-      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "a387eb05bfdba67aea58d1ea6a391eee929061d8708e22f6d5a25c708939626d", "jsonPointer": "/rows/81", "sha256OfCanonicalRow": "53b15ea4311767ae71c28ee68e3bdd334d39a6f80d68dab258e519083420c4c7" }
+      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "41630f87dcfd0e038b3a738c6c7fc20ad5c29a64304d0187ed461f2786150c32", "jsonPointer": "/rows/81", "sha256OfCanonicalRow": "53b15ea4311767ae71c28ee68e3bdd334d39a6f80d68dab258e519083420c4c7" }
     },
     {
       "host": "avalonia",
@@ -165,10 +177,10 @@
       "captureArtifact": {
         "kind": "external-capture-manifest-containing-row",
         "path": "artifacts/wave194-freew-font-final/avalonia/avalonia_dialog_capture_manifest.json",
-        "sha256": "a3a7933d670dfbb39d4fb95d9671debd7f662ce4122a187729cdeebed1dc9d46",
+        "sha256": "9638db75d05b90245d0c2f3146c7a82d411d0d52b33167e6214d1695a009c156",
         "tracked": false
       },
-      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "a387eb05bfdba67aea58d1ea6a391eee929061d8708e22f6d5a25c708939626d", "jsonPointer": "/rows/81", "sha256OfCanonicalRow": "53b15ea4311767ae71c28ee68e3bdd334d39a6f80d68dab258e519083420c4c7" }
+      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "41630f87dcfd0e038b3a738c6c7fc20ad5c29a64304d0187ed461f2786150c32", "jsonPointer": "/rows/81", "sha256OfCanonicalRow": "53b15ea4311767ae71c28ee68e3bdd334d39a6f80d68dab258e519083420c4c7" }
     },
     {
       "host": "wpf",
@@ -181,10 +193,10 @@
       "captureArtifact": {
         "kind": "external-capture-manifest-containing-row",
         "path": "artifacts/wave194-freew-font-final/wpf/wpf_dialog_capture_manifest.json",
-        "sha256": "629cd8062ea00b69283b54bd6ea8e769a24957ad22ea5f9566994ef231038121",
+        "sha256": "0f63ba1642d0477057abf5f20b2050d205e121cc89b6f26c8b9196458a4225ec",
         "tracked": false
       },
-      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "a387eb05bfdba67aea58d1ea6a391eee929061d8708e22f6d5a25c708939626d", "jsonPointer": "/rows/82", "sha256OfCanonicalRow": "b94e0d744c5ff5b035d4c4234aeca179161d494c80822a778a80f1e66eaf836c" }
+      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "41630f87dcfd0e038b3a738c6c7fc20ad5c29a64304d0187ed461f2786150c32", "jsonPointer": "/rows/82", "sha256OfCanonicalRow": "b94e0d744c5ff5b035d4c4234aeca179161d494c80822a778a80f1e66eaf836c" }
     },
     {
       "host": "avalonia",
@@ -197,10 +209,10 @@
       "captureArtifact": {
         "kind": "external-capture-manifest-containing-row",
         "path": "artifacts/wave194-freew-font-final/avalonia/avalonia_dialog_capture_manifest.json",
-        "sha256": "a3a7933d670dfbb39d4fb95d9671debd7f662ce4122a187729cdeebed1dc9d46",
+        "sha256": "9638db75d05b90245d0c2f3146c7a82d411d0d52b33167e6214d1695a009c156",
         "tracked": false
       },
-      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "a387eb05bfdba67aea58d1ea6a391eee929061d8708e22f6d5a25c708939626d", "jsonPointer": "/rows/82", "sha256OfCanonicalRow": "b94e0d744c5ff5b035d4c4234aeca179161d494c80822a778a80f1e66eaf836c" }
+      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "41630f87dcfd0e038b3a738c6c7fc20ad5c29a64304d0187ed461f2786150c32", "jsonPointer": "/rows/82", "sha256OfCanonicalRow": "b94e0d744c5ff5b035d4c4234aeca179161d494c80822a778a80f1e66eaf836c" }
     },
     {
       "host": "wpf",
@@ -213,10 +225,10 @@
       "captureArtifact": {
         "kind": "external-capture-manifest-containing-row",
         "path": "artifacts/wave194-freew-font-final/wpf/wpf_dialog_capture_manifest.json",
-        "sha256": "629cd8062ea00b69283b54bd6ea8e769a24957ad22ea5f9566994ef231038121",
+        "sha256": "0f63ba1642d0477057abf5f20b2050d205e121cc89b6f26c8b9196458a4225ec",
         "tracked": false
       },
-      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "a387eb05bfdba67aea58d1ea6a391eee929061d8708e22f6d5a25c708939626d", "jsonPointer": "/rows/83", "sha256OfCanonicalRow": "f7523c96c002ce12eb1918f2c27b578b4070434968ab4617e8e831ff97d956d9" }
+      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "41630f87dcfd0e038b3a738c6c7fc20ad5c29a64304d0187ed461f2786150c32", "jsonPointer": "/rows/83", "sha256OfCanonicalRow": "f7523c96c002ce12eb1918f2c27b578b4070434968ab4617e8e831ff97d956d9" }
     },
     {
       "host": "avalonia",
@@ -229,10 +241,10 @@
       "captureArtifact": {
         "kind": "external-capture-manifest-containing-row",
         "path": "artifacts/wave194-freew-font-final/avalonia/avalonia_dialog_capture_manifest.json",
-        "sha256": "a3a7933d670dfbb39d4fb95d9671debd7f662ce4122a187729cdeebed1dc9d46",
+        "sha256": "9638db75d05b90245d0c2f3146c7a82d411d0d52b33167e6214d1695a009c156",
         "tracked": false
       },
-      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "a387eb05bfdba67aea58d1ea6a391eee929061d8708e22f6d5a25c708939626d", "jsonPointer": "/rows/83", "sha256OfCanonicalRow": "f7523c96c002ce12eb1918f2c27b578b4070434968ab4617e8e831ff97d956d9" }
+      "trackedRow": { "path": "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json", "sha256": "41630f87dcfd0e038b3a738c6c7fc20ad5c29a64304d0187ed461f2786150c32", "jsonPointer": "/rows/83", "sha256OfCanonicalRow": "f7523c96c002ce12eb1918f2c27b578b4070434968ab4617e8e831ff97d956d9" }
     }
   ]
 }

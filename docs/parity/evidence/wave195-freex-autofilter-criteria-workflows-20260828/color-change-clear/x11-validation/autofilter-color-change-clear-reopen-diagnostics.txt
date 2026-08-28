@@ -1,0 +1,2 @@
+shortcut=ctrl+F12|active-id=16777263|active-title=Open Workbook|active-pid=29
+shortcut=ctrl+F12|active-id=25165831|active-title=Open Workbook|active-pid=29
