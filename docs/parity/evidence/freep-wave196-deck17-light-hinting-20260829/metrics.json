@@ -1,0 +1,96 @@
+{
+  "schema": "freep.parity.wave196.deck17-light-hinting.v1",
+  "date": "2026-08-29",
+  "baseRevision": "ef7c2de4348ee09276f444662d678ce80a03281e",
+  "target": {
+    "deck": "17-bullets-autofit",
+    "slide": "slide-02",
+    "corpusPath": "tools/FreeP.RenderCompare/corpus/17-bullets-autofit.pptx",
+    "corpusSha256": "f4fc0c9e3d048cac3e0c7fe3d929029238448ff05281be542df105a46c6c88ea",
+    "officeReferenceSha256": "2828a7a3ced739e6b5b36f53aa7309df35ceb8c7f898b7bf8fb29480ab012ee5",
+    "width": 1280,
+    "height": 720
+  },
+  "acceptedCorrection": {
+    "scope": "fixed-size single-column no-autofit non-bullet 18pt Aptos body fallback",
+    "fallbackFont": "Arial",
+    "fontScale": 0.93,
+    "textRenderingMode": "Antialias",
+    "textHintingModeBefore": "None",
+    "textHintingModeAfter": "Light",
+    "baselinePixelAlignment": "Unaligned"
+  },
+  "measurements": {
+    "slide01Control": {
+      "before": {
+        "wpfOffice": 0.8441,
+        "avaloniaOffice": 0.8339,
+        "wpfAvalonia": 0.8439
+      },
+      "after": {
+        "wpfOffice": 0.8441,
+        "avaloniaOffice": 0.8339,
+        "wpfAvalonia": 0.8439
+      },
+      "beforeAfterAvalonia": 0.0,
+      "beforeAfterAvaloniaMaxChannel": 0
+    },
+    "slide02Target": {
+      "before": {
+        "wpfOffice": 3.0587,
+        "avaloniaOffice": 2.536,
+        "wpfAvalonia": 2.9091
+      },
+      "after": {
+        "wpfOffice": 3.0587,
+        "avaloniaOffice": 2.482,
+        "wpfAvalonia": 2.8755
+      },
+      "delta": {
+        "avaloniaOffice": -0.054,
+        "wpfAvalonia": -0.0336
+      },
+      "beforeAfterAvalonia": 0.3998,
+      "beforeAfterAvaloniaMaxChannel": 223
+    }
+  },
+  "refutedHypotheses": [
+    {
+      "id": "structural-autofit-theme-inheritance",
+      "outcome": "refuted-by-wave194-topology"
+    },
+    {
+      "id": "avalonia-port-wpf-light-width",
+      "outcome": "rejected",
+      "avaloniaOffice": 3.6208,
+      "wpfAvalonia": 3.3449
+    },
+    {
+      "id": "avalonia-remove-light-keep-width",
+      "outcome": "rejected",
+      "avaloniaOffice": 3.6209
+    },
+    {
+      "id": "avalonia-fixed-line-spacing-1.21",
+      "outcome": "rejected",
+      "avaloniaOffice": 3.5344
+    },
+    {
+      "id": "avalonia-calibri-one",
+      "outcome": "rejected",
+      "avaloniaOffice": 3.9395,
+      "slide01AvaloniaOffice": 1.0304
+    },
+    {
+      "id": "wpf-aptos-to-arial",
+      "outcome": "rejected",
+      "wpfOffice": 4.824,
+      "slide01WpfOffice": 1.0498
+    },
+    {
+      "id": "wpf-vertical-display-centered-height",
+      "outcome": "rejected",
+      "wpfOfficeRange": "3.3828%-3.8637%"
+    }
+  ]
+}
