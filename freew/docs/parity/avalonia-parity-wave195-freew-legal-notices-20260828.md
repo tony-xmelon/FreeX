@@ -1,6 +1,6 @@
 # FreeW Legal Notices Wave 195
 
-The FreeW Avalonia Legal Notices wrapper now applies a one-pixel trailing margin to the realized selected-content presenter after the shared tab template has rendered. This matches the WPF tab pane's trailing edge while keeping the correction local to FreeW Legal Notices.
+The shared Avalonia implementation in `shared/Free.Shared.Shell.Avalonia/AvaloniaLegalNoticesDialog.cs` now applies a one-pixel trailing margin to the realized selected-content presenter after the shared tab template has rendered. This matches the WPF tab pane's trailing edge. The FreeW `LegalNoticesDialog` remains a thin adapter over that shared implementation; it does not own the visual correction.
 
 The six route scenarios were recaptured from commit `e2afdfb257` and compared against the retained WPF authority capture with the canonical route-local `legal-notices` refresh. The WPF authority manifest remained unchanged at SHA-256 `0F63BA1642D0477057ABF5F20B2050D205E121CC89B6F26C8B9196458A4225EC`. Against the previously tracked canonical rows, the refresh reduced the aggregate changed-pixel count by 683 pixels, from 324,936 to 324,253. Row metrics are below; negative deltas are improvements.
 
