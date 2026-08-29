@@ -5,7 +5,7 @@
   "targetDpi": 96,
   "logicalClientWidth": 1280,
   "logicalClientHeight": 760,
-  "generatedAtUtc": "2026-08-25T11:25:45.4543707\u002B00:00",
+  "generatedAtUtc": "2026-08-29T14:42:21.4336299\u002B00:00",
   "captures": [
     {
       "scenarioId": "ribbon.view",
@@ -21,9 +21,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 882499,
-      "fullImageSha256": "6e6151ad0d807fe06d96aec91479851a406dba45aaa1ec578e2cbfc58bc7d88f",
-      "clientImageSha256": "6e6151ad0d807fe06d96aec91479851a406dba45aaa1ec578e2cbfc58bc7d88f",
+      "nonBackgroundPixelCount": 880392,
+      "fullImageSha256": "9bdbb826ae9f7cb4095f29e50cdd01543c82461f3a02b69ee4ddbd9dfd8427ff",
+      "clientImageSha256": "9bdbb826ae9f7cb4095f29e50cdd01543c82461f3a02b69ee4ddbd9dfd8427ff",
       "semanticState": {
         "scenarioId": "ribbon.view",
         "host": "avalonia",
@@ -65,42 +65,42 @@
           "x": 0,
           "y": 0,
           "width": 1280,
-          "height": 34,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
+          "y": 34.4,
           "width": 1280,
-          "height": 123.33333333333333,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 1100,
-          "height": 516.6666666666666,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
+          "y": 673.6,
           "width": 1100,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
+          "y": 733.6,
           "width": 1280,
-          "height": 26,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],

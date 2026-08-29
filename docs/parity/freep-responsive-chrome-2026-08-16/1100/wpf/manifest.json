@@ -5,7 +5,7 @@
   "targetDpi": 96,
   "logicalClientWidth": 1100,
   "logicalClientHeight": 760,
-  "generatedAtUtc": "2026-08-25T11:26:24.3452848\u002B00:00",
+  "generatedAtUtc": "2026-08-29T14:42:38.1653700\u002B00:00",
   "captures": [
     {
       "scenarioId": "ribbon.view",
@@ -19,11 +19,11 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
-      "nonBackgroundPixelCount": 765619,
-      "fullImageSha256": "f822f4e4b246a171c06ba21d14d7fb8e1d9ba073f709b103b665b975ad9196cb",
-      "clientImageSha256": "f822f4e4b246a171c06ba21d14d7fb8e1d9ba073f709b103b665b975ad9196cb",
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
+      "nonBackgroundPixelCount": 766484,
+      "fullImageSha256": "0318d1fe9e817a528ed995b015448add38e807a606358fe52d94e34a55e121da",
+      "clientImageSha256": "0318d1fe9e817a528ed995b015448add38e807a606358fe52d94e34a55e121da",
       "semanticState": {
         "scenarioId": "ribbon.view",
         "host": "wpf",
@@ -72,21 +72,21 @@
           "x": 0,
           "y": 34,
           "width": 1100,
-          "height": 122.96000000000001,
+          "height": 130.96,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 156.96,
+          "y": 164.96,
           "width": 180,
-          "height": 577.04,
+          "height": 569.04,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 156.96,
+          "y": 164.96,
           "width": 920,
-          "height": 517.04,
+          "height": 509.03999999999996,
           "isVisible": true
         },
         "notesPaneBounds": {

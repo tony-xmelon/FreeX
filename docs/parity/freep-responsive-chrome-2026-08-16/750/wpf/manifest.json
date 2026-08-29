@@ -5,7 +5,7 @@
   "targetDpi": 96,
   "logicalClientWidth": 750,
   "logicalClientHeight": 760,
-  "generatedAtUtc": "2026-08-25T11:27:35.3865439\u002B00:00",
+  "generatedAtUtc": "2026-08-29T14:43:38.9412465\u002B00:00",
   "captures": [
     {
       "scenarioId": "ribbon.view",
@@ -19,11 +19,11 @@
       "pixelHeight": 760,
       "dpiX": 96,
       "dpiY": 96,
-      "sourceDpiX": 144,
-      "sourceDpiY": 144,
-      "nonBackgroundPixelCount": 517909,
-      "fullImageSha256": "9db1dbcb21b0078a82be1aa7a6fdb9374fc61702aad844721d3633dfeb2e317b",
-      "clientImageSha256": "9db1dbcb21b0078a82be1aa7a6fdb9374fc61702aad844721d3633dfeb2e317b",
+      "sourceDpiX": 120,
+      "sourceDpiY": 120,
+      "nonBackgroundPixelCount": 517881,
+      "fullImageSha256": "00e3c9ade4127f373443c99c6c788167d7c8995cbeba7c8466b3ad4832ed57e2",
+      "clientImageSha256": "65932bfcd75d5172d4612884fcc65c8689f16c0d2ef77efb97b8ab2fb910ab7f",
       "semanticState": {
         "scenarioId": "ribbon.view",
         "host": "wpf",
@@ -64,42 +64,42 @@
         "titleBarBounds": {
           "x": 0,
           "y": 0,
-          "width": 750,
+          "width": 750.4000000000001,
           "height": 34,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
           "y": 34,
-          "width": 750,
-          "height": 122.96000000000001,
+          "width": 750.4000000000001,
+          "height": 130.96,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 156.96,
+          "y": 164.96,
           "width": 180,
-          "height": 577.04,
+          "height": 569.04,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 156.96,
-          "width": 570,
-          "height": 517.04,
+          "y": 164.96,
+          "width": 570.4000000000001,
+          "height": 509.03999999999996,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
           "y": 674,
-          "width": 570,
+          "width": 570.4000000000001,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
           "y": 734,
-          "width": 750,
+          "width": 750.4000000000001,
           "height": 26,
           "isVisible": true
         },

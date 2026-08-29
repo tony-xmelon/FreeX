@@ -5,7 +5,7 @@
   "targetDpi": 96,
   "logicalClientWidth": 750,
   "logicalClientHeight": 760,
-  "generatedAtUtc": "2026-08-25T11:27:53.2700793\u002B00:00",
+  "generatedAtUtc": "2026-08-29T14:43:54.6567638\u002B00:00",
   "captures": [
     {
       "scenarioId": "ribbon.view",
@@ -21,9 +21,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 506611,
-      "fullImageSha256": "c7130f849df542326919aa1572cd92e12306c70dae11fa59743ac5b7a5cfdf0b",
-      "clientImageSha256": "c7130f849df542326919aa1572cd92e12306c70dae11fa59743ac5b7a5cfdf0b",
+      "nonBackgroundPixelCount": 506258,
+      "fullImageSha256": "30810c1f425c85b8d61f2975a9aad7609ac1df368fdcde1d4e0eee4bd62c46db",
+      "clientImageSha256": "125f296724acd27e1c8a734505333e737effb7383205d03c593e79e04276f60c",
       "semanticState": {
         "scenarioId": "ribbon.view",
         "host": "avalonia",
@@ -64,43 +64,43 @@
         "titleBarBounds": {
           "x": 0,
           "y": 0,
-          "width": 750,
-          "height": 34,
+          "width": 750.4,
+          "height": 34.4,
           "isVisible": true
         },
         "ribbonBounds": {
           "x": 0,
-          "y": 34,
-          "width": 750,
-          "height": 123.33333333333333,
+          "y": 34.4,
+          "width": 750.4,
+          "height": 123.2,
           "isVisible": true
         },
         "slidePaneBounds": {
           "x": 0,
-          "y": 157.33333333333331,
+          "y": 157.6,
           "width": 180,
-          "height": 576.6666666666666,
+          "height": 576,
           "isVisible": true
         },
         "canvasBounds": {
           "x": 180,
-          "y": 157.33333333333331,
-          "width": 570,
-          "height": 516.6666666666666,
+          "y": 157.6,
+          "width": 570.4,
+          "height": 516,
           "isVisible": true
         },
         "notesPaneBounds": {
           "x": 180,
-          "y": 674,
-          "width": 570,
+          "y": 673.6,
+          "width": 570.4,
           "height": 60,
           "isVisible": true
         },
         "statusBarBounds": {
           "x": 0,
-          "y": 734,
-          "width": 750,
-          "height": 26,
+          "y": 733.6,
+          "width": 750.4,
+          "height": 26.4,
           "isVisible": true
         },
         "visibleAuxiliaryPanes": [],
