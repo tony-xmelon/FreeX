@@ -36,8 +36,14 @@
     }
   },
   "imageIntegrity": {
-    "status": "tracked-byte-hashes-verified",
-    "claimBoundary": "SHA-256 values verify the current tracked image bytes only; they do not prove generation from a source revision.",
+    "status": "incomplete-missing-tracked-images",
+    "claimBoundary": "SHA-256 values were recorded, but the four candidate images are not tracked in this evidence directory; no current byte-integrity or source-generation claim is made.",
+    "missingImages": [
+      "candidate-avalonia-slide-01.png",
+      "candidate-avalonia-slide-02.png",
+      "candidate-wpf-slide-01.png",
+      "candidate-wpf-slide-02.png"
+    ],
     "candidateAvaloniaSlide01Sha256": "b839f25ffd749e7238633488ff3f8eaabf054ecfd5805426ce0115c27fee4200",
     "acceptedAvaloniaSlide01Sha256": "b839f25ffd749e7238633488ff3f8eaabf054ecfd5805426ce0115c27fee4200",
     "candidateAvaloniaSlide02Sha256": "3faee960ff25fa4c543d9c8d3834fa212bccbf5a8ad5b65add54e331cdbceeb7",

@@ -1056,10 +1056,10 @@
           "productionCandidateRetained": false,
           "leadingCandidate": "Rejected: scaled leading preserved all 16 body ink-band starts but would accumulate 30.24 DIP of final baseline drift.",
           "baselineAlignmentCandidate": "Rejected: target worsened from 2.4820% to 2.5116% Avalonia/Office and from 2.8755% to 2.9053% WPF/Avalonia; the slide01 control remained byte-identical.",
-          "trackedImageBytesAndHashes": "Verified from tracked image bytes and recorded hashes; the recorded source commit is verified, but image-generation linkage is explicitly unproven.",
+          "trackedImageBytesAndHashes": "Leading-candidate image bytes/hashes and its recorded source commit are verified. The baseline-alignment manifest records four missing untracked candidate images and makes no current byte-integrity claim.",
           "recordedSourceCommit": "a43d86c885",
           "residualBoundary": "The remaining evidence is an unresolved text-raster residual, not a fallback-font diagnosis.",
-          "claimBoundary": "Committed FreeP rejection evidence for leading and baseline-alignment candidates; no production candidate is retained, tracked image bytes/hashes and source-commit metadata are verified, and image-generation linkage is not independently proven."
+          "claimBoundary": "Committed FreeP rejection evidence for leading and baseline-alignment candidates; no production candidate is retained. Leading-candidate bytes and source metadata are verified, while the baseline-alignment images are explicitly recorded as missing and generation linkage is not independently proven."
         },
         "wave198": {
           "status": "candidate-refuted",

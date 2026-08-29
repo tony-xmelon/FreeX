@@ -68,9 +68,11 @@ evidence and triage metrics, not visual or functional completion.
 ### FreeP
 
 No production candidate is retained. Leading and baseline-alignment candidates
-were rejected. Tracked image bytes/hashes and the recorded source commit are
-verified, but image-generation linkage is explicitly unproven. The residual
-remains unresolved text-raster evidence, not a fallback-font diagnosis.
+were rejected. The leading-candidate bytes/hashes and recorded source commit are
+verified. The baseline-alignment manifest instead records four missing untracked
+candidate images and makes no current byte-integrity claim. Image-generation
+linkage is explicitly unproven. The residual remains unresolved text-raster
+evidence, not a fallback-font diagnosis.
 
 Focused validation passed **4/4**. This is bounded renderer evidence and does
 not establish complete FreeP or PowerPoint visual parity.

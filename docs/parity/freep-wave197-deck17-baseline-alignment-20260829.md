@@ -28,12 +28,13 @@ causation is not established by this evidence.
 
 ## Evidence boundary
 
-No source revision is recorded for this capture. The SHA-256 values in
-`images.json` and `imageIntegrity` verify the current tracked image bytes only;
-they do not establish which renderer/configuration/source tree generated those
-bytes. No renderer/config/source-tree hashes or deterministic regeneration
-evidence is recorded, so image generation linkage is not independently proven.
+No source revision is recorded for this capture. `images.json` retains four
+recorded SHA-256 values, but the corresponding candidate PNGs were never
+tracked in this evidence directory. The metrics therefore identify all four as
+missing and make no current byte-integrity claim. No renderer/config/source-tree
+hashes or deterministic regeneration evidence is recorded, so image generation
+linkage is not independently proven.
 
-Machine-readable metrics and candidate PNGs are in
+Machine-readable metrics and the recorded (but unfulfilled) image manifest are in
 [`metrics.json`](./evidence/freep-wave197-deck17-baseline-alignment-20260829/metrics.json)
 and the adjacent evidence directory.
