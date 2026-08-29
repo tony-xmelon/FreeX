@@ -27,11 +27,11 @@
   },
   "baseline": {
     "wpfManifestSha256": "4130632AC826A78C0ACF8A75CB80CCDEBF3297DC48A5D183AA708BCA4F573297",
-    "avaloniaManifestSha256": "46846FAF466E53BC8702F6F00DECCF6C956A334763C96CA70AFD16E3BA78F9E2",
-    "comparisonSha256": "C8AF03FDDE81C647EBB76B322B6A31C2F212D6ABA2ABC64DCDBC076112F72372",
+    "avaloniaManifestSha256": "E6FC9094A1039E179C6F776AB808EBD30F44ED8ABEEB9252841F432F9D70AC95",
+    "comparisonSha256": "D1E7FAF5A426B8440A7A66B84D2003987AD27FF71775A16EE10186FCC67182E0",
     "metrics": {
       "style.initial": { "changedPixels": 11511, "changedRatio": 0.07602988091227932, "meanChannelDelta": 6.948743183114163, "p95ChannelDelta": 63.666666666666664, "wpfBounds": "280x389", "avaloniaBounds": "282x389" },
-      "style.populated": { "changedPixels": 11661, "changedRatio": 0.0770206273406384, "meanChannelDelta": 7.12890491696444, "p95ChannelDelta": 67, "wpfBounds": "280x389", "avaloniaBounds": "282x389" },
+      "style.populated": { "changedPixels": 11661, "changedRatio": 0.07702062734063844, "meanChannelDelta": 7.128904916964436, "p95ChannelDelta": 67, "wpfBounds": "280x389", "avaloniaBounds": "282x389" },
       "style.validation-error": { "changedPixels": 11511, "changedRatio": 0.07602988091227932, "meanChannelDelta": 6.948743183114163, "p95ChannelDelta": 63.666666666666664, "wpfBounds": "280x389", "avaloniaBounds": "282x389" }
     }
   },
@@ -40,9 +40,9 @@
     "avaloniaManifestSha256": "C5D8EA34C43F6B8D88B789382F77237142FE7C2AF2735DD08F02D4A5736056C0",
     "comparisonSha256": "7E2384B349E59BBF315D32D9A52A1CF595104CF1721EAAAF26DB7950E44DDBC2",
     "metrics": {
-      "style.initial": { "changedPixels": 20164, "changedRatio": 0.133182739876223, "meanChannelDelta": 8.54511088654179, "p95ChannelDelta": 68, "wpfBounds": "280x389", "avaloniaBounds": "282x389" },
-      "style.populated": { "changedPixels": 20308, "changedRatio": 0.134133856447448, "meanChannelDelta": 8.48222270658701, "p95ChannelDelta": 68, "wpfBounds": "280x389", "avaloniaBounds": "282x389" },
-      "style.validation-error": { "changedPixels": 20164, "changedRatio": 0.133182739876223, "meanChannelDelta": 8.54511088654179, "p95ChannelDelta": 68, "wpfBounds": "280x389", "avaloniaBounds": "282x389" }
+      "style.initial": { "changedPixels": 20164, "changedRatio": 0.13318273987622276, "meanChannelDelta": 8.545110886541792, "p95ChannelDelta": 68, "wpfBounds": "280x389", "avaloniaBounds": "282x389" },
+      "style.populated": { "changedPixels": 20308, "changedRatio": 0.13413385644744752, "meanChannelDelta": 8.482222706587008, "p95ChannelDelta": 68, "wpfBounds": "280x389", "avaloniaBounds": "282x389" },
+      "style.validation-error": { "changedPixels": 20164, "changedRatio": 0.13318273987622276, "meanChannelDelta": 8.545110886541792, "p95ChannelDelta": 68, "wpfBounds": "280x389", "avaloniaBounds": "282x389" }
     },
     "retained": false,
     "rejection": "All target rows worsened and the Avalonia content bounds remained 282x389."
@@ -51,6 +51,16 @@
     "avaloniaManifestSha256": "E6FC9094A1039E179C6F776AB808EBD30F44ED8ABEEB9252841F432F9D70AC95",
     "comparisonSha256": "D1E7FAF5A426B8440A7A66B84D2003987AD27FF71775A16EE10186FCC67182E0",
     "result": "Final reverted source reproduces the baseline metrics for all three target rows; 3/3 Avalonia captures and 3/3 WPF authority captures pass content gates."
+  },
+  "durableEvidence": {
+    "artifactRoot": "wave199-freew-style-dialog-artifacts",
+    "checksumFile": "wave199-freew-style-dialog-artifacts/SHA256SUMS.txt",
+    "wpfManifest": "wave199-freew-style-dialog-artifacts/wpf/wpf_dialog_capture_manifest.json",
+    "finalAvaloniaManifest": "wave199-freew-style-dialog-artifacts/final/avalonia_dialog_capture_manifest.json",
+    "finalComparison": "wave199-freew-style-dialog-artifacts/final/freew_dialog_visual_comparison.json",
+    "candidateAvaloniaManifest": "wave199-freew-style-dialog-artifacts/candidate/avalonia_dialog_capture_manifest.json",
+    "candidateComparison": "wave199-freew-style-dialog-artifacts/candidate/freew_dialog_visual_comparison.json",
+    "pixelBoundary": "All full captures, target crops, and comparison heatmaps for the three exact states are tracked and checksum-covered. Historical absolute captureRoot values remain byte-identical provenance; manifest image paths are relative and resolve inside this artifact root."
   },
   "retainedChanges": [
     {

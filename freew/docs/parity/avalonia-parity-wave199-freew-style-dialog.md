@@ -16,8 +16,8 @@ a native raster or font substitution.
 
 ## Before and candidate evidence
 
-All six captures passed the WPF/Avalonia content gates. The retained baseline
-used one WPF manifest for both comparisons. An explicit Avalonia width pin did
+All six captures passed the WPF/Avalonia content gates. The tracked final
+recapture uses one WPF manifest for both comparisons. An explicit Avalonia width pin did
 not reduce the measured bounds and materially worsened all three target rows,
 so it was reverted.
 
@@ -52,10 +52,15 @@ Avalonia extensions.
 ## Provenance
 
 The machine-readable record is
-`freew/docs/parity/evidence/wave199-freew-style-dialog.json`. Disposable PNG,
-manifest, and comparison files remain under `C:\Users\anton\AppData\Local\Temp`.
-The WPF authority was captured with the restored WPF harness and the Avalonia
-route was captured against that same WPF manifest. The full inventory compare
-reports unrelated uncaptured inventory rows because this wave intentionally
-uses a route-local three-state capture; the three Style rows above are the
-only rows used for the decision.
+`freew/docs/parity/evidence/wave199-freew-style-dialog.json`. The exact WPF
+authority, final Avalonia capture, rejected candidate capture, comparison JSON
+and HTML, full PNGs, target crops, and heatmaps are tracked under
+`freew/docs/parity/evidence/wave199-freew-style-dialog-artifacts/` with a
+complete SHA-256 manifest.
+
+The capture manifests retain their historical absolute `captureRoot` values
+byte-for-byte. Their PNG paths are relative and resolve inside the tracked
+bundle; a focused test verifies every checksum, path, PNG header, content gate,
+scenario set, and recorded metric. The full inventory compare reports unrelated
+uncaptured inventory rows because this wave intentionally uses a route-local
+three-state capture; only the three Style rows above support the decision.

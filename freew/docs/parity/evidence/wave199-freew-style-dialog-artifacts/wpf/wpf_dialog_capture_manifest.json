@@ -1,0 +1,2753 @@
+{
+  "schema": "freew.dialog-capture-manifest.v1",
+  "schemaVersion": 1,
+  "host": "wpf",
+  "captureRoot": "C:\\Users\\anton\\AppData\\Local\\Temp\\FreeW-Wave199-style-before-wpf",
+  "captures": [
+    {
+      "scenarioId": "wpf.style.initial",
+      "host": "wpf",
+      "routeId": "style",
+      "state": "initial",
+      "status": "captured",
+      "fullPngPath": "full/wpf/wpf.style.initial.png",
+      "logicalWidth": 327,
+      "logicalHeight": 463,
+      "actualWidth": 327,
+      "actualHeight": 463,
+      "dpiX": 144,
+      "dpiY": 144,
+      "targetCrop": {
+        "x": 0,
+        "y": 0,
+        "width": 327,
+        "height": 463
+      },
+      "semantics": {
+        "focusedAutomationId": "StyleDialogNameTextBox",
+        "defaultButton": "OK",
+        "cancelButton": "Cancel",
+        "actionButtonOrder": [
+          "OK",
+          "Cancel"
+        ],
+        "controls": [
+          {
+            "automationId": "",
+            "type": "FreeWDialogWindow",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "AdornerDecorator",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "StackPanel",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogNameTextBox",
+            "type": "TextBox",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ScrollViewer",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Rectangle",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ScrollContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBoxView",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "AdornerLayer",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "CaretElement",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "VerticalScrollBar",
+            "type": "ScrollBar",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "HorizontalScrollBar",
+            "type": "ScrollBar",
+            "name": "",
+            "enabled": false,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogBasedOnComboBox",
+            "type": "ComboBox",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": 0
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Popup",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ToggleButton",
+            "name": "",
+            "enabled": true,
+            "checked": false,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogNextStyleComboBox",
+            "type": "ComboBox",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": 0
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Popup",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ToggleButton",
+            "name": "",
+            "enabled": true,
+            "checked": false,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogFormattingPanel",
+            "type": "StackPanel",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogBoldCheckBox",
+            "type": "CheckBox",
+            "name": "",
+            "enabled": true,
+            "checked": false,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Rectangle",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogItalicCheckBox",
+            "type": "CheckBox",
+            "name": "",
+            "enabled": true,
+            "checked": false,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Rectangle",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogUnderlineCheckBox",
+            "type": "CheckBox",
+            "name": "",
+            "enabled": true,
+            "checked": false,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Rectangle",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogFontSizeComboBox",
+            "type": "ComboBox",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": 0
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Popup",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ToggleButton",
+            "name": "",
+            "enabled": true,
+            "checked": false,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogTextColorComboBox",
+            "type": "ComboBox",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": 0
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Popup",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ToggleButton",
+            "name": "",
+            "enabled": true,
+            "checked": false,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogAlignmentComboBox",
+            "type": "ComboBox",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": 0
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Popup",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ToggleButton",
+            "name": "",
+            "enabled": true,
+            "checked": false,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "StackPanel",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Button",
+            "name": "OK",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "AccessText",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Button",
+            "name": "Cancel",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "AccessText",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "AdornerLayer",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          }
+        ]
+      },
+      "limitation": null,
+      "note": "Real app-owned WPF static-prompt dialog captured before its cancel path returned; full and target images passed pixel-content validation.",
+      "targetPngPath": "crops/wpf/wpf.style.initial.png",
+      "fullPixelContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 327,
+        "height": 463,
+        "pixelCount": 151401,
+        "opaqueRatio": 0.8758198426694672,
+        "nearTransparentRatio": 0.12418015733053282,
+        "nearBlackRatio": 7.541478129713424E-05,
+        "dominantColorRatio": 0.710052790346908,
+        "distinctColorCount": 335,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.25186755701745694,
+        "contentBounds": {
+          "x": 16,
+          "y": 20,
+          "width": 280,
+          "height": 389
+        }
+      },
+      "targetPixelContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 327,
+        "height": 463,
+        "pixelCount": 151401,
+        "opaqueRatio": 0.8758198426694672,
+        "nearTransparentRatio": 0.12418015733053282,
+        "nearBlackRatio": 7.541478129713424E-05,
+        "dominantColorRatio": 0.710052790346908,
+        "distinctColorCount": 335,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.25186755701745694,
+        "contentBounds": {
+          "x": 16,
+          "y": 20,
+          "width": 280,
+          "height": 389
+        }
+      },
+      "key": "wpf.style.initial"
+    },
+    {
+      "scenarioId": "wpf.style.populated",
+      "host": "wpf",
+      "routeId": "style",
+      "state": "populated",
+      "status": "captured",
+      "fullPngPath": "full/wpf/wpf.style.populated.png",
+      "logicalWidth": 327,
+      "logicalHeight": 463,
+      "actualWidth": 327,
+      "actualHeight": 463,
+      "dpiX": 144,
+      "dpiY": 144,
+      "targetCrop": {
+        "x": 0,
+        "y": 0,
+        "width": 327,
+        "height": 463
+      },
+      "semantics": {
+        "focusedAutomationId": "StyleDialogNameTextBox",
+        "defaultButton": "OK",
+        "cancelButton": "Cancel",
+        "actionButtonOrder": [
+          "OK",
+          "Cancel"
+        ],
+        "controls": [
+          {
+            "automationId": "",
+            "type": "FreeWDialogWindow",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "AdornerDecorator",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "StackPanel",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogNameTextBox",
+            "type": "TextBox",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ScrollViewer",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Rectangle",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ScrollContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBoxView",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "AdornerLayer",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "CaretElement",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "VerticalScrollBar",
+            "type": "ScrollBar",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "HorizontalScrollBar",
+            "type": "ScrollBar",
+            "name": "",
+            "enabled": false,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogBasedOnComboBox",
+            "type": "ComboBox",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": 1
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Popup",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ToggleButton",
+            "name": "",
+            "enabled": true,
+            "checked": false,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogNextStyleComboBox",
+            "type": "ComboBox",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": 2
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Popup",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ToggleButton",
+            "name": "",
+            "enabled": true,
+            "checked": false,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogFormattingPanel",
+            "type": "StackPanel",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogBoldCheckBox",
+            "type": "CheckBox",
+            "name": "",
+            "enabled": true,
+            "checked": true,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Rectangle",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogItalicCheckBox",
+            "type": "CheckBox",
+            "name": "",
+            "enabled": true,
+            "checked": true,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Rectangle",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogUnderlineCheckBox",
+            "type": "CheckBox",
+            "name": "",
+            "enabled": true,
+            "checked": false,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Rectangle",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogFontSizeComboBox",
+            "type": "ComboBox",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": 7
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Popup",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ToggleButton",
+            "name": "",
+            "enabled": true,
+            "checked": false,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogTextColorComboBox",
+            "type": "ComboBox",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": 5
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Popup",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ToggleButton",
+            "name": "",
+            "enabled": true,
+            "checked": false,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogAlignmentComboBox",
+            "type": "ComboBox",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": 1
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Popup",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ToggleButton",
+            "name": "",
+            "enabled": true,
+            "checked": false,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "StackPanel",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Button",
+            "name": "OK",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "AccessText",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Button",
+            "name": "Cancel",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "AccessText",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "AdornerLayer",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          }
+        ]
+      },
+      "limitation": null,
+      "note": "Real app-owned WPF static-prompt dialog captured before its cancel path returned; full and target images passed pixel-content validation.",
+      "targetPngPath": "crops/wpf/wpf.style.populated.png",
+      "fullPixelContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 327,
+        "height": 463,
+        "pixelCount": 151401,
+        "opaqueRatio": 0.8758198426694672,
+        "nearTransparentRatio": 0.12418015733053282,
+        "nearBlackRatio": 6.787330316742082E-05,
+        "dominantColorRatio": 0.7078205128205128,
+        "distinctColorCount": 365,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.25367732049325964,
+        "contentBounds": {
+          "x": 16,
+          "y": 20,
+          "width": 280,
+          "height": 389
+        }
+      },
+      "targetPixelContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 327,
+        "height": 463,
+        "pixelCount": 151401,
+        "opaqueRatio": 0.8758198426694672,
+        "nearTransparentRatio": 0.12418015733053282,
+        "nearBlackRatio": 6.787330316742082E-05,
+        "dominantColorRatio": 0.7078205128205128,
+        "distinctColorCount": 365,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.25367732049325964,
+        "contentBounds": {
+          "x": 16,
+          "y": 20,
+          "width": 280,
+          "height": 389
+        }
+      },
+      "key": "wpf.style.populated"
+    },
+    {
+      "scenarioId": "wpf.style.validation-error",
+      "host": "wpf",
+      "routeId": "style",
+      "state": "validation-error",
+      "status": "captured",
+      "fullPngPath": "full/wpf/wpf.style.validation-error.png",
+      "logicalWidth": 327,
+      "logicalHeight": 463,
+      "actualWidth": 327,
+      "actualHeight": 463,
+      "dpiX": 144,
+      "dpiY": 144,
+      "targetCrop": {
+        "x": 0,
+        "y": 0,
+        "width": 327,
+        "height": 463
+      },
+      "semantics": {
+        "focusedAutomationId": "StyleDialogNameTextBox",
+        "defaultButton": "OK",
+        "cancelButton": "Cancel",
+        "actionButtonOrder": [
+          "OK",
+          "Cancel"
+        ],
+        "controls": [
+          {
+            "automationId": "",
+            "type": "FreeWDialogWindow",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "AdornerDecorator",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "StackPanel",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogNameTextBox",
+            "type": "TextBox",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ScrollViewer",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Rectangle",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ScrollContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBoxView",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "AdornerLayer",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "CaretElement",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "VerticalScrollBar",
+            "type": "ScrollBar",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "HorizontalScrollBar",
+            "type": "ScrollBar",
+            "name": "",
+            "enabled": false,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogBasedOnComboBox",
+            "type": "ComboBox",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": 0
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Popup",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ToggleButton",
+            "name": "",
+            "enabled": true,
+            "checked": false,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogNextStyleComboBox",
+            "type": "ComboBox",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": 0
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Popup",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ToggleButton",
+            "name": "",
+            "enabled": true,
+            "checked": false,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogFormattingPanel",
+            "type": "StackPanel",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogBoldCheckBox",
+            "type": "CheckBox",
+            "name": "",
+            "enabled": true,
+            "checked": false,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Rectangle",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogItalicCheckBox",
+            "type": "CheckBox",
+            "name": "",
+            "enabled": true,
+            "checked": false,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Rectangle",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogUnderlineCheckBox",
+            "type": "CheckBox",
+            "name": "",
+            "enabled": true,
+            "checked": false,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Rectangle",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogFontSizeComboBox",
+            "type": "ComboBox",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": 0
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Popup",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ToggleButton",
+            "name": "",
+            "enabled": true,
+            "checked": false,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogTextColorComboBox",
+            "type": "ComboBox",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": 0
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Popup",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ToggleButton",
+            "name": "",
+            "enabled": true,
+            "checked": false,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "StyleDialogAlignmentComboBox",
+            "type": "ComboBox",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": 0
+          },
+          {
+            "automationId": "",
+            "type": "Grid",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Popup",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ToggleButton",
+            "name": "",
+            "enabled": true,
+            "checked": false,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Path",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "StackPanel",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Button",
+            "name": "OK",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "AccessText",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Button",
+            "name": "Cancel",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "Border",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "ContentPresenter",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "AccessText",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "TextBlock",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          },
+          {
+            "automationId": "",
+            "type": "AdornerLayer",
+            "name": "",
+            "enabled": true,
+            "checked": null,
+            "selectedIndex": null
+          }
+        ]
+      },
+      "limitation": null,
+      "note": "Real app-owned WPF static-prompt dialog captured before its cancel path returned; full and target images passed pixel-content validation.",
+      "targetPngPath": "crops/wpf/wpf.style.validation-error.png",
+      "fullPixelContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 327,
+        "height": 463,
+        "pixelCount": 151401,
+        "opaqueRatio": 0.8758198426694672,
+        "nearTransparentRatio": 0.12418015733053282,
+        "nearBlackRatio": 7.541478129713424E-05,
+        "dominantColorRatio": 0.710052790346908,
+        "distinctColorCount": 335,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.25186755701745694,
+        "contentBounds": {
+          "x": 16,
+          "y": 20,
+          "width": 280,
+          "height": 389
+        }
+      },
+      "targetPixelContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 327,
+        "height": 463,
+        "pixelCount": 151401,
+        "opaqueRatio": 0.8758198426694672,
+        "nearTransparentRatio": 0.12418015733053282,
+        "nearBlackRatio": 7.541478129713424E-05,
+        "dominantColorRatio": 0.710052790346908,
+        "distinctColorCount": 335,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.25186755701745694,
+        "contentBounds": {
+          "x": 16,
+          "y": 20,
+          "width": 280,
+          "height": 389
+        }
+      },
+      "key": "wpf.style.validation-error"
+    }
+  ]
+}
