@@ -337,7 +337,7 @@
       "classification": "paired-capture-review-required",
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/900/ribbon-8-View.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-900x720-view.png",
-      "wpfSha256": "d1e023c5dd155d6df4953f7f3f418fe51fdfcb8ec3ba5cb56a63eb1c701bbcb2",
+      "wpfSha256": "444e1c230151a63216bd5e78c083b1dd42a92502809982c1c1169d2f2cb61ace",
       "avaloniaSha256": "57ebb82db0ef660400033e7a42dc6060924c2cca4f9ed4f13cef497f7b02dc02",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
