@@ -17,25 +17,27 @@ This slice converged the unresolved fixed-size Aptos/text-raster hypothesis for 
 | Body + shape-title Liberation Sans | 0.8134% | 0.8590% | 2.4802% | 2.7992% |
 | Global Liberation Sans | 0.8171% | 0.8591% | 2.4802% | 2.7992% |
 
-The body-only candidate worsens the decisive Office target. The body-plus-title and global candidates improve slide02 Office distance, but fail the slide01 cross-renderer control and/or broader corpus gate. Therefore none is safe to retain.
+The body-only artifact worsens the decisive Office target. The body-plus-title and global artifacts improve slide02 Office distance, but fail the recomputable slide01 cross-renderer control. Therefore none is safe to retain. These names are historical probe labels: the PNG pixels are tracked and auditable, but no retained patch or generation log independently binds a label to its temporary renderer source.
 
 ## Candidate findings
 
-- A native Aptos resource route was unavailable: no Aptos font files were installed on the host and no tracked repository font resource exists.
-- `TextHintingMode.Full` is not a supported Avalonia API member, so that probe did not compile and produced no render.
+- The historical claim that the host had no native Aptos resource is downgraded to an unverified observation because the host-font inventory was not retained.
+- `TextHintingMode.Full` remains independently checkable against the referenced Avalonia API: the enum has no `Full` member.
 - Global Calibri and Carlito both regress the decisive target.
-- Liberation Sans is the closest substitute on slide02, but its 18-slide control corpus mean regresses from `1.454822%` to `1.469489%` (`+0.014667` percentage points), with 15 worsened states and 3 improved states.
+- Liberation Sans is the closest retained artifact on slide02, but its slide01 WPF/Avalonia control regresses.
 - Raising the scoped fixed-body scale from `0.930` to `0.950` materially worsens slide02.
+
+The former 18-slide before/after averages are removed. The 18 Office references are durable and inventoried in [broader-controls.json](evidence/freep-wave199-deck17-aptos-resource-raster-20260829/broader-controls.json), but zero corresponding candidate control renders were retained, so no broader numerical comparison is independently recomputable.
 
 ## Decision
 
-Reject all probes and preserve the production route: Aptos/Aptos Display resolve to Arial; fixed-size Aptos body scale is `0.930`; rendering uses Antialias, Light hinting, and Unaligned baseline pixel alignment. No `SlideCanvas` production file changed in Wave199.
+Reject the retained pixel artifacts and preserve the production route: Aptos/Aptos Display resolve to Arial; fixed-size Aptos body scale is `0.930`; rendering uses Antialias, Light hinting, and Unaligned baseline pixel alignment. No `SlideCanvas` production file changed in Wave199.
 
-The retained PNGs and exact measurements are in [metrics.json](evidence/freep-wave199-deck17-aptos-resource-raster-20260829/metrics.json), with image hashes in [images.json](evidence/freep-wave199-deck17-aptos-resource-raster-20260829/images.json). Hashes prove the current image bytes only. Candidate generation is intentionally marked `not-independently-proven` because the temporary source probes were restored before commit and no candidate patch hash or generation log was captured.
+The retained PNGs and exact measurements are in [metrics.json](evidence/freep-wave199-deck17-aptos-resource-raster-20260829/metrics.json), with image hashes in [images.json](evidence/freep-wave199-deck17-aptos-resource-raster-20260829/images.json). [references.json](evidence/freep-wave199-deck17-aptos-resource-raster-20260829/references.json) binds the tracked corpus, Office references, accepted Avalonia baseline, and WPF baseline. The focused test recomputes every accepted and candidate target metric from those pixels using the `FreeP.RenderCompare/ImageDiff.cs` semantics and evaluates every recorded rejection gate.
 
 ## Verification boundary
 
-Evidence was generated with the Avalonia headless renderer on the Windows host and measured against the authoritative WPF/PowerPoint corpus. Docker was available, but no FreeP image or container was present, so this slice does not claim a Linux runtime render. The next investigation must obtain an independently measurable supported Aptos resource or host glyph-raster configuration; this slice does not start that investigation.
+Pixel values are independently auditable, but candidate identity and generation remain `not-independently-proven`: the temporary source probes were restored before commit and no candidate patch hash or generation log was captured. Evidence was generated with the Avalonia headless renderer on the Windows host and measured against the authoritative WPF/PowerPoint corpus. Docker was available, but no FreeP image or container was present, so this slice does not claim a Linux runtime render. The next investigation must obtain an independently measurable and source-linked Aptos resource or host glyph-raster configuration.
 
 ## Verification
 

@@ -1,28 +1,24 @@
 {
-  "schema": "freep.parity.wave199.deck17-aptos-resource-raster.v1",
+  "schema": "freep.parity.wave199.deck17-aptos-resource-raster.v2",
   "date": "2026-08-29",
   "status": "diagnostic-rejected-no-production-change",
   "sourceProvenance": {
     "sourceRevision": "4760be18736bf14affc66746b450ad093e54a6bf",
     "sourceRevisionRole": "Wave199 base / production restored",
     "generationLinkage": "not-independently-proven",
-    "generationLinkageBasis": "Candidate PNGs were generated from temporary source edits that were restored before this diagnostic was committed; no exact candidate-source-byte or patch hash and no captured generation log independently binds those temporary inputs to the PNG bytes.",
+    "generationLinkageBasis": "Candidate labels describe temporary probe intent, but no candidate-source patch hash or generation log independently binds those labels to the retained PNG bytes. Pixel metrics are independently recomputable from tracked artifacts; candidate identity is not.",
     "environment": "Windows host, Avalonia headless renderer, authoritative WPF and PowerPoint corpus",
     "environmentBoundary": "Docker was available but no FreeP image or container was present; this slice does not claim a Linux runtime render."
+  },
+  "comparisonSemantics": {
+    "implementation": "tools/FreeP.RenderCompare/ImageDiff.cs",
+    "algorithm": "Decode to BGRA, alpha-composite over white, compare RGB channels by absolute difference on the larger canvas, divide the sum by width * height * 3 * 255, then multiply by 100.",
+    "recordedPrecisionDecimals": 4
   },
   "target": {
     "deck": "17-bullets-autofit",
     "slides": ["slide-01", "slide-02"],
-    "corpusPath": "tools/FreeP.RenderCompare/corpus/17-bullets-autofit.pptx",
-    "corpusSha256": "f4fc0c9e3d048cac3e0c7fe3d929029238448ff05281be542df105a46c6c88ea",
-    "officeReferences": {
-      "slide-01": "tools/FreeP.RenderCompare/corpus/pptx-ref/17-bullets-autofit/slide-01.png",
-      "slide-02": "tools/FreeP.RenderCompare/corpus/pptx-ref/17-bullets-autofit/slide-02.png"
-    },
-    "officeReferenceSha256": {
-      "slide-01": "72ec3e44fce1f2ae2d51b64032ce528d9384b46202aae7c1146ff786933da1bd",
-      "slide-02": "2828a7a3ced739e6b5b36f53aa7309df35ceb8c7f898b7bf8fb29480ab012ee5"
-    },
+    "referenceManifest": "references.json",
     "width": 1280,
     "height": 720
   },
@@ -38,113 +34,127 @@
     "slide01": {
       "avaloniaOffice": 0.8339,
       "wpfOffice": 0.8441,
-      "wpfAvalonia": 0.8439,
-      "avaloniaPngSha256": "b839f25ffd749e7238633488ff3f8eaabf054ecfd5805426ce0115c27fee4200",
-      "wpfPngSha256": "1e5bf71c64187b08b2cb46a4855362a813a217769c0e4fd813c58da0b693a5f4"
+      "wpfAvalonia": 0.8439
     },
     "slide02": {
-      "avaloniaOffice": 2.482,
+      "avaloniaOffice": 2.4820,
       "wpfOffice": 3.0587,
-      "wpfAvalonia": 2.8755,
-      "avaloniaPngSha256": "69c173388fec6bae29525e5041e837dd384b70b099f796ceb31e605d879ea621",
-      "wpfPngSha256": "7a16e22e966907f2d5c9551cfae70a925585a774931fb6ddbd08573eeaf0d751"
+      "wpfAvalonia": 2.8755
     }
   },
   "candidateMeasurements": [
     {
-      "id": "native-aptos-resource",
-      "status": "unavailable",
-      "reason": "No Aptos font files were installed on the host and no tracked repository font resources were available to load."
-    },
-    {
-      "id": "avalonia-text-hinting-full",
-      "status": "unsupported-api",
-      "reason": "Avalonia TextHintingMode has no Full member; the candidate did not compile and produced no render."
-    },
-    {
       "id": "global-calibri",
-      "status": "rejected",
+      "artifactIdentity": "historical-label-not-independently-proven",
+      "status": "pixel-gate-rejected",
+      "rejectionGate": "slide02-both-regress",
+      "images": {
+        "slide01": "candidate-calibri-slide-01.png",
+        "slide02": "candidate-calibri-slide-02.png"
+      },
       "slide01": { "avaloniaOffice": 0.8754, "wpfAvalonia": 0.9581 },
-      "slide02": { "avaloniaOffice": 3.5453, "wpfAvalonia": 3.1185 },
-      "reason": "Both decisive target metrics regress, especially the autofit slide."
+      "slide02": { "avaloniaOffice": 3.5453, "wpfAvalonia": 3.1185 }
     },
     {
       "id": "global-carlito",
-      "status": "rejected",
+      "artifactIdentity": "historical-label-not-independently-proven",
+      "status": "pixel-gate-rejected",
+      "rejectionGate": "slide02-both-regress",
+      "images": {
+        "slide01": "candidate-carlito-slide-01.png",
+        "slide02": "candidate-carlito-slide-02.png"
+      },
       "slide01": { "avaloniaOffice": 0.8969, "wpfAvalonia": 0.9773 },
-      "slide02": { "avaloniaOffice": 3.7438, "wpfAvalonia": 3.2608 },
-      "reason": "Both decisive target metrics regress."
+      "slide02": { "avaloniaOffice": 3.7438, "wpfAvalonia": 3.2608 }
     },
     {
       "id": "global-liberation-sans",
-      "status": "rejected",
+      "artifactIdentity": "historical-label-not-independently-proven",
+      "status": "pixel-gate-rejected",
+      "rejectionGate": "slide01-wpf-avalonia-regresses",
+      "images": {
+        "slide01": "candidate-global-liberation-slide-01.png",
+        "slide02": "candidate-global-liberation-slide-02.png"
+      },
       "slide01": { "avaloniaOffice": 0.8171, "wpfAvalonia": 0.8591 },
-      "slide02": { "avaloniaOffice": 2.4802, "wpfAvalonia": 2.7992 },
-      "reason": "Target Office distance improves, but the broader control corpus regresses and slide01 cross-renderer distance worsens."
+      "slide02": { "avaloniaOffice": 2.4802, "wpfAvalonia": 2.7992 }
     },
     {
       "id": "fixed-body-liberation-sans",
-      "status": "rejected",
-      "scale": 0.93,
+      "artifactIdentity": "historical-label-not-independently-proven",
+      "status": "pixel-gate-rejected",
+      "rejectionGate": "slide02-office-regresses",
+      "images": {
+        "slide01": "candidate-body-liberation-slide-01.png",
+        "slide02": "candidate-body-liberation-slide-02.png"
+      },
       "slide01": { "avaloniaOffice": 0.8339, "wpfAvalonia": 0.8439 },
-      "slide02": { "avaloniaOffice": 2.5009, "wpfAvalonia": 2.8238 },
-      "reason": "The scoped body route worsens the slide02 Office and WPF/Avalonia gates."
+      "slide02": { "avaloniaOffice": 2.5009, "wpfAvalonia": 2.8238 }
     },
     {
       "id": "fixed-body-plus-shape-title-liberation-sans",
-      "status": "rejected",
-      "scale": 0.93,
-      "slide01": { "avaloniaOffice": 0.8134, "wpfAvalonia": 0.859 },
-      "slide02": { "avaloniaOffice": 2.4802, "wpfAvalonia": 2.7992 },
-      "reason": "Although slide02 Office distance improves, the slide01 WPF/Avalonia control regresses."
+      "artifactIdentity": "historical-label-not-independently-proven",
+      "status": "pixel-gate-rejected",
+      "rejectionGate": "slide01-wpf-avalonia-regresses",
+      "images": {
+        "slide01": "candidate-body-title-liberation-slide-01.png",
+        "slide02": "candidate-body-title-liberation-slide-02.png"
+      },
+      "slide01": { "avaloniaOffice": 0.8134, "wpfAvalonia": 0.8590 },
+      "slide02": { "avaloniaOffice": 2.4802, "wpfAvalonia": 2.7992 }
     },
     {
       "id": "fixed-body-liberation-sans-scale-0.950",
-      "status": "rejected",
-      "scale": 0.95,
+      "artifactIdentity": "historical-label-not-independently-proven",
+      "status": "pixel-gate-rejected",
+      "rejectionGate": "slide02-both-regress",
+      "images": {
+        "slide01": "candidate-body-scale-095-slide-01.png",
+        "slide02": "candidate-body-scale-095-slide-02.png"
+      },
       "slide01": { "avaloniaOffice": 0.8339, "wpfAvalonia": 0.8439 },
-      "slide02": { "avaloniaOffice": 3.025, "wpfAvalonia": 3.0375 },
-      "reason": "The scale change materially worsens slide02."
+      "slide02": { "avaloniaOffice": 3.0250, "wpfAvalonia": 3.0375 }
+    }
+  ],
+  "apiProbe": {
+    "id": "avalonia-text-hinting-full",
+    "status": "independently-auditable-unsupported-api",
+    "durableCheck": "Avalonia.Media.TextHintingMode enum has no Full member"
+  },
+  "unverifiedObservations": [
+    {
+      "id": "native-aptos-resource",
+      "status": "not-independently-auditable",
+      "reason": "The historical host-font inventory was not retained as a durable artifact, so the prior unavailable claim is not asserted as evidence."
     }
   ],
   "broaderCorpusControl": {
-    "candidate": "global-liberation-sans",
-    "controlCount": 18,
-    "averageBefore": 1.454822,
-    "averageAfter": 1.469489,
-    "deltaPercentagePoints": 0.014667,
-    "improvedStates": 3,
-    "worsenedStates": 15,
-    "perSlide": [
-      { "deck": "01-title-slide", "slide": "slide-01", "before": 1.386, "after": 1.3942 },
-      { "deck": "03-mixed-text", "slide": "slide-01", "before": 1.1281, "after": 1.1077 },
-      { "deck": "08-effects", "slide": "slide-01", "before": 1.311, "after": 1.3255 },
-      { "deck": "15-smartart-grouped-list", "slide": "slide-01", "before": 1.3124, "after": 1.2711 },
-      { "deck": "15-smartart-grouped-list", "slide": "slide-02", "before": 1.5689, "after": 1.6117 },
-      { "deck": "15-smartart-grouped-list", "slide": "slide-03", "before": 1.5823, "after": 1.6249 },
-      { "deck": "15-smartart-grouped-list", "slide": "slide-04", "before": 0.7043, "after": 0.7105 },
-      { "deck": "15-smartart-grouped-list", "slide": "slide-05", "before": 1.7286, "after": 1.7248 },
-      { "deck": "15-smartart-grouped-list", "slide": "slide-06", "before": 1.5581, "after": 1.576 },
-      { "deck": "15-smartart-grouped-list", "slide": "slide-07", "before": 0.5063, "after": 0.5193 },
-      { "deck": "15-smartart-grouped-list", "slide": "slide-08", "before": 1.1313, "after": 1.151 },
-      { "deck": "15-smartart-grouped-list", "slide": "slide-09", "before": 0.8675, "after": 0.9484 },
-      { "deck": "15-smartart-grouped-list", "slide": "slide-10", "before": 1.5956, "after": 1.627 },
-      { "deck": "18-chart-types", "slide": "slide-01", "before": 0.4181, "after": 0.4279 },
-      { "deck": "18-chart-types", "slide": "slide-02", "before": 0.768, "after": 0.7699 },
-      { "deck": "18-chart-types", "slide": "slide-03", "before": 0.996, "after": 1.0047 },
-      { "deck": "18-chart-types", "slide": "slide-04", "before": 0.6799, "after": 0.6897 },
-      { "deck": "27-chart-surface3d-4x4", "slide": "slide-01", "before": 6.9444, "after": 6.9665 }
-    ]
+    "candidateArtifactLabel": "global-liberation-sans",
+    "status": "not-independently-auditable",
+    "sourceInventory": "broader-controls.json",
+    "officeReferenceCount": 18,
+    "retainedCandidateRenderCount": 0,
+    "recomputableComparisonCount": 0,
+    "removedClaims": [
+      "averageBefore",
+      "averageAfter",
+      "deltaPercentagePoints",
+      "improvedStates",
+      "worsenedStates",
+      "perSlideBeforeAfter"
+    ],
+    "reason": "The 18 Office reference images are tracked and inventoried, but the corresponding accepted and candidate render pairs were not retained. Historical before/after values were removed because they cannot be recomputed from the committed bundle."
   },
   "decision": {
-    "outcome": "reject-all-candidates-preserve-production-Arial-route",
-    "officeGate": "No candidate improves both decisive slides without a control regression.",
-    "crossRendererGate": "No candidate improves the target while preserving the slide01 WPF/Avalonia control and broader corpus.",
-    "remainingHypothesis": "An independently measured supported native Aptos/resource route or host glyph-raster configuration is still needed; the available substitute fonts do not generalize safely."
+    "outcome": "reject-retained-pixel-artifacts-preserve-production-Arial-route",
+    "officeGate": "Each retained candidate artifact is rejected by a recomputable target or slide01 control metric.",
+    "crossRendererGate": "No retained artifact improves the target while preserving both the Office and WPF/Avalonia slide01 control gates.",
+    "provenanceGate": "Candidate labels are not independently bound to source changes, so the artifacts cannot support adopting a production candidate even where target pixels improve.",
+    "remainingHypothesis": "An independently measured and source-linked supported Aptos resource or host glyph-raster configuration is still needed."
   },
   "imageIntegrity": {
     "status": "tracked-byte-hashes-verified",
-    "claimBoundary": "SHA-256 values verify the retained candidate image bytes only; they do not prove generation from sourceRevision.",
+    "claimBoundary": "SHA-256 values verify the retained candidate image bytes only; they do not prove the historical candidate labels or generation source.",
     "trackedImages": {
       "candidate-body-liberation-slide-01.png": "b839f25ffd749e7238633488ff3f8eaabf054ecfd5805426ce0115c27fee4200",
       "candidate-body-liberation-slide-02.png": "fd55001dabca0ea1115c3d6d479b0791db4613d06273384a20c84e065df5f6b1",
