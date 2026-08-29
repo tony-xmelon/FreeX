@@ -54,12 +54,12 @@
   },
   "durableEvidence": {
     "artifactRoot": "wave199-freew-style-dialog-artifacts",
-    "checksumFile": "wave199-freew-style-dialog-artifacts/SHA256SUMS.txt",
-    "wpfManifest": "wave199-freew-style-dialog-artifacts/wpf/wpf_dialog_capture_manifest.json",
-    "finalAvaloniaManifest": "wave199-freew-style-dialog-artifacts/final/avalonia_dialog_capture_manifest.json",
-    "finalComparison": "wave199-freew-style-dialog-artifacts/final/freew_dialog_visual_comparison.json",
-    "candidateAvaloniaManifest": "wave199-freew-style-dialog-artifacts/candidate/avalonia_dialog_capture_manifest.json",
-    "candidateComparison": "wave199-freew-style-dialog-artifacts/candidate/freew_dialog_visual_comparison.json",
+    "checksumFile": "SHA256SUMS.txt",
+    "wpfManifest": "wpf/wpf_dialog_capture_manifest.json",
+    "finalAvaloniaManifest": "final/avalonia_dialog_capture_manifest.json",
+    "finalComparison": "final/freew_dialog_visual_comparison.json",
+    "candidateAvaloniaManifest": "candidate/avalonia_dialog_capture_manifest.json",
+    "candidateComparison": "candidate/freew_dialog_visual_comparison.json",
     "pixelBoundary": "All full captures, target crops, and comparison heatmaps for the three exact states are tracked and checksum-covered. Historical absolute captureRoot values remain byte-identical provenance; manifest image paths are relative and resolve inside this artifact root."
   },
   "retainedChanges": [
