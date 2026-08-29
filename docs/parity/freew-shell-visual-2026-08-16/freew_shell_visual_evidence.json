@@ -16,13 +16,13 @@
   "sourceSha256": {
     "freew/tools/FreeW.RibbonShot/Program.cs": "5029c273cac6ba3ccb5ef16fa5ca394a1f7dc970e844556e3ca3899c53caf6a0",
     "freew/tools/FreeW.ShellVisualHarness.Avalonia/Program.cs": "91f6c05be54b2ea45661dc844b359363defa79599f275237dd197cc4c56b564a",
-    "freew/FreeW.App.Host/MainWindow.cs": "90a9287ccbef2230db4e560d884b68cf1166fefddca790fdbc5919332c33368f",
+    "freew/FreeW.App.Host/MainWindow.cs": "539544a32e5255ba0b3fe8f78b426bdefede3f67915d8512c7030e77a446a11e",
     "freew/FreeW.App.Avalonia/MainWindow.cs": "aafb64d244bf9e6ad746e00b9ba6fa2d4b6719baeb0e9ba3e12baff24ddbed21",
     "freew/FreeW.Ribbon.Definitions/FreeWRibbonCapabilities.cs": "47d097fcefbfdfd1892db7914077695dc28d98aa4cad182f728523b47beeee7e",
     "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.Ordinary.cs": "dbf23c199faa9985c14b591e2a8f1fb8ff27e936a969976c347923f2c9076042",
     "shared/Free.Shared.Shell.Avalonia/SisterAppWindowFrameBuilder.cs": "f68e5e3dc4dea74a0f66e5e99d926f0141eb52dfc1862922a77dd4bf3e5e0299",
     "freew/FreeW.App.Host/Ribbon/StylesGallery.cs": "50314375561ccb2a660f69b27b96ba06691016b18900c7d46e28b0e19bb27565",
-    "freew/FreeW.App.Host/Ribbon/ThemeGallery.cs": "f2c85834ee84333840d120420d17fa59f8af701190019b2be81d2755dbb9eb17",
+    "freew/FreeW.App.Host/Ribbon/ThemeGallery.cs": "8eaed62cc2cf21a9cff500336a047fbfd600798da7f4f12ef48de18cbae73eb9",
     "freew/FreeW.App.Host/Ribbon/TableStylesGallery.cs": "cf374cffe7f5bb6256de4a77418fe4399e63976b18cb128eb1387cb530373dca",
     "freew/FreeW.App.Host/Ribbon/ChartDesignGallery.cs": "44175facfce451dffb4ac051ee04c30681743ded713b6b088a2122baf64a4e75",
     "freew/FreeW.App.Host/Ribbon/SmartArtGallery.cs": "80b91cbd4606d3e374bf0be4bf72c43ae19a99a46b48e7bb451f9b47f2e388d0",
@@ -172,7 +172,7 @@
       "classification": "paired-capture-review-required",
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1100/ribbon-3-Design.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1100x720-design.png",
-      "wpfSha256": "3dead87af7bbd7fb68cdfc35bbf24f7c56920c4beaa204136ee9190d005fd731",
+      "wpfSha256": "f0baf01d30d16474d4a8988eab29d7c316c6712e8a0b3a0b01a8f9d3a3daffec",
       "avaloniaSha256": "c46f5c0172d0ab79e2982f5b14d91c3ee63b6524d96e00d78f42eb84d042167f",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
@@ -282,7 +282,7 @@
       "classification": "paired-capture-review-required",
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/900/ribbon-3-Design.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-900x720-design.png",
-      "wpfSha256": "826803075c664628f2100e83ca97a5c77b0e0113eb31ee34ff27ae0810e0e3eb",
+      "wpfSha256": "8fa70a1ea3f23588258311392becca23ef926f703f925e4667000499e19a86f4",
       "avaloniaSha256": "4e00ab8c72005a1b77543fa83938d08abbe9c91e2efc9b10c6d3f591253c8f56",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
@@ -392,7 +392,7 @@
       "classification": "paired-capture-review-required",
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/750/ribbon-3-Design.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-750x720-design.png",
-      "wpfSha256": "0f6a0972cc26bd88272cf72d885e23698aa52ed7776816e1943767ca6337302b",
+      "wpfSha256": "03c1bac76aa9ef03f5b130ffc822dc5ec6f75eb0a7ef48aa1062e67e86ad8e8a",
       "avaloniaSha256": "c4446606b0f1a6a950357e517a3375a678d556e5dbc72ef3599149a41773dc9d",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
