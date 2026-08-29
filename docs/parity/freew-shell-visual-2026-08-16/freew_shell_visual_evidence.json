@@ -19,7 +19,7 @@
     "freew/FreeW.App.Host/MainWindow.cs": "0065fb52e0226d771fdba213fda5cce5b048263382b6490daad4c7341778cdf5",
     "freew/FreeW.App.Avalonia/MainWindow.cs": "aafb64d244bf9e6ad746e00b9ba6fa2d4b6719baeb0e9ba3e12baff24ddbed21",
     "freew/FreeW.Ribbon.Definitions/FreeWRibbonCapabilities.cs": "47d097fcefbfdfd1892db7914077695dc28d98aa4cad182f728523b47beeee7e",
-    "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.Ordinary.cs": "e68b3af17a13208bde91ad1b345689d68797c1d1e6ad28fbc55d2b1dd4e2ca0c",
+    "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.Ordinary.cs": "93a54b0fe481acb634d41f9c5aa1cfa07dd6fe3070242b811e94ff005699636a",
     "shared/Free.Shared.Shell.Avalonia/SisterAppWindowFrameBuilder.cs": "f68e5e3dc4dea74a0f66e5e99d926f0141eb52dfc1862922a77dd4bf3e5e0299",
     "freew/FreeW.App.Host/Ribbon/StylesGallery.cs": "50314375561ccb2a660f69b27b96ba06691016b18900c7d46e28b0e19bb27565",
     "freew/FreeW.App.Host/Ribbon/ThemeGallery.cs": "f2c85834ee84333840d120420d17fa59f8af701190019b2be81d2755dbb9eb17",

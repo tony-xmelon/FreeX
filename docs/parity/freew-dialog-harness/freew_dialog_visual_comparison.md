@@ -149,9 +149,9 @@ Inventory scenarios: **512**. Captured WPF: **221**. Captured Avalonia: **291**.
 | `mark-citation.initial` | captured/captured | **genuine-visual-mismatch** | pass (5.0% painted) | pass (5.0% painted) | 3.24 % | 2.40 |  | heatmaps/mark-citation.initial.png |
 | `mark-citation.populated` | captured/captured | **genuine-visual-mismatch** | pass (5.0% painted) | pass (5.3% painted) | 3.56 % | 2.84 |  | heatmaps/mark-citation.populated.png |
 | `mark-citation.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (5.1% painted) | pass (5.1% painted) | 3.37 % | 2.54 |  | heatmaps/mark-citation.validation-error.png |
-| `mark-index-entry.initial` | captured/captured | **genuine-visual-mismatch** | pass (4.8% painted) | pass (7.1% painted) | 10.54 % | 4.99 |  | heatmaps/mark-index-entry.initial.png |
-| `mark-index-entry.populated` | captured/captured | **genuine-visual-mismatch** | pass (4.8% painted) | pass (6.9% painted) | 10.36 % | 5.20 |  | heatmaps/mark-index-entry.populated.png |
-| `mark-index-entry.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (4.8% painted) | pass (7.2% painted) | 10.65 % | 5.09 |  | heatmaps/mark-index-entry.validation-error.png |
+| `mark-index-entry.initial` | captured/captured | **genuine-visual-mismatch** | pass (4.8% painted) | pass (4.9% painted) | 4.96 % | 3.58 |  | heatmaps/mark-index-entry.initial.png |
+| `mark-index-entry.populated` | captured/captured | **genuine-visual-mismatch** | pass (4.4% painted) | pass (4.7% painted) | 4.87 % | 3.86 |  | heatmaps/mark-index-entry.populated.png |
+| `mark-index-entry.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (4.9% painted) | pass (5.0% painted) | 5.07 % | 3.68 |  | heatmaps/mark-index-entry.validation-error.png |
 | `multilevel-list.initial` | captured/captured | **genuine-visual-mismatch** | pass (23.0% painted) | pass (22.8% painted) | 3.95 % | 4.03 |  | heatmaps/multilevel-list.initial.png |
 | `multilevel-list.populated` | captured/captured | **genuine-visual-mismatch** | pass (23.0% painted) | pass (22.8% painted) | 3.95 % | 4.03 |  | heatmaps/multilevel-list.populated.png |
 | `multilevel-list.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (23.1% painted) | pass (23.0% painted) | 4.17 % | 4.27 |  | heatmaps/multilevel-list.validation-error.png |

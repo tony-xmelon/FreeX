@@ -1,7 +1,7 @@
-# FreeW Design Dialog Parity Evidence
+﻿# FreeW Design Dialog Parity Evidence
 
-Generated at UTC: 2026-08-29T12:47:48.7668860Z
-Source commit: `101c8e86ccd34b81c60e383ed94e90a1553b22d6`
+Generated at UTC: 2026-08-29T13:14:15.9154306Z
+Source commit: `89b6b4f5ccdffafc4d0a66d605176474a22f9fec`
 Schema: `freew.design-dialog-parity.v1`
 
 Routes: 11 total; 10 complete; 0 remaining in the owned dialog/planner scope; 0 shell gaps recorded.
@@ -48,6 +48,6 @@ Generate-FreeWDesignDialogParityEvidence.ps1 -Check recomputes SHA-256 for every
 | freew/FreeW.App.Presentation.Tests/DesignDialogPlannerTests.cs | fa8a1a51951b85b649e4434d45ff748e8e88d906c760f38478605c30c87997ae |
 | freew/FreeW.App.Presentation/Dialogs/BordersAndShadingDialogPlanner.cs | b3bacdce6d02f237d7f15d4622039991df218c18802e1e6cde729b5174f7ec9a |
 | freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.Contextual.cs | 17d19593786591f0eb980b2b0991522898cfc8158fb6aa0d88dda293c2c0eeca |
-| freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.cs | fba1e7733a5be2e7257a2f408d5a0e77f38e473b5086da92828996b383b3b27d |
-| freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.Ordinary.cs | e68b3af17a13208bde91ad1b345689d68797c1d1e6ad28fbc55d2b1dd4e2ca0c |
+| freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.cs | 5c66daee21146293ce1218c190847b4907611f92a0beb9c7e130f4ee191ca70b |
+| freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.Ordinary.cs | 93a54b0fe481acb634d41f9c5aa1cfa07dd6fe3070242b811e94ff005699636a |
 | freew/FreeW.Ribbon.Definitions/FreeWRibbon.cs | b677dc00c1f57487b84bbfa8f62bb2936c3d880094bb8df15df4adf1559266e9 |

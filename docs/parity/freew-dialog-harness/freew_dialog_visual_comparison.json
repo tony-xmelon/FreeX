@@ -8049,12 +8049,12 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 35403,
-        "changedRatio": 0.10536607142857143,
-        "meanAbsoluteChannelDelta": 4.985507936507821,
-        "p95AbsoluteChannelDelta": 16,
-        "luminanceSimilarity": 0.9080031424608941,
-        "perceptualHashDistance": 5
+        "changedPixels": 16672,
+        "changedRatio": 0.04961904761904762,
+        "meanAbsoluteChannelDelta": 3.580998015873182,
+        "p95AbsoluteChannelDelta": 7,
+        "luminanceSimilarity": 0.9190027707832857,
+        "perceptualHashDistance": 1
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/mark-index-entry.initial.png",
@@ -8068,10 +8068,10 @@
         "opaqueRatio": 0.91325,
         "nearTransparentRatio": 0.08675,
         "nearBlackRatio": 4.562460078474313E-05,
-        "dominantColorRatio": 0.9471243465905388,
-        "distinctColorCount": 405,
+        "dominantColorRatio": 0.9468147510852137,
+        "distinctColorCount": 427,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.04755952380952381,
+        "contentPixelRatio": 0.04781845238095238,
         "contentBounds": {
           "x": 16,
           "y": 20,
@@ -8088,15 +8088,15 @@
         "opaqueRatio": 0.914875,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 4.554356241745229E-05,
-        "dominantColorRatio": 0.9226442592339573,
-        "distinctColorCount": 203,
+        "dominantColorRatio": 0.946730297529587,
+        "distinctColorCount": 155,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.07071726190476191,
+        "contentPixelRatio": 0.04873511904761905,
         "contentBounds": {
           "x": 16,
           "y": 20,
           "width": 514,
-          "height": 458
+          "height": 364
         }
       }
     },
@@ -8106,12 +8106,12 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 34808,
-        "changedRatio": 0.1035952380952381,
-        "meanAbsoluteChannelDelta": 5.196239087301578,
-        "p95AbsoluteChannelDelta": 15,
-        "luminanceSimilarity": 0.9028747858572186,
-        "perceptualHashDistance": 5
+        "changedPixels": 16369,
+        "changedRatio": 0.0487172619047619,
+        "meanAbsoluteChannelDelta": 3.8593978174604735,
+        "p95AbsoluteChannelDelta": 0,
+        "luminanceSimilarity": 0.9133133919604137,
+        "perceptualHashDistance": 1
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/mark-index-entry.populated.png",
@@ -8124,11 +8124,11 @@
         "pixelCount": 336000,
         "opaqueRatio": 0.91325,
         "nearTransparentRatio": 0.08675,
-        "nearBlackRatio": 4.562460078474313E-05,
-        "dominantColorRatio": 0.9464725665793281,
-        "distinctColorCount": 440,
-        "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.04814285714285714,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.9508948939553922,
+        "distinctColorCount": 405,
+        "luminanceRange": 223.99999999999997,
+        "contentPixelRatio": 0.043979166666666666,
         "contentBounds": {
           "x": 16,
           "y": 20,
@@ -8145,15 +8145,15 @@
         "opaqueRatio": 0.914875,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0,
-        "dominantColorRatio": 0.924566848190294,
-        "distinctColorCount": 191,
+        "dominantColorRatio": 0.9486528864859238,
+        "distinctColorCount": 143,
         "luminanceRange": 227.61419999999998,
-        "contentPixelRatio": 0.06895833333333333,
+        "contentPixelRatio": 0.04697619047619048,
         "contentBounds": {
           "x": 16,
           "y": 20,
           "width": 514,
-          "height": 458
+          "height": 364
         }
       }
     },
@@ -8163,12 +8163,12 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 35780,
-        "changedRatio": 0.10648809523809524,
-        "meanAbsoluteChannelDelta": 5.086604166666545,
-        "p95AbsoluteChannelDelta": 16,
-        "luminanceSimilarity": 0.9070685703719693,
-        "perceptualHashDistance": 5
+        "changedPixels": 17049,
+        "changedRatio": 0.05074107142857143,
+        "meanAbsoluteChannelDelta": 3.6820942460319492,
+        "p95AbsoluteChannelDelta": 10,
+        "luminanceSimilarity": 0.9179428250765137,
+        "perceptualHashDistance": 1
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/mark-index-entry.validation-error.png",
@@ -8182,10 +8182,10 @@
         "opaqueRatio": 0.91325,
         "nearTransparentRatio": 0.08675,
         "nearBlackRatio": 4.562460078474313E-05,
-        "dominantColorRatio": 0.9461238642733305,
-        "distinctColorCount": 469,
+        "dominantColorRatio": 0.9458142687680055,
+        "distinctColorCount": 481,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.048407738095238094,
+        "contentPixelRatio": 0.048666666666666664,
         "contentBounds": {
           "x": 16,
           "y": 20,
@@ -8202,15 +8202,15 @@
         "opaqueRatio": 0.914875,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 4.554356241745229E-05,
-        "dominantColorRatio": 0.9216423008607734,
-        "distinctColorCount": 204,
+        "dominantColorRatio": 0.9457283391564031,
+        "distinctColorCount": 156,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.07163392857142857,
+        "contentPixelRatio": 0.04965178571428572,
         "contentBounds": {
           "x": 16,
           "y": 20,
           "width": 514,
-          "height": 458
+          "height": 364
         }
       }
     },
