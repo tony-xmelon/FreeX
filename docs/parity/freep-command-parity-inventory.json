@@ -4,15 +4,15 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia) plus freep/FreeP.App.Presentation SmartArtLayoutPreset",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 724,
-    "both": 724,
+    "totalCommands": 725,
+    "both": 725,
     "wpfOnly": 0,
     "avaloniaOnly": 0,
     "missingWpf": 0,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 724,
+    "shared": 725,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 0,
@@ -23431,9 +23431,29 @@
           "label": "Berlin",
           "controlType": "RibbonMenuItem",
           "layout": "Menu"
+        },
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "customize",
+          "group": "Customize",
+          "label": "Berlin",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ],
       "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "customize",
+          "group": "Customize",
+          "label": "Berlin",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        },
         {
           "profile": "Avalonia",
           "tabId": "design",
@@ -23465,9 +23485,29 @@
           "label": "Facet",
           "controlType": "RibbonMenuItem",
           "layout": "Menu"
+        },
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "customize",
+          "group": "Customize",
+          "label": "Facet",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ],
       "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "customize",
+          "group": "Customize",
+          "label": "Facet",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        },
         {
           "profile": "Avalonia",
           "tabId": "design",
@@ -23499,9 +23539,29 @@
           "label": "Ion",
           "controlType": "RibbonMenuItem",
           "layout": "Menu"
+        },
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "customize",
+          "group": "Customize",
+          "label": "Ion",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ],
       "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "customize",
+          "group": "Customize",
+          "label": "Ion",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        },
         {
           "profile": "Avalonia",
           "tabId": "design",
@@ -23543,6 +23603,16 @@
           "label": "Office",
           "controlType": "RibbonMenuItem",
           "layout": "Menu"
+        },
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "customize",
+          "group": "Customize",
+          "label": "Office",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ],
       "avaloniaLocations": [
@@ -23555,6 +23625,16 @@
           "label": "Colors",
           "controlType": "RibbonDropdown",
           "layout": "Medium"
+        },
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "customize",
+          "group": "Customize",
+          "label": "Office",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         },
         {
           "profile": "Avalonia",
@@ -23587,6 +23667,16 @@
           "label": "Slice",
           "controlType": "RibbonMenuItem",
           "layout": "Menu"
+        },
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "customize",
+          "group": "Customize",
+          "label": "Slice",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ],
       "avaloniaLocations": [
@@ -23599,6 +23689,50 @@
           "label": "Slice",
           "controlType": "RibbonMenuItem",
           "layout": "Menu"
+        },
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "customize",
+          "group": "Customize",
+          "label": "Slice",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.theme-variants.office",
+      "label": "Variants",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "customize",
+          "group": "Customize",
+          "label": "Variants",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "customize",
+          "group": "Customize",
+          "label": "Variants",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
         }
       ]
     },
