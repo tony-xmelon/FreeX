@@ -31,10 +31,11 @@ Machine-readable evidence and the retained image/reference provenance are in
 
 ## Remaining residual
 
-The remaining slide02 difference is concentrated in the fallback font glyph
-raster and small per-glyph edge/row coverage differences. The available
-general typography probes have now rejected structure, line spacing, font
-family substitution, draw-time width/weight, vertical alignment, and scaled
-leading. A further improvement needs a supported Aptos font/resource route or
-an independently measured host text implementation; no corpus-specific
-condition is justified.
+The remaining slide02 difference is an unresolved text-raster residual. Its
+pixel concentration is consistent with small per-glyph edge/row coverage
+differences, but the evidence does not identify fallback glyph raster as the
+cause. The available general typography probes have now rejected structure,
+line spacing, font family substitution, draw-time width/weight, vertical
+alignment, and scaled leading. A further improvement needs a supported Aptos
+font/resource route or an independently measured host text implementation; no
+corpus-specific condition is justified.

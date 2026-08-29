@@ -33,7 +33,9 @@
     "candidateAvaloniaSlide01Sha256": "b839f25ffd749e7238633488ff3f8eaabf054ecfd5805426ce0115c27fee4200",
     "acceptedAvaloniaSlide01Sha256": "b839f25ffd749e7238633488ff3f8eaabf054ecfd5805426ce0115c27fee4200",
     "candidateAvaloniaSlide02Sha256": "3faee960ff25fa4c543d9c8d3834fa212bccbf5a8ad5b65add54e331cdbceeb7",
-    "acceptedAvaloniaSlide02Sha256": "69c173388fec6bae29525e5041e837dd384b70b099f796ceb31e605d879ea621"
+    "acceptedAvaloniaSlide02Sha256": "69c173388fec6bae29525e5041e837dd384b70b099f796ceb31e605d879ea621",
+    "candidateWpfSlide01Sha256": "1e5bf71c64187b08b2cb46a4855362a813a217769c0e4fd813c58da0b693a5f4",
+    "candidateWpfSlide02Sha256": "7a16e22e966907f2d5c9551cfae70a925585a774931fb6ddbd08573eeaf0d751"
   },
-  "interpretation": "Baseline pixel alignment is a general raster semantic, but it worsens the target while leaving the unrelated control unchanged. The accepted unaligned setting is retained; the residual remains font fallback and glyph raster variation rather than paragraph placement."
+  "interpretation": "Baseline pixel alignment is a general raster semantic, but it worsens the target while leaving the unrelated control unchanged. The accepted unaligned setting is retained; the remaining difference is an unresolved text-raster residual rather than paragraph placement. Glyph-raster variation is consistent with the pixels but remains an inference, not an established fallback-font cause."
 }

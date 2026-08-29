@@ -21,8 +21,10 @@ setting is restored.
 
 This rules out baseline pixel alignment as the next general correction for the
 residual. Together with the retained leading, font-family, draw-scale, weight,
-vertical, and hinting probes, the measured boundary is now the fallback glyph
-raster rather than paragraph cadence or placement.
+vertical, and hinting probes, the measured boundary is an unresolved
+text-raster residual rather than paragraph cadence or placement. Glyph-raster
+variation is a plausible interpretation of the pixels, but fallback-font
+causation is not established by this evidence.
 
 Machine-readable metrics and candidate PNGs are in
 [`metrics.json`](./evidence/freep-wave197-deck17-baseline-alignment-20260829/metrics.json)
