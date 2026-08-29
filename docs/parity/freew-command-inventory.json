@@ -24827,8 +24827,8 @@
           "groupId": "page-setup",
           "group": "Page Setup",
           "label": "Page Setup",
-          "controlType": "RibbonButton",
-          "layout": "Small"
+          "controlType": "RibbonGroupLauncher",
+          "layout": "DialogLauncher"
         }
       ],
       "avaloniaLocations": [
@@ -26041,8 +26041,8 @@
           "groupId": "paragraph",
           "group": "Paragraph",
           "label": "Paragraph Settings",
-          "controlType": "RibbonButton",
-          "layout": "Small"
+          "controlType": "RibbonGroupLauncher",
+          "layout": "DialogLauncher"
         }
       ],
       "avaloniaLocations": [
@@ -26063,8 +26063,8 @@
           "groupId": "paragraph",
           "group": "Paragraph",
           "label": "Paragraph Settings",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
+          "controlType": "RibbonGroupLauncher",
+          "layout": "DialogLauncher"
         }
       ],
       "sourceLiteralEvidence": {
