@@ -5,7 +5,7 @@
   "targetDpi": 96,
   "logicalClientWidth": 1280,
   "logicalClientHeight": 760,
-  "generatedAtUtc": "2026-08-29T19:50:21.1460198\u002B00:00",
+  "generatedAtUtc": "2026-08-29T21:39:01.9408513\u002B00:00",
   "captures": [
     {
       "scenarioId": "ribbon.view",
@@ -21,9 +21,9 @@
       "dpiY": 96,
       "sourceDpiX": 120,
       "sourceDpiY": 120,
-      "nonBackgroundPixelCount": 893484,
-      "fullImageSha256": "d58445b70e4b6fc30d0e2190fb0956c03f619d5d9d79e1842b373b4d97798009",
-      "clientImageSha256": "d58445b70e4b6fc30d0e2190fb0956c03f619d5d9d79e1842b373b4d97798009",
+      "nonBackgroundPixelCount": 914944,
+      "fullImageSha256": "d0c696c9d630338b4e0738fab923f106d3e4e42bedcf874e8ac00e9e98bdbedc",
+      "clientImageSha256": "d0c696c9d630338b4e0738fab923f106d3e4e42bedcf874e8ac00e9e98bdbedc",
       "semanticState": {
         "scenarioId": "ribbon.view",
         "host": "wpf",

@@ -1,7 +1,7 @@
 {
     "schemaVersion":  1,
     "tool":  "tools/Capture-FreePResponsiveChrome.ps1",
-    "generatedAtUtc":  "2026-08-29T19:52:12.7659769Z",
+    "generatedAtUtc":  "2026-08-29T21:40:53.6855683Z",
     "captureStatus":  "complete",
     "evidenceSubject":  "FreeP WPF and Avalonia app-owned ribbon/chrome",
     "captureMethod":  "visible app-owned whole-client render target, scenario-isolated host process; each host invocation exits successfully before its captured PNG pair is recorded",
@@ -11,13 +11,16 @@
                          "freep/TestSupport/VisualEvidence.Avalonia/AvaloniaWholeWindowVisualEvidenceCapture.cs":  "149e04f7e5d640c74fe13334c28ae979ca1afc9c240f498d01012db1e0320e7e",
                          "freep/TestSupport/VisualEvidence/WholeWindowVisualEvidenceContract.cs":  "071f62031cf38ae01e5517b947522e6c7a0aaccf5dd09a4b18864947d9c95177",
                          "freep/FreeP.App.Host/MainWindow.cs":  "f131386c25724073af778bca855d2e2f31f03fc307349f0ff8d581f905b5aed3",
-                         "freep/FreeP.App.Avalonia/MainWindow.cs":  "ae187e1e5489e0cbf3e7f06457d297c0bbfe907e62099e42f8450b1eafcab479",
+                         "freep/FreeP.App.Avalonia/MainWindow.cs":  "1b15fa93af2e3f7c92f833bcb4324b7692a847307b6cddfc26668e4dc4162920",
                          "shared/Free.Shared.Shell.Avalonia/SisterAppWindowFrameBuilder.cs":  "ec8214f8c4955c957a6db9355fb05bb2ff510949d94417d62c36d0c91d6b6342",
-                         "freep/FreeP.Ribbon.Definitions/FreePRibbon.cs":  "3da30f6f9522d8d13ee824ca3fbd40ac1ae268b4f7aa7411dbb404ef5f8c9dac",
-                         "freep/FreeP.Ribbon.Definitions/FreePRibbonText.cs":  "7d5fcd01abdbe1cbdeb65412a970389fbdd4da2f990f342bcaa83775bc2fcf8b",
+                         "freep/FreeP.Ribbon.Definitions/FreePRibbon.cs":  "d3930b90c4b3fae176d7272c22ea212e83f15f3eb083a11d60b06bf186589ed4",
+                         "freep/FreeP.Ribbon.Definitions/FreePRibbonText.cs":  "24a30566dae138a37d435bb5eccb9e1bd5ac65cec375b6a3109b942ddda2d35a",
                          "freep/FreeP.Ribbon.Definitions/FreePRibbonCapabilities.cs":  "4ecb4bd4dbe6d084d44137b3c83d8853988d006a9d435f3103b445b28d2dbffe",
+                         "freep/FreeP.App.Presentation/PresentationViewShowPlanner.cs":  "2a17d81e96a59b371a0567c86a41b5783cce082a45337ef01fee8134faeb265a",
                          "freep/FreeP.App.Presentation/Ribbon/FreePRibbonCommandWorkflow.cs":  "98bdbf96650f536feedb56ec897dcfeaeda62772fdb5690599d8ce20278348c3",
-                         "freep/FreeP.App.Localization/Resources/Strings.resx":  "855d60e2d0b1b776aa9cfb7e2802ad400cbbfaee681a06bb442173df81a38044",
+                         "freep/FreeP.App.Rendering.Wpf/SlideCanvas.cs":  "c5c298778eac04c6e8048531076931b1cf9dfd69591529bb4eee400f927cb3e9",
+                         "freep/FreeP.App.Rendering.Avalonia/SlideCanvas.cs":  "7ad4d27a5fe0cc26ed7308992f78df3b93baf8864fafdda0796876a364a7ae11",
+                         "freep/FreeP.App.Localization/Resources/Strings.resx":  "b5709f1b71c5f554977a48654eb474ef1704a057eba79b6abba7710e1cc16bce",
                          "freep/FreeP.App.Host/Ribbon/PresentationThemeGallery.cs":  "4ca5d100189898623269bc1a9933059ab057e83281188368695352b4d5027fc2",
                          "freep/FreeP.App.Host/Ribbon/PresentationTransitionGallery.cs":  "8402e7f483dbecef2ee54e464abeb670c8061f29a3bbb08011d2aa9d01406db9",
                          "freep/FreeP.App.Host/Ribbon/PresentationAnimationGallery.cs":  "dbbe1de4082f12bfb0120b2570ed85cbe95564afabeda9c051a4e31bca22ec76",
@@ -25,7 +28,7 @@
                          "freep/FreeP.App.Avalonia/PresentationTransitionGallery.cs":  "9651388dec4a607c3011a05e8e0fd4d2be3cf12f0a916fe39966e32fe4f0d031",
                          "freep/FreeP.App.Avalonia/PresentationAnimationGallery.cs":  "f555e6e6e3bb82ab0c66bfa0cb45d1c85b424846fae48aa6235866656db195e3",
                          "shared/Free.Shared.Ribbon.Wpf/RibbonWpfRenderer.cs":  "0e8468ee9a584086108dd488378c106edb3304885d3210b35f1fd45dc54cf45c",
-                         "shared/Free.Shared.Ribbon.Wpf/RibbonAdaptivePanel.cs":  "45998ffb3be98af63a43f938f3daf5ad9e23628f688ec4667853bcf6dd8c08d4",
+                         "shared/Free.Shared.Ribbon.Wpf/RibbonAdaptivePanel.cs":  "0d3fb355c35b966a53b743cdddd1cefa4fb93cbdc948f648a38c21ed6ce1e2d7",
                          "shared/Free.Shared.Ribbon.Avalonia/AvaloniaRibbonRenderer.cs":  "1097bfc0550394ba36679e92d5aed351c3d6c0022c508ede8a8d23d4ac305587"
                      },
     "widths":  [
@@ -55,8 +58,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1280/wpf/full/ribbon.home.png",
                          "clientImagePath":  "1280/wpf/client/ribbon.home.png",
-                         "fullImageSha256":  "f2f189b0017daf86ca70041b4544feae114e024e1476b4f8b84b53e2aa8af3ea",
-                         "clientImageSha256":  "f2f189b0017daf86ca70041b4544feae114e024e1476b4f8b84b53e2aa8af3ea",
+                         "fullImageSha256":  "200dcae375c077199701c33d129ef15edba9d49322f837883edfccd6fbb0279d",
+                         "clientImageSha256":  "200dcae375c077199701c33d129ef15edba9d49322f837883edfccd6fbb0279d",
                          "captureStatus":  "complete"
                      },
                      {
@@ -67,8 +70,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1280/wpf/full/ribbon.insert.png",
                          "clientImagePath":  "1280/wpf/client/ribbon.insert.png",
-                         "fullImageSha256":  "caf3d94da7b9e6f356b2cff641f2c4684f125091dcceff7084f45a5ed7ec5990",
-                         "clientImageSha256":  "caf3d94da7b9e6f356b2cff641f2c4684f125091dcceff7084f45a5ed7ec5990",
+                         "fullImageSha256":  "28e6ad239b42ff58b7be94b570002627cfb90260c85446cb3398186bb7d62b99",
+                         "clientImageSha256":  "28e6ad239b42ff58b7be94b570002627cfb90260c85446cb3398186bb7d62b99",
                          "captureStatus":  "complete"
                      },
                      {
@@ -79,8 +82,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1280/wpf/full/ribbon.design.png",
                          "clientImagePath":  "1280/wpf/client/ribbon.design.png",
-                         "fullImageSha256":  "a1088ff574f6372f4c491bef6ee7942c0442e86e18b4ff1925882fe18c09bf27",
-                         "clientImageSha256":  "a1088ff574f6372f4c491bef6ee7942c0442e86e18b4ff1925882fe18c09bf27",
+                         "fullImageSha256":  "ffd9efca5681702055f7d1caed24bb47cffa45c227f31af9d8d4c00948e59de5",
+                         "clientImageSha256":  "ffd9efca5681702055f7d1caed24bb47cffa45c227f31af9d8d4c00948e59de5",
                          "captureStatus":  "complete"
                      },
                      {
@@ -91,8 +94,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1280/wpf/full/ribbon.transitions.png",
                          "clientImagePath":  "1280/wpf/client/ribbon.transitions.png",
-                         "fullImageSha256":  "33b1fb85be4bee8ded9201fa3dbf7f91577f9ee3bae9e11da7d0ca62dd1c3ebd",
-                         "clientImageSha256":  "33b1fb85be4bee8ded9201fa3dbf7f91577f9ee3bae9e11da7d0ca62dd1c3ebd",
+                         "fullImageSha256":  "6cdde7ee171c708b0372ea6b399ef8f5630ea039b65616ac2dadf72da7a12298",
+                         "clientImageSha256":  "6cdde7ee171c708b0372ea6b399ef8f5630ea039b65616ac2dadf72da7a12298",
                          "captureStatus":  "complete"
                      },
                      {
@@ -103,8 +106,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1280/wpf/full/ribbon.animations.png",
                          "clientImagePath":  "1280/wpf/client/ribbon.animations.png",
-                         "fullImageSha256":  "af31c276623d489ba32574bbe260c918da38e2887a1a5535adb5e5b03d094166",
-                         "clientImageSha256":  "af31c276623d489ba32574bbe260c918da38e2887a1a5535adb5e5b03d094166",
+                         "fullImageSha256":  "98d403e7cd9ccd84b18940ca3722eb68f5f54f0cbc2c55f20116b804b4aaa2c3",
+                         "clientImageSha256":  "98d403e7cd9ccd84b18940ca3722eb68f5f54f0cbc2c55f20116b804b4aaa2c3",
                          "captureStatus":  "complete"
                      },
                      {
@@ -115,8 +118,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1280/wpf/full/ribbon.slide-show.png",
                          "clientImagePath":  "1280/wpf/client/ribbon.slide-show.png",
-                         "fullImageSha256":  "e68307c2edb610a7f76107f8943f85168c4e8ae8c55073f4356624f8d5e79331",
-                         "clientImageSha256":  "e68307c2edb610a7f76107f8943f85168c4e8ae8c55073f4356624f8d5e79331",
+                         "fullImageSha256":  "784fb16ae8aca9634e8e3cb037de9c09467e6f7ab987c74606df2520a2df4cff",
+                         "clientImageSha256":  "784fb16ae8aca9634e8e3cb037de9c09467e6f7ab987c74606df2520a2df4cff",
                          "captureStatus":  "complete"
                      },
                      {
@@ -127,8 +130,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1280/wpf/full/ribbon.review.png",
                          "clientImagePath":  "1280/wpf/client/ribbon.review.png",
-                         "fullImageSha256":  "6cfcd763fe22e135f244d37305a550fb5da2204c74414383f37fa7b2eec160ff",
-                         "clientImageSha256":  "6cfcd763fe22e135f244d37305a550fb5da2204c74414383f37fa7b2eec160ff",
+                         "fullImageSha256":  "eb15bb133b2ff081d5c4fbb40e0b7d184bccf3ed601eb464cc38ff629e29cc7f",
+                         "clientImageSha256":  "eb15bb133b2ff081d5c4fbb40e0b7d184bccf3ed601eb464cc38ff629e29cc7f",
                          "captureStatus":  "complete"
                      },
                      {
@@ -139,8 +142,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1280/wpf/full/ribbon.view.png",
                          "clientImagePath":  "1280/wpf/client/ribbon.view.png",
-                         "fullImageSha256":  "d58445b70e4b6fc30d0e2190fb0956c03f619d5d9d79e1842b373b4d97798009",
-                         "clientImageSha256":  "d58445b70e4b6fc30d0e2190fb0956c03f619d5d9d79e1842b373b4d97798009",
+                         "fullImageSha256":  "d0c696c9d630338b4e0738fab923f106d3e4e42bedcf874e8ac00e9e98bdbedc",
+                         "clientImageSha256":  "d0c696c9d630338b4e0738fab923f106d3e4e42bedcf874e8ac00e9e98bdbedc",
                          "captureStatus":  "complete"
                      },
                      {
@@ -151,8 +154,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1280/avalonia/full/ribbon.home.png",
                          "clientImagePath":  "1280/avalonia/client/ribbon.home.png",
-                         "fullImageSha256":  "608ecd46a7dffc61b4b664e5fbcb1c7510b645ac68a852c31764bec9ade6f899",
-                         "clientImageSha256":  "608ecd46a7dffc61b4b664e5fbcb1c7510b645ac68a852c31764bec9ade6f899",
+                         "fullImageSha256":  "85970c38171d9c28e4dfaeebfada355f50d7f521a3db72f7e78fd93c0d58bc7a",
+                         "clientImageSha256":  "85970c38171d9c28e4dfaeebfada355f50d7f521a3db72f7e78fd93c0d58bc7a",
                          "captureStatus":  "complete"
                      },
                      {
@@ -163,8 +166,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1280/avalonia/full/ribbon.insert.png",
                          "clientImagePath":  "1280/avalonia/client/ribbon.insert.png",
-                         "fullImageSha256":  "6912870a8c629398e53811d4ae66a85f10f2ecd8de9b53151bed2cf91d278778",
-                         "clientImageSha256":  "6912870a8c629398e53811d4ae66a85f10f2ecd8de9b53151bed2cf91d278778",
+                         "fullImageSha256":  "4bd0317bbab1784ad36adf5cfc0eadab5504515c184c99fa8a121d8e28acbb91",
+                         "clientImageSha256":  "4bd0317bbab1784ad36adf5cfc0eadab5504515c184c99fa8a121d8e28acbb91",
                          "captureStatus":  "complete"
                      },
                      {
@@ -175,8 +178,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1280/avalonia/full/ribbon.design.png",
                          "clientImagePath":  "1280/avalonia/client/ribbon.design.png",
-                         "fullImageSha256":  "56375fd6f1cef302b01de571283327da5619f912ca97600fb553580c22ec0127",
-                         "clientImageSha256":  "56375fd6f1cef302b01de571283327da5619f912ca97600fb553580c22ec0127",
+                         "fullImageSha256":  "929fed6b6b167a6022852d2bc1593bd696f09b5d7a291f742eadf7407b375776",
+                         "clientImageSha256":  "929fed6b6b167a6022852d2bc1593bd696f09b5d7a291f742eadf7407b375776",
                          "captureStatus":  "complete"
                      },
                      {
@@ -187,8 +190,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1280/avalonia/full/ribbon.transitions.png",
                          "clientImagePath":  "1280/avalonia/client/ribbon.transitions.png",
-                         "fullImageSha256":  "0d3f475e2b41f0010a5c1add2a1a1f44a87a4ae4d6ac62e01dfa43fa9f6008e0",
-                         "clientImageSha256":  "0d3f475e2b41f0010a5c1add2a1a1f44a87a4ae4d6ac62e01dfa43fa9f6008e0",
+                         "fullImageSha256":  "013eb302b9df6571e81e20a88cffd7f38e89112ef3d7aa5f7f7496d0c68b3b54",
+                         "clientImageSha256":  "013eb302b9df6571e81e20a88cffd7f38e89112ef3d7aa5f7f7496d0c68b3b54",
                          "captureStatus":  "complete"
                      },
                      {
@@ -199,8 +202,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1280/avalonia/full/ribbon.animations.png",
                          "clientImagePath":  "1280/avalonia/client/ribbon.animations.png",
-                         "fullImageSha256":  "f7b6863f0c2a18537443642686ff0359dcf3e81d9903766aebc8f8c649c050c6",
-                         "clientImageSha256":  "f7b6863f0c2a18537443642686ff0359dcf3e81d9903766aebc8f8c649c050c6",
+                         "fullImageSha256":  "07e88ede3e21411bce3596def84e3dd232cab88541de2b774c35002fae8bb5af",
+                         "clientImageSha256":  "07e88ede3e21411bce3596def84e3dd232cab88541de2b774c35002fae8bb5af",
                          "captureStatus":  "complete"
                      },
                      {
@@ -211,8 +214,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1280/avalonia/full/ribbon.slide-show.png",
                          "clientImagePath":  "1280/avalonia/client/ribbon.slide-show.png",
-                         "fullImageSha256":  "d8069b1b4a3b8e77e46c8089cee6a30a48a8bab3029ed3b3962c6a72ef16e0b1",
-                         "clientImageSha256":  "d8069b1b4a3b8e77e46c8089cee6a30a48a8bab3029ed3b3962c6a72ef16e0b1",
+                         "fullImageSha256":  "e97d599762075b4fb2666f23b862f5c892a45ae5b7e84a59ba650f0326fb0297",
+                         "clientImageSha256":  "e97d599762075b4fb2666f23b862f5c892a45ae5b7e84a59ba650f0326fb0297",
                          "captureStatus":  "complete"
                      },
                      {
@@ -223,8 +226,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1280/avalonia/full/ribbon.review.png",
                          "clientImagePath":  "1280/avalonia/client/ribbon.review.png",
-                         "fullImageSha256":  "20516e40bd9c9ea89b2a98fb9008b24405dada7be49ce5987b6794c433598e64",
-                         "clientImageSha256":  "20516e40bd9c9ea89b2a98fb9008b24405dada7be49ce5987b6794c433598e64",
+                         "fullImageSha256":  "70ca756f28db73a3ba534bd4ad3ec891abf5f86ff49426d7f73b58216996990f",
+                         "clientImageSha256":  "70ca756f28db73a3ba534bd4ad3ec891abf5f86ff49426d7f73b58216996990f",
                          "captureStatus":  "complete"
                      },
                      {
@@ -235,8 +238,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1280/avalonia/full/ribbon.view.png",
                          "clientImagePath":  "1280/avalonia/client/ribbon.view.png",
-                         "fullImageSha256":  "9bdbb826ae9f7cb4095f29e50cdd01543c82461f3a02b69ee4ddbd9dfd8427ff",
-                         "clientImageSha256":  "9bdbb826ae9f7cb4095f29e50cdd01543c82461f3a02b69ee4ddbd9dfd8427ff",
+                         "fullImageSha256":  "95579c7dc58b38e402cd3968245945acdaf7f3fa4fd25f01779b4ed03cde4f08",
+                         "clientImageSha256":  "95579c7dc58b38e402cd3968245945acdaf7f3fa4fd25f01779b4ed03cde4f08",
                          "captureStatus":  "complete"
                      },
                      {
@@ -247,8 +250,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1100/wpf/full/ribbon.home.png",
                          "clientImagePath":  "1100/wpf/client/ribbon.home.png",
-                         "fullImageSha256":  "6eae4b3b32cdb26fbe562099b7df1e81681b73abe57c06b480c65363e719e37e",
-                         "clientImageSha256":  "6eae4b3b32cdb26fbe562099b7df1e81681b73abe57c06b480c65363e719e37e",
+                         "fullImageSha256":  "c3a02af5d9d79068ae54daf6a846e7b3101fdfc24343c67dbd2156728fde575e",
+                         "clientImageSha256":  "c3a02af5d9d79068ae54daf6a846e7b3101fdfc24343c67dbd2156728fde575e",
                          "captureStatus":  "complete"
                      },
                      {
@@ -259,8 +262,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1100/wpf/full/ribbon.insert.png",
                          "clientImagePath":  "1100/wpf/client/ribbon.insert.png",
-                         "fullImageSha256":  "86161979e881000f53542b460edf1928cf583ed3505383a1d73430441e7da961",
-                         "clientImageSha256":  "86161979e881000f53542b460edf1928cf583ed3505383a1d73430441e7da961",
+                         "fullImageSha256":  "285e7fbbcc9fe4f2b627dcb0376da16543c1fc57f6e11829ea7ff7f4debd4d20",
+                         "clientImageSha256":  "285e7fbbcc9fe4f2b627dcb0376da16543c1fc57f6e11829ea7ff7f4debd4d20",
                          "captureStatus":  "complete"
                      },
                      {
@@ -271,8 +274,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1100/wpf/full/ribbon.design.png",
                          "clientImagePath":  "1100/wpf/client/ribbon.design.png",
-                         "fullImageSha256":  "974110d4fb7b39e12a847f5828f7745d276fb84681344d4fd1e64dde24f6a0f2",
-                         "clientImageSha256":  "974110d4fb7b39e12a847f5828f7745d276fb84681344d4fd1e64dde24f6a0f2",
+                         "fullImageSha256":  "a5689318a3e369fec4a6ce5989a77e6b32afc7568bb78513c5143cff422144f4",
+                         "clientImageSha256":  "a5689318a3e369fec4a6ce5989a77e6b32afc7568bb78513c5143cff422144f4",
                          "captureStatus":  "complete"
                      },
                      {
@@ -283,8 +286,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1100/wpf/full/ribbon.transitions.png",
                          "clientImagePath":  "1100/wpf/client/ribbon.transitions.png",
-                         "fullImageSha256":  "98b8842dc1c5af1b8351167c1494579225a854f6837e09ee0450ec156585613c",
-                         "clientImageSha256":  "98b8842dc1c5af1b8351167c1494579225a854f6837e09ee0450ec156585613c",
+                         "fullImageSha256":  "6d3043da25ed488c39163e396839b0ee1e1a97ee5edb866a2da99e9d09348052",
+                         "clientImageSha256":  "6d3043da25ed488c39163e396839b0ee1e1a97ee5edb866a2da99e9d09348052",
                          "captureStatus":  "complete"
                      },
                      {
@@ -295,8 +298,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1100/wpf/full/ribbon.animations.png",
                          "clientImagePath":  "1100/wpf/client/ribbon.animations.png",
-                         "fullImageSha256":  "519a124703e1a33001dd9d623d270a65fa2f155e00deacef654d0bde65a99ac1",
-                         "clientImageSha256":  "519a124703e1a33001dd9d623d270a65fa2f155e00deacef654d0bde65a99ac1",
+                         "fullImageSha256":  "4c4d88a45cd43c7fa9a4dbca694def042299187aa8a2550ca91ebf377148385f",
+                         "clientImageSha256":  "4c4d88a45cd43c7fa9a4dbca694def042299187aa8a2550ca91ebf377148385f",
                          "captureStatus":  "complete"
                      },
                      {
@@ -307,8 +310,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1100/wpf/full/ribbon.slide-show.png",
                          "clientImagePath":  "1100/wpf/client/ribbon.slide-show.png",
-                         "fullImageSha256":  "df22f2b87a1efa277704fcc8527c7658f12e5c804452e1b33fe16abf1f80c034",
-                         "clientImageSha256":  "df22f2b87a1efa277704fcc8527c7658f12e5c804452e1b33fe16abf1f80c034",
+                         "fullImageSha256":  "81306e420a2d52312ab59f93b3ea43ce50525164a3789815db3ab83636b6767b",
+                         "clientImageSha256":  "81306e420a2d52312ab59f93b3ea43ce50525164a3789815db3ab83636b6767b",
                          "captureStatus":  "complete"
                      },
                      {
@@ -319,8 +322,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1100/wpf/full/ribbon.review.png",
                          "clientImagePath":  "1100/wpf/client/ribbon.review.png",
-                         "fullImageSha256":  "befb07da529a069a06780ac87cbbcab637255e6cb4c20dc606e6ac90c79ac5b5",
-                         "clientImageSha256":  "befb07da529a069a06780ac87cbbcab637255e6cb4c20dc606e6ac90c79ac5b5",
+                         "fullImageSha256":  "774bf221332778c2b6a8b795c4ba8a0f23a5e261fa708df749e54104de11fe52",
+                         "clientImageSha256":  "774bf221332778c2b6a8b795c4ba8a0f23a5e261fa708df749e54104de11fe52",
                          "captureStatus":  "complete"
                      },
                      {
@@ -331,8 +334,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1100/wpf/full/ribbon.view.png",
                          "clientImagePath":  "1100/wpf/client/ribbon.view.png",
-                         "fullImageSha256":  "0318d1fe9e817a528ed995b015448add38e807a606358fe52d94e34a55e121da",
-                         "clientImageSha256":  "0318d1fe9e817a528ed995b015448add38e807a606358fe52d94e34a55e121da",
+                         "fullImageSha256":  "e963dcf27f4c3308f24dfbc6b60b0929146d7b5d9f006124908a45f1684e5107",
+                         "clientImageSha256":  "e963dcf27f4c3308f24dfbc6b60b0929146d7b5d9f006124908a45f1684e5107",
                          "captureStatus":  "complete"
                      },
                      {
@@ -343,8 +346,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1100/avalonia/full/ribbon.home.png",
                          "clientImagePath":  "1100/avalonia/client/ribbon.home.png",
-                         "fullImageSha256":  "c72b39a66130abde07253e0a1acd47b0521b880340da995bc59446cbd00a45be",
-                         "clientImageSha256":  "c72b39a66130abde07253e0a1acd47b0521b880340da995bc59446cbd00a45be",
+                         "fullImageSha256":  "5b017c2ce7a20c0a48961447612da8fb17060a42047720835c00455064c01a39",
+                         "clientImageSha256":  "5b017c2ce7a20c0a48961447612da8fb17060a42047720835c00455064c01a39",
                          "captureStatus":  "complete"
                      },
                      {
@@ -355,8 +358,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1100/avalonia/full/ribbon.insert.png",
                          "clientImagePath":  "1100/avalonia/client/ribbon.insert.png",
-                         "fullImageSha256":  "6908c7b788fc84bdef7d1c371e0e81dd539ec40ee58829c0101668bf841789eb",
-                         "clientImageSha256":  "6908c7b788fc84bdef7d1c371e0e81dd539ec40ee58829c0101668bf841789eb",
+                         "fullImageSha256":  "dbf62458b408ddbb083d5aa14e5b063395128be91d425be730cc6a56f04e1991",
+                         "clientImageSha256":  "dbf62458b408ddbb083d5aa14e5b063395128be91d425be730cc6a56f04e1991",
                          "captureStatus":  "complete"
                      },
                      {
@@ -367,8 +370,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1100/avalonia/full/ribbon.design.png",
                          "clientImagePath":  "1100/avalonia/client/ribbon.design.png",
-                         "fullImageSha256":  "93607158c9a7541b15115ff3e3dc630bdc832064d360e827dd10e02887a069cc",
-                         "clientImageSha256":  "93607158c9a7541b15115ff3e3dc630bdc832064d360e827dd10e02887a069cc",
+                         "fullImageSha256":  "04d13ab55416945b2f45edb90901cd1f4b3025b1a2803b796de8c11e1479794a",
+                         "clientImageSha256":  "04d13ab55416945b2f45edb90901cd1f4b3025b1a2803b796de8c11e1479794a",
                          "captureStatus":  "complete"
                      },
                      {
@@ -379,8 +382,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1100/avalonia/full/ribbon.transitions.png",
                          "clientImagePath":  "1100/avalonia/client/ribbon.transitions.png",
-                         "fullImageSha256":  "f21d45e11292ffaee30ffbef66b7c3b2f2e715f660cbd21db855a07cbbb66312",
-                         "clientImageSha256":  "f21d45e11292ffaee30ffbef66b7c3b2f2e715f660cbd21db855a07cbbb66312",
+                         "fullImageSha256":  "03d95cd93b26acacedded76c18d10811a2c05d6b59f4aff612bf1458b0fbd249",
+                         "clientImageSha256":  "03d95cd93b26acacedded76c18d10811a2c05d6b59f4aff612bf1458b0fbd249",
                          "captureStatus":  "complete"
                      },
                      {
@@ -391,8 +394,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1100/avalonia/full/ribbon.animations.png",
                          "clientImagePath":  "1100/avalonia/client/ribbon.animations.png",
-                         "fullImageSha256":  "d0962f92bf9fa02ada4b71b2fc2bb19fd45b6e59e3e5d72bd8bb6b8cd494c6cd",
-                         "clientImageSha256":  "d0962f92bf9fa02ada4b71b2fc2bb19fd45b6e59e3e5d72bd8bb6b8cd494c6cd",
+                         "fullImageSha256":  "f3debfc7f536029b209f563ce165bebd8bc263bbd644fcd120f0a0a70f12c313",
+                         "clientImageSha256":  "f3debfc7f536029b209f563ce165bebd8bc263bbd644fcd120f0a0a70f12c313",
                          "captureStatus":  "complete"
                      },
                      {
@@ -403,8 +406,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1100/avalonia/full/ribbon.slide-show.png",
                          "clientImagePath":  "1100/avalonia/client/ribbon.slide-show.png",
-                         "fullImageSha256":  "a2472492140135aea134d9042334d36101f1c007c56529bb5d6e867278b9e899",
-                         "clientImageSha256":  "a2472492140135aea134d9042334d36101f1c007c56529bb5d6e867278b9e899",
+                         "fullImageSha256":  "448938fb3d81b92ef0444decf8d20a57bdf7352ec3d514bcf880bc1c24ba73ba",
+                         "clientImageSha256":  "448938fb3d81b92ef0444decf8d20a57bdf7352ec3d514bcf880bc1c24ba73ba",
                          "captureStatus":  "complete"
                      },
                      {
@@ -415,8 +418,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1100/avalonia/full/ribbon.review.png",
                          "clientImagePath":  "1100/avalonia/client/ribbon.review.png",
-                         "fullImageSha256":  "02b84aad5e6dadc0f5a92631daf275db64d8a7d35fff8cae0082f9a6c7019919",
-                         "clientImageSha256":  "02b84aad5e6dadc0f5a92631daf275db64d8a7d35fff8cae0082f9a6c7019919",
+                         "fullImageSha256":  "81e59de1fb4359a16e928f7efc58ed01b7a399cf11e3c65bfc1ae42bf6717c42",
+                         "clientImageSha256":  "81e59de1fb4359a16e928f7efc58ed01b7a399cf11e3c65bfc1ae42bf6717c42",
                          "captureStatus":  "complete"
                      },
                      {
@@ -427,8 +430,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "1100/avalonia/full/ribbon.view.png",
                          "clientImagePath":  "1100/avalonia/client/ribbon.view.png",
-                         "fullImageSha256":  "589762504f4a987b7aafb1b7104c4fb1aec2f714a28b1c04dad71c448eab25a4",
-                         "clientImageSha256":  "589762504f4a987b7aafb1b7104c4fb1aec2f714a28b1c04dad71c448eab25a4",
+                         "fullImageSha256":  "020071797eeb37e5905c8d3954e6d688586711aa7803e879feea6f478b92bdf2",
+                         "clientImageSha256":  "020071797eeb37e5905c8d3954e6d688586711aa7803e879feea6f478b92bdf2",
                          "captureStatus":  "complete"
                      },
                      {
@@ -439,8 +442,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "900/wpf/full/ribbon.home.png",
                          "clientImagePath":  "900/wpf/client/ribbon.home.png",
-                         "fullImageSha256":  "a626d41f3a974a5968148415ec509f561aa7a457bcb1e9ad9c9ba9b329050a12",
-                         "clientImageSha256":  "a626d41f3a974a5968148415ec509f561aa7a457bcb1e9ad9c9ba9b329050a12",
+                         "fullImageSha256":  "9923a10544e67d4b28d0ecba2975a2fee98b20c148a07d73f3870a50af109d8c",
+                         "clientImageSha256":  "9923a10544e67d4b28d0ecba2975a2fee98b20c148a07d73f3870a50af109d8c",
                          "captureStatus":  "complete"
                      },
                      {
@@ -451,8 +454,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "900/wpf/full/ribbon.insert.png",
                          "clientImagePath":  "900/wpf/client/ribbon.insert.png",
-                         "fullImageSha256":  "edfb59646b0e0c2d36e5cfb2ff911797a290ab00cf4728be49b4c3a101080efc",
-                         "clientImageSha256":  "edfb59646b0e0c2d36e5cfb2ff911797a290ab00cf4728be49b4c3a101080efc",
+                         "fullImageSha256":  "0e0492e7b0e2b7aa7b94fdc8cb7ab15e36d6df3914c2bf3661c7ccd0583e7e91",
+                         "clientImageSha256":  "0e0492e7b0e2b7aa7b94fdc8cb7ab15e36d6df3914c2bf3661c7ccd0583e7e91",
                          "captureStatus":  "complete"
                      },
                      {
@@ -463,8 +466,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "900/wpf/full/ribbon.design.png",
                          "clientImagePath":  "900/wpf/client/ribbon.design.png",
-                         "fullImageSha256":  "5a4f26e5bc91b0ce458a41f6166066eb83e4852c3be7f56845e3af18e800fc44",
-                         "clientImageSha256":  "5a4f26e5bc91b0ce458a41f6166066eb83e4852c3be7f56845e3af18e800fc44",
+                         "fullImageSha256":  "8eff3d1d5354376c9883243033ce97b7345c129cdb11a231c61c9462a1de7049",
+                         "clientImageSha256":  "8eff3d1d5354376c9883243033ce97b7345c129cdb11a231c61c9462a1de7049",
                          "captureStatus":  "complete"
                      },
                      {
@@ -475,8 +478,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "900/wpf/full/ribbon.transitions.png",
                          "clientImagePath":  "900/wpf/client/ribbon.transitions.png",
-                         "fullImageSha256":  "c78be78d8e9d2e1ebf70aee44ee8e417b3ce2ce266759cd40d7532fef63e2885",
-                         "clientImageSha256":  "c78be78d8e9d2e1ebf70aee44ee8e417b3ce2ce266759cd40d7532fef63e2885",
+                         "fullImageSha256":  "f1c480bf7dbf6401b352f0d2d369db9487194a981bea968b1400770d028eb43f",
+                         "clientImageSha256":  "f1c480bf7dbf6401b352f0d2d369db9487194a981bea968b1400770d028eb43f",
                          "captureStatus":  "complete"
                      },
                      {
@@ -487,8 +490,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "900/wpf/full/ribbon.animations.png",
                          "clientImagePath":  "900/wpf/client/ribbon.animations.png",
-                         "fullImageSha256":  "0c71f23d31241fd1fca8088d92c527de9cf408da30cf9df2bd3083db43d8ebaf",
-                         "clientImageSha256":  "0c71f23d31241fd1fca8088d92c527de9cf408da30cf9df2bd3083db43d8ebaf",
+                         "fullImageSha256":  "65903d070afdf370b77338221a7aaca8cd21deaf39eb3b4b7e8411f67bc659da",
+                         "clientImageSha256":  "65903d070afdf370b77338221a7aaca8cd21deaf39eb3b4b7e8411f67bc659da",
                          "captureStatus":  "complete"
                      },
                      {
@@ -499,8 +502,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "900/wpf/full/ribbon.slide-show.png",
                          "clientImagePath":  "900/wpf/client/ribbon.slide-show.png",
-                         "fullImageSha256":  "2c81e8c7cd6fb612f0e2a4a29e5387a9cf6bee0cd4bf4361046a8c425d1c1ed9",
-                         "clientImageSha256":  "2c81e8c7cd6fb612f0e2a4a29e5387a9cf6bee0cd4bf4361046a8c425d1c1ed9",
+                         "fullImageSha256":  "1a7c10dc388266f28b7238988732f477befee98c33de897c428c924d2d7b6d63",
+                         "clientImageSha256":  "1a7c10dc388266f28b7238988732f477befee98c33de897c428c924d2d7b6d63",
                          "captureStatus":  "complete"
                      },
                      {
@@ -511,8 +514,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "900/wpf/full/ribbon.review.png",
                          "clientImagePath":  "900/wpf/client/ribbon.review.png",
-                         "fullImageSha256":  "87b45f101507cd2ea4e38aa1f8320a6df3aca8fefb60929f2b28a7cc41c40e0c",
-                         "clientImageSha256":  "87b45f101507cd2ea4e38aa1f8320a6df3aca8fefb60929f2b28a7cc41c40e0c",
+                         "fullImageSha256":  "cb22a2554eb332c4caeeeaa58d35fc3d09d6ce644120bc860412b23dd8cc1c3d",
+                         "clientImageSha256":  "cb22a2554eb332c4caeeeaa58d35fc3d09d6ce644120bc860412b23dd8cc1c3d",
                          "captureStatus":  "complete"
                      },
                      {
@@ -523,8 +526,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "900/wpf/full/ribbon.view.png",
                          "clientImagePath":  "900/wpf/client/ribbon.view.png",
-                         "fullImageSha256":  "e4167f138a3452a6e0328ab98142270dc80272e791e1fcc45e68743aa0306006",
-                         "clientImageSha256":  "e4167f138a3452a6e0328ab98142270dc80272e791e1fcc45e68743aa0306006",
+                         "fullImageSha256":  "ac86d5bf660e855063cbd4e21c1fd043f2951685b0ed6b2a5101356b9e6a67ae",
+                         "clientImageSha256":  "ac86d5bf660e855063cbd4e21c1fd043f2951685b0ed6b2a5101356b9e6a67ae",
                          "captureStatus":  "complete"
                      },
                      {
@@ -535,8 +538,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "900/avalonia/full/ribbon.home.png",
                          "clientImagePath":  "900/avalonia/client/ribbon.home.png",
-                         "fullImageSha256":  "7dce638e136fbb5de73983908c468b45b5c87df8d8948ce4263e48162cf230be",
-                         "clientImageSha256":  "7dce638e136fbb5de73983908c468b45b5c87df8d8948ce4263e48162cf230be",
+                         "fullImageSha256":  "8bdc0632a4302e1990ece230f3f419a4b60f3cde78716a39a7525f4149a2fdd8",
+                         "clientImageSha256":  "8bdc0632a4302e1990ece230f3f419a4b60f3cde78716a39a7525f4149a2fdd8",
                          "captureStatus":  "complete"
                      },
                      {
@@ -547,8 +550,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "900/avalonia/full/ribbon.insert.png",
                          "clientImagePath":  "900/avalonia/client/ribbon.insert.png",
-                         "fullImageSha256":  "da2719fc859a8edb07e1ccebae725d40d8000362e6a2bbc8f7b30b5844420203",
-                         "clientImageSha256":  "da2719fc859a8edb07e1ccebae725d40d8000362e6a2bbc8f7b30b5844420203",
+                         "fullImageSha256":  "a318f0fd36cb27ea35146190ddb4d756e61c46590cc91efb7f5f09a58696986a",
+                         "clientImageSha256":  "a318f0fd36cb27ea35146190ddb4d756e61c46590cc91efb7f5f09a58696986a",
                          "captureStatus":  "complete"
                      },
                      {
@@ -559,8 +562,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "900/avalonia/full/ribbon.design.png",
                          "clientImagePath":  "900/avalonia/client/ribbon.design.png",
-                         "fullImageSha256":  "546de57323923906993d3f7d0e4ccb4295cc7c253ecff831666d1cef6ac6c07a",
-                         "clientImageSha256":  "546de57323923906993d3f7d0e4ccb4295cc7c253ecff831666d1cef6ac6c07a",
+                         "fullImageSha256":  "c5642b230c3b4790a7cf51277942a0d817692f9aa4231d5e68dd78a4e6be189d",
+                         "clientImageSha256":  "c5642b230c3b4790a7cf51277942a0d817692f9aa4231d5e68dd78a4e6be189d",
                          "captureStatus":  "complete"
                      },
                      {
@@ -571,8 +574,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "900/avalonia/full/ribbon.transitions.png",
                          "clientImagePath":  "900/avalonia/client/ribbon.transitions.png",
-                         "fullImageSha256":  "60037f49a50cdab02460856f8275331dd28c75dc906fa8614689cdff44771fc6",
-                         "clientImageSha256":  "60037f49a50cdab02460856f8275331dd28c75dc906fa8614689cdff44771fc6",
+                         "fullImageSha256":  "72867bf6d696bf336cbdb3360f009927aa784c9c49772627f41ddfffe97ef5b9",
+                         "clientImageSha256":  "72867bf6d696bf336cbdb3360f009927aa784c9c49772627f41ddfffe97ef5b9",
                          "captureStatus":  "complete"
                      },
                      {
@@ -583,8 +586,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "900/avalonia/full/ribbon.animations.png",
                          "clientImagePath":  "900/avalonia/client/ribbon.animations.png",
-                         "fullImageSha256":  "40d53bce8a8754dea49c3850c7a21983b0229a62d09871da4fdb2ab5d1e07909",
-                         "clientImageSha256":  "40d53bce8a8754dea49c3850c7a21983b0229a62d09871da4fdb2ab5d1e07909",
+                         "fullImageSha256":  "fb39c30162daaf1e8a892277c950e512ef89b095c1b5550a89f1106a9fb78f62",
+                         "clientImageSha256":  "fb39c30162daaf1e8a892277c950e512ef89b095c1b5550a89f1106a9fb78f62",
                          "captureStatus":  "complete"
                      },
                      {
@@ -595,8 +598,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "900/avalonia/full/ribbon.slide-show.png",
                          "clientImagePath":  "900/avalonia/client/ribbon.slide-show.png",
-                         "fullImageSha256":  "26607e43f1bf9b2c73cbae116c7857592b054d4e487f7d360520d4ac462d9c65",
-                         "clientImageSha256":  "26607e43f1bf9b2c73cbae116c7857592b054d4e487f7d360520d4ac462d9c65",
+                         "fullImageSha256":  "d76faff1ebe719c89be766d768d6065ae4a1e9347d70d411bd6ae246a39186a2",
+                         "clientImageSha256":  "d76faff1ebe719c89be766d768d6065ae4a1e9347d70d411bd6ae246a39186a2",
                          "captureStatus":  "complete"
                      },
                      {
@@ -607,8 +610,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "900/avalonia/full/ribbon.review.png",
                          "clientImagePath":  "900/avalonia/client/ribbon.review.png",
-                         "fullImageSha256":  "8c11748ed1319e261a876a2cc88e068b457a3b23ac5a41b613c5c97d8a3e32f4",
-                         "clientImageSha256":  "8c11748ed1319e261a876a2cc88e068b457a3b23ac5a41b613c5c97d8a3e32f4",
+                         "fullImageSha256":  "b9ea6d1d7082bc7f17e602dcea40f8768373097c5070714625a6998abbdf4ba5",
+                         "clientImageSha256":  "b9ea6d1d7082bc7f17e602dcea40f8768373097c5070714625a6998abbdf4ba5",
                          "captureStatus":  "complete"
                      },
                      {
@@ -619,8 +622,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "900/avalonia/full/ribbon.view.png",
                          "clientImagePath":  "900/avalonia/client/ribbon.view.png",
-                         "fullImageSha256":  "a368f69fcc85efeae19552883d82ae7cfa461599431028db9e13e34f90331512",
-                         "clientImageSha256":  "a368f69fcc85efeae19552883d82ae7cfa461599431028db9e13e34f90331512",
+                         "fullImageSha256":  "74e1183b4b2f4519e435bd36cfa3e08ee055f4c05098ef0729b8e198c1162143",
+                         "clientImageSha256":  "74e1183b4b2f4519e435bd36cfa3e08ee055f4c05098ef0729b8e198c1162143",
                          "captureStatus":  "complete"
                      },
                      {
@@ -631,8 +634,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "750/wpf/full/ribbon.home.png",
                          "clientImagePath":  "750/wpf/client/ribbon.home.png",
-                         "fullImageSha256":  "ffb0d16b32dcb7e20626bb945feb1771242d94368583055a401920b80825013d",
-                         "clientImageSha256":  "e7ae4d5bd47c7d8aa72ac13ab7472c0c28c40f48fe7a6c21278068624d6d69ee",
+                         "fullImageSha256":  "41d8274eebe2777c1c4c596948e23a381771a7883a95dd7e0e15bab31fb7e25f",
+                         "clientImageSha256":  "5882fba9d21253b65864d4ea103324d9df4f413ce429c9a2053a0939330c17ba",
                          "captureStatus":  "complete"
                      },
                      {
@@ -643,8 +646,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "750/wpf/full/ribbon.insert.png",
                          "clientImagePath":  "750/wpf/client/ribbon.insert.png",
-                         "fullImageSha256":  "68782dc30683fa25faf6962d7149dfe749e5540cfc8c7fdf7abd20eafcdbee06",
-                         "clientImageSha256":  "a2443999e90714dffb1e147634fc2f0c5c8ff178b15d94437bb3d2c20efdd891",
+                         "fullImageSha256":  "dc93034d5955d23f09a238cbde95e21c11893c2bf1d47c93ca2d2f5416c98ad3",
+                         "clientImageSha256":  "9f31c8a45f19db8f9337a9f6fdefbc5217e4ee36c71ffbff266cc9f4e99bcd31",
                          "captureStatus":  "complete"
                      },
                      {
@@ -655,8 +658,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "750/wpf/full/ribbon.design.png",
                          "clientImagePath":  "750/wpf/client/ribbon.design.png",
-                         "fullImageSha256":  "d27a871c028c7f48215a964d098889838f9f0e65d9a55ba0276c35d42cb42e4b",
-                         "clientImageSha256":  "38f30bd6ae71d614b8084b5488a0fe540ce666b1e9706e6a803bd9afddce3295",
+                         "fullImageSha256":  "a4ffacd96aed3fcdf4f80ddf2e1106e8421cda1dbd47d778bb64b34cd9aa6f97",
+                         "clientImageSha256":  "85d73c739a2701a3ee0e65935dc18af0d064a76c8c12069b5de634cece4dcec7",
                          "captureStatus":  "complete"
                      },
                      {
@@ -667,8 +670,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "750/wpf/full/ribbon.transitions.png",
                          "clientImagePath":  "750/wpf/client/ribbon.transitions.png",
-                         "fullImageSha256":  "0e5dd1e820ebc921545388ed0afb0265bb010424f117fc18aa2e244712538f2b",
-                         "clientImageSha256":  "fd59f949dba14c3e258874c07e333b30c0647b8e08324442b02ea3132d66fa00",
+                         "fullImageSha256":  "656ab01ccbf037608beb7d0f43754fc37944b721c4bc568ab8b76f07d8425d77",
+                         "clientImageSha256":  "ccb416f1a1e84af2a07445a74efd08912014ff6fed0d6012aadf9d83c89c1794",
                          "captureStatus":  "complete"
                      },
                      {
@@ -679,8 +682,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "750/wpf/full/ribbon.animations.png",
                          "clientImagePath":  "750/wpf/client/ribbon.animations.png",
-                         "fullImageSha256":  "2d4f50b2f70f0b9930afeb92f5f9a92850a583d77c206002f0e3131a67afc36c",
-                         "clientImageSha256":  "6a0ae1fd7a4caf08000a4a3f71ebd475b3cbc29302be475616f1a5bc626c63d0",
+                         "fullImageSha256":  "80538c332f2362022ac727b09f6d5f50752dca6bf7bf0b6578ff2656923d6fc6",
+                         "clientImageSha256":  "8b5267ad260776a8b42427ecf0219da7f74753c25cdbadd44bf409c798711f79",
                          "captureStatus":  "complete"
                      },
                      {
@@ -691,8 +694,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "750/wpf/full/ribbon.slide-show.png",
                          "clientImagePath":  "750/wpf/client/ribbon.slide-show.png",
-                         "fullImageSha256":  "5f3e9954960953c5cb03d335b12cecfa60937c7a86f8a7803ba7173fb1324bdc",
-                         "clientImageSha256":  "32e380e8baf2cf84026c404abd1db00094f7600ce87aaa3e329c9b1450ea1ad6",
+                         "fullImageSha256":  "516f0b412858e2f1ef3052b5028aaa5fed56d10541351673cfd4062361373a9a",
+                         "clientImageSha256":  "c370773ae1d5df8fc5b0e41a8ff4919ac309fe86eb082eb2f80284610a575bf7",
                          "captureStatus":  "complete"
                      },
                      {
@@ -703,8 +706,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "750/wpf/full/ribbon.review.png",
                          "clientImagePath":  "750/wpf/client/ribbon.review.png",
-                         "fullImageSha256":  "39510bd5df2ea5d402a66a26bd4d4000572cddf9439a8b99ec510177e4f47b3a",
-                         "clientImageSha256":  "9bc86b740a93564c809f3e7fcef4730911cc430638f004927be8a710b2a74fb8",
+                         "fullImageSha256":  "583eaaeabe39b265971e91da78bab9aaf06bb3010cdba7d02ed027b6cd8c3463",
+                         "clientImageSha256":  "b0fad17f3353d3ab8bbd943afef33cec097db1dcd76ce8ac378ceeeb9a7b378f",
                          "captureStatus":  "complete"
                      },
                      {
@@ -715,8 +718,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "750/wpf/full/ribbon.view.png",
                          "clientImagePath":  "750/wpf/client/ribbon.view.png",
-                         "fullImageSha256":  "00e3c9ade4127f373443c99c6c788167d7c8995cbeba7c8466b3ad4832ed57e2",
-                         "clientImageSha256":  "65932bfcd75d5172d4612884fcc65c8689f16c0d2ef77efb97b8ab2fb910ab7f",
+                         "fullImageSha256":  "0186fb7286f045656f0e73fc5a79b0ad6132546a46c97f498ecf48f38f202e80",
+                         "clientImageSha256":  "7488e6c1a363b4a66d1e9ff1874e3903e2ea70c9ec0b657c250bf8e75711a90b",
                          "captureStatus":  "complete"
                      },
                      {
@@ -727,8 +730,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "750/avalonia/full/ribbon.home.png",
                          "clientImagePath":  "750/avalonia/client/ribbon.home.png",
-                         "fullImageSha256":  "19b8d9fa15acad2d05d3c83738ba530c8b6fec6b5005b5101808bacd06d0f672",
-                         "clientImageSha256":  "65d425b0dac82de368c30650d1a36ce0bf1ade50598830898bb01af9af394a40",
+                         "fullImageSha256":  "e1c681eade6c6f0be8d6c37d33c5f1fe5d8a7aa8869c49009c45c5f0fc562f36",
+                         "clientImageSha256":  "033dc7b96b33a75c577a202e801825b9640f3cdc00b6695a2011b4dce71c1a9c",
                          "captureStatus":  "complete"
                      },
                      {
@@ -739,8 +742,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "750/avalonia/full/ribbon.insert.png",
                          "clientImagePath":  "750/avalonia/client/ribbon.insert.png",
-                         "fullImageSha256":  "0f046780a682f535e5e39b9896d55cd78c0e9f12914555d32c8c984120d783dc",
-                         "clientImageSha256":  "bf8c6c3d9491fb6c0569488a237027722f85b07cd2c59a027b8fdde2ddf7d66a",
+                         "fullImageSha256":  "9b017b16a8581c04c3cb0749452eb52156e26fad2be9342f2ab35dc9383da3a4",
+                         "clientImageSha256":  "66d21c30992b45c284a2ecdce14b7f37769c38e83d988e2698fbc2c042ccd486",
                          "captureStatus":  "complete"
                      },
                      {
@@ -751,8 +754,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "750/avalonia/full/ribbon.design.png",
                          "clientImagePath":  "750/avalonia/client/ribbon.design.png",
-                         "fullImageSha256":  "d5a3692050afc97b4cf43b738545947aee5270c32f18237a36b0a26bfeeb949f",
-                         "clientImageSha256":  "a2c7ed44607cff55842577968e3bdacfdca96b428aa7c28c90c7be3051b2a505",
+                         "fullImageSha256":  "c3e07239f0b68e8b7ce9a8283f128773893068b4a091fd66df52cfb13f0a880f",
+                         "clientImageSha256":  "23c066d599d7760e966d094c9c3f6b6f27b3fa47b4c6c5295d77730703a77578",
                          "captureStatus":  "complete"
                      },
                      {
@@ -763,8 +766,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "750/avalonia/full/ribbon.transitions.png",
                          "clientImagePath":  "750/avalonia/client/ribbon.transitions.png",
-                         "fullImageSha256":  "632bb918aa6b5fdd17922e4555783997031432cb165ca4debd16939ec098506b",
-                         "clientImageSha256":  "eca10cee751ad1c0b0bd66b461d367d88ec9c9692347798a378f21e1288ec379",
+                         "fullImageSha256":  "e204c492a4c46d2fc155ee9798880eaa4958edb64bee24e21df6704702492938",
+                         "clientImageSha256":  "474fc84b5c684ada7fd2ac3893378bc4fa7b9e84f37ceaa53dd583a86668d7dd",
                          "captureStatus":  "complete"
                      },
                      {
@@ -775,8 +778,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "750/avalonia/full/ribbon.animations.png",
                          "clientImagePath":  "750/avalonia/client/ribbon.animations.png",
-                         "fullImageSha256":  "d05d598dc1833101b79eaf01499c9c890cac031f896bec9434ac6a3f6bf13067",
-                         "clientImageSha256":  "5738372c89b0d3a1716d7ff0972456680797fbd94b8136e7528303f8dfe85992",
+                         "fullImageSha256":  "f235abd38cb6ad34825349eb4bcce5d1070bf8f38de8fca2e261178cd7767938",
+                         "clientImageSha256":  "46234a73c3f16c8ec57ca5210067ffefece77dfe66083ecb88d9515662802e37",
                          "captureStatus":  "complete"
                      },
                      {
@@ -787,8 +790,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "750/avalonia/full/ribbon.slide-show.png",
                          "clientImagePath":  "750/avalonia/client/ribbon.slide-show.png",
-                         "fullImageSha256":  "03cb2c9be0fb2995bba9b05feb573227808c035fc407cee6096855b75642e270",
-                         "clientImageSha256":  "122fa81cb85dec23b0ac6f37eb322a1b161c7aa1ef4ffbfe92e39a97b55b073e",
+                         "fullImageSha256":  "cfcbd01ca4ba9e3fdff5d667c58a8f8cef9223d289bf4dfbe4937f5196545e73",
+                         "clientImageSha256":  "c5ad1c6c93f7f1bf3e4896077e27e7a2b0f429f67dd4199653f85ebfc8115f08",
                          "captureStatus":  "complete"
                      },
                      {
@@ -799,8 +802,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "750/avalonia/full/ribbon.review.png",
                          "clientImagePath":  "750/avalonia/client/ribbon.review.png",
-                         "fullImageSha256":  "feb64280e5ec382f4b93f53685e2a7a2d29fa73ae426a7d2d2a3bae5a4229440",
-                         "clientImageSha256":  "438872c7f9974b1bfbbbc75c7faf0fd6efbd437b5faa6bcd85a6448b21f41fdd",
+                         "fullImageSha256":  "221578b47fd9e32a29e095c4a28dffe144678384605ffbff2475e86dfa2e0efb",
+                         "clientImageSha256":  "0a476de67797757a796f967738b7eba589964b0a80bf9ba210d9b51b60f5b149",
                          "captureStatus":  "complete"
                      },
                      {
@@ -811,8 +814,8 @@
                          "logicalHeight":  760,
                          "fullImagePath":  "750/avalonia/full/ribbon.view.png",
                          "clientImagePath":  "750/avalonia/client/ribbon.view.png",
-                         "fullImageSha256":  "30810c1f425c85b8d61f2975a9aad7609ac1df368fdcde1d4e0eee4bd62c46db",
-                         "clientImageSha256":  "125f296724acd27e1c8a734505333e737effb7383205d03c593e79e04276f60c",
+                         "fullImageSha256":  "cd07af956e89602b1d8d5d3d580fc4f0b43a6e7690b20cc620795851c483c03c",
+                         "clientImageSha256":  "27baf557e5859dfa41e17310731ab470915e529f0fffe0b4b1f4a24dafc07332",
                          "captureStatus":  "complete"
                      }
                  ],
