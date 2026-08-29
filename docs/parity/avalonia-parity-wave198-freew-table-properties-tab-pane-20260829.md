@@ -56,14 +56,19 @@ on both hosts and improved in the same fresh comparison:
 | `populated` | 35,412 | 34,876 | 6.058991 | 5.876692 |
 | `validation-error` | 35,716 | 35,180 | 6.181889 | 5.999591 |
 
-## Auditable capture identity
+## Capture identity and linkage boundary
 
 - WPF authority manifest: `artifacts/wave198-freew-table-properties-baseline-wpf/wpf_dialog_capture_manifest.json`, SHA-256 `7ead01d76eef4e4b9de296877ecad5aae2ce8ba0a8d8a277684ec4fd5f6dc26d`.
 - Table Properties corrected Avalonia manifest: `artifacts/wave198-freew-table-properties-trailing-frame-avalonia/avalonia_dialog_capture_manifest.json`, SHA-256 `41a52dd3e7a22536f45520d2c8f5ced8a37e473e6d4b1c4957f19a4e8da1a502`.
 - Borders and Shading corrected Avalonia manifest: `artifacts/wave198-freew-borders-control-avalonia/avalonia_dialog_capture_manifest.json`, SHA-256 `63c217784963e78e5befa4cacafdf674f9716d95dfef2baa3a4665d5f87e2df9`.
 
-The PNGs and route manifests remain disposable local capture artifacts; this
-tracked note records their identities and the inspectable before/after metrics.
+The tracked raw-evidence bundle at
+`freew/docs/parity/evidence/wave198-freew-table-properties-tab-pane-raw-evidence.json`
+validates the exact scenario IDs, before/after metrics, totals, source commit,
+and recorded manifest hashes. The PNGs and route manifests remain disposable
+and untracked: this is auditable metadata linkage, not independently
+inspectable pixel evidence. Reproducing or inspecting pixels still requires
+regenerating the route captures.
 
 ## Verification
 

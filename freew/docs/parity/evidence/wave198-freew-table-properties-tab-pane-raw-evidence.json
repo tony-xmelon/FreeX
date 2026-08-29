@@ -1,0 +1,150 @@
+{
+  "schema": "freew.wave198.tab-pane-raw-evidence.v1",
+  "route": "table-properties",
+  "scope": {
+    "canonicalInventoryRows": 291,
+    "canonicalGenuineMismatches": 141,
+    "targetScenarioCount": 7,
+    "controlScenarioCount": 3,
+    "scenarioCount": 10,
+    "scenarioIds": [
+      "table-properties.initial",
+      "table-properties.populated",
+      "table-properties.tab-cell",
+      "table-properties.tab-column",
+      "table-properties.tab-row",
+      "table-properties.tab-table",
+      "table-properties.validation-error",
+      "borders-and-shading.initial",
+      "borders-and-shading.populated",
+      "borders-and-shading.validation-error"
+    ]
+  },
+  "sourceCommit": "dc187494872daf30b7a080cecd7874d34b9db84d",
+  "sourceFiles": [
+    "shared/Free.Shared.Shell.Avalonia/AvaloniaCompactDialogChrome.cs",
+    "tests/Free.Shared.Shell.Avalonia.Tests/DialogTabChromeParityTests.cs"
+  ],
+  "manifestHashAlgorithm": "sha256-raw-json-bytes",
+  "linkageBoundary": {
+    "claim": "auditable metadata linkage only",
+    "canonicalInventory": "The parent-owned canonical 291-row inventory and 141 genuine-mismatch count are not rewritten by this route-local bundle.",
+    "captureArtifacts": "The manifest and PNG paths below identify disposable capture artifacts that are not tracked in this commit.",
+    "independentCheck": "This tracked JSON permits independent checking of scenario IDs, counts, metrics, totals, source commit, and recorded manifest hashes; it cannot independently inspect untracked pixels or recompute those hashes without regenerated artifacts."
+  },
+  "manifests": {
+    "target": {
+      "wpfAuthority": {
+        "host": "wpf",
+        "captureCount": 7,
+        "path": "artifacts/wave198-freew-table-properties-baseline-wpf/wpf_dialog_capture_manifest.json",
+        "sha256": "7ead01d76eef4e4b9de296877ecad5aae2ce8ba0a8d8a277684ec4fd5f6dc26d"
+      },
+      "avaloniaBefore": {
+        "host": "avalonia",
+        "captureCount": 7,
+        "path": "artifacts/wave198-freew-table-properties-baseline-avalonia/avalonia_dialog_capture_manifest.json",
+        "sha256": "4612fa8ca29861ac7f9e915f1d06b0f19b6c09fbf7c2c0e6c293b3df3e62e787"
+      },
+      "avaloniaAfter": {
+        "host": "avalonia",
+        "captureCount": 7,
+        "path": "artifacts/wave198-freew-table-properties-trailing-frame-avalonia/avalonia_dialog_capture_manifest.json",
+        "sha256": "41a52dd3e7a22536f45520d2c8f5ced8a37e473e6d4b1c4957f19a4e8da1a502"
+      }
+    },
+    "control": {
+      "wpfAuthority": {
+        "host": "wpf",
+        "captureCount": 3,
+        "path": "artifacts/wave198-freew-borders-control-wpf/wpf_dialog_capture_manifest.json",
+        "sha256": "056d5e4240cc57c5d348f5da13f924c3659817b809cc75d68d7dbc19e5a0a43e"
+      },
+      "avaloniaBefore": {
+        "host": "avalonia",
+        "captureCount": 3,
+        "path": "artifacts/wave198-freew-borders-control-final-avalonia/avalonia_dialog_capture_manifest.json",
+        "sha256": "8e743bc7d4223a67510c9b4cfc44a211f5ea947abfb52394a094dc5755891aaa"
+      },
+      "avaloniaAfter": {
+        "host": "avalonia",
+        "captureCount": 3,
+        "path": "artifacts/wave198-freew-borders-control-avalonia/avalonia_dialog_capture_manifest.json",
+        "sha256": "63c217784963e78e5befa4cacafdf674f9716d95dfef2baa3a4665d5f87e2df9"
+      }
+    }
+  },
+  "scenarios": [
+    {
+      "id": "table-properties.initial",
+      "family": "target",
+      "before": { "comparedPixels": 336000, "changedPixels": 31664, "changedRatio": 0.09423809523809523, "meanAbsoluteChannelDelta": 6.766809523810502, "p95AbsoluteChannelDelta": 66.66666666666667, "luminanceSimilarity": 0.8906916037156214, "perceptualHashDistance": 2 },
+      "after": { "comparedPixels": 336000, "changedPixels": 31127, "changedRatio": 0.09263988095238095, "meanAbsoluteChannelDelta": 6.582567460318422, "p95AbsoluteChannelDelta": 66.66666666666667, "luminanceSimilarity": 0.8917617322252942, "perceptualHashDistance": 2 }
+    },
+    {
+      "id": "table-properties.populated",
+      "family": "target",
+      "before": { "comparedPixels": 336000, "changedPixels": 31664, "changedRatio": 0.09423809523809523, "meanAbsoluteChannelDelta": 6.766809523810502, "p95AbsoluteChannelDelta": 66.66666666666667, "luminanceSimilarity": 0.8906916037156214, "perceptualHashDistance": 2 },
+      "after": { "comparedPixels": 336000, "changedPixels": 31127, "changedRatio": 0.09263988095238095, "meanAbsoluteChannelDelta": 6.582567460318422, "p95AbsoluteChannelDelta": 66.66666666666667, "luminanceSimilarity": 0.8917617322252942, "perceptualHashDistance": 2 }
+    },
+    {
+      "id": "table-properties.tab-cell",
+      "family": "target",
+      "before": { "comparedPixels": 336000, "changedPixels": 39948, "changedRatio": 0.11889285714285715, "meanAbsoluteChannelDelta": 7.688064484127253, "p95AbsoluteChannelDelta": 45.333333333333336, "luminanceSimilarity": 0.8798633227983466, "perceptualHashDistance": 2 },
+      "after": { "comparedPixels": 336000, "changedPixels": 39574, "changedRatio": 0.1177797619047619, "meanAbsoluteChannelDelta": 7.527721230158926, "p95AbsoluteChannelDelta": 45.333333333333336, "luminanceSimilarity": 0.8807525056698245, "perceptualHashDistance": 2 }
+    },
+    {
+      "id": "table-properties.tab-column",
+      "family": "target",
+      "before": { "comparedPixels": 336000, "changedPixels": 9064, "changedRatio": 0.026976190476190477, "meanAbsoluteChannelDelta": 2.201034722222211, "p95AbsoluteChannelDelta": 0, "luminanceSimilarity": 0.9333500771222024, "perceptualHashDistance": 1 },
+      "after": { "comparedPixels": 336000, "changedPixels": 8589, "changedRatio": 0.0255625, "meanAbsoluteChannelDelta": 2.023082341269828, "p95AbsoluteChannelDelta": 0, "luminanceSimilarity": 0.9350811082844205, "perceptualHashDistance": 1 }
+    },
+    {
+      "id": "table-properties.tab-row",
+      "family": "target",
+      "before": { "comparedPixels": 336000, "changedPixels": 15328, "changedRatio": 0.04561904761904762, "meanAbsoluteChannelDelta": 3.7505674603174115, "p95AbsoluteChannelDelta": 7, "luminanceSimilarity": 0.9122833831783735, "perceptualHashDistance": 1 },
+      "after": { "comparedPixels": 336000, "changedPixels": 14828, "changedRatio": 0.04413095238095238, "meanAbsoluteChannelDelta": 3.5706607142856615, "p95AbsoluteChannelDelta": 6.333333333333333, "luminanceSimilarity": 0.9135987001458192, "perceptualHashDistance": 1 }
+    },
+    {
+      "id": "table-properties.tab-table",
+      "family": "target",
+      "before": { "comparedPixels": 336000, "changedPixels": 31664, "changedRatio": 0.09423809523809523, "meanAbsoluteChannelDelta": 6.766809523810502, "p95AbsoluteChannelDelta": 66.66666666666667, "luminanceSimilarity": 0.8906916037156214, "perceptualHashDistance": 2 },
+      "after": { "comparedPixels": 336000, "changedPixels": 31127, "changedRatio": 0.09263988095238095, "meanAbsoluteChannelDelta": 6.582567460318422, "p95AbsoluteChannelDelta": 66.66666666666667, "luminanceSimilarity": 0.8917617322252942, "perceptualHashDistance": 2 }
+    },
+    {
+      "id": "table-properties.validation-error",
+      "family": "target",
+      "before": { "comparedPixels": 336000, "changedPixels": 32037, "changedRatio": 0.09534821428571429, "meanAbsoluteChannelDelta": 6.904758928572262, "p95AbsoluteChannelDelta": 66.66666666666667, "luminanceSimilarity": 0.8891404883728984, "perceptualHashDistance": 3 },
+      "after": { "comparedPixels": 336000, "changedPixels": 31500, "changedRatio": 0.09375, "meanAbsoluteChannelDelta": 6.720516865080314, "p95AbsoluteChannelDelta": 66.66666666666667, "luminanceSimilarity": 0.8901954990412234, "perceptualHashDistance": 3 }
+    },
+    {
+      "id": "borders-and-shading.initial",
+      "family": "control",
+      "before": { "comparedPixels": 336000, "changedPixels": 35412, "changedRatio": 0.10539285714285715, "meanAbsoluteChannelDelta": 6.058991071428583, "p95AbsoluteChannelDelta": 24, "luminanceSimilarity": 0.8952498977402961, "perceptualHashDistance": 13 },
+      "after": { "comparedPixels": 336000, "changedPixels": 34876, "changedRatio": 0.10379761904761904, "meanAbsoluteChannelDelta": 5.876692460317472, "p95AbsoluteChannelDelta": 24, "luminanceSimilarity": 0.8963566128563991, "perceptualHashDistance": 13 }
+    },
+    {
+      "id": "borders-and-shading.populated",
+      "family": "control",
+      "before": { "comparedPixels": 336000, "changedPixels": 35412, "changedRatio": 0.10539285714285715, "meanAbsoluteChannelDelta": 6.058991071428583, "p95AbsoluteChannelDelta": 24, "luminanceSimilarity": 0.8952498977402961, "perceptualHashDistance": 13 },
+      "after": { "comparedPixels": 336000, "changedPixels": 34876, "changedRatio": 0.10379761904761904, "meanAbsoluteChannelDelta": 5.876692460317472, "p95AbsoluteChannelDelta": 24, "luminanceSimilarity": 0.8963566128563991, "perceptualHashDistance": 13 }
+    },
+    {
+      "id": "borders-and-shading.validation-error",
+      "family": "control",
+      "before": { "comparedPixels": 336000, "changedPixels": 35716, "changedRatio": 0.10629761904761904, "meanAbsoluteChannelDelta": 6.181889880952366, "p95AbsoluteChannelDelta": 24, "luminanceSimilarity": 0.8938238897099119, "perceptualHashDistance": 12 },
+      "after": { "comparedPixels": 336000, "changedPixels": 35180, "changedRatio": 0.10470238095238095, "meanAbsoluteChannelDelta": 5.999591269841256, "p95AbsoluteChannelDelta": 24, "luminanceSimilarity": 0.8949155854966454, "perceptualHashDistance": 12 }
+    }
+  ],
+  "totals": {
+    "scenarioCount": 10,
+    "targetScenarioCount": 7,
+    "controlScenarioCount": 3,
+    "targetBeforeChangedPixels": 191369,
+    "targetAfterChangedPixels": 187872,
+    "targetChangedPixelsReduction": 3497,
+    "controlBeforeChangedPixels": 106540,
+    "controlAfterChangedPixels": 104932,
+    "controlChangedPixelsReduction": 1608
+  }
+}
