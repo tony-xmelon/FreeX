@@ -26,6 +26,14 @@ text-raster residual rather than paragraph cadence or placement. Glyph-raster
 variation is a plausible interpretation of the pixels, but fallback-font
 causation is not established by this evidence.
 
+## Evidence boundary
+
+No source revision is recorded for this capture. The SHA-256 values in
+`images.json` and `imageIntegrity` verify the current tracked image bytes only;
+they do not establish which renderer/configuration/source tree generated those
+bytes. No renderer/config/source-tree hashes or deterministic regeneration
+evidence is recorded, so image generation linkage is not independently proven.
+
 Machine-readable metrics and candidate PNGs are in
 [`metrics.json`](./evidence/freep-wave197-deck17-baseline-alignment-20260829/metrics.json)
 and the adjacent evidence directory.

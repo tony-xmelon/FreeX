@@ -1,7 +1,7 @@
 # FreeP Wave197 deck17 leading residual
 
 Date: 2026-08-29
-Source revision: `a43d86c885`
+Recorded source revision: `a43d86c885`
 Corpus: `17-bullets-autofit.pptx`, 1280x720
 
 ## Candidate
@@ -25,6 +25,15 @@ The Wave196 control remains unchanged: slide 01 Avalonia before/after is
 `0.0000%` with maximum channel delta `0`, while slide 02 remains
 `2.4820%` Avalonia/Office and `2.8755%` WPF/Avalonia. No production raster
 correction is accepted in Wave197.
+
+## Evidence boundary
+
+The recorded source revision is provenance metadata only. The commit-resolution
+check proves that `a43d86c885` names a Git commit, while the SHA-256 values in
+`imageIntegrity` prove the current tracked bytes of the retained PNGs. Neither
+claim proves that those images were generated from that revision. No verifiable
+renderer/config/source-tree hashes or deterministic regeneration evidence is
+recorded, so generation linkage is not independently proven.
 
 Machine-readable evidence and the retained image/reference provenance are in
 [`metrics.json`](./evidence/freep-wave197-deck17-leading-residual-20260829/metrics.json).

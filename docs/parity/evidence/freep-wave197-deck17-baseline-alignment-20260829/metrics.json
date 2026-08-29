@@ -1,7 +1,13 @@
 {
-  "schema": "freep.parity.wave197.deck17-baseline-alignment.v1",
+  "schema": "freep.parity.wave197.deck17-baseline-alignment.v2",
   "date": "2026-08-29",
   "status": "candidate-refuted",
+  "sourceProvenance": {
+    "sourceRevision": null,
+    "sourceRevisionRole": "not-recorded",
+    "generationLinkage": "not-independently-proven",
+    "generationLinkageBasis": "No renderer/config/source-tree hashes or deterministic regeneration evidence is recorded."
+  },
   "candidate": {
     "id": "avalonia-fixed-aptos-baseline-aligned",
     "description": "Use Avalonia aligned baseline pixels for the existing fixed-size Aptos fallback route.",
@@ -30,6 +36,8 @@
     }
   },
   "imageIntegrity": {
+    "status": "tracked-byte-hashes-verified",
+    "claimBoundary": "SHA-256 values verify the current tracked image bytes only; they do not prove generation from a source revision.",
     "candidateAvaloniaSlide01Sha256": "b839f25ffd749e7238633488ff3f8eaabf054ecfd5805426ce0115c27fee4200",
     "acceptedAvaloniaSlide01Sha256": "b839f25ffd749e7238633488ff3f8eaabf054ecfd5805426ce0115c27fee4200",
     "candidateAvaloniaSlide02Sha256": "3faee960ff25fa4c543d9c8d3834fa212bccbf5a8ad5b65add54e331cdbceeb7",

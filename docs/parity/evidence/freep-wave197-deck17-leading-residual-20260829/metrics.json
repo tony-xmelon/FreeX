@@ -1,8 +1,13 @@
 {
-  "schema": "freep.parity.wave197.deck17-leading-residual.v1",
+  "schema": "freep.parity.wave197.deck17-leading-residual.v2",
   "date": "2026-08-29",
   "status": "candidate-refuted",
-  "sourceRevision": "a43d86c885",
+  "sourceProvenance": {
+    "sourceRevision": "a43d86c885",
+    "sourceRevisionRole": "recorded-source-commit",
+    "generationLinkage": "not-independently-proven",
+    "generationLinkageBasis": "No verifiable renderer/config/source-tree hashes or deterministic regeneration evidence is recorded."
+  },
   "target": {
     "deck": "17-bullets-autofit",
     "slide": "slide-02",
@@ -33,6 +38,14 @@
     "slide01BeforeAfterAvaloniaMaxChannel": 0,
     "wave196AvaloniaOfficeSlide02": 2.482,
     "wave196WpfAvaloniaSlide02": 2.8755
+  },
+  "imageIntegrity": {
+    "status": "tracked-byte-hashes-verified",
+    "claimBoundary": "SHA-256 values verify the current tracked image bytes only; they do not prove generation from sourceRevision.",
+    "trackedImages": {
+      "docs/parity/evidence/freep-wave196-deck17-light-hinting-20260829/avalonia-slide-02.png": "69c173388fec6bae29525e5041e837dd384b70b099f796ceb31e605d879ea621",
+      "tools/FreeP.RenderCompare/corpus/pptx-ref/17-bullets-autofit/slide-02.png": "2828a7a3ced739e6b5b36f53aa7309df35ceb8c7f898b7bf8fb29480ab012ee5"
+    }
   },
   "retainedEvidence": [
     "docs/parity/evidence/freep-wave196-deck17-light-hinting-20260829/metrics.json",
