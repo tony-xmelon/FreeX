@@ -16,8 +16,8 @@
   "sourceSha256": {
     "freew/tools/FreeW.RibbonShot/Program.cs": "5029c273cac6ba3ccb5ef16fa5ca394a1f7dc970e844556e3ca3899c53caf6a0",
     "freew/tools/FreeW.ShellVisualHarness.Avalonia/Program.cs": "91f6c05be54b2ea45661dc844b359363defa79599f275237dd197cc4c56b564a",
-    "freew/FreeW.App.Host/MainWindow.cs": "51b08ab794024ce9f8c617a0b18c17f247d3860ab96354d1a6fa9bc1200a2fad",
-    "freew/FreeW.App.Avalonia/MainWindow.cs": "002679c8b7ddf8c4e7a7d957f6740516e28510b28e840a323f37cd8c0b28b393",
+    "freew/FreeW.App.Host/MainWindow.cs": "0065fb52e0226d771fdba213fda5cce5b048263382b6490daad4c7341778cdf5",
+    "freew/FreeW.App.Avalonia/MainWindow.cs": "aafb64d244bf9e6ad746e00b9ba6fa2d4b6719baeb0e9ba3e12baff24ddbed21",
     "freew/FreeW.Ribbon.Definitions/FreeWRibbonCapabilities.cs": "47d097fcefbfdfd1892db7914077695dc28d98aa4cad182f728523b47beeee7e",
     "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.Ordinary.cs": "e68b3af17a13208bde91ad1b345689d68797c1d1e6ad28fbc55d2b1dd4e2ca0c",
     "shared/Free.Shared.Shell.Avalonia/SisterAppWindowFrameBuilder.cs": "f68e5e3dc4dea74a0f66e5e99d926f0141eb52dfc1862922a77dd4bf3e5e0299",
