@@ -10153,7 +10153,7 @@
           "group": "Editing",
           "label": "Find",
           "controlType": "RibbonButton",
-          "layout": "Medium"
+          "layout": "Small"
         }
       ],
       "sourceLiteralEvidence": {
@@ -27060,7 +27060,7 @@
           "group": "Editing",
           "label": "Redo",
           "controlType": "RibbonButton",
-          "layout": "Medium"
+          "layout": "Small"
         }
       ],
       "sourceLiteralEvidence": {
@@ -27290,7 +27290,7 @@
           "group": "Editing",
           "label": "Replace",
           "controlType": "RibbonButton",
-          "layout": "Medium"
+          "layout": "Small"
         }
       ],
       "sourceLiteralEvidence": {
@@ -28072,7 +28072,7 @@
           "group": "Editing",
           "label": "Select",
           "controlType": "RibbonButton",
-          "layout": "Medium"
+          "layout": "Small"
         }
       ],
       "sourceLiteralEvidence": {
@@ -43351,7 +43351,7 @@
           "group": "Editing",
           "label": "Undo",
           "controlType": "RibbonButton",
-          "layout": "Medium"
+          "layout": "Small"
         }
       ],
       "sourceLiteralEvidence": {
