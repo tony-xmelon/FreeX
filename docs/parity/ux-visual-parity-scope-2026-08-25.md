@@ -6,6 +6,11 @@ This workstream improves user-visible parity through backed, evidence-led change
 
 Current priority is the FreeW and FreeP ribbon/chrome surface, including command discoverability, gallery layout, responsive overflow, and existing presentation/document view modes.
 
+## Evidence-backed residuals
+
+- **FreeP Insert at narrow widths** — native PowerPoint keeps image insertion prominently direct. FreeP now exposes the backed New Slide route in the corresponding leading position, but its broad Illustrations group still mixes picture/shape insertion with picture and shape-effect commands. An Office-adaptive sizing experiment did not improve the 750px capture and was reverted. A follow-up should split that group along an interaction boundary and prove direct Picture discoverability in a fresh host capture.
+- **FreeP Slide Show native-only surfaces** — Present in Teams depends on an external collaboration integration, while generic Captions & Subtitles authoring is contextual to selected media. Neither is synthesized as an inactive ribbon substitute. The backed Start Slide Show, Set Up, and Rehearse controls are now arranged in the matching task hierarchy without new dependencies.
+
 ## Explicitly deferred
 
 - **Ink/Draw behavior** — pen, lasso, handwriting, recording, and slideshow-ink interaction fidelity are outside this stream. Existing backed behavior is not removed or represented as Word/PowerPoint-equivalent work here.
