@@ -73,3 +73,7 @@ dotnet run --project freew/tools/FreeW.DialogVisualHarness/FreeW.DialogVisualHar
 dotnet run --project freew/tools/FreeW.DialogVisualHarness.Wpf/FreeW.DialogVisualHarness.Wpf.csproj -c Release -- --inventory artifacts/wave197-freew-legal-template-inventory/freew_dialog_evidence_inventory.json --route legal-notices --output artifacts/wave197-freew-legal-template-before-wpf
 dotnet run --project freew/tools/FreeW.DialogVisualHarness.Avalonia/FreeW.DialogVisualHarness.Avalonia.csproj -c Release -- --inventory artifacts/wave197-freew-legal-template-inventory/freew_dialog_evidence_inventory.json --wpf-authority artifacts/wave197-freew-legal-template-before-wpf/wpf_dialog_capture_manifest.json --route legal-notices --output artifacts/wave197-freew-legal-template-before-avalonia
 ```
+
+Tracked audit bundle: [`freew/docs/parity/evidence/`](evidence/), including
+the exact candidate metrics, source mutations, capture-manifest provenance,
+and checksums for the ignored local capture artifacts.

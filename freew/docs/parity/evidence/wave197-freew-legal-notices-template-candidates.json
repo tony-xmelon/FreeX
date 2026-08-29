@@ -1,0 +1,167 @@
+{
+  "schema": "freew.wave197.legal-notices-template-evidence.v1",
+  "wave": 197,
+  "capturedOn": "2026-08-29",
+  "decision": "no-candidate-accepted",
+  "scope": {
+    "product": "FreeW",
+    "route": "legal-notices",
+    "authority": "FreeW WPF SharedLegalNoticesDialog",
+    "logicalSize": "620x600",
+    "targetDpi": 96,
+    "scenarioIds": [
+      "legal-notices.initial",
+      "legal-notices.tab-project-license",
+      "legal-notices.tab-legal-notices",
+      "legal-notices.tab-privacy-notice",
+      "legal-notices.tab-third-party-license-texts",
+      "legal-notices.tab-third-party-notices"
+    ]
+  },
+  "provenance": {
+    "inventory": {
+      "path": "artifacts/wave197-freew-legal-template-inventory/freew_dialog_evidence_inventory.json",
+      "sha256": "05e46af943414b6879048e314d14e332da923110fa31980bb1acdf81cca8c9a3",
+      "sha256Of": "disposable-inventory-json-content",
+      "generatedFromSha256": "b3075d160b2f51868108838f7c3b6cc823d1ef6d05996d0b6bbff25c977b3b6e",
+      "generatedFromSha256Of": "inventory-generator-input-content"
+    },
+    "captureManifests": [
+      {
+        "id": "wpf-baseline",
+        "host": "wpf",
+        "path": "artifacts/wave197-freew-legal-template-before-wpf/wpf_dialog_capture_manifest.json",
+        "sha256": "fd7d7f900dc10cb8a6b98ae117b51babf337a58daf8b4938f1827044b5a5f261",
+        "sha256Of": "disposable-capture-manifest-json-content",
+        "schema": "freew.dialog-capture-manifest.v1",
+        "schemaVersion": 1,
+        "captureCount": 6,
+        "contentValidatedCount": 6,
+        "dpi": 144
+      },
+      {
+        "id": "avalonia-baseline",
+        "host": "avalonia",
+        "path": "artifacts/wave197-freew-legal-template-before-avalonia/avalonia_dialog_capture_manifest.json",
+        "sha256": "2bf9d576724813eb311b0ad95708d4dff84ada20e2cafe1c2be8b5661bbbb6c5",
+        "sha256Of": "disposable-capture-manifest-json-content",
+        "schema": "freew.dialog-capture-manifest.v1",
+        "schemaVersion": 2,
+        "captureCount": 6,
+        "contentValidatedCount": 6,
+        "dpi": 96
+      },
+      {
+        "id": "surface-margin-candidate",
+        "host": "avalonia",
+        "path": "artifacts/wave197-freew-legal-template-candidate-surface-margin-avalonia/avalonia_dialog_capture_manifest.json",
+        "sha256": "7be789cfbd9bb49d3a534c0db6a040459199e5e89dde4160f0653f783e6df7fc",
+        "sha256Of": "disposable-capture-manifest-json-content",
+        "schema": "freew.dialog-capture-manifest.v1",
+        "schemaVersion": 2,
+        "captureCount": 6,
+        "contentValidatedCount": 6,
+        "dpi": 96
+      },
+      {
+        "id": "linebox-candidate",
+        "host": "avalonia",
+        "path": "artifacts/wave197-freew-legal-template-candidate-linebox-avalonia/avalonia_dialog_capture_manifest.json",
+        "sha256": "7ffbede8932f7606ac4dcb46e3bf2d165a6da4aadb84a51329907f2490c0368b",
+        "sha256Of": "disposable-capture-manifest-json-content",
+        "schema": "freew.dialog-capture-manifest.v1",
+        "schemaVersion": 2,
+        "captureCount": 6,
+        "contentValidatedCount": 6,
+        "dpi": 96
+      }
+    ],
+    "comparisonReports": [
+      {
+        "id": "baseline",
+        "path": "artifacts/wave197-freew-legal-template-before-comparison/freew_dialog_visual_comparison.json",
+        "sha256": "8c404732ab95ea1913c592025123896499811197e74cc41c1b3034a3c713442c",
+        "sha256Of": "disposable-comparison-report-json-content",
+        "generatedFromSha256": "a2c751b927025cda5256747d0013ccdb2c19c55a93e1fe5df329ffd16593b005",
+        "generatedFromSha256Of": "disposable-comparison-input-content"
+      },
+      {
+        "id": "surface-margin-candidate",
+        "path": "artifacts/wave197-freew-legal-template-candidate-surface-margin-comparison/freew_dialog_visual_comparison.json",
+        "sha256": "6209a6a632b593046859b336e790dd8e3d2a6a2a68a86d7385d589e050b0ac7a",
+        "sha256Of": "disposable-comparison-report-json-content",
+        "generatedFromSha256": "568b71f17e590ae81946f2a7868e5687a3f721e8e8ef58106301550a131dd14c",
+        "generatedFromSha256Of": "disposable-comparison-input-content"
+      },
+      {
+        "id": "linebox-candidate",
+        "path": "artifacts/wave197-freew-legal-template-candidate-linebox-comparison/freew_dialog_visual_comparison.json",
+        "sha256": "3c828e5c48ca66c3277f5a366f86f07a8aee703d27c1a29d32a9d5386ede4653",
+        "sha256Of": "disposable-comparison-report-json-content",
+        "generatedFromSha256": "621a2b20d826f0f5ac22203f302c01903188379cd3c8913ffeec5cd563c43ad5",
+        "generatedFromSha256Of": "disposable-comparison-input-content"
+      }
+    ]
+  },
+  "sourceMutations": [
+    {
+      "id": "surface-margin-candidate",
+      "sourceFile": "shared/Free.Shared.Shell.Avalonia/AvaloniaLegalNoticesDialog.cs",
+      "symbol": "CreateContent contentPaneMargin",
+      "baselineValue": "new Thickness(0, -5, 0, 0)",
+      "candidateValue": "new Thickness(0, -5, 1, 0)",
+      "baselineSha256": "e985eb0ddea7307a7b34837bdf186c515a7f37fecc06eb77db9ca53361ce03b5",
+      "candidateSha256": "b4148d1500a4b7334b43d792cd262b2648fd7f96175f8b2d8f73a4b6ea2b284c",
+      "restoredSha256": "e985eb0ddea7307a7b34837bdf186c515a7f37fecc06eb77db9ca53361ce03b5",
+      "reverted": true
+    },
+    {
+      "id": "linebox-candidate",
+      "sourceFile": "shared/Free.Shared.Shell.Avalonia/AvaloniaLegalNoticesDialog.cs",
+      "symbol": "OverflowDocumentLineHeightCompensation",
+      "baselineValue": "15.0",
+      "candidateValue": "16.0",
+      "baselineSha256": "e985eb0ddea7307a7b34837bdf186c515a7f37fecc06eb77db9ca53361ce03b5",
+      "candidateSha256": "95a1024b9d8441d6e848c96944b84c80008bdfaa25f87a9409733d583ce2e2f9",
+      "restoredSha256": "e985eb0ddea7307a7b34837bdf186c515a7f37fecc06eb77db9ca53361ce03b5",
+      "reverted": true
+    }
+  ],
+  "metrics": {
+    "comparedPixels": 372000,
+    "baseline": {
+      "legal-notices.initial": { "changedPixels": 31491, "changedRatio": 0.08465322580645161, "meanChannelDelta": 9.395395161289775 },
+      "legal-notices.tab-project-license": { "changedPixels": 31491, "changedRatio": 0.08465322580645161, "meanChannelDelta": 9.395395161289775 },
+      "legal-notices.tab-legal-notices": { "changedPixels": 69858, "changedRatio": 0.18779032258064515, "meanChannelDelta": 21.355870967742845 },
+      "legal-notices.tab-privacy-notice": { "changedPixels": 59025, "changedRatio": 0.15866935483870967, "meanChannelDelta": 16.529351254480975 },
+      "legal-notices.tab-third-party-license-texts": { "changedPixels": 66445, "changedRatio": 0.17861559139784947, "meanChannelDelta": 20.389829749104663 },
+      "legal-notices.tab-third-party-notices": { "changedPixels": 59886, "changedRatio": 0.16098387096774194, "meanChannelDelta": 17.404877240144003 }
+    },
+    "surface-margin-candidate": {
+      "legal-notices.initial": { "changedPixels": 31928, "changedRatio": 0.0858279569892473, "meanChannelDelta": 9.423635304659122 },
+      "legal-notices.tab-project-license": { "changedPixels": 31928, "changedRatio": 0.0858279569892473, "meanChannelDelta": 9.423635304659122 },
+      "legal-notices.tab-legal-notices": { "changedPixels": 70297, "changedRatio": 0.18897043010752687, "meanChannelDelta": 21.384918458781957 },
+      "legal-notices.tab-privacy-notice": { "changedPixels": 59465, "changedRatio": 0.1598521505376344, "meanChannelDelta": 16.55857616487511 },
+      "legal-notices.tab-third-party-license-texts": { "changedPixels": 66884, "changedRatio": 0.17979569892473118, "meanChannelDelta": 20.418877240143896 },
+      "legal-notices.tab-third-party-notices": { "changedPixels": 60325, "changedRatio": 0.16216397849462366, "meanChannelDelta": 17.433924731183286 }
+    },
+    "linebox-candidate": {
+      "legal-notices.initial": { "changedPixels": 31491, "changedRatio": 0.08465322580645161, "meanChannelDelta": 9.395395161289775 },
+      "legal-notices.tab-project-license": { "changedPixels": 31491, "changedRatio": 0.08465322580645161, "meanChannelDelta": 9.395395161289775 },
+      "legal-notices.tab-legal-notices": { "changedPixels": 69050, "changedRatio": 0.18561827956989246, "meanChannelDelta": 21.027410394266024 },
+      "legal-notices.tab-privacy-notice": { "changedPixels": 63164, "changedRatio": 0.16979569892473118, "meanChannelDelta": 18.611122759857484 },
+      "legal-notices.tab-third-party-license-texts": { "changedPixels": 63353, "changedRatio": 0.1703037634408602, "meanChannelDelta": 19.13590232974983 },
+      "legal-notices.tab-third-party-notices": { "changedPixels": 65338, "changedRatio": 0.17563978494623655, "meanChannelDelta": 20.04098745519784 }
+    }
+  },
+  "commands": [
+    "dotnet run --project freew/tools/FreeW.DialogVisualHarness/FreeW.DialogVisualHarness.csproj -c Release -- inventory --repo-root . --output artifacts/wave197-freew-legal-template-inventory",
+    "dotnet run --project freew/tools/FreeW.DialogVisualHarness.Wpf/FreeW.DialogVisualHarness.Wpf.csproj -c Release -- --inventory artifacts/wave197-freew-legal-template-inventory/freew_dialog_evidence_inventory.json --route legal-notices --output artifacts/wave197-freew-legal-template-before-wpf",
+    "dotnet run --project freew/tools/FreeW.DialogVisualHarness.Avalonia/FreeW.DialogVisualHarness.Avalonia.csproj -c Release -- --inventory artifacts/wave197-freew-legal-template-inventory/freew_dialog_evidence_inventory.json --wpf-authority artifacts/wave197-freew-legal-template-before-wpf/wpf_dialog_capture_manifest.json --route legal-notices --output artifacts/wave197-freew-legal-template-before-avalonia",
+    "dotnet run --project freew/tools/FreeW.DialogVisualHarness.Avalonia/FreeW.DialogVisualHarness.Avalonia.csproj -c Release -- --inventory artifacts/wave197-freew-legal-template-inventory/freew_dialog_evidence_inventory.json --wpf-authority artifacts/wave197-freew-legal-template-before-wpf/wpf_dialog_capture_manifest.json --route legal-notices --output artifacts/wave197-freew-legal-template-candidate-surface-margin-avalonia",
+    "dotnet run --project freew/tools/FreeW.DialogVisualHarness.Avalonia/FreeW.DialogVisualHarness.Avalonia.csproj -c Release -- --inventory artifacts/wave197-freew-legal-template-inventory/freew_dialog_evidence_inventory.json --wpf-authority artifacts/wave197-freew-legal-template-before-wpf/wpf_dialog_capture_manifest.json --route legal-notices --output artifacts/wave197-freew-legal-template-candidate-linebox-avalonia",
+    "dotnet run --project freew/tools/FreeW.DialogVisualHarness/FreeW.DialogVisualHarness.csproj -c Release -- compare --inventory artifacts/wave197-freew-legal-template-inventory/freew_dialog_evidence_inventory.json --wpf artifacts/wave197-freew-legal-template-before-wpf/wpf_dialog_capture_manifest.json --avalonia artifacts/wave197-freew-legal-template-before-avalonia/avalonia_dialog_capture_manifest.json --output artifacts/wave197-freew-legal-template-before-comparison",
+    "dotnet run --project freew/tools/FreeW.DialogVisualHarness/FreeW.DialogVisualHarness.csproj -c Release -- compare --inventory artifacts/wave197-freew-legal-template-inventory/freew_dialog_evidence_inventory.json --wpf artifacts/wave197-freew-legal-template-before-wpf/wpf_dialog_capture_manifest.json --avalonia artifacts/wave197-freew-legal-template-candidate-surface-margin-avalonia/avalonia_dialog_capture_manifest.json --output artifacts/wave197-freew-legal-template-candidate-surface-margin-comparison",
+    "dotnet run --project freew/tools/FreeW.DialogVisualHarness/FreeW.DialogVisualHarness.csproj -c Release -- compare --inventory artifacts/wave197-freew-legal-template-inventory/freew_dialog_evidence_inventory.json --wpf artifacts/wave197-freew-legal-template-before-wpf/wpf_dialog_capture_manifest.json --avalonia artifacts/wave197-freew-legal-template-candidate-linebox-avalonia/avalonia_dialog_capture_manifest.json --output artifacts/wave197-freew-legal-template-candidate-linebox-comparison"
+  ]
+}
