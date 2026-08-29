@@ -63,7 +63,8 @@ byte-for-byte. Their PNG paths are relative and resolve inside the tracked
 bundle; a focused test requires every declared durable path to remain inside
 that bundle, verifies traversal rejection, decodes the promoted PNGs, and
 independently recomputes the production changed-pixel, mean, percentile, and
-heatmap semantics before accepting the recorded metrics. The full inventory
+heatmap semantics, plus luminance similarity and perceptual-hash distance,
+before accepting the recorded metrics. The full inventory
 compare reports unrelated uncaptured inventory rows because this wave
 intentionally uses a route-local three-state capture; only the three Style rows
 above support the decision.
