@@ -1,14 +1,14 @@
 {
   "schema": "freex.parity.cross-app-dashboard.v3",
-  "wave": 197,
-  "cumulativeAppSlices": 591,
+  "wave": 198,
+  "cumulativeAppSlices": 594,
   "cumulativeAppSlicesStatus": "accepted-local-gates",
   "integrationGateStatus": "accepted-local-gates",
   "pendingIntegrationGates": [],
   "integrationGateEvidence": {
     "status": "accepted-local-gates",
     "acceptanceStatus": "accepted-local-gates",
-    "testedSourceCommit": "a6b1f27e02d15a7495644db64c9bda3a839f126a",
+    "testedSourceCommit": "1c6cb5e8019dd0098465c67f8f0261929a3d3bbc",
     "acceptanceRefreshNote": "This dashboard/report is an acceptance-only documentation/tooling refresh; it does not alter the tested source commit.",
     "pendingIntegrationGates": [],
     "acceptedLocalGates": [
@@ -21,29 +21,29 @@
       "tests/FreeX.App.Host.Tests/CrossAppParityDashboardTests.cs",
       "docs/parity/avalonia-wpf-cross-app-dashboard.json",
       "docs/parity/avalonia-wpf-cross-app-dashboard.md",
-      "docs/parity/avalonia-parity-wave197-cross-app-integration-20260829.md"
+      "docs/parity/avalonia-parity-wave198-cross-app-integration-20260829.md"
     ],
-    "sliceAccounting": "Wave 197 is three app slices, one each for FreeX, FreeW, and FreeP; cumulative accounting is 591 app slices (197 per app).",
-    "currentEvidence": "Wave197 evidence is recorded from committed app-specific notes, source tests, tracked FreeW raw evidence/checksums, and tracked FreeP image/hash evidence; local repository preflight and full Release build acceptance is recorded separately below.",
+    "sliceAccounting": "Wave 198 is three app slices, one each for FreeX, FreeW, and FreeP; cumulative accounting is 594 app slices (198 per app).",
+    "currentEvidence": "Wave198 evidence is recorded from committed FreeX physical/source-test evidence, FreeW shared tab-pane metadata and source tests, and FreeP rejected-candidate metrics/source tests; local repository preflight and full Release build acceptance is recorded separately below.",
     "localGatePolicy": "Per AGENTS.md, repository preflight and the full Release build are the local branch gates. The manifest-driven integration suite and UI/render/release-only gates are delegated to GitHub after main is pushed.",
     "delegatedGitHubGates": [
       "manifest-driven-integration-suite",
       "ui-render-release-workflow"
     ],
     "delegatedGitHubGateStatus": "not-run-locally",
-    "gateBoundary": "Wave197 local acceptance records only the exact tested source commit a6b1f27e02d15a7495644db64c9bda3a839f126a and the six allowlisted acceptance/report paths; delegated GitHub gates are not claimed as locally run and full Avalonia/WPF parity is not claimed.",
-    "repositoryPreflight": "Passed at tested source commit a6b1f27e02d15a7495644db64c9bda3a839f126a: tools/Test-RepositoryPreflight.ps1 repository preflight passed in Mode All with exit code 0.",
-    "fullReleaseBuildMsBuildElapsed": "00:07:04.93",
-    "fullReleaseBuildWrapperElapsed": "00:07:05.2629619",
-    "fullReleaseBuild": "Passed at tested source commit a6b1f27e02d15a7495644db64c9bda3a839f126a: dotnet build FreeX.slnx --configuration Release passed with 0 warnings and 0 errors; MSBuild 00:07:04.93; wrapper 00:07:05.2629619.",
-    "focusedTests": "Passed at tested source commit a6b1f27e02d15a7495644db64c9bda3a839f126a: FreeX 16/16; FreeW 20/20; FreeP 4/4.",
-    "independentReviewStatus": "passed",
-    "independentReview": "Passed: final independent review found no P1/P2 findings after all remediation. This acceptance refresh preserves the exact tested-source boundary and does not claim any delegated GitHub gate or full parity.",
+    "gateBoundary": "Wave198 local acceptance records only the exact tested source commit 1c6cb5e8019dd0098465c67f8f0261929a3d3bbc and the six allowlisted acceptance/report paths; delegated GitHub gates are not claimed as locally run and full Avalonia/WPF parity is not claimed.",
+    "repositoryPreflight": "Passed at tested source commit 1c6cb5e8019dd0098465c67f8f0261929a3d3bbc: tools/Test-RepositoryPreflight.ps1 repository preflight passed in Mode All with exit code 0; elapsed 00:06:49.7701327.",
+    "fullReleaseBuildMsBuildElapsed": "00:09:30.47",
+    "fullReleaseBuildWrapperElapsed": "00:09:30.8983681",
+    "fullReleaseBuild": "Passed at tested source commit 1c6cb5e8019dd0098465c67f8f0261929a3d3bbc: dotnet build FreeX.slnx --configuration Release passed with 0 warnings and 0 errors; MSBuild 00:09:30.47; wrapper 00:09:30.8983681.",
+    "focusedTests": "Passed at tested source commit 1c6cb5e8019dd0098465c67f8f0261929a3d3bbc: FreeX Wave198 3/3 (combined Wave198/Wave197 command 5/5); shared DialogTabChromeParityTests 3/3; FreeW target suite 32/32 plus FontDialog/Wave198 review suite 6/6; FreeP Wave198 evidence 2/2.",
+    "independentReviewStatus": "passed-with-remediation",
+    "independentReview": "Independent Wave198 review found no P1 findings. Four P2 evidence-quality findings were addressed in this acceptance record: FreeX checksums are recomputed by the focused source test, the current-source claim is narrowed, automatic combo-close focus is recorded as not measured, and a Font Dialog regression covers the shared negative-right tab-pane caller while pixel evidence remains bounded to the captured Table Properties/Borders and Shading states.",
     "portabilityCorrection": "Committed portability correction remains included in the generator and focused dashboard test; it normalizes repository paths to forward slashes.",
-    "historicalWave196Acceptance": {
+    "historicalWave197Acceptance": {
       "status": "accepted-local-gates",
       "acceptanceStatus": "accepted-local-gates",
-      "testedSourceCommit": "100f4aea399e3bc9d194c15cf962ded7d0cf3772",
+      "testedSourceCommit": "a6b1f27e02d15a7495644db64c9bda3a839f126a",
       "acceptanceRefreshNote": "This dashboard/report is an acceptance-only documentation/tooling refresh; it does not alter the tested source commit.",
       "pendingIntegrationGates": [],
       "acceptedLocalGates": [
@@ -56,71 +56,107 @@
         "tests/FreeX.App.Host.Tests/CrossAppParityDashboardTests.cs",
         "docs/parity/avalonia-wpf-cross-app-dashboard.json",
         "docs/parity/avalonia-wpf-cross-app-dashboard.md",
-        "docs/parity/avalonia-parity-wave196-cross-app-integration-20260829.md"
+        "docs/parity/avalonia-parity-wave197-cross-app-integration-20260829.md"
       ],
-      "sliceAccounting": "Wave 196 is three app slices, one each for FreeX, FreeW, and FreeP; cumulative accounting is 588 app slices (196 per app).",
-      "currentEvidence": "Wave196 evidence is recorded from committed app-specific notes, source tests, and the FreeP image/metrics bundle; local repository preflight and full Release build acceptance is recorded separately below.",
+      "sliceAccounting": "Wave 197 is three app slices, one each for FreeX, FreeW, and FreeP; cumulative accounting is 591 app slices (197 per app).",
+      "currentEvidence": "Wave197 evidence is recorded from committed app-specific notes, source tests, tracked FreeW raw evidence/checksums, and tracked FreeP image/hash evidence; local repository preflight and full Release build acceptance is recorded separately below.",
       "localGatePolicy": "Per AGENTS.md, repository preflight and the full Release build are the local branch gates. The manifest-driven integration suite and UI/render/release-only gates are delegated to GitHub after main is pushed.",
       "delegatedGitHubGates": [
         "manifest-driven-integration-suite",
         "ui-render-release-workflow"
       ],
       "delegatedGitHubGateStatus": "not-run-locally",
-      "gateBoundary": "Wave196 local acceptance records only the exact tested source commit 100f4aea399e3bc9d194c15cf962ded7d0cf3772 and the six allowlisted acceptance/report paths; delegated GitHub gates are not claimed as locally run and full Avalonia/WPF parity is not claimed.",
-      "repositoryPreflight": "Passed at tested source commit 100f4aea399e3bc9d194c15cf962ded7d0cf3772: tools/Test-RepositoryPreflight.ps1 repository preflight passed in Mode All with exit code 0.",
-      "fullReleaseBuild": "Passed at tested source commit 100f4aea399e3bc9d194c15cf962ded7d0cf3772: dotnet build FreeX.slnx --configuration Release passed with 0 warnings and 0 errors; elapsed 00:10:12.82.",
-      "fullReleaseBuildElapsed": "00:10:12.82",
-      "focusedTests": "Passed at tested source commit 100f4aea399e3bc9d194c15cf962ded7d0cf3772: FreeX focused 22/22; FreeW focused 2/2; FreeP renderer/evidence 10/10 and resolved model 1/1.",
+      "gateBoundary": "Wave197 local acceptance records only the exact tested source commit a6b1f27e02d15a7495644db64c9bda3a839f126a and the six allowlisted acceptance/report paths; delegated GitHub gates are not claimed as locally run and full Avalonia/WPF parity is not claimed.",
+      "repositoryPreflight": "Passed at tested source commit a6b1f27e02d15a7495644db64c9bda3a839f126a: tools/Test-RepositoryPreflight.ps1 repository preflight passed in Mode All with exit code 0.",
+      "fullReleaseBuildMsBuildElapsed": "00:07:04.93",
+      "fullReleaseBuildWrapperElapsed": "00:07:05.2629619",
+      "fullReleaseBuild": "Passed at tested source commit a6b1f27e02d15a7495644db64c9bda3a839f126a: dotnet build FreeX.slnx --configuration Release passed with 0 warnings and 0 errors; MSBuild 00:07:04.93; wrapper 00:07:05.2629619.",
+      "focusedTests": "Passed at tested source commit a6b1f27e02d15a7495644db64c9bda3a839f126a: FreeX 16/16; FreeW 20/20; FreeP 4/4.",
       "independentReviewStatus": "passed",
-      "independentReview": "Passed: independent review found two Wave196 issues; both were fixed and retested. This acceptance refresh preserves the exact tested-source boundary and does not claim any delegated GitHub gate or full parity.",
-      "portabilityCorrection": "Committed portability correction is included in the generator and focused dashboard test; it normalizes repository paths to forward slashes.",
-      "historicalWave195Acceptance": {
+      "independentReview": "Passed: final independent review found no P1/P2 findings after all remediation. This acceptance refresh preserves the exact tested-source boundary and does not claim any delegated GitHub gate or full parity.",
+      "portabilityCorrection": "Committed portability correction remains included in the generator and focused dashboard test; it normalizes repository paths to forward slashes.",
+      "historicalWave196Acceptance": {
         "status": "accepted-local-gates",
-        "testedSourceCommit": "feff4d47c02d57112c6cb191bcc85e1d60ea4e06",
+        "acceptanceStatus": "accepted-local-gates",
+        "testedSourceCommit": "100f4aea399e3bc9d194c15cf962ded7d0cf3772",
         "acceptanceRefreshNote": "This dashboard/report is an acceptance-only documentation/tooling refresh; it does not alter the tested source commit.",
         "pendingIntegrationGates": [],
-        "sliceAccounting": "Wave 195 is three app slices, one each for FreeX, FreeW, and FreeP; cumulative accounting is 585 app slices (195 per app).",
-        "currentEvidence": "Wave195 evidence is recorded from committed app-specific artifacts and remains separate from the parent-run integration gates.",
+        "acceptedLocalGates": [
+          "repository-preflight",
+          "full-release-build"
+        ],
+        "acceptanceRefreshAllowedPaths": [
+          "tools/Generate-CrossAppParityDashboard.ps1",
+          "tools/Test-CrossAppParityDashboard.ps1",
+          "tests/FreeX.App.Host.Tests/CrossAppParityDashboardTests.cs",
+          "docs/parity/avalonia-wpf-cross-app-dashboard.json",
+          "docs/parity/avalonia-wpf-cross-app-dashboard.md",
+          "docs/parity/avalonia-parity-wave196-cross-app-integration-20260829.md"
+        ],
+        "sliceAccounting": "Wave 196 is three app slices, one each for FreeX, FreeW, and FreeP; cumulative accounting is 588 app slices (196 per app).",
+        "currentEvidence": "Wave196 evidence is recorded from committed app-specific notes, source tests, and the FreeP image/metrics bundle; local repository preflight and full Release build acceptance is recorded separately below.",
         "localGatePolicy": "Per AGENTS.md, repository preflight and the full Release build are the local branch gates. The manifest-driven integration suite and UI/render/release-only gates are delegated to GitHub after main is pushed.",
         "delegatedGitHubGates": [
           "manifest-driven-integration-suite",
           "ui-render-release-workflow"
         ],
         "delegatedGitHubGateStatus": "not-run-locally",
-        "gateBoundary": "Wave195 local acceptance records only the supplied exact-head repository preflight and full Release build. Delegated GitHub gates are not claimed as locally run and remain for GitHub after main is pushed.",
-        "repositoryPreflight": "Passed at tested source commit feff4d47c02d57112c6cb191bcc85e1d60ea4e06: powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/Test-RepositoryPreflight.ps1 exited 0; all repository preflight checks passed.",
-        "fullReleaseBuild": "Passed at tested source commit feff4d47c02d57112c6cb191bcc85e1d60ea4e06: dotnet build FreeX.slnx --configuration Release passed with 0 warnings and 0 errors; elapsed 00:05:22.96.",
-        "fullReleaseBuildElapsed": "00:05:22.96",
-        "focusedTests": "Passed at tested source commit feff4d47c02d57112c6cb191bcc85e1d60ea4e06: FreeX Wave195 physical 2/2 workflows with 75 artifacts, 58 PNGs, and 2 reload witnesses; FreeW canonical 291 rows with 80 pass, 141 genuine visual mismatches, and 70 Avalonia extensions; FreeP whole-window 36/36 and combined 64/64 with zero local-threshold mismatch.",
+        "gateBoundary": "Wave196 local acceptance records only the exact tested source commit 100f4aea399e3bc9d194c15cf962ded7d0cf3772 and the six allowlisted acceptance/report paths; delegated GitHub gates are not claimed as locally run and full Avalonia/WPF parity is not claimed.",
+        "repositoryPreflight": "Passed at tested source commit 100f4aea399e3bc9d194c15cf962ded7d0cf3772: tools/Test-RepositoryPreflight.ps1 repository preflight passed in Mode All with exit code 0.",
+        "fullReleaseBuild": "Passed at tested source commit 100f4aea399e3bc9d194c15cf962ded7d0cf3772: dotnet build FreeX.slnx --configuration Release passed with 0 warnings and 0 errors; elapsed 00:10:12.82.",
+        "fullReleaseBuildElapsed": "00:10:12.82",
+        "focusedTests": "Passed at tested source commit 100f4aea399e3bc9d194c15cf962ded7d0cf3772: FreeX focused 22/22; FreeW focused 2/2; FreeP renderer/evidence 10/10 and resolved model 1/1.",
         "independentReviewStatus": "passed",
-        "independentReview": "Passed: the exact tested/reviewed source commit feff4d47c02d57112c6cb191bcc85e1d60ea4e06 is the acceptance evidence boundary; no delegated GitHub gate is represented as locally run.",
-        "historicalWave194Acceptance": {
-          "testedSourceCommit": "f7cbd8cbe3f1ac5fbaf14da1c2cacc1a3fb7bf3f",
+        "independentReview": "Passed: independent review found two Wave196 issues; both were fixed and retested. This acceptance refresh preserves the exact tested-source boundary and does not claim any delegated GitHub gate or full parity.",
+        "portabilityCorrection": "Committed portability correction is included in the generator and focused dashboard test; it normalizes repository paths to forward slashes.",
+        "historicalWave195Acceptance": {
+          "status": "accepted-local-gates",
+          "testedSourceCommit": "feff4d47c02d57112c6cb191bcc85e1d60ea4e06",
           "acceptanceRefreshNote": "This dashboard/report is an acceptance-only documentation/tooling refresh; it does not alter the tested source commit.",
-          "reintegration": "The current integration branch is anchored to tested source commit f7cbd8cbe3f1ac5fbaf14da1c2cacc1a3fb7bf3f; the acceptance refresh records only evidence from that tested source and does not claim that the documentation commit itself was rebuilt.",
-          "focusedTests": "At tested source commit f7cbd8cbe3f1ac5fbaf14da1c2cacc1a3fb7bf3f: FreeX Avalonia Wave194 9/9; FreeX Presentation Wave194 1/1; FreeX Core.IO Wave194 plus five foreground-capture guards 8/8; FreeW Avalonia 2,175/2,175; FreeW host 1,835/1,835; FreeW Presentation 2,892/2,892; FreeW Ribbon definitions 62/62; FreeP Avalonia 724/724; FreeP host 2,418/2,418; FreeP Presentation 5,496/5,496; FreeP Ribbon definitions 34/34; FreeP responsive evidence 64/64; FreeP localization focused 1/1; FreeP resources 14/14; FreeP Hide Slide assertions 2/2; FreeP ChartRenderPlanner 264/264.",
-          "initialReintegrationPreflight": "The current acceptance refresh uses the supplied repository-preflight result and the exact tested-source boundary; no additional source paths are allowlisted by this documentation-only change.",
-          "initialIndependentReview": "Recorded: the initial independent review found two P2 findings: FreeX crop/readiness/transition and physical click geometry were duplicated instead of consuming one contract; FreeP topology evidence did not pin the complete source PPTX and initially over-attributed the residual.",
-          "reviewRemediation": "FreeX now uses one authoritative mixed-type geometry contract with mutation coverage and reachable-source provenance; FreeP topology schema v3 pins the complete PPTX SHA-256 and describes the remaining residual as unresolved; the color-geometry guard remediation remains retained in the tested source.",
+          "pendingIntegrationGates": [],
+          "sliceAccounting": "Wave 195 is three app slices, one each for FreeX, FreeW, and FreeP; cumulative accounting is 585 app slices (195 per app).",
+          "currentEvidence": "Wave195 evidence is recorded from committed app-specific artifacts and remains separate from the parent-run integration gates.",
+          "localGatePolicy": "Per AGENTS.md, repository preflight and the full Release build are the local branch gates. The manifest-driven integration suite and UI/render/release-only gates are delegated to GitHub after main is pushed.",
+          "delegatedGitHubGates": [
+            "manifest-driven-integration-suite",
+            "ui-render-release-workflow"
+          ],
+          "delegatedGitHubGateStatus": "not-run-locally",
+          "gateBoundary": "Wave195 local acceptance records only the supplied exact-head repository preflight and full Release build. Delegated GitHub gates are not claimed as locally run and remain for GitHub after main is pushed.",
+          "repositoryPreflight": "Passed at tested source commit feff4d47c02d57112c6cb191bcc85e1d60ea4e06: powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/Test-RepositoryPreflight.ps1 exited 0; all repository preflight checks passed.",
+          "fullReleaseBuild": "Passed at tested source commit feff4d47c02d57112c6cb191bcc85e1d60ea4e06: dotnet build FreeX.slnx --configuration Release passed with 0 warnings and 0 errors; elapsed 00:05:22.96.",
+          "fullReleaseBuildElapsed": "00:05:22.96",
+          "focusedTests": "Passed at tested source commit feff4d47c02d57112c6cb191bcc85e1d60ea4e06: FreeX Wave195 physical 2/2 workflows with 75 artifacts, 58 PNGs, and 2 reload witnesses; FreeW canonical 291 rows with 80 pass, 141 genuine visual mismatches, and 70 Avalonia extensions; FreeP whole-window 36/36 and combined 64/64 with zero local-threshold mismatch.",
           "independentReviewStatus": "passed",
-          "independentReview": "Passed: an independent final cross-app acceptance review of tested source commit f7cbd8cbe3f1ac5fbaf14da1c2cacc1a3fb7bf3f completed in an isolated worktree at integration head 2ee42a45efd651ad9ad1c015403d788570ae02d9; no findings. This review preserves the tested-source boundary, counts, timings, and visual claim boundaries.",
-          "repositoryPreflight": "Passed at tested source commit f7cbd8cbe3f1ac5fbaf14da1c2cacc1a3fb7bf3f: powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/Test-RepositoryPreflight.ps1 with isolated SDK C:\\Users\\anton\\.dotnet-codex-10.0.400 and Git Bash first on PATH exited 0; 294 JSON, 310 XML-backed, 127 PowerShell scripts, 11 GitHub workflows, 12 test gates/48 assigned projects, 13,996 conflict-marker files checked, and all generated docs/evidence current; elapsed 00:01:55.8304515.",
-          "fullReleaseBuildMsBuildElapsed": "00:09:49.19",
-          "fullReleaseBuildWrapperElapsed": "00:09:49.4386774",
-          "fullReleaseBuild": "Passed at tested source commit f7cbd8cbe3f1ac5fbaf14da1c2cacc1a3fb7bf3f: dotnet build FreeX.slnx --configuration Release -m:1 passed with 0 warnings and 0 errors; MSBuild-retained Time Elapsed 00:09:49.19; wrapper stopwatch 00:09:49.4386774.",
-          "defaultNonUiTestLaneWrapperElapsed": "00:16:54.2974514",
-          "defaultNonUiTestLaneTrxTimestampSpan": "14:03:31.8502271 to 14:20:25.1692656 (+03:00)",
-          "defaultNonUiTestLaneTrxDuration": "00:16:53.3190385",
-          "defaultNonUiTestLane": "Passed at tested source commit f7cbd8cbe3f1ac5fbaf14da1c2cacc1a3fb7bf3f: final default non-UI lane produced 31 unique TRXs and matching console aggregation: 43,548 passed, 134 intentional skips, 0 failed, 43,682 total; wrapper stopwatch 00:16:54.2974514; independently parsed 31-TRX timestamp span 14:03:31.8502271 to 14:20:25.1692656 (+03:00); duration 00:16:53.3190385.",
-          "initialDefaultLane": "Earlier default-lane remediation history is retained in the Wave194 report; the current rerun is the authoritative 43,548 passed, 134 intentional skips, 0 failed, 43,682 total result.",
-          "sliceAccounting": "582 cumulative app slices (194 per app) remain the processed Wave194 accounting; later wave feature commits are included in the tested source and do not add Wave194 slices.",
-          "sourceTestRemediation": "The current source is accepted only with the focused and full-lane evidence recorded above; generated inventory and visual manifests remain the authority for coverage and comparison counts.",
-          "workerVerification": "Current focused evidence is recorded for FreeW and FreeP above; FreeX physical and generated metrics remain retained below. Functional/source evidence and visual comparison evidence are intentionally separate."
+          "independentReview": "Passed: the exact tested/reviewed source commit feff4d47c02d57112c6cb191bcc85e1d60ea4e06 is the acceptance evidence boundary; no delegated GitHub gate is represented as locally run.",
+          "historicalWave194Acceptance": {
+            "testedSourceCommit": "f7cbd8cbe3f1ac5fbaf14da1c2cacc1a3fb7bf3f",
+            "acceptanceRefreshNote": "This dashboard/report is an acceptance-only documentation/tooling refresh; it does not alter the tested source commit.",
+            "reintegration": "The current integration branch is anchored to tested source commit f7cbd8cbe3f1ac5fbaf14da1c2cacc1a3fb7bf3f; the acceptance refresh records only evidence from that tested source and does not claim that the documentation commit itself was rebuilt.",
+            "focusedTests": "At tested source commit f7cbd8cbe3f1ac5fbaf14da1c2cacc1a3fb7bf3f: FreeX Avalonia Wave194 9/9; FreeX Presentation Wave194 1/1; FreeX Core.IO Wave194 plus five foreground-capture guards 8/8; FreeW Avalonia 2,175/2,175; FreeW host 1,835/1,835; FreeW Presentation 2,892/2,892; FreeW Ribbon definitions 62/62; FreeP Avalonia 724/724; FreeP host 2,418/2,418; FreeP Presentation 5,496/5,496; FreeP Ribbon definitions 34/34; FreeP responsive evidence 64/64; FreeP localization focused 1/1; FreeP resources 14/14; FreeP Hide Slide assertions 2/2; FreeP ChartRenderPlanner 264/264.",
+            "initialReintegrationPreflight": "The current acceptance refresh uses the supplied repository-preflight result and the exact tested-source boundary; no additional source paths are allowlisted by this documentation-only change.",
+            "initialIndependentReview": "Recorded: the initial independent review found two P2 findings: FreeX crop/readiness/transition and physical click geometry were duplicated instead of consuming one contract; FreeP topology evidence did not pin the complete source PPTX and initially over-attributed the residual.",
+            "reviewRemediation": "FreeX now uses one authoritative mixed-type geometry contract with mutation coverage and reachable-source provenance; FreeP topology schema v3 pins the complete PPTX SHA-256 and describes the remaining residual as unresolved; the color-geometry guard remediation remains retained in the tested source.",
+            "independentReviewStatus": "passed",
+            "independentReview": "Passed: an independent final cross-app acceptance review of tested source commit f7cbd8cbe3f1ac5fbaf14da1c2cacc1a3fb7bf3f completed in an isolated worktree at integration head 2ee42a45efd651ad9ad1c015403d788570ae02d9; no findings. This review preserves the tested-source boundary, counts, timings, and visual claim boundaries.",
+            "repositoryPreflight": "Passed at tested source commit f7cbd8cbe3f1ac5fbaf14da1c2cacc1a3fb7bf3f: powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/Test-RepositoryPreflight.ps1 with isolated SDK C:\\Users\\anton\\.dotnet-codex-10.0.400 and Git Bash first on PATH exited 0; 294 JSON, 310 XML-backed, 127 PowerShell scripts, 11 GitHub workflows, 12 test gates/48 assigned projects, 13,996 conflict-marker files checked, and all generated docs/evidence current; elapsed 00:01:55.8304515.",
+            "fullReleaseBuildMsBuildElapsed": "00:09:49.19",
+            "fullReleaseBuildWrapperElapsed": "00:09:49.4386774",
+            "fullReleaseBuild": "Passed at tested source commit f7cbd8cbe3f1ac5fbaf14da1c2cacc1a3fb7bf3f: dotnet build FreeX.slnx --configuration Release -m:1 passed with 0 warnings and 0 errors; MSBuild-retained Time Elapsed 00:09:49.19; wrapper stopwatch 00:09:49.4386774.",
+            "defaultNonUiTestLaneWrapperElapsed": "00:16:54.2974514",
+            "defaultNonUiTestLaneTrxTimestampSpan": "14:03:31.8502271 to 14:20:25.1692656 (+03:00)",
+            "defaultNonUiTestLaneTrxDuration": "00:16:53.3190385",
+            "defaultNonUiTestLane": "Passed at tested source commit f7cbd8cbe3f1ac5fbaf14da1c2cacc1a3fb7bf3f: final default non-UI lane produced 31 unique TRXs and matching console aggregation: 43,548 passed, 134 intentional skips, 0 failed, 43,682 total; wrapper stopwatch 00:16:54.2974514; independently parsed 31-TRX timestamp span 14:03:31.8502271 to 14:20:25.1692656 (+03:00); duration 00:16:53.3190385.",
+            "initialDefaultLane": "Earlier default-lane remediation history is retained in the Wave194 report; the current rerun is the authoritative 43,548 passed, 134 intentional skips, 0 failed, 43,682 total result.",
+            "sliceAccounting": "582 cumulative app slices (194 per app) remain the processed Wave194 accounting; later wave feature commits are included in the tested source and do not add Wave194 slices.",
+            "sourceTestRemediation": "The current source is accepted only with the focused and full-lane evidence recorded above; generated inventory and visual manifests remain the authority for coverage and comparison counts.",
+            "workerVerification": "Current focused evidence is recorded for FreeW and FreeP above; FreeX physical and generated metrics remain retained below. Functional/source evidence and visual comparison evidence are intentionally separate."
+          }
         }
       }
     }
   },
-  "scopeBoundary": "Wave197 is three app slices, cumulative 591 (197 per app). Functional/source parity evidence is represented by generated command/profile routing, route coverage, committed source tests, focused evidence, and artifact coverage. Visual parity remains a separate claim: FreeW retains 141 genuine visual mismatches and 70 Avalonia extensions; FreeP retains an unresolved text-raster residual and no accepted production candidate. Wave197 evidence is bounded to the named workflows and rejected candidates. These metrics do not prove complete visual parity, workflow completeness, or pixel-level equivalence, and the overall 100% parity goal remains incomplete.",
+  "scopeBoundary": "Wave198 is three app slices, cumulative 594 (198 per app). Functional/source parity evidence is represented by generated command/profile routing, route coverage, committed source tests, focused evidence, and artifact coverage. Visual parity remains a separate claim: FreeW retains 141 genuine visual mismatches and 70 Avalonia extensions; FreeP retains an unresolved text-raster residual and no accepted production candidate. Wave198 evidence is bounded to the named workflows and rejected candidates. These metrics do not prove complete visual parity, workflow completeness, or pixel-level equivalence, and the overall 100% parity goal remains incomplete.",
   "sources": [
     "docs/parity/command-inventory.json",
     "docs/parity/functional-parity.json",
@@ -225,6 +261,17 @@
     "docs/parity/evidence/freep-wave197-deck17-baseline-alignment-20260829/metrics.json",
     "docs/parity/evidence/freep-wave197-deck17-baseline-alignment-20260829/images.json",
     "docs/parity/avalonia-parity-wave197-cross-app-integration-20260829.md",
+    "docs/parity/freex-wave198-ribbon-font-family/README.md",
+    "docs/parity/freex-wave198-ribbon-font-family/FINAL-EVIDENCE.md",
+    "docs/parity/freex-wave198-ribbon-font-family/evidence/SHA256SUMS.txt",
+    "tests/FreeX.App.Avalonia.Tests/Wave198RibbonFontFamilyPhysicalSourceTests.cs",
+    "docs/parity/avalonia-parity-wave198-freew-table-properties-tab-pane-20260829.md",
+    "freew/FreeW.App.Avalonia.Tests/Wave198TablePropertiesEvidenceTests.cs",
+    "freew/docs/parity/evidence/wave198-freew-table-properties-tab-pane-raw-evidence.json",
+    "docs/parity/freep-wave198-deck17-subpixel-antialias-20260829.md",
+    "docs/parity/evidence/freep-wave198-deck17-subpixel-antialias-20260829/metrics.json",
+    "freep/FreeP.App.Rendering.Avalonia.Tests/Wave198Deck17SubpixelAntialiasEvidenceTests.cs",
+    "docs/parity/avalonia-parity-wave198-cross-app-integration-20260829.md",
     "freep/FreeP.App.Rendering.Avalonia.Tests/Wave196Deck17LightHintingEvidenceTests.cs",
     "freep/FreeP.App.Presentation.Tests/Wave196Deck17Slide02ResolvedModelTests.cs",
     "tools/Generate-CrossAppParityDashboard.ps1",
@@ -497,6 +544,25 @@
             "testedSourceBoundary": "The later exact tested head differs only by the FreeW evidence/test commit a6b1f27e02; FreeX production source remains represented by provenance commit 9c1fd10cb61dc5bf324502ba68fc47d939436624.",
             "claimBoundary": "Committed FreeX production Linux/X11 and source-test evidence for one Home ribbon number-format persistence workflow; accepted local integration gates do not establish complete FreeX or visual parity."
           },
+          "wave198": {
+            "status": "evidence-recorded",
+            "validationMode": "physical-only",
+            "evidencePath": "docs/parity/freex-wave198-ribbon-font-family/FINAL-EVIDENCE.md",
+            "readmePath": "docs/parity/freex-wave198-ribbon-font-family/README.md",
+            "checksumsPath": "docs/parity/freex-wave198-ribbon-font-family/evidence/SHA256SUMS.txt",
+            "sourceTestPath": "tests/FreeX.App.Avalonia.Tests/Wave198RibbonFontFamilyPhysicalSourceTests.cs",
+            "physicalPassed": 1,
+            "physicalTotal": 1,
+            "focusedSourceTestsPassed": 3,
+            "focusedSourceTestsTotal": 3,
+            "productionDockerX11Report": "20260829T040529Z",
+            "persistedStyle": "style-id=1|font-id=1|font-name=Arial|font-family=true",
+            "saveClean": true,
+            "automaticComboCloseFocus": "not-measured",
+            "worksheetKeyboardVerification": "explicit reselect followed by Right and Ctrl+C copied B1=Unchanged",
+            "checksumStatus": "tracked evidence SHA-256 values verified in the current integration worktree",
+            "claimBoundary": "Committed FreeX production Linux/X11 and source-test evidence for one Home ribbon font-family operation/persistence workflow; automatic combo-close focus remains unresolved and accepted local integration gates do not establish complete FreeX or visual parity."
+          },
           "limitations": [
             "The 2026-08-16 interactive run captured 36 foreground ribbon states for each of Excel, WPF, and Avalonia, including Draw at all four widths, plus six guarded Excel popup/dialog surfaces. The 27 fixed-viewport triage rows average 13.937% RGB delta for WPF and 15.639% for Avalonia versus Excel; nine maximized rows are coverage-only, not an acceptance threshold.",
             "The ribbon harness creates a blank workbook before tab discovery so the enabled Draw tab is materialized; the current manifest records no unavailable-tab skips.",
@@ -528,7 +594,7 @@
         },
         "claimBoundary": "Coverage, manifest pairing, and DPI-normalized size comparability only; do not read these fields as visual parity."
       },
-      "nextSlice": "Command/dialog route coverage is complete for the generated inputs: all 0 pseudo-gallery rows are catalog-backed in classifier evidence (0 conditional-format rows over 38 runtime catalog items, 0 font/border rows, and 0 accounting-symbol rows), and dialog screenshot evidence has 94 paired WPF/Avalonia manifest surface ids with 0 Avalonia-only ids. This is coverage and size-comparability evidence, not visual parity. The paired screenshots retain 0 unresolved high-delta visual review candidates at triage score >= 0.4 (highest 0.100622); keep those candidates separate from 0 scale-aware dimension mismatch rows and 21 raw PNG pixel dimension mismatches. Wave197 records one production Docker/X11 Home ribbon number-format persistence probe with 16/16 focused tests; ordinary bubble key routing remains retained and combo dismissal restores worksheet focus synchronously. Continue with broader physical coverage beyond this completed workflow."
+      "nextSlice": "Command/dialog route coverage is complete for the generated inputs: all 0 pseudo-gallery rows are catalog-backed in classifier evidence (0 conditional-format rows over 38 runtime catalog items, 0 font/border rows, and 0 accounting-symbol rows), and dialog screenshot evidence has 94 paired WPF/Avalonia manifest surface ids with 0 Avalonia-only ids. This is coverage and size-comparability evidence, not visual parity. The paired screenshots retain 0 unresolved high-delta visual review candidates at triage score >= 0.4 (highest 0.100622); keep those candidates separate from 0 scale-aware dimension mismatch rows and 21 raw PNG pixel dimension mismatches. Wave198 records one production Docker/X11 Home ribbon font-family operation/persistence probe with 3/3 focused tests. Automatic combo-close focus was not measured before explicit worksheet reselect and remains unresolved; continue with a pre-reselect focus-routing probe and broader physical coverage."
     },
     {
       "app": "FreeW",
@@ -658,6 +724,28 @@
           "productionCandidateRetained": false,
           "claimBoundary": "Committed FreeW evidence-only candidate review for the Legal Notices tab-template family; no production candidate is retained, and accepted local integration gates do not establish complete FreeW or visual parity."
         },
+        "wave198": {
+          "status": "evidence-recorded",
+          "evidencePath": "docs/parity/avalonia-parity-wave198-freew-table-properties-tab-pane-20260829.md",
+          "sourceTestPath": "freew/FreeW.App.Avalonia.Tests/Wave198TablePropertiesEvidenceTests.cs",
+          "rawEvidencePath": "freew/docs/parity/evidence/wave198-freew-table-properties-tab-pane-raw-evidence.json",
+          "targetScenarioCount": 7,
+          "controlScenarioCount": 3,
+          "scenarioCount": 10,
+          "targetBeforeChangedPixels": 191369,
+          "targetAfterChangedPixels": 187872,
+          "targetChangedPixelsReduction": 3497,
+          "controlBeforeChangedPixels": 106540,
+          "controlAfterChangedPixels": 104932,
+          "controlChangedPixelsReduction": 1608,
+          "focusedSourceTestsPassed": 6,
+          "focusedSourceTestsTotal": 6,
+          "productionCandidateRetained": true,
+          "correction": "Shared compact dialog tab chrome preserves a one-pixel WPF trailing pane frame when route authority supplies negative right compensation.",
+          "canonicalClassificationBoundary": "The canonical inventory remains 291 rows: 141 genuine visual mismatches, 80 passes, and 70 Avalonia extensions.",
+          "evidenceBoundary": "Raw evidence is metadata-only: PNGs and route manifests are disposable and untracked, so the recorded metrics and manifest identities cannot independently inspect pixels.",
+          "claimBoundary": "Committed FreeW shared tab-pane correction and metadata linkage for Table Properties and Borders/Shading; this route-local improvement does not establish complete FreeW or Word visual parity."
+        },
         "routeCoverage": {
           "inventoryScenarioCount": 512,
           "inventoryRouteCount": 102,
@@ -727,7 +815,7 @@
         },
         "claimBoundary": "Route and evidence-row coverage only; paired comparison rows and mismatch classifications do not establish Word visual parity."
       },
-      "nextSlice": "Wave197 records rejected Legal Notices template candidates: the surface-margin candidate regressed all six rows and the 16px line-box candidate improved two long rows but regressed two. The canonical FreeW catalog remains 291 rows: 80 pass, 141 genuine visual mismatches, and 70 Avalonia extensions. No production candidate is retained; continue with the remaining native checkbox/glyph raster tail, tab-template edges, or the next classified pagination, drawing/object, chart, table, or WordArt residual."
+      "nextSlice": "Wave198 records a shared tab-pane trailing-frame correction: target changed pixels fall 191369 -> 187872 and the control falls 106540 -> 104932, with all states improved. The canonical FreeW catalog remains 291 rows: 80 pass, 141 genuine visual mismatches, and 70 Avalonia extensions. Continue with the remaining classified visual residuals, including the next native checkbox/glyph, tab-template, pagination, drawing/object, chart, table, or WordArt surface."
     },
     {
       "app": "FreeP",
@@ -973,6 +1061,29 @@
           "residualBoundary": "The remaining evidence is an unresolved text-raster residual, not a fallback-font diagnosis.",
           "claimBoundary": "Committed FreeP rejection evidence for leading and baseline-alignment candidates; no production candidate is retained, tracked image bytes/hashes and source-commit metadata are verified, and image-generation linkage is not independently proven."
         },
+        "wave198": {
+          "status": "candidate-refuted",
+          "evidencePath": "docs/parity/freep-wave198-deck17-subpixel-antialias-20260829.md",
+          "metricsPath": "docs/parity/evidence/freep-wave198-deck17-subpixel-antialias-20260829/metrics.json",
+          "sourceTestPath": "freep/FreeP.App.Rendering.Avalonia.Tests/Wave198Deck17SubpixelAntialiasEvidenceTests.cs",
+          "target": "17-bullets-autofit / slide-02",
+          "focusedSourceTestsPassed": 2,
+          "focusedSourceTestsTotal": 2,
+          "productionCandidateRetained": false,
+          "candidate": "Use Avalonia subpixel glyph antialiasing for the existing fixed-size Aptos fallback route.",
+          "acceptedTextRenderingMode": "Antialias",
+          "candidateTextRenderingMode": "SubpixelAntialias",
+          "avaloniaOfficeBefore": 2.482,
+          "avaloniaOfficeAfter": 2.4583,
+          "avaloniaOfficeDeltaPercentagePoints": -0.0237,
+          "wpfAvaloniaBefore": 2.8755,
+          "wpfAvaloniaAfter": 2.8847,
+          "wpfAvaloniaDeltaPercentagePoints": 0.0092,
+          "slide01ControlUnchanged": true,
+          "generationLinkage": "not-independently-proven",
+          "correctionDisposition": "Rejected: SubpixelAntialias improves Avalonia/Office by 0.0237 percentage points but worsens WPF/Avalonia by 0.0092 percentage points; preserve Antialias.",
+          "claimBoundary": "Committed FreeP renderer evidence for a rejected fixed-size Aptos subpixel-antialias candidate; provenance is not independently proven and no production candidate is retained."
+        },
         "physicalEvidence": {
           "status": "available-app-and-native-office-chrome",
           "captureMode": "visible app-owned render targets with scenario-isolated processes plus guarded native PowerPoint ribbon capture",
@@ -1012,7 +1123,7 @@
         },
         "claimBoundary": "Route/scenario coverage, committed PNG manifests, and local WPF/Avalonia comparison results only; no PowerPoint visual-parity claim is made."
       },
-      "nextSlice": "Wave197 rejects leading and baseline-alignment candidates for the deck17 slide02 residual; no production candidate is retained. Tracked image bytes/hashes and recorded source-commit metadata are verified, but image-generation linkage is explicitly unproven. The remaining residual is unresolved text-raster evidence, not a fallback-font diagnosis; continue renderer-level evidence against the existing corpus rather than introducing fixture-specific correction."
+      "nextSlice": "Wave198 rejects SubpixelAntialias for the deck17 slide02 residual: Avalonia/Office improves by 0.0237 percentage points but WPF/Avalonia worsens by 0.0092 points, and the slide01 control is unchanged. No production candidate is retained; provenance is not independently proven. Continue with supported native Aptos/resource or independently measured host glyph-raster evidence."
     }
   ]
 }
