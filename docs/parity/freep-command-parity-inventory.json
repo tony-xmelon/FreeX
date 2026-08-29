@@ -17255,8 +17255,8 @@
           "groupId": "customize",
           "group": "Customize",
           "label": "Widescreen (16:9)",
-          "controlType": "RibbonButton",
-          "layout": "Large"
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ],
       "avaloniaLocations": [
@@ -17267,8 +17267,8 @@
           "groupId": "customize",
           "group": "Customize",
           "label": "Widescreen (16:9)",
-          "controlType": "RibbonButton",
-          "layout": "Large"
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ]
     },
@@ -17289,8 +17289,8 @@
           "groupId": "customize",
           "group": "Customize",
           "label": "Standard (4:3)",
-          "controlType": "RibbonButton",
-          "layout": "Large"
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ],
       "avaloniaLocations": [
@@ -17301,8 +17301,8 @@
           "groupId": "customize",
           "group": "Customize",
           "label": "Standard (4:3)",
-          "controlType": "RibbonButton",
-          "layout": "Large"
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ]
     },
@@ -17323,8 +17323,18 @@
           "groupId": "customize",
           "group": "Customize",
           "label": "Slide Size…",
-          "controlType": "RibbonButton",
+          "controlType": "RibbonDropdown",
           "layout": "Medium"
+        },
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "customize",
+          "group": "Customize",
+          "label": "Slide Size…",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ],
       "avaloniaLocations": [
@@ -17335,8 +17345,18 @@
           "groupId": "customize",
           "group": "Customize",
           "label": "Slide Size…",
-          "controlType": "RibbonButton",
+          "controlType": "RibbonDropdown",
           "layout": "Medium"
+        },
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "customize",
+          "group": "Customize",
+          "label": "Slide Size…",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ]
     },
