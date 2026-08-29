@@ -184,7 +184,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/1100/ribbon-4-Layout.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-1100x720-layout.png",
       "wpfSha256": "a2c755e847dbb11fdb38f9f2002d4688e3914fea646777f00fbffec14db66916",
-      "avaloniaSha256": "054716c82f71256d98638e6980a9b03cd122568e18f37ec237c5f3f1cbc8e7d0",
+      "avaloniaSha256": "d64c3f8771727c7f1fcdfdd153a8e6b4c3f5791ff8a336585789a2374e638219",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -294,7 +294,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/900/ribbon-4-Layout.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-900x720-layout.png",
       "wpfSha256": "f52a4c18e5cf1e2f0b3260a87115defedb60f720f3131b54695ee0dd70991337",
-      "avaloniaSha256": "2b186deb506dfd6d6d001f0d53deb148deae7cf2d27e106d92f54f0b94bc0b15",
+      "avaloniaSha256": "6108daa4609a2e52b3de38610ce08188df0326f08a63d969a875d190c7e240bb",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {
@@ -404,7 +404,7 @@
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/750/ribbon-4-Layout.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-750x720-layout.png",
       "wpfSha256": "721c5185cd2ca4c4a6d89f28461f6091ca75ba801b94fd30d0055b84fd37fafa",
-      "avaloniaSha256": "bc7df731b94985bbd8fe2dbc7695f8d4609446357b309806474c01a8d3a4a6c8",
+      "avaloniaSha256": "34df36a95ee98b8befe71ea49b2485e15044827b1dc333be54dbad16e3857683",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
     {

@@ -25,7 +25,7 @@
     "freew/FreeW.App.Avalonia/MainWindow.cs": "aafb64d244bf9e6ad746e00b9ba6fa2d4b6719baeb0e9ba3e12baff24ddbed21",
     "freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs": "ddf547d667aa11285b34a11d1137c9c86908192c2ad186b25940d6178cfe1c2d",
     "freew/FreeW.Ribbon.Definitions/FreeWRibbon.cs": "b677dc00c1f57487b84bbfa8f62bb2936c3d880094bb8df15df4adf1559266e9",
-    "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.cs": "5c66daee21146293ce1218c190847b4907611f92a0beb9c7e130f4ee191ca70b",
+    "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.cs": "e25b1549c9d6d38d44718c172302e752cbbdeab4e67e9ee5f9f4b7e18fdeb15d",
     "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.Ordinary.cs": "8db0831595bc545ea01cc124c314a79881bfcd87c282845cb61d28cb0184982f",
     "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.Contextual.cs": "17d19593786591f0eb980b2b0991522898cfc8158fb6aa0d88dda293c2c0eeca",
     "freew/FreeW.App.Presentation/Ribbon/MailMergeDialogPlanners.cs": "39ab92b18c0be8ba0e5ef96fb1c583f8ddbd3351fe5084fd19252a3b85efc1d2",
