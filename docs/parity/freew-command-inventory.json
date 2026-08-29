@@ -10750,8 +10750,8 @@
           "groupId": "font",
           "group": "Font",
           "label": "Font…",
-          "controlType": "RibbonButton",
-          "layout": "Small"
+          "controlType": "RibbonGroupLauncher",
+          "layout": "DialogLauncher"
         }
       ],
       "avaloniaLocations": [
@@ -10762,8 +10762,8 @@
           "groupId": "font",
           "group": "Font",
           "label": "Font…",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
+          "controlType": "RibbonGroupLauncher",
+          "layout": "DialogLauncher"
         }
       ],
       "sourceLiteralEvidence": {
@@ -26031,8 +26031,8 @@
           "groupId": "paragraph",
           "group": "Paragraph",
           "label": "Paragraph Settings",
-          "controlType": "RibbonButton",
-          "layout": "Small"
+          "controlType": "RibbonGroupLauncher",
+          "layout": "DialogLauncher"
         },
         {
           "profile": "WPF",
@@ -26052,9 +26052,9 @@
           "tab": "Home",
           "groupId": "paragraph",
           "group": "Paragraph",
-          "label": "Paragraph…",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
+          "label": "Paragraph Settings",
+          "controlType": "RibbonGroupLauncher",
+          "layout": "DialogLauncher"
         },
         {
           "profile": "Avalonia",
