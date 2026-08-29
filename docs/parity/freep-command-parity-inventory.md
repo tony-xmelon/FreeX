@@ -293,10 +293,10 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.arrange.send-to-back` | Send to Back | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.ungroup` | Ungroup | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.audio` | Audio | Yes | Yes | none | shared | insert/media (RibbonButton) | insert/media (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.background-black` | Black Background | Yes | Yes | none | shared | design/customize (RibbonButton) | design/customize (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.background-blue` | Blue Background | Yes | Yes | none | shared | design/customize (RibbonButton) | design/customize (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.background-reset` | Reset Background | Yes | Yes | none | shared | design/customize (RibbonButton) | design/customize (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.background-white` | White Background | Yes | Yes | none | shared | design/customize (RibbonButton) | design/customize (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.background-black` | Black Background | Yes | Yes | none | shared | design/slides (RibbonButton) | design/slides (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.background-blue` | Blue Background | Yes | Yes | none | shared | design/slides (RibbonButton) | design/slides (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.background-reset` | Reset Background | Yes | Yes | none | shared | design/slides (RibbonButton) | design/slides (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.background-white` | White Background | Yes | Yes | none | shared | design/slides (RibbonButton) | design/slides (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.bold` | Bold | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.bullets` | Bullets | Yes | Yes | none | shared | home/paragraph (RibbonDropdown) | home/paragraph (RibbonDropdown) | Available in both generated FreeP ribbon profiles. |
 | `freep.bullets.bullet.check` | ✓  Check Bullet | Yes | Yes | none | shared | home/paragraph (RibbonMenuItem) | home/paragraph (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
@@ -576,9 +576,9 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.shape.soft-edge.strong` | Strong Shape Soft Edge | Yes | Yes | none | shared | insert/shapes-effects (RibbonButton) | insert/shapes-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape.soft-edge.subtle` | Subtle Shape Soft Edge | Yes | Yes | none | shared | insert/shapes-effects (RibbonButton) | insert/shapes-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slide-number` | Slide Number | Yes | Yes | none | shared | insert/text (RibbonButton) | insert/text (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.slide-size-16x9` | Widescreen (16:9) | Yes | Yes | none | shared | design/customize (RibbonMenuItem) | design/customize (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
-| `freep.slide-size-4x3` | Standard (4:3) | Yes | Yes | none | shared | design/customize (RibbonMenuItem) | design/customize (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
-| `freep.slide-size-custom` | Slide Size… | Yes | Yes | none | shared | design/customize (RibbonDropdown)<br>design/customize (RibbonMenuItem) | design/customize (RibbonDropdown)<br>design/customize (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.slide-size-16x9` | Widescreen (16:9) | Yes | Yes | none | shared | design/slides (RibbonMenuItem) | design/slides (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.slide-size-4x3` | Standard (4:3) | Yes | Yes | none | shared | design/slides (RibbonMenuItem) | design/slides (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.slide-size-custom` | Slide Size… | Yes | Yes | none | shared | design/slides (RibbonDropdown)<br>design/slides (RibbonMenuItem) | design/slides (RibbonDropdown)<br>design/slides (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.slideshow.custom-shows` | Custom Shows | Yes | Yes | none | shared | slide-show/slide-show-start (RibbonButton) | slide-show/slide-show-start (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slideshow.from-beginning` | From Beginning | Yes | Yes | none | shared | slide-show/slide-show-start (RibbonButton) | slide-show/slide-show-start (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slideshow.from-current-slide` | From Current Slide | Yes | Yes | none | shared | slide-show/slide-show-start (RibbonButton) | slide-show/slide-show-start (RibbonButton) | Available in both generated FreeP ribbon profiles. |
@@ -757,11 +757,11 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.text-column-spacing` | Column Spacing | Yes | Yes | none | shared | text-format/text-layout (RibbonComboBox) | text-format/text-layout (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
 | `freep.text-columns` | Text Columns | Yes | Yes | none | shared | text-format/text-layout (RibbonComboBox) | text-format/text-layout (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
 | `freep.text-direction` | Text Direction | Yes | Yes | none | shared | text-format/text-layout (RibbonComboBox) | text-format/text-layout (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
-| `freep.theme-colors.berlin` | Berlin | Yes | Yes | none | shared | design/colors (RibbonMenuItem) | design/colors (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
-| `freep.theme-colors.facet` | Facet | Yes | Yes | none | shared | design/colors (RibbonMenuItem) | design/colors (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
-| `freep.theme-colors.ion` | Ion | Yes | Yes | none | shared | design/colors (RibbonMenuItem) | design/colors (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
-| `freep.theme-colors.office` | Colors | Yes | Yes | none | shared | design/colors (RibbonDropdown)<br>design/colors (RibbonMenuItem) | design/colors (RibbonDropdown)<br>design/colors (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
-| `freep.theme-colors.slice` | Slice | Yes | Yes | none | shared | design/colors (RibbonMenuItem) | design/colors (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.theme-colors.berlin` | Berlin | Yes | Yes | none | shared | design/customize (RibbonMenuItem) | design/customize (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.theme-colors.facet` | Facet | Yes | Yes | none | shared | design/customize (RibbonMenuItem) | design/customize (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.theme-colors.ion` | Ion | Yes | Yes | none | shared | design/customize (RibbonMenuItem) | design/customize (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.theme-colors.office` | Colors | Yes | Yes | none | shared | design/customize (RibbonDropdown)<br>design/customize (RibbonMenuItem) | design/customize (RibbonDropdown)<br>design/customize (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.theme-colors.slice` | Slice | Yes | Yes | none | shared | design/customize (RibbonMenuItem) | design/customize (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.theme.berlin` | Berlin | Yes | Yes | none | shared | design/themes (RibbonButton) | design/themes (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.theme.facet` | Facet | Yes | Yes | none | shared | design/themes (RibbonButton) | design/themes (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.theme.ion` | Ion | Yes | Yes | none | shared | design/themes (RibbonButton) | design/themes (RibbonButton) | Available in both generated FreeP ribbon profiles. |
