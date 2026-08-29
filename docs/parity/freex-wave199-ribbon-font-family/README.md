@@ -4,6 +4,8 @@ Wave199 changed the production Linux X11 probe so it measures the real worksheet
 
 Evidence checksums use canonical Git/blob bytes: tracked text is normalized to the repository's `eol=lf` policy before hashing, while PNG bytes are hashed unchanged. This keeps the bundle valid in both Windows and Linux checkouts.
 
+The promoted bundle uses one flat evidence directory. Its report, physical manifest, calibration screenshots, probe screenshots, and postcondition references are all local and are validated by the focused evidence test.
+
 The single production focus candidate was rejected after the decisive Docker/X11 run. The candidate captured combo focus synchronously and deferred the worksheet handoff, but the physical result remained `automatic-focus-after-combo=false`; the next `Right` and `Ctrl+C` still observed the original `A1` value. The same run also reported `save-clean=false` and a package signature containing `Calibri`, so it did not satisfy the retained font persistence requirement. Production `MainWindow.cs` therefore has zero net candidate change.
 
 The WPF authority remains the native `FontNameBox_SelectionChanged` application path plus the worksheet keyboard route in `MainWindow.Selection.cs`. The Avalonia production path still uses the existing guarded `DropDownClosed` handoff; the unresolved gap is now measured truthfully rather than represented as not measured.

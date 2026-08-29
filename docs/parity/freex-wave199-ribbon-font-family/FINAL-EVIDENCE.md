@@ -35,6 +35,8 @@ The automatic probe runs before `select_cell 0 0 A1`; its order is asserted by `
 
 `SHA256SUMS.txt` records canonical Git/blob-byte hashes. Text evidence is normalized to the repository `eol=lf` policy before hashing; PNG evidence is hashed byte-for-byte.
 
+The durable bundle promotes the authentic `calibration-a1.png`, `calibration-b1.png`, and `calibration-a2.png` files from the accepted run. Report and manifest paths are normalized to the bundle's flat directory, and the focused evidence test requires every local JSON/HTML evidence reference to resolve to a promoted file.
+
 ## Focused Tests
 
 Command:

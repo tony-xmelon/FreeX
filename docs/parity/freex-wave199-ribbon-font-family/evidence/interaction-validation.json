@@ -62,7 +62,7 @@
                                                              "calibration-a2.png"
                                                          ]
                                         },
-                        "manifest":  "x11-validation/x11-input-results.json",
-                        "evidenceDirectory":  "x11-validation"
+                        "manifest":  "x11-input-results.json",
+                        "evidenceDirectory":  "."
                     }
 }
