@@ -1,7 +1,7 @@
 ﻿{
     "Schema":  "freew.design-dialog-parity.v1",
-    "GeneratedAtUtc":  "2026-08-29T14:22:55.6942580Z",
-    "Commit":  "7f3116dffacf8697980be793ec8ba52f459ecdc0",
+    "GeneratedAtUtc":  "2026-08-29T14:53:08.6171486Z",
+    "Commit":  "fea162e9c3e2442373b61c2191ee9caedc72ebf8",
     "RouteCounts":  {
                         "Total":  11,
                         "Complete":  10,
@@ -132,7 +132,7 @@
                          "freew/FreeW.App.Presentation.Tests/DesignDialogPlannerTests.cs":  "fa8a1a51951b85b649e4434d45ff748e8e88d906c760f38478605c30c87997ae",
                          "freew/FreeW.App.Presentation/Dialogs/BordersAndShadingDialogPlanner.cs":  "b3bacdce6d02f237d7f15d4622039991df218c18802e1e6cde729b5174f7ec9a",
                          "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.Contextual.cs":  "17d19593786591f0eb980b2b0991522898cfc8158fb6aa0d88dda293c2c0eeca",
-                         "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.cs":  "e25b1549c9d6d38d44718c172302e752cbbdeab4e67e9ee5f9f4b7e18fdeb15d",
+                         "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.cs":  "b5da25d6dd48f699ff9fa8161f9f20de8b582904b14a83eb7b3e1a2444e1526a",
                          "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.Ordinary.cs":  "8db0831595bc545ea01cc124c314a79881bfcd87c282845cb61d28cb0184982f",
                          "freew/FreeW.Ribbon.Definitions/FreeWRibbon.cs":  "b677dc00c1f57487b84bbfa8f62bb2936c3d880094bb8df15df4adf1559266e9"
                      }
