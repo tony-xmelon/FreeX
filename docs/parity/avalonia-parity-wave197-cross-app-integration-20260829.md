@@ -1,7 +1,7 @@
 # Avalonia/WPF Cross-App Parity Wave197 Integration
 
-Date: 2026-08-29  
-Wave: 197  
+Date: 2026-08-29
+Wave: 197
 Status: accepted-local-gates
 
 ## Integration Status
