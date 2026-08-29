@@ -496,7 +496,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.replace` | Replace | Yes | Yes | none | shared | home/editing (RibbonButton) | home/editing (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.review.accessibility.check` | Check Accessibility | Yes | Yes | none | shared | review/accessibility (RibbonButton) | review/accessibility (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.review.alt-text` | Alt Text | Yes | Yes | none | shared | review/accessibility (RibbonButton) | review/accessibility (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.review.comments.add` | New Comment | Yes | Yes | none | shared | review/comments (RibbonButton) | review/comments (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.review.comments.add` | New Comment | Yes | Yes | none | shared | insert/comments (RibbonButton)<br>review/comments (RibbonButton) | insert/comments (RibbonButton)<br>review/comments (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.review.comments.delete` | Delete | Yes | Yes | none | shared | review/comments (RibbonButton) | review/comments (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.review.comments.next` | Next | Yes | Yes | none | shared | review/comments (RibbonButton) | review/comments (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.review.comments.pane` | Comments | Yes | Yes | none | shared | review/comments (RibbonButton) | review/comments (RibbonButton) | Available in both generated FreeP ribbon profiles. |

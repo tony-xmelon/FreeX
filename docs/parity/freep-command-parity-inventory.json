@@ -14510,6 +14510,16 @@
       "wpfLocations": [
         {
           "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "New Comment",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        },
+        {
+          "profile": "WPF",
           "tabId": "review",
           "tab": "Review",
           "groupId": "comments",
@@ -14520,6 +14530,16 @@
         }
       ],
       "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "New Comment",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        },
         {
           "profile": "Avalonia",
           "tabId": "review",
