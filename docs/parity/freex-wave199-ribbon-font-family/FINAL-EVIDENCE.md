@@ -33,6 +33,8 @@ The image included the one Wave199 production focus candidate. That candidate wa
 
 The automatic probe runs before `select_cell 0 0 A1`; its order is asserted by `Wave199RibbonFontFamilyFocusSourceTests`. No result is hard-coded.
 
+`SHA256SUMS.txt` records canonical Git/blob-byte hashes. Text evidence is normalized to the repository `eol=lf` policy before hashing; PNG evidence is hashed byte-for-byte.
+
 ## Focused Tests
 
 Command:
