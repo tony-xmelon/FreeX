@@ -3,6 +3,7 @@
   "wave": 197,
   "capturedOn": "2026-08-29",
   "decision": "no-candidate-accepted",
+  "sourceHashAlgorithm": "sha256-normalized-lf-utf8-source-text",
   "scope": {
     "product": "FreeW",
     "route": "legal-notices",
@@ -124,9 +125,10 @@
       "symbol": "CreateContent contentPaneMargin",
       "baselineValue": "new Thickness(0, -5, 0, 0)",
       "candidateValue": "new Thickness(0, -5, 1, 0)",
-      "baselineSha256": "e985eb0ddea7307a7b34837bdf186c515a7f37fecc06eb77db9ca53361ce03b5",
-      "candidateSha256": "b4148d1500a4b7334b43d792cd262b2648fd7f96175f8b2d8f73a4b6ea2b284c",
-      "restoredSha256": "e985eb0ddea7307a7b34837bdf186c515a7f37fecc06eb77db9ca53361ce03b5",
+      "sha256Of": "sha256-normalized-lf-utf8-source-text",
+      "baselineSha256": "9d05b97a50f3ed7bb8d98c489c1dd4b291b010db8bd0d67daacbe3d926dc3460",
+      "candidateSha256": "a7134e5395022db912e7d49c827535399d327b4b9a89af4f90da4f8737f9f54f",
+      "restoredSha256": "9d05b97a50f3ed7bb8d98c489c1dd4b291b010db8bd0d67daacbe3d926dc3460",
       "reverted": true
     },
     {
@@ -135,9 +137,10 @@
       "symbol": "OverflowDocumentLineHeightCompensation",
       "baselineValue": "15.0",
       "candidateValue": "16.0",
-      "baselineSha256": "e985eb0ddea7307a7b34837bdf186c515a7f37fecc06eb77db9ca53361ce03b5",
-      "candidateSha256": "95a1024b9d8441d6e848c96944b84c80008bdfaa25f87a9409733d583ce2e2f9",
-      "restoredSha256": "e985eb0ddea7307a7b34837bdf186c515a7f37fecc06eb77db9ca53361ce03b5",
+      "sha256Of": "sha256-normalized-lf-utf8-source-text",
+      "baselineSha256": "9d05b97a50f3ed7bb8d98c489c1dd4b291b010db8bd0d67daacbe3d926dc3460",
+      "candidateSha256": "22ca4516c44ac4bbd571bf5b327e2e04a1f62ecec74719415ccc62d666acdebb",
+      "restoredSha256": "9d05b97a50f3ed7bb8d98c489c1dd4b291b010db8bd0d67daacbe3d926dc3460",
       "reverted": true
     }
   ],
