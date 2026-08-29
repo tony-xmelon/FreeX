@@ -5,14 +5,19 @@ candidates from 2026-08-29. It keeps metrics, source mutations, capture
 provenance, and checksums without adding the ignored PNG corpus to Git.
 
 `wave197-freew-legal-notices-template-candidates.json` is the machine-readable
-record. `SHA256SUMS.txt` checks this README and bundle, plus the retained local
-inventory, capture manifests, and comparison reports when the ignored
-`artifacts/wave197-freew-legal-template-*` directories are available.
+record. `wave197-freew-legal-notices-raw-evidence.json` is a tracked,
+route-local lossless extract of the inventory, capture manifests, and
+comparison reports. `SHA256SUMS.txt` checks every tracked file in this
+directory from this directory's root; it does not refer to ignored
+`artifacts/` paths.
 
-The provenance hashes in the bundle are explicitly hashes of ignored,
-disposable JSON content: capture-manifest content or comparison-report content.
-They identify the local evidence that produced the recorded metrics; they are
-not hashes of tracked PNGs or claims that those disposable files are committed.
+The raw extract records each ignored source path and its original SHA-256. Its
+extraction schema preserves every route-local inventory, capture, and
+comparison field while omitting only absolute capture roots, PNG paths, and
+inventory scenarios outside `legal-notices`. The bundle's provenance links to
+the tracked extract and retains the original disposable-content hashes; they
+are not hashes of tracked PNGs or claims that those disposable files are
+committed.
 Candidate source hashes are hashes of the exact one-line source mutations
 recorded in the bundle.
 

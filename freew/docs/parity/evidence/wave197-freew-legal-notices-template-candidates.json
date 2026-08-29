@@ -19,87 +19,101 @@
     ]
   },
   "provenance": {
+    "rawEvidence": {
+      "path": "wave197-freew-legal-notices-raw-evidence.json",
+      "sha256": "3c44fe7c23c6786834898052624a63d13aee8efe6de1cb7793dfcc94c1a38a00",
+      "sha256Of": "tracked-route-local-raw-evidence-json-content",
+      "schema": "freew.wave197.legal-notices-route-evidence.v1"
+    },
     "inventory": {
-      "path": "artifacts/wave197-freew-legal-template-inventory/freew_dialog_evidence_inventory.json",
-      "sha256": "05e46af943414b6879048e314d14e332da923110fa31980bb1acdf81cca8c9a3",
+      "sourcePath": "artifacts/wave197-freew-legal-template-inventory/freew_dialog_evidence_inventory.json",
+      "originalSha256": "05e46af943414b6879048e314d14e332da923110fa31980bb1acdf81cca8c9a3",
       "sha256Of": "disposable-inventory-json-content",
       "generatedFromSha256": "b3075d160b2f51868108838f7c3b6cc823d1ef6d05996d0b6bbff25c977b3b6e",
-      "generatedFromSha256Of": "inventory-generator-input-content"
+      "generatedFromSha256Of": "inventory-generator-input-content",
+      "rawEvidenceId": "inventory"
     },
     "captureManifests": [
       {
         "id": "wpf-baseline",
         "host": "wpf",
-        "path": "artifacts/wave197-freew-legal-template-before-wpf/wpf_dialog_capture_manifest.json",
-        "sha256": "fd7d7f900dc10cb8a6b98ae117b51babf337a58daf8b4938f1827044b5a5f261",
+        "sourcePath": "artifacts/wave197-freew-legal-template-before-wpf/wpf_dialog_capture_manifest.json",
+        "originalSha256": "fd7d7f900dc10cb8a6b98ae117b51babf337a58daf8b4938f1827044b5a5f261",
         "sha256Of": "disposable-capture-manifest-json-content",
         "schema": "freew.dialog-capture-manifest.v1",
         "schemaVersion": 1,
         "captureCount": 6,
         "contentValidatedCount": 6,
-        "dpi": 144
+        "dpi": 144,
+        "rawEvidenceId": "wpf-baseline"
       },
       {
         "id": "avalonia-baseline",
         "host": "avalonia",
-        "path": "artifacts/wave197-freew-legal-template-before-avalonia/avalonia_dialog_capture_manifest.json",
-        "sha256": "2bf9d576724813eb311b0ad95708d4dff84ada20e2cafe1c2be8b5661bbbb6c5",
+        "sourcePath": "artifacts/wave197-freew-legal-template-before-avalonia/avalonia_dialog_capture_manifest.json",
+        "originalSha256": "2bf9d576724813eb311b0ad95708d4dff84ada20e2cafe1c2be8b5661bbbb6c5",
         "sha256Of": "disposable-capture-manifest-json-content",
         "schema": "freew.dialog-capture-manifest.v1",
         "schemaVersion": 2,
         "captureCount": 6,
         "contentValidatedCount": 6,
-        "dpi": 96
+        "dpi": 96,
+        "rawEvidenceId": "avalonia-baseline"
       },
       {
         "id": "surface-margin-candidate",
         "host": "avalonia",
-        "path": "artifacts/wave197-freew-legal-template-candidate-surface-margin-avalonia/avalonia_dialog_capture_manifest.json",
-        "sha256": "7be789cfbd9bb49d3a534c0db6a040459199e5e89dde4160f0653f783e6df7fc",
+        "sourcePath": "artifacts/wave197-freew-legal-template-candidate-surface-margin-avalonia/avalonia_dialog_capture_manifest.json",
+        "originalSha256": "7be789cfbd9bb49d3a534c0db6a040459199e5e89dde4160f0653f783e6df7fc",
         "sha256Of": "disposable-capture-manifest-json-content",
         "schema": "freew.dialog-capture-manifest.v1",
         "schemaVersion": 2,
         "captureCount": 6,
         "contentValidatedCount": 6,
-        "dpi": 96
+        "dpi": 96,
+        "rawEvidenceId": "surface-margin-candidate"
       },
       {
         "id": "linebox-candidate",
         "host": "avalonia",
-        "path": "artifacts/wave197-freew-legal-template-candidate-linebox-avalonia/avalonia_dialog_capture_manifest.json",
-        "sha256": "7ffbede8932f7606ac4dcb46e3bf2d165a6da4aadb84a51329907f2490c0368b",
+        "sourcePath": "artifacts/wave197-freew-legal-template-candidate-linebox-avalonia/avalonia_dialog_capture_manifest.json",
+        "originalSha256": "7ffbede8932f7606ac4dcb46e3bf2d165a6da4aadb84a51329907f2490c0368b",
         "sha256Of": "disposable-capture-manifest-json-content",
         "schema": "freew.dialog-capture-manifest.v1",
         "schemaVersion": 2,
         "captureCount": 6,
         "contentValidatedCount": 6,
-        "dpi": 96
+        "dpi": 96,
+        "rawEvidenceId": "linebox-candidate"
       }
     ],
     "comparisonReports": [
       {
         "id": "baseline",
-        "path": "artifacts/wave197-freew-legal-template-before-comparison/freew_dialog_visual_comparison.json",
-        "sha256": "8c404732ab95ea1913c592025123896499811197e74cc41c1b3034a3c713442c",
+        "sourcePath": "artifacts/wave197-freew-legal-template-before-comparison/freew_dialog_visual_comparison.json",
+        "originalSha256": "8c404732ab95ea1913c592025123896499811197e74cc41c1b3034a3c713442c",
         "sha256Of": "disposable-comparison-report-json-content",
         "generatedFromSha256": "a2c751b927025cda5256747d0013ccdb2c19c55a93e1fe5df329ffd16593b005",
-        "generatedFromSha256Of": "disposable-comparison-input-content"
+        "generatedFromSha256Of": "disposable-comparison-input-content",
+        "rawEvidenceId": "baseline"
       },
       {
         "id": "surface-margin-candidate",
-        "path": "artifacts/wave197-freew-legal-template-candidate-surface-margin-comparison/freew_dialog_visual_comparison.json",
-        "sha256": "6209a6a632b593046859b336e790dd8e3d2a6a2a68a86d7385d589e050b0ac7a",
+        "sourcePath": "artifacts/wave197-freew-legal-template-candidate-surface-margin-comparison/freew_dialog_visual_comparison.json",
+        "originalSha256": "6209a6a632b593046859b336e790dd8e3d2a6a2a68a86d7385d589e050b0ac7a",
         "sha256Of": "disposable-comparison-report-json-content",
         "generatedFromSha256": "568b71f17e590ae81946f2a7868e5687a3f721e8e8ef58106301550a131dd14c",
-        "generatedFromSha256Of": "disposable-comparison-input-content"
+        "generatedFromSha256Of": "disposable-comparison-input-content",
+        "rawEvidenceId": "surface-margin-candidate"
       },
       {
         "id": "linebox-candidate",
-        "path": "artifacts/wave197-freew-legal-template-candidate-linebox-comparison/freew_dialog_visual_comparison.json",
-        "sha256": "3c828e5c48ca66c3277f5a366f86f07a8aee703d27c1a29d32a9d5386ede4653",
+        "sourcePath": "artifacts/wave197-freew-legal-template-candidate-linebox-comparison/freew_dialog_visual_comparison.json",
+        "originalSha256": "3c828e5c48ca66c3277f5a366f86f07a8aee703d27c1a29d32a9d5386ede4653",
         "sha256Of": "disposable-comparison-report-json-content",
         "generatedFromSha256": "621a2b20d826f0f5ac22203f302c01903188379cd3c8913ffeec5cd563c43ad5",
-        "generatedFromSha256Of": "disposable-comparison-input-content"
+        "generatedFromSha256Of": "disposable-comparison-input-content",
+        "rawEvidenceId": "linebox-candidate"
       }
     ]
   },
