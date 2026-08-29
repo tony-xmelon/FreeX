@@ -1,0 +1,8 @@
+Wave199 package proof
+======================
+status=failed
+saved-package-retained=false
+package-signature=style-id=0|font-id=0|font-name=Calibri|font-family=false
+save-clean=false
+
+The rejected candidate run did not produce an accepted saved Arial package. The retained accepted persistence proof is the Wave198 bundle at docs/parity/freex-wave198-ribbon-font-family/evidence/package-proof.txt, which records style-id=1|font-id=1|font-name=Arial|font-family=true and save-clean=true after the explicit worksheet reselect workflow.

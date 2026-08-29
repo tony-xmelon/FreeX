@@ -1,0 +1,15 @@
+selector=ribbon-font-family
+document-path=/documents/freex-wave198-ribbon-font-family.xlsx
+cell=A1
+keytip-sequence=Alt,H
+combo-open-coordinate=323,96
+selected-item-coordinate=280,149
+selected-font=Arial
+automatic-focus-after-combo=false
+automatic-focus-status=failed
+automatic-focus-clipboard=Wave198 Font Family Target
+worksheet-focus-after-reselect=true
+focus-reselect-coordinate=29,236
+focus-clipboard=Unchanged
+save-clean=false
+package-signature=style-id=0|font-id=0|font-name=Calibri|font-family=false

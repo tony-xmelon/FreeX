@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>FreeX Linux interaction validation</title>
+<style>
+body{font:13px Segoe UI,Arial,sans-serif;margin:24px;color:#202124}h1{font-size:22px}table{border-collapse:collapse;width:100%}
+th,td{border:1px solid #d0d5da;padding:6px 8px;text-align:left;vertical-align:top}th{background:#eef1f4;position:sticky;top:0}
+tr.failed{background:#fde7e9}tr.skipped{background:#fff4ce}tr.passed td:first-child{color:#107c10;font-weight:600}
+</style></head><body><h1>FreeX Linux interaction validation</h1><p><strong>failed</strong>: 1 &nbsp; <strong>total</strong>: 1</p>
+<h2>Physical X11 input</h2><p><strong>failed</strong>: 1 &nbsp; <strong>passed</strong>: 0 &nbsp; <strong>total</strong>: 1</p>
+<p>Geometry calibration: <strong>passed</strong>;
+A1=(29,236); cell=64x20; selection=#217346. <a href="x11-validation/x11-input-results.json">Manifest and evidence</a></p>
+<p><input id="query" type="search" placeholder="Filter interactions" style="width:320px;padding:6px">
+<select id="status" style="padding:6px"><option value="">All statuses</option><option>passed</option><option>failed</option><option>skipped</option></select>
+<select id="category" style="padding:6px"><option value="">All categories</option><option value='x11-input'>x11-input</option></select>
+<span id="visibleCount"></span></p>
+<table><thead><tr><th>Status</th><th>Category</th><th>Interaction</th><th>Evidence level</th><th>Evidence</th><th>Note</th></tr></thead>
+<tbody><tr class='failed'><td>failed</td><td>x11-input</td><td>ribbon-home-font-family-combo-physical</td><td>physical-x11-input</td><td>ribbon-home-font-family-combo-before.png; ribbon-home-font-family-combo-keytips.png; ribbon-home-font-family-combo-open.png; ribbon-home-font-family-combo-after.png; ribbon-home-font-family-combo-focus-auto.png; ribbon-home-font-family-combo-focus-reselect.png; cell=A1; font-id=0; font-name=Calibri; automatic-focus-after-combo=false; automatic-focus-status=failed; automatic-focus-clipboard=Wave198 Font Family Target; worksheet-focus-after-reselect=true; save-clean=false</td><td>The production Home Font combo did not complete the automatic post-combo worksheet focus, clean-save, worksheet-reselect keyboard, and Arial-package postconditions.</td></tr></tbody></table>
+<script>
+const rows=[...document.querySelectorAll('tbody tr')], q=document.querySelector('#query'), s=document.querySelector('#status'), c=document.querySelector('#category'), n=document.querySelector('#visibleCount');
+function filter(){let shown=0; for(const row of rows){const ok=(!q.value||row.textContent.toLowerCase().includes(q.value.toLowerCase()))&&(!s.value||row.cells[0].textContent===s.value)&&(!c.value||row.cells[1].textContent===c.value);row.hidden=!ok;if(ok)shown++;}n.textContent=shown+' of '+rows.length+' rows';}
+q.addEventListener('input',filter);s.addEventListener('change',filter);c.addEventListener('change',filter);filter();
+</script></body></html>
