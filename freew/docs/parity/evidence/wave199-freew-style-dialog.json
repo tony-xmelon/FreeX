@@ -1,0 +1,73 @@
+{
+  "schema": "freew.wave199.style-dialog-evidence.v1",
+  "wave": 199,
+  "capturedOn": "2026-08-29",
+  "decision": "style-width-candidate-rejected",
+  "scope": {
+    "product": "FreeW",
+    "route": "style",
+    "authority": "FreeW WPF StyleDialog",
+    "targetScenarioIds": [
+      "style.initial",
+      "style.populated",
+      "style.validation-error"
+    ],
+    "canonicalCounts": {
+      "comparisonScenarioCount": 291,
+      "genuineVisualMismatch": 141,
+      "passes": 80,
+      "avaloniaExtensions": 70
+    },
+    "boundaries": [
+      "FreeW only",
+      "No dashboard files",
+      "No FreeX or FreeP files",
+      "No retained Avalonia Style production geometry change"
+    ]
+  },
+  "baseline": {
+    "wpfManifestSha256": "4130632AC826A78C0ACF8A75CB80CCDEBF3297DC48A5D183AA708BCA4F573297",
+    "avaloniaManifestSha256": "46846FAF466E53BC8702F6F00DECCF6C956A334763C96CA70AFD16E3BA78F9E2",
+    "comparisonSha256": "C8AF03FDDE81C647EBB76B322B6A31C2F212D6ABA2ABC64DCDBC076112F72372",
+    "metrics": {
+      "style.initial": { "changedPixels": 11511, "changedRatio": 0.07602988091227932, "meanChannelDelta": 6.948743183114163, "p95ChannelDelta": 63.666666666666664, "wpfBounds": "280x389", "avaloniaBounds": "282x389" },
+      "style.populated": { "changedPixels": 11661, "changedRatio": 0.0770206273406384, "meanChannelDelta": 7.12890491696444, "p95ChannelDelta": 67, "wpfBounds": "280x389", "avaloniaBounds": "282x389" },
+      "style.validation-error": { "changedPixels": 11511, "changedRatio": 0.07602988091227932, "meanChannelDelta": 6.948743183114163, "p95ChannelDelta": 63.666666666666664, "wpfBounds": "280x389", "avaloniaBounds": "282x389" }
+    }
+  },
+  "candidate": {
+    "description": "Pin Avalonia Style fields to the shared WPF surface widths.",
+    "avaloniaManifestSha256": "C5D8EA34C43F6B8D88B789382F77237142FE7C2AF2735DD08F02D4A5736056C0",
+    "comparisonSha256": "7E2384B349E59BBF315D32D9A52A1CF595104CF1721EAAAF26DB7950E44DDBC2",
+    "metrics": {
+      "style.initial": { "changedPixels": 20164, "changedRatio": 0.133182739876223, "meanChannelDelta": 8.54511088654179, "p95ChannelDelta": 68, "wpfBounds": "280x389", "avaloniaBounds": "282x389" },
+      "style.populated": { "changedPixels": 20308, "changedRatio": 0.134133856447448, "meanChannelDelta": 8.48222270658701, "p95ChannelDelta": 68, "wpfBounds": "280x389", "avaloniaBounds": "282x389" },
+      "style.validation-error": { "changedPixels": 20164, "changedRatio": 0.133182739876223, "meanChannelDelta": 8.54511088654179, "p95ChannelDelta": 68, "wpfBounds": "280x389", "avaloniaBounds": "282x389" }
+    },
+    "retained": false,
+    "rejection": "All target rows worsened and the Avalonia content bounds remained 282x389."
+  },
+  "finalValidation": {
+    "avaloniaManifestSha256": "E6FC9094A1039E179C6F776AB808EBD30F44ED8ABEEB9252841F432F9D70AC95",
+    "comparisonSha256": "D1E7FAF5A426B8440A7A66B84D2003987AD27FF71775A16EE10186FCC67182E0",
+    "result": "Final reverted source reproduces the baseline metrics for all three target rows; 3/3 Avalonia captures and 3/3 WPF authority captures pass content gates."
+  },
+  "retainedChanges": [
+    {
+      "path": "freew/tools/FreeW.DialogVisualHarness.Wpf/Program.cs",
+      "change": "Retry static prompt discovery on a dispatcher timer with a bounded timeout and owned-window cleanup."
+    },
+    {
+      "path": "freew/FreeW.App.Host.Tests/DialogCaptureAdapterParitySourceTests.cs",
+      "change": "Guard the WPF retry, deadline, and cleanup source contract."
+    }
+  ],
+  "commands": [
+    "dotnet restore freew/tools/FreeW.DialogVisualHarness.Wpf/FreeW.DialogVisualHarness.Wpf.csproj",
+    "dotnet build freew/tools/FreeW.DialogVisualHarness.Wpf/FreeW.DialogVisualHarness.Wpf.csproj --configuration Release --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1",
+    "dotnet exec freew/tools/FreeW.DialogVisualHarness.Wpf/bin/Release/net10.0-windows10.0.19041.0/FreeW.DialogVisualHarness.Wpf.dll --inventory docs/parity/freew-dialog-harness/freew_dialog_evidence_inventory.json --route style --output %TEMP%/FreeW-Wave199-style-before-wpf",
+    "dotnet build freew/tools/FreeW.DialogVisualHarness.Avalonia/FreeW.DialogVisualHarness.Avalonia.csproj --configuration Release --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1",
+    "dotnet exec freew/tools/FreeW.DialogVisualHarness.Avalonia/bin/Release/net10.0/FreeW.DialogVisualHarness.Avalonia.dll --inventory docs/parity/freew-dialog-harness/freew_dialog_evidence_inventory.json --route style --wpf-authority %TEMP%/FreeW-Wave199-style-before-wpf/wpf_dialog_capture_manifest.json --output %TEMP%/FreeW-Wave199-style-after-avalonia-v3",
+    "dotnet exec freew/tools/FreeW.DialogVisualHarness/bin/Release/net10.0/FreeW.DialogVisualHarness.dll compare --inventory docs/parity/freew-dialog-harness/freew_dialog_evidence_inventory.json --wpf %TEMP%/FreeW-Wave199-style-before-wpf/wpf_dialog_capture_manifest.json --avalonia %TEMP%/FreeW-Wave199-style-after-avalonia-v3/avalonia_dialog_capture_manifest.json --output %TEMP%/FreeW-Wave199-style-after-compare-v3"
+  ]
+}
