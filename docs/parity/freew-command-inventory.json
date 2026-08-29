@@ -23108,7 +23108,7 @@
     },
     {
       "commandId": "freew.new-comment",
-      "label": "New Comment",
+      "label": "Comment",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "profileSurface": "both",
@@ -23118,6 +23118,16 @@
       "gapClassificationRule": "shared-profile",
       "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "Comment",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        },
         {
           "profile": "WPF",
           "tabId": "review",
@@ -23130,6 +23140,16 @@
         }
       ],
       "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "comments",
+          "group": "Comments",
+          "label": "Comment",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        },
         {
           "profile": "Avalonia",
           "tabId": "review",

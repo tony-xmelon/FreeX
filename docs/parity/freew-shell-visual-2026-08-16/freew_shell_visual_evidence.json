@@ -19,7 +19,7 @@
     "freew/FreeW.App.Host/MainWindow.cs": "0065fb52e0226d771fdba213fda5cce5b048263382b6490daad4c7341778cdf5",
     "freew/FreeW.App.Avalonia/MainWindow.cs": "aafb64d244bf9e6ad746e00b9ba6fa2d4b6719baeb0e9ba3e12baff24ddbed21",
     "freew/FreeW.Ribbon.Definitions/FreeWRibbonCapabilities.cs": "47d097fcefbfdfd1892db7914077695dc28d98aa4cad182f728523b47beeee7e",
-    "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.Ordinary.cs": "8db0831595bc545ea01cc124c314a79881bfcd87c282845cb61d28cb0184982f",
+    "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.Ordinary.cs": "dbf23c199faa9985c14b591e2a8f1fb8ff27e936a969976c347923f2c9076042",
     "shared/Free.Shared.Shell.Avalonia/SisterAppWindowFrameBuilder.cs": "f68e5e3dc4dea74a0f66e5e99d926f0141eb52dfc1862922a77dd4bf3e5e0299",
     "freew/FreeW.App.Host/Ribbon/StylesGallery.cs": "50314375561ccb2a660f69b27b96ba06691016b18900c7d46e28b0e19bb27565",
     "freew/FreeW.App.Host/Ribbon/ThemeGallery.cs": "f2c85834ee84333840d120420d17fa59f8af701190019b2be81d2755dbb9eb17",
@@ -381,7 +381,7 @@
       "classification": "paired-capture-review-required",
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/750/ribbon-2-Insert.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-750x720-insert.png",
-      "wpfSha256": "55dad1eb7f04723e72052d70ed8f2a8e8e738a4db407785a21d3bdbb8a973ed8",
+      "wpfSha256": "ae2ea21e00cd215b200873eacc4a59ede77f22267d04634ca3ff83bff7350584",
       "avaloniaSha256": "b987ba7149865a176712eeaf849ac17ed89cbd31f8508b9faeb08f97b13cbaff",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
@@ -436,7 +436,7 @@
       "classification": "paired-capture-review-required",
       "wpfPath": "docs/parity/freew-shell-visual-2026-08-16/wpf/750/ribbon-7-Review.png",
       "avaloniaPath": "docs/parity/freew-shell-visual-2026-08-16/avalonia/shell-750x720-review.png",
-      "wpfSha256": "718db91b734e84bd951eab2fd2d2e05f288b9f14d02d8b6a8fe55b3e0e60909e",
+      "wpfSha256": "a027bba76ddf15cce6e462fb9b644ec1058d6e1c11f8239f6f36669ded4f9b6c",
       "avaloniaSha256": "038821890b3dbf81eca84c4b53601d82f80c0147f733679c408eb2391851f1d6",
       "note": "Whole-window capture is present for both hosts. No pixel pass/fail is inferred because the WPF and Avalonia shell chrome intentionally use different native/window-frame and toolbar structures."
     },
