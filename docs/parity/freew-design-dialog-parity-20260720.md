@@ -1,7 +1,7 @@
 ﻿# FreeW Design Dialog Parity Evidence
 
-Generated at UTC: 2026-08-29T16:03:44.2014229Z
-Source commit: `45123797de7676f67bd46063423e7d23525d0564`
+Generated at UTC: 2026-08-29T23:00:10.3246005Z
+Source commit: `f5b4d39c2ee15fed1c2b5e3553ed0d281ba86173`
 Schema: `freew.design-dialog-parity.v1`
 
 Routes: 11 total; 10 complete; 0 remaining in the owned dialog/planner scope; 0 shell gaps recorded.
@@ -42,12 +42,12 @@ Generate-FreeWDesignDialogParityEvidence.ps1 -Check recomputes SHA-256 for every
 | freew/FreeW.App.Host/CustomizeThemeFontsDialog.cs | 0d546d0c86b73feadf41d4c960af5709e925f201da988958891c6561c9de4882 |
 | freew/FreeW.App.Host/CustomParagraphSpacingDialog.cs | 05c777b3ed1e0e92f549b7e2544c3917f964e2f5a6b16ca253e34a454c5cbd46 |
 | freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs | 45e103b0e0a46207a17332ecdae691b42e91c5a77f90e9ffd69e0c008ff8f053 |
-| freew/FreeW.App.Host/Ribbon/ThemeGallery.cs | f2c85834ee84333840d120420d17fa59f8af701190019b2be81d2755dbb9eb17 |
+| freew/FreeW.App.Host/Ribbon/ThemeGallery.cs | 8eaed62cc2cf21a9cff500336a047fbfd600798da7f4f12ef48de18cbae73eb9 |
 | freew/FreeW.App.Host/WatermarkOptionsDialog.cs | c0d8bcb54f46df40cb0ec152319892797313257eaa8d54851cd1e8704cc1a6a1 |
 | freew/FreeW.App.Presentation.Tests/BordersAndShadingDialogPlannerTests.cs | e85f8ac331d7bf80f99de76f6935b5b600cf6d85cb27ac4ee4ab397a381e1abf |
 | freew/FreeW.App.Presentation.Tests/DesignDialogPlannerTests.cs | fa8a1a51951b85b649e4434d45ff748e8e88d906c760f38478605c30c87997ae |
 | freew/FreeW.App.Presentation/Dialogs/BordersAndShadingDialogPlanner.cs | b3bacdce6d02f237d7f15d4622039991df218c18802e1e6cde729b5174f7ec9a |
 | freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.Contextual.cs | 17d19593786591f0eb980b2b0991522898cfc8158fb6aa0d88dda293c2c0eeca |
-| freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.cs | a5bb98718b18055e81832d2c9caa9bbe4e38bd950630c4ed72e3a5b420972b2b |
+| freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.cs | 1559fe48da3e2833385382305c1a9c9496793d6d21ac7f876a2dd4657f5bb8c3 |
 | freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.Ordinary.cs | dbf23c199faa9985c14b591e2a8f1fb8ff27e936a969976c347923f2c9076042 |
 | freew/FreeW.Ribbon.Definitions/FreeWRibbon.cs | b677dc00c1f57487b84bbfa8f62bb2936c3d880094bb8df15df4adf1559266e9 |
