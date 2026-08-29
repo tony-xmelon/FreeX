@@ -14,7 +14,7 @@
       "category": "x11-input",
       "status": "passed",
       "evidenceLevel": "physical-x11-input",
-      "evidence": "ribbon-home-font-family-combo-before.png; ribbon-home-font-family-combo-keytips.png; ribbon-home-font-family-combo-open.png; ribbon-home-font-family-combo-after.png; ribbon-home-font-family-combo-focus-reselect.png; cell=A1; font-id=1; font-name=Arial; automatic-focus-after-combo=false; worksheet-focus-after-reselect=true; save-clean=true",
+      "evidence": "ribbon-home-font-family-combo-before.png; ribbon-home-font-family-combo-keytips.png; ribbon-home-font-family-combo-open.png; ribbon-home-font-family-combo-after.png; ribbon-home-font-family-combo-focus-reselect.png; cell=A1; font-id=1; font-name=Arial; automatic-focus-after-combo=not-measured; worksheet-focus-after-reselect=true; save-clean=true",
       "artifacts": [
         "ribbon-home-font-family-combo-before.png",
         "ribbon-home-font-family-combo-keytips.png",

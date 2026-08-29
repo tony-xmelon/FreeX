@@ -24,7 +24,7 @@ package proof, screenshots, and checksums are tracked under
 - Target: `A1`
 - Ribbon path: `Alt,H`, rendered Home Font combo, dropdown arrow `323,96`, Arial item `280,149`
 - Selected font: `Arial`
-- Automatic combo-close focus: `false`; status: `unresolved-observed`
+- Automatic combo-close focus: `not-measured`; status: `unresolved-not-measured`
 - Explicit worksheet reselect: `29,236`
 - Subsequent keyboard check: `Right`, `Ctrl+C`, clipboard `Unchanged` from `B1`
 - Save: `save-clean=true`
@@ -51,8 +51,11 @@ X11/Avalonia production path, clean save, and package persistence. It does not
 prove automatic focus restoration, broad font coverage, arbitrary font-name
 entry, WPF execution, Wayland behavior, or broad parity.
 
-The production source file `src/FreeX.App.Avalonia/MainWindow.cs` has zero net
-diff versus the Wave198 implementation base `f5f549461da4518195596dd63ccbeef2d36c4d8c`.
+The rejected Wave198 focus candidates leave zero net focus-specific diff in
+`src/FreeX.App.Avalonia/MainWindow.cs` versus the Wave198 worker base
+`f5f549461da4518195596dd63ccbeef2d36c4d8c`. The integration branch also
+contains unrelated upstream Round167 changes in that file; this statement does
+not characterize the whole integration-file diff.
 
 ## Rejected Candidates
 

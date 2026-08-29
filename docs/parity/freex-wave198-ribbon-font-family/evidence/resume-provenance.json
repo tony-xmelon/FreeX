@@ -4,6 +4,8 @@
   "platform": "linux",
   "shell": "avalonia",
   "sourceCommit": "11bff13a7c79d3d63b8aae4aa04e3652f4411667",
+  "sourceCommitKind": "worker evidence source; not integration ancestry",
+  "integrationBoundary": "owned Wave198 evidence and harness paths transplanted without the rejected focus candidates",
   "payloadFingerprint": "8e98855334aa681317ea5658a60ad7049315a8d076d03a15bb834de143a9c315",
   "payloadFileCount": 778,
   "appImageReference": "freex-linux-interactive-app-freex-29fc9341a543:current",
