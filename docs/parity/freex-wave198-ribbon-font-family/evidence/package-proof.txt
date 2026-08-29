@@ -1,0 +1,7 @@
+package-inspection=production-probe-python-zipfile
+package-path=/documents/freex-wave198-ribbon-font-family.xlsx
+target-cell=A1
+package-signature=style-id=1|font-id=1|font-name=Arial|font-family=true
+save-clean=true
+saved-package-retained=false
+saved-package-boundary=The XLSX was container-local; this tracked proof retains the exact inspected signature, not the binary package.
