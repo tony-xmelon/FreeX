@@ -25,7 +25,7 @@
     "shared/Free.Shared.Pdf.Skia/SkiaPdfWriter.cs"
   ],
   "sourceSha256": {
-    "freew/FreeW.App.Host/MainWindow.cs": "0065fb52e0226d771fdba213fda5cce5b048263382b6490daad4c7341778cdf5",
+    "freew/FreeW.App.Host/MainWindow.cs": "90a9287ccbef2230db4e560d884b68cf1166fefddca790fdbc5919332c33368f",
     "freew/FreeW.App.Host/XpsExport.cs": "6091e728dbf2a9c470d9c654af8e0694fcf5d295bece095556821a4a34cd5afe",
     "freew/FreeW.App.Host/PrintPreviewWindow.cs": "fdd6cb2d2c6eabe7ebe6004fb21551ee62e74f7d412273294688cef21bd5ec76",
     "freew/FreeW.App.Avalonia/MainWindow.cs": "aafb64d244bf9e6ad746e00b9ba6fa2d4b6719baeb0e9ba3e12baff24ddbed21",

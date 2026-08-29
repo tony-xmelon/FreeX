@@ -14173,7 +14173,7 @@
           "tabId": "insert",
           "tab": "Insert",
           "groupId": "illustrations",
-          "group": "Illustrations",
+          "group": "Images",
           "label": "Picture",
           "controlType": "RibbonButton",
           "layout": "Large"
@@ -14185,7 +14185,7 @@
           "tabId": "insert",
           "tab": "Insert",
           "groupId": "illustrations",
-          "group": "Illustrations",
+          "group": "Images",
           "label": "Picture",
           "controlType": "RibbonButton",
           "layout": "Large"
