@@ -28,13 +28,13 @@ Generate-FreeWDesignDialogParityEvidence.ps1 -Check recomputes SHA-256 for every
 |---|---|
 | freew/FreeW.App.Avalonia.Tests/DesignDialogParityTests.cs | 9b11b73d7b4b062f6e5cc016f875430a48f5a424b22e693d284146631d4d0168 |
 | freew/FreeW.App.Avalonia.Tests/DesignTabTests.cs | d45afd72671318af4f208046f0399cc8c5dfe12ba1d2c22a3f1839c28c2f9d21 |
-| freew/FreeW.App.Avalonia.Tests/PageLayoutDialogParityTests.cs | a6122e47e2f3240a5180b87b03fe433a5ca6117b434d448f25e994ddcda24b05 |
+| freew/FreeW.App.Avalonia.Tests/PageLayoutDialogParityTests.cs | 70ef82be3e746cca541f56a8cfe6976a02cf45fb88c07f9455d8e7c476c9f7ab |
 | freew/FreeW.App.Avalonia.Tests/WatermarkDialogTests.cs | f572794914258192a994e4ea35c1d1e3cbcfe43a198ef7d10a4acff6f5ea743b |
-| freew/FreeW.App.Avalonia/DesignDialogParity.cs | d533cdab32cdbf879e721254fa24d34d673d1f6d98223a91b551cfe887de085b |
+| freew/FreeW.App.Avalonia/DesignDialogParity.cs | 33fe3dd13569372598f2259f2adb56c58c61cd739d8ead7b7ccf9b3106b7d339 |
 | freew/FreeW.App.Avalonia/DesignDialogs.cs | aab998b94553b026a453fb98b20a7696c9d076f951068f7bff9665706ef603ee |
-| freew/FreeW.App.Avalonia/MainWindow.cs | 2b61227d876bce1c62d518a64fa157087e572ce44c0641cfd881f96d7cffd107 |
+| freew/FreeW.App.Avalonia/MainWindow.cs | 1414c27bf517e75adafb5c02c2d3d13ba196753fc2e64831e1bee2ed517b7eba |
 | freew/FreeW.App.Avalonia/PageLayoutDialogs.cs | 1be79922deda672e3b20285933505a5246e771ce43747bb9e1739f58e72e25fd |
-| freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs | ddf547d667aa11285b34a11d1137c9c86908192c2ad186b25940d6178cfe1c2d |
+| freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs | 8b7348a396c3f999bc46ed016992acdfe7eb58a9bd54d0d46def27a90c10c219 |
 | freew/FreeW.App.Host.Tests/DesignDialogParitySourceTests.cs | b7d44ab89cbb6759c684779b9cece1227edef88e1c7d767760d431c4d6f5b477 |
 | freew/FreeW.App.Host.Tests/DocumentEffectRenderingTests.cs | c1f3bab8bc21ebd264b851911c3dcdcf256dc2fdfc735c97ed2ca5a6da9df4b1 |
 | freew/FreeW.App.Host/BordersAndShadingDialog.cs | cd6e4794bcaa98dc896eed354313616c4107941eba8e0b323d91a39cb03c57fb |
@@ -43,7 +43,7 @@ Generate-FreeWDesignDialogParityEvidence.ps1 -Check recomputes SHA-256 for every
 | freew/FreeW.App.Host/CustomParagraphSpacingDialog.cs | 05c777b3ed1e0e92f549b7e2544c3917f964e2f5a6b16ca253e34a454c5cbd46 |
 | freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs | 45e103b0e0a46207a17332ecdae691b42e91c5a77f90e9ffd69e0c008ff8f053 |
 | freew/FreeW.App.Host/Ribbon/ThemeGallery.cs | 8eaed62cc2cf21a9cff500336a047fbfd600798da7f4f12ef48de18cbae73eb9 |
-| freew/FreeW.App.Host/WatermarkOptionsDialog.cs | c0d8bcb54f46df40cb0ec152319892797313257eaa8d54851cd1e8704cc1a6a1 |
+| freew/FreeW.App.Host/WatermarkOptionsDialog.cs | b99ad62827ea8155fec222ce9122b6e151af4b09ad8cd3bb56294ad3629d0f61 |
 | freew/FreeW.App.Presentation.Tests/BordersAndShadingDialogPlannerTests.cs | e85f8ac331d7bf80f99de76f6935b5b600cf6d85cb27ac4ee4ab397a381e1abf |
 | freew/FreeW.App.Presentation.Tests/DesignDialogPlannerTests.cs | fa8a1a51951b85b649e4434d45ff748e8e88d906c760f38478605c30c87997ae |
 | freew/FreeW.App.Presentation/Dialogs/BordersAndShadingDialogPlanner.cs | b3bacdce6d02f237d7f15d4622039991df218c18802e1e6cde729b5174f7ec9a |
