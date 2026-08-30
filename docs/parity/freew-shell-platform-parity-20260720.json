@@ -25,10 +25,10 @@
     "shared/Free.Shared.Pdf.Skia/SkiaPdfWriter.cs"
   ],
   "sourceSha256": {
-    "freew/FreeW.App.Host/MainWindow.cs": "76b971f951257f0269bd044f5b180fbc02d8363e4e3f3325949f628f5d9ccc29",
+    "freew/FreeW.App.Host/MainWindow.cs": "a3a43519ac3990340d57ae443504f8877c114e3b70bfffca61153b1db4dbb999",
     "freew/FreeW.App.Host/XpsExport.cs": "6091e728dbf2a9c470d9c654af8e0694fcf5d295bece095556821a4a34cd5afe",
     "freew/FreeW.App.Host/PrintPreviewWindow.cs": "a6e79ecbcb5bd2075b5d35ef97d9b0824ed58cab084fc9dfc7d80771b774145c",
-    "freew/FreeW.App.Avalonia/MainWindow.cs": "622e53ea841ad79fa100dd0b54d9401fcf8a906f1f9df13c91bebf69affee7cd",
+    "freew/FreeW.App.Avalonia/MainWindow.cs": "2b61227d876bce1c62d518a64fa157087e572ce44c0641cfd881f96d7cffd107",
     "freew/FreeW.App.Avalonia/PrintPreviewDialog.cs": "e8a876499cae6863673e44545823640e7617a0df2bca4846cadb1c38f09867e3",
     "freew/FreeW.App.Avalonia/Printing/CupsPrintDialog.cs": "31ad28869ed7e62bd5a18ec2d27b60b0f781f7620522eb5446dda6df4e160eef",
     "freew/FreeW.App.Avalonia/Pdf/FreeWAvaloniaPdfExport.cs": "b11d72a7faac2810d0546a614ec149399cf0e499ef0b9db829eba153182b6348",
