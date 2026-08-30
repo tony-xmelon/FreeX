@@ -24,15 +24,25 @@ invalidate a candidate that was already dispatched at a verified commit.
 
 ## Local workflow
 
-Use proportional validation while developing:
+Use the canonical branch integration gate after committing the task branch:
 
 ```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/Test-RepositoryPreflight.ps1
-dotnet build FreeX.slnx --configuration Release
-pwsh -NoProfile -File tools/Invoke-TestGate.ps1 -Gate commit -App FreeW -Platform windows
+pwsh -NoProfile -File tools/Test-BranchForIntegration.ps1
 ```
 
-Run only the affected app gate during iteration. Use the repository default and UI solution lanes
-once for a tester candidate or when the changed area requires them. Do not run default, UI, CI, and
-release gates serially as four equivalent confirmations; CI is the hosted source-test attestation
-and the release workflow consumes it.
+The script compares the branch with `origin/main`, verifies that the exact base SHA has a successful
+CI run, then runs repository preflight, the full Release build, and only the affected Windows commit
+gates. `tools/Get-ImpactedTestGates.ps1` combines the .NET `ProjectReference` graph with each gate's
+manifest-declared `impactPaths`, so ordinary dependencies and cross-layer source-contract tests are
+both covered. Documentation-only and unrelated tooling changes do not acquire a test lane merely
+because the repository is large.
+
+If exact-base CI is running, missing, cancelled, or failed, ordinary integration stops. Only a task
+whose purpose is to repair that failure may use `-AllowRedMainFix`; this is explicit so unrelated
+work cannot keep advancing a broken `main`. `-SkipMainHealthCheck` is for offline diagnosis and is
+not an integration path.
+
+GitHub CI remains the authoritative cross-platform integration suite after the merged commit is
+pushed. The App Tester Release workflow remains the only routine owner of complete UI, rendering,
+installation, package-integrity, and release-only tests. Do not run default, UI, CI, and release
+gates serially as equivalent confirmations.
