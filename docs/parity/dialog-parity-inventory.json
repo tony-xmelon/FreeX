@@ -659,7 +659,8 @@
         "src/FreeX.App.Presentation/SlicerTimeline/SlicerTimelineInteractionPlanner.cs",
         "src/FreeX.App.Presentation/SlicerTimeline/SlicerTimelinePanePlanner.cs",
         "src/FreeX.App.Presentation/SlicerTimeline/SlicerTimelineSourceReader.cs",
-        "src/FreeX.App.Presentation/SlicerTimeline/TimelineLayoutModel.cs"
+        "src/FreeX.App.Presentation/SlicerTimeline/TimelineLayoutModel.cs",
+        "src/FreeX.App.Presentation/SlicerTimeline/ViewportNativeVisualFilterCache.cs"
       ],
       "notes": []
     },
@@ -686,7 +687,8 @@
         "src/FreeX.App.Presentation/SlicerTimeline/SlicerTimelineInteractionPlanner.cs",
         "src/FreeX.App.Presentation/SlicerTimeline/SlicerTimelinePanePlanner.cs",
         "src/FreeX.App.Presentation/SlicerTimeline/SlicerTimelineSourceReader.cs",
-        "src/FreeX.App.Presentation/SlicerTimeline/TimelineLayoutModel.cs"
+        "src/FreeX.App.Presentation/SlicerTimeline/TimelineLayoutModel.cs",
+        "src/FreeX.App.Presentation/SlicerTimeline/ViewportNativeVisualFilterCache.cs"
       ],
       "notes": []
     },
