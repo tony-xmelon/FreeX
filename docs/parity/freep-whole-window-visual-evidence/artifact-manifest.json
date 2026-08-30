@@ -48,7 +48,7 @@
     },
     {
       "path": "freep/FreeP.App.Host/MainWindow.cs",
-      "sha256": "e8d6f8ae72a45269a4ac9f40315f02268e73449bb09a849efc003fedc3ea871d"
+      "sha256": "3164be264071b641edd1a161dd17326c1df805764169d757f62c2d4e846d36b4"
     },
     {
       "path": "freep/TestSupport/VisualEvidence.Wpf/MainWindow.VisualCaptureAdapter.cs",
@@ -64,7 +64,7 @@
     },
     {
       "path": "freep/FreeP.App.Avalonia/MainWindow.cs",
-      "sha256": "3c61704faa64f12f1c5d989dff2b9bb44080569cd352cb984fac777b03a7b8ea"
+      "sha256": "010bd411ce2fa5e01020d5b1eaa28f05900458052568071972fb86bcf0d2365b"
     },
     {
       "path": "freep/TestSupport/VisualEvidence.Avalonia/MainWindow.VisualCaptureAdapter.cs",
@@ -72,7 +72,7 @@
     },
     {
       "path": "freep/FreeP.App.Rendering.Wpf/InCanvasTextEditor.cs",
-      "sha256": "eb703fbba8c4bd7387eed5c288d7e3eac0b41925162ab377757e7695256c502a"
+      "sha256": "f9b772c941c918e41b8e4bda9ef1f8cb55f06516189a2b6b18a361cb7542e4ae"
     },
     {
       "path": "freep/FreeP.App.Rendering.Wpf/TextBodyFlowDocumentConverter.cs",
@@ -84,7 +84,7 @@
     },
     {
       "path": "freep/FreeP.App.Rendering.Avalonia/AvaloniaRichTextEditor.cs",
-      "sha256": "4c8fdd0974cbd97b65e921b7d984406f569b634b6bce2cc8ded08dcf411d0274"
+      "sha256": "0fad3a297ac933a9e5b9b47d167215857f4322566495776f021d4c685b27d344"
     },
     {
       "path": "freep/FreeP.App.Rendering.Avalonia/AvaloniaRichTextEditingSurface.cs",
@@ -100,11 +100,11 @@
     },
     {
       "path": "shared/Free.Shared.Ribbon.Wpf/RibbonWpfRenderer.cs",
-      "sha256": "bb15c17f106584917b6d2d0f9a8f698356220a0c86d344d8094c168f7c3fe478"
+      "sha256": "4be363f8590e428b2a7bcb6a47dbdf763d5c02e5a77af060f413b667d156f80a"
     },
     {
       "path": "shared/Free.Shared.Ribbon.Avalonia/AvaloniaRibbonRenderer.cs",
-      "sha256": "6ea0c13704dde0cd6bd6bb589ed2efe42f8746ddc1b728d3bd4b99ecee1d1f47"
+      "sha256": "4d0f8d8dd302819d1897b20bcad1b5ed3abbb5ceae6059a340477ec198300f0b"
     },
     {
       "path": "tools/FreeP.RenderCompare/WholeWindowVisualEvidence.cs",
