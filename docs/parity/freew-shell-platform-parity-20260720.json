@@ -33,7 +33,7 @@
     "freew/FreeW.App.Avalonia/Printing/CupsPrintDialog.cs": "31ad28869ed7e62bd5a18ec2d27b60b0f781f7620522eb5446dda6df4e160eef",
     "freew/FreeW.App.Avalonia/Pdf/FreeWAvaloniaPdfExport.cs": "b11d72a7faac2810d0546a614ec149399cf0e499ef0b9db829eba153182b6348",
     "freew/FreeW.App.Avalonia/Pdf/FreeWAvaloniaXpsExport.cs": "eba644a0f2f8ddd479a67613bccb2091f5ba17524e51670677f8102fc69001df",
-    "shared/Free.Shared.AppServices/Printing/CupsPrintService.cs": "6c7588d65deb06553bb9c832cc9e332980ca3a8089ebcdcaae3e79bf2d381c40",
+    "shared/Free.Shared.AppServices/Printing/CupsPrintService.cs": "3279ed91adebb7e67e7f8fa4f5dd27907063d3d5853b4b3edee25fd66137d3e7",
     "freew/FreeW.App.Avalonia/Editing/DocumentView.cs": "edeca61c95e9203cb10e8c066061192dec82f5f9e6aaadd3876d1ef4c1f0335a",
     "tests/FreeX.App.Services.Tests/SharedCupsPrintServiceTests.cs": "f0ddd10d9946a73ed6eb7f282f92a383e2b8c8d78b5ef22124617dc7e2771218",
     "freew/FreeW.App.Avalonia.Tests/Printing/PrintLifecycleTests.cs": "d87268bb4c1ffbe2d8af46719f6c2fd0e2df77af8e009d388643f5eaa030c19b",
