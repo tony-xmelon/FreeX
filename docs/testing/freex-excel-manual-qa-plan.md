@@ -37,5 +37,6 @@
 | Iteration | Run | Result | Disparities / next action |
 |---|---|---|---|
 | 1 | `20260830-131520` paired core-corpus launch | Passed | Excel 16.0 and FreeX opened separate byte-identical Excel-authored workbooks. The 496-function core corpus has no rich-data entries, and FreeX opened the supplied workbook argument directly without an unsupported-feature dialog. |
+| 2 | `20260830-131114` dynamic-array startup probe | Passed | A real Excel-authored `FILTER` workbook opened as `dynamic-array-probe - FreeX` with no unsupported-XLSX dialog in the UI Automation window tree after rich-data classification was corrected. |
 | 1 | `20260830-122624` keyboard grid edit | Passed with corpus-warning divergence | Both saved copies contain `Grid Basics!H12 = Keyboard parity 001` after the matched keyboard route. The cause is now isolated to Excel's dynamic-array metadata, not a shared-file lock. |
 | 1 | `20260830-131520` visual/mouse continuation | Blocked by desktop evidence harness | This execution context reported no foreground window and produced black captures for both exact window rectangles. No unguarded mouse or keyboard input was sent. Resume these cases only when the interactive desktop can be observed and foreground ownership can be asserted. |
