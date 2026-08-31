@@ -44,7 +44,7 @@
     "shared/Free.Shared.AppServices/Printing/SystemProcessRunner.cs": "c721c3c4e227414bfcb2065bacad061d8f901c2fd971f009705f889dc0d4787c",
     "shared/Free.Shared.Pdf/PdfContentDocument.cs": "03360cb6a182fa8c8bdd79a069351a5049ed464ddeabca2c863d41ba61c1fb0f",
     "shared/Free.Shared.Pdf/PdfDrawOp.cs": "982646892f4b6cc2d217e9a2071f96101239c23b21cd3f62693c4713ab1d6d46",
-    "shared/Free.Shared.Pdf/PortableXpsWriter.cs": "0530c9b30171bbba82f7dba088e8c74b59de1cb4100ffce225cc2385fa27d0c1",
+    "shared/Free.Shared.Pdf/PortableXpsWriter.cs": "2c0775e6d2a8d8d43724cfae691c0e29b27eb1745fd0a0526916de8ffc96469f",
     "shared/Free.Shared.Pdf.Skia/SkiaPdfWriter.cs": "23f7dcab8585d624e23938cb6842e3f58ca684ba953283b9a0fac66b0759a3e3"
   },
   "ownershipBoundary": [
