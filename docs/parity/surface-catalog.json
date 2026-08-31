@@ -1,7 +1,7 @@
 {
   "schema": "freex.parity.surface-catalog.v1",
   "ribbonCommands": [
-    { "id": "Paste", "tab": "Home", "group": "Clipboard", "controlKind": "Dropdown", "display": "Paste", "keyTip": "V", "contextual": false, "menuItem": false },
+    { "id": "Paste", "tab": "Home", "group": "Clipboard", "controlKind": "SplitButton", "display": "Paste", "keyTip": "V", "contextual": false, "menuItem": false },
     { "id": "Paste", "tab": "Home", "group": "Clipboard", "controlKind": "MenuItem", "display": "Paste", "keyTip": "P", "contextual": false, "menuItem": true },
     { "id": "Paste Values", "tab": "Home", "group": "Clipboard", "controlKind": "MenuItem", "display": "Values", "keyTip": "V", "contextual": false, "menuItem": true },
     { "id": "Paste Formulas", "tab": "Home", "group": "Clipboard", "controlKind": "MenuItem", "display": "Formulas", "keyTip": "F", "contextual": false, "menuItem": true },
