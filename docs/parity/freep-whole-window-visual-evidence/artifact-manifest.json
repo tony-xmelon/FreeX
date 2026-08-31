@@ -36,7 +36,7 @@
     },
     {
       "path": "freep/FreeP.App.Presentation/InCanvasRichTextVisualPlanner.cs",
-      "sha256": "8e665bc87e05d5fb378f6712b6e66715d3463cf722a13922b57e5c0a2b106ea3"
+      "sha256": "27823426ea7b372247611c27440917cc4d282b0cde4c3abae675c6c0efb70297"
     },
     {
       "path": "freep/TestSupport/VisualEvidence.Wpf/WpfWholeWindowVisualEvidenceCapture.cs",
