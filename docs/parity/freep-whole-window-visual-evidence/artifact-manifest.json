@@ -48,7 +48,7 @@
     },
     {
       "path": "freep/FreeP.App.Host/MainWindow.cs",
-      "sha256": "a61b5c4bb9845e85ab4ed41cda86164e432dd9affba5452a2476913e2d091672"
+      "sha256": "ca63d61798cc12c5db2f26880ef4077806a7127a1d90fc6366740d67bd9cb6e4"
     },
     {
       "path": "freep/TestSupport/VisualEvidence.Wpf/MainWindow.VisualCaptureAdapter.cs",
@@ -64,7 +64,7 @@
     },
     {
       "path": "freep/FreeP.App.Avalonia/MainWindow.cs",
-      "sha256": "64a4d28adef2b191f1df79879bdeb3cb4cba5f7dd8217b968fbcbe0efaf198a2"
+      "sha256": "0b17ee6a5ac6f214ce3b68d5db3d7f2eb784327f9a800ffcadab95213e0e57bf"
     },
     {
       "path": "freep/TestSupport/VisualEvidence.Avalonia/MainWindow.VisualCaptureAdapter.cs",
@@ -72,11 +72,11 @@
     },
     {
       "path": "freep/FreeP.App.Rendering.Wpf/InCanvasTextEditor.cs",
-      "sha256": "eb703fbba8c4bd7387eed5c288d7e3eac0b41925162ab377757e7695256c502a"
+      "sha256": "7c83dd23a1acec768cd6d1dd2dcfe00c0f36e30cbf7b2357cba4f2629325834e"
     },
     {
       "path": "freep/FreeP.App.Rendering.Wpf/TextBodyFlowDocumentConverter.cs",
-      "sha256": "1c3d90795396c9ed85e99de7a1ffdaedd6adc447a552281ae7723a86dd3fc347"
+      "sha256": "737b2430eb417acb6c381a36ffb190b280f92b0f270c8164068c541abfdee4bd"
     },
     {
       "path": "freep/FreeP.App.Rendering.Avalonia/AvaloniaInCanvasTextEditor.cs",
@@ -84,7 +84,7 @@
     },
     {
       "path": "freep/FreeP.App.Rendering.Avalonia/AvaloniaRichTextEditor.cs",
-      "sha256": "4c8fdd0974cbd97b65e921b7d984406f569b634b6bce2cc8ded08dcf411d0274"
+      "sha256": "0fad3a297ac933a9e5b9b47d167215857f4322566495776f021d4c685b27d344"
     },
     {
       "path": "freep/FreeP.App.Rendering.Avalonia/AvaloniaRichTextEditingSurface.cs",
@@ -100,11 +100,11 @@
     },
     {
       "path": "shared/Free.Shared.Ribbon.Wpf/RibbonWpfRenderer.cs",
-      "sha256": "bb15c17f106584917b6d2d0f9a8f698356220a0c86d344d8094c168f7c3fe478"
+      "sha256": "4be363f8590e428b2a7bcb6a47dbdf763d5c02e5a77af060f413b667d156f80a"
     },
     {
       "path": "shared/Free.Shared.Ribbon.Avalonia/AvaloniaRibbonRenderer.cs",
-      "sha256": "6ea0c13704dde0cd6bd6bb589ed2efe42f8746ddc1b728d3bd4b99ecee1d1f47"
+      "sha256": "4d0f8d8dd302819d1897b20bcad1b5ed3abbb5ceae6059a340477ec198300f0b"
     },
     {
       "path": "tools/FreeP.RenderCompare/WholeWindowVisualEvidence.cs",
