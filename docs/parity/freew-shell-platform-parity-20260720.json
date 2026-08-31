@@ -25,7 +25,7 @@
     "shared/Free.Shared.Pdf.Skia/SkiaPdfWriter.cs"
   ],
   "sourceSha256": {
-    "freew/FreeW.App.Host/MainWindow.cs": "ebc7f82a7355bac899dd7cc6d2cfad3fa6b3a72bdc3c8719f70201268debfeb0",
+    "freew/FreeW.App.Host/MainWindow.cs": "542bf7421ef07f6294230081eae315b8b77b3cbaa096073d83c61b10fe64c8e6",
     "freew/FreeW.App.Host/XpsExport.cs": "6091e728dbf2a9c470d9c654af8e0694fcf5d295bece095556821a4a34cd5afe",
     "freew/FreeW.App.Host/PrintPreviewWindow.cs": "2212df30bc37231d1e08fa94efd2166a609b3b69603073e7d5ec3081088fc3f7",
     "freew/FreeW.App.Avalonia/MainWindow.cs": "6f0d7793aca5f622086c5f275229bb4bf2154bd6bd1cbc9403b167e5deffcade",
@@ -34,7 +34,7 @@
     "freew/FreeW.App.Avalonia/Pdf/FreeWAvaloniaPdfExport.cs": "b11d72a7faac2810d0546a614ec149399cf0e499ef0b9db829eba153182b6348",
     "freew/FreeW.App.Avalonia/Pdf/FreeWAvaloniaXpsExport.cs": "eba644a0f2f8ddd479a67613bccb2091f5ba17524e51670677f8102fc69001df",
     "shared/Free.Shared.AppServices/Printing/CupsPrintService.cs": "3279ed91adebb7e67e7f8fa4f5dd27907063d3d5853b4b3edee25fd66137d3e7",
-    "freew/FreeW.App.Avalonia/Editing/DocumentView.cs": "075555c8e534bbad5e7a6d52ccc668d287dff4937a0f3eb2ab741059aaf1b434",
+    "freew/FreeW.App.Avalonia/Editing/DocumentView.cs": "85ead30c9d54b8a6af661fdd149118d5bb33189f99bd707c1608bdc0b15b0c1a",
     "tests/FreeX.App.Services.Tests/SharedCupsPrintServiceTests.cs": "f0ddd10d9946a73ed6eb7f282f92a383e2b8c8d78b5ef22124617dc7e2771218",
     "freew/FreeW.App.Avalonia.Tests/Printing/PrintLifecycleTests.cs": "d87268bb4c1ffbe2d8af46719f6c2fd0e2df77af8e009d388643f5eaa030c19b",
     "freew/FreeW.App.Avalonia.Tests/Printing/PortableXpsWriterTests.cs": "1e260607dffa2125e806c968c38e814daa5d591a0c1ece0b54696df5ca07ca73",
