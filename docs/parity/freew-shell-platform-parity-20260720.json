@@ -45,7 +45,7 @@
     "shared/Free.Shared.Pdf/PdfContentDocument.cs": "03360cb6a182fa8c8bdd79a069351a5049ed464ddeabca2c863d41ba61c1fb0f",
     "shared/Free.Shared.Pdf/PdfDrawOp.cs": "982646892f4b6cc2d217e9a2071f96101239c23b21cd3f62693c4713ab1d6d46",
     "shared/Free.Shared.Pdf/PortableXpsWriter.cs": "0530c9b30171bbba82f7dba088e8c74b59de1cb4100ffce225cc2385fa27d0c1",
-    "shared/Free.Shared.Pdf.Skia/SkiaPdfWriter.cs": "eb8e02264c8049b8fc37239170e833a9906591c820059f9fa39bf57d9c056c05"
+    "shared/Free.Shared.Pdf.Skia/SkiaPdfWriter.cs": "23f7dcab8585d624e23938cb6842e3f58ca684ba953283b9a0fac66b0759a3e3"
   },
   "ownershipBoundary": [
     "MainWindow, ribbon registry/definition, Backstage callback, and the shared print-selection/platform boundary are included in the integration."
