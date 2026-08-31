@@ -72,11 +72,11 @@
     },
     {
       "path": "freep/FreeP.App.Rendering.Wpf/InCanvasTextEditor.cs",
-      "sha256": "eb703fbba8c4bd7387eed5c288d7e3eac0b41925162ab377757e7695256c502a"
+      "sha256": "c49f12c11a01985cdec5c96fec15240177fcb8440d54806a4e7b680ffb37f8f9"
     },
     {
       "path": "freep/FreeP.App.Rendering.Wpf/TextBodyFlowDocumentConverter.cs",
-      "sha256": "1c3d90795396c9ed85e99de7a1ffdaedd6adc447a552281ae7723a86dd3fc347"
+      "sha256": "737b2430eb417acb6c381a36ffb190b280f92b0f270c8164068c541abfdee4bd"
     },
     {
       "path": "freep/FreeP.App.Rendering.Avalonia/AvaloniaInCanvasTextEditor.cs",
