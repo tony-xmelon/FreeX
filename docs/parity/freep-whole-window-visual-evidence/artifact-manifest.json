@@ -72,7 +72,7 @@
     },
     {
       "path": "freep/FreeP.App.Rendering.Wpf/InCanvasTextEditor.cs",
-      "sha256": "e244d77b31c8b8dee47a292c4f03d038c208ca90d91a5b6429aee3d3e5ad86b3"
+      "sha256": "1a1158f20772d5aceb4dcdd627e8b39707813c68ded1d3787a5dee1c57730134"
     },
     {
       "path": "freep/FreeP.App.Rendering.Wpf/TextBodyFlowDocumentConverter.cs",
