@@ -55,3 +55,4 @@
 | 12 | `20260831-142414` Charts worksheet anchor follow-up | Passed with residual visual disparity | The fresh FreeX chart is fully visible and no longer clips its left edge. Default title typography and gridline styling remain visually different from Excel. |
 | 13 | `20260831-142604` Ctrl+End grid navigation | Passed | Excel-first then FreeX: `Ctrl+End` from `UX Overview` selects `B10` in both applications, confirmed by the UI Automation selection tree. |
 | 14 | `20260831-142726` Ctrl+Home grid navigation | Passed | Excel-first then FreeX: `Ctrl+Home` from `UX Overview` selects `A1` in both applications, confirmed by the UI Automation selection tree. |
+| 15 | `20260831-142848` Find keyboard entry | Passed for entry surface | Exact paired `Ctrl+F` opens an Excel find/search surface and a FreeX Find & Replace surface. FreeX exposes `Find what`, `Find Next`, `Find All`, and Find & Replace controls; option parity and result traversal remain scheduled. |
