@@ -14833,9 +14833,9 @@
         },
         {
           "profile": "Avalonia",
-          "tabId": "drawing-format",
-          "tab": "Drawing Format",
-          "groupId": "drawing-arrange",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-arrange",
           "group": "Arrange",
           "label": "Bring Forward",
           "controlType": "RibbonButton",
@@ -14885,9 +14885,9 @@
         },
         {
           "profile": "Avalonia",
-          "tabId": "drawing-format",
-          "tab": "Drawing Format",
-          "groupId": "drawing-arrange",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-arrange",
           "group": "Arrange",
           "label": "Bring to Front",
           "controlType": "RibbonButton",
@@ -16734,9 +16734,9 @@
         },
         {
           "profile": "Avalonia",
-          "tabId": "drawing-format",
-          "tab": "Drawing Format",
-          "groupId": "drawing-arrange",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-arrange",
           "group": "Arrange",
           "label": "Send Backward",
           "controlType": "RibbonButton",
@@ -16786,9 +16786,9 @@
         },
         {
           "profile": "Avalonia",
-          "tabId": "drawing-format",
-          "tab": "Drawing Format",
-          "groupId": "drawing-arrange",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-arrange",
           "group": "Arrange",
           "label": "Send to Back",
           "controlType": "RibbonButton",
@@ -28559,9 +28559,9 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "picture-format",
-          "tab": "Picture Format",
-          "groupId": "picture-arrange",
+          "tabId": "drawing-format",
+          "tab": "Drawing Format",
+          "groupId": "drawing-arrange",
           "group": "Arrange",
           "label": "Bring Forward",
           "controlType": "RibbonButton",
@@ -28601,9 +28601,9 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "picture-format",
-          "tab": "Picture Format",
-          "groupId": "picture-arrange",
+          "tabId": "drawing-format",
+          "tab": "Drawing Format",
+          "groupId": "drawing-arrange",
           "group": "Arrange",
           "label": "Bring to Front",
           "controlType": "RibbonButton",
@@ -30488,9 +30488,9 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "picture-format",
-          "tab": "Picture Format",
-          "groupId": "picture-arrange",
+          "tabId": "drawing-format",
+          "tab": "Drawing Format",
+          "groupId": "drawing-arrange",
           "group": "Arrange",
           "label": "Send Backward",
           "controlType": "RibbonButton",
@@ -30530,9 +30530,9 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "picture-format",
-          "tab": "Picture Format",
-          "groupId": "picture-arrange",
+          "tabId": "drawing-format",
+          "tab": "Drawing Format",
+          "groupId": "drawing-arrange",
           "group": "Arrange",
           "label": "Send to Back",
           "controlType": "RibbonButton",
