@@ -181,6 +181,40 @@ the token inside RebuildFormulaDependencies leaves a partial dependency graph on
 later incremental recalc would silently miss dependencies. That is a correctness bug worse than the
 low-severity responsiveness gap it would have fixed, and the entry now says so.
 
+## Round 192: the test-subject lens across the whole suite -- and what it did NOT find
+
+r191's test-subject lens was the most productive question this program had asked, so r192 pointed it
+at all eight test regions instead of one neighbourhood. The result is the first real negative
+finding of the program: SIX of the eight lenses returned empty. FreeX's IO, calc, command,
+shell, shared-tier and presentation suites each came back with nothing that met the bar -- a
+regression that survives the test, named concretely. Only the FreeP suite yielded one.
+
+That is worth recording precisely because it is a null result. The same question that found a real
+product defect when aimed at code this program had just churned found almost nothing across suites
+it had not. The lens is not universally powerful; it is powerful where tests were written ALONGSIDE
+a fix, under time pressure, by someone who already believed they knew what the code did. That is a
+statement about how these tests came to exist, not about their subject areas.
+
+The meta lens found a defect in the previous round's commit for the FIFTH consecutive round. The
+r191 quarantine rescue keyed "has this file been rescued" on a per-INSTANCE flag, and FreeW builds a
+fresh JsonSettingsStore for the Quick Parts gallery on every window: open two windows over a corrupt
+file and the second window's save copied the file as it stood by then -- the first window's freshly
+written, VALID content -- over the rescued original. The fix's own scenario reappeared through the
+two-window path the fix was never checked against. Rescue is now first-writer-wins at the filesystem.
+
+Two of this round's own corrections are worth naming:
+
+  * The strengthened media-pane binding test PASSED the mutation it was written to catch. It looped
+    over the enum and asked `buttons.Get(command)` for the button to click -- routing the assertion
+    through the very switch under test, so swapping two cases moved expectation and behaviour
+    together. That is the "asserts on a value computed with the same helper the production code
+    uses" bullet from the lens's own description, written by the person who wrote the bullet. The
+    test now uses a fixed button-to-command table and fails on the swap, measured both ways.
+
+  * The Animation Pane fix was half a fix until its test failed. Widening the display to 1ms did not
+    stop 1005ms round-tripping to 1004, because the PARSE truncated: `seconds * 1000.0` is inexact
+    in binary floating point. The test found that; reasoning about the format alone would not have.
+
 ## Assessed and declined
 
 Findings that survived 2-of-2 verification but that measurement showed did not warrant the change.
@@ -313,10 +347,16 @@ Recorded so they are not re-reported every round.
     gate builds and tests Release (`tools/Invoke-TestGate.ps1` defaults Configuration=Release). An
     unexpected exception from a built-in function becomes a silent `#VALUE!` in every build anyone
     actually runs.
-33. **FreeP Animation Pane truncates durations to 10ms on focus loss**, round-tripping through
-    2-decimal-second text (`FormatDuration` "0.##" then `TryParseTimingSeconds`).
-34. **FreeP run font size is unbounded before being scaled x100 and cast to int** for the PPTX `sz`
-    attribute, so a large value typed into the editable size combo overflows.
+33. ~~FreeP Animation Pane truncates durations to 10ms on focus loss.~~ **FIXED r192.** The display
+    went to 3 decimals (1ms, the model resolution), and -- the deeper half, found by the new test --
+    the parse now ROUNDS instead of truncating: `seconds * 1000.0` is inexact in binary floating
+    point, so "1.005" floored to 1004 even at full precision. An existing test pinned the truncation
+    of a sub-millisecond input; its name is about culture acceptance and the rounding policy was
+    incidental, so it was updated with the reasoning recorded.
+34. ~~FreeP run font size is unbounded before being scaled x100 and cast to int.~~ **FIXED r192.**
+    Clamped to ST_TextFontSize"s legal 1..4000pt at the ribbon entry point (where FreeX puts the
+    equivalent bound) and again defensively in the writer, so a size reaching the model from a file
+    cannot emit a schema-invalid or overflowed `sz`.
 35. **Wrap Text auto-fits row heights synchronously across the whole selection**, with no progress
     and no cancel, on the UI thread -- measured to block for a long time at ~200k rows.
 36. **The recalc cancellation gap (item 27) is NOT safely fixable as stated.** Threading the token
@@ -324,3 +364,8 @@ Recorded so they are not re-reported every round.
     PARTIAL dependency graph, and a later incremental recalc would then silently miss dependencies
     -- a correctness bug worse than the low-severity responsiveness gap. A real fix needs the graph
     to be marked invalid on cancellation so the next recalc rebuilds it.
+37. **A media-pane binding test checked 1 of 10 button-to-command mappings** -- FIXED r192. Swapping
+    two cases in the switch left the suite green while "Apply Volume" ran Apply Timing on both
+    shells.
+38. **JsonSettingsStore's rescue flag was per-instance** -- FIXED r192. See the round-192 note: the
+    two-window path destroyed the rescued copy the r191 fix exists to keep.
