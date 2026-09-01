@@ -58,6 +58,21 @@ Ordered by size. These are the honest answer to "what remains".
 - Update/installer and crash-recovery flows.
 - Cross-app consistency of shared *behaviour* (as opposed to shared code).
 
+## Assessed and declined
+
+Findings that survived 2-of-2 verification but that measurement showed did not warrant the change.
+Recorded so they are not re-reported every round.
+
+- **SYLK and DIF drop the CR of an embedded CRLF** (r182). Measured: `a
+b` round-trips to
+  `a
+b` with neighbouring cells intact -- the line break survives, only the CR is normalised, and
+  both readers already fold the folded record correctly. FreeX own model treats `
+`, `` and
+  `
+` identically (`AutoFitSizingService.EnumerateLines` uses `StringReader.ReadLine`), and
+  Excel uses LF for in-cell breaks. This is normalisation to the platform convention, not loss.
+
 ## Known-open findings, with the reason each is still open
 
 1. **Insert > Shapes are never printed, exported or previewed.** `WorksheetPrintDrawingLayerPlan`
