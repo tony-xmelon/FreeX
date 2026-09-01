@@ -28,33 +28,31 @@ against malformed input, and a rotating numbered sweep class (108-118).
 
 ## Not yet covered by a dedicated lens
 
-Ordered by size. These are the honest answer to "what remains".
+**None.** Round 184 aimed one lens at each remaining production project; every project in the
+size ranking has now had a dedicated pass. Two of them -- `src/FreeX.App.Host` (291 files) and
+`src/FreeX.App.Services` (197) -- returned no findings, as did `src/FreeX.Core.Formula` on both
+of its passes.
 
-| Region | Files | Why it is worth its own lens |
-|---|---:|---|
-| src/FreeX.App.Presentation | 454 | Largest production project in the repo; only ever reached incidentally. |
-| freep/FreeP.App.Presentation | 364 | Second largest; the FreeP lens covered the domain model, not this layer. |
-| freew/FreeW.App.Presentation | 318 | Same: the editing surface was reviewed, the rest of the layer was not. |
-| src/FreeX.App.Host | 291 | The WPF shell. Reviewed only where a cross-cutting lens landed. |
-| src/FreeX.Core.Commands | 251 | The undo lens covered command *shape*; the command bodies were not swept. |
-| src/FreeX.App.Services | 197 | Planner/options/export services. |
-| src/FreeX.App.Avalonia | 169 | The Linux/macOS shell. |
-| freew/FreeW.App.Host + App.Avalonia | 212 | Beyond find/replace and paste. |
-| shared/Free.Shared.Shell{,.Wpf,.Avalonia} | 121 | Chrome/backstage shared across all three apps. |
-| shared/Free.Shared.Ribbon{,.Wpf,.Avalonia} | 71 | Ribbon definition + rendering tier. |
-| src/FreeX.App.UI | 74 | Grid rendering; the chart-cache finding came from here but the region was not swept. |
-| shared/Free.Shared.Opc / IO / Pdf / Drawing / Theme | 87 | Package, PDF and drawing primitives shared by all three apps. |
-| freep/FreeP.App.Recording{,.Windows} | 24 | Slide-show recording: audio/video capture, never reviewed. |
-| Ribbon.Definitions (3 apps) | 30 | Declarative command surface. |
+That is coverage, not exhaustion: a lens finding nothing means that lens found nothing, and a
+different question asked of the same code can still surface a defect. What has changed is that
+there is no longer a project nobody has looked at. Further rounds should rotate the QUESTION
+(new sweep classes, new concerns) rather than hunt for unvisited files.
 
-## Concern areas never given a lens
+Covered in r184: FreeX.App.Host, FreeX.App.Services, FreeX.App.Avalonia, FreeX.App.UI,
+FreeW.App.Host + App.Avalonia, FreeP.App.Host + App.Avalonia, Free.Shared.Opc + IO,
+Free.Shared.Drawing + Pdf + Theme, FreeP.App.Recording(.Windows), and the three
+Ribbon.Definitions projects plus Free.Shared.Ribbon.
 
-- Performance and algorithmic complexity (a dense-range-scan hang class exists in this codebase's
-  history, so this is not hypothetical).
-- Memory retention / leaks: event handlers and caches that outlive the document or window.
-- Serialization formats beyond XLSX/DOCX/ODT: CSV, DIF, SLK, fxl, RTF, HTML.
-- Security boundaries: external content (OLE payloads, linked images, hyperlinks), path handling.
-- Cancellation and progress: long operations that cannot be cancelled or report wrong progress.
+## Concern areas
+
+Five of these have now been lensed; the two below them have not.
+
+
+- Performance and algorithmic complexity -- LENSED r182 (AutoSum full-column walk).
+- Memory retention and leaks -- LENSED r182 (FreeP find-replace subscription) and r184 (camera device).
+- Serialization formats beyond the main OOXML ones -- LENSED r182 (SYLK/DIF; both assessed and declined).
+- Security boundaries -- LENSED r182 (OLE shell-execute allowlist).
+- Cancellation and progress -- LENSED r182 (FreeP Export Video, still open).
 - Update/installer and crash-recovery flows.
 - Cross-app consistency of shared *behaviour* (as opposed to shared code).
 
@@ -83,3 +81,14 @@ Recorded so they are not re-reported every round.
    lives in `Free.Shared.AppServices`, but adopting it requires the four FreeW/FreeP shells to wire
    its `onProbed` refresh, as both FreeX shells already do. Without that it trades a freeze for a
    dead entry that never disappears — two existing tests correctly refuse the half-fix.
+4. **Split-pane + column outline misaligns click and render.** `SplitPaneCellLayoutPlanner`
+   builds the render geometry with the bare column-header height while `HitTestViewportCell`
+   passes the gutter-inclusive height, so with a column outline group AND a horizontal split
+   every top-pane row selects one row earlier than the one drawn under the cursor. Needs the two
+   paths to agree on one height, which touches render, hit-test and divider geometry together.
+5. **Avalonia Options UI-language field is inert.** It validates, persists and reports plain
+   success, but nothing on that platform ever reads it -- `AvaloniaAppLocalizationBootstrap`
+   deliberately leaves CurrentUICulture to the OS. The WPF sibling shows a restart message. Fix
+   is a product decision: hide/disable the field on Avalonia, or say it has no effect there.
+6. **PortablePdfWriter never emits /Info.** Title/Author/Subject/Keywords are dropped in the
+   Skia-unavailable fallback path, so an exported PDF has no document properties.
