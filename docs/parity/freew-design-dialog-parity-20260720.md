@@ -1,7 +1,7 @@
 # FreeW Design Dialog Parity Evidence
 
-Generated at UTC: 2026-09-01T03:01:27.8150887Z
-Source commit: `3d1ea42cc6ce7c972fb24d4bab36e985518bb54d`
+Generated at UTC: 2026-09-01T11:02:03.7178164Z
+Source commit: `f5a4d9e2fdb046b59774a41bf7dc6fc865f469d2`
 Schema: `freew.design-dialog-parity.v1`
 
 Routes: 11 total; 10 complete; 0 remaining in the owned dialog/planner scope; 0 shell gaps recorded.
@@ -33,7 +33,7 @@ Generate-FreeWDesignDialogParityEvidence.ps1 -Check recomputes SHA-256 for every
 | freew/FreeW.App.Avalonia/DesignDialogParity.cs | 33fe3dd13569372598f2259f2adb56c58c61cd739d8ead7b7ccf9b3106b7d339 |
 | freew/FreeW.App.Avalonia/DesignDialogs.cs | aab998b94553b026a453fb98b20a7696c9d076f951068f7bff9665706ef603ee |
 | freew/FreeW.App.Avalonia/MainWindow.cs | 6f0d7793aca5f622086c5f275229bb4bf2154bd6bd1cbc9403b167e5deffcade |
-| freew/FreeW.App.Avalonia/PageLayoutDialogs.cs | 1be79922deda672e3b20285933505a5246e771ce43747bb9e1739f58e72e25fd |
+| freew/FreeW.App.Avalonia/PageLayoutDialogs.cs | 85be8c6adb2b08049cf39e3d970c02012cd7b9dae265815364d3fa4fbc86efdd |
 | freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs | 8b7348a396c3f999bc46ed016992acdfe7eb58a9bd54d0d46def27a90c10c219 |
 | freew/FreeW.App.Host.Tests/DesignDialogParitySourceTests.cs | b7d44ab89cbb6759c684779b9cece1227edef88e1c7d767760d431c4d6f5b477 |
 | freew/FreeW.App.Host.Tests/DocumentEffectRenderingTests.cs | c1f3bab8bc21ebd264b851911c3dcdcf256dc2fdfc735c97ed2ca5a6da9df4b1 |
