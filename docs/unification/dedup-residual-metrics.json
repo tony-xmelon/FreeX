@@ -29,10 +29,10 @@
   },
   "repository": {
     "analysisRevision": "HEAD",
-    "analysisCommit": "46041f7c4369de6b7b53e6e9b53e7f1b42a0dd04",
+    "analysisCommit": "0ef35627bd2d5fa195b9c6313f8ef892ee19a12b",
     "upstreamRevision": "origin/main",
-    "upstreamCommit": "d99246f3aa3f0b55f89ae7e9c2879e9de93c1cab",
-    "mergeBaseCommit": "d99246f3aa3f0b55f89ae7e9c2879e9de93c1cab",
+    "upstreamCommit": "4ef689d4afaf8c909ba99158d00fd152c2cd0c0d",
+    "mergeBaseCommit": "4ef689d4afaf8c909ba99158d00fd152c2cd0c0d",
     "inputTreeSha256": "bf6e8fae6a71614f4eebc841aca526f0cbad35a4772eebab2b065837aac3d67e",
     "campaignLocDelta": {
       "allCSharp": {
