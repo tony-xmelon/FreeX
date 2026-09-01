@@ -97,6 +97,36 @@ a test. The test written for it passed with the fix reverted, so it was deleted 
 shipped -- a green test that cannot fail is worse than none, and this program has already been
 caught once by a vacuous test that counted windows in an assembly that never creates any.
 
+## Round 189: the backlog is not what it said it was
+
+r189 added a lens that re-read every entry in the known-open list against today's code, because
+a list of open defects is an accounting claim and this repo has many sessions committing to main.
+Of the fifteen entries, four turned out to be wrong or already resolved: two were MIS-STATED
+(the sync/async conflict-policy defaults agree; the WPF sibling does not block New Window during
+a save either, so there was no divergence to fix), one was ALREADY FIXED upstream
+(`ApplyAndRestart` does re-query the feed), and one understated its own bug (the Avalonia language
+field was not merely inert -- the dialog promised a restart would apply it).
+
+That is the useful result: "N open findings" was not a measure of remaining defects. It mixed real
+work with entries that had rotted. Any future claim about how much is left has to re-verify the
+list, not count it.
+
+The meta lens again found more in this program's own last commit than most lenses found in the
+product. Two of r188's changes were wrong:
+
+  * the slideshow reuse check compared only liveness, not MODE, so asking for Reading View while a
+    fullscreen show was running silently re-focused the fullscreen window -- and my own r188 test
+    asserted that behaviour, pinning the defect the fix had introduced; and
+  * the two tie-break tests never reached the tie-break. Measured on .NET 10, their chosen pair
+    ("co-op"/"coop") compares non-zero under de-DE collation, so the primary comparison settled it.
+    They passed for the wrong reason. Replaced with NFC/NFD forms of one word, which do compare
+    equal, and with an assertion that both input orders converge -- a property a stable sort does
+    not give you for free.
+
+And the fix for backlog item 5 reached FreeX alone on its first attempt, which is the same
+one-shell trap r188's meta lens caught. It is now wired through the shared sister-app Avalonia
+profile, so FreeW and FreeP get it from the same code path rather than from a remembered edit.
+
 ## Assessed and declined
 
 Findings that survived 2-of-2 verification but that measurement showed did not warrant the change.
@@ -136,12 +166,16 @@ Recorded so they are not re-reported every round.
    passes the gutter-inclusive height, so with a column outline group AND a horizontal split
    every top-pane row selects one row earlier than the one drawn under the cursor. Needs the two
    paths to agree on one height, which touches render, hit-test and divider geometry together.
-5. **Avalonia Options UI-language field is inert.** It validates, persists and reports plain
-   success, but nothing on that platform ever reads it -- `AvaloniaAppLocalizationBootstrap`
-   deliberately leaves CurrentUICulture to the OS. The WPF sibling shows a restart message. Fix
-   is a product decision: hide/disable the field on Avalonia, or say it has no effect there.
-6. **PortablePdfWriter never emits /Info.** Title/Author/Subject/Keywords are dropped in the
-   Skia-unavailable fallback path, so an exported PDF has no document properties.
+5. ~~Avalonia Options UI-language field is inert.~~ **FIXED r189.** The entry was also partly
+   wrong: the Avalonia Options dialog shows the restart notice too (Options_AppLanguageRestartNotice),
+   so the app was promising a restart would apply a setting nothing read -- worse than merely inert.
+   Rather than hide the field, the promise was made true: `AvaloniaAppLocalizationBootstrap` gained
+   `ApplyAppLanguage` (only the WPF FrameworkElement.Language metadata step is toolkit-bound; setting
+   the UI culture is plain BCL) and FreeX Avalonia App.cs calls it at startup as the WPF host does.
+6. ~~PortablePdfWriter never emits /Info.~~ **FIXED r189.** PdfContentDocument already carried
+   Properties and both the Skia and WPF writers stamped them; the portable fallback now appends an
+   Info object (last, so no existing object number shifts) and references it from the trailer.
+   Absent and whitespace-only values are omitted rather than stamped blank.
 7. **Slicer state is not synchronised across the six commands that can change it.** Filtering
    through one entry point leaves the others showing stale selection.
 8. **Crash-recovery snapshot ordering.** The snapshot can be written before the edit that
@@ -149,12 +183,42 @@ Recorded so they are not re-reported every round.
 9. **Drag-and-drop gaps in FreeP and FreeW** relative to FreeX, which supports the same gestures.
 10. **XLTX template save loses VBA.** A macro-enabled template round-tripped through the template
     path drops the project rather than refusing or preserving it.
-11. **`ExternalFileWriteConflictPolicy` default differs between the sync and non-sync paths.**
-12. **Avalonia New Window is not blocked during a save**, unlike the WPF sibling.
+11. ~~`ExternalFileWriteConflictPolicy` default differs between the sync and non-sync paths.~~
+    **MIS-STATED, closed r189.** They agree: `Prepare` evaluates
+    `confirmOverwrite?.Invoke(path) == true`, which is false when the handler is null, and
+    `PrepareAsync` short-circuits on `confirmOverwriteAsync is null`. Both then return `Declined`.
+    The safe default is the one both already have.
+12. ~~Avalonia New Window is not blocked during a save, unlike the WPF sibling.~~
+    **MIS-STATED, closed r189.** The WPF sibling does not block it either:
+    `ApplyLiveWindowCommandState` sets "New Window" to `isEnabled: true` unconditionally and
+    `ViewNewWindowBtn_Click` consults neither `_isSavingFile` nor `_isOpeningFile`. There is no
+    divergence. Whether New Window SHOULD be blocked mid-save is a separate question neither
+    shell has answered, and no harm from it has been demonstrated.
 13. **Row-height pixel quantisation drifts** as rows accumulate, so a long sheet's gridlines
     diverge from the heights the model holds.
 14. **FreeX save prompts omit the document name**, so with several windows open the user cannot
     tell which document is being asked about. FreeW and FreeP name it.
-15. **`ApplyAndRestart` does not re-query the update feed**, so a feed that changed between the
-    check and the click is applied from the stale staged version. Applies to BOTH shells
-    (r188 gave them a shared prompt plan, which did not change what is applied).
+15. ~~`ApplyAndRestart` does not re-query the update feed.~~ **MIS-STATED, closed r189.**
+    `VelopackUpdateOrchestrator.ApplyAndRestart` calls `_manager.CheckForUpdates()` immediately
+    before `ApplyUpdatesAndRestart(info.TargetFullRelease, ...)` -- a fresh feed check at apply
+    time, not a replay of what `CheckAndDownloadAsync` staged. Both shells route through this one
+    implementation via `IUpdateService`.
+16. **FreeW Drop Cap dialog turns unparseable input into a valid default.**
+    `DropCapOptionsDialogPlanner.BuildResult` discards the bool from `int.TryParse`/`double.TryParse`
+    (`_ = int.TryParse(...)`), so junk text leaves 0, which `Math.Clamp` then turns into
+    `LinesToDrop=1`/`DistanceFromTextPt=0` -- values the user never typed, applied with no error.
+17. **Bar-chart axis titles are captured by data role while every sibling axis property routes by
+    physical position.** `XlsxChartAxisReader.ApplyAxisMetadata` computes `valueAxisOnX` and uses it
+    for bounds and reverse-order, but title capture is unconditional, so a bar chart's titles land
+    on the wrong axis.
+18. **FreeP external OLE edit-back is lost if the owning window closes first.**
+    `OleActivationService` stores sessions in a static, window-agnostic dictionary and awaits the
+    editor's exit with no ownership tie, so the update callback writes into a document that is gone.
+19. **FreeW WPF Font dialog never shows mixed formatting as indeterminate.** `FontDialogCommand`
+    seeds from `editor.CurrentRunFormatting` (a caret-only snapshot); the Avalonia sibling seeds
+    from the selection and does show the indeterminate state.
+20. **FreeW Ruler never clears its drag state on lost mouse capture.** `_drag` is cleared only in
+    `OnMouseLeftButtonUp`, and the class neither overrides `OnLostMouseCapture` nor subscribes to
+    it -- unlike its two siblings -- so a drag interrupted by capture loss leaves the ruler stuck.
+21. **Two limit checks compute a bound and do not enforce it**
+    (`CustomViewNameDialog`, `CrossPageUndoCoordinator`), found by sweep class 135.
