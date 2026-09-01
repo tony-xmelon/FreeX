@@ -149,6 +149,38 @@ passed; the renderer, which had always read physically, drew a bar chart's two a
 other's axes. A convention applied property-by-property leaves exactly this kind of hole, and only
 a lens that asks about the ODD ONE OUT rather than about round-tripping will find it.
 
+## Round 191: a lens on this program's own tests
+
+The meta lens had found a defect in the previous round's commit three rounds running, and r190
+diagnosed the mechanism: the tests around the changed method asserted about how many WINDOWS were
+created and which was activated, never about what was DONE to the one that was reused. r191 turned
+that into a lens of its own -- "the test that asserts about the wrong subject" -- and asked it of
+the whole suite.
+
+It found the strongest defect of the round, and the reason four rounds of tests could not see it.
+The slideshow reuse branch discarded the new launch ROUTE: the route reaches a window only through
+the plan handed to createWindow, so picking a different custom show while one was already
+presenting refocused the running show and left the audience on the old deck. Every reuse test
+written in r188, r189 and r190 drove the coordinator with the SAME input twice, and the FakeWindow
+fixture had no member recording which route a call carried, so no assertion in any of them could
+have failed. The test added this round varies the route between calls and does fail without the fix.
+
+That is worth stating plainly as a method result: asking "does this test constrain what its name
+claims" is a different question from "is this code correct", and in a suite this large it finds
+things no amount of reading the production code does. The gap was not in the code under test; it
+was in what the tests were looking at.
+
+Also fixed: the shared JsonSettingsStore now keeps an unreadable settings file instead of letting
+the first save overwrite it (no caller in any of the three apps reads LastError, so this hole
+belonged to the store, not to the one consumer that surfaced it); the FreeP camera stop path defers
+disposal like the start path already did; six missing FreeP ribbon resource keys; and the stale
+drag preview the r190 Ruler override left behind.
+
+One fix was tried and REVERTED. Item 27's recalc cancellation cannot be closed as stated: putting
+the token inside RebuildFormulaDependencies leaves a partial dependency graph on cancellation, so a
+later incremental recalc would silently miss dependencies. That is a correctness bug worse than the
+low-severity responsiveness gap it would have fixed, and the entry now says so.
+
 ## Assessed and declined
 
 Findings that survived 2-of-2 verification but that measurement showed did not warrant the change.
@@ -253,16 +285,42 @@ Recorded so they are not re-reported every round.
     lens auditing r189. Rehearse/Record Timings are ribbon commands with no running-show gate, so
     invoking either while a show was up took the reuse branch and returned before `_setTimingIntent`
     was called: the button refocused the show and started no recording.
-23. **FreeP camera capture disposes a live MediaCapture while the timed-out stop is still using it.**
-    `CompleteCapture`'s finally disposes unconditionally on TimeoutException, while the orphaned
-    `StopRecordAsync` keeps running -- the same hazard the r185 fix deferred disposal for on the
-    START path, never applied to the stop path.
-24. **FreeW QuickPartLibrary silently discards a corrupt quickparts.json and then overwrites it.**
-    `JsonSettingsStore.Load` returns an empty list plus `LastError`; `TryLoad` ignores `LastError`,
-    so the gallery comes up empty and the next save writes the empty set over the user's file.
+23. ~~FreeP camera capture disposes a live MediaCapture while the timed-out stop is still using it.~~
+    **FIXED r191.** RunAsync gained a deferred-disposal parameter and CompleteCapture skips its own
+    finally on TimeoutException, so the capture is released only once the orphaned StopRecordAsync
+    finishes -- the r185 treatment of the start path, now applied to the stop path.
+24. ~~FreeW QuickPartLibrary silently discards a corrupt quickparts.json and then overwrites it.~~
+    **FIXED r191, in the shared store rather than the one caller.** No caller in any of the three
+    apps reads `LastError`, so every consumer of JsonSettingsStore had this hole. The store now
+    copies an unreadable file aside once, before the first overwrite, so the data survives.
 25. **A FreeP Avalonia workarea endpoint command has no reachable handler** (sweep 139).
 26. **FreeP Avalonia slide-show media controller diverges from its writer/reader counterpart**
     (sweep 141).
 27. **A RecalcEngine cancellation is checked outside the loop that takes the time** (sweep 142).
 28. **FreeW Avalonia undo does not restore every field a document-view command changed**
     (undo-fidelity lens).
+29. ~~FreeP ribbon references six localization keys absent from every resx.~~ **FIXED r191.** The
+    Change Zoom Target, Edit Summary Zoom and four SmartArt-layout commands showed raw `[[key]]`
+    text on their buttons and keytips; the twelve missing entries were added.
+30. ~~Reusing a live slideshow window discarded the new launch ROUTE.~~ **FIXED r191**, found by the
+    test-subject lens. The route reaches a window only through the plan given to `createWindow`, so
+    picking a different custom show while one was presenting refocused the running show and left the
+    audience on the old deck. Reuse now requires the route to match; a different one replaces the
+    window, as a mode mismatch already did.
+31. ~~The r190 Ruler lost-capture override left the stale drag preview set.~~ **FIXED r191**, found
+    by the meta lens. Visual only -- the committed margin never came from that field.
+32. **RecalcEngine's `#if DEBUG` evaluator-bug safety net never fires in any gate**, because every
+    gate builds and tests Release (`tools/Invoke-TestGate.ps1` defaults Configuration=Release). An
+    unexpected exception from a built-in function becomes a silent `#VALUE!` in every build anyone
+    actually runs.
+33. **FreeP Animation Pane truncates durations to 10ms on focus loss**, round-tripping through
+    2-decimal-second text (`FormatDuration` "0.##" then `TryParseTimingSeconds`).
+34. **FreeP run font size is unbounded before being scaled x100 and cast to int** for the PPTX `sz`
+    attribute, so a large value typed into the editable size combo overflows.
+35. **Wrap Text auto-fits row heights synchronously across the whole selection**, with no progress
+    and no cancel, on the UI thread -- measured to block for a long time at ~200k rows.
+36. **The recalc cancellation gap (item 27) is NOT safely fixable as stated.** Threading the token
+    into `RebuildFormulaDependencies` was tried and reverted: cancelling mid-rebuild leaves a
+    PARTIAL dependency graph, and a later incremental recalc would then silently miss dependencies
+    -- a correctness bug worse than the low-severity responsiveness gap. A real fix needs the graph
+    to be marked invalid on cancellation so the next recalc rebuilds it.
