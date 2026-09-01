@@ -45,7 +45,7 @@ Ribbon.Definitions projects plus Free.Shared.Ribbon.
 
 ## Concern areas
 
-Five of these have now been lensed; the two below them have not.
+All seven have now been lensed. The last two were the r187 rotation.
 
 
 - Performance and algorithmic complexity -- LENSED r182 (AutoSum full-column walk).
@@ -53,8 +53,27 @@ Five of these have now been lensed; the two below them have not.
 - Serialization formats beyond the main OOXML ones -- LENSED r182 (SYLK/DIF; both assessed and declined).
 - Security boundaries -- LENSED r182 (OLE shell-execute allowlist).
 - Cancellation and progress -- LENSED r182 (FreeP Export Video, still open).
-- Update/installer and crash-recovery flows.
-- Cross-app consistency of shared *behaviour* (as opposed to shared code).
+- Update/installer and crash-recovery flows -- LENSED r187 (self-update discarded other windows unsaved work; crash-recovery snapshot ordering, still open).
+- Cross-app consistency of shared *behaviour* (as opposed to shared code) -- LENSED r187 (drag-and-drop gaps in FreeP and FreeW; save prompts that omit the document name; both still open).
+
+## Round 187: rotating the question, not the file list
+
+r184 gave every production project a lens and two of them came back empty. r187 tested whether
+that meant those projects were clean, by asking a DIFFERENT set of questions of the same code --
+new sweep classes (115 the fallback that no longer matches its primary, 116 the branch that only
+runs when the primary found nothing, 117 the rebuild that flattens what it did not intend to
+touch, 118 the test whose fixture is too simple to reach the risk, 119 two writers of one piece
+of state, 120 the ordering assumption on something unordered, 121 the message that names the
+wrong thing) plus the two previously unlensed concern areas above.
+
+All ten lenses returned findings, including against `src/FreeX.App.Host`, which r184 had reported
+empty. That settles the question empirically: one pass per project is coverage, not exhaustion,
+and the productive axis from here is the question asked, not the file visited.
+
+Fixed this round: the self-update path restarted the whole process after prompting only the window
+the user clicked in, silently destroying unsaved edits in every other open workbook; the same path
+ignored a false return from `ApplyAndRestart`, leaving the user on the old version with no message;
+and the Goal Seek error box was titled with a competitor's product name.
 
 ## Assessed and declined
 
@@ -101,3 +120,18 @@ Recorded so they are not re-reported every round.
    is a product decision: hide/disable the field on Avalonia, or say it has no effect there.
 6. **PortablePdfWriter never emits /Info.** Title/Author/Subject/Keywords are dropped in the
    Skia-unavailable fallback path, so an exported PDF has no document properties.
+7. **Slicer state is not synchronised across the six commands that can change it.** Filtering
+   through one entry point leaves the others showing stale selection.
+8. **Crash-recovery snapshot ordering.** The snapshot can be written before the edit that
+   prompted it is committed to the model, so recovery restores one edit short.
+9. **Drag-and-drop gaps in FreeP and FreeW** relative to FreeX, which supports the same gestures.
+10. **XLTX template save loses VBA.** A macro-enabled template round-tripped through the template
+    path drops the project rather than refusing or preserving it.
+11. **`ExternalFileWriteConflictPolicy` default differs between the sync and non-sync paths.**
+12. **Avalonia New Window is not blocked during a save**, unlike the WPF sibling.
+13. **Row-height pixel quantisation drifts** as rows accumulate, so a long sheet's gridlines
+    diverge from the heights the model holds.
+14. **FreeX save prompts omit the document name**, so with several windows open the user cannot
+    tell which document is being asked about. FreeW and FreeP name it.
+15. **`ApplyAndRestart` does not re-query the update feed**, so a feed that changed between the
+    check and the click is applied from the stale staged version.
