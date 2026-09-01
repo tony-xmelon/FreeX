@@ -68,6 +68,15 @@ Recorded so they are not re-reported every round.
   (`AutoFitSizingService.EnumerateLines` goes through `StringReader.ReadLine`), and Excel uses a bare
   LF for in-cell breaks. This is normalisation to the platform convention, not data loss.
 
+- **AutoSum walks ~1,048,575 cells on a full-column selection** (r182). The walk is real --
+  `GridRange.AllCells()` iterates every address and the number probe only exits early when it
+  FINDS a number. But the claimed consequence (a synchronous UI-thread freeze) does not occur:
+  measured, `TryCreatePlan` on a whole blank column returns in 0 ms, and on a sheet with 5000
+  populated cells elsewhere it is still 0 ms. A clamp to the used range was written, could not be
+  shown to change anything measurable, and was reverted rather than shipped -- it altered a
+  decision path (returning false when a sheet has no used range) for no demonstrable benefit.
+  Worth revisiting only if a profile ever shows this path costing real time.
+
 ## Known-open findings, with the reason each is still open
 
 1. **Insert > Shapes are never printed, exported or previewed.** `WorksheetPrintDrawingLayerPlan`
