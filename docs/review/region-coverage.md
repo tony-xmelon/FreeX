@@ -75,6 +75,28 @@ the user clicked in, silently destroying unsaved edits in every other open workb
 ignored a false return from `ApplyAndRestart`, leaving the user on the old version with no message;
 and the Goal Seek error box was titled with a competitor's product name.
 
+## Round 188: the same method, applied again
+
+r188 repeated r187's approach with a fresh question set (sweep classes 122-128, plus a
+half-applied-operation lens and a second-invocation lens). Six findings survived 2-of-2
+verification; four lenses returned empty (122 the guard that validates the wrong instance,
+124 the retry that repeats a side effect, 126 the collection mutated under a held index,
+127 the confident default for a merely-unknown answer).
+
+The meta lens produced the round's most useful result by auditing r187's own commit: the r187
+self-update fix had been written into the WPF shell alone, and the Avalonia twin still had both
+halves of the bug. That is worth recording as a finding about the PROGRAM, not just the code --
+a fix aimed at one shell is not a fix, and the remedy is to move the decision into the shared
+tier rather than to patch the sibling. Both update prompts now come from
+`FreeXSynchronousPromptCatalog`, and the FreeP slideshow launch coordinator takes its new
+liveness/activation callbacks as REQUIRED constructor arguments for the same reason.
+
+One fix shipped without a failing-first test: `AddPivotTableCommand` now records what it
+registered before rendering rather than after, but the render's throw could not be provoked from
+a test. The test written for it passed with the fix reverted, so it was deleted rather than
+shipped -- a green test that cannot fail is worse than none, and this program has already been
+caught once by a vacuous test that counted windows in an assembly that never creates any.
+
 ## Assessed and declined
 
 Findings that survived 2-of-2 verification but that measurement showed did not warrant the change.
@@ -134,4 +156,5 @@ Recorded so they are not re-reported every round.
 14. **FreeX save prompts omit the document name**, so with several windows open the user cannot
     tell which document is being asked about. FreeW and FreeP name it.
 15. **`ApplyAndRestart` does not re-query the update feed**, so a feed that changed between the
-    check and the click is applied from the stale staged version.
+    check and the click is applied from the stale staged version. Applies to BOTH shells
+    (r188 gave them a shared prompt plan, which did not change what is applied).
