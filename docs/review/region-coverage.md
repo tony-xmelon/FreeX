@@ -215,6 +215,29 @@ Two of this round's own corrections are worth naming:
     stop 1005ms round-tripping to 1004, because the PARSE truncated: `seconds * 1000.0` is inexact
     in binary floating point. The test found that; reasoning about the format alone would not have.
 
+## Round 193: a sixth question set, and the null result did not repeat
+
+r192's test-subject sweep came back six-of-eight empty. r193 rotated to new questions -- aliasing
+copies, lazy initialisation, values trusted from the file, user-visible text, bidirectional and
+non-Latin text, paired state, plus three concerns (accessibility of what THIS program added, two
+writers of one file, and keyboard-shortcut parity between the shells). Nine of ten lenses found
+something. So r192's dryness was a property of that question, not a signal about the codebase.
+
+The round's only HIGH is worth naming as a class. FreeW's Drop Cap took its leading letter with
+`Text[..1]` -- one UTF-16 char. Applied to a paragraph starting with an emoji that cuts a surrogate
+pair in half, and this codebase already knows what a lone surrogate does: the XML sanitizer
+chokepoints abort the WHOLE save. So a one-character indexing habit turned a cosmetic feature into
+a document that cannot be saved. Splitting by text element fixes it and incidentally does the right
+thing for combining marks. The lesson generalises: `[0]` and `[..1]` on user text are worth a sweep
+of their own wherever the result is stored rather than only displayed.
+
+Two findings were about this program's own recent work. The FreeP undo save point (R175) worked in
+the WPF shell and not the Avalonia one -- and its existing test wired the endpoint BY HAND, "exactly
+the way production does", so it asserted the shared mechanism works given correct wiring and could
+never notice that one shell supplied none. That is the r191/r192 test-subject shape once more, in a
+test written long before this program started. The accessibility lens found that the status control
+r190 added to the Avalonia Drop Cap dialog lacks the automation id its siblings carry.
+
 ## Assessed and declined
 
 Findings that survived 2-of-2 verification but that measurement showed did not warrant the change.
@@ -327,7 +350,13 @@ Recorded so they are not re-reported every round.
     **FIXED r191, in the shared store rather than the one caller.** No caller in any of the three
     apps reads `LastError`, so every consumer of JsonSettingsStore had this hole. The store now
     copies an unreadable file aside once, before the first overwrite, so the data survives.
-25. **A FreeP Avalonia workarea endpoint command has no reachable handler** (sweep 139).
+25. ~~A FreeP Avalonia workarea endpoint command has no reachable handler.~~ **FIXED r193.** The real
+    content: the Avalonia endpoint wired neither `MarkSavedAtUndoDepth` nor
+    `TryMarkCleanIfAtSavePoint`, and nothing called `NotifySaved`, so undoing back to the saved
+    state left the presentation dirty and closing prompted to save an unmodified file. Both are now
+    wired and the Avalonia wrapper exposes the pass-throughs it was missing. The existing R175 test
+    hand-wired the endpoint "exactly the way production does", so it could never notice a shell that
+    supplied no wiring -- a source-contract test now asserts BOTH shells do.
 26. **FreeP Avalonia slide-show media controller diverges from its writer/reader counterpart**
     (sweep 141).
 27. **A RecalcEngine cancellation is checked outside the loop that takes the time** (sweep 142).
@@ -343,10 +372,11 @@ Recorded so they are not re-reported every round.
     window, as a mode mismatch already did.
 31. ~~The r190 Ruler lost-capture override left the stale drag preview set.~~ **FIXED r191**, found
     by the meta lens. Visual only -- the committed margin never came from that field.
-32. **RecalcEngine's `#if DEBUG` evaluator-bug safety net never fires in any gate**, because every
-    gate builds and tests Release (`tools/Invoke-TestGate.ps1` defaults Configuration=Release). An
-    unexpected exception from a built-in function becomes a silent `#VALUE!` in every build anyone
-    actually runs.
+32. ~~RecalcEngine's `#if DEBUG` evaluator-bug safety net never fires in any gate.~~ **FIXED r193.**
+    Both catch blocks now consult a runtime seam (`SurfaceUnexpectedEvaluatorExceptions`, default
+    false) instead of a compile-time gate, so the strict behaviour is reachable and both branches
+    can be asserted. Shipped behaviour is unchanged; no existing test starts failing on a latent
+    evaluator bug it was never asked about.
 33. ~~FreeP Animation Pane truncates durations to 10ms on focus loss.~~ **FIXED r192.** The display
     went to 3 decimals (1ms, the model resolution), and -- the deeper half, found by the new test --
     the parse now ROUNDS instead of truncating: `seconds * 1000.0` is inexact in binary floating
@@ -369,3 +399,23 @@ Recorded so they are not re-reported every round.
     shells.
 38. **JsonSettingsStore's rescue flag was per-instance** -- FIXED r192. See the round-192 note: the
     two-window path destroyed the rescued copy the r191 fix exists to keep.
+39. ~~FreeW Drop Cap split the leading run by UTF-16 char.~~ **FIXED r193, the round's only HIGH.**
+    `Text[..1]` cut a surrogate pair in half, so applying Drop Cap to a paragraph starting with an
+    emoji left a lone high surrogate in the cap run and a lone low surrogate in the remainder. In
+    this codebase a lone surrogate is XML-illegal and the sanitizer chokepoints abort the WHOLE save,
+    so the document became unsaveable -- not merely mis-rendered. Now splits one text element, which
+    also keeps combining marks with their base letter.
+40. **Chart clone drops `SeriesNameOverrides`** while copying all ~23 sibling SeriesIndex-keyed
+    fields, so a duplicated or pasted chart loses a custom series name on the next save
+    (`DuplicateSheetDrawingCloner.CloneChart`).
+41. **FreeP shape-id watermark goes stale after Set Slide Layout**, so a later insert can hand out an
+    id the layout already used; by-id lookups then resolve to the wrong shape and Delete can remove
+    a placeholder the user never selected.
+42. **PivotTable Show Details trusts `SourceFieldIndex` from the file** with no range check against
+    the source row width.
+43. **`InsertCopiedCellsPlanner` updates one of two values that must move together** (sweep 154).
+44. **The r190 Avalonia Drop Cap status control lacks the automation id its siblings carry**
+    (a11y lens, low).
+45. **`QuickPartLibrary` is reconstructed per window with no shared state**, so two windows' Quick
+    Parts saves overwrite each other independently of the r191/r192 rescue work.
+46. **A FreeX keyboard chord diverges between the shells** (`MainWindow.cs:26350`, shortcut-parity).
