@@ -29,23 +29,23 @@
   },
   "repository": {
     "analysisRevision": "HEAD",
-    "analysisCommit": "0ef35627bd2d5fa195b9c6313f8ef892ee19a12b",
+    "analysisCommit": "1dfcae91cf6495a879234909dccd4833a7c3e70e",
     "upstreamRevision": "origin/main",
-    "upstreamCommit": "4ef689d4afaf8c909ba99158d00fd152c2cd0c0d",
-    "mergeBaseCommit": "4ef689d4afaf8c909ba99158d00fd152c2cd0c0d",
-    "inputTreeSha256": "bf6e8fae6a71614f4eebc841aca526f0cbad35a4772eebab2b065837aac3d67e",
+    "upstreamCommit": "a744c34b5a45d3b26557635d06f557d2521ead8a",
+    "mergeBaseCommit": "a744c34b5a45d3b26557635d06f557d2521ead8a",
+    "inputTreeSha256": "8e395061ef5625c258ee39c9bb76fa2c80cd21d945feaf98252ec9d6a140a587",
     "campaignLocDelta": {
       "allCSharp": {
-        "filesChanged": 8,
-        "addedLines": 160,
-        "deletedLines": 28,
-        "netLines": 132
+        "filesChanged": 12,
+        "addedLines": 164,
+        "deletedLines": 58,
+        "netLines": 106
       },
       "rendererCSharp": {
-        "filesChanged": 3,
-        "addedLines": 35,
-        "deletedLines": 22,
-        "netLines": 13
+        "filesChanged": 7,
+        "addedLines": 39,
+        "deletedLines": 52,
+        "netLines": -13
       }
     }
   },
@@ -77,9 +77,9 @@
         "platform": "WPF",
         "path": "freew/FreeW.App.Host",
         "fileCount": 117,
-        "physicalLines": 56382,
-        "nonBlankLines": 50712,
-        "codeLines": 42474
+        "physicalLines": 56389,
+        "nonBlankLines": 50718,
+        "codeLines": 42478
       },
       {
         "id": "FreeW.Avalonia",
@@ -97,9 +97,9 @@
         "platform": "WPF",
         "path": "freep/FreeP.App.Host",
         "fileCount": 65,
-        "physicalLines": 18297,
-        "nonBlankLines": 16382,
-        "codeLines": 15426
+        "physicalLines": 18299,
+        "nonBlankLines": 16384,
+        "codeLines": 15428
       },
       {
         "id": "FreeP.Wpf.Rendering",
@@ -184,15 +184,15 @@
     ],
     "totals": {
       "fileCount": 2580,
-      "physicalLines": 727249,
-      "nonBlankLines": 644835,
-      "codeLines": 588084
+      "physicalLines": 727258,
+      "nonBlankLines": 644843,
+      "codeLines": 588090
     },
     "duplicateCoverage": {
       "exact": {
-        "codeLines": 588084,
+        "codeLines": 588090,
         "duplicateLines": 7390,
-        "percent": 1.256623,
+        "percent": 1.25661,
         "byRoot": [
           {
             "rootId": "FreeP.Avalonia.App",
@@ -214,9 +214,9 @@
           },
           {
             "rootId": "FreeP.Wpf.App",
-            "codeLines": 15426,
+            "codeLines": 15428,
             "duplicateLines": 2385,
-            "coveragePercent": 15.46091
+            "coveragePercent": 15.458906
           },
           {
             "rootId": "FreeP.Wpf.Rendering",
@@ -238,9 +238,9 @@
           },
           {
             "rootId": "FreeW.Wpf",
-            "codeLines": 42474,
+            "codeLines": 42478,
             "duplicateLines": 634,
-            "coveragePercent": 1.492678
+            "coveragePercent": 1.492537
           },
           {
             "rootId": "FreeX.Avalonia",
@@ -275,9 +275,9 @@
         ]
       },
       "normalized": {
-        "codeLines": 588084,
+        "codeLines": 588090,
         "duplicateLines": 8774,
-        "percent": 1.491964,
+        "percent": 1.491949,
         "byRoot": [
           {
             "rootId": "FreeP.Avalonia.App",
@@ -299,9 +299,9 @@
           },
           {
             "rootId": "FreeP.Wpf.App",
-            "codeLines": 15426,
+            "codeLines": 15428,
             "duplicateLines": 2531,
-            "coveragePercent": 16.407364
+            "coveragePercent": 16.405237
           },
           {
             "rootId": "FreeP.Wpf.Rendering",
@@ -323,9 +323,9 @@
           },
           {
             "rootId": "FreeW.Wpf",
-            "codeLines": 42474,
+            "codeLines": 42478,
             "duplicateLines": 663,
-            "coveragePercent": 1.560955
+            "coveragePercent": 1.560808
           },
           {
             "rootId": "FreeX.Avalonia",
@@ -9648,11 +9648,11 @@
       {
         "rootId": "FreeP.Wpf.App",
         "path": "freep/FreeP.App.Host/Program.cs",
-        "physicalLines": 45,
-        "nonBlankLines": 41,
-        "codeLines": 31,
-        "sha256": "4ab244218a4c403360fd50c4bfdafc7faf935b46ab80970dfbe5169634df1e2b",
-        "normalizedSha256": "e6b0562bdee3f5b767bfa1217071b43fd28302e817a99ab08099fef6b2b8d52a"
+        "physicalLines": 47,
+        "nonBlankLines": 43,
+        "codeLines": 33,
+        "sha256": "3eca3727f0164354d52f75b060aa8c5723279a240f1b0c82f03870c1a9de0a75",
+        "normalizedSha256": "5c488f9d6bd0cdcb5d30236c4795014557c69db8d1f97e18683a122485f36fae"
       },
       {
         "rootId": "FreeP.Wpf.App",
@@ -14931,11 +14931,11 @@
       {
         "rootId": "FreeW.Wpf",
         "path": "freew/FreeW.App.Host/Program.cs",
-        "physicalLines": 40,
-        "nonBlankLines": 37,
-        "codeLines": 29,
-        "sha256": "a04845cea1501e724d7678e1caf2466449ee096f4add63f2268b7406ab61fd2e",
-        "normalizedSha256": "d2ee8f541194c48ffcddc260cbbac84b9cea42d6dc4647d0200d36895b54fb94"
+        "physicalLines": 47,
+        "nonBlankLines": 43,
+        "codeLines": 33,
+        "sha256": "c1d431b3d1ff8172762dfde71abf197e0a86cec2251756bb8c4bdd55747da082",
+        "normalizedSha256": "73147ac56ca047c8b0d348eb1b482c1ddf5317f0caec42d81213da220b40168b"
       },
       {
         "rootId": "FreeW.Wpf",
