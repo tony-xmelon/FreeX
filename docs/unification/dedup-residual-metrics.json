@@ -29,11 +29,11 @@
   },
   "repository": {
     "analysisRevision": "HEAD",
-    "analysisCommit": "0d7f981960f1bb534bdeab210a25235b69f79f75",
+    "analysisCommit": "3cd08a96996ac6749f5a5e89cb09dca2d03c2cbf",
     "upstreamRevision": "origin/main",
-    "upstreamCommit": "2a21a1a97b307f2f6395800d9d1d173363bb9c95",
-    "mergeBaseCommit": "2a21a1a97b307f2f6395800d9d1d173363bb9c95",
-    "inputTreeSha256": "0adede9ef1c43912f2bd97551f4c6d04c0588ba728b57037313f8a306246b842",
+    "upstreamCommit": "3c8cb1ecb98f2d8be5d4056aef51664e3c6da1ad",
+    "mergeBaseCommit": "3c8cb1ecb98f2d8be5d4056aef51664e3c6da1ad",
+    "inputTreeSha256": "bf6e8fae6a71614f4eebc841aca526f0cbad35a4772eebab2b065837aac3d67e",
     "campaignLocDelta": {
       "allCSharp": {
         "filesChanged": 8,
@@ -67,9 +67,9 @@
         "platform": "Avalonia",
         "path": "src/FreeX.App.Avalonia",
         "fileCount": 169,
-        "physicalLines": 81571,
-        "nonBlankLines": 72735,
-        "codeLines": 66460
+        "physicalLines": 81581,
+        "nonBlankLines": 72744,
+        "codeLines": 66466
       },
       {
         "id": "FreeW.Wpf",
@@ -77,9 +77,9 @@
         "platform": "WPF",
         "path": "freew/FreeW.App.Host",
         "fileCount": 117,
-        "physicalLines": 56343,
-        "nonBlankLines": 50676,
-        "codeLines": 42459
+        "physicalLines": 56382,
+        "nonBlankLines": 50712,
+        "codeLines": 42474
       },
       {
         "id": "FreeW.Avalonia",
@@ -87,9 +87,9 @@
         "platform": "Avalonia",
         "path": "freew/FreeW.App.Avalonia",
         "fileCount": 95,
-        "physicalLines": 57636,
-        "nonBlankLines": 51875,
-        "codeLines": 46543
+        "physicalLines": 57658,
+        "nonBlankLines": 51896,
+        "codeLines": 46557
       },
       {
         "id": "FreeP.Wpf.App",
@@ -97,9 +97,9 @@
         "platform": "WPF",
         "path": "freep/FreeP.App.Host",
         "fileCount": 65,
-        "physicalLines": 18296,
-        "nonBlankLines": 16381,
-        "codeLines": 15425
+        "physicalLines": 18297,
+        "nonBlankLines": 16382,
+        "codeLines": 15426
       },
       {
         "id": "FreeP.Wpf.Rendering",
@@ -117,9 +117,9 @@
         "platform": "Avalonia",
         "path": "freep/FreeP.App.Avalonia",
         "fileCount": 55,
-        "physicalLines": 19465,
-        "nonBlankLines": 17521,
-        "codeLines": 16938
+        "physicalLines": 19476,
+        "nonBlankLines": 17532,
+        "codeLines": 16945
       },
       {
         "id": "FreeP.Avalonia.Rendering",
@@ -157,9 +157,9 @@
         "platform": "Neutral",
         "path": "freew/FreeW.App.Presentation",
         "fileCount": 318,
-        "physicalLines": 69410,
-        "nonBlankLines": 61520,
-        "codeLines": 58563
+        "physicalLines": 69449,
+        "nonBlankLines": 61555,
+        "codeLines": 58586
       },
       {
         "id": "FreeP.Presentation",
@@ -167,9 +167,9 @@
         "platform": "Neutral",
         "path": "freep/FreeP.App.Presentation",
         "fileCount": 364,
-        "physicalLines": 138471,
-        "nonBlankLines": 122967,
-        "codeLines": 116387
+        "physicalLines": 138533,
+        "nonBlankLines": 123023,
+        "codeLines": 116411
       },
       {
         "id": "Shared",
@@ -177,28 +177,28 @@
         "platform": "Neutral",
         "path": "shared",
         "fileCount": 437,
-        "physicalLines": 62793,
-        "nonBlankLines": 55130,
-        "codeLines": 49348
+        "physicalLines": 62939,
+        "nonBlankLines": 55261,
+        "codeLines": 49422
       }
     ],
     "totals": {
       "fileCount": 2580,
-      "physicalLines": 726919,
-      "nonBlankLines": 644535,
-      "codeLines": 587920
+      "physicalLines": 727249,
+      "nonBlankLines": 644835,
+      "codeLines": 588084
     },
     "duplicateCoverage": {
       "exact": {
-        "codeLines": 587920,
+        "codeLines": 588084,
         "duplicateLines": 7390,
-        "percent": 1.256974,
+        "percent": 1.256623,
         "byRoot": [
           {
             "rootId": "FreeP.Avalonia.App",
-            "codeLines": 16938,
+            "codeLines": 16945,
             "duplicateLines": 2399,
-            "coveragePercent": 14.16342
+            "coveragePercent": 14.157569
           },
           {
             "rootId": "FreeP.Avalonia.Rendering",
@@ -208,15 +208,15 @@
           },
           {
             "rootId": "FreeP.Presentation",
-            "codeLines": 116387,
+            "codeLines": 116411,
             "duplicateLines": 69,
-            "coveragePercent": 0.059285
+            "coveragePercent": 0.059273
           },
           {
             "rootId": "FreeP.Wpf.App",
-            "codeLines": 15425,
+            "codeLines": 15426,
             "duplicateLines": 2385,
-            "coveragePercent": 15.461912
+            "coveragePercent": 15.46091
           },
           {
             "rootId": "FreeP.Wpf.Rendering",
@@ -226,27 +226,27 @@
           },
           {
             "rootId": "FreeW.Avalonia",
-            "codeLines": 46543,
+            "codeLines": 46557,
             "duplicateLines": 675,
-            "coveragePercent": 1.450272
+            "coveragePercent": 1.449836
           },
           {
             "rootId": "FreeW.Presentation",
-            "codeLines": 58563,
+            "codeLines": 58586,
             "duplicateLines": 81,
-            "coveragePercent": 0.138313
+            "coveragePercent": 0.138258
           },
           {
             "rootId": "FreeW.Wpf",
-            "codeLines": 42459,
+            "codeLines": 42474,
             "duplicateLines": 634,
-            "coveragePercent": 1.493205
+            "coveragePercent": 1.492678
           },
           {
             "rootId": "FreeX.Avalonia",
-            "codeLines": 66460,
+            "codeLines": 66466,
             "duplicateLines": 126,
-            "coveragePercent": 0.189588
+            "coveragePercent": 0.189571
           },
           {
             "rootId": "FreeX.Presentation",
@@ -268,22 +268,22 @@
           },
           {
             "rootId": "Shared",
-            "codeLines": 49348,
+            "codeLines": 49422,
             "duplicateLines": 34,
-            "coveragePercent": 0.068898
+            "coveragePercent": 0.068795
           }
         ]
       },
       "normalized": {
-        "codeLines": 587920,
+        "codeLines": 588084,
         "duplicateLines": 8774,
-        "percent": 1.49238,
+        "percent": 1.491964,
         "byRoot": [
           {
             "rootId": "FreeP.Avalonia.App",
-            "codeLines": 16938,
+            "codeLines": 16945,
             "duplicateLines": 2541,
-            "coveragePercent": 15.001771
+            "coveragePercent": 14.995574
           },
           {
             "rootId": "FreeP.Avalonia.Rendering",
@@ -293,15 +293,15 @@
           },
           {
             "rootId": "FreeP.Presentation",
-            "codeLines": 116387,
+            "codeLines": 116411,
             "duplicateLines": 247,
-            "coveragePercent": 0.212223
+            "coveragePercent": 0.212179
           },
           {
             "rootId": "FreeP.Wpf.App",
-            "codeLines": 15425,
+            "codeLines": 15426,
             "duplicateLines": 2531,
-            "coveragePercent": 16.408428
+            "coveragePercent": 16.407364
           },
           {
             "rootId": "FreeP.Wpf.Rendering",
@@ -311,27 +311,27 @@
           },
           {
             "rootId": "FreeW.Avalonia",
-            "codeLines": 46543,
+            "codeLines": 46557,
             "duplicateLines": 702,
-            "coveragePercent": 1.508283
+            "coveragePercent": 1.507829
           },
           {
             "rootId": "FreeW.Presentation",
-            "codeLines": 58563,
+            "codeLines": 58586,
             "duplicateLines": 316,
-            "coveragePercent": 0.53959
+            "coveragePercent": 0.539378
           },
           {
             "rootId": "FreeW.Wpf",
-            "codeLines": 42459,
+            "codeLines": 42474,
             "duplicateLines": 663,
-            "coveragePercent": 1.561506
+            "coveragePercent": 1.560955
           },
           {
             "rootId": "FreeX.Avalonia",
-            "codeLines": 66460,
+            "codeLines": 66466,
             "duplicateLines": 140,
-            "coveragePercent": 0.210653
+            "coveragePercent": 0.210634
           },
           {
             "rootId": "FreeX.Presentation",
@@ -353,9 +353,9 @@
           },
           {
             "rootId": "Shared",
-            "codeLines": 49348,
+            "codeLines": 49422,
             "duplicateLines": 152,
-            "coveragePercent": 0.308017
+            "coveragePercent": 0.307555
           }
         ]
       }
@@ -632,8 +632,8 @@
           "endLineA": 2974,
           "rootB": "FreeP.Wpf.App",
           "fileB": "freep/FreeP.App.Host/MainWindow.cs",
-          "startLineB": 3858,
-          "endLineB": 3885,
+          "startLineB": 3859,
+          "endLineB": 3886,
           "sourceLineCount": 27,
           "normalizedCharacterCount": 815
         },
@@ -853,8 +853,8 @@
           "endLineA": 3147,
           "rootB": "FreeP.Wpf.App",
           "fileB": "freep/FreeP.App.Host/MainWindow.cs",
-          "startLineB": 3951,
-          "endLineB": 3973,
+          "startLineB": 3952,
+          "endLineB": 3974,
           "sourceLineCount": 22,
           "normalizedCharacterCount": 634
         },
@@ -1594,8 +1594,8 @@
           "endLineA": 3460,
           "rootB": "FreeP.Wpf.App",
           "fileB": "freep/FreeP.App.Host/MainWindow.cs",
-          "startLineB": 4138,
-          "endLineB": 4154,
+          "startLineB": 4139,
+          "endLineB": 4155,
           "sourceLineCount": 16,
           "normalizedCharacterCount": 438
         },
@@ -1763,8 +1763,8 @@
           "endLineA": 2945,
           "rootB": "FreeP.Wpf.App",
           "fileB": "freep/FreeP.App.Host/MainWindow.cs",
-          "startLineB": 3840,
-          "endLineB": 3856,
+          "startLineB": 3841,
+          "endLineB": 3857,
           "sourceLineCount": 15,
           "normalizedCharacterCount": 436
         },
@@ -2023,8 +2023,8 @@
           "endLineA": 2917,
           "rootB": "FreeP.Wpf.App",
           "fileB": "freep/FreeP.App.Host/MainWindow.cs",
-          "startLineB": 3815,
-          "endLineB": 3828,
+          "startLineB": 3816,
+          "endLineB": 3829,
           "sourceLineCount": 14,
           "normalizedCharacterCount": 396
         },
@@ -2270,8 +2270,8 @@
           "endLineA": 3080,
           "rootB": "FreeP.Wpf.App",
           "fileB": "freep/FreeP.App.Host/MainWindow.cs",
-          "startLineB": 3896,
-          "endLineB": 3909,
+          "startLineB": 3897,
+          "endLineB": 3910,
           "sourceLineCount": 13,
           "normalizedCharacterCount": 346
         },
@@ -2764,8 +2764,8 @@
           "endLineA": 3109,
           "rootB": "FreeP.Wpf.App",
           "fileB": "freep/FreeP.App.Host/MainWindow.cs",
-          "startLineB": 3923,
-          "endLineB": 3935,
+          "startLineB": 3924,
+          "endLineB": 3936,
           "sourceLineCount": 12,
           "normalizedCharacterCount": 284
         },
@@ -3532,8 +3532,8 @@
           "endLineA": 2974,
           "rootB": "FreeP.Wpf.App",
           "fileB": "freep/FreeP.App.Host/MainWindow.cs",
-          "startLineB": 3858,
-          "endLineB": 3885,
+          "startLineB": 3859,
+          "endLineB": 3886,
           "sourceLineCount": 27,
           "normalizedCharacterCount": 801,
           "exactEquivalent": true
@@ -3826,8 +3826,8 @@
           "endLineA": 3147,
           "rootB": "FreeP.Wpf.App",
           "fileB": "freep/FreeP.App.Host/MainWindow.cs",
-          "startLineB": 3951,
-          "endLineB": 3973,
+          "startLineB": 3952,
+          "endLineB": 3974,
           "sourceLineCount": 22,
           "normalizedCharacterCount": 609,
           "exactEquivalent": true
@@ -5016,8 +5016,8 @@
           "endLineA": 3460,
           "rootB": "FreeP.Wpf.App",
           "fileB": "freep/FreeP.App.Host/MainWindow.cs",
-          "startLineB": 4138,
-          "endLineB": 4154,
+          "startLineB": 4139,
+          "endLineB": 4155,
           "sourceLineCount": 16,
           "normalizedCharacterCount": 425,
           "exactEquivalent": true
@@ -5240,8 +5240,8 @@
           "endLineA": 2945,
           "rootB": "FreeP.Wpf.App",
           "fileB": "freep/FreeP.App.Host/MainWindow.cs",
-          "startLineB": 3840,
-          "endLineB": 3856,
+          "startLineB": 3841,
+          "endLineB": 3857,
           "sourceLineCount": 15,
           "normalizedCharacterCount": 437,
           "exactEquivalent": true
@@ -5674,8 +5674,8 @@
           "endLineA": 2917,
           "rootB": "FreeP.Wpf.App",
           "fileB": "freep/FreeP.App.Host/MainWindow.cs",
-          "startLineB": 3815,
-          "endLineB": 3828,
+          "startLineB": 3816,
+          "endLineB": 3829,
           "sourceLineCount": 14,
           "normalizedCharacterCount": 390,
           "exactEquivalent": true
@@ -6136,8 +6136,8 @@
           "endLineA": 3080,
           "rootB": "FreeP.Wpf.App",
           "fileB": "freep/FreeP.App.Host/MainWindow.cs",
-          "startLineB": 3896,
-          "endLineB": 3909,
+          "startLineB": 3897,
+          "endLineB": 3910,
           "sourceLineCount": 13,
           "normalizedCharacterCount": 358,
           "exactEquivalent": true
@@ -6766,8 +6766,8 @@
           "endLineA": 3109,
           "rootB": "FreeP.Wpf.App",
           "fileB": "freep/FreeP.App.Host/MainWindow.cs",
-          "startLineB": 3923,
-          "endLineB": 3935,
+          "startLineB": 3924,
+          "endLineB": 3936,
           "sourceLineCount": 12,
           "normalizedCharacterCount": 299,
           "exactEquivalent": true
@@ -8766,11 +8766,11 @@
       {
         "rootId": "FreeP.Avalonia.App",
         "path": "freep/FreeP.App.Avalonia/App.cs",
-        "physicalLines": 55,
-        "nonBlankLines": 49,
-        "codeLines": 43,
-        "sha256": "3e7a2345ac98fb5cd213636846126ade2a80643a6bec2af91aceed9115e3080d",
-        "normalizedSha256": "4bf506afc9e04775a17cb1349c42572da1b31b156d1ee855e46638bc7c018072"
+        "physicalLines": 65,
+        "nonBlankLines": 59,
+        "codeLines": 49,
+        "sha256": "3216198b23415d0bc4b154bbfe4aab6952f03799e14a75fa54ed2de39dcfa639",
+        "normalizedSha256": "cb542caa48cfc3e4d1da560bdd1b0a737732bdd8b9c56b33bd8bc31e2d295217"
       },
       {
         "rootId": "FreeP.Avalonia.App",
@@ -9045,11 +9045,11 @@
       {
         "rootId": "FreeP.Avalonia.App",
         "path": "freep/FreeP.App.Avalonia/MainWindow.cs",
-        "physicalLines": 8110,
-        "nonBlankLines": 7345,
-        "codeLines": 7112,
-        "sha256": "3be50c9cf3cd14d1ee0476602ce741bfab23879ef32a7edf0e468c519d9514a3",
-        "normalizedSha256": "9d2fe859d8683facc8a10d81bc7ea508a09efd509f84c50549c1cc11fec7e27a"
+        "physicalLines": 8111,
+        "nonBlankLines": 7346,
+        "codeLines": 7113,
+        "sha256": "56b80e34eaf89fb469cc8fd58e187300734d9259b058f6cff727fe7c5ef85faf",
+        "normalizedSha256": "61a08e80924faa2e719367e00d54a80ec6572718b63c1c1661b6711d56abc010"
       },
       {
         "rootId": "FreeP.Avalonia.App",
@@ -9549,11 +9549,11 @@
       {
         "rootId": "FreeP.Wpf.App",
         "path": "freep/FreeP.App.Host/MainWindow.cs",
-        "physicalLines": 4444,
-        "nonBlankLines": 4024,
-        "codeLines": 3755,
-        "sha256": "bc14b0257767b109353de80a7a5e7daea29571684f3e2a6a662c60ae658ee2a3",
-        "normalizedSha256": "a847e880d99426a61de2dcf835396d2e5e081a9b050f805321c5ec5cc0b456f5"
+        "physicalLines": 4445,
+        "nonBlankLines": 4025,
+        "codeLines": 3756,
+        "sha256": "9d9139340611940177380d07f50c15f2f54568caeebb1397d47e98de5ffbf689",
+        "normalizedSha256": "0717cdf3d3dcb241b645b73e1c7241a9b7e5e9cd463a91b5faf19e43265f2b4d"
       },
       {
         "rootId": "FreeP.Wpf.App",
@@ -12717,11 +12717,11 @@
       {
         "rootId": "FreeP.Presentation",
         "path": "freep/FreeP.App.Presentation/SlideShowWindowLaunchCoordinator.cs",
-        "physicalLines": 136,
-        "nonBlankLines": 123,
-        "codeLines": 109,
-        "sha256": "f14ee66a53f77468918a3627f794a10bf3f5e2aa3b974c9961f97b43cd65091f",
-        "normalizedSha256": "9fe9f3e7a02181543ae174031876806919c365f6acfa7eaf766e8530c5291c67"
+        "physicalLines": 198,
+        "nonBlankLines": 179,
+        "codeLines": 133,
+        "sha256": "3efa8dc09d49e2059a23b8c3f7f9f79cf32ac01e0ceb0df1428de5c1f9f56035",
+        "normalizedSha256": "ba1a47668c941cfb6e81d248b208437cfbdfb6ed5236aac9b8c0e947fec307e4"
       },
       {
         "rootId": "FreeP.Presentation",
@@ -13329,11 +13329,11 @@
       {
         "rootId": "FreeW.Avalonia",
         "path": "freew/FreeW.App.Avalonia/App.cs",
-        "physicalLines": 123,
-        "nonBlankLines": 111,
-        "codeLines": 75,
-        "sha256": "e874d0e5cb129c2b4ad588f2c4682d6abbfa750f364dbdbdc4f06583e06809c0",
-        "normalizedSha256": "8df05edd9e9083d7975581189b09ccbaf572eb76432bae308cdff4d3e4b8c973"
+        "physicalLines": 133,
+        "nonBlankLines": 121,
+        "codeLines": 81,
+        "sha256": "235c247a16703d49f87babead20f113fc542f8af4444c57595e4ebea53383f30",
+        "normalizedSha256": "a1b2d4da2e532bd1608244afd9875fb0e85b628e84ccc56c4fc8b4bc83dbbcd8"
       },
       {
         "rootId": "FreeW.Avalonia",
@@ -13788,11 +13788,11 @@
       {
         "rootId": "FreeW.Avalonia",
         "path": "freew/FreeW.App.Avalonia/PageLayoutDialogs.cs",
-        "physicalLines": 650,
-        "nonBlankLines": 582,
-        "codeLines": 579,
-        "sha256": "80582ee46bb94bf7e4fd970203ad14cb5e1d0343b35b1e0c09108096e7da8acb",
-        "normalizedSha256": "4d57e64bc5252a3498ce5c82d163c7197d6c95d8a9b7e99f909a8a079a5c4304"
+        "physicalLines": 662,
+        "nonBlankLines": 593,
+        "codeLines": 587,
+        "sha256": "7f4033ef3f331a9d5db7a32011006c7437b64f757979a5a3de366c4200c59e8d",
+        "normalizedSha256": "ae48a74138c9f9c7cdbdb569abc8bf753172d7b1365786073332af714a53c0ba"
       },
       {
         "rootId": "FreeW.Avalonia",
@@ -14418,11 +14418,11 @@
       {
         "rootId": "FreeW.Wpf",
         "path": "freew/FreeW.App.Host/DropCapOptionsDialog.cs",
-        "physicalLines": 121,
-        "nonBlankLines": 107,
-        "codeLines": 106,
-        "sha256": "e4ac784df126433192fcfd3a1657fba065ef88cb5361ecebb2a2c0544f184b4d",
-        "normalizedSha256": "181a5f4cd23f9ab119fbce7a4fbde8f53b52e5ada1b50779ff3fda6af927e766"
+        "physicalLines": 130,
+        "nonBlankLines": 115,
+        "codeLines": 112,
+        "sha256": "cf6acd590b043158c55893bbd84537775b414345bc6472c8d360a88dfb8c98e6",
+        "normalizedSha256": "945541a77046ccb759598813c6c3f4bfde0c214b125aebbd7755e53ffbe97755"
       },
       {
         "rootId": "FreeW.Wpf",
@@ -14526,11 +14526,11 @@
       {
         "rootId": "FreeW.Wpf",
         "path": "freew/FreeW.App.Host/Editing/Ruler.cs",
-        "physicalLines": 631,
-        "nonBlankLines": 554,
-        "codeLines": 463,
-        "sha256": "5f8a6cfb9aba1e0f0050b3b77e7d31c54e38780ece3f1241d222b04736378f5c",
-        "normalizedSha256": "4e387affd27e4186d34e24f5db7027518172690200686946e323a3356bb57531"
+        "physicalLines": 661,
+        "nonBlankLines": 582,
+        "codeLines": 472,
+        "sha256": "95224739e552a32c7c48f0d4fabdf365917adf14c31ea784a8df7313587cba49",
+        "normalizedSha256": "be5ee60dd4c3878a72db06e4e8dc2ee9e796fd6bea9e7261dea5f6f4f7fb6545"
       },
       {
         "rootId": "FreeW.Wpf",
@@ -15552,11 +15552,11 @@
       {
         "rootId": "FreeW.Presentation",
         "path": "freew/FreeW.App.Presentation/Dialogs/DropCapOptionsDialogPlanner.cs",
-        "physicalLines": 110,
-        "nonBlankLines": 96,
-        "codeLines": 95,
-        "sha256": "f3354c91c3543102fb5c64c28371cce56dc2e6b80cdd55ea6662fad90f4a95d3",
-        "normalizedSha256": "7cc30d7d6d9f14d516b13243e6464f3ee743b36cdd07bbe40e6bd1eaa524c01f"
+        "physicalLines": 140,
+        "nonBlankLines": 123,
+        "codeLines": 110,
+        "sha256": "ad7769cfab0770f884a2dcc4b4ee3bf601fe7cf8411f8ea63a52bb7fc130c684",
+        "normalizedSha256": "7ec91e4d72ac20699fba8177b9e0d9552e6d56ce8d5f3ef1aa32eae2dd03edd3"
       },
       {
         "rootId": "FreeW.Presentation",
@@ -15795,11 +15795,11 @@
       {
         "rootId": "FreeW.Presentation",
         "path": "freew/FreeW.App.Presentation/Dialogs/PageLayoutDialogSessions.cs",
-        "physicalLines": 203,
-        "nonBlankLines": 166,
-        "codeLines": 166,
-        "sha256": "d57aa52b3b42a3a5dd31e7b5f7108db94a24304e937edd93cec3ad5aab5d8c10",
-        "normalizedSha256": "604525d23eee108d81318af4af9a40bfda3de7eaae49ac0c96ca7e32d1bc0b68"
+        "physicalLines": 212,
+        "nonBlankLines": 174,
+        "codeLines": 174,
+        "sha256": "112fa42c1af63ab37cb5802aba70b734abc73fcfd54c2d59662db5d163c02488",
+        "normalizedSha256": "a1caaabde8a4419a885d59d72a571ba505d3d52a6b7b6e6f9025d6fc8bf8e93e"
       },
       {
         "rootId": "FreeW.Presentation",
@@ -18657,11 +18657,11 @@
       {
         "rootId": "Shared",
         "path": "shared/Free.Shared.AppServices/JsonSettingsStore.cs",
-        "physicalLines": 172,
-        "nonBlankLines": 151,
-        "codeLines": 96,
-        "sha256": "16ff93bdfb30d302464f3fb2f3fea31d552ed6fe9bbb4a77066a249ee88e2807",
-        "normalizedSha256": "8890965134aee90f6c32bccc9fb93a79036a9ea9c77118fd6d8824131eb3cbd8"
+        "physicalLines": 215,
+        "nonBlankLines": 190,
+        "codeLines": 116,
+        "sha256": "ced9f2366a681d87f97313b50bf55de6d687c4a7a45ce3d457cfc0da9c743310",
+        "normalizedSha256": "d8bd1989990219ecbea0579fd8d94b3ff10e9eb65ce27db83ef618064d71c905"
       },
       {
         "rootId": "Shared",
@@ -18846,11 +18846,11 @@
       {
         "rootId": "Shared",
         "path": "shared/Free.Shared.AppServices/RecentFilesStore.cs",
-        "physicalLines": 382,
-        "nonBlankLines": 328,
-        "codeLines": 268,
-        "sha256": "5400ceafe61a878bef8a841f1ea84e00617c9f2a50d6074155b5a6302757c326",
-        "normalizedSha256": "b2ffa036b9d92d1b053be0e6c3bf116c5dd44b565bc43452e283298764a73884"
+        "physicalLines": 391,
+        "nonBlankLines": 337,
+        "codeLines": 276,
+        "sha256": "25022bd36b603c4fa0e7a0cd879e0736784f4ed829a080c9cc9d4dbc9f4ccfd0",
+        "normalizedSha256": "fa80057e27657d2bd7423dfc68a6b2d8db6779061e82880229a5a3ed7b9588c2"
       },
       {
         "rootId": "Shared",
@@ -20124,11 +20124,11 @@
       {
         "rootId": "Shared",
         "path": "shared/Free.Shared.Pdf/PortablePdfWriter.cs",
-        "physicalLines": 2222,
-        "nonBlankLines": 2005,
-        "codeLines": 1937,
-        "sha256": "834635f6bc9dff380b91d92963066e95bef16c92be02ac8c290b2d3967bbe54b",
-        "normalizedSha256": "4ed4d6775a947883019004653468980dc283dcdd60bb8dd9edbab365682e7f4d"
+        "physicalLines": 2269,
+        "nonBlankLines": 2046,
+        "codeLines": 1965,
+        "sha256": "a59154c356f262b0e8785fb97cf1ea5676a3289803d82d0b90c537c8c8ca48c5",
+        "normalizedSha256": "e12e95fbec9fb1e72d61ef37389152aa112f6dfa99163e063807084a83417954"
       },
       {
         "rootId": "Shared",
@@ -20790,11 +20790,11 @@
       {
         "rootId": "Shared",
         "path": "shared/Free.Shared.Shell.Avalonia/AvaloniaAppLocalizationBootstrap.cs",
-        "physicalLines": 30,
-        "nonBlankLines": 29,
-        "codeLines": 11,
-        "sha256": "796675b6353c8749eb14c9caa40a7479a255bd124efed14e6efeb3f557c900dc",
-        "normalizedSha256": "985d0a9ecf197707fb646a74b6ed4f1a74bdc6b4e7976ac0e858afed32815ef9"
+        "physicalLines": 60,
+        "nonBlankLines": 56,
+        "codeLines": 24,
+        "sha256": "5a8596fcc76748d1a0952216f46740669e9b2f62b202ca89253bb30285becf1c",
+        "normalizedSha256": "a4ab4a020a64a3c44bd2913ef2a846b873c441dfd371a93fb70e0acc80d1447a"
       },
       {
         "rootId": "Shared",
@@ -21123,11 +21123,11 @@
       {
         "rootId": "Shared",
         "path": "shared/Free.Shared.Shell.Avalonia/SisterAvaloniaStandardDesktopFactory.cs",
-        "physicalLines": 253,
-        "nonBlankLines": 224,
-        "codeLines": 210,
-        "sha256": "35832441edba77c7e3aee82b920f60538d66d9f412cfc871f23fbaac4b2ae2ac",
-        "normalizedSha256": "24f1af05be9fd763ed670225e6e63d51dff275ec0875c270a165df7441f908a0"
+        "physicalLines": 270,
+        "nonBlankLines": 239,
+        "codeLines": 215,
+        "sha256": "08e61c6f91221252403183225c31c8ef2ec206e3c03d76539dfd4c6c5c85c98b",
+        "normalizedSha256": "cb43ed029477def9d9827490bdbee34b5b8174e66073d8198406c240d721e319"
       },
       {
         "rootId": "Shared",
@@ -22032,11 +22032,11 @@
       {
         "rootId": "FreeX.Avalonia",
         "path": "src/FreeX.App.Avalonia/App.cs",
-        "physicalLines": 367,
-        "nonBlankLines": 324,
-        "codeLines": 207,
-        "sha256": "471d20d3c7c16241e9bef9ddd9887a588b306a06803032fbeb33cbd1d62b2533",
-        "normalizedSha256": "df92c5f2973a185f7ce77ce6dc496b1e2ea21601edcd8a262f91ee1fbe749d07"
+        "physicalLines": 377,
+        "nonBlankLines": 333,
+        "codeLines": 213,
+        "sha256": "8a9946a58f0261fb7c610d12abb0697561852347b9d272101bee758f6d51976d",
+        "normalizedSha256": "af006dba1fb585a9ab989a24e464d6d1263559ffe721891a7e735cea299679ac"
       },
       {
         "rootId": "FreeX.Avalonia",
@@ -32011,9 +32011,9 @@
       {
         "name": "FreeP",
         "path": "freep/FreeP.App.Localization/Resources/Strings.resx",
-        "keyCount": 1418,
-        "uniqueValueCount": 1050,
-        "sha256": "b5709f1b71c5f554977a48654eb474ef1704a057eba79b6abba7710e1cc16bce"
+        "keyCount": 1430,
+        "uniqueValueCount": 1062,
+        "sha256": "66a53095205a9de8d30f9f6e536cdd3715ed771c2d7d3460e37452c88b69a520"
       }
     ],
     "pairwiseValueOverlap": [
