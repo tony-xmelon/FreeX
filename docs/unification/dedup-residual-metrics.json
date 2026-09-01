@@ -29,23 +29,23 @@
   },
   "repository": {
     "analysisRevision": "HEAD",
-    "analysisCommit": "c579fe7306e9831304c77deee27b4ee3f868ad23",
+    "analysisCommit": "b94a88aa79350e611157e308b06a5aa1d946d97d",
     "upstreamRevision": "origin/main",
-    "upstreamCommit": "2b734dba5f3bb5d55f7d6bb329d551ab2884ca3e",
-    "mergeBaseCommit": "2b734dba5f3bb5d55f7d6bb329d551ab2884ca3e",
-    "inputTreeSha256": "24ba5797e9af6c67a7658b1de6fea58ea30cea87770e3e6e99a32ebf39c5ee6b",
+    "upstreamCommit": "925b95b2c17cbda1906e19612684bb3e7c79b6a4",
+    "mergeBaseCommit": "925b95b2c17cbda1906e19612684bb3e7c79b6a4",
+    "inputTreeSha256": "131a60ff5ea0fe939cfa54ef8a74ec555ed0b30e1dc3aae6fd77cc744c8320b9",
     "campaignLocDelta": {
       "allCSharp": {
         "filesChanged": 8,
-        "addedLines": 293,
-        "deletedLines": 75,
-        "netLines": 218
+        "addedLines": 160,
+        "deletedLines": 28,
+        "netLines": 132
       },
       "rendererCSharp": {
-        "filesChanged": 2,
-        "addedLines": 82,
-        "deletedLines": 34,
-        "netLines": 48
+        "filesChanged": 3,
+        "addedLines": 35,
+        "deletedLines": 22,
+        "netLines": 13
       }
     }
   },
@@ -137,9 +137,9 @@
         "platform": "Neutral",
         "path": "src/FreeX.App.Presentation",
         "fileCount": 454,
-        "physicalLines": 92251,
-        "nonBlankLines": 80984,
-        "codeLines": 72102
+        "physicalLines": 92252,
+        "nonBlankLines": 80985,
+        "codeLines": 72103
       },
       {
         "id": "FreeX.Services",
@@ -157,9 +157,9 @@
         "platform": "Neutral",
         "path": "freew/FreeW.App.Presentation",
         "fileCount": 318,
-        "physicalLines": 69398,
-        "nonBlankLines": 61509,
-        "codeLines": 58552
+        "physicalLines": 69410,
+        "nonBlankLines": 61520,
+        "codeLines": 58563
       },
       {
         "id": "FreeP.Presentation",
@@ -184,15 +184,15 @@
     ],
     "totals": {
       "fileCount": 2580,
-      "physicalLines": 726816,
-      "nonBlankLines": 644440,
-      "codeLines": 587863
+      "physicalLines": 726829,
+      "nonBlankLines": 644452,
+      "codeLines": 587875
     },
     "duplicateCoverage": {
       "exact": {
-        "codeLines": 587863,
+        "codeLines": 587875,
         "duplicateLines": 7390,
-        "percent": 1.257096,
+        "percent": 1.25707,
         "byRoot": [
           {
             "rootId": "FreeP.Avalonia.App",
@@ -232,9 +232,9 @@
           },
           {
             "rootId": "FreeW.Presentation",
-            "codeLines": 58552,
+            "codeLines": 58563,
             "duplicateLines": 81,
-            "coveragePercent": 0.138339
+            "coveragePercent": 0.138313
           },
           {
             "rootId": "FreeW.Wpf",
@@ -250,7 +250,7 @@
           },
           {
             "rootId": "FreeX.Presentation",
-            "codeLines": 72102,
+            "codeLines": 72103,
             "duplicateLines": 0,
             "coveragePercent": 0.0
           },
@@ -275,9 +275,9 @@
         ]
       },
       "normalized": {
-        "codeLines": 587863,
+        "codeLines": 587875,
         "duplicateLines": 8774,
-        "percent": 1.492525,
+        "percent": 1.492494,
         "byRoot": [
           {
             "rootId": "FreeP.Avalonia.App",
@@ -317,9 +317,9 @@
           },
           {
             "rootId": "FreeW.Presentation",
-            "codeLines": 58552,
+            "codeLines": 58563,
             "duplicateLines": 316,
-            "coveragePercent": 0.539691
+            "coveragePercent": 0.53959
           },
           {
             "rootId": "FreeW.Wpf",
@@ -335,9 +335,9 @@
           },
           {
             "rootId": "FreeX.Presentation",
-            "codeLines": 72102,
+            "codeLines": 72103,
             "duplicateLines": 259,
-            "coveragePercent": 0.359213
+            "coveragePercent": 0.359208
           },
           {
             "rootId": "FreeX.Services",
@@ -16761,7 +16761,7 @@
         "physicalLines": 1426,
         "nonBlankLines": 1298,
         "codeLines": 1191,
-        "sha256": "296e7c440212c198764b3eb2161a66147f7a715ecd50f2ff661d1678793c6c41",
+        "sha256": "cc6c431c56e80899be590bd452ca5d425ed31efe8cd702860705fa61fbd9d2dd",
         "normalizedSha256": "1dde37fbb88b89011d5d7010f491fc979f16b5267443da62cfd96e1a5f845bc9"
       },
       {
@@ -16965,11 +16965,11 @@
       {
         "rootId": "FreeW.Presentation",
         "path": "freew/FreeW.App.Presentation/Panes/NavigationPaneSession.cs",
-        "physicalLines": 281,
-        "nonBlankLines": 250,
-        "codeLines": 246,
-        "sha256": "743c90d04d1cb754a2ef32823b179364cfc185ed74e2d5f44dfcda91d2f9cbcc",
-        "normalizedSha256": "a4f3e84f271a6a684c5a549a9e22a542b4226615c349ae67ecd7e68bbde2b7e7"
+        "physicalLines": 293,
+        "nonBlankLines": 261,
+        "codeLines": 257,
+        "sha256": "43d2001853bf35076ae311b5be4af79c9da4dbe12d3c9467857ae5f1604c9366",
+        "normalizedSha256": "07adf2c80e9c917ce57aca56880a8b2bf8cc48895351a716b09809b4ca97a410"
       },
       {
         "rootId": "FreeW.Presentation",
@@ -26337,7 +26337,7 @@
         "physicalLines": 367,
         "nonBlankLines": 319,
         "codeLines": 319,
-        "sha256": "b1772b5392f031e0839634f977246aba8f6caaf558065d4b28c02c29222e6191",
+        "sha256": "bdada02ac46a5c852de90784766303d5b839ec93bd0739819ae5fedbeb560d37",
         "normalizedSha256": "aee69e9a12c154d9ddad1a74c5d39beeeb068871774da842d44b8414901e2c0e"
       },
       {
@@ -29790,11 +29790,11 @@
       {
         "rootId": "FreeX.Presentation",
         "path": "src/FreeX.App.Presentation/SlicerTimeline/SlicerLayoutModel.cs",
-        "physicalLines": 459,
-        "nonBlankLines": 408,
-        "codeLines": 311,
-        "sha256": "fd86c5528df5650f75a071c600e8989392fe4fb857188744c0b3e296d3aa0fbf",
-        "normalizedSha256": "0b586029bc64c50f862351b75a6587457aa4d313168e88aaf657ee6c0e2286c8"
+        "physicalLines": 458,
+        "nonBlankLines": 407,
+        "codeLines": 310,
+        "sha256": "81e9233ddf0e4ed982c8dedb3dcc44abdedeb676aa1952cedebd8e4372a593b1",
+        "normalizedSha256": "39d40110ad0aebb15d4d6ce5080e328a6eb831fa3685cb17be90fc08ccf13c4e"
       },
       {
         "rootId": "FreeX.Presentation",
@@ -29817,11 +29817,11 @@
       {
         "rootId": "FreeX.Presentation",
         "path": "src/FreeX.App.Presentation/SlicerTimeline/SlicerTimelinePanePlanner.cs",
-        "physicalLines": 406,
-        "nonBlankLines": 346,
-        "codeLines": 328,
-        "sha256": "5d2017500441ad1cdd70c6aa7022651bab718b378980cca70d2320578582562f",
-        "normalizedSha256": "4e6826f733a6178e43b61acbdf82d756b083f22fe733ffb81d82ba0881bf1809"
+        "physicalLines": 408,
+        "nonBlankLines": 348,
+        "codeLines": 330,
+        "sha256": "30969884cf6402d505091ff52ec36becb9a0ce8c8b49038fca5fadca227bcfc8",
+        "normalizedSha256": "8bf25116b8f24fed4399753eec37ad9f6cd3e5970541001f6610e29984d85f72"
       },
       {
         "rootId": "FreeX.Presentation",
