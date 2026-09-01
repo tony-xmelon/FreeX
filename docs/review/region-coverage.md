@@ -238,6 +238,39 @@ never notice that one shell supplied none. That is the r191/r192 test-subject sh
 test written long before this program started. The accessibility lens found that the status control
 r190 added to the Avalonia Drop Cap dialog lacks the automation id its siblings carry.
 
+## Round 194: generalising confirmed findings into sweeps -- zero empty lenses
+
+Round 193 confirmed three defects that were each obviously an INSTANCE of something. r194 turned
+each into a sweep and asked where its siblings were:
+
+  * `Text[..1]` on user text whose result is stored (the Drop Cap surrogate split);
+  * the model field a hand-written copier forgot (chart SeriesNameOverrides);
+  * the second allocator for one id space (FreeP shape ids).
+
+Every lens found something. ZERO came back empty -- the first round in this program where that is
+true, and a sharp contrast with r192's six-of-eight. The lesson is worth keeping: a bug that was
+real once is the best available evidence about where the next one is, and generalising a CONFIRMED
+finding is a far better question than inventing a fresh category.
+
+The strongest result came from the first of those. Four sheet-name sanitizers independently wrote
+`name[..31]` to enforce Excel's 31-CHARACTER limit -- but the slice counts UTF-16 code units. Open a
+.csv whose filename carries an emoji across that boundary, or import a .fxl/.ods/SpreadsheetML file
+with such a sheet name, and the name is truncated to a trailing LONE HIGH SURROGATE. Nothing
+validates it (`ValidateSheetNameStructure` checks length and the invalid-character set, never
+surrogate well-formedness), the workbook opens normally, and then every save to .xlsx throws from
+ClosedXML's `Worksheets.Add` before writing a byte -- permanently, because the name never changes in
+memory. That is a document the user cannot save, reached by naming a file with an emoji. It is the
+same class as the Drop Cap fix one round earlier, and only the generalising sweep found it.
+
+The four call sites now share one `SurrogateSafeTruncation` helper in Free.Shared.IO, beside the XML
+sanitizer, so a fifth caller gets it rather than reintroducing the slice.
+
+The pivot field-index fix is worth noting for WHERE it went. The finding pointed at one unchecked
+`row[field.SourceFieldIndex]`; there are 31 of them. Guarding each would have been busywork with a
+hole in it, so the check went into the reader -- the same chokepoint that already drops the -2
+"Values" placeholder for the identical stated reason, so the model simply cannot hold an impossible
+index any more.
+
 ## Assessed and declined
 
 Findings that survived 2-of-2 verification but that measurement showed did not warrant the change.
@@ -405,17 +438,26 @@ Recorded so they are not re-reported every round.
     this codebase a lone surrogate is XML-illegal and the sanitizer chokepoints abort the WHOLE save,
     so the document became unsaveable -- not merely mis-rendered. Now splits one text element, which
     also keeps combining marks with their base letter.
-40. **Chart clone drops `SeriesNameOverrides`** while copying all ~23 sibling SeriesIndex-keyed
-    fields, so a duplicated or pasted chart loses a custom series name on the next save
-    (`DuplicateSheetDrawingCloner.CloneChart`).
+40. ~~Chart clone drops `SeriesNameOverrides`.~~ **FIXED r194.**
 41. **FreeP shape-id watermark goes stale after Set Slide Layout**, so a later insert can hand out an
     id the layout already used; by-id lookups then resolve to the wrong shape and Delete can remove
     a placeholder the user never selected.
-42. **PivotTable Show Details trusts `SourceFieldIndex` from the file** with no range check against
-    the source row width.
+42. ~~PivotTable Show Details trusts `SourceFieldIndex` from the file.~~ **FIXED r194** at the reader,
+    not at the ~31 unchecked `row[field.SourceFieldIndex]` use sites: the reader now drops a field
+    index outside the cache range, at the same chokepoint that already drops the -2 Values
+    placeholder for the identical reason.
 43. **`InsertCopiedCellsPlanner` updates one of two values that must move together** (sweep 154).
-44. **The r190 Avalonia Drop Cap status control lacks the automation id its siblings carry**
-    (a11y lens, low).
+44. ~~The r190 Avalonia Drop Cap status control lacks the automation id its siblings carry.~~
+    **FIXED r194.** The surface spec never declared a ValidationAutomationId, so there was nothing
+    for the dialog to apply. A test now pins the convention across every page-layout dialog that can
+    reject input, so the next one added inherits it.
 45. **`QuickPartLibrary` is reconstructed per window with no shared state**, so two windows' Quick
     Parts saves overwrite each other independently of the r191/r192 rescue work.
 46. **A FreeX keyboard chord diverges between the shells** (`MainWindow.cs:26350`, shortcut-parity).
+47. ~~Four sheet-name sanitizers truncate with `name[..31]`, able to leave a lone surrogate that makes
+    every later .xlsx save throw.~~ **FIXED r194** via a shared `SurrogateSafeTruncation` helper.
+48. **DropCap enlarges an invisible bidi/joiner mark** when a paragraph starts with LRM/RLM/ZWNJ --
+    the cap run holds only the control character and the real first letter stays at body size. Same
+    "the leading text element is the visible glyph" assumption as the r193 fix, different edge case.
+49. **The .fxl chart serializer drops the secondary axis's own title, scale and format**, so a combo
+    chart's secondary axis rescales after a save/reload through the native format.
