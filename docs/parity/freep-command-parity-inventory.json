@@ -9428,7 +9428,7 @@
     },
     {
       "commandId": "freep.edit-summary-zoom-targets",
-      "label": "[[Ribbon_Command_EditSummaryZoomTargets_Label]]",
+      "label": "Edit Summary Zoom",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "surface": "both",
@@ -9442,7 +9442,7 @@
           "tab": "Insert",
           "groupId": "links",
           "group": "Links",
-          "label": "[[Ribbon_Command_EditSummaryZoomTargets_Label]]",
+          "label": "Edit Summary Zoom",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -9454,7 +9454,7 @@
           "tab": "Insert",
           "groupId": "links",
           "group": "Links",
-          "label": "[[Ribbon_Command_EditSummaryZoomTargets_Label]]",
+          "label": "Edit Summary Zoom",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -9462,7 +9462,7 @@
     },
     {
       "commandId": "freep.edit-zoom-target",
-      "label": "[[Ribbon_Command_ChangeZoomTarget_Label]]",
+      "label": "Change Zoom Target",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "surface": "both",
@@ -9476,7 +9476,7 @@
           "tab": "Insert",
           "groupId": "links",
           "group": "Links",
-          "label": "[[Ribbon_Command_ChangeZoomTarget_Label]]",
+          "label": "Change Zoom Target",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -9488,7 +9488,7 @@
           "tab": "Insert",
           "groupId": "links",
           "group": "Links",
-          "label": "[[Ribbon_Command_ChangeZoomTarget_Label]]",
+          "label": "Change Zoom Target",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -19504,7 +19504,7 @@
     },
     {
       "commandId": "freep.smartart.layout.basic-list",
-      "label": "[[Ribbon_Command_SmartArtBasicList_Label]]",
+      "label": "Basic List",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "surface": "both",
@@ -19518,7 +19518,7 @@
           "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "[[Ribbon_Command_SmartArtBasicList_Label]]",
+          "label": "Basic List",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -19530,7 +19530,7 @@
           "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "[[Ribbon_Command_SmartArtBasicList_Label]]",
+          "label": "Basic List",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -19912,7 +19912,7 @@
     },
     {
       "commandId": "freep.smartart.layout.circle-arrow-process",
-      "label": "[[Ribbon_Command_SmartArtCircleArrowProcess_Label]]",
+      "label": "Circle Arrow Process",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "surface": "both",
@@ -19926,7 +19926,7 @@
           "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "[[Ribbon_Command_SmartArtCircleArrowProcess_Label]]",
+          "label": "Circle Arrow Process",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -19938,7 +19938,7 @@
           "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "[[Ribbon_Command_SmartArtCircleArrowProcess_Label]]",
+          "label": "Circle Arrow Process",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -21272,7 +21272,7 @@
     },
     {
       "commandId": "freep.smartart.layout.radial-list",
-      "label": "[[Ribbon_Command_SmartArtRadialList_Label]]",
+      "label": "Radial List",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "surface": "both",
@@ -21286,7 +21286,7 @@
           "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "[[Ribbon_Command_SmartArtRadialList_Label]]",
+          "label": "Radial List",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -21298,7 +21298,7 @@
           "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "[[Ribbon_Command_SmartArtRadialList_Label]]",
+          "label": "Radial List",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -21646,7 +21646,7 @@
     },
     {
       "commandId": "freep.smartart.layout.vertical-arrow-list",
-      "label": "[[Ribbon_Command_SmartArtVerticalArrowList_Label]]",
+      "label": "Vertical Arrow List",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "surface": "both",
@@ -21660,7 +21660,7 @@
           "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "[[Ribbon_Command_SmartArtVerticalArrowList_Label]]",
+          "label": "Vertical Arrow List",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -21672,7 +21672,7 @@
           "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "[[Ribbon_Command_SmartArtVerticalArrowList_Label]]",
+          "label": "Vertical Arrow List",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }

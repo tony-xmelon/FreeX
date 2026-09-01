@@ -75,6 +75,112 @@ the user clicked in, silently destroying unsaved edits in every other open workb
 ignored a false return from `ApplyAndRestart`, leaving the user on the old version with no message;
 and the Goal Seek error box was titled with a competitor's product name.
 
+## Round 188: the same method, applied again
+
+r188 repeated r187's approach with a fresh question set (sweep classes 122-128, plus a
+half-applied-operation lens and a second-invocation lens). Six findings survived 2-of-2
+verification; four lenses returned empty (122 the guard that validates the wrong instance,
+124 the retry that repeats a side effect, 126 the collection mutated under a held index,
+127 the confident default for a merely-unknown answer).
+
+The meta lens produced the round's most useful result by auditing r187's own commit: the r187
+self-update fix had been written into the WPF shell alone, and the Avalonia twin still had both
+halves of the bug. That is worth recording as a finding about the PROGRAM, not just the code --
+a fix aimed at one shell is not a fix, and the remedy is to move the decision into the shared
+tier rather than to patch the sibling. Both update prompts now come from
+`FreeXSynchronousPromptCatalog`, and the FreeP slideshow launch coordinator takes its new
+liveness/activation callbacks as REQUIRED constructor arguments for the same reason.
+
+One fix shipped without a failing-first test: `AddPivotTableCommand` now records what it
+registered before rendering rather than after, but the render's throw could not be provoked from
+a test. The test written for it passed with the fix reverted, so it was deleted rather than
+shipped -- a green test that cannot fail is worse than none, and this program has already been
+caught once by a vacuous test that counted windows in an assembly that never creates any.
+
+## Round 189: the backlog is not what it said it was
+
+r189 added a lens that re-read every entry in the known-open list against today's code, because
+a list of open defects is an accounting claim and this repo has many sessions committing to main.
+Of the fifteen entries, four turned out to be wrong or already resolved: two were MIS-STATED
+(the sync/async conflict-policy defaults agree; the WPF sibling does not block New Window during
+a save either, so there was no divergence to fix), one was ALREADY FIXED upstream
+(`ApplyAndRestart` does re-query the feed), and one understated its own bug (the Avalonia language
+field was not merely inert -- the dialog promised a restart would apply it).
+
+That is the useful result: "N open findings" was not a measure of remaining defects. It mixed real
+work with entries that had rotted. Any future claim about how much is left has to re-verify the
+list, not count it.
+
+The meta lens again found more in this program's own last commit than most lenses found in the
+product. Two of r188's changes were wrong:
+
+  * the slideshow reuse check compared only liveness, not MODE, so asking for Reading View while a
+    fullscreen show was running silently re-focused the fullscreen window -- and my own r188 test
+    asserted that behaviour, pinning the defect the fix had introduced; and
+  * the two tie-break tests never reached the tie-break. Measured on .NET 10, their chosen pair
+    ("co-op"/"coop") compares non-zero under de-DE collation, so the primary comparison settled it.
+    They passed for the wrong reason. Replaced with NFC/NFD forms of one word, which do compare
+    equal, and with an assertion that both input orders converge -- a property a stable sort does
+    not give you for free.
+
+And the fix for backlog item 5 reached FreeX alone on its first attempt, which is the same
+one-shell trap r188's meta lens caught. It is now wired through the shared sister-app Avalonia
+profile, so FreeW and FreeP get it from the same code path rather than from a remembered edit.
+
+## Round 190: working the backlog down, and the meta lens again
+
+r190 fixed five of the entries the r189 backlog left open (items 5, 6 were r189's; 16, 17, 20 and
+the new 22 are this round's) and recorded six more that the new question set surfaced. Two lenses
+returned empty (137 the comparison against an already-transformed value, 140 the assumption that a
+collection is non-empty).
+
+The meta lens found a defect in r189's own fix for the third round running: the slideshow reuse
+branch it had just corrected still returned before applying the timing intent, so Rehearse Timings
+and Record Timings on an already-running show refocused the window and started no recording. Both
+r188 and r189 touched that method and neither noticed, because every test written for it asserted
+about WINDOWS -- how many were created, which was activated -- and none about what was done to the
+window that was reused.
+
+The bar-chart axis-title fix is worth recording as a shape, not just a defect. The model's X*/Y*
+axis fields denote physical position, and R16/R47/R62/R71 each extended that routing to one more
+property: reverse order, then gridlines, then tick styles and line, then crossBetween. The TITLE
+was never included. Reader and writer stayed symmetric with each other, so every round-trip test
+passed; the renderer, which had always read physically, drew a bar chart's two axis titles on each
+other's axes. A convention applied property-by-property leaves exactly this kind of hole, and only
+a lens that asks about the ODD ONE OUT rather than about round-tripping will find it.
+
+## Round 191: a lens on this program's own tests
+
+The meta lens had found a defect in the previous round's commit three rounds running, and r190
+diagnosed the mechanism: the tests around the changed method asserted about how many WINDOWS were
+created and which was activated, never about what was DONE to the one that was reused. r191 turned
+that into a lens of its own -- "the test that asserts about the wrong subject" -- and asked it of
+the whole suite.
+
+It found the strongest defect of the round, and the reason four rounds of tests could not see it.
+The slideshow reuse branch discarded the new launch ROUTE: the route reaches a window only through
+the plan handed to createWindow, so picking a different custom show while one was already
+presenting refocused the running show and left the audience on the old deck. Every reuse test
+written in r188, r189 and r190 drove the coordinator with the SAME input twice, and the FakeWindow
+fixture had no member recording which route a call carried, so no assertion in any of them could
+have failed. The test added this round varies the route between calls and does fail without the fix.
+
+That is worth stating plainly as a method result: asking "does this test constrain what its name
+claims" is a different question from "is this code correct", and in a suite this large it finds
+things no amount of reading the production code does. The gap was not in the code under test; it
+was in what the tests were looking at.
+
+Also fixed: the shared JsonSettingsStore now keeps an unreadable settings file instead of letting
+the first save overwrite it (no caller in any of the three apps reads LastError, so this hole
+belonged to the store, not to the one consumer that surfaced it); the FreeP camera stop path defers
+disposal like the start path already did; six missing FreeP ribbon resource keys; and the stale
+drag preview the r190 Ruler override left behind.
+
+One fix was tried and REVERTED. Item 27's recalc cancellation cannot be closed as stated: putting
+the token inside RebuildFormulaDependencies leaves a partial dependency graph on cancellation, so a
+later incremental recalc would silently miss dependencies. That is a correctness bug worse than the
+low-severity responsiveness gap it would have fixed, and the entry now says so.
+
 ## Assessed and declined
 
 Findings that survived 2-of-2 verification but that measurement showed did not warrant the change.
@@ -114,12 +220,16 @@ Recorded so they are not re-reported every round.
    passes the gutter-inclusive height, so with a column outline group AND a horizontal split
    every top-pane row selects one row earlier than the one drawn under the cursor. Needs the two
    paths to agree on one height, which touches render, hit-test and divider geometry together.
-5. **Avalonia Options UI-language field is inert.** It validates, persists and reports plain
-   success, but nothing on that platform ever reads it -- `AvaloniaAppLocalizationBootstrap`
-   deliberately leaves CurrentUICulture to the OS. The WPF sibling shows a restart message. Fix
-   is a product decision: hide/disable the field on Avalonia, or say it has no effect there.
-6. **PortablePdfWriter never emits /Info.** Title/Author/Subject/Keywords are dropped in the
-   Skia-unavailable fallback path, so an exported PDF has no document properties.
+5. ~~Avalonia Options UI-language field is inert.~~ **FIXED r189.** The entry was also partly
+   wrong: the Avalonia Options dialog shows the restart notice too (Options_AppLanguageRestartNotice),
+   so the app was promising a restart would apply a setting nothing read -- worse than merely inert.
+   Rather than hide the field, the promise was made true: `AvaloniaAppLocalizationBootstrap` gained
+   `ApplyAppLanguage` (only the WPF FrameworkElement.Language metadata step is toolkit-bound; setting
+   the UI culture is plain BCL) and FreeX Avalonia App.cs calls it at startup as the WPF host does.
+6. ~~PortablePdfWriter never emits /Info.~~ **FIXED r189.** PdfContentDocument already carried
+   Properties and both the Skia and WPF writers stamped them; the portable fallback now appends an
+   Info object (last, so no existing object number shifts) and references it from the trailer.
+   Absent and whitespace-only values are omitted rather than stamped blank.
 7. **Slicer state is not synchronised across the six commands that can change it.** Filtering
    through one entry point leaves the others showing stale selection.
 8. **Crash-recovery snapshot ordering.** The snapshot can be written before the edit that
@@ -127,11 +237,90 @@ Recorded so they are not re-reported every round.
 9. **Drag-and-drop gaps in FreeP and FreeW** relative to FreeX, which supports the same gestures.
 10. **XLTX template save loses VBA.** A macro-enabled template round-tripped through the template
     path drops the project rather than refusing or preserving it.
-11. **`ExternalFileWriteConflictPolicy` default differs between the sync and non-sync paths.**
-12. **Avalonia New Window is not blocked during a save**, unlike the WPF sibling.
+11. ~~`ExternalFileWriteConflictPolicy` default differs between the sync and non-sync paths.~~
+    **MIS-STATED, closed r189.** They agree: `Prepare` evaluates
+    `confirmOverwrite?.Invoke(path) == true`, which is false when the handler is null, and
+    `PrepareAsync` short-circuits on `confirmOverwriteAsync is null`. Both then return `Declined`.
+    The safe default is the one both already have.
+12. ~~Avalonia New Window is not blocked during a save, unlike the WPF sibling.~~
+    **MIS-STATED, closed r189.** The WPF sibling does not block it either:
+    `ApplyLiveWindowCommandState` sets "New Window" to `isEnabled: true` unconditionally and
+    `ViewNewWindowBtn_Click` consults neither `_isSavingFile` nor `_isOpeningFile`. There is no
+    divergence. Whether New Window SHOULD be blocked mid-save is a separate question neither
+    shell has answered, and no harm from it has been demonstrated.
 13. **Row-height pixel quantisation drifts** as rows accumulate, so a long sheet's gridlines
     diverge from the heights the model holds.
 14. **FreeX save prompts omit the document name**, so with several windows open the user cannot
     tell which document is being asked about. FreeW and FreeP name it.
-15. **`ApplyAndRestart` does not re-query the update feed**, so a feed that changed between the
-    check and the click is applied from the stale staged version.
+15. ~~`ApplyAndRestart` does not re-query the update feed.~~ **MIS-STATED, closed r189.**
+    `VelopackUpdateOrchestrator.ApplyAndRestart` calls `_manager.CheckForUpdates()` immediately
+    before `ApplyUpdatesAndRestart(info.TargetFullRelease, ...)` -- a fresh feed check at apply
+    time, not a replay of what `CheckAndDownloadAsync` staged. Both shells route through this one
+    implementation via `IUpdateService`.
+16. ~~FreeW Drop Cap dialog turns unparseable input into a valid default.~~ **FIXED r190.**
+    `BuildResult` became `TryBuildResult`, matching the Columns/Hyphenation/LineNumber siblings in
+    the same file; both shells now show the validation message instead of accepting an invented
+    value. Non-finite distances (NaN/Infinity, which double.TryParse accepts and Math.Clamp passes
+    through) are rejected too. Values the user really typed are still clamped.
+17. ~~Bar-chart axis titles are captured by data role while every sibling property routes by
+    physical position.~~ **FIXED r190.** Titles now follow the same valueAxisOnX / categoryAxisIsOnY
+    routing as the ~15 neighbouring properties, in the reader and mirrored in the writer. The
+    renderer already read them physically (left category axis titled from YAxisTitle), so the two
+    titles had been drawn on each other.s axes. One R43 writer test pinned the old behaviour and
+    was updated: it described the implementation rather than the intent.
+18. **FreeP external OLE edit-back is lost if the owning window closes first.**
+    `OleActivationService` stores sessions in a static, window-agnostic dictionary and awaits the
+    editor's exit with no ownership tie, so the update callback writes into a document that is gone.
+19. **FreeW WPF Font dialog never shows mixed formatting as indeterminate.** `FontDialogCommand`
+    seeds from `editor.CurrentRunFormatting` (a caret-only snapshot); the Avalonia sibling seeds
+    from the selection and does show the indeterminate state.
+20. ~~FreeW Ruler never clears its drag state on lost mouse capture.~~ **FIXED r190.** It now
+    overrides `OnLostMouseCapture` and abandons the gesture without committing, as
+    PaginatedEditorPanel in the same shell already did. Previously an Alt+Tab, a modal dialog, or a
+    cancelled pen gesture mid-drag left the ruler dragging the margin on the next mouse move with
+    no button held.
+21. **Two limit checks compute a bound and do not enforce it**
+    (`CustomViewNameDialog`, `CrossPageUndoCoordinator`), found by sweep class 135.
+22. **Reusing a live slideshow window dropped the timing intent** -- FIXED r190, found by the meta
+    lens auditing r189. Rehearse/Record Timings are ribbon commands with no running-show gate, so
+    invoking either while a show was up took the reuse branch and returned before `_setTimingIntent`
+    was called: the button refocused the show and started no recording.
+23. ~~FreeP camera capture disposes a live MediaCapture while the timed-out stop is still using it.~~
+    **FIXED r191.** RunAsync gained a deferred-disposal parameter and CompleteCapture skips its own
+    finally on TimeoutException, so the capture is released only once the orphaned StopRecordAsync
+    finishes -- the r185 treatment of the start path, now applied to the stop path.
+24. ~~FreeW QuickPartLibrary silently discards a corrupt quickparts.json and then overwrites it.~~
+    **FIXED r191, in the shared store rather than the one caller.** No caller in any of the three
+    apps reads `LastError`, so every consumer of JsonSettingsStore had this hole. The store now
+    copies an unreadable file aside once, before the first overwrite, so the data survives.
+25. **A FreeP Avalonia workarea endpoint command has no reachable handler** (sweep 139).
+26. **FreeP Avalonia slide-show media controller diverges from its writer/reader counterpart**
+    (sweep 141).
+27. **A RecalcEngine cancellation is checked outside the loop that takes the time** (sweep 142).
+28. **FreeW Avalonia undo does not restore every field a document-view command changed**
+    (undo-fidelity lens).
+29. ~~FreeP ribbon references six localization keys absent from every resx.~~ **FIXED r191.** The
+    Change Zoom Target, Edit Summary Zoom and four SmartArt-layout commands showed raw `[[key]]`
+    text on their buttons and keytips; the twelve missing entries were added.
+30. ~~Reusing a live slideshow window discarded the new launch ROUTE.~~ **FIXED r191**, found by the
+    test-subject lens. The route reaches a window only through the plan given to `createWindow`, so
+    picking a different custom show while one was presenting refocused the running show and left the
+    audience on the old deck. Reuse now requires the route to match; a different one replaces the
+    window, as a mode mismatch already did.
+31. ~~The r190 Ruler lost-capture override left the stale drag preview set.~~ **FIXED r191**, found
+    by the meta lens. Visual only -- the committed margin never came from that field.
+32. **RecalcEngine's `#if DEBUG` evaluator-bug safety net never fires in any gate**, because every
+    gate builds and tests Release (`tools/Invoke-TestGate.ps1` defaults Configuration=Release). An
+    unexpected exception from a built-in function becomes a silent `#VALUE!` in every build anyone
+    actually runs.
+33. **FreeP Animation Pane truncates durations to 10ms on focus loss**, round-tripping through
+    2-decimal-second text (`FormatDuration` "0.##" then `TryParseTimingSeconds`).
+34. **FreeP run font size is unbounded before being scaled x100 and cast to int** for the PPTX `sz`
+    attribute, so a large value typed into the editable size combo overflows.
+35. **Wrap Text auto-fits row heights synchronously across the whole selection**, with no progress
+    and no cancel, on the UI thread -- measured to block for a long time at ~200k rows.
+36. **The recalc cancellation gap (item 27) is NOT safely fixable as stated.** Threading the token
+    into `RebuildFormulaDependencies` was tried and reverted: cancelling mid-rebuild leaves a
+    PARTIAL dependency graph, and a later incremental recalc would then silently miss dependencies
+    -- a correctness bug worse than the low-severity responsiveness gap. A real fix needs the graph
+    to be marked invalid on cancellation so the next recalc rebuilds it.

@@ -14,9 +14,10 @@ The pipeline now has one owner for each kind of evidence:
    failed project receives one isolated retry while the first-attempt evidence is retained.
 2. **CodeQL** owns security analysis. It uses GitHub's supported no-build C# extraction, avoiding a
    second instrumented build while retaining automatic main, pull-request, weekly, and manual scans.
-3. **App Tester Release** owns native publish, package-content validation, SBOMs, manifests,
-   checksums, installation transitions, and publication. It requires successful CI and CodeQL runs
-   for the exact immutable SHA and does not rerun their work.
+3. **Full Signed Release** owns native publish, Windows Azure Artifact Signing, macOS Developer ID
+   signing and notarization, package-content validation, SBOMs, manifests, checksums, installation
+   transitions, and publication. It requires successful CI and CodeQL runs for the exact immutable
+   SHA and does not rerun their work.
 
 This makes retries local to the failed responsibility. A packaging defect reruns packaging, not the
 entire source suite. A test defect reruns CI, not a half-completed release. A moving `main` does not
@@ -43,6 +44,6 @@ work cannot keep advancing a broken `main`. `-SkipMainHealthCheck` is for offlin
 not an integration path.
 
 GitHub CI remains the authoritative cross-platform integration suite after the merged commit is
-pushed. The App Tester Release workflow remains the only routine owner of complete UI, rendering,
-installation, package-integrity, and release-only tests. Do not run default, UI, CI, and release
+pushed. The Full Signed Release workflow remains the only routine owner of complete UI, rendering,
+installation, signing/notarization, package-integrity, and release-only tests. Do not run default, UI, CI, and release
 gates serially as equivalent confirmations.
