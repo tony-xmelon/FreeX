@@ -127,6 +127,28 @@ And the fix for backlog item 5 reached FreeX alone on its first attempt, which i
 one-shell trap r188's meta lens caught. It is now wired through the shared sister-app Avalonia
 profile, so FreeW and FreeP get it from the same code path rather than from a remembered edit.
 
+## Round 190: working the backlog down, and the meta lens again
+
+r190 fixed five of the entries the r189 backlog left open (items 5, 6 were r189's; 16, 17, 20 and
+the new 22 are this round's) and recorded six more that the new question set surfaced. Two lenses
+returned empty (137 the comparison against an already-transformed value, 140 the assumption that a
+collection is non-empty).
+
+The meta lens found a defect in r189's own fix for the third round running: the slideshow reuse
+branch it had just corrected still returned before applying the timing intent, so Rehearse Timings
+and Record Timings on an already-running show refocused the window and started no recording. Both
+r188 and r189 touched that method and neither noticed, because every test written for it asserted
+about WINDOWS -- how many were created, which was activated -- and none about what was done to the
+window that was reused.
+
+The bar-chart axis-title fix is worth recording as a shape, not just a defect. The model's X*/Y*
+axis fields denote physical position, and R16/R47/R62/R71 each extended that routing to one more
+property: reverse order, then gridlines, then tick styles and line, then crossBetween. The TITLE
+was never included. Reader and writer stayed symmetric with each other, so every round-trip test
+passed; the renderer, which had always read physically, drew a bar chart's two axis titles on each
+other's axes. A convention applied property-by-property leaves exactly this kind of hole, and only
+a lens that asks about the ODD ONE OUT rather than about round-tripping will find it.
+
 ## Assessed and declined
 
 Findings that survived 2-of-2 verification but that measurement showed did not warrant the change.
@@ -203,22 +225,44 @@ Recorded so they are not re-reported every round.
     before `ApplyUpdatesAndRestart(info.TargetFullRelease, ...)` -- a fresh feed check at apply
     time, not a replay of what `CheckAndDownloadAsync` staged. Both shells route through this one
     implementation via `IUpdateService`.
-16. **FreeW Drop Cap dialog turns unparseable input into a valid default.**
-    `DropCapOptionsDialogPlanner.BuildResult` discards the bool from `int.TryParse`/`double.TryParse`
-    (`_ = int.TryParse(...)`), so junk text leaves 0, which `Math.Clamp` then turns into
-    `LinesToDrop=1`/`DistanceFromTextPt=0` -- values the user never typed, applied with no error.
-17. **Bar-chart axis titles are captured by data role while every sibling axis property routes by
-    physical position.** `XlsxChartAxisReader.ApplyAxisMetadata` computes `valueAxisOnX` and uses it
-    for bounds and reverse-order, but title capture is unconditional, so a bar chart's titles land
-    on the wrong axis.
+16. ~~FreeW Drop Cap dialog turns unparseable input into a valid default.~~ **FIXED r190.**
+    `BuildResult` became `TryBuildResult`, matching the Columns/Hyphenation/LineNumber siblings in
+    the same file; both shells now show the validation message instead of accepting an invented
+    value. Non-finite distances (NaN/Infinity, which double.TryParse accepts and Math.Clamp passes
+    through) are rejected too. Values the user really typed are still clamped.
+17. ~~Bar-chart axis titles are captured by data role while every sibling property routes by
+    physical position.~~ **FIXED r190.** Titles now follow the same valueAxisOnX / categoryAxisIsOnY
+    routing as the ~15 neighbouring properties, in the reader and mirrored in the writer. The
+    renderer already read them physically (left category axis titled from YAxisTitle), so the two
+    titles had been drawn on each other.s axes. One R43 writer test pinned the old behaviour and
+    was updated: it described the implementation rather than the intent.
 18. **FreeP external OLE edit-back is lost if the owning window closes first.**
     `OleActivationService` stores sessions in a static, window-agnostic dictionary and awaits the
     editor's exit with no ownership tie, so the update callback writes into a document that is gone.
 19. **FreeW WPF Font dialog never shows mixed formatting as indeterminate.** `FontDialogCommand`
     seeds from `editor.CurrentRunFormatting` (a caret-only snapshot); the Avalonia sibling seeds
     from the selection and does show the indeterminate state.
-20. **FreeW Ruler never clears its drag state on lost mouse capture.** `_drag` is cleared only in
-    `OnMouseLeftButtonUp`, and the class neither overrides `OnLostMouseCapture` nor subscribes to
-    it -- unlike its two siblings -- so a drag interrupted by capture loss leaves the ruler stuck.
+20. ~~FreeW Ruler never clears its drag state on lost mouse capture.~~ **FIXED r190.** It now
+    overrides `OnLostMouseCapture` and abandons the gesture without committing, as
+    PaginatedEditorPanel in the same shell already did. Previously an Alt+Tab, a modal dialog, or a
+    cancelled pen gesture mid-drag left the ruler dragging the margin on the next mouse move with
+    no button held.
 21. **Two limit checks compute a bound and do not enforce it**
     (`CustomViewNameDialog`, `CrossPageUndoCoordinator`), found by sweep class 135.
+22. **Reusing a live slideshow window dropped the timing intent** -- FIXED r190, found by the meta
+    lens auditing r189. Rehearse/Record Timings are ribbon commands with no running-show gate, so
+    invoking either while a show was up took the reuse branch and returned before `_setTimingIntent`
+    was called: the button refocused the show and started no recording.
+23. **FreeP camera capture disposes a live MediaCapture while the timed-out stop is still using it.**
+    `CompleteCapture`'s finally disposes unconditionally on TimeoutException, while the orphaned
+    `StopRecordAsync` keeps running -- the same hazard the r185 fix deferred disposal for on the
+    START path, never applied to the stop path.
+24. **FreeW QuickPartLibrary silently discards a corrupt quickparts.json and then overwrites it.**
+    `JsonSettingsStore.Load` returns an empty list plus `LastError`; `TryLoad` ignores `LastError`,
+    so the gallery comes up empty and the next save writes the empty set over the user's file.
+25. **A FreeP Avalonia workarea endpoint command has no reachable handler** (sweep 139).
+26. **FreeP Avalonia slide-show media controller diverges from its writer/reader counterpart**
+    (sweep 141).
+27. **A RecalcEngine cancellation is checked outside the loop that takes the time** (sweep 142).
+28. **FreeW Avalonia undo does not restore every field a document-view command changed**
+    (undo-fidelity lens).
