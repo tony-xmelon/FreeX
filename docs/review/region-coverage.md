@@ -1715,3 +1715,36 @@ it is the kind of thing a per-command copy of the comparison would have got inco
 161. 6 tests; reverting the three guards fails 2 of them. The four that still pass are the real-edit
      directions, which is the expected shape: they exist to stop the guards over-reporting, and a
      missing guard cannot make them fail.
+
+## r231 -- a round with no fixes, and why that is the result rather than a failure
+
+162. **Eight commands examined: two judged sound, six moved to known-broken, none fixed.**
+     Outstanding 72 -> **70**, never-examined 36 -> **29**. The outstanding total barely moved while
+     seven commands left the unexamined column, which is what a classification round looks like. It
+     is worth saying plainly rather than dressing up: this round converted unknowns into knowns and
+     fixed nothing, and that is a real result because "nobody looked" and "we looked and it is
+     broken, here is why it is hard" are different states.
+
+163. **Two commands I expected to fix turned out to be sound, and reading them said so.**
+     `ConvertNotesToCommentsCommand` looked like a certain defect -- run Convert twice and the second
+     run converts nothing -- but it already returns Success:false with "All notes already have
+     threaded comments". `DrillDownPivotTableCommand` errors for a disabled drill, a missing table
+     and an empty detail set, and always adds a sheet past those. Expecting a fix is not evidence of
+     one.
+
+164. **`SaveScenarioCommand` and `SaveCustomViewCommand` are the round's most useful entry, because
+     the obvious guard is a trap.** Both replace an existing entry with a freshly captured one, so
+     saving twice with nothing changed in between writes an equal value. Both targets ARE records,
+     so `newValue == previous` looks exactly like r219's technique -- but both records carry LIST
+     members, and record equality compares those by reference, so against a freshly built instance
+     the comparison is always false. The guard would never fire while looking indistinguishable from
+     the ones that work. That is the same objection r229 raised against a post-hoc test on Autofill,
+     arrived at from the opposite direction, and the rule it yields is: a guard that cannot fire is
+     worse than an honest debt entry, because it takes the command off the list without fixing it.
+
+165. **`ReapplyStructuredTableStyleCommand` is a delegation case of a kind r223 and r224 did not
+     have.** Those two delegated to something that reports IsNoOp correctly, so the command was fine
+     and only the scan could not see it. This one returns `ApplyStructuredTableStyleCommand`'s
+     outcome, and that command is itself on the known-broken list -- so it inherits the DEFECT.
+     Delegation propagates both, and fixing the inner command will fix this one for free. Listed
+     separately anyway, so the count stays honest.
