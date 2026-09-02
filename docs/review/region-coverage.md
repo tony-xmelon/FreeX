@@ -1456,3 +1456,33 @@ it is the kind of thing a per-command copy of the comparison would have got inco
 130. `R222_DefinedNameNoOpTests` is 9 tests, including the case-only rename and the
      colliding-formula-deletion cases that a naive guard would have got wrong. Reverting the three
      guards fails 4 of them.
+
+## r223 -- a false unknown, and one family that disagreed with itself
+
+131. **The contract had been reporting a false unknown, and the fix is a fourth list.**
+     `BringDrawingShapeForwardCommand` and `SendDrawingShapeBackwardCommand` DO report IsNoOp -- both
+     return the outcome of `DrawingShapeCommandGuards.TryMoveZOrder`, which has reported
+     `IsNoOp: true` for "already at the front/back" all along. The source scan reads each class body
+     in isolation, so it could not see it, and the two sat in never-examined looking like unknowns.
+     They are not defects and they are not exemptions, so filing them under "judged sound" would
+     have been wrong in a way that matters: those entries say a command CANNOT no-op, and these
+     correctly report that it did. New list, `DeclaresIsNoOpThroughAHelper`, whose value names the
+     delegate -- and a new test parses that helper's body and fails if it stops reporting IsNoOp, so
+     the claim is machine-checked rather than a comment that used to be true.
+
+132. **The outline family disagreed with itself, and three quarters of it was wrong.**
+     `CollapseColGroupCommand` reported IsNoOp on its unresolvable-scope path.
+     `CollapseRowGroupCommand`, `ExpandRowGroupCommand` and `ExpandColGroupCommand` have the same
+     path and returned a plain success -- and none of the four reported the more common case of
+     expanding a group that is already expanded, or collapsing one already collapsed. Clicking the
+     outline gutter or the 1/2/3 level buttons does that constantly.
+     All four now decide through one `OutcomeFor(sheet)` helper per command, using the technique from
+     r221: the two snapshots each command already captures for Revert are taken before anything is
+     touched, so comparing the live sets against them at every exit says exactly whether the outline
+     moved. Three mutation paths, one decision, nothing to keep in step.
+
+133. Outstanding 106 -> **101**, never-examined 86 -> **81**. `R223_OutlineGroupNoOpTests` is 6
+     tests; reverting the guards fails 5 of them. The one that still passes is the
+     collapse-then-collapse-again case's first half, which is a real edit either way -- worth noting
+     because a test that passes in both directions is documenting, not gating, and it should be
+     obvious which is which.
