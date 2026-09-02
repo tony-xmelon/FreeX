@@ -1017,3 +1017,52 @@ line rather than on a class is matching the wrong thing.
     the answer is unknowable without running it, and running it mutates. The remedy is a bus-level
     before/after comparison in `DocumentCommandBus.Execute`, not a command-level override. They stay
     in the contract's known-broken list, annotated, so the ratchet still counts them.
+    **Assessed r207 and deliberately NOT attempted yet.** The bus hook itself is easy -- ask the
+    command after Apply whether anything changed, and skip the push if not. The comparison is not.
+    `Run` is a reference type with a large member graph (text, formatting, image, shape, chart,
+    control, ruby, revision/comment marks), the rebuild delegate allocates NEW Run objects even when
+    the content is identical, and this path carries ordinary formatting edits. A conservative
+    reference-equality check would be safe but would never fire, so it buys nothing; a hand-rolled
+    content comparison that is wrong in the permissive direction SUPPRESSES A REAL EDIT, which is
+    far worse than the phantom undo entry it removes -- the same asymmetry r204 recorded. Doing this
+    properly means real structural equality over the Run graph with its own tests, which is a piece
+    of work in its own right rather than an appendix to a census round.
+
+### Round 207: the last 52, and FreeW's unexamined list reaches zero
+
+The final tranche of FreeW commands nobody had judged: 52 insert, delete, merge, split, revision,
+comment, note, bookmark and catalog commands. 52/52 classified, every claimed no-op checked by two
+verifiers.
+
+  * 39 ALWAYS-CHANGES
+  * 2 claimed no-ops REFUTED
+  * 11 CONFIRMED no-op-capable
+
+**FreeW's "nobody has looked" list is now empty.** All 128 commands have been judged: 47 fixed across
+r203/r204/r206, 26 recorded as known-broken with evidence, and the rest judged sound with a stated
+reason each. The debt ceiling is 26, down from 128.
+
+The distribution is the finding. The earlier tranches were equal-value setters and ran ~90% defective
+(35/39, then 27/37). This tranche of STRUCTURAL commands ran ~21% (11/52). That is not luck: an
+insert has no already-there case, a delete is gated on the thing existing, and a merge is gated on
+two distinct cells. The defect concentrates almost entirely in commands that assign a value the
+target may already hold -- which says where to look first in FreeX and FreeP, and says the census
+was worth partitioning by shape rather than alphabetically.
+
+Two verdicts are worth keeping for their reasoning rather than their outcome:
+
+  * `CarryMergedCellContentCommand` genuinely CAN mutate nothing -- merging a filled cell with blank
+    ones appends nothing. It is still sound, because all three call sites batch it with a
+    `MergeCellsHorizontalCommand` that does mutate, and a batch is pushed as one composite entry. The
+    verdict is about the composite, not the command. Recorded that way rather than as a bare "safe".
+  * `UngroupFloatingObjectsCommand`'s claimed no-op rested on a group with fewer than two children
+    being loadable from .docx. Both verifiers found `DocxReader.ReadDrawingGroup` returns null unless
+    `Children.Count >= 2`, so the state the claim needs cannot be read from a file. The premise, not
+    the mechanism, was wrong.
+94. **11 more FreeW commands are confirmed no-op-capable** (r207 census): ApplyShapeStyle,
+    ApplyTableStyle, ArrangeFloatingObjects, DesignCatalog, DistributeTableColumns/Rows,
+    FormatParagraphRuns, MoveShapeEditPoint, MutateSmartArtStructure, ResetImageSize, SplitCell.
+    Listed in the contract's `KnownNoOpCapableNotYetFixed`.
+95. **FreeW's unexamined command list is EMPTY** (r207). All 128 commands judged: 47 fixed, 26
+    known-broken with evidence, 55 sound with a stated reason. Ceiling 128 -> 26. The class is no
+    longer "partly surveyed" for this app -- what remains is a finite, named list of fixes.
