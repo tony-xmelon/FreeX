@@ -499,24 +499,34 @@ the model has a public settable member the DTO does not. Escape hatches are expl
 entries with a stated reason, never name patterns, and a second test fails if an exemption names a
 member that no longer exists.
 
-It found SEVEN gaps on its first run, where a hand-written script of mine had found four:
+It found seven candidate gaps on its first run, where a hand-written script of mine had found four.
+SIX were real; the seventh was mine to get wrong, and is the most useful part of the round:
 
   * `Sheet.TabThemeColor` -- R123 added it specifically so a theme-linked tab colour is not baked to
     RGB on save. The DTO carried only the resolved `TabColor`, undoing R123 on every round trip.
   * `Sheet.DefaultColumnWidth` / `DefaultRowHeight` -- reset to 8.43 / 20.0 on reopen.
   * `Sheet.CodeName` -- the VBA/OOXML code name, dropped.
-  * `Workbook.NextStructuredTableIdWatermark` -- the id FLOOR r197 established so a deleted table's
-    id is never reissued to a pinned pivot cache. Reopening reset the floor and brought back exactly
-    the collision the watermark exists to prevent.
   * `Cell.QuotePrefix` -- the leading apostrophe behind "Number Stored as Text".
   * `Cell.LegacyArrayRows` / `LegacyArrayCols` -- a legacy CSE array's declared extent, which decides
     where #N/A padding goes. These had to be assigned AFTER the formula on load, because
     `Cell.FormulaText`'s setter zeroes them on every assignment -- the r169 legacy-array class.
 
-Autosave and crash recovery go through this adapter exclusively, so all seven were lost on a
-recovered document, not only on an explicit Save As .fxl.
+Autosave and crash recovery go through this adapter exclusively, so all six were lost on a recovered
+document, not only on an explicit Save As .fxl.
 
-Five more were adjudicated and exempted with reasons: a parse cache, a theme value derived from XML
+The seventh, `Workbook.NextStructuredTableIdWatermark`, I carried too -- reasoning that reopening
+reset the id floor and restored the collision the watermark prevents. The gate refuted it:
+`R109_StructuredTableIdWatermarkPersistenceTests` asserts the reloaded watermark is 0 ON PURPOSE,
+because R109 folds every slicer's and pivot cache's SourceTableId into NextTableId, and that fold --
+not the watermark -- is what blocks reissuing a freed id. The premise of my fix was false and an
+existing test held the evidence. Reverted, and recorded as an exemption WITH that reasoning, so the
+next person to read the diff finds the argument rather than repeating it.
+
+This is the third time in this program that a "gap" turned out to be a deliberate design with a test
+behind it. The rule that keeps proving itself: verify the PREMISE against the sibling path before
+calling something a defect -- including, especially, when the finding is your own.
+
+Five others were adjudicated and exempted with reasons: a parse cache, a theme value derived from XML
 the DTO does carry, the Circle Invalid Data view overlay, and two per-load identities that nothing
 durable stores. Two more were renames rather than gaps (`Cell.FormulaText` is carried as `Formula`,
 `ArrayMode` as `FormulaArrayMode`) and are recorded as checked aliases -- the DTO member must exist,
@@ -810,10 +820,12 @@ Recorded so they are not re-reported every round.
 84. ~~FreeP's print-markup comment-callout truncation cut mid-surrogate.~~ **FIXED r200**, together
     with its PDF-export twin -- which is NOT reachable (PortablePdfWriter throws on non-WinAnsi text
     first) but was fixed identically so the pair cannot drift.
-85. ~~The .fxl serializer dropped seven members of its model types.~~ **FIXED r201:**
+85. ~~The .fxl serializer dropped six members of its model types.~~ **FIXED r201:**
     `Sheet.TabThemeColor` (undoing R123's whole point), `Sheet.DefaultColumnWidth`/`DefaultRowHeight`,
-    `Sheet.CodeName`, `Workbook.NextStructuredTableIdWatermark` (the r197 id floor), `Cell.QuotePrefix`,
-    and `Cell.LegacyArrayRows`/`LegacyArrayCols`. All seven were also lost on autosave/crash recovery.
+    `Sheet.CodeName`, `Cell.QuotePrefix`, and `Cell.LegacyArrayRows`/`LegacyArrayCols`. All six were
+    also lost on autosave/crash recovery. A seventh candidate, the structured-table id watermark, was
+    a FALSE finding of mine -- R109 deliberately does not persist it -- reverted, and the reasoning
+    kept as an exemption.
     **The class is now guarded** by `R201_NativeDtoCoverageContractTests`, which fails when any DTO
     omits a model member -- so this is the first review class retired by a check rather than by
     finding its instances. Its stated limit: it proves a member EXISTS on the DTO, not that both
