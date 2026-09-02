@@ -1344,3 +1344,43 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      so "we know it is broken" and "nobody looked" stay legible as different states, and a second
      bound holds the never-examined column to a separately falling number (**134**) so the combined
      ceiling cannot be satisfied by fixing easy known entries while nobody looks at the rest.
+
+## r220 -- "remove what is not there"
+
+118. **The `Clear*` family, the structural counterpart to the equal-value setter.** Thirteen commands
+     examined (nine Clear, four protection); seven fixed, five judged sound with a reason, one moved
+     to known-broken. Outstanding 151 -> **139**, never-examined 134 -> **121**.
+     These gestures are as ordinary as the setter ones and the ribbon does nothing to stop them:
+     Delete over empty cells, Clear Print Area on a sheet that has none, Clear > Comments over a
+     selection carrying none, Clear Rules where no rule reaches.
+     `ClearContentsCommand` is the standout -- it ALREADY returned early on a null scope, having
+     worked out there was nothing to clear, and simply never said so. Pressing Delete over blank
+     cells pushed an undo entry and cleared the pending redo.
+
+119. **The conditional-format guard decides by reference equality, and that is the precise test
+     rather than a shortcut.** The rebuild loop adds an untouched rule BY REFERENCE, a shrunk rule as
+     a fresh `Clone`, and drops a fully-covered one. So "same count and every element the same
+     object" means exactly "the loop changed nothing". The test that matters is the shrink case: a
+     rule whose range is merely reduced survives as a different object, and a count-only comparison
+     would have called that no change and silently dropped the shrink.
+
+120. **My own guard nearly proved the point about incomplete mirrors -- against me.** For
+     `UnprotectSheetCommand` the obvious guard is `!sheet.IsProtected`. That is wrong twice over: an
+     unprotected sheet loaded from a file can still carry a preserved `ProtectionMetadata` bag which
+     Apply clears (a real change to what gets written back), AND a fresh sheet ships with two default
+     `ProtectionPermissions` which Apply also clears. I wrote the four-clause version, and the
+     behavioural test then failed on the second point -- my fixture had to empty the permission list
+     before the command was genuinely a no-op. The complete mirror was right and my mental model of
+     "unprotected" was not; the one-clause version would have suppressed a real edit.
+
+121. **The protection family is gated at the planner, which is the defence r207 preferred.**
+     `ProtectionWorkflowSession` branches on the current state -- protected sheets get Unprotect,
+     unprotected ones get Protect -- so neither command can be issued against a target already in the
+     state it would produce. Judged sound on the gate, not on the command. The `UnprotectSheet` guard
+     above stays anyway as belt and braces, and is recorded as such rather than as a fix.
+
+122. `ClearPivotTableViewCommand` joins the r219 `RefreshGuarded` group in known-broken for the same
+     stated reason: clearing filters that are already clear replaces empty collections with empty
+     ones, but deciding that means also proving the re-render is unnecessary. `ClearSparklineCommand`
+     is judged sound -- it returns Success:false when the target is missing and otherwise always
+     removes one. `R220_ClearNoOpTests` is 19 tests; reverting the seven guards fails 10 of them.
