@@ -352,6 +352,48 @@ of those apps' Options dialogs DISCLOSE the restart requirement, so the user is 
 is what made the FreeX case severe. Same mechanism, materially different consequence, correctly not
 counted.
 
+## Round 198: the second saturation measurement
+
+r197 could not tell whether a question that yielded had yielded its LAST instance, because the
+instances it found were still unfixed -- a re-sweep would just re-find them. So r198 first fixed
+all four (plus the r197 fix already in the tree), then asked the same five questions again over
+the same ground, with the same brief: an empty answer is the valuable one, and padding destroys
+the measurement.
+
+RESULT: one of five came back empty. The SAME one.
+
+  * re-sweep "second allocator for one id space" -- EMPTY, a second time. Two consecutive empty
+    passes over a question with three confirmed historical instances. This is the strongest
+    exhaustion evidence the program has produced for any single question.
+  * re-sweep "text sliced by UTF-16 char and stored" -- FIFTH instance. Flash Fill derives name
+    abbreviations with `value[0]` in two helpers, and FlashFillCommand writes the prediction into
+    `Cell.Value` for every filled row. A name beginning outside the BMP stored a lone high
+    surrogate; measured against the repo's own ClosedXML build, that does NOT throw here -- it
+    round-trips through the `_xD83D_` escape and comes back as a glyphless box in Excel and FreeX
+    alike. Four rounds of fixes in this class, and a fifth hiding place.
+  * re-sweep "model field the copier forgot" -- found the .fxl sparkline DTO dropping DateAxisRange,
+    the only one of SparklineModel's properties it did not carry, silently reverting a Date Axis
+    Type sparkline to even spacing.
+  * re-sweep "degenerate input still mutates" -- found TWO more phantom-undo commands: Sort over a
+    blank or inverted range, and Bring Forward / Send Backward on an already-frontmost or
+    -backmost object. Both clear redo for a command that changed nothing. The Selection Pane one
+    had an existing test literally NAMED `...AtTopIsNoOp` that never asserted `IsNoOp`.
+  * re-sweep "honoured on screen, ignored on the page" -- found FreeW's Avalonia print preview
+    ignoring Show Markup > Balloons. The preview renders a snapshot and reads four Show Markup
+    toggles from ReviewDisplayState; Balloons is a fifth that lives on DocumentView instead, so it
+    was the one the earlier fix missed -- while Print and Create PDF, which render from the LIVE
+    editor, drew the strip. The WPF host already had this right, which is what made the asymmetry
+    findable.
+
+Zero of the five reports were refuted, which is itself notable: after a round of re-asking spent
+questions, everything reported survived two independent skeptics.
+
+What the two measurements say together: of five questions, one is now empty twice running and four
+have yielded on every pass, including the pass taken after their previous instance was fixed. A
+question does not run dry because it feels finished, and four passes is not enough to spend one.
+Exhaustion of the codebase is not demonstrated and this round moves no closer to demonstrating it;
+what it does establish is a defensible claim about ONE question out of five.
+
 ## Assessed and declined
 
 Findings that survived 2-of-2 verification but that measurement showed did not warrant the change.
@@ -576,14 +618,25 @@ Recorded so they are not re-reported every round.
 63. **Three FreeP commands mutate on degenerate input** rather than declining (r195, sweep 166).
 64. ~~FreeP comment initials derived with `part[0]` and stored.~~ **FIXED r197.** Fourth instance of
     the char-slice class; a lone surrogate reached the OOXML author element and aborted every save.
-65. **The .fxl conditional-format DTO drops 7 of ConditionalFormat's 62 properties** -- theme-linked
-    colour-scale and data-bar colours, and data-bar negative/direction styling, so a round trip
-    through the native format flattens theme references to literal RGB.
-66. **RemoveDuplicateRows pushes a phantom undo entry** on an empty range or when nothing was
-    removed, because its no-op paths omit `IsNoOp` -- which also clears redo.
-67. **FreeP notes-pages and handout PDF/print ignore a table cell's vertical anchor** that both the
-    screen and Full Page Slides honour.
+65. ~~The .fxl conditional-format DTO drops 7 of ConditionalFormat's 62 properties.~~ **FIXED r198**,
+    both directions, with a round-trip test per property group.
+66. ~~RemoveDuplicateRows pushes a phantom undo entry.~~ **FIXED r198.** Re-asking the question then
+    found two more of the same shape -- see 70.
+67. ~~FreeP notes-pages and handout PDF/print ignore a table cell's vertical anchor.~~ **FIXED r198.**
 68. **FreeX Avalonia background save has no cross-window input gate**, unlike the WPF sibling's R115
     fix, so a New Window sibling can mutate the workbook while the save thread enumerates it.
 69. **The FreeW Thesaurus pane applies a synonym to whatever word the caret is on now**, not the
     word its display still shows, because it captures the word once when opened and never re-reads.
+70. ~~Sort and Bring Forward / Send Backward push phantom undo entries.~~ **FIXED r198.** Sort over a
+    blank or inverted range, and a z-order move that falls off either end, all changed nothing and
+    still cleared redo. The sibling `DrawingShapeCommandGuards.TryMoveZOrder` had the identical bug
+    and was fixed alongside, though it currently has no production caller.
+71. ~~Flash Fill derives name initials with `value[0]` and stores the result.~~ **FIXED r198.** Fifth
+    instance of the char-slice class, and the first where the lone surrogate does not throw: measured
+    against this repo's ClosedXML, it round-trips as `_xD83D_` and lands in the cell as a glyphless box.
+72. ~~The .fxl sparkline DTO drops DateAxisRange.~~ **FIXED r198**, both directions. It was the only
+    one of SparklineModel's properties the DTO did not carry.
+73. ~~FreeW's Avalonia print preview ignores Show Markup > Balloons.~~ **FIXED r198.** Balloons lives
+    on DocumentView rather than in ReviewDisplayState, so the snapshot-based preview had nowhere to
+    read it from while Print and Create PDF, rendering from the live editor, drew the strip. The WPF
+    host reads `editor.ShowMarkupBalloons` directly and was already correct.
