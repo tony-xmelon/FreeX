@@ -1784,3 +1784,36 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      clear most of the list at once. The rest are the RefreshGuarded pivot group (r219), the
      AutoFilter group (r225), the record-with-list-members group (r231), and two delegation cases
      that inherit their inner command's defect.
+
+## r233 -- naming the obstacle precisely, and a sixth clean probe
+
+171. **r232 said the remaining FreeX debt shares one obstacle. This round established what that
+     obstacle actually IS, which turns out to be a design question rather than a missing utility.**
+     Thirteen of the fifty known-broken commands need "did the written values DIFFER", not the
+     post-hoc "did we write anything" that fixed their neighbours. The blocker is that
+     `FreeX.Core.Model.Cell` is a plain sealed class with reference equality only -- and it carries
+     `CachedAst`, derived state that must NOT participate in such a comparison. So the fix is not a
+     guard; it is defining what "the same cell" means for this purpose.
+     `CellEditCompanionSnapshot` is the right home for it -- it already captures the cell plus its
+     rich-text runs, hyperlink, metadata and phonetic guide, already has a `Restore` inverse, and the
+     thirteen commands already build a list of these for undo. But this is a partial-mirror hazard
+     across thirteen commands at once, so it needs the r201 treatment: a reflection contract asserting
+     every settable member of `Cell` is either compared or exempted with a reason. Filed as its own
+     task rather than started at the end of a round, because a half-built version of this is worse
+     than none -- it would take thirteen commands off the debt list without fixing them, which is
+     precisely what r229 and r231 refused to do one command at a time.
+
+172. **A sixth defect class probed in FreeW's app layers, and it came back clean too.** Event-handler
+     leaks: subscriptions from a short-lived subscriber to a long-lived publisher. FreeW has exactly
+     seven event publishers outside its controls (`DocumentCommandBus.Changed`,
+     `DocumentEditingSession.Changed`, `OutlineViewController.RowsChanged`, and four read-aloud
+     ones), ten subscriptions to them, and five matching unsubscriptions. Every one of the five
+     un-paired subscriptions turned out to be same-lifetime and therefore not a leak:
+     `OutlineView` constructs the controller it subscribes to, and `DocumentView` constructs its own
+     `DocumentEditingSession` in its own constructor -- so even the scratch/print DocumentViews own
+     their publisher rather than attaching to a shared one.
+     Six classes probed in those layers now (culture-sensitive parse, discarded TryParse, undefined
+     Enum.TryParse, static-event leaks, sync-over-async, and now instance-event leaks), six clean.
+     Still worth repeating what r217 said: probing six classes is not reviewing 183k lines. But six
+     for six is starting to be evidence about where defects in this codebase concentrate, and it is
+     not there.
