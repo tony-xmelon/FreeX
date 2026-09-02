@@ -1418,3 +1418,41 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      rather than a guard bolted on. `PasteRangeAsPictureCommand` is judged sound: the picture arrives
      ready-made and Apply's only mutation is to add it.
      `R221_PasteNoOpTests` is 12 tests; reverting the ten guards fails 8 of them.
+
+## r222 -- four branches that looked alike and were not
+
+127. **The Add/Create/Insert family, 22 commands.** Nineteen judged sound, three fixed. Outstanding
+     128 -> **106**, never-examined 108 -> **86**. Each of the nineteen was read rather than assumed:
+     the mutation that creates the object is unconditional once the guards above it pass, and every
+     guard that can fail returns Success:false rather than a quiet success. There is no path that
+     reaches the add and skips it. That is a reason, not a shrug at a verb.
+
+128. **The three with a same-value path are the defined-name commands, and they needed four
+     different guards for what looks like one situation.** Name Manager's Edit dialog pre-fills the
+     current Refers To, comment and hidden flag, so OK-unchanged redefines a name to what it already
+     is; Create from Selection is idempotent by nature, so running it twice re-defines every name to
+     the range it already has. Reading each branch beat assuming they matched:
+     - The workbook-global RANGE branch REMOVES the key before re-adding it, specifically so a
+       case-only rename ("revenue" -> "Revenue") takes effect -- `Workbook.DefineNamedRange` says so
+       in a comment. So the stored key's casing is part of what the command can change, and its guard
+       compares the stored key ORDINALLY. Without that clause the guard would have swallowed a
+       rename the user explicitly asked for.
+     - The SCOPED range branch assigns through a case-insensitive comparer WITHOUT removing first,
+       so it cannot re-case a key even when asked to, and needs no such clause.
+     - Defining a range deletes a colliding named formula as a side effect, and defining a formula
+       deletes a colliding range. Each guard therefore carries a clause for the other kind: same
+       range in, but a definition disappearing is a real change.
+     - Null metadata means "write WorkbookScope" for ranges and "leave what is stored untouched" for
+       formulas -- the same argument with opposite meanings, documented on the formula overload. The
+       two guards cannot share a shape.
+
+129. **A latent asymmetry found on the way, recorded not fixed.** The case-only-rename fix described
+     in `Workbook.DefineNamedRange`'s comment was applied to the workbook-global overload only. The
+     sheet-scoped overload still assigns through the case-insensitive comparer without removing, so a
+     scoped name cannot be re-cased at all. That is a real inconsistency between two overloads of the
+     same operation, but changing it is a behaviour change needing its own thought and its own tests,
+     not a side effect of a no-op round. Left as a note so the next round has it.
+
+130. `R222_DefinedNameNoOpTests` is 9 tests, including the case-only rename and the
+     colliding-formula-deletion cases that a naive guard would have got wrong. Reverting the three
+     guards fails 4 of them.
