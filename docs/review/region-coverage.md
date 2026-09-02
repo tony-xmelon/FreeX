@@ -1185,3 +1185,13 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      * The gradient additionally forces `HasFill` true and `FillThemeColor` null, so a theme-linked
        fill is a real change even when all three gradient values already match.
      Both cases have tests.
+104. ~~2 more tier-2 FreeX no-op commands.~~ **FIXED r215:** drawing-shape colours and text-box
+     colours. Ceiling 14 -> 12. These two look like siblings and are NOT quite: both have two
+     independently-gated blocks (fill, outline) and both clear `IsSourceLoaded`, but the shape
+     clears it only when something is actually being updated while the text box clears it
+     UNCONDITIONALLY. Copying one mirror to the other would report a no-op for a source-loaded text
+     box with nothing else to change, silently keeping its stale source XML. Both sides of the
+     asymmetry have tests.
+     Worth generalising: "these two are siblings" is a hypothesis to check against the code, not a
+     licence to copy the fix. Three rounds running now, the hazard has been in what a command writes
+     BESIDES the property the user chose.
