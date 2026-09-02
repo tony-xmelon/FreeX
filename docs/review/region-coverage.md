@@ -575,6 +575,49 @@ check asks whether a decision was made rather than what the decision should be. 
 visible -- 32 entries someone had to justify -- and the benefit is that the 133rd command cannot
 inherit the default silently.
 
+## Round 203: the same contract in FreeW, and what to do when the debt is too big to pay at once
+
+r202 retired the no-op class for FreeP by requiring every command to declare. FreeW has the same
+interface and the same default, so the same contract applies -- except that FreeP had 57 commands
+inheriting the default and FreeW has 128. Too many to adjudicate honestly in one round.
+
+The tempting move is a blanket exemption for all 128, which would be a guard that guards nothing. The
+honest one is to split the population by what is actually known about each command, and to make the
+total a ratchet:
+
+  * **judged, with a reason** -- 4, from this round's census.
+  * **known no-op-capable, not yet fixed** -- 32 confirmed defects with the evidence recorded.
+  * **not yet adjudicated** -- 89 nobody has looked at.
+
+Three lists rather than one, because conflating "we looked and it is broken" with "nobody looked"
+lets the first hide inside the second. A test asserts the two debt lists cannot overlap, cannot
+overlap the judged list, and that their TOTAL never exceeds a ceiling each round lowers.
+
+What the contract buys immediately, with 121 entries outstanding: a NEW command cannot join them
+silently. Anything not named fails outright. The debt is closed to new entrants before it is paid
+down -- verified by adding a throwaway command and watching the contract reject it.
+
+The census covered the 39 Set* commands on floating objects, images, shapes, SmartArt and WordArt --
+one coherent family, the equal-value-setter shape. 39/39 classified, 35 confirmed no-op-capable by
+two verifiers each. Three are fixed this round; the family they belong to is the one the codebase had
+already noticed:
+
+`DocumentObjectEditingCoordinator.SetWrap` carries a comment reading "SetFloatingWrapCommand would
+apply as a genuine no-op but still push an inert entry onto the undo stack (it doesn't override
+IDocumentCommand.HasEffect)". Someone diagnosed this exact defect, wrote it down next to the code,
+and left it. That is the argument for contracts over review notes in one sentence: a note records a
+finding, a contract prevents one.
+
+Two of the four ALWAYS-CHANGES verdicts are more interesting than the label suggests.
+`SetShapeRotationCommand` and `SetShapeWrappingCommand` are never constructed anywhere -- both are
+dead, superseded by the SetFloating* equivalents. They pass the contract only because no gesture can
+reach them, so the entries say so explicitly and point at finding 90: the right fix is deletion.
+
+A trap worth recording. `SetFloatingPositionCommand.GetFloatingPlacement` CREATES the placement it
+returns (`??=`). A HasEffect that called it would mutate the document while being asked whether it
+would -- a worse bug than the one being fixed. The overrides use a separate non-creating peek, and
+return true when the placement is absent, because creating one IS a change.
+
 ## Assessed and declined
 
 Findings that survived 2-of-2 verification but that measurement showed did not warrant the change.
@@ -880,3 +923,17 @@ Recorded so they are not re-reported every round.
     chart shape r200 found four instances of. The 32 commands that legitimately inherit the default
     are listed there with the census's reason, including 17 whose claimed no-op two verifiers
     refuted on reachability -- kept as entries so the claim and its answer stay with the code.
+88. ~~FreeW commands inherit `HasEffect => true` with nobody deciding.~~ **GUARDED r203** by
+    `R203_CommandDeclaresHasEffectContractTests`, the FreeW twin of r202's FreeP contract. 128
+    commands inherited the default; 3 are fixed, 4 judged sound, and the remaining 121 are split
+    into "known broken" and "unexamined" behind a ratchet that only ever lowers. A new command
+    cannot join either list silently.
+89. **32 FreeW commands are confirmed no-op-capable and not yet fixed** (r203 census, two verifiers
+    each). All are equal-value setters on floating objects, images, shapes, SmartArt or WordArt:
+    re-confirming the value a ribbon control already shows pushes an undo entry and clears redo.
+    They are listed in the contract test's `KnownNoOpCapableNotYetFixed`, and the ratchet requires
+    that list to shrink.
+90. **`SetShapeRotationCommand` and `SetShapeWrappingCommand` are dead code** (r203). Neither is
+    constructed anywhere; rotation and wrapping both route through the `SetFloating*` equivalents.
+    Recorded rather than deleted in the same round that found them, so the deletion is a change
+    someone makes deliberately rather than a drive-by.
