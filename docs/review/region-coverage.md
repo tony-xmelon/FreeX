@@ -1748,3 +1748,39 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      outcome, and that command is itself on the known-broken list -- so it inherits the DEFECT.
      Delegation propagates both, and fixing the inner command will fix this one for free. Listed
      separately anyway, so the count stays honest.
+
+## r232 -- the never-examined column reaches zero
+
+166. **Twenty-nine commands examined: four fixed, eleven judged sound, fourteen moved to
+     known-broken. `NeverExaminedForThisClass` is now EMPTY.** Every one of FreeX's 233
+     `IWorkbookCommand`s has been looked at for this class. Outstanding 70 -> **50**, which is now
+     entirely known-broken-with-evidence and nothing unknown.
+     That is the milestone r217 set up when it replaced a scope filter with an honest accounting, and
+     it is worth being precise about what it does and does not mean. It means nobody can point at a
+     FreeX command and ask whether anyone checked. It does not mean the class is fixed: 50 commands
+     are recorded as defective, each with a reason and most with the specific obstacle named.
+
+167. **`AllowEditRangeCommand` is the fifth instance of r226's shape** -- `if
+     (!sheet.AllowEditRanges.Contains(_range))` -- the command already knew it had nothing to add and
+     returned a plain success anyway. Five rounds have now found this; the sweep that found it is
+     cheap and should simply be re-run whenever new commands land.
+
+168. **The two Group commands take r223's technique, in the same files it was invented for.** Every
+     mutation is captured for Revert before anything is touched, so comparing the live outline state
+     against those snapshots says exactly whether the group moved. Pressing Ungroup on a selection
+     that carries no outline level writes nothing.
+
+169. **`GoalSeekCommand` needed a clause that stops it over-reporting.** It compares the cell's
+     current NUMBER against the value the solve arrived at -- but a cell holding the TEXT "42" is not
+     a cell holding the number 42, and writing the number over it is a real edit. There is a test for
+     exactly that, because a guard written as "does the cell look like this value" would get it
+     wrong.
+
+170. **What the 50 remaining look like, since the shape of the debt is now the whole story.** Fourteen
+     joined this round and thirteen of those are cell-writing commands held by one boundary: each
+     writes values into a target set its guards have already established is non-empty, so the
+     post-hoc "did we write anything" test is always yes, and deciding whether the written values
+     DIFFER needs a comparison per cell. That is one obstacle, not thirteen, and clearing it would
+     clear most of the list at once. The rest are the RefreshGuarded pivot group (r219), the
+     AutoFilter group (r225), the record-with-list-members group (r231), and two delegation cases
+     that inherit their inner command's defect.
