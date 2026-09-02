@@ -394,6 +394,46 @@ question does not run dry because it feels finished, and four passes is not enou
 Exhaustion of the codebase is not demonstrated and this round moves no closer to demonstrating it;
 what it does establish is a defensible claim about ONE question out of five.
 
+## Round 199: zero of five, and a sixth instance in a file just fixed
+
+The r198 pattern repeated with the four questions that had kept yielding, plus one new question
+generalised from r198's balloons finding. Every instance the previous round found had been fixed
+first, so a re-sweep could only report something new.
+
+RESULT: ZERO of five came back empty. Nothing was refuted.
+
+  * re-sweep "text sliced by UTF-16 char and stored" -- SIXTH instance, and the most instructive
+    one in the program. It is in `FlashFillService.cs`, the very file r198 fixed: a second helper,
+    `GetEmailNameInitial`, reimplements the extraction that `GetFirstInitial` does safely two calls
+    away, so fixing the one left all nine email-address patterns still building an address from one
+    UTF-16 code unit. Fixing a helper does not fix its copy.
+  * re-sweep "model field the copier forgot" -- `SlideCloner.CloneShape` drops a group's four
+    child-coordinate-space fields (a:chOff/a:chExt), so Duplicate Slide and copy/paste of a group
+    displace everything inside it. Directed away from the .fxl DTOs, which had had three passes, the
+    question found this on the first look at another app.
+  * re-sweep "degenerate input still mutates" -- FreeW's
+    `ChangeDrawingGroupChildZOrderCommand` never overrode `HasEffect`, unlike its sibling in the
+    same file, so Bring Forward on an already-frontmost group child cleared the redo stack.
+  * re-sweep "honoured on screen, ignored on the page" -- FreeP's Avalonia slideshow numbered every
+    slide "1", because `SlideCanvas` trusts a settable `SlideIndex` that `SlideShowWindow` assigns
+    at none of its twenty-odd navigation sites. The editor, the exporter and the WPF twin all get it
+    right; the WPF twin cannot go wrong, because it derives the index from the deck instead of
+    storing a second copy of it. The fix makes Avalonia do the same.
+  * NEW "a group of settings copied all but one, because the missing one lives elsewhere" -- FreeX's
+    Show Outline Symbols (Ctrl+8) was the one View-tab display toggle with no per-window override,
+    so hiding the outline in one New Window sibling hid it in all of them. Zoom, Freeze, Split,
+    Gridlines, Headings, Rulers and Show Formulas each got one across R83/R85/R86/R87/R89; this one
+    was passed over every time.
+
+Two results worth separating. The first is about the code: a question can find a further instance
+in a file it swept the round before, so "swept" is a claim about a pass, not about a file.
+
+The second is about the method. This new question is the second one generalised from a confirmed
+finding (after r194's char-slice sweep), and both found real defects immediately. Inventing a
+category has never worked as well as promoting one the code has already demonstrated. And the class
+it names is invisible to the copier question that ran beside it: listing a source object's members
+cannot reveal a member the source object never had.
+
 ## Assessed and declined
 
 Findings that survived 2-of-2 verification but that measurement showed did not warrant the change.
@@ -640,3 +680,16 @@ Recorded so they are not re-reported every round.
     on DocumentView rather than in ReviewDisplayState, so the snapshot-based preview had nowhere to
     read it from while Print and Create PDF, rendering from the live editor, drew the strip. The WPF
     host reads `editor.ShowMarkupBalloons` directly and was already correct.
+74. ~~Flash Fill's email-address patterns build the local part with `token[0]`.~~ **FIXED r199.**
+    Sixth instance of the char-slice class, in the file r198 fixed: `GetEmailNameInitial`
+    reimplemented what `GetFirstInitial` does safely two calls away.
+75. ~~`SlideCloner.CloneShape` drops a group's child coordinate space.~~ **FIXED r199.** All four
+    a:chOff/a:chExt fields, so Duplicate Slide and paste no longer displace a group's contents.
+76. ~~FreeW's `ChangeDrawingGroupChildZOrderCommand` pushes an inert undo entry.~~ **FIXED r199**,
+    by the `HasEffect` override its sibling in the same file has always had.
+77. ~~FreeP's Avalonia slideshow resolves every Slide Number field as "1".~~ **FIXED r199**, by
+    deriving the index from the deck as the WPF twin does, rather than trusting a second copy of it
+    that the twenty-odd navigation sites never set.
+78. ~~FreeX's Show Outline Symbols has no per-window override.~~ **FIXED r199** across the session,
+    the viewport request, the WPF window snapshot and both shells' Ctrl+8 handlers. It was the one
+    member of the View-tab display group left out of R83/R85/R86/R87/R89.
