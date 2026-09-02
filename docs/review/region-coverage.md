@@ -314,6 +314,44 @@ opt-out. Turning the option back ON mid-session re-enables reporting only if the
 initialised at startup; it is deliberately not re-initialised here, because getting that wrong
 sends data the user did not ask to send.
 
+## Round 197: a saturation test -- measuring whether the questions are exhausted
+
+Nine rounds had asked whether the codebase still holds defects and kept finding that it does. The
+question never asked was whether the QUESTIONS were spent. r197 measured it: five lenses re-asked,
+over the same ground, the exact questions earlier rounds had already swept the whole repo with and
+whose findings were fixed. The brief said plainly that an empty answer was the valuable one and
+must not be padded.
+
+RESULT: one of five came back empty. Four found defects their first pass had missed.
+
+  * re-sweep "second allocator for one id space" -- EMPTY. Three confirmed instances across two
+    apps, all now fixed, and a fourth full pass found nothing. This question looks spent.
+  * re-sweep "text sliced by UTF-16 char and stored" -- found a HIGH, a fourth instance. FreeP
+    derives comment initials with part[0] and stores the result; an author name from dc:creator
+    beginning outside the BMP yields a lone surrogate that goes straight into the OOXML author
+    element, and constructing that XElement throws -- aborting every later .pptx save, permanently.
+    Three rounds had already fixed this class in Drop Cap, four sheet-name sanitizers and four
+    dedup loops. It still had somewhere to hide.
+  * re-sweep "model field the copier forgot" -- found the .fxl conditional-format DTO dropping 7 of
+    62 properties.
+  * re-sweep "degenerate input still mutates" -- found RemoveDuplicateRows pushing a phantom undo
+    entry on an empty range.
+  * re-sweep "honoured on screen, ignored on the page" -- found FreeP notes/handout PDF ignoring a
+    table cell's vertical anchor.
+
+So the honest state is: ONE question of five is exhausted, and it took four passes to establish
+even that. Rounds that find defects are evidence the code is not clean; this round is the first
+evidence about the METHOD, and it says the method's individual questions retain yield well past the
+point where they feel finished. Anyone claiming exhaustion of this codebase would need this
+experiment to come back five-for-five empty, repeatedly.
+
+One finding was REFUTED and the refutation is worth keeping: the meta lens reported that r196's
+crash-consent fix reached FreeX only, since FreeW and FreeP use a different shared implementation
+that still reads consent once at startup. Technically true -- but a verifier established that both
+of those apps' Options dialogs DISCLOSE the restart requirement, so the user is not misled, which
+is what made the FreeX case severe. Same mechanism, materially different consequence, correctly not
+counted.
+
 ## Assessed and declined
 
 Findings that survived 2-of-2 verification but that measurement showed did not warrant the change.
@@ -526,13 +564,26 @@ Recorded so they are not re-reported every round.
     one**, so an entry beginning with LRM/RLM/ZWNJ gets its own heading made of an invisible
     character while sorting correctly next to its letter -- the r194 DropCap class, in the index.
 59. ~~The crash-report opt-in is resolved once at startup and never re-applied.~~ **FIXED r196.**
-60. **DuplicateSheetCommand mints structured-table ids from its own scan** (r195 HIGH), bypassing the
-    watermark that keeps a deleted table's id pinned for a pivot/slicer still bound to it -- the
-    THIRD instance of the "second allocator for one id space" class, after the two FreeP shape-id
-    cases fixed in r195.
+60. ~~DuplicateSheetCommand mints structured-table ids from its own scan.~~ **FIXED r197**, by
+    delegating to CreateStructuredTableCommand.NextTableId -- the allocator that folds in the
+    watermark, the slicers and the pivot caches. A re-sweep of this question then found nothing
+    further, the only re-sweep of five to come back empty.
 61. **Avalonia print preview and PDF export ignore VerticalAlignment, WrapText and TextRotation**
     (r195 HIGH). Honoured by both on-screen grids; lost on the page. Open because the fix is a real
     feature -- line splitting, a vertical anchor and rotated glyph drawing in two builders -- not a
     threading change.
 62. **The lossy-format warning planner does not cover every writer that drops a feature** (r195).
 63. **Three FreeP commands mutate on degenerate input** rather than declining (r195, sweep 166).
+64. ~~FreeP comment initials derived with `part[0]` and stored.~~ **FIXED r197.** Fourth instance of
+    the char-slice class; a lone surrogate reached the OOXML author element and aborted every save.
+65. **The .fxl conditional-format DTO drops 7 of ConditionalFormat's 62 properties** -- theme-linked
+    colour-scale and data-bar colours, and data-bar negative/direction styling, so a round trip
+    through the native format flattens theme references to literal RGB.
+66. **RemoveDuplicateRows pushes a phantom undo entry** on an empty range or when nothing was
+    removed, because its no-op paths omit `IsNoOp` -- which also clears redo.
+67. **FreeP notes-pages and handout PDF/print ignore a table cell's vertical anchor** that both the
+    screen and Full Page Slides honour.
+68. **FreeX Avalonia background save has no cross-window input gate**, unlike the WPF sibling's R115
+    fix, so a New Window sibling can mutate the workbook while the save thread enumerates it.
+69. **The FreeW Thesaurus pane applies a synonym to whatever word the caret is on now**, not the
+    word its display still shows, because it captures the word once when opened and never re-reads.
