@@ -1299,3 +1299,48 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      one-hundredth-of-a-point resize. `R218_ObjectTransformNoOpTests` (17 tests) pins both
      directions, including a same-size-but-flipped resize that a width/height-only guard would have
      suppressed. Reverting the nine guards fails 10 of the 17.
+
+## r219 -- options dialogs, and a ratchet with the wrong incentive
+
+114. **The `Configure*` family: options dialogs, the purest form of this class.** A dialog that
+     pre-fills the current settings and writes them all back on OK changes nothing whenever a user
+     opens it, reads it, and closes with OK instead of Cancel. Nine commands; three fixed, six moved
+     to known-broken with the evidence, none left unexamined.
+     Fixed: `ConfigureChartHiddenEmptyCells` (two fields, both compared),
+     `ConfigureSparkline`, `ConfigureStructuredTableStyleOptions`.
+
+115. **Two of those guards are built the way a wide options dialog's guard should be, and the
+     technique is the finding.** Hand-listing fields is a transcription that can silently fall out of
+     step with what Apply writes -- and the more fields, the likelier it does. Instead, build the
+     target state through the SAME function the mutation uses and compare it against the state it
+     came from:
+     - `SparklineSettings` is a readonly record struct whose `Capture` and `ApplyTo` are visibly
+       inverse over the same eight members, so `Capture(sparkline) == _settings` is a COMPLETE mirror
+       by construction. It cannot drift.
+     - `ConfigureStructuredTableStyleOptions` had its single `with` expression lifted out of the copy
+       helper into its own function, so Apply now uses one description of the change for both the
+       decision and the write. Comparing the target against the same `CaptureCopyState()` instance it
+       was derived from also keeps untouched members reference-identical, so the record struct's
+       equality is exact rather than accidentally always-false.
+     This is the answer to the brittle-mirror hazard r211 and r218 kept running into. Where a
+     capture/apply pair or a single `with` exists, the guard should be written against it.
+
+116. **The six not fixed, with the reason stated rather than implied.** The pivot `Configure*`
+     commands replace collections and then run `RefreshGuarded`; deciding "no change" means also
+     proving the re-render is unnecessary, and guessing at that is exactly how a guard ends up
+     suppressing a real edit. `ConfigurePivotTableOptionsCommand` is a 25-field assignment block --
+     it needs the snapshot-versus-target treatment above, not a transcription.
+     Their no-op capability is not inferred, it is read off the callers:
+     `PivotApplicationSession.PlanFieldFilters` passes `sorts ?? PivotTable.Sorts.ToList()` and
+     `PlanFieldSort` passes the pivot's own `LabelFilters`/`ValueFilters` straight back, so
+     re-applying the sort already in effect reaches Apply with every argument equal to current state.
+
+117. **The per-list ratchet had the wrong incentive, so it was replaced.** Examining a never-examined
+     command and finding it defective is progress -- unknown becomes known, with evidence -- but
+     under two independent ceilings that move was forbidden, because it raised the known-broken
+     count. A rule that punishes examination is a bad rule, and I would have hit it this round.
+     There is now one `OutstandingCeiling` over known-broken PLUS never-examined, which only ever
+     falls: 163 at r217, 154 at r218, **151** now. Both lists still exist and are still kept apart,
+     so "we know it is broken" and "nobody looked" stay legible as different states, and a second
+     bound holds the never-examined column to a separately falling number (**134**) so the combined
+     ceiling cannot be satisfied by fixing easy known entries while nobody looks at the rest.
