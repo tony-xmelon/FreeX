@@ -1592,3 +1592,38 @@ it is the kind of thing a per-command copy of the comparison would have got inco
 
 146. Outstanding 85 -> **84**, never-examined 51 -> **50**. `R226_DetectedButUnsignalledNoOpTests` is
      6 tests; reverting the three guards fails 4 of them.
+
+## r227 -- carrying the method to FreeW, and a bool that is not the bool it looks like
+
+147. **r226's method transfers across apps; the reasoning behind it does not.** The same shape sweep
+     -- an Apply early-return before any mutation -- run over FreeW's 67 `IDocumentCommand`s found 29
+     with no `HasEffect` override. But the FreeX conclusion does NOT carry over: in FreeX a
+     "target not found" guard is judged SOUND because Apply returns `Success:false`, which the bus
+     excludes from the stack. FreeW's `Apply` returns void, so the identical shape there is a silent
+     no-op with an undo entry pushed anyway. Same code shape, opposite verdict, because the two apps
+     signal differently. Worth stating explicitly since the r208/r203 contracts sit side by side and
+     invite exactly that transfer.
+
+148. **`DistributeTableColumnsCommand` and `DistributeTableRowsCommand` fixed; FreeW debt 26 -> 24.**
+     Clicking Distribute Columns twice is an ordinary gesture and the second click changes nothing.
+     Both had the early return and no override.
+
+149. **The trap in those two is a bool that looks like the answer and is not.** Each Apply ends with
+     `_applied = TableLayoutOperations.DistributeColumns(table)`, and that return reads exactly like
+     a did-it-change flag. It is not: it reports whether the operation was APPLICABLE, and is true
+     for any table with columns -- including one already evenly distributed. Deriving `HasEffect`
+     from it would have produced a guard that never fires and looks correct.
+     The fix adds `WouldDistributeRows`/`WouldDistributeColumns`, which answer the question the bool
+     does not, and -- following r219 -- share the target-size calculation with the mutation through a
+     private `ResolveDistributed*` helper, so the predicate and the write cannot drift. One test pins
+     the trap itself, so nobody re-derives the guard from that return value later.
+
+150. **The fail-before probe was wrong twice before it was right, and both failures are worth
+     recording.** Reverting the fix first broke the BUILD, because the tests called `HasEffect` on
+     the concrete type -- and a compile error is a weaker proof than a red test: it shows only that
+     the tests reference new code. Routing the calls through `IDocumentCommand` fixes that, since the
+     interface default (true) takes over when the override is gone.
+     The second attempt then reported green off STALE binaries: reverting the whole patch also
+     removed the `WouldDistribute*` predicates the tests call, so the build failed and `--no-build`
+     happily ran the previous assembly. Reverting only the overrides, and leaving the predicates in
+     place, gives the honest result: 3 of 6 fail.
