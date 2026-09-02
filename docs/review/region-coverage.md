@@ -830,3 +830,14 @@ Recorded so they are not re-reported every round.
     omits a model member -- so this is the first review class retired by a check rather than by
     finding its instances. Its stated limit: it proves a member EXISTS on the DTO, not that both
     conversion directions are wired; the round-trip tests beside it cover that.
+86. **The r201 contract's stated hole is closed** (r202) by
+    `R202_NativeRoundTripPropertyTests`: for every scalar member of Workbook/Sheet/Cell it writes a
+    distinctive value, round-trips, and requires it back -- so a member that is declared but written
+    from nothing, or read into nothing, fails. Proven complementary: deleting only a save line leaves
+    r201's membership contract green and turns this one red.
+    Its first run produced ZERO defects and six documented behaviours (three sanitising validators,
+    one flag-gated field, one formula-gated field, one password hashed on save), each traced to the
+    code that causes it and recorded with that reason rather than excused.
+    A first attempt asked instead whether each member NAME appeared on both sides of the adapter. It
+    passed the very probe it existed to catch, because a member's own declaration mentions its name.
+    It was deleted rather than weakened into something that resembles a guard.
