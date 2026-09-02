@@ -1384,3 +1384,37 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      ones, but deciding that means also proving the re-render is unnecessary. `ClearSparklineCommand`
      is judged sound -- it returns Success:false when the target is missing and otherwise always
      removes one. `R220_ClearNoOpTests` is 19 tests; reverting the seven guards fails 10 of them.
+
+## r221 -- decide after the loop, on the record of what it did
+
+123. **The `Paste*` family, and the best guard shape found so far.** Thirteen commands examined; ten
+     fixed, one judged sound, two moved to known-broken. Outstanding 139 -> **128**, never-examined
+     121 -> **108**.
+     Eleven of these already accumulate a record of what they wrote -- an `affected` list, an
+     `_added` list, a `pastedRules` list -- because they need it for `AffectedCells` or for Revert.
+     So the no-op decision can be made AFTER the loop, on that record. There is nothing to keep in
+     step with the mutation: an empty record IS the proof that nothing was written, whatever
+     combination of empty source, filtered mapping or skipped destination produced it.
+     Compare r218's hand-listed field comparisons, which have to be re-checked every time Apply
+     changes, and r219's capture/apply pairs, which are complete only because two functions happen to
+     be inverse. This is stronger than both: it is not a mirror at all.
+
+124. **`PasteMergedRegionsCommand` is why the decision belongs after the loop and not at the top.**
+     Its no-op case is NOT an empty source. The command's own comment records Excel's behaviour --
+     "a destination that already overlaps an existing merge is left alone" -- so a paste with real
+     merges to copy can still add nothing. A "was the source empty" test up front would have missed
+     it; the post-hoc test catches it for free.
+
+125. **The limit is stated rather than implied.** These guards catch "there was nothing to paste",
+     NOT "the pasted values equalled what was already there". The second needs a value-by-value
+     comparison and is not claimed -- in the source, in the tests, and here. A guard that quietly
+     over-promises is worse than one that says what it does not cover.
+
+126. `PasteColumnWidthsCommand` and `PasteDataValidationCommand` went to known-broken rather than
+     fixed, and the reason is precisely that they are the two with no such record: they mutate
+     through helpers and return a bare `CommandOutcome(true)`. Both are no-op-capable -- pasting
+     widths onto columns that already have them, or rules identical to the destination's -- but
+     deciding them needs a before/after snapshot comparison, which is a change to how they work
+     rather than a guard bolted on. `PasteRangeAsPictureCommand` is judged sound: the picture arrives
+     ready-made and Apply's only mutation is to add it.
+     `R221_PasteNoOpTests` is 12 tests; reverting the ten guards fails 8 of them.
