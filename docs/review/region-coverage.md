@@ -481,6 +481,58 @@ five; one round of enumeration produced auditable counts for two questions and 1
 sampling had walked past. Exhaustion is not demonstrated -- but it is now clear what demonstrating
 it would require, and it is not more rounds of asking.
 
+## Round 201: retiring a class instead of finding its next instance
+
+r200 established that asking a question again samples the codebase rather than covering it. The
+follow-on question is what to do with a class once you can enumerate it, and the answer is not "find
+the last instance" -- for a class that grows with the model, there is no last instance. It is to make
+the next one impossible.
+
+The copier question was the right one to try this on, because it is mechanically checkable: for each
+DTO, does it carry every member of the model type it serializes? Four rounds had each found one gap
+by reading (the chart DTO, the conditional-format DTO, the sparkline DTO), fixed it, and left the
+class alive.
+
+So this round wrote the check instead. `R201_NativeDtoCoverageContractTests` reflects over every
+`*Dto` the .fxl serializer declares, pairs it with the model type of the same name, and fails when
+the model has a public settable member the DTO does not. Escape hatches are explicit `Type.Member`
+entries with a stated reason, never name patterns, and a second test fails if an exemption names a
+member that no longer exists.
+
+It found SEVEN gaps on its first run, where a hand-written script of mine had found four:
+
+  * `Sheet.TabThemeColor` -- R123 added it specifically so a theme-linked tab colour is not baked to
+    RGB on save. The DTO carried only the resolved `TabColor`, undoing R123 on every round trip.
+  * `Sheet.DefaultColumnWidth` / `DefaultRowHeight` -- reset to 8.43 / 20.0 on reopen.
+  * `Sheet.CodeName` -- the VBA/OOXML code name, dropped.
+  * `Workbook.NextStructuredTableIdWatermark` -- the id FLOOR r197 established so a deleted table's
+    id is never reissued to a pinned pivot cache. Reopening reset the floor and brought back exactly
+    the collision the watermark exists to prevent.
+  * `Cell.QuotePrefix` -- the leading apostrophe behind "Number Stored as Text".
+  * `Cell.LegacyArrayRows` / `LegacyArrayCols` -- a legacy CSE array's declared extent, which decides
+    where #N/A padding goes. These had to be assigned AFTER the formula on load, because
+    `Cell.FormulaText`'s setter zeroes them on every assignment -- the r169 legacy-array class.
+
+Autosave and crash recovery go through this adapter exclusively, so all seven were lost on a
+recovered document, not only on an explicit Save As .fxl.
+
+Five more were adjudicated and exempted with reasons: a parse cache, a theme value derived from XML
+the DTO does carry, the Circle Invalid Data view overlay, and two per-load identities that nothing
+durable stores. Two more were renames rather than gaps (`Cell.FormulaText` is carried as `Formula`,
+`ArrayMode` as `FormulaArrayMode`) and are recorded as checked aliases -- the DTO member must exist,
+so a rename on either side still fails.
+
+Two things worth keeping about the method.
+
+First, my own diff script found four of the seven. The reflection contract found all seven, because
+it works on the real type graph rather than on a regex over source text. When a check can be written
+against the artifact instead of its text, it should be.
+
+Second, the contract has a stated limit: it verifies that a DTO HAS a member, not that both
+conversion directions are wired. Removing only the write lines leaves it green. That is what the
+round-trip tests beside it are for, and the honest description of this round is that one test makes
+the class's *omissions* impossible while the other pins its *behaviour*.
+
 ## Assessed and declined
 
 Findings that survived 2-of-2 verification but that measurement showed did not warrant the change.
@@ -758,3 +810,11 @@ Recorded so they are not re-reported every round.
 84. ~~FreeP's print-markup comment-callout truncation cut mid-surrogate.~~ **FIXED r200**, together
     with its PDF-export twin -- which is NOT reachable (PortablePdfWriter throws on non-WinAnsi text
     first) but was fixed identically so the pair cannot drift.
+85. ~~The .fxl serializer dropped seven members of its model types.~~ **FIXED r201:**
+    `Sheet.TabThemeColor` (undoing R123's whole point), `Sheet.DefaultColumnWidth`/`DefaultRowHeight`,
+    `Sheet.CodeName`, `Workbook.NextStructuredTableIdWatermark` (the r197 id floor), `Cell.QuotePrefix`,
+    and `Cell.LegacyArrayRows`/`LegacyArrayCols`. All seven were also lost on autosave/crash recovery.
+    **The class is now guarded** by `R201_NativeDtoCoverageContractTests`, which fails when any DTO
+    omits a model member -- so this is the first review class retired by a check rather than by
+    finding its instances. Its stated limit: it proves a member EXISTS on the DTO, not that both
+    conversion directions are wired; the round-trip tests beside it cover that.
