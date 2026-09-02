@@ -1127,3 +1127,19 @@ it is the kind of thing a per-command copy of the comparison would have got inco
     descendant gated 31/31 an hour earlier. That makes them environmental -- the known WPF/capture
     behaviour on this machine -- and the control was run in a throwaway worktree rather than
     inferred. Recorded rather than reported as a green gate.
+99. ~~5 more of FreeX's confirmed no-op-capable commands.~~ **FIXED r210:** chart style, chart
+    layout, picture aspect-ratio lock, drawing-object rotation, worksheet background. Ceiling
+    27 -> 22. Two carry a wrinkle now pinned by tests: rotation compares AFTER normalising (450
+    degrees on an object at 90 is no change, which a raw-request comparison would have missed), and
+    chart layout compares a fresh `Capture(chart)` against the whole options record, so the check
+    cannot drift from the fields `ApplyOptions` actually writes.
+    **Gate note, and a durable environmental fact.** The r210 FreeX gate came back 29/31 with 42
+    failures, up from 5 on essentially the same code an hour earlier. ALL 42 are WPF pixel-render
+    tests (printed cells, borders, comment indicators, FreeP SlideCanvas) and every one reports an
+    entirely BLANK bitmap -- `minX = 2147483647` (int.MaxValue, i.e. no ink found) or a sampled
+    colour of 0x00. Zero non-render tests failed.
+    A set of failures that GROWS between runs on unchanged code is not a code cause. Combined with
+    r209's control -- the same tests failing at three unmodified commits, including one whose
+    descendant gated 31/31 green an hour before -- this is the WPF rendering surface on this machine
+    going blank, not a regression. Interpret any future FreeX/FreeP gate the same way: if the
+    failures are all render tests reporting no ink, check the environment before the diff.
