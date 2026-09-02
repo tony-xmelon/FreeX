@@ -292,6 +292,28 @@ sites that call it, and the second cut point was four lines below the first in t
 The generalising sweep found in one round what the "shared helper" framing had made me stop looking
 for.
 
+## Round 196: weighting toward closing, and a consent bug
+
+By r195 the backlog had reached 58 recorded items and was growing faster than it was shrinking --
+each round's sweeps produced more than that round's fixes closed. Discovering faster than you
+resolve is not progress toward exhausting anything, so this round weighted toward closing the
+highest-severity open items rather than opening new lenses.
+
+The one fixed here is a consent bug and the most user-important thing this program has found. The
+Trust Center's "send opt-in crash reports" checkbox was read exactly ONCE, inside Initialize, which
+startup calls once. Unticking it changed nothing until the app was restarted, and the checkbox
+carries no restart notice -- so a user who withdrew consent kept sending crash reports for the rest
+of the session and had every reason to believe they had stopped. Withdrawal of consent is the one
+direction that must never lag, and every other side effect the Options commit handler drives
+(gridlines, headings, the QAT, calculation mode) already took effect immediately.
+
+The gate is now live and is checked in two places: the class's own send paths, and Sentry's
+BeforeSend hook. The second matters because the SDK captures unhandled exceptions on its own, so
+gating only the methods would have left the biggest category of report still flowing after an
+opt-out. Turning the option back ON mid-session re-enables reporting only if the SDK was
+initialised at startup; it is deliberately not re-initialised here, because getting that wrong
+sends data the user did not ask to send.
+
 ## Assessed and declined
 
 Findings that survived 2-of-2 verification but that measurement showed did not warrant the change.
@@ -503,3 +525,14 @@ Recorded so they are not re-reported every round.
 58. **FreeW index alphabetic headings key off the first Unicode text element, not the first VISIBLE
     one**, so an entry beginning with LRM/RLM/ZWNJ gets its own heading made of an invisible
     character while sorting correctly next to its letter -- the r194 DropCap class, in the index.
+59. ~~The crash-report opt-in is resolved once at startup and never re-applied.~~ **FIXED r196.**
+60. **DuplicateSheetCommand mints structured-table ids from its own scan** (r195 HIGH), bypassing the
+    watermark that keeps a deleted table's id pinned for a pivot/slicer still bound to it -- the
+    THIRD instance of the "second allocator for one id space" class, after the two FreeP shape-id
+    cases fixed in r195.
+61. **Avalonia print preview and PDF export ignore VerticalAlignment, WrapText and TextRotation**
+    (r195 HIGH). Honoured by both on-screen grids; lost on the page. Open because the fix is a real
+    feature -- line splitting, a vertical anchor and rotated glyph drawing in two builders -- not a
+    threading change.
+62. **The lossy-format warning planner does not cover every writer that drops a feature** (r195).
+63. **Three FreeP commands mutate on degenerate input** rather than declining (r195, sweep 166).
