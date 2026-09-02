@@ -1551,3 +1551,44 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      `MovePivotTableCommand` and `MoveRangeCommand` join them: dropping something where it started is
      an ordinary gesture, and both need a real before/after comparison rather than a guard on the
      arguments.
+
+## r226 -- grepping the shape instead of sweeping the family, and correcting two of my own verdicts
+
+142. **r225 named a recurring sub-shape; this round went and looked for it directly.** The shape: an
+     early return, before any mutation, whose condition is an equality or emptiness test and whose
+     outcome is a plain success. A one-pass source sweep over all 233 commands found eleven
+     candidates. Three were real and are fixed, two were already fixed in earlier rounds (the sweep
+     re-finding them is a sanity check on the method), two were already on the known-broken list, one
+     was a false positive, and one turned out to be dead code.
+     The method matters because it does not care which family a command belongs to. Sweeping by
+     family had already visited every one of these files.
+
+143. **Two commands I had recorded as JUDGED SOUND were not, and the sweep caught my own reasoning.**
+     - `ApplyStructuredTableFiltersCommand` was on the sound list as "refuted: the caller only issues
+       a changed filter set" -- two independent verifiers in r208 said so. But the command contains a
+       method literally called `FilterHiddenRowsAlreadyMatch`, and when it fires it returned a plain
+       success. A command carrying its own already-matches check is telling you the caller gate is
+       not relied on, and that check fires whether or not the gate holds.
+     - `SetStructuredTableTotalsRowCommand` was sound as "the planner adds it only when the value
+       differs, and both shells pass the negation". It also checks `table.TotalsRowShown ==
+       _showTotalsRow` itself and returned a plain success.
+     The general lesson is about what a caller-gate justification can and cannot cover. A gate makes
+     a command's no-op path unreachable TODAY, from TODAY's callers; it says nothing about the
+     command's own defences, and where the command has one, recording the gate as the reason leaves
+     that defence silently useless. Both are now fixed and off the sound list.
+
+144. **One false positive, recorded as such.** `EditCellsCommand`'s `extraAffectedCells.Count == 0`
+     matched the pattern but is not a no-op -- the edits themselves have already been applied above,
+     and the branch only means there were no ADDITIONAL affected cells from table/data-table effects.
+     The sweep is a lead generator, not a verdict, and this is what it looks like when the difference
+     matters.
+
+145. **One dead-code finding, spawned rather than fixed here.** `MoveSelectionPaneObjectCommand`'s
+     generic `Move<T>` helper has had no callers since R62-meta-1 rerouted every kind through the
+     z-order path; `FindObjectIndex` is called only from it, and the `_fromIndex`/`_toIndex` Revert
+     branch with its four `Swap` calls is unreachable in consequence. Its plain-success return is
+     what the sweep matched. Removing it is a cleanup outside this class and with its own risk, so it
+     is filed as a separate task rather than folded in here.
+
+146. Outstanding 85 -> **84**, never-examined 51 -> **50**. `R226_DetectedButUnsignalledNoOpTests` is
+     6 tests; reverting the three guards fails 4 of them.
