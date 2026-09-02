@@ -1661,3 +1661,33 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      top: the pane shows current visibility, and the shells also drive a Show All / Hide All sweep
      that sets every object to the same value, so everything already in that state arrives unchanged.
      8 tests; reverting the four guards fails 4 of them.
+
+## r229 -- the same trap, in a second file
+
+155. **Five fill/analysis commands examined: two fixed, one judged sound, two moved to
+     known-broken.** Outstanding 78 -> **75**, never-examined 44 -> **39**.
+
+156. **`SetCalculatedColumnFormula` returns a bool that reports whether the COLUMN WAS FOUND, not
+     whether anything changed** -- it returns true for a re-set of the identical formula. That is
+     exactly the trap r227 found in `TableLayoutOperations.DistributeColumns`, in a different file
+     and a different feature area. Twice in three rounds is enough to make it a habit rather than a
+     coincidence: when a mutating helper hands back a bool, read what it means before letting a
+     no-op guard depend on it. `PropagateCalculatedColumnCommand`'s guard therefore compares the
+     stored formula itself, and a test pins the bool's real meaning so nobody derives a guard from
+     it later.
+     That command needed two clauses because it makes two writes -- the cell fills recorded in
+     `_snapshot` AND the column's stored formula -- and either alone would have been a partial
+     mirror.
+
+157. `FlashFillCommand` takes the r221 post-hoc guard: `DetectFill` can succeed and still leave no
+     rows to write, when every candidate already holds the value the pattern would produce, and
+     nothing above the loop mutates. Same stated limit as the Paste guards -- it catches "there was
+     nothing to fill", not "the filled values equalled what was there".
+
+158. **`AutofillCommand` and `FillCellsCommand` went to known-broken precisely because the post-hoc
+     test would not work on them.** Both validate a NON-EMPTY target set and then write to all of
+     it, so "did we write anything" is always yes and a guard built on it would never fire while
+     looking correct. Fill Down over cells that already hold the value being filled changes nothing,
+     but deciding that needs a comparison per cell -- the same boundary r221 drew and declined to
+     cross by guessing. Recording them as broken is the honest alternative to a guard that cannot
+     fire.
