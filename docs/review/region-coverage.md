@@ -1195,3 +1195,16 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      Worth generalising: "these two are siblings" is a hypothesis to check against the code, not a
      licence to copy the fix. Three rounds running now, the hazard has been in what a command writes
      BESIDES the property the user chose.
+105. ~~1 more FreeX no-op command.~~ **FIXED r216:** page breaks. Ceiling 12 -> 11. Compared against
+     the SORTED input because that is what Apply writes, so the same breaks supplied in a different
+     order are correctly no change -- comparing against the raw request would have called that a
+     real edit.
+106. **`SetColumnWidthCommand` and `SetRowHeightCommand` re-ranked from tier 2 to tier 3** (r216),
+     and the reason is a correction to r212's own method. Field count put them in tier 2; field
+     count was wrong. Their `DrawingAnchorResizeHelper.ResizeFor*Range` calls LOOK like snapshot
+     lines -- they are assigned to `_previousShapeWidths` and return the previous sizes -- but they
+     also RESIZE every shape, picture and text box anchored in the range. Deciding "no change" means
+     predicting that resize, not just comparing widths and hidden state.
+     The general point: counting written fields is a proxy for danger, and it fails exactly where a
+     mutation hides inside a line that reads as a read. Both commands stay in the debt list with
+     this noted, rather than being fixed on the strength of a ranking now known to be wrong for them.
