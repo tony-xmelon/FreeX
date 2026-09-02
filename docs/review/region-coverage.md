@@ -1261,3 +1261,41 @@ it is the kind of thing a per-command copy of the comparison would have got inco
        thread while posting to the UI one -- the correct direction, with a comment saying so.
      Worth stating plainly: probing five classes is not the same as reviewing three layers. It
      narrows what is likely to be there; it does not make those 183k lines examined.
+
+## r218 -- the filter was on the name, the class is about the shape
+
+110. **Nine equal-value setters wearing a structural verb.** `Reposition*`, `Resize*` and `Rotate*`
+     (picture, drawing shape, text box) assign a value the target may already hold -- precisely the
+     shape r207 measured at ~90% defective -- but none is named `Set*`, so the r208 scope filter
+     never saw them. That is the sharper version of r217's finding: the filter matched on the NAME
+     while the defect is a property of the SHAPE, so it was never going to find the setters that
+     wear another verb. All nine now report IsNoOp, and all nine came off the never-examined list.
+     Ceiling 152 -> 143.
+     The gestures are ordinary. A drag ending in the cell it began in -- picked up and put back, or
+     moved less than one cell -- issues a Reposition to the current anchor. Size and Properties
+     pre-fills the current width and height, so tabbing out re-submits them. The rotation box
+     pre-fills the current angle.
+
+111. **Compare against what Apply writes, third time this has mattered.** The rotation guards
+     compare the current angle against `ObjectRotationNormalizer.NormalizeDegrees(request)`, not
+     against the request -- so asking for 370 degrees on an object already at 10 is correctly no
+     change. Same lesson as r216's sorted page breaks and r217's trimmed table name, and it is
+     starting to look like the general rule for this class rather than three coincidences: the guard
+     belongs at the value the mutation actually assigns, not at the argument that arrived.
+
+112. **`RotateTextBoxCommand` is the `RenameSelectionPaneObject` shape again.** It clears
+     `IsSourceLoaded` unconditionally (R62, so the writer re-emits the object rather than replaying
+     stale source XML). Right for a real rotation; on a re-submitted angle it discarded a loaded
+     text box's preserved anchor XML for a rotation that did not move it. Two rounds running, the
+     no-op defect in a command that clears that flag has turned out to cost fidelity, not just an
+     undo entry -- which suggests `IsSourceLoaded`-clearing commands are worth auditing as their own
+     sub-family rather than one at a time.
+     Its siblings differ and were checked rather than assumed: `RotatePictureCommand` and
+     `RotateDrawingShapeCommand` do not touch the flag at all.
+
+113. Exact double equality in the size guards is deliberate, and it is the safe direction. A value
+     that came back through a text box at a different precision compares unequal and takes the
+     real-edit path, costing one undo entry; a tolerance would risk swallowing a genuine
+     one-hundredth-of-a-point resize. `R218_ObjectTransformNoOpTests` (17 tests) pins both
+     directions, including a same-size-but-flipped resize that a width/height-only guard would have
+     suppressed. Reverting the nine guards fails 10 of the 17.
