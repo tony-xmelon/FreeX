@@ -1175,3 +1175,13 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      deciding would be the mutating-HasEffect trap from r204 in another form.
      `ApplyCustomViewCommand` was left: it is tier-1 by field count but applies a captured state per
      sheet plus an active-sheet index, so it belongs with the composites.
+103. ~~2 tier-2 FreeX no-op commands.~~ **FIXED r214:** drawing-shape effect and gradient. Ceiling
+     16 -> 14. Both write more than the property the user picked, and the tier-2 warning was the
+     right one: a comparison of the visible property alone would have been wrong in the DANGEROUS
+     direction on both.
+     * Both clear `IsSourceLoaded` unconditionally, and that flag decides whether a shape's original
+       XML is replayed verbatim on save (the r-earlier source-loaded discard class). Calling a
+       source-loaded shape "unchanged" would leave the flag set and silently keep the old XML.
+     * The gradient additionally forces `HasFill` true and `FillThemeColor` null, so a theme-linked
+       fill is a real change even when all three gradient values already match.
+     Both cases have tests.
