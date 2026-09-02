@@ -1208,3 +1208,56 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      The general point: counting written fields is a proxy for danger, and it fails exactly where a
      mutation hides inside a line that reads as a read. Both commands stay in the debt list with
      this noted, rather than being fixed on the strength of a ranking now known to be wrong for them.
+
+## r217 -- the population, not the sample
+
+107. **The scope filter was doing the hiding.** `R208_WorkbookCommandDeclaresNoOpContractTests`
+     scanned `(Set|Apply|Toggle)\w*Command` because r207 measured that shape at ~90% defective
+     against ~21% for structural commands. Right place to start; wrong thing to leave in place. It
+     meant 67 of FreeX's 233 `IWorkbookCommand`s were accounted for and the other 166 were not
+     judged clean -- they were **invisible to the accounting**, which reads identically to clean
+     from outside. r217 dropped the filter. The scan now covers all 233 and the remainder sits in a
+     new `NeverExaminedForThisClass` list: **152 commands**, capped by `UnexaminedCeiling`, asserting
+     nothing about them except that nobody has decided yet.
+     The ratchet is the point. Nothing may JOIN that list -- a command written after r217 has no
+     claim to never having been looked at, so it fails the contract until someone classifies it --
+     and entries leave only by being examined. Three lists now partition the undeclared population
+     (judged sound / known broken / never examined) and a fourth test proves no command sits in two
+     of them, so "we know it's broken" cannot drift into "nobody looked" or back.
+
+108. **The rename family, four fixed.** First payment against the population r217 exposed. Every
+     rename surface edits IN PLACE with the current name pre-filled -- double-click a sheet tab,
+     Table Design > Table Name, the PivotTable name box, the Selection pane label -- so pressing
+     Enter unchanged is an ordinary gesture. Two of the four cost more than a phantom undo entry:
+     - `RenameSheetCommand` is `IWholeWorkbookRecalcCommand` and ran `RewriteAllFormulas` over every
+       sheet with a `RenameSheetOp` whose halves were identical: rewrote nothing, recalculated
+       everything, cleared redo.
+     - `RenameSelectionPaneObjectCommand` cleared `IsSourceLoaded`, which R124 added deliberately so
+       the writer regenerates the anchor under the new name. Correct for a real rename; for a name
+       that did not change it **discards a loaded object's original anchor XML** and re-synthesises
+       it for nothing.
+     - `RenameStructuredTableCommand` ran the workbook-wide CF/DV/chart rewrite and `CopyTable`.
+     - `RenamePivotTableCommand` is the sharpest: the same-name check was **already there and already
+       correct**. Only the signal was missing, so the bus pushed anyway. One argument.
+     All four guards are ORDINAL. "Sheet1" -> "sheet1" is a real rename, and a case-insensitive
+     guard would have suppressed a real edit -- the dangerous direction, per r211's complete-mirror
+     rule. The structured-table guard compares against the TRIMMED name because that is what gets
+     written, so "  Sales  " over "Sales" is correctly no change. Both directions are pinned in
+     `R217_RenameNoOpTests` (10 tests); reverting the four guards fails 6 of them.
+
+109. **Five classes probed in the layers the accounting had never touched, and all five came back
+     clean.** Negative results, recorded because "nobody looked" is the thing being paid down:
+     - Culture-sensitive numeric parse across FreeW's Presentation/Host/Avalonia layers: every
+       decimal parse already threads an explicit `CultureInfo`. A culture pass has been done here.
+     - Discarded `TryParse` failure (the r190 shape, where a bad value silently becomes 0): 11
+       statement-form sites repo-wide, all of them the deliberate `default`-on-failure idiom.
+     - `Enum.TryParse` accepting undefined numeric strings (`"9999"` parses as `(ShapeKind)9999`,
+       reachable from a crafted `docPr/@name` in a .docx): real, but every consumer downstream --
+       `ShapeGeometryBuilder`, `DrawingShapeKindSupport`, the anchor-token writers -- has a `_ =>`
+       fallback, so it degrades to a rectangle rather than throwing or corrupting output.
+     - Static-event leaks: there are no static events in the repo.
+     - Sync-over-async (50 blocking waits): the two that looked most dangerous are documented as
+       deliberate, and the `TaskCompletionSource` wait in FreeW's mail merge blocks a BACKGROUND
+       thread while posting to the UI one -- the correct direction, with a comment saying so.
+     Worth stating plainly: probing five classes is not the same as reviewing three layers. It
+     narrows what is likely to be there; it does not make those 183k lines examined.
