@@ -1104,3 +1104,26 @@ preferring over an IsNoOp return in new code.
     reflection, so this one scans source for a mention of `IsNoOp`. It tells present from absent, not
     correct from wrong. Stated in the test itself. A stronger check needs an analyzer or a bus-level
     before/after comparison.
+
+### Round 209: starting to pay down FreeX
+
+Eight of r208's 35 confirmed FreeX defects fixed; the known-broken list is 27 and the ceiling moved
+with it. All eight are the equal-value setter shape: the Alt Text pane pre-populates the current
+description, Page Setup pre-populates the current orientation, paper size and margins, the theme
+gallery highlights the current theme, and Print Area re-selects what is already selected.
+
+The alt-text trio shared one helper, so the check went there rather than into three commands --
+`AltTextCommandChange.Changes(current)`, which also normalises, so clearing an already-empty
+description (null vs "" vs whitespace) correctly counts as no change. That case has its own test;
+it is the kind of thing a per-command copy of the comparison would have got inconsistently right.
+98. ~~8 of the 35 FreeX confirmed no-op-capable commands.~~ **FIXED r209:** the three alt-text
+    commands (via their shared `AltTextCommandChange`), page orientation, paper size, page margins,
+    print area, and workbook theme. Ceiling 35 -> 27.
+    **Gate note.** The r209 FreeX gate came back 29/31 with 5 failures -- printed comment-indicator
+    colour, printed diagonal-merge extent (FreeX), and two FreeP WPF rendering tests. All five are
+    WPF pixel renders returning 0x00. They are NOT from this change: FreeP cannot reference
+    FreeX.Core.Commands at all, neither FreeX test mentions any command touched here, and the same
+    four FreeX tests fail identically at three unmodified commits INCLUDING `b81d6ca8ac`, whose
+    descendant gated 31/31 an hour earlier. That makes them environmental -- the known WPF/capture
+    behaviour on this machine -- and the control was run in a throwaway worktree rather than
+    inferred. Recorded rather than reported as a green gate.
