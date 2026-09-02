@@ -1149,3 +1149,21 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      would have suppressed that clear -- a suppressed real edit, which r204 recorded as strictly
      worse than the phantom entry being removed. The complete mirror, and a test for exactly that
      case, are both in place. The crop fix compares all four edges because all four are written.
+101. ~~1 more FreeX no-op-capable command.~~ **FIXED r212:** workbook window arrangement.
+     Ceiling 20 -> 19.
+     **The remaining 19 are now ranked by difficulty rather than listed flat**, because after r211
+     it is clear that the number of fields `Apply` writes is what decides both how hard the fix is
+     and how dangerous a partial one would be:
+     * **1-2 fields** (ApplyCustomView, ApplyScenario, SetPrintAreas, SetComment) -- a direct
+       compare, the shape r209-r211 fixed a dozen times.
+     * **6-8 fields** (the drawing-shape colour/gradient/effect family, ApplyStyle, SetColumnWidth,
+       SetRowHeight, SetColumnOutlineGroupCollapsed) -- doable, but every written field must be in
+       the compare.
+     * **Composites and wide writes** (ApplyStructuredTableStyle, SetSlicerSelection,
+       SetTimelineRange delegate to inner commands that do not report IsNoOp themselves, so the
+       inner one must be fixed first; SetHeaderFooter writes 16 fields including deep-cloned picture
+       collections; SetPageSetup writes 20) -- these need real value equality, not a hand-listed
+       field compare that drifts the first time someone adds a field.
+     Two of the tier-3 commands were deliberately NOT attempted this round for that reason. The
+     ranking is in the contract test itself, so the next person picks them up in cost order instead
+     of rediscovering which are cheap.
