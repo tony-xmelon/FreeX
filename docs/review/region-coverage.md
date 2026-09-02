@@ -543,6 +543,38 @@ conversion directions are wired. Removing only the write lines leaves it green. 
 round-trip tests beside it are for, and the honest description of this round is that one test makes
 the class's *omissions* impossible while the other pins its *behaviour*.
 
+### Round 202, second half: the same move on a class that is NOT mechanically decidable
+
+r201 retired the copier class by writing a check that machines can run. The obvious objection is that
+the trick only works where a machine can decide the question, and the no-op class is the clearest
+counter-example: whether a command can be invoked on a target it would not change depends on what its
+callers allow, which is exactly why four rounds each found one more instance.
+
+But the undecidable part is the ANSWER, not the QUESTION. `IPresentationCommand.HasEffect` defaults to
+true, so a command that never overrides it has inherited "always changes something" without anyone
+checking. That is decidable: did the author declare, or inherit by omission?
+
+So the contract requires a declaration. 132 FreeP commands; 75 already overrode HasEffect. The 57 that
+did not were put through a census -- three partitions, every command classified, every claimed no-op
+checked by two independent verifiers. 57/57 classified: 25 confirmed no-op-capable, 32 not.
+
+The 25 now have overrides mirroring the guard their own Apply opens with. Sixteen were the same shape
+r200 found four instances of: a chart command that returns early when the chart is protection-locked,
+while the bus still pushed an undo entry -- and a protection-locked chart still selects and still
+accepts the gesture, so it is an ordinary interaction that was clearing the user's redo stack.
+
+The 32 are listed in the contract with the census's reason for each. They divide into commands whose
+Apply has no early return at all, commands whose one early return every caller already excludes, and
+-- the interesting group -- seventeen where the census claimed a no-op and the verifiers refuted it on
+REACHABILITY: chart commands whose dialogs edit an in-memory planner instead, a connector command that
+is never bus-executed, table deletes already gated by the caller. Those refutations are recorded as
+entries rather than silently dropped, so the claim and its answer stay attached to the code.
+
+What this establishes: a class that cannot be decided by a machine can still be RETIRED by one, if the
+check asks whether a decision was made rather than what the decision should be. The cost is honest and
+visible -- 32 entries someone had to justify -- and the benefit is that the 133rd command cannot
+inherit the default silently.
+
 ## Assessed and declined
 
 Findings that survived 2-of-2 verification but that measurement showed did not warrant the change.
@@ -841,3 +873,10 @@ Recorded so they are not re-reported every round.
     A first attempt asked instead whether each member NAME appeared on both sides of the adapter. It
     passed the very probe it existed to catch, because a member's own declaration mentions its name.
     It was deleted rather than weakened into something that resembles a guard.
+87. ~~25 FreeP commands pushed undo entries, and so cleared redo, having changed nothing.~~
+    **FIXED r202**, and **the class is now guarded** by
+    `R202_CommandDeclaresHasEffectContractTests`: every `IPresentationCommand` must override
+    `HasEffect` or appear in that test's list with a reason. 16 of the 25 were the protection-locked
+    chart shape r200 found four instances of. The 32 commands that legitimately inherit the default
+    are listed there with the census's reason, including 17 whose claimed no-op two verifiers
+    refuted on reachability -- kept as entries so the claim and its answer stay with the code.
