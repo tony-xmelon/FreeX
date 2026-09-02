@@ -1066,3 +1066,41 @@ Two verdicts are worth keeping for their reasoning rather than their outcome:
 95. **FreeW's unexamined command list is EMPTY** (r207). All 128 commands judged: 47 fixed, 26
     known-broken with evidence, 55 sound with a stated reason. Ceiling 128 -> 26. The class is no
     longer "partly surveyed" for this app -- what remains is a finite, named list of fixes.
+
+### Round 208: FreeX, the third app -- and a contract that had to be built differently
+
+FreeX has 233 command classes and 16 `IsNoOp` sites. The 61 SETTER-SHAPED ones (Set*, Apply*,
+Toggle*) that never report IsNoOp were censused: 61/61 classified, every claimed no-op checked by two
+verifiers. 35 confirmed, 7 refuted, 19 sound.
+
+35 of 61 is 57%, between FreeW's ~90% for pure equal-value setters and ~21% for structural commands.
+That is the expected place to land: FreeX's partition is name-based, so it swept in structural
+commands (SetPageBreaks, SetPrintArea) alongside true setters. The r207 distribution finding predicted
+the ordering and it held on a different app.
+
+The contract had to be built differently, and the difference is the point worth recording. FreeP and
+FreeW both expose `HasEffect`, which a REFLECTION test can check: does this type declare an override?
+FreeX has no such member -- `Apply` returns a `CommandOutcome` and the signal is `IsNoOp: true` in the
+return VALUE, which reflection cannot see. So `R208_WorkbookCommandDeclaresNoOpContractTests` reads
+the source instead, asking whether each command's own class body ever mentions IsNoOp.
+
+That is weaker than its siblings and the test says so in its own remarks: it distinguishes present
+from absent, not correct from wrong. It is still worth having -- it refuses a new undeclared
+setter-shaped command, which is verified by adding one and watching it fail -- but the asymmetry is
+real and recorded rather than glossed. A stronger FreeX check would need either an analyzer or a
+bus-level before/after comparison.
+
+Three of the 19 sound verdicts are the negation-gate pattern r205 named
+(`SetRowOutlineGroupCollapsed` passes `!group.IsCollapsed`), and four more are the
+planner-diffs-first pattern (`SetIterativeCalculationOptions`, `SetFormulaErrorCheckingRule`). Both
+are structural defences that make the class impossible rather than merely absent, and both are worth
+preferring over an IsNoOp return in new code.
+96. **35 FreeX setter-shaped commands are confirmed no-op-capable** (r208 census, two verifiers
+    each), listed in `R208_WorkbookCommandDeclaresNoOpContractTests.KnownNoOpCapableNotYetFixed`
+    behind a ratchet. Page setup, print area, drawing/picture/text-box properties, chart layout and
+    style, comments, hyperlinks, row height and column width, workbook theme and window arrangement.
+97. **The FreeX no-op contract is weaker than its FreeP/FreeW twins, by necessity** (r208). Those
+    check for a `HasEffect` override via reflection; FreeX's signal is a return value, invisible to
+    reflection, so this one scans source for a mention of `IsNoOp`. It tells present from absent, not
+    correct from wrong. Stated in the test itself. A stronger check needs an analyzer or a bus-level
+    before/after comparison.
