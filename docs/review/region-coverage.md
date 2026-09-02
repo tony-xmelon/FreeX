@@ -1143,3 +1143,9 @@ it is the kind of thing a per-command copy of the comparison would have got inco
     descendant gated 31/31 green an hour before -- this is the WPF rendering surface on this machine
     going blank, not a regression. Interpret any future FreeX/FreeP gate the same way: if the
     failures are all render tests reporting no ink, check the environment before the diff.
+100. ~~2 more FreeX no-op-capable commands.~~ **FIXED r211:** split panes and picture crop. Ceiling
+     22 -> 20. `SetSplitPanesCommand` is the round's lesson: it looked like a two-field compare, but
+     establishing a real split ALSO clears any freeze, so a no-op on matching split positions alone
+     would have suppressed that clear -- a suppressed real edit, which r204 recorded as strictly
+     worse than the phantom entry being removed. The complete mirror, and a test for exactly that
+     case, are both in place. The crop fix compares all four edges because all four are written.
