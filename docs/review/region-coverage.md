@@ -1486,3 +1486,32 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      collapse-then-collapse-again case's first half, which is a real edit either way -- worth noting
      because a test that passes in both directions is documenting, not gating, and it should be
      obvious which is which.
+
+## r224 -- the Delete/Remove family, and a test that refused to certify what it could not read
+
+134. **Fourteen Delete/Remove commands examined; one fixed, twelve judged sound, one reclassified as
+     a second delegation case.** Outstanding 101 -> **87**, never-examined 81 -> **67**.
+     The pattern that makes twelve of them sound is uniform and was checked in each rather than
+     assumed from the verb: the target is looked up first, a miss returns Success:false, and the
+     removal below that check is unconditional. A command that cannot find what it was asked to
+     delete reports an error rather than a quiet success, which keeps it off the undo stack just as
+     effectively as IsNoOp would.
+
+135. `RemoveHyperlinksCommand` is the fix, and it is the twin of r220's `ClearHyperlinksCommand`
+     guard sitting in the same file. Both are reachable from the same menu over a selection carrying
+     no link. Worth noting that the two were found in different rounds by different routes -- the
+     first by sweeping Clear*, the second by sweeping Remove* -- which is an argument for sweeping by
+     SHAPE rather than by verb, exactly as r218 concluded.
+
+136. **`RemoveSheetsCommand` is a second delegation false unknown**, and of a different shape from
+     r223's: its entire Apply is `_composite.Apply(ctx)`, and `CompositeWorkbookCommand` deliberately
+     bubbles IsNoOp up -- it starts `allNoOp` true so a composite wrapping zero children, or one
+     whose children were all no-ops, reports IsNoOp itself. So the command already reports correctly
+     and the per-class scan cannot see through the delegation.
+
+137. **The delegation test failed on that entry, and it was right to.** r223's version only knew how
+     to find a helper METHOD's body, so given a CLASS name it matched
+     `CompositeWorkbookCommand`'s constructor -- a body with no IsNoOp in it -- and rejected a claim
+     that happens to be true. That is the correct failure to have: the test refuses to certify what
+     it cannot read, rather than passing on a loose match. It now handles both extents, method and
+     class, and the fix is in the test rather than in the claim.
