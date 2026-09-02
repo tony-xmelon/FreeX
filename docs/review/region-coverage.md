@@ -1817,3 +1817,36 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      Still worth repeating what r217 said: probing six classes is not reviewing 183k lines. But six
      for six is starting to be evidence about where defects in this codebase concentrate, and it is
      not there.
+
+## r234 -- building the thing r233 named
+
+173. **The shared obstacle is now built, with the guard that makes it safe to share.**
+     `CellEditCompanionSnapshot.MatchesCurrent(sheet)` answers "did the written values DIFFER" for
+     any command that already captures that snapshot for undo -- which is all thirteen of the
+     commands r233 identified. Outstanding 50 -> **49**, with `EditCellsCommand` the first through.
+     It is deliberately NOT an equality override on `Cell`. Cell is a mutable class used as an
+     identity throughout the model, and giving it value semantics would change meaning far beyond
+     this question; it also carries `CachedAst`, a derived parse cache that must not participate,
+     since two cells with the same formula are the same cell whether or not either has been parsed.
+
+174. **`R234_CellChangeComparisonCoverageContractTests` is the part that matters more than the
+     helper.** Thirteen commands are meant to depend on one comparison, so a field added to `Cell`
+     and forgotten in it would be a partial mirror THIRTEEN times over -- each one reporting
+     "nothing changed" for an edit that did. The contract reflects over every settable member of
+     `Cell` and requires each to be compared or exempted with a reason. Proved by deletion: removing
+     the `QuotePrefix` clause makes it fail and name the member.
+     A side benefit worth recording, given r227's stale-binary trap: because this contract reads the
+     SOURCE rather than the assembly, it failed correctly even when the probe build was broken. A
+     source-reading contract cannot be fooled by `--no-build` running yesterday's binaries.
+
+175. **One test in this round asserted the wrong thing and the guard was right.** I expected writing
+     a blank into a cell that does not exist to be a no-op -- blank over nothing looks like nothing.
+     The guard says it is an edit, and it is: the sheet had no `Cell` object at that address and now
+     has one, which moves the used range and changes what gets written to the file. The displayed
+     value is the same; the model is not. The test now pins that boundary with the reasoning, rather
+     than being deleted. (The real gesture, pressing Delete over empty cells, goes through
+     `ClearContentsCommand` and was guarded in r220.)
+
+176. The batch case has its own test for a reason: a batch is a no-op only when EVERY cell in it is
+     unchanged (`TrueForAll`, not `Any`). Getting that backwards would suppress a multi-cell edit
+     because one of its cells happened to match -- a suppression bug hiding inside a no-op fix.
