@@ -928,12 +928,36 @@ Recorded so they are not re-reported every round.
     commands inherited the default; 3 are fixed, 4 judged sound, and the remaining 121 are split
     into "known broken" and "unexamined" behind a ratchet that only ever lowers. A new command
     cannot join either list silently.
-89. **32 FreeW commands are confirmed no-op-capable and not yet fixed** (r203 census, two verifiers
-    each). All are equal-value setters on floating objects, images, shapes, SmartArt or WordArt:
-    re-confirming the value a ribbon control already shows pushes an undo entry and clears redo.
-    They are listed in the contract test's `KnownNoOpCapableNotYetFixed`, and the ratchet requires
-    that list to shrink.
+89. ~~32 FreeW commands are confirmed no-op-capable and not yet fixed.~~ **FIXED r204**, all 32.
+    Equal-value setters on floating objects, images, shapes, SmartArt and WordArt: re-confirming the
+    value a ribbon control already shows pushed an undo entry and cleared redo. The contract test's
+    `KnownNoOpCapableNotYetFixed` list is now EMPTY and the debt ceiling is down from 121 to 89 --
+    what remains is all "never examined", with nothing left that is known-broken.
 90. **`SetShapeRotationCommand` and `SetShapeWrappingCommand` are dead code** (r203). Neither is
     constructed anywhere; rotation and wrapping both route through the `SetFloating*` equivalents.
     Recorded rather than deleted in the same round that found them, so the deletion is a change
     someone makes deliberately rather than a drive-by.
+
+### Round 204: paying the debt down, and two traps in doing it
+
+r203 left 32 confirmed defects listed as debt. r204 fixed all 32, so the known-broken list is empty
+and the FreeW debt is 89 -- entirely "nobody has looked", with nothing outstanding that anyone has
+looked at and found broken. The ratchet moved 121 -> 89 in one round.
+
+Two traps worth keeping, both of which would have made the fix worse than the bug:
+
+  * **A HasEffect that mutates.** Three of these commands resolve their target through a helper that
+    CREATES what it returns -- `GetFloatingPlacement`'s `??=`, `SetShapePositionCommand`'s
+    `shape.Placement ??=`, `SetDrawingGroupChildPositionCommand`'s `EnsureOffsetSlot`. Asking "would
+    this change anything?" must not change something. Each override uses a non-creating peek and
+    returns TRUE when the thing is absent, because creating it IS the change. A test asserts the
+    document is untouched after the question is asked.
+  * **A peek that covers fewer cases than the mutator.** My first
+    `SetDrawingGroupChildRotationCommand` override switched on four child types where `TryMutate`
+    handles six. That does not produce a false no-op report -- it produces a SUPPRESSED REAL EDIT,
+    which is strictly worse than the phantom undo entry being fixed. Caught by diffing the peek's
+    cases against the mutator's rather than by reading it twice; the same diff was then run against
+    the other two multi-type peeks.
+
+The general lesson: an override that mirrors a guard has to mirror ALL of it. A partial mirror fails
+in the dangerous direction.
