@@ -434,6 +434,53 @@ category has never worked as well as promoting one the code has already demonstr
 it names is invisible to the copier question that ran beside it: listing a source object's members
 cannot reveal a member the source object never had.
 
+## Round 200: census instead of sampling
+
+Six rounds asked the char-slice question and six times it found one more instance -- the last of
+them in a file the previous round had just fixed, in a sibling helper two calls away. That is not
+evidence of an inexhaustible supply of defects. It is evidence that ASKING A QUESTION AGAIN samples
+the codebase rather than covering it, and that a sample of one per round says nothing about what
+remains.
+
+So r200 stopped asking and started counting. The two questions with the longest yield records were
+given to five agents as partitions of an enumeration, each required to run a deliberately over-broad
+grep, widen it, classify EVERY site into one of four buckets, and report how many it examined. The
+brief said plainly that a census examining forty sites and reporting nothing is a success, and one
+that reports a real defect having covered half its partition is a failure.
+
+RESULT: 767 sites enumerated. 13 confirmed defects, 4 refuted.
+
+That is roughly what four rounds of sampling found in total, in one pass. The sampling rounds were
+not measuring a codebase that yielded one defect per question; they were measuring their own reach.
+
+  * The cell-text cap had THREE implementations -- typed entry, clipboard paste, delimited import --
+    each with its own copy of the constant and the slice, all cutting mid-surrogate. This is the
+    r199 lesson at larger scale, on the mainline path where text enters a cell. Now one
+    implementation in the shared tier.
+  * Text to Columns took the first CODE UNIT of the custom delimiter box. Fixing that alone was
+    half a fix, and the behavioural test caught it: the splitter matches the delimiter set one code
+    unit at a time, so a two-unit delimiter still split on each half. The matcher now matches at a
+    position -- and the first version of that allocated a string per delimiter per character, which
+    the file's own allocation-budget test caught at 86MB against a 7MB ceiling. Both were mine, both
+    were found by tests rather than by review.
+  * Six FreeX commands pushed undo entries -- and so cleared redo -- having changed nothing: Clear
+    Outline, Collapse/Expand Group, Clear Data Validation, Remove All Subtotals, Unhide Rows/Columns
+    and the Manage Rules dialog committing after the user only looked at it.
+  * FreeP had four of five siblings unfixed: FlipShapeCommand got the HasEffect override for a
+    protection-locked chart and Move, Resize, Rotate and Delete did not.
+
+The four refutations were as useful as the confirmations. The FreeP PDF-export copy of a truncation
+helper is unreachable because PortablePdfWriter throws on non-WinAnsi text before writing, while its
+print-renderer twin is a live defect -- the same code, one reachable and one not. FreeW's run-splice
+is covered by the XmlTextSanitizer chokepoint an earlier program installed. Both were fixed anyway,
+in the twin's case specifically so the pair cannot drift apart again.
+
+What this round establishes about the method: a question's yield per round measures the search, not
+the code. Nine rounds of "ask again and see" produced a defensible claim about one question out of
+five; one round of enumeration produced auditable counts for two questions and 13 defects the
+sampling had walked past. Exhaustion is not demonstrated -- but it is now clear what demonstrating
+it would require, and it is not more rounds of asking.
+
 ## Assessed and declined
 
 Findings that survived 2-of-2 verification but that measurement showed did not warrant the change.
@@ -693,3 +740,21 @@ Recorded so they are not re-reported every round.
 78. ~~FreeX's Show Outline Symbols has no per-window override.~~ **FIXED r199** across the session,
     the viewport request, the WPF window snapshot and both shells' Ctrl+8 handlers. It was the one
     member of the View-tab display group left out of R83/R85/R86/R87/R89.
+79. ~~The spreadsheet cell-text cap had three implementations, all cutting mid-surrogate.~~
+    **FIXED r200**, collapsed to `SurrogateSafeTruncation.LimitToCellText`. Typed entry, clipboard
+    paste and delimited-text import each carried their own copy of the constant and the slice.
+80. ~~Text to Columns took the first code unit of the custom delimiter, and the splitter matched
+    delimiters per code unit.~~ **FIXED r200**, both halves. The delimiter chain is `string` rather
+    than `char` end to end, and the matcher matches at a position without allocating.
+81. ~~Duplicate Sheet's PivotTable-name dedup sliced a user-typed name at a raw cut point.~~
+    **FIXED r200.** PivotTable names have no length cap and no character-class gate, unlike the
+    structured-table sibling whose identical slice is therefore unreachable.
+82. ~~Six FreeX commands pushed an undo entry, and so cleared redo, having changed nothing.~~
+    **FIXED r200:** Clear Outline, Collapse/Expand Group, Clear Data Validation, Remove All
+    Subtotals, Unhide Rows *and* Unhide Columns, and Manage Conditional Formatting Rules.
+83. ~~FreeP: Move/Resize/Rotate/Delete on a protection-locked chart, Remove Link on a shape with no
+    link, and re-applying the font/size/colour a run already has.~~ **FIXED r200.** The chart cases
+    are four of five siblings that were missed when FlipShapeCommand got its `HasEffect`.
+84. ~~FreeP's print-markup comment-callout truncation cut mid-surrogate.~~ **FIXED r200**, together
+    with its PDF-export twin -- which is NOT reachable (PortablePdfWriter throws on non-WinAnsi text
+    first) but was fixed identically so the pair cannot drift.
