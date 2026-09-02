@@ -989,3 +989,31 @@ anywhere including tests. Recorded as finding 92 rather than deleted here.
 92. **`SetRunFormattingCommand` is dead code** (r205). Zero call sites anywhere, tests included;
     run formatting goes through `FormatParagraphRunsCommand`. Third dead FreeW command found by
     this census line, after `SetShapeRotationCommand` and `SetShapeWrappingCommand` (finding 90).
+
+### Round 206: paying down r205, and a class the mechanism cannot fix
+
+12 of r205's 27 confirmed defects fixed. FreeW debt 79 -> 67 (15 known-broken, 52 unexamined).
+
+The interesting half is the 15 left, because they are not all the same kind of "not yet".
+
+**Two cannot be fixed by a HasEffect override at all.** `ReplaceParagraphRunsCommand` and
+`ReplaceCellParagraphRunsCommand` take an opaque `Action<Paragraph> rebuild`. The only way to learn
+whether the delegate changes anything is to run it, and running it mutates the document -- which is
+precisely the trap r204 recorded (a HasEffect that mutates is worse than the bug). No override can
+be written. The remedy is at the bus: compare the paragraph before and after Apply and drop the
+entry when they match, which is a change to DocumentCommandBus, not to the commands. Recorded as
+finding 93 rather than papered over with a fake override that always returns true.
+
+That distinction matters for the honesty of the ratchet. A debt list that mixes "nobody has looked",
+"we know and haven't got to it", and "the mechanism cannot express this" would let the third hide
+inside the second forever. The contract test now says which is which.
+
+The other trap this round: a substitution matched `SetCellBorderPayloadCommand` -- whose no-op claim
+r205's verifiers REFUTED -- because it shares a line with `SetCellBordersCommand`, the one actually
+being fixed. It failed to compile, which is the cheap way to find that. A pattern that matches on a
+line rather than on a class is matching the wrong thing.
+93. **Two FreeW commands cannot declare `HasEffect` at all** (r206). `ReplaceParagraphRunsCommand`
+    and `ReplaceCellParagraphRunsCommand` take an opaque `Action<Paragraph>` rebuild delegate, so
+    the answer is unknowable without running it, and running it mutates. The remedy is a bus-level
+    before/after comparison in `DocumentCommandBus.Execute`, not a command-level override. They stay
+    in the contract's known-broken list, annotated, so the ratchet still counts them.
