@@ -1515,3 +1515,39 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      that happens to be true. That is the correct failure to have: the test refuses to certify what
      it cannot read, rather than passing on a loose match. It now handles both extents, method and
      class, and the fix is in the test rather than in the claim.
+
+## r225 -- saturating moves, and refusing a partial fix
+
+138. **Twenty-six commands examined; two fixed, fourteen judged sound, ten moved to known-broken.**
+     Outstanding 87 -> **85**, never-examined 67 -> **51**. Note the shape of that: the outstanding
+     total barely moved while sixteen commands left the unexamined column. That is the honest
+     arithmetic of a round that mostly converted unknowns into knowns, and it is what the combined
+     ceiling introduced in r219 exists to allow.
+
+139. **`NudgeChartCommand` clamps where its three siblings do not, and that is the whole defect.**
+     Picture, Shape and TextBox add the arrow-key delta to an unclamped anchor offset, so they always
+     move. The chart applies `Math.Max(0, ...)`, so one already at the left edge absorbs every
+     further press -- and holding the key against the edge pushed one undo entry per repeat, each
+     clearing the pending redo. Decided AFTER the write by comparing against the values captured for
+     Revert, because predicting a `Math.Max` up front would mean duplicating it. The test that keeps
+     it honest is the mixed one: a nudge that saturates horizontally but moves vertically is a real
+     edit and must stay on the stack.
+
+140. **`MoveChartCommand` is the RenamePivotTable shape for the fourth time.** `if (_sourceSheetId ==
+     _targetSheetId) return new CommandOutcome(true, ...)` -- the check was already there and already
+     right, and only the signal was missing. Move Chart's dialog pre-selects the sheet the chart is
+     already on, so OK-without-changing-the-dropdown lands there. Four rounds have now found a
+     command that had correctly detected its own no-op and said nothing; that is a recognisable
+     sub-shape worth grepping for directly rather than waiting to meet it.
+
+141. **The AutoFilter family went to known-broken rather than half-fixed, on purpose.** All eight are
+     no-op-capable -- clicking the same colour swatch, re-confirming the same Top 10, recomputes the
+     same hidden-row set and writes back the same column model. `TopBottomFilterCommand` even has a
+     quiet-success path (count 0, no owned rows) that would have been trivial to mark. Marking it
+     alone is exactly the partial fix r221 warned about: it would take the command off the debt list
+     and let it declare IsNoOp while still being wrong on every other path. These need a
+     snapshot-versus-target comparison across BOTH the hidden-row set and the autofilter model, so
+     they stay recorded as broken until someone can do that properly.
+     `MovePivotTableCommand` and `MoveRangeCommand` join them: dropping something where it started is
+     an ordinary gesture, and both need a real before/after comparison rather than a guard on the
+     arguments.
