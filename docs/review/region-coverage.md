@@ -271,6 +271,27 @@ hole in it, so the check went into the reader -- the same chokepoint that alread
 "Values" placeholder for the identical stated reason, so the model simply cannot hold an impossible
 index any more.
 
+## Round 195: generalising again -- and the fix that was half a fix
+
+r194's method (turn each confirmed finding into its own sweep) gave the program's first zero-empty
+round, so r195 did it again with r194's twelve findings. Zero empty lenses a second time, and
+nothing refuted. Two rounds running, generalising a CONFIRMED defect has outperformed every
+invented category this program has tried.
+
+The meta lens found the most important thing, for the sixth consecutive round: r194's own
+sheet-name fix was HALF a fix. It routed the four initial truncations through the new
+SurrogateSafeTruncation helper -- and left the four dedup/uniqueness loops sitting right beside them
+re-slicing raw, at a DIFFERENT cut point (31 minus a " (N)" suffix). So the unsaveable-document bug
+r194 was written to eliminate stayed reachable, this time without any crafted import file at all:
+rename a sheet to a 31-character name whose emoji straddles the suffix cut, press Duplicate Sheet,
+and the copy's name carries a lone surrogate that makes every later .xlsx save throw.
+
+That is worth recording as a lesson about fixing a CLASS rather than an instance. Introducing a
+shared helper felt like the thorough move, and the commit said so. But a helper only helps the call
+sites that call it, and the second cut point was four lines below the first in the same functions.
+The generalising sweep found in one round what the "shared helper" framing had made me stop looking
+for.
+
 ## Assessed and declined
 
 Findings that survived 2-of-2 verification but that measurement showed did not warrant the change.
@@ -439,9 +460,13 @@ Recorded so they are not re-reported every round.
     so the document became unsaveable -- not merely mis-rendered. Now splits one text element, which
     also keeps combining marks with their base letter.
 40. ~~Chart clone drops `SeriesNameOverrides`.~~ **FIXED r194.**
-41. **FreeP shape-id watermark goes stale after Set Slide Layout**, so a later insert can hand out an
-    id the layout already used; by-id lookups then resolve to the wrong shape and Delete can remove
-    a placeholder the user never selected.
+41. ~~FreeP shape-id watermark goes stale after Set Slide Layout.~~ **FIXED r195, together with the
+    r194 header-footer HIGH, which was the same defect from a second command.** The watermark is now
+    a FLOOR raised from the live document on every allocation rather than a cache seeded once. A
+    plain live scan would have been wrong -- AssignShapeIds allocates in a loop for a pasted subtree
+    not yet in the presentation, so a scan alone returns the same value each iteration -- and keeping
+    the counter also preserves the documented "ids only ever increase" property an undone edit relies
+    on.
 42. ~~PivotTable Show Details trusts `SourceFieldIndex` from the file.~~ **FIXED r194** at the reader,
     not at the ~31 unchecked `row[field.SourceFieldIndex]` use sites: the reader now drops a field
     index outside the cache range, at the same chokepoint that already drops the -2 Values
@@ -461,3 +486,20 @@ Recorded so they are not re-reported every round.
     "the leading text element is the visible glyph" assumption as the r193 fix, different edge case.
 49. **The .fxl chart serializer drops the secondary axis's own title, scale and format**, so a combo
     chart's secondary axis rescales after a save/reload through the native format.
+50. **The .fxl chart serializer carries 4 of ChartModel's 17 Secondary* properties** (r194 HIGH), so
+    saving a combo chart to the native format and reopening loses the secondary axis title, its
+    explicit min/max, its number format and its scale -- the axis reverts to auto.
+51. **The ODS writer drops a feature without contributing to the lossy-format warning** (r194).
+52. **A FreeW Avalonia IconPickerDialog fire-and-forget has no error path** (r194, low).
+53. **A FreeP WPF setting is captured at construction** and ignored after the user changes it (r194).
+54. **A FreeP EditingSession command mutates on degenerate input** rather than declining (r194).
+55. **A PageContentRenderModel property is honoured on screen but not in print** (r194).
+56. ~~Four sheet-name dedup loops re-slice with the raw cut r194 guarded only at the entry point.~~
+    **FIXED r195.** Reachable through the UI by rename-then-duplicate, no import file needed.
+57. **Ordinary Ctrl+V drops a cell's phonetic guide (furigana)** that Paste Special > All preserves:
+    PasteCommandFactory builds rich-text/hyperlink/hyperlink-metadata dictionaries on both the plain
+    and tiled paste paths but never the phonetic-guide one, though the same method's Paste Special
+    branch does and the method's own doc comment calls the four a single group.
+58. **FreeW index alphabetic headings key off the first Unicode text element, not the first VISIBLE
+    one**, so an entry beginning with LRM/RLM/ZWNJ gets its own heading made of an invisible
+    character while sorting correctly next to its letter -- the r194 DropCap class, in the index.
