@@ -1691,3 +1691,27 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      but deciding that needs a comparison per cell -- the same boundary r221 drew and declined to
      cross by guessing. Recording them as broken is the honest alternative to a guard that cannot
      fire.
+
+## r230 -- a third verb hiding the same shape
+
+159. **The `Change*` family: three commands, all fixed.** Outstanding 75 -> **72**, never-examined
+     39 -> **36**. This is the third verb to hide the equal-value setter shape, after r218's
+     Reposition/Resize/Rotate and r225's Move -- and all three were missed by the original scope
+     filter for the same reason, which is that it matched on the name.
+     The gestures are ordinary and pre-selected by the UI: the Change Chart Type gallery highlights
+     the chart's current type, and Select Data pre-fills the current range with its header and
+     category checkboxes.
+
+160. **Each guard has exactly as many clauses as Apply has writes, and the extra clauses earn their
+     place.** `ChangeChartTypeCommand` writes Type AND FirstColIsCategories, the latter DERIVED from
+     the requested type -- so a chart whose flag was set by hand can disagree with what its type
+     implies, and correcting that is a real edit even though the type already matches. A guard on the
+     type alone would have suppressed it. There is a test for exactly that case, because it is the
+     one a plausible-looking one-clause guard gets wrong.
+     `ChangeChartSourceCommand` writes four fields, and the long per-series clear block below them is
+     already gated on the range or orientation having changed -- so when all four match, every
+     remaining line is a self-assignment and the guard is exact rather than approximate.
+
+161. 6 tests; reverting the three guards fails 2 of them. The four that still pass are the real-edit
+     directions, which is the expected shape: they exist to stop the guards over-reporting, and a
+     missing guard cannot make them fail.
