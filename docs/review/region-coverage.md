@@ -1167,3 +1167,11 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      Two of the tier-3 commands were deliberately NOT attempted this round for that reason. The
      ranking is in the contract test itself, so the next person picks them up in cost order instead
      of rediscovering which are cheap.
+102. ~~3 of the tier-1 FreeX no-op commands.~~ **FIXED r213:** print areas, cell comment, and
+     scenario. Ceiling 19 -> 16. Each carried a wrinkle the tests pin: print areas compares
+     SEQUENCE-equal because order is part of the value; a cell comment is only a no-op when the note
+     ALREADY exists, since a brand-new one also writes the author; and the scenario check runs as a
+     separate probe pass so no cell is written before the answer is known -- writing first and then
+     deciding would be the mutating-HasEffect trap from r204 in another form.
+     `ApplyCustomViewCommand` was left: it is tier-1 by field count but applies a captured state per
+     sheet plus an active-sheet index, so it belongs with the composites.
