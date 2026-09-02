@@ -961,3 +961,31 @@ Two traps worth keeping, both of which would have made the fix worse than the bu
 
 The general lesson: an override that mirrors a guard has to mirror ALL of it. A partial mirror fails
 in the dangerous direction.
+
+### Round 205: the second FreeW tranche
+
+37 more FreeW commands censused -- the Set*/Replace* family on paragraphs, runs, tables, cells,
+charts, notes and comments. 37/37 classified, every claimed no-op checked by two verifiers.
+
+  * 27 CONFIRMED no-op-capable, moved from "unexamined" to "known broken" with their evidence.
+  * 7 ALWAYS-CHANGES, judged with a reason and out of the debt entirely.
+  * 3 claimed no-ops REFUTED on reachability, also out of the debt with the refutation recorded.
+
+FreeW debt: 89 -> 79, and the composition changed as much as the count -- 52 unexamined, 27 known.
+
+The 7 sound ones are almost all the same argument, and it is worth naming because it is the one
+structural defence against this class: **the caller passes a negated value**. ToggleChartLegend
+passes `!IsLegendVisible`; TryToggleCommentResolved passes `!comment.Resolved`; every
+SetTableFormatting caller flips one boolean of a record it read in the same call. A command whose
+only caller computes the opposite of the current state cannot be asked to set what is already there.
+Where that pattern is used, the class simply does not arise -- which is a better fix than an override,
+and worth preferring in new code.
+
+`SetRunFormattingCommand` is the round's second dead-code find (after r203's two): zero call sites
+anywhere including tests. Recorded as finding 92 rather than deleted here.
+91. **27 more FreeW commands are confirmed no-op-capable** (r205 census, two verifiers each), now
+    listed in the contract test's `KnownNoOpCapableNotYetFixed`. Set*/Replace* on paragraphs, runs,
+    tables, cells, charts, notes. The ratchet requires that list to shrink.
+92. **`SetRunFormattingCommand` is dead code** (r205). Zero call sites anywhere, tests included;
+    run formatting goes through `FormatParagraphRunsCommand`. Third dead FreeW command found by
+    this census line, after `SetShapeRotationCommand` and `SetShapeWrappingCommand` (finding 90).
