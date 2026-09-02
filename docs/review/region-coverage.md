@@ -1627,3 +1627,37 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      removed the `WouldDistribute*` predicates the tests call, so the build failed and `--no-build`
      happily ran the previous assembly. Reverting only the overrides, and leaving the predicates in
      place, gives the honest result: 3 of 6 fail.
+
+## r228 -- when "nothing changed" has to argue with a timestamp
+
+151. **Eight commands examined: four fixed, two judged sound, two already covered.** Outstanding 84
+     -> **78**, never-examined 50 -> **44**. The four fixes are the comment-state family
+     (`UpdateThreadedCommentText`, `UpdateThreadedCommentReply`, `ResolveThreadedComment`) and the
+     Selection pane's `SetSelectionPaneObjectVisibility`.
+
+152. **This is the first round where "nothing changed" was not obviously true, and the argument
+     matters more than the fix.** Opening a comment and pressing Save without typing leaves every
+     user-visible field identical but writes a fresh timestamp -- so is it a no-op? Two things
+     settle it, neither of them a preference:
+     - The helper is named `TouchRootTextEdit`, and the model field it writes is documented as "the
+       UTC time the ROOT comment's own text was last GENUINELY edited". Stamping it when no text was
+       edited contradicts the field's own stated meaning. The command was not recording a change; it
+       was recording a wrong thing.
+     - Both Update commands were ALREADY computing the text equality, one line further down, to
+       decide whether the preserved @mention offsets were still valid. Each knew whether the text had
+       changed and wrote the new timestamp regardless.
+     Where a judgement like this cannot be settled from the code, the honest move is the debt list,
+     not a guess. Here it could be.
+
+153. **Two toggles judged sound, and the distinction is the point.** `ShowHideCommentCommand` and
+     `ShowAllNotesCommand` read the CURRENT state and flip it, so no argument can ask them to do what
+     is already done -- the self-guaranteeing shape r207 preferred. Their neighbours in the same
+     files take the target state as an argument and can be handed the one already in place. Same
+     files, same feature area, opposite verdicts, and the difference is toggle versus setter rather
+     than anything about comments. `R228_CommentStateNoOpTests` includes the toggle as a contrast
+     rather than a fix, so the distinction is pinned and not just asserted here.
+
+154. `SetSelectionPaneObjectVisibilityCommand` is an ordinary equal-value setter with an eye icon on
+     top: the pane shows current visibility, and the shells also drive a Show All / Hide All sweep
+     that sets every object to the same value, so everything already in that state arrives unchanged.
+     8 tests; reverting the four guards fails 4 of them.
