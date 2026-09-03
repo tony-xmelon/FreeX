@@ -2233,3 +2233,27 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      fit-to-page -- silently, forever.
      That is the strongest argument yet for writing the contract BEFORE the comparison it guards
      rather than after: it cost one round to build and paid for itself within it.
+
+## r249 -- let the type's own Clone be the field list
+
+222. **`ApplyConditionalFormatCommand` fixed; outstanding 33 -> 32.** The Conditional Formatting
+     rules dialog pre-fills the rule being edited, so pressing OK unchanged replaces a rule with an
+     equal one. `ConditionalFormat` is a class with reference equality and SIXTY settable members, so
+     this needed a content comparison.
+
+223. **The coverage contract for it is a better shape than r234's and r248's, and worth reusing.**
+     Those reflect over the type and maintain an exemption list. This one compares `SameAs` against
+     `Clone`: every member `Clone` assigns must appear in the comparison.
+     `Clone` is the type's own maintained enumeration of what it consists of -- it has to be complete
+     or cloning loses data -- so the field list comes from code that is already required to be right
+     for an unrelated reason, and there is no exemption list to keep honest. For a sixty-member type
+     that is both cheaper to write and harder to fool.
+
+224. **Two coverage contracts in two rounds, two real omissions caught on first run.** r248's caught
+     `FitToPage` and `ScaleToFit`; r249's caught `Value1` and `Value2` -- both times in a comparison I
+     had GENERATED from the source rather than typed, which is exactly the case where one feels
+     safest. A generated comparison is only as complete as the extraction that generated it, and my
+     extraction was wrong twice out of two. That is the argument for the contract stated as a
+     measurement rather than a principle.
+     `Value2` matters concretely: without it, changing the upper bound of a between-rule would have
+     been reported as no change. There is a test for it.
