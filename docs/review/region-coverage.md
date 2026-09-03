@@ -2164,3 +2164,24 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      ranking now known to be wrong for them". Twenty-nine rounds later that judgement reads well: the
      right move was to wait until the decision could be made from a record rather than from a
      prediction, and the machinery that allowed it did not exist yet.
+
+## r246 -- probably the most frequent no-op in the product
+
+213. **`ApplyStyleCommand` fixed; outstanding 37 -> 36.** The single-sheet twin of the command r239
+     did, and the same two-snapshot decision: cells with their style-only entry and its provenance
+     tag, plus the rich-text runs the command rewrites when the diff touches run fonts.
+     Worth saying what this one is, because the count does not convey it: pressing Bold on
+     already-bold text is very likely the single most frequent no-op gesture in a spreadsheet editor.
+     Every one of those was pushing an undo entry and clearing the user's redo.
+
+214. Probed by removing the rich-text clause from the decision: the r237 contract fails and names
+     `_richTextSnapshot`. That probe is worth repeating per command rather than trusting the pattern
+     -- r240 showed the contract can be structurally unable to see a particular command even while
+     passing for others.
+
+215. The third test is the batch case once more, now for a range rather than a sheet group: the first
+     cell already carries the style and the second does not, so the application is a real edit even
+     though half of it changes nothing. That case has appeared in r234 (cells), r239 (sheets) and now
+     r246 (ranges), and it is the same mistake each time -- `Any` where `TrueForAll` belongs -- which
+     is why each of the three has its own test rather than an assumption that the earlier one covers
+     it.
