@@ -2257,3 +2257,27 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      measurement rather than a principle.
      `Value2` matters concretely: without it, changing the upper bound of a between-rule would have
      been reported as no change. There is a test for it.
+
+## r250 -- the pattern reaches the command r242 had to give up on
+
+225. **`SetDataValidationCommand` fixed; outstanding 32 -> 31.** The Data Validation dialog pre-fills
+     the rule being edited, so OK-unchanged replaces a rule with an equal one.
+     r242 examined this family and put it back on the debt, because `DataValidation` is a plain class
+     with reference equality and the snapshots are built with a clone -- so any comparison written
+     with `Equals` would never fire. That verdict was right at the time. The r249 shape is what makes
+     it wrong now: a content comparison whose coverage contract derives its field list from the
+     type's own `CloneForRanges`.
+
+226. **The four `Native*` collections are the subtlety worth recording.** `CloneForRanges` assigns
+     them BY REFERENCE, so a clone genuinely compares equal to its source on those members -- which
+     makes reference comparison look adequate if you test with a clone. But the case a no-op decision
+     actually faces is two INDEPENDENTLY BUILT rules with identical content, and those share no
+     references. Testing with a clone would have hidden the need for content comparison entirely; the
+     comparison covers them by content for that reason.
+
+227. **A method note, since it cost time three rounds running.** My shell edits keep silently not
+     applying -- a `perl -0777` substitution that does not match, an `awk` line that mangles regex
+     escapes. Twice more this round. The reliable form for writing a line containing regex escapes is
+     to put the line in a file and have `awk` read it, rather than embedding it in the program text.
+     Every one of these was caught by re-reading the file afterwards rather than by the test, which
+     is the same lesson as r238 and r240: verify the edit, not just the outcome.
