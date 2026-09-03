@@ -2709,3 +2709,35 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      unsettled clause added a static diagnosis field to `RefreshPivotTableCommand` itself. Instrumenting
      production code to answer a test question leaves exactly the kind of residue this program is
      supposed to be removing; the same question was answered by comparing cache contents from a test.
+
+## r262 -- the missing contract, and what it cost
+
+280. **RefreshPivotTable fixed; outstanding 6 -> 5. The command was never the problem.** r261 reverted
+     its guard because a settled refresh still reported a change. Four test-only diagnoses, one per
+     candidate, established that a settled refresh leaves the rendered cells, the last-rendered
+     range, the merged regions and the pivot's own field lists all untouched. Nothing churned. The
+     false "changed" came from the comparison itself.
+
+281. **`PivotCacheFieldModel` carries THREE collection members and r261's comparison stripped ONE.**
+     `SharedItems` was stripped; `SharedItemKinds` and `GroupItems` were not, so both were compared by
+     REFERENCE inside the stripped record equality and differed after every refresh that rebuilt the
+     cache field list. That is the exact defect this program has been fixing in other people's code
+     for ten rounds, committed by me, in the one comparison I shipped WITHOUT a coverage contract.
+
+282. **The symptom of a broken comparison is indistinguishable from the symptom of a churning
+     command.** Both look like "the guard never reports a no-op". r261 read it as the command's fault
+     and reverted -- the safe call on the evidence then available, and still the right call, but the
+     diagnosis was wrong. What separates the two is asking the model directly whether the state
+     changed, which is four small tests and does not touch production code.
+
+283. **The contract found the third member on its first run.** Writing the contract r261 skipped
+     immediately failed with "one extraneous item: GroupItems" -- a member my hand-written fix had
+     ALSO missed. Two misses of the same kind in two rounds, one caught by a machine on first
+     execution. Every other comparison in this program had a contract and none of them has had this
+     failure. That is the argument for the contracts, demonstrated on my own code rather than
+     hypothetically.
+
+284. **The probe reproduces the whole story.** Restoring r261's one-member strip fails
+     `ASettledRefreshReportsANoOp` -- r261's symptom exactly -- AND the coverage contract, in the same
+     run. The difference between the two rounds is not the code; it is that the second one has a test
+     that names the cause.
