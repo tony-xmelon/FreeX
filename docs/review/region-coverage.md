@@ -2776,3 +2776,33 @@ it is the kind of thing a per-command copy of the comparison would have got inco
 289. **The timeline's clause IS load-bearing** -- the same probe fails
      `SetTimelineRange_ChangingTheRangeIsNotANoOp`, because a timeline stores its dates on itself and
      nowhere else.
+
+## r264 -- the cannot-fire objection, narrowed rather than repeated
+
+290. **ChangePivotTableSource fixed; outstanding 3 -> 2.** r231 held this command back for thirty
+     rounds on a real observation: the snapshot's `OriginalCache` is the LIVE cache object whenever
+     Apply mutates in place, so comparing its content against itself is always true -- the guard that
+     "would never fire while looking exactly like the ones that do work".
+
+291. **The objection was right about that member and wrong about the snapshot.** Every mutable field
+     of the cache is captured BESIDE the object -- source type, sheet name, reference, table name,
+     table id, and the field list -- and those carry the content half. The object itself is compared
+     by IDENTITY, which is not vacuous: a source change that crosses the table/range boundary swaps in
+     a replacement cache, and `ReferenceEquals` sees exactly that. A cannot-fire objection is about a
+     particular comparison, not about the command, and the way past it is to find what else was
+     captured rather than to accept it a second time.
+
+292. **The identity exception is pinned by its own test**, because it is the kind that rots quietly:
+     "improving" it to a content comparison would make the clause vacuous again and the guard would
+     start reporting no-ops for real source changes. The contract asserts the `ReferenceEquals` is
+     there, rather than trusting a comment to keep someone from removing it.
+
+293. **The load-bearing test is a source change that renders identically.** Widening the range to
+     include an empty column moves no pivot cell, so the cell comparison sees nothing -- but the
+     pivot's SourceRange and the cache's SourceReference both changed, and both round-trip into the
+     saved file. The probe that removes the snapshot half fails exactly that test and nothing else,
+     which is the distinction r231 could not make from reading.
+
+294. **Two commands remain: MoveRange (thirty snapshot fields) and ResizeStructuredTable.** Neither is
+     blocked on a missing technique now -- both are blocked on size, which is a different and more
+     honest kind of debt than the one this program started with.
