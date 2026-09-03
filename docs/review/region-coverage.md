@@ -2672,3 +2672,40 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      must declare snapshot fields". Same failure recorded earlier in this program with the same cause.
      Written through a file instead. A contract edited by a tool that silently mangles its regex is
      worth no more than no contract.
+
+## r261 -- MergeCells fixed; RefreshPivotTable attempted and reverted
+
+275. **MergeCells fixed; outstanding 7 -> 6.** r232 recorded it as "net effect nil, but establishing
+     that means reasoning through five loops rather than adding a guard". The post-hoc form reasons
+     through none of them: Revert restores six things -- the merged region and the absorbed ones, the
+     covered cells, and the four per-address comment collections -- and the decision compares all six
+     against the sheet.
+
+276. **The comment half is load-bearing on its own.** Apply MIGRATES a covered cell's note onto the
+     anchor, so a re-merge that moves a note changed something even though every covered cell was
+     already blank and the region already existed. The probe that drops the comment clause fails
+     exactly that test and nothing else.
+
+277. **RefreshPivotTable was written, could not be demonstrated, and was REVERTED.** The guard covered
+     all four snapshots and looked right. With no `PivotCacheModel` in the fixture its tests passed --
+     but that fixture proved nothing, because `cache` was null on both sides and the cache clause
+     compared nothing at all. Adding a real cache made the no-op test fail: with a populated cache,
+     a second refresh over untouched data still reports a change, and I did not identify which clause
+     never settles. A test-only probe established that the cache's own shared items ARE stable across
+     the second and third refresh, so the cache comparison is not the culprit -- which narrows it to
+     the rendered cells, the last-rendered range, or the merged regions, and leaves the question open.
+     Shipping a guard whose no-op direction cannot be demonstrated is exactly what this program has
+     declined eight times for other people's code, so it is declined here for mine. r240 set the
+     precedent: a guard written and reverted, with the obstacle recorded precisely enough to act on
+     next time.
+
+278. **The near-miss worth recording is the fixture, not the guard.** A pivot fixture with no cache
+     makes every cache-related clause vacuous while all the tests pass. The first version of these
+     tests would have taken RefreshPivotTable off the debt list on the strength of a comparison that
+     never executed -- the same failure as r253's and r256's green probes, but reaching a wrong
+     conclusion rather than merely an unproven one.
+
+279. **A diagnostic probe belongs in test code, not in the command.** My first attempt at finding the
+     unsettled clause added a static diagnosis field to `RefreshPivotTableCommand` itself. Instrumenting
+     production code to answer a test question leaves exactly the kind of residue this program is
+     supposed to be removing; the same question was answered by comparing cache contents from a test.
