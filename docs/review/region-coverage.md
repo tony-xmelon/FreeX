@@ -2335,3 +2335,62 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      stopping point. The alternative -- shipping a guard over the hidden-row half only -- is exactly
      the partial mirror r225 declined to build, and it would have taken eight commands off the debt
      list without fixing any of them.
+
+## r253 -- the second half, and the first of the eight comes off
+
+233. **`WorksheetAutoFilterColumnComparison.SameAs` -- content comparison for the column model and
+     the six nested filter models it carries.** Eleven of the column model's fifteen members are
+     reference types, so record equality compares them by reference and reports "changed" for two
+     filters built the same way. The comparison is structured to keep using record equality for what
+     it is good at: every reference-compared member is stripped to a SHARED instance (`Strip`), the
+     stripped pair is compared with `==`, and each stripped member is then compared by content. A
+     scalar member added later is covered with no edit here. The six nested models each carry
+     scalars plus one `NativeAttributes` dictionary, so they use the same shape --
+     `with { NativeAttributes = null }` plus a map comparison.
+
+234. **`R253_AutoFilterColumnComparisonCoverageContractTests` derives its field list from the types,
+     not from a hand-written list.** A member is reference-compared exactly when its type is a
+     reference type other than `string`, so the contract computes that set by reflection and checks
+     three things: every such member of the column model is stripped; every stripped member is then
+     compared in `SameAs`; and no nested model has a reference-typed member other than
+     `NativeAttributes`. The third is the one that matters most -- an unstripped collection makes
+     `SameAs` answer "changed" too often, which loses nothing, but an unhandled member inside a
+     nested model makes it answer "unchanged" for two DIFFERENT filters, which drops a real edit.
+
+235. **`AverageFilterCommand` fixed; outstanding 31 -> 30, and r225's eight-command block is now
+     seven.** Its two snapshot fields are exactly the two halves and nothing else -- `_undoSnapshot`
+     and `_previousAutoFilterColumns` -- which Revert confirms by restoring precisely those two. So
+     a decision over both is complete rather than partial, and r225's objection to the group does
+     not apply to this member of it.
+
+236. **The decision is post-hoc, so it mirrors nothing.** `WorksheetAutoFilterColumnSync.Unchanged`
+     compares the stored filterColumn list against the snapshot Apply already captured, and
+     `FilterUndoSnapshot.Matches` does the same for the hidden-row half. Both read the record of
+     what the edit did rather than predicting it, which is why an earlier draft of this round --
+     a `WouldChange` that re-ran Apply's projection on a copy -- was thrown away: it was a second
+     copy of the edit that could drift, and the post-hoc form needs no such copy. It also satisfies
+     r237's participation contract honestly, since both fields appear in the decision.
+
+237. **The other seven each carry a THIRD snapshot, and stay on the debt.** Five carry a
+     `StructuredTableFilterColumnSnapshot`; `FilterCommand` additionally carries a table-reband cell
+     snapshot and a slicer-sync snapshot; `AdvancedFilterCommand` carries a copy-to cell snapshot.
+     Each of those halves needs its own content comparison before those commands can be decided,
+     and naming which half is missing per command is more useful than the group-level "both models"
+     note r225 left.
+
+238. **The fail-before probe came back GREEN, and the round's premise was wrong for this command.**
+     Swapping `SameAs` for `!=` in `Unchanged` left every AverageFilterCommand test passing.
+     `AverageFilterCommand` builds its column model entirely from EMPTY collection expressions, and
+     an empty `[]` targeting an interface lowers to the cached `Array.Empty<T>()` singleton, so its
+     two applications are reference-equal member for member; its one nested model carries a null
+     attribute dictionary. For this command record equality would have sufficed. The claim in r252
+     that "record equality reports changed every time" is true of the seven commands that build
+     NON-empty value lists and custom-filter criteria -- not of this one.
+     A probe that stays green is evidence about the test, not just the code: the command-level tests
+     could not distinguish the two comparisons, so `R253_AutoFilterColumnComparisonTests` now pins
+     the distinction on the models directly, asserting that `left == right` is FALSE and
+     `left.SameAs(right)` TRUE for two identically-built value filters. That test fails without the
+     comparison by construction, which the command-level ones did not.
+     Keeping `SameAs` here anyway is deliberate: the singleton-empty-array coincidence is not a
+     property AverageFilterCommand states or a test protects, and a later edit giving it a real
+     value list would silently turn record equality wrong.
