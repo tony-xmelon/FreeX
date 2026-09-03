@@ -1877,3 +1877,33 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      removals and the contract found 47 -- because two of the four were already off the list. The
      ratchet caught my own bad count, which is the second time this session a mechanical check has
      corrected a number I asserted (see r232). Outstanding 49 -> **47**.
+
+## r236 -- the diagnosis was one level too shallow
+
+180. **r233 said thirteen commands were blocked on "Cell has no value comparison". r234 built that
+     comparison, and r236 found it is not sufficient for three of them.** `FillCellsCommand`,
+     `AutofillCommand` and `GroupedApplyStyleCommand` write COMPANION state as well as cells --
+     hyperlinks, hyperlink metadata, rich-text runs -- and keep it in SEPARATE parallel snapshot
+     lists alongside their cell snapshot. So no single snapshot answers "did anything change", and a
+     comparison built on the cell list alone would report unchanged for a fill that altered only a
+     hyperlink: a partial mirror, in the dangerous direction, in three commands at once.
+     The remedy is now specific: capture `CellEditCompanionSnapshot`, which already covers all four
+     kinds, instead of three parallel tuples. That is a change to how these commands hold their undo
+     state, not a guard added to them -- which is why it is recorded rather than attempted at the end
+     of a round, on the same reasoning r233 used.
+
+181. **This is the third time this session that checking a "surely it's fine" assumption changed the
+     answer, and the fourth time overall the pattern has paid.** r227: `DistributeColumns` returns
+     "was applicable", not "did change". r229: `SetCalculatedColumnFormula` returns "was the column
+     found". r236: these commands' cell snapshot is not the whole of what they write. In each case
+     the plausible move was to trust the obvious reading, and in each case it would have produced a
+     guard that looks right and never fires -- or worse, fires wrongly.
+
+182. **The same look cut the other way too, which is worth recording because it is the answer nobody
+     writes down.** Finding that these commands write hyperlinks raised a sharper worry than the
+     no-op question: if their undo snapshot were really cell-only, then undoing a fill would not
+     restore a hyperlink it removed -- a data-loss bug in a different class entirely. It is not so.
+     `FillCellsCommand.Revert` restores from `_hyperlinkSnapshot`, and `GroupedApplyStyleCommand`
+     restores rich-text runs from its own. The parallel snapshots exist precisely so undo is
+     complete. The structure that makes the no-op question hard is the structure that makes undo
+     correct.
