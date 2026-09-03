@@ -2433,3 +2433,38 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      at the call site cannot distinguish a working comparison from a missing one.
      `R254_TableFilterReapplyNoOpTests` puts the criterion on a structured table so the comparison is
      actually reached.
+
+## r255 -- the AutoFilter block is closed
+
+244. **`AdvancedFilterCommand` and `FilterCommand` fixed; outstanding 25 -> 23, and r225's
+     eight-command block is EMPTY.** Neither needed a fourth filter model: both write cell content,
+     and the cell comparison they needed already existed --
+     `CellEditCompanionSnapshot.SameCellOrAbsent`, built in r234 for the cell-editing commands.
+     AdvancedFilter compares its copy-to block cell by cell against `_copySnapshot`; FilterCommand
+     does the same for the table-reband block, plus the two filter-column models, the hidden-row
+     snapshot, and the slicer selections item by item -- five snapshots, which is exactly what its
+     Revert restores.
+
+245. **The probe was the strongest of the three rounds.** Removing the cell comparison from
+     AdvancedFilter failed BOTH copy-to tests, including the changed direction: with the copy block
+     unexamined the decision reports "nothing changed" for a run that wrote a whole block of data,
+     which is the failure mode that actually loses work rather than merely annoying the user.
+     r253's probe stayed green and r254's failed half its cases; this one failed everything it
+     should, because the machinery it removes is the only thing that can see the change.
+
+246. **A latent hazard noted rather than changed: `FilterCommand.Revert` early-returns on
+     `!_undoSnapshot.HasSnapshot` BEFORE restoring the table filter columns, the slicer selections
+     and the reband block.** It restores `_previousAutoFilterColumns` first, so those four are
+     ordered around a guard that is about a fifth. Today that early return is unreachable after a
+     successful Apply, because Apply calls `CaptureIfNeeded` unconditionally -- so this is not a live
+     bug and is not "fixed" here. It is recorded because the r237 invariant cuts both ways: the
+     undo record is the complete list of what a command writes only while Revert actually restores
+     all of it, and making that capture conditional (as five sibling commands already do) would
+     silently turn this into an undo that leaves four of five snapshots unapplied.
+
+247. **The r237 contract caught a real hole in my own guard, and the fix was not to loosen it.**
+     FilterCommand's first draft consulted `_previousTableFilterColumns` inside a helper, so the
+     decision method's body never named it and the contract failed. A contract that followed one
+     level of delegation would have passed the draft -- and would also pass a decision that
+     delegates to a helper which ignores the field. Passing the snapshot to the helper as an
+     argument keeps the field visible in the decision, which is what the contract is actually for.
