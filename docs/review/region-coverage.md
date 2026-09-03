@@ -2865,3 +2865,38 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      comparisons plus the ones r234, r249, r250, r254 and r265 already built; assembling it in the
      same round that discovered two incomplete comparisons would be exactly the rush that produced
      r261's un-demonstrable guard.
+
+## r267 -- MoveRange, and the debt list reaches ZERO
+
+304. **MoveRange fixed; outstanding 1 -> 0. The known-broken list is empty.** Every one of the 233
+     FreeX workbook commands now either declares whether it can no-op or is on the judged-sound list
+     with a reason. The ceiling that started at 163 in r217 is at 0.
+
+305. **The one reachable no-op was already handled by an early return that simply did not say so.**
+     r225's own example -- "dragging something and dropping it where it started" -- hits an explicit
+     `targetRange == _sourceRange` branch that captures empty snapshots and returns without writing
+     anything. Marking it `IsNoOp: true` is a ONE-LINE fix, true by construction rather than by
+     comparison, and I found it only after building a twenty-six-clause decision. Reading the
+     command's control flow would have found it first. The lesson is not that the wide decision was
+     wasted -- see below -- but that "what does this command do when nothing changes" is a question
+     about control flow before it is a question about comparison.
+
+306. **The wide decision is not redundant, and there is a test that proves it.** Moving an EMPTY
+     range onto blank cells takes the FULL apply path -- snapshots, formula rewrites, the lot -- and
+     still writes nothing observable. The early return never sees that case; only the comparison over
+     all twenty-six snapshots reports it. The two probes fail on DISJOINT tests: unmarking the early
+     return fails the three same-destination tests, blinding the wide decision fails the two
+     real-move tests. Neither half can stand in for the other.
+
+307. **The r237 contract made the same structural point for the fourth time.** Twenty-six snapshots
+     split across four helpers meant the decision body named none of them, so the contract reported
+     all twenty-six unconsulted. Passing every field from the decision keeps them visible; the
+     parameter lists are long, and that is the price of the decision reading as a list of everything
+     the command can write.
+
+308. **What the whole program came to.** Fifty-one rounds, 163 commands off the debt, and the shape
+     that did most of the work was not a technique but an order: capture what you write, decide
+     afterwards by comparing that record against the model, and let a contract derived from the
+     capture keep the comparison honest. The recurring failure was never a hard command -- it was a
+     comparison that looked complete and was not, which is why every comparison in this program ends
+     up with a contract that fails when a member is added.
