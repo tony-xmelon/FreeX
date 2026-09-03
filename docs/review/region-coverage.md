@@ -2281,3 +2281,31 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      to put the line in a file and have `awk` read it, rather than embedding it in the program text.
      Every one of these was caught by re-reading the file afterwards rather than by the test, which
      is the same lesson as r238 and r240: verify the edit, not just the outcome.
+
+## r251 -- a fix built, measured, and thrown away
+
+228. **I wrote guards for `FormatPainterDataValidationCommand` and `PasteDataValidationCommand`,
+     measured them, and reverted both. Outstanding stays 31.** They were the obvious next users of
+     r250's `DataValidation.SameAs`: one snapshot each, the target sheet's whole rule list, compared
+     element-wise. The tests said the second application was still a real edit, so I probed what
+     actually differed between two identical paints. Only the rule's **Id**:
+     `...|A5:A6|10` on both sides, different Guids.
+
+229. **Both commands mint a fresh rule identity on every copy** -- `CloneValidation` goes through
+     `CloneWithNewIdentity`, which assigns `Guid.NewGuid()`. So by the model's own definition the
+     second paint DOES change the document, and a guard comparing content-including-Id can never
+     fire for the case it exists to catch. That is the "guard that cannot fire" this program has now
+     refused five times (r229 Autofill, r231 SaveScenario, r242 FormatPainter's first look, r248's
+     near miss, and this) -- and the only reason I did not ship it is that the behavioural test
+     failed. Had I written only the "different rule is a real edit" direction, it would have passed
+     and the guard would have looked correct forever.
+     That is the argument for always writing the no-op direction as a test, not just the real-edit
+     direction: the real-edit direction passes with no guard at all.
+
+230. **The identity churn is a separate question, and possibly a real defect.** Re-painting the same
+     validation onto the same target produces a document that differs only by a regenerated Guid --
+     which marks the workbook dirty and changes the saved bytes with nothing user-visible behind it.
+     Whether copy should preserve or mint identity is a design question about the model rather than
+     about no-ops, so it is filed rather than answered here.
+     Both commands stay on the debt with this as their reason, which is sharper than r242's "the
+     comparison would never fire": now we know exactly which member makes it so, and why.
