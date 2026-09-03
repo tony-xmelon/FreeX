@@ -2554,3 +2554,41 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      chart data ranges, named ranges scoped and unscoped, sparklines and their data ranges, and spill
      relocations. A decision over all thirty is a round of its own, and a decision over fewer is the
      partial mirror this program keeps declining.
+
+## r258 -- the guard r231 said could not fire
+
+259. **SaveScenario and SaveCustomView fixed; outstanding 13 -> 11.** r231 named these two exactly
+     and refused to guard them: "both targets ARE records, and the obvious guard is
+     `newValue == previous` -- but both records carry LIST members, which record equality compares by
+     reference, so against a freshly built instance it is always false. That guard would never fire
+     while looking exactly like the ones that do work." `SaveTargetComparison` is the comparison that
+     does fire; each record has exactly one collection member, so the strip-and-compare shape applies
+     directly, and the custom view's elements reuse r248's thirty-member comparer.
+
+260. **The probe confirmed r231's prediction empirically rather than by argument.** Replacing both
+     comparisons with `==` fails BOTH no-op tests while all four changed-direction tests keep
+     passing -- which is precisely what makes that guard dangerous: it looks like it works. r231
+     called this from reading; the probe measured it.
+
+261. **The coverage contract found a reference comparison no reading would have surfaced.**
+     `ScenarioCellValue` is a `CellAddress` and a `ScalarValue`, and both are records with value
+     equality, so `!=` looked obviously correct. `ScalarValue` is ABSTRACT, and one of its subtypes,
+     `RangeValue`, carries a `ScalarValue[,]` -- an array, compared by reference. The member's
+     declared type never mentions it. The contract walks the reachable graph including subtypes, so
+     it failed; the comparison now compares range contents element by element, recursively, and a
+     second test pins the exemption to the existence of that code so it cannot outlive it.
+
+262. **The classifier used since r253 is conservative, not exact, and this round is where the
+     difference showed.** "Reference type means compared by reference" is right for collections and
+     WRONG for records, which are reference types with value equality. The earlier contracts are
+     unaffected -- being conservative there only meant stripping and comparing members that record
+     equality would have handled -- but a contract on a record-typed member needs the recursive form:
+     value equality recurses into the member, and stops being content equality at the first
+     collection it reaches.
+
+263. **A blanket `sed` for the return statement hit two sibling commands in the same file.**
+     `CustomViewCommands.cs` holds three commands, two of which had their own bare
+     `return new CommandOutcome(true);`, and one already had an unrelated `NothingChanged(ICommandContext)`
+     -- so the edit COMPILED and silently changed two commands I had not examined. Caught by grepping
+     for the applied pattern and finding three hits where one was intended. This is the fifth time in
+     this program that verifying the edit rather than the outcome has caught something.
