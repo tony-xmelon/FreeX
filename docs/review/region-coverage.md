@@ -2091,3 +2091,26 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      previous assembly and reported a failure from the OLD ceiling. The green/red I was reading had
      nothing to do with the change I had just made. Same family as r227 and r240: the check ran, but
      not against the code I thought.
+
+## r243 -- twenty fields, and the contract that made writing them by hand safe
+
+203. **`SetPageSetupCommand` fixed; outstanding 41 -> 40.** Twenty fields written, twenty snapshots
+     kept, and every pair now compared. Page Setup pre-fills every one of its controls from the
+     sheet, so pressing OK without editing rewrites all twenty with what they already hold.
+
+204. **This is the command the r237 contract was worth building for.** Twenty clauses is well past
+     the point where hand-transcription is trustworthy -- and the failure mode is silent: nineteen of
+     twenty compared looks exactly like twenty, and the missing one reports "nothing changed" for a
+     real edit forever. Earlier rounds handled that by keeping guards small enough to eyeball, which
+     is why this command sat on the debt list from r208 to r243. The contract removes the constraint:
+     it fails if a `_previous*` field this class declares is not mentioned in the decision, so the
+     twenty clauses are machine-checked rather than trusted. Proved by deleting the
+     `_previousPrintComments` clause and watching the contract name it.
+     Worth stating the general form, because it changes what is worth attempting: a guard whose
+     completeness is enforced can be as wide as the command needs. Without that, guard width is
+     capped by what a person can re-read reliably, and commands wider than that stay broken.
+
+205. The clauses were generated from the command's own `_previousX = sheet.Y;` snapshot lines rather
+     than typed, so the pairing comes from the code that already exists rather than from me reading
+     twenty names twice. The test that pins it picks a field deliberately far from the first, because
+     a comparison that stopped early would still pass a test that only checked orientation.
