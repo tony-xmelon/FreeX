@@ -3045,3 +3045,41 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      Deleting the Pinned row left invalid syntax, so the test run used stale binaries -- r241's lesson.
      The compiling probe flips the row's Kind instead, and it fails THREE tests at once: Pinned
      resolves to zero and Recent to two, which is exactly the pair of conditions `.Single()` throws on.
+
+## r272 -- auditing my own fences, and what the hole was hiding
+
+332. **The event-leak class is clean, and that made auditing the better use of the round.** FreeX's
+     app layers declare EIGHT public events, three on long-lived objects. Both that matter --
+     `WorkbookSession.WorkbookChanged` and `WorkbookDocumentContext.CommandStackChanged` -- have
+     balanced pairs, and both detach in `OnClosed`/`MainWindow_Closed` with a comment saying why the
+     retention would otherwise persist. Fifth class in a row found already correct, which is the
+     signal to stop asking the same question.
+
+333. **My own contracts had a coverage hole, and it was the worst-placed one available.**
+     r268/r270 scanned eleven UI-bearing projects; the repository has eighteen. The seven omitted
+     include BOTH shared shells -- `Free.Shared.Shell.Avalonia` and `.Wpf` -- which all three apps run
+     on, so a gap there was a gap in every app simultaneously. Also missed: `src/FreeX.App.UI` and
+     four FreeP projects. A fence is only as good as its perimeter, and I never checked mine against
+     the repository.
+
+334. **Widening it found a loaded gun with the safety on, in the save-changes prompt.**
+     `SisterAvaloniaFileCommandWorkflow.PromptSaveChangesSync` blocks on an Avalonia MODAL dialog's
+     `ShowAsync` with `GetAwaiter().GetResult()`. A modal dialog needs the UI thread to pump before it
+     can be answered, so calling this on that thread deadlocks with CERTAINTY -- not by luck of
+     scheduling, the way the r269 clipboard case would have. It is reachable only through the public
+     sync `ConfirmCloseAllowed` overload, and no app calls it: every Avalonia caller uses
+     `ConfirmCloseAllowedAsync`.
+
+335. **The codebase already knew, and fenced the wrong half.** Two sibling tests assert the MainWindow
+     files never name `PromptSaveChangesSync`, and FreeP's asserts the file-lifecycle chain contains
+     no `GetAwaiter().GetResult()` "because these types are driven from the UI". So the hazard was
+     understood and the windows were fenced -- while the shared shell that still offers the method
+     was not. Recorded rather than deleted: removing a public member of shared code that three apps
+     link is not a change to make from inside a review of a different defect class.
+
+336. **Third false positive from my own detector, third time the code was right.** The shared
+     window-close coordinator opens with `await Task.Yield()` -- deliberately, to leave the
+     synchronous Closing callback before doing anything -- and my "every await inside a try" rule
+     flagged it. `Task.Yield()`'s awaiter cannot fault, so the rule was over-strict and now says so
+     explicitly. r268 was delegation, r270 was `_ = await`, r272 is this. Every one would have been a
+     false bug report if the contract had been written and trusted rather than written and run.
