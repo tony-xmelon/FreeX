@@ -2185,3 +2185,27 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      r246 (ranges), and it is the same mistake each time -- `Any` where `TrueForAll` belongs -- which
      is why each of the three has its own test rather than an assumption that the earlier one covers
      it.
+
+## r247 -- the delegation that carried a defect now carries the fix
+
+216. **`ApplyStructuredTableStyleCommand` fixed, and `ReapplyStructuredTableStyleCommand` cleared
+     with it. Outstanding 36 -> 34 -- two entries, one change.**
+     The first is a composite in all but name: one `ConfigureStructuredTableStyleOptionsCommand`
+     (fixed in r219) plus a set of `ApplyStyleCommand`s (fixed in r246). Once every child could say
+     whether it changed anything, the parent needed only to bubble that up -- the mechanism
+     `CompositeWorkbookCommand` has had all along and which r224 leaned on to clear
+     `RemoveSheetsCommand`. The `allNoOp` flag starts from the option change so a run with no style
+     commands at all still answers correctly.
+
+217. **r231 recorded `Reapply` as inheriting this command's DEFECT through delegation. It now
+     inherits the fix through the same delegation.** That is the observation running forward, and it
+     is the argument for fixing leaves before composites: the six rounds spent on
+     Configure/ApplyStyle/cell-comparison were what made this round a two-line change.
+     It moves to `DeclaresIsNoOpThroughAHelper` rather than off the books entirely, because its own
+     class body still never mentions IsNoOp and the source scan cannot see through the call. The
+     contract's machine-checked delegate claim (r223) covers it.
+
+218. The contract caught the classification, not me: I removed both from the debt list, and
+     `EveryWorkbookCommandDeclaresWhetherItCanNoOp` failed naming `Reapply` -- correctly, because
+     "fixed" and "declares" are different properties and only the second is what that list tracks.
+     Third time this session a mechanical check has corrected my bookkeeping rather than my code.
