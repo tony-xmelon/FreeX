@@ -2741,3 +2741,38 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      `ASettledRefreshReportsANoOp` -- r261's symptom exactly -- AND the coverage contract, in the same
      run. The difference between the two rounds is not the code; it is that the second one has a test
      that names the cause.
+
+## r263 -- the slicer/timeline pair, contract first
+
+285. **SetSlicerSelection and SetTimelineRange fixed; outstanding 5 -> 3.** Both re-render every bound
+     pivot from a snapshot per target, and both are reached twice by the most ordinary gesture there
+     is: clicking a slicer tile back to the selection already in effect, or dragging a timeline handle
+     back where it was.
+
+286. **The coverage contract was written BEFORE the comparisons this time**, which is the order r262
+     established at the cost of a round. It earned that immediately, twice over: its own
+     "a short member list means the parse broke" assertion caught a bug in my parser -- the substring
+     excluded the record's closing paren, so the LAST positional member never matched and two of the
+     three snapshots silently checked only two members each.
+
+287. **The r237 contract found a structural mistake, not a missing clause.** SetSlicerSelection has
+     TWO mutually exclusive paths with disjoint undo records -- a slicer bound to pivots re-renders
+     them; one bound to a structured table writes a value filter on a table column -- and I wrote a
+     decision per path. That hid half the snapshot fields from the contract, which correctly reported
+     `_tableSnapshot` unconsulted. Merging them into one decision that branches on which path ran is
+     both what the contract asks and the more honest shape: the command has one no-op question, not
+     two.
+
+288. **The slicer's own selection clause is NOT independently demonstrable, and that is recorded
+     rather than glossed.** The probe that removes it leaves every test passing, including one built
+     specifically to isolate it -- selecting an item absent from the source data, which changes the
+     stored selection while every rendered cell stays identical. It passes anyway because the slicer
+     sync writes that selection into the pivot's own field model, where
+     `PivotFieldLayoutStateSnapshot.Matches` catches it. The clause stays: it is part of what Revert
+     restores, r237 requires it, and a slicer whose pivots cannot be resolved would depend on it. But
+     it is redundant in every reachable case found, and claiming otherwise would be the kind of
+     unearned confidence the probes exist to prevent.
+
+289. **The timeline's clause IS load-bearing** -- the same probe fails
+     `SetTimelineRange_ChangingTheRangeIsNotANoOp`, because a timeline stores its dates on itself and
+     nowhere else.
