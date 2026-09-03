@@ -3151,3 +3151,43 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      one level further out; there is no further out left -- the next unscanned thing would have to be
      a project that does not exist yet, which is what the lower-bound and coverage contracts across
      this program exist to catch.
+
+## r275 -- a new class, and a demonstrated flaw in how this program measures
+
+348. **The hook was right that exhausting a method is not exhausting the issues, so this round changed
+     class rather than perimeter.** Culture-sensitive number handling in the file-format layers had
+     never been surveyed by this program, and it fails in the one way a green suite here cannot see:
+     every test in the repository runs under en-US.
+
+349. **The class has been fixed seven times and fenced zero times.** r98, r108, r110, r111, r145,
+     r151 and r152 each found one culture bug and closed it. No contract and no analyzer followed --
+     CA1305 is not enabled anywhere in the build -- so nothing stood between the writers and the
+     eighth occurrence except that nobody had yet written the wrong line.
+
+350. **Measured before asserting: the layers are clean.** A multi-line-aware scan of every
+     floating-point parse across the five format layers found zero provider-less calls. Integer
+     parses were excluded deliberately rather than counted as passes: `NumberStyles.Integer` forbids
+     group separators, so a digit string parses identically everywhere, and including them would have
+     buried the signal.
+
+351. **The round-trip probe is blind to the failure that matters, and this round proved it rather
+     than asserting it.** Injecting a symmetric regression -- writer and reader both switched to the
+     current culture -- failed the payload assertion for THREE formats and the round-trip assertion
+     for ONE. CSV and delimited round-tripped their comma decimals perfectly while handing Excel a
+     file it reads as a different number. A save/load test cannot see a wire-format bug, because both
+     halves are wrong in the same direction.
+
+352. **That is the same blind spot the format-fidelity harness was already known to have, now
+     demonstrated with a number instead of argued.** The remedy is to assert on the saved payload,
+     which is what the nine `SavedPayloadUsesTheInvariantDecimalPoint` cases do.
+
+353. **One real inconsistency, correctly NOT reported as a bug.** `DocxWriter.cs:5018` passes
+     `cg.Width` to `XAttribute`, which formats via `XmlConvert` and is invariant; line 5061 called
+     `.ToString()` on the same value, which is not. The type is `long` and the values are geometry
+     extents that are never negative, so no culture in .NET formats them differently -- it is a
+     latent wart, not a defect, and saying so plainly beats dressing it up. Made explicitly invariant
+     in the file's own fully-qualified idiom.
+
+354. **A stale-binary near-miss, caught by checking the build.** Four failures appeared after a
+     compile error left `--no-build` running the probe's own assembly. The r241 trap, and the reason
+     a failed build must never be chained into a test run.
