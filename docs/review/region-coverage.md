@@ -3191,3 +3191,46 @@ it is the kind of thing a per-command copy of the comparison would have got inco
 354. **A stale-binary near-miss, caught by checking the build.** Four failures appeared after a
      compile error left `--no-build` running the probe's own assembly. The r241 trap, and the reason
      a failed build must never be chained into a test run.
+
+## r276 -- untrusted-input hardening, and a class fixed once before
+
+355. **Changed class again, to the one surface this program had never treated as a security
+     boundary.** All three apps open zip-container documents from wherever the user got them, so
+     archive and XML handling is attacker-controlled input by definition.
+
+356. **Zip-slip has no surface here, and that is a real result rather than a null one.** There is no
+     `ExtractToDirectory`, no `ExtractToFile`, and no `Path.Combine` over an archive entry name
+     anywhere in the three apps -- the OPC readers work entirely in memory, so a malicious entry path
+     has nothing to escape into.
+
+357. **XXE is handled deliberately, not accidentally.** `Free.Shared.Opc.SecureXmlReaderSettings`
+     sets `DtdProcessing.Prohibit`, `XmlResolver = null` and a 64 MB character cap together, and most
+     of `FreeX.Core.IO` already routes through it. No site anywhere sets `DtdProcessing.Parse`.
+
+358. **The gap was the third protection, not the first two.** Thirteen readers hand-rolled their own
+     `XmlReaderSettings` with `DtdProcessing.Prohibit` and no character cap. Twelve open a
+     `ZipArchiveEntry` straight from the workbook being opened.
+
+359. **The premise was verified before the fix, because streaming looks like a defence and is not.**
+     Eleven of the twelve are pull-readers rather than DOM loads, which bounds accumulation but not a
+     single colossal text node or attribute -- a pull-reader still materialises one of those as one
+     string. `XlsxPivotCacheReader` already documents why the size cannot be bounded upstream:
+     `WorkbookOpenSizeGuard` validates only the zip central directory's DECLARED lengths, which an
+     attacker controls outright, and never checks what the DeflateStream actually yields.
+
+360. **So this class was already found, fixed once, and never fenced -- r275's shape exactly.** The
+     pivot-cache path was hardened against precisely this zip bomb in an earlier round while thirteen
+     siblings kept the unbounded form. Two consecutive rounds have now found the same failure mode:
+     the bug gets fixed, the class does not get closed.
+
+361. **Two sites deliberately left alone, and said so rather than swept in.** `FILTERXML`
+     (`BuiltInFunctions.TextAdvanced.cs`) parses in-memory cell text in a different layer, and
+     `XlsxWorkbookThemeWriter` loads an already-materialised string -- neither carries decompression
+     amplification. The theme writer was still capped for uniformity with the layer's policy; the
+     formula one was not, and the contract scopes to the package layer to match.
+
+362. **The behavioural test proves the mechanism, the contract proves the coverage, and the doc
+     comment says which is which.** A 64 MB production cap cannot be exercised against a real reader
+     without a 64 MB fixture, so claiming the behavioural test covers all thirteen call sites would
+     have been false. Proved by removing one cap: the contract names the file, the line, and which
+     protection is missing.
