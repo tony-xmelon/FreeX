@@ -2838,3 +2838,30 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      `return new CommandOutcome(true, AffectedCells: affectedCells);` pattern matched THREE commands in
      the same file, and this time it did not compile, which is luckier than r258 where it did. The
      habit that catches it either way is counting matches before applying, not reading the diff after.
+
+## r266 -- the last command's missing machinery; outstanding stays 1
+
+300. **Built the two comparisons MoveRange's decision needs and that nothing else had; no command
+     came off the list.** MoveRange is the last entry on the no-op debt and it is there for size:
+     twenty-four snapshot fields, which Revert restores through as many helpers. Most are maps of
+     key-to-prior-value and compare directly. Two do not -- sparklines and a chart's verbatim formula
+     snapshot -- and each is large enough to need its own coverage contract.
+
+301. **Both hand-written comparisons were incomplete, and both were caught by the contracts.** The
+     sparkline comparison as first drafted covered EIGHT of the model's twenty-nine members; the chart
+     verbatim one covered THREE of six, missing all three error-bar fields. Neither would have failed
+     a build or a test; both would have answered "unchanged" for a sparkline whose colours moved or a
+     chart whose error-bar range was rewritten. This is the r262 failure twice more in one round, and
+     the only reason it cost minutes instead of a round is that the contracts were written first.
+
+302. **`SparklineModel` is a class a move mutates IN PLACE on the captured instance**, which is the
+     worst case for reference comparison: the captured object and the current object are the SAME
+     object, so identity reports "unchanged" for a sparkline that moved. Twenty-nine members, all
+     scalars -- and a contract that fails if a collection member is ever added, because that would
+     silently need stripping.
+
+303. **Landing the proven half and naming what remains is the honest stopping point**, the same call
+     r252 made for the AutoFilter block. The decision itself is twenty-four clauses over these two new
+     comparisons plus the ones r234, r249, r250, r254 and r265 already built; assembling it in the
+     same round that discovered two incomplete comparisons would be exactly the rush that produced
+     r261's un-demonstrable guard.
