@@ -2592,3 +2592,46 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      -- so the edit COMPILED and silently changed two commands I had not examined. Caught by grepping
      for the applied pattern and finding three hits where one was intended. This is the fifth time in
      this program that verifying the edit rather than the outcome has caught something.
+
+## r259 -- the two Options dialogs, and a guard with nothing hand-listed
+
+264. **ConfigurePivotChartOptions and ConfigurePivotTableOptions fixed; outstanding 11 -> 9.**
+     Both dialogs pre-fill every control from current state, so OK-without-changing-anything is the
+     ordinary case, and both wrote every setting back unconditionally.
+
+265. **r219's objection to the PivotTable one is answered by not doing what it warned against.**
+     It declined that command because "its Apply is a 25-field assignment block, and hand-listing
+     that many fields in a guard is precisely the brittle mirror r218 avoided". Nothing is hand-listed
+     in the fix: the decision RE-RUNS `PivotOptionsSnapshot.Capture` and compares the result with the
+     snapshot Apply already took. It is complete by construction because it is the same capture the
+     undo record uses, and a setting added to the snapshot is carried into the decision with no edit
+     at all. This is the cheapest correct shape found in the whole program -- available whenever the
+     undo snapshot is a scalar-only record.
+
+266. **What that shape rests on is now a contract, because its failure is silent.** Record equality
+     is content equality for the snapshot only while every member is a scalar; a collection member
+     added there would be compared by REFERENCE against a fresh capture, so the guard would answer
+     "changed" forever and quietly stop firing, with nothing about the code looking wrong.
+     `R259_..ContractTests` fails if a reference-typed member appears, and separately pins that the
+     snapshot still covers 30+ settings, so a snapshot that shrank would not silently narrow the
+     guard.
+
+267. **`ChartDataTableModel` is a CLASS, which is the reference-equality trap one level worse.**
+     A record at least compares its scalars; a class compares nothing but identity, and this one is
+     captured with `Clone`. It gained a `SameAs` over all twelve members with a contract deriving the
+     field list from `Clone`, proved by deleting the `BorderThickness` clause -- the contract named it.
+
+268. **A test premise was wrong again, and finding out why produced a better test.**
+     "Re-applying the current options is a no-op" failed. Rather than adjust the assertion, I asked
+     which half disagreed: the second identical apply WAS a no-op, so the first was changing
+     something real. It was `AutofitColumnsOnUpdate`, on by default, resizing the pivot's rendered
+     columns -- caught by the third comparison. So the fixture turns autofit off with a comment, and
+     a new test asserts the autofit apply is NOT a no-op while the one after it is. That test is what
+     makes the column-width comparison load-bearing: the probe that removes it fails exactly there.
+
+269. **The r237 contract caught the same hole as r255, in the same shape.** The autofit half was
+     consulted inside a helper, so the decision body never named the field. Fixed the same way --
+     pass the snapshot as an argument -- rather than teaching the contract to follow delegation,
+     which would also pass a helper that ignored it. Two rounds apart, the same mistake and the same
+     resolution; the contract is earning its keep on my own code rather than on hypothetical future
+     edits.
