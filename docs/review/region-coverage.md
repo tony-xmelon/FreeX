@@ -2806,3 +2806,35 @@ it is the kind of thing a per-command copy of the comparison would have got inco
 294. **Two commands remain: MoveRange (thirty snapshot fields) and ResizeStructuredTable.** Neither is
      blocked on a missing technique now -- both are blocked on size, which is a different and more
      honest kind of debt than the one this program started with.
+
+## r265 -- ResizeStructuredTable; one command left
+
+295. **ResizeStructuredTable fixed; outstanding 2 -> 1.** r232 grouped it with the cell-writing
+     commands as needing "a comparison per cell". It needed that and six more: Revert restores the
+     delegated totals refresh, the captured cells, four filter-state collections, and the table model
+     itself.
+
+296. **The table half needed a 27-member content comparison, which is why it waited.** Every
+     structural edit goes through `CopyTable`, which builds a NEW instance, so reference equality
+     there can never report unchanged -- the r231 cannot-fire shape again, in the largest model yet.
+     `StructuredTableComparison` compares all twenty-seven members, with the column list stripped and
+     compared per element and the filter columns going through r254's comparison.
+     `R265_..CoverageContractTests` derives the field list from `CaptureCopyState`, whose own doc
+     comment says it "captures every table field" -- the r249 pattern on the best possible source.
+
+297. **Delegation is now safe to consult, and it was not before.** The command runs
+     `RefreshStructuredTableTotalsCommand` and r231 warned that "delegation propagates both" a right
+     and a wrong signal. That command has reported IsNoOp correctly since r245, so this decision
+     carries its verdict rather than re-deriving it -- one question asked once. The debt entries paid
+     off twice here: r231's warning said what to check, and r245's fix is what made the check pass.
+
+298. **The count assertion caught a third parse bug in three rounds.** This one was CRLF: `Multiline`'s
+     `$` matches before the `\n` and leaves the carriage return unmatched, so the field list came back
+     EMPTY and the contract would have guarded nothing while passing. Every one of these contracts now
+     carries a lower-bound assertion on its own field list, and that assertion has now failed more
+     often than the contracts themselves.
+
+299. **The blanket-sed mistake recurred, exactly as in r258.** One
+     `return new CommandOutcome(true, AffectedCells: affectedCells);` pattern matched THREE commands in
+     the same file, and this time it did not compile, which is luckier than r258 where it did. The
+     habit that catches it either way is counting matches before applying, not reading the diff after.
