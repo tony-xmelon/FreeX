@@ -2064,3 +2064,30 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      since changed meaning -- from "this number keeps falling" to "nothing may ever go back in here
      unexamined" -- and the text now says so. A ratchet whose comment describes a different era is
      the kind of thing that gets loosened by someone who believes the comment.
+
+## r242 -- the pair the original census split
+
+200. **`SetColumnOutlineGroupCollapsedCommand` fixed; `MergeScenarioCommand` judged sound.**
+     Outstanding 43 -> **41**.
+     The column-outline command is one half of a pair r208 deliberately separated: its ROW twin is
+     sound because the caller passes `!group.IsCollapsed`, a negation gate, while the column one has
+     no such caller guarantee. Two commands with the same body and opposite verdicts, and the
+     difference is entirely in who calls them -- which is what makes a caller-gate justification
+     worth recording per command rather than per family. It takes the r223 decision, making it the
+     third command in that file to use it.
+
+201. **Two candidates examined and rejected as fixes, both for reasons already on the record.**
+     `MergeScenarioCommand` errors when there are no source scenarios and otherwise adds every one,
+     renaming on collision rather than skipping -- so the merge always grows the list. Sound.
+     `FormatPainterDataValidationCommand` looked tractable -- a single `_previous` snapshot of the
+     target sheet's rules -- until the snapshot turned out to be built with `CloneValidation`, and
+     `DataValidation` is a plain class with reference equality. Comparing a fresh clone list against
+     the live one is always unequal, so the guard would never fire: the r231 trap exactly, now met
+     for the third time. It stays on the debt.
+
+202. **Two of my own edits broke the build in this round and one ran tests against stale binaries
+     before I noticed.** An `awk` insertion ended a dictionary entry with `;` instead of `,`, which
+     compiles as a statement terminator inside an initializer and fails; `--no-build` then ran the
+     previous assembly and reported a failure from the OLD ceiling. The green/red I was reading had
+     nothing to do with the change I had just made. Same family as r227 and r240: the check ran, but
+     not against the code I thought.
