@@ -1988,3 +1988,44 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      coverage contract, `CellWriteSnapshots.NothingChanged`, and the snapshot-participation contract
      -- is now built and proven on three commands, so the remaining applications are work rather than
      design.
+
+## r240 -- the contract was checking the wrong text and reporting success
+
+192. **`RefreshStructuredTableTotalsCommand` fixed; outstanding 44 -> 43.** A refresh re-derives
+     every totals cell, so refreshing a table nothing has moved under writes back what is there, and
+     Refresh is a button that can be pressed twice. One undo snapshot, so per the r237 invariant
+     consulting it is the whole question.
+
+193. **The r237 contract had a hole, and finding it took three attempts because two of my own edits
+     silently did not apply.** Three separate faults, all worth recording because each produced a
+     GREEN result for a question I had not asked:
+     - The contract keyed on FILE, not class. Several commands share a file, so it would have
+       demanded one command's decision mention another's fields. Now class-scoped.
+     - Its field pattern matched `_*Snapshot` only. `RefreshStructuredTableTotalsCommand` calls its
+       snapshot `_previousCells`, so the contract found no fields to check and would have passed a
+       decision that consulted nothing. Now matches `_previous*` too.
+     - Worst: it located the decision method's text by searching forward for the next `private`
+       member. When the decision is the LAST private member of its class -- which it was here -- that
+       search finds nothing, the slice runs to the end of the class, and it sweeps in `Revert`.
+       Revert touches every snapshot by definition, so the contract passed for a decision that
+       consulted none of them. Now brace-matched.
+     Each was found by deleting the clause and watching the test stay green. A contract that cannot
+     fail is worth less than no contract, because it is believed.
+
+194. **Two `perl -0777` substitutions in this round did not match and printed nothing, and I nearly
+     built on both.** That is now the fourth and fifth instance this session (r232's arithmetic,
+     r238's registration, and these). The habit that catches it is cheap and I should have adopted it
+     earlier: after an edit, grep for the text you expected to write, before running anything that
+     depends on it. Verify the edit, not just the outcome.
+
+195. **`DataTableBodyRefreshCommand`'s guard was written and then REMOVED again, deliberately.** It
+     had no behavioural test behind it, and the stale-entry contract correctly refused the state I
+     tried to leave it in -- a command that reports IsNoOp cannot also sit on the list of commands
+     that do not. Rather than weaken either list I reverted the guard, so the command stays honestly
+     on the debt with its remedy known. Removing work to keep the ledger true is the right trade.
+
+196. My own test premise was wrong once more, and the guard was right: I expected refreshing after a
+     DATA change to be a real edit. It is not -- `ResolveTotalsCell` writes a SUBTOTAL formula
+     derived from column metadata and the table range, not a computed value, so data moving beneath
+     it changes nothing this command writes. The evaluator recalculates the formula; the refresh does
+     not rewrite it. The test now changes the totals FUNCTION, which does change what gets written.
