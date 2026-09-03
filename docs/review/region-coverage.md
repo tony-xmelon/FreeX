@@ -2029,3 +2029,38 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      derived from column metadata and the table range, not a computed value, so data moving beneath
      it changes nothing this command writes. The evaluator recalculates the formula; the refresh does
      not rewrite it. The test now changes the totals FUNCTION, which does change what gets written.
+
+## r241 -- auditing my own contracts, because one of them was hollow
+
+197. **r240 found a contract that could not fail. This round asked the same question of every other
+     contract this program has built, by the only method that answers it: break the thing each one
+     guards and confirm the test goes red.** Nine assertions probed, nine failed correctly.
+     - `EveryWorkbookCommandDeclaresWhetherItCanNoOp` -- removed a judged-sound entry so a live
+       command became undeclared. Red.
+     - `EveryEntryStillNamesALiveCommandThatStillLacksAnIsNoOp` -- listed a command that already
+       reports IsNoOp. Red.
+     - `NoCommandIsInMoreThanOneList` -- put one command in two lists. Red.
+     - `EveryDelegatedEntryNamesAHelperThatReportsNoOp` -- pointed a delegation entry at a helper
+       that does not report IsNoOp. Red.
+     - `TheOutstandingDebtOnlyEverShrinks` -- added three entries above the ceiling. Red.
+     - `TheNeverExaminedListStillOnlyShrinks` -- put a command back into the drained column. Red.
+     - `EveryExemptionStillNamesALiveCellMember` (r234) -- exempted a member of `Cell` that does not
+       exist. Red.
+     - `EverySettableCellMemberIsComparedOrExempted` (r234) -- proved in r234 by deleting the
+       `QuotePrefix` clause. Red.
+     - FreeW's `R203` declaration contract -- removed a judged-sound entry. Red.
+     Nine for nine is the answer I wanted and not the one I assumed: r240's hole existed in the ONE
+     contract I had probed least carefully, and the probe I had run for it happened to land on a
+     command where the flawed extraction worked.
+
+198. **The probe method has its own failure mode, met twice in this round.** Removing a single line
+     from a two-line dictionary entry leaves a dangling string literal, so the build fails and
+     `dotnet test` prints no result at all -- which reads as "no failure" if you are grepping for the
+     word `Failed`. An inconclusive probe is not a passing probe. Both times the fix was to delete
+     the whole entry and re-run.
+
+199. A stale comment corrected while in there: `TheNeverExaminedListStillOnlyShrinks` still described
+     its bound as "the r218 count", from before r232 drained that column to zero. The assertion has
+     since changed meaning -- from "this number keeps falling" to "nothing may ever go back in here
+     unexamined" -- and the text now says so. A ratchet whose comment describes a different era is
+     the kind of thing that gets loosened by someone who believes the comment.
