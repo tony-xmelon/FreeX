@@ -3083,3 +3083,35 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      flagged it. `Task.Yield()`'s awaiter cannot fault, so the rule was over-strict and now says so
      explicitly. r268 was delegation, r270 was `_ = await`, r272 is this. Every one would have been a
      false bug report if the contract had been written and trusted rather than written and run.
+
+## r273 -- a different region, and the same kind of hole
+
+337. **Changed region rather than class, because six classes into the UI layers five had come back
+     clean.** Localization key integrity spans all three apps, is mechanically checkable, and fails in
+     the one place a user is guaranteed to look: `LocalizedTextCatalog.Get` returns
+     `CreateMissingText(key)` for an unknown key, so a typo renders `[[Some_Key]]` where a label
+     belongs. No exception, no log, nothing red.
+
+338. **Cross-referenced 3,037 distinct referenced keys against 7,006 defined ones. Zero missing in
+     FreeX; two apparent misses in each sibling, both false.** `Shared_Catalog_Missing_Key` is
+     deliberately absent -- it exists to assert the `[[key]]` sentinel -- and `FormatCells_InvalidColor`
+     appears only inside doc comments describing the historical bug that prompted these tests. Reading
+     the two before reporting them is the difference between a finding and a false alarm, for the
+     fourth round running.
+
+339. **The class is already fenced -- and finding that out is what exposed the gap.** FreeW and FreeP
+     each fence BOTH shells; FreeX fences its Avalonia shell in `LocalizationKeyIntegrityTests` and its
+     WPF host in `LocalizationUsageTests`, whose line 84 does exactly this cross-reference. So the
+     question stopped being "is this class clean" and became "what do those tests actually walk".
+
+340. **`src/FreeX.App.UI` has twenty localization keys and neither test scanned it.** The Host test
+     walks `FreeX.App.Host`, the Avalonia test walks `FreeX.App.Avalonia`, and a third UI project fell
+     between them. All twenty resolve today; nothing checked that they still would. Closed with a
+     test built on the same shared support helper, so it behaves identically to its five siblings, and
+     proved by renaming one key -- it names both the key and the file.
+
+341. **Second perimeter gap in two rounds, found the same way both times.** r272's was two shared
+     shells missing from my own contracts; this one is a UI project missing from tests written long
+     before. Neither was found by reading code. Both came from asking what a check covers and
+     comparing that against the repository -- which is now the first question this program asks about
+     any fence, its own included.
