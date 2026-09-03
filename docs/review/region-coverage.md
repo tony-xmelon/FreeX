@@ -2394,3 +2394,42 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      Keeping `SameAs` here anyway is deliberate: the singleton-empty-array coincidence is not a
      property AverageFilterCommand states or a test protects, and a later edit giving it a real
      value list would silently turn record equality wrong.
+
+## r254 -- the third half, and five more off the block
+
+239. **`SameAs` for `StructuredTableFilterColumnModel`, and `StructuredTableFilterColumnSync.Unchanged`.**
+     A table carries its own `<autoFilter>` inside the table part, so the same criterion has a
+     second model of the same shape with the same reference-equality problem. It is compared the same
+     way -- strip the seven reference-compared members to shared instances, let record equality cover
+     the scalars, compare the stripped members by content -- and `Unchanged` asks post-hoc whether
+     the table's filter-column list still holds what the snapshot captured.
+
+240. **Five commands fixed; outstanding 30 -> 25, and r225's block is down to two.**
+     CellFillColorFilter, CellFontColorFilter, CellNoFillColorFilter, FilterCondition and
+     TopBottomFilter each have exactly three snapshot fields, and each `Revert` restores exactly
+     those three, so a post-hoc decision over all three is complete rather than partial. That is the
+     whole of what r225 said was missing for them: "a snapshot-versus-target comparison over both
+     models" -- there were three models, not two, and the third now has one.
+
+241. **The two that remain are not blocked on another filter model.** `FilterCommand` also repaints
+     a banded table's data body and rewrites slicer selections; `AdvancedFilterCommand` writes a
+     copy-to block of cells. Both need a cell-level comparison, which is a different piece of
+     machinery from the three built in r252-r254, so naming that is more useful than leaving them
+     under the group-level note.
+
+242. **The probe failed correctly this time, and the r253 coincidence recurred on a third model.**
+     Swapping `SameAs` for `!=` on the table half failed 2 of the 3 no-op tests -- TopBottomFilter
+     (whose criterion is a `NativeFilterXmls` entry) and FilterCondition (a `CustomFilters` entry).
+     The colour filter still passed, because `ColorFilter` is a nested record whose members are all
+     value types with a null attribute dictionary, so record equality happens to be right for it
+     too. Three models in, the pattern is clear: reference equality is wrong exactly when the
+     criterion lands in a COLLECTION member, and right when it lands in scalars or a nested record
+     of scalars. That is a property of where a given filter kind stores itself, not of the command,
+     which is why the comparison is written for the type rather than per command.
+
+243. **The sibling tests could not have caught this, and that is why the table-range ones exist.**
+     `SortFilterTests`' cases run on a plain worksheet range, where the table half sees a null
+     snapshot and returns true without comparing anything -- exactly the r253 situation, where a test
+     at the call site cannot distinguish a working comparison from a missing one.
+     `R254_TableFilterReapplyNoOpTests` puts the criterion on a structured table so the comparison is
+     actually reached.
