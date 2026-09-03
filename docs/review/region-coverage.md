@@ -2900,3 +2900,40 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      capture keep the comparison honest. The recurring failure was never a hard command -- it was a
      comparison that looked complete and was not, which is why every comparison in this program ends
      up with a contract that fails when a member is added.
+
+## r268 -- first lens outside the command layer
+
+309. **The no-op program is CONVERGED, so this round opens a new one.** With the known-broken list at
+     zero, the useful question stopped being "which command is next" and became "which class, in which
+     layer". The four FreeX app layers are 209k lines that the no-op program never touched.
+
+310. **Chose the class by measuring, not by guessing.** Eight candidate classes counted across the app
+     layers: culture-sensitive `Parse` and `DateTime.Parse` are at ZERO (an earlier sweep did that
+     work), empty `catch {}` at one, `async void` at twelve, `.Wait()`/`GetAwaiter().GetResult()` at
+     ten, and a `.Result` count of 159 that is mostly property accesses rather than task blocking.
+     `async void` was picked because twelve is exhaustively reviewable and the class is the most
+     punishing available: an exception in an `async void` continuation has no caller, Avalonia has no
+     dispatcher-level boundary, and the process dies with the user's workbook in it.
+
+311. **All twenty-three sites across the three apps are guarded. No bug found, and that is the
+     finding.** Twelve in FreeX, three in FreeW, eight in FreeP; every one either wraps its awaits in
+     a try or delegates to a method that does. The crash-hunt program did this work across twelve
+     waves. What it did not do is leave anything behind to keep it done.
+
+312. **The detector reported one false positive, and tracing the callee killed it.**
+     `FreeW.PrintPreviewDialog.OnPrimaryActionClick` is an expression-bodied `await
+     ExecutePrimaryActionAsync()` with no try of its own -- and the callee catches everything. Same
+     lesson as r246 and r262: trace the delegate before calling it a finding. The contract encodes the
+     delegation shape rather than flagging it, so the next reader does not repeat the check.
+
+313. **The contract is a ratchet for a class that was fixed twelve times and never fenced.** It scans
+     eleven UI layers across three apps, requires every `await` to sit inside a `try` (or the body to
+     be a single delegation), and asserts a floor on the number of sites examined -- the same
+     lower-bound guard that caught three parse bugs in r263-r266. Proved by both failure modes:
+     removing a real guard reports "awaits with no try at all", and hoisting one await above the try
+     reports "an await on body line 6 precedes the try on line 7", each naming the exact site.
+
+314. **What carries over from the command work.** Not a comparison technique -- a habit: a class is
+     not done when its instances are fixed, it is done when something fails if a new instance appears.
+     Fifty-one rounds of no-op work produced exactly one durable artifact per defect, and it was
+     always the contract, never the fix.
