@@ -2309,3 +2309,29 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      about no-ops, so it is filed rather than answered here.
      Both commands stay on the debt with this as their reason, which is sharper than r242's "the
      comparison would never fire": now we know exactly which member makes it so, and why.
+
+## r252 -- half the machinery for the largest remaining block
+
+231. **Built `FilterUndoSnapshot.Matches` and its coverage contract. No command came off the list;
+     outstanding stays 31.** The AutoFilter group is the largest single block left -- eight commands
+     -- and r225 put them all on the debt because each touches BOTH the hidden-row state and the
+     autofilter column model, so a guard covering one half would be a partial mirror.
+     `Matches` covers the first half completely: field for field with `Capture`, over the five sheet
+     members filter state consists of (hidden rows, filter-hidden rows, value-filter-hidden rows,
+     the active value-filter columns, and the per-column owned-row map).
+     `R252_FilterSnapshotComparisonCoverageContractTests` derives the field list from `Capture` --
+     the r249 trick, since Capture has to be complete or undo loses filter state -- and fails if
+     Capture reads a sheet member Matches does not. Proved by deleting the `ValueFilterHiddenRows`
+     clause.
+
+232. **The second half needs another content comparison, and I stopped rather than guess at it.**
+     `_previousAutoFilterColumns` is a SHALLOW copy of `autoFilter.FilterColumns`, so its elements are
+     the same instances -- which makes a reference comparison look adequate. But the case that
+     matters is re-applying a filter, where `newColumn` is a freshly built model with identical
+     content and no shared reference. `WorksheetAutoFilterColumnModel` is a record carrying five
+     collection members, so this is the same trap for the SIXTH time, and it needs its own `SameAs`
+     with its own coverage contract before any of the eight can be decided.
+     Landing the proven half as infrastructure and naming what the other half needs is the honest
+     stopping point. The alternative -- shipping a guard over the hidden-row half only -- is exactly
+     the partial mirror r225 declined to build, and it would have taken eight commands off the debt
+     list without fixing any of them.
