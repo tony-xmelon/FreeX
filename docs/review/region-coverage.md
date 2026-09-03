@@ -2972,3 +2972,37 @@ it is the kind of thing a per-command copy of the comparison would have got inco
 320. **Three failure modes, three probes.** A new blocking call in an unlisted file names the file; a
      changed count in a listed file reports "expected 2, found 1"; deleting the clipboard fast path
      fails with the sentence explaining what hangs. An inventory that cannot fail is a comment.
+
+## r270 -- the third escape route; the async-supervision set is closed
+
+321. **Fire-and-forget fenced; the set r268 opened is complete.** There are exactly three ways an
+     async operation escapes supervision in a UI layer, and they fail differently enough that one
+     rule could never have covered them: an unguarded `async void` KILLS the process (r268), a bad
+     block HANGS it (r269), and an unobserved discarded task does neither -- it swallows the
+     exception and the feature silently does not happen. Silent is not the mildest of the three from
+     the user's side: a hang at least tells them something is wrong, where a dropped autosave does not.
+
+322. **Twenty-one discard sites, all observed, by FOUR different mechanisms.** The callee guards its
+     own body (FreeX's ad-hoc style); the discard routes through a guard helper whose whole job is
+     observing (FreeW's `AvaloniaUiTaskGuard`, which every FreeW `RunUiTask` funnels into); a
+     `Task.Run` lambda carries its own try; or a `ContinueWith` inspects `IsFaulted`. A contract
+     recognising fewer than four would have reported working code as broken.
+
+323. **The contract found three sites my own survey grep had missed -- and all three were its own
+     false positives.** `_ = await X()` discards a VALUE from an AWAITED call: the exception
+     propagates to the enclosing method, which is entirely safe. My first draft matched `await`
+     deliberately and reported three working clipboard call sites as bugs. The lesson is the one this
+     program keeps paying for in a new costume: when the detector and the code disagree, the detector
+     is the better bet. r268 hit it as delegation, r262 as a missing member, this round as a matched
+     keyword that should have been excluded.
+
+324. **FreeW has a guard helper and FreeX does not.** Every FreeW discard routes through
+     `AvaloniaUiTaskGuard`; every FreeX discard relies on its own callee happening to be guarded.
+     Both are correct today. Recorded rather than "fixed", because adopting FreeW's helper across
+     FreeX is a refactor with no defect behind it, and the contract makes the ad-hoc style safe
+     either way.
+
+325. **The guard-helper probe passed first, and that was the probe being wrong.** Removing one of the
+     helper's two catches left the other, so the test correctly still passed. Removing both fails it.
+     A probe that does not reproduce the failure it was written for proves nothing about the test --
+     the same trap as r241's inconclusive build and r259's green probe.
