@@ -2209,3 +2209,27 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      `EveryWorkbookCommandDeclaresWhetherItCanNoOp` failed naming `Reapply` -- correctly, because
      "fixed" and "declares" are different properties and only the second is what that list tracks.
      Third time this session a mechanical check has corrected my bookkeeping rather than my code.
+
+## r248 -- the fifth instance earns a guard rail instead of another hand-written comparison
+
+219. **`ApplyCustomViewCommand` fixed; outstanding 34 -> 33.** Applying the custom view the workbook
+     is already showing writes every sheet's view state back over itself.
+
+220. **This is the FIFTH time this program has met one trap, and that is why it got different
+     treatment.** A record whose `==` looks like value equality but carries collection members, which
+     records compare by REFERENCE: r231 (scenario and custom-view records), r236 (parallel
+     snapshots), r242 (`DataValidation` clones), r244 (header/footer picture bytes), and now
+     `WorksheetCustomViewState`'s four list members. Every capture builds fresh lists, so a guard
+     written with `==` compiles, reads correctly, and never fires.
+     The first four got hand-written content comparisons. The fifth got
+     `WorksheetCustomViewStateComparer` PLUS `R248_ViewStateComparisonCoverageContractTests`, on
+     r234's pattern: every member of the record must be compared or exempted with a reason. Thirty
+     members is past the point where re-reading is a check.
+
+221. **The coverage contract caught two members on its very first run, before any command depended on
+     it.** I had enumerated the record's members with a `sed` range that truncated before the end of
+     the declaration, so `FitToPage` and `ScaleToFit` were missing from the comparison. A guard
+     shipped without that contract would have reported "no change" for a custom view that switched
+     fit-to-page -- silently, forever.
+     That is the strongest argument yet for writing the contract BEFORE the comparison it guards
+     rather than after: it cost one round to build and paid for itself within it.
