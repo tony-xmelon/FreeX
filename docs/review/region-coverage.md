@@ -2510,3 +2510,47 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      RefreshPivotTable and the two Options commands carry snapshot fields no pivot-state record
      covers (a refresh field snapshot, an autofit column-width map, ten separate chart-property
      fields), each needing its own comparison.
+
+## r257 -- applying the comparison rather than building one
+
+253. **Three more fixed; outstanding 16 -> 13.** MovePivotTable (r225),
+     DataTableBodyRefresh (r232) and ExternalTextPasteSpecial (r232). All three were held by the
+     same recorded reason -- each "needs a real before/after comparison, not a guard on the
+     arguments" -- and r255's `SameCellOrAbsent` is that comparison, so this round applied existing
+     machinery rather than building any. Each has a snapshot set small enough to cover completely,
+     and each Revert restores exactly that set.
+
+254. **r240's reverted guard is back, with the tests it lacked.** DataTableBodyRefresh had a guard
+     written and then deliberately reverted in r240, because there was no behavioural test and the
+     stale-entry contract correctly refused an entry that declared IsNoOp while still listed as
+     broken. Keeping the debt entry honest that round is what made this round's fix cheap: the
+     obstacle was recorded precisely enough to act on.
+
+255. **ExternalTextPasteSpecial's style-only slot needed its own clause.** Revert has two cases --
+     restore the cell, or (where no cell existed) restore the style-only entry -- so a comparison on
+     cells alone would call a paste that changed only the style-only slot a no-op. The decision
+     mirrors Revert's two cases rather than just its obvious one.
+
+256. **Two test premises were wrong, and the code was right both times.**
+     Pasting the TEXT "one" through ExternalTextPasteSpecial writes nothing at all:
+     `PasteArithmetic.ApplyOperation` returns null for a non-numeric operand, which is Excel's
+     documented behaviour, so the loop skips every cell. My test read that correct no-op as a broken
+     guard. The tests now paste numeric text, and the comment records why -- otherwise the next
+     reader repeats the same misreading.
+     The Data Table body writes FORMULA cells, not evaluated values, and the test workbook never
+     recalculates, so asserting on `GetValue` found blanks and looked like a table that never built.
+     The assertion moved to `FormulaText`, and a build-succeeded assertion was added first, because a
+     table that silently failed to build would leave an EMPTY snapshot and make the no-op test pass
+     vacuously.
+
+257. **The probe failed on all three, four tests, one per command in the changed direction.**
+     Neutralising each decision made a real move, a real paste and a real refresh all report "nothing
+     changed" -- the direction that loses work.
+
+258. **MoveRangeCommand stays, and its reason is now countable rather than qualitative: THIRTY
+     snapshot fields.** Cells, formulas, comments, threaded comments, hyperlinks and their metadata,
+     rich-text runs, phonetic guides, data validations, conditional formats and three formula maps
+     for them, chart verbatim XML, merged regions at both ends, structured tables at both ends,
+     chart data ranges, named ranges scoped and unscoped, sparklines and their data ranges, and spill
+     relocations. A decision over all thirty is a round of its own, and a decision over fewer is the
+     partial mirror this program keeps declining.
