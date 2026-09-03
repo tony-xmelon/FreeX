@@ -3115,3 +3115,39 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      before. Neither was found by reading code. Both came from asking what a check covers and
      comparing that against the repository -- which is now the first question this program asks about
      any fence, its own included.
+
+## r274 -- the last question the perimeter method had left to ask
+
+342. **Two rounds of perimeter gaps found by asking what a check walks, so this round asked the
+     question at repository scale.** Audited all 114 source-scanning tests for the paths they
+     enumerate and compared that set against the 60 production projects. Ten projects were never
+     named by any scan; excluding non-production directories left five shared ones.
+
+343. **`Free.Shared.TextSearch` was the only production project in the repository with no test
+     referencing it at all** -- not merely unscanned, but unreferenced by any test project, which is
+     a stronger and more checkable condition than "under-covered". It is 62 lines and not incidental:
+     `FreeW.App.Presentation`'s Find/Replace dialog planner and its navigation pane both search
+     through it.
+
+344. **Read it in full before writing anything, and it is correct for its documented policy.** The
+     finding is the absence of tests, not a defect -- worth saying plainly rather than manufacturing
+     a bug to justify the round. Non-overlapping advance, empty-needle guard, whole-word skip
+     advancing by ONE rather than by the needle length, and the `ArgumentOutOfRangeException` span
+     guard are all right.
+
+345. **Eleven tests pin every behaviour a caller already depends on, and two document policy at the
+     edges rather than endorsing it.** Word characters are decided per `char`, so a surrogate half
+     and a combining mark both read as non-word -- a match beside an astral letter or an accent
+     counts as whole-word. That may or may not be what a user wants; what matters is that it is now
+     written down and cannot change silently.
+
+346. **Proved by two real regressions, each caught by exactly the test written for it.** Advancing by
+     one instead of the needle length failed the overlap test; dropping `_` from the word-character
+     policy failed that theory row. A test that cannot fail documents nothing, which is the same
+     standard the eighteen preceding rounds were held to.
+
+347. **The perimeter method is now exhausted at this level.** r272 found gaps in my own contracts,
+     r273 in tests written long before, r274 in the project list itself. Each asked the same question
+     one level further out; there is no further out left -- the next unscanned thing would have to be
+     a project that does not exist yet, which is what the lower-bound and coverage contracts across
+     this program exist to catch.
