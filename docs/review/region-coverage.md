@@ -2468,3 +2468,45 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      level of delegation would have passed the draft -- and would also pass a decision that
      delegates to a helper which ignores the field. Passing the snapshot to the helper as an
      argument keeps the field visible in the decision, which is what the contract is actually for.
+
+## r256 -- the pivot Configure family, and r219's obstacle dissolved
+
+248. **Five pivot commands fixed; outstanding 23 -> 18.** ConfigurePivotTableView,
+     ConfigurePivotTableFieldFilters, ConfigurePivotTableLayout,
+     ConfigurePivotTableCalculatedItems and ClearPivotTableView. r219's evidence was in the callers:
+     the dialogs hand back the pivot's own current state as their default, so re-confirming one
+     reaches Apply with every argument equal to current state.
+
+249. **r219's obstacle was a consequence of predicting rather than observing.** It declined to fix
+     the family because "deciding no change means also proving the re-render is unnecessary, and
+     guessing at that is how a guard ends up suppressing a real edit". That is true of a PREDICTIVE
+     guard and false of a post-hoc one: `_targetSnapshot` IS the block the re-render overwrote, so
+     comparing it against the sheet afterwards observes what the re-render produced. The obstacle
+     was never about pivots; it was about guard shape, and r255's cell comparison is the same tool.
+
+250. **`PivotSnapshotComparison` plus `Matches` on the six snapshot records.** Every pivot snapshot
+     is a record of lists captured with `ToList()` -- the reference-equality trap for the fifth and
+     sixth model family. Only `PivotFieldModel` carries a collection of its own (`SelectedItems`), so
+     it gets the strip-and-compare treatment and the rest are compared with
+     `EqualityComparer<T>.Default`. `R256_PivotSnapshotComparisonCoverageContractTests` derives each
+     record's field list from its own `Capture` (the r249 pattern) and separately pins the assumption
+     the scalar path rests on: that those element records carry no collection member. Proved by
+     deleting a clause -- the contract named the missing member.
+
+251. **The probe came back green, and the fix was a missing TEST, not a missing guard.** Removing
+     the rendered-cell comparison left all ten behavioural tests passing, because in every one of
+     them the model changed whenever the render did -- so the model half alone decided every case.
+     The case that separates them is a SOURCE-DATA edit: the configuration is identical, the model
+     comparison says "unchanged", but the re-render writes a different total. With that test added
+     the same probe fails, and the cell half is load-bearing on exactly the case r219 said could not
+     be decided. Three rounds running, a green probe has meant the tests could not see the machinery
+     rather than that the machinery was unnecessary.
+
+252. **ChangePivotTableSource, RefreshPivotTable, ConfigurePivotTableOptions and
+     ConfigurePivotChartOptions stay on the debt, with sharper reasons than the family note.**
+     ChangePivotTableSource's `PivotSourceSnapshot` holds the cache OBJECT, and when Apply mutates
+     the cache in place that field IS the live object -- so a comparison against it is the
+     cannot-fire guard r231 refused, and it needs a captured copy of the cache's fields instead.
+     RefreshPivotTable and the two Options commands carry snapshot fields no pivot-state record
+     covers (a refresh field snapshot, an autofit column-width map, ten separate chart-property
+     fields), each needing its own comparison.
