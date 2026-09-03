@@ -2635,3 +2635,40 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      which would also pass a helper that ignored it. Two rounds apart, the same mistake and the same
      resolution; the contract is earning its keep on my own code rather than on hypothetical future
      edits.
+
+## r260 -- and the contract that had been half-blind
+
+270. **PasteColumnWidths and SetHyperlink fixed; outstanding 9 -> 7.** r221 grouped
+     PasteColumnWidths with PasteDataValidation as needing "a before/after snapshot comparison, which
+     is a change to how they work rather than a guard bolted on". Half true: that is right about the
+     did-we-write-anything test, but this command already HOLDS the before half --
+     `_previousWidths` is exactly what Revert restores -- so comparing it against the same range
+     afterwards is the whole decision. The capture loop and the comparison now share one
+     `CaptureDestinationWidths`, so they cannot describe different ranges.
+
+271. **SetHyperlink's decision covers all five things Revert restores, and the two "had" flags carry
+     as much weight as the values.** Apply REMOVES any rich-text runs and phonetic guide on the cell,
+     so re-linking a cell that carries them is a real change even when target, display text and
+     metadata all match. The probe that drops the runs clause fails exactly that test.
+
+272. **The r237 contract has been HALF-BLIND since r237, and registering SetHyperlink exposed it.**
+     Its field pattern matched `_*snapshot` and `_previous*` only. SetHyperlink names its undo state
+     `_oldCell`, `_oldTarget`, `_hadOldMetadata` and so on -- nine fields of exactly the state the
+     contract exists to police, none of them matched. The failure was loud in this case (the contract
+     asserts the field list is non-empty, so it refused a command it could not see), but that
+     assertion is the only thing that made it loud: a command with ONE matching field and five
+     `_old*` ones would have passed while five sixths of its undo record went unchecked.
+     The pattern now covers `old\w*` and `hadOld\w*`, and every previously registered command still
+     passes. Proved by dropping a clause: the contract named `_hadOldMetadata`.
+
+273. **The r237 contract reads the decision BODY, so passing a snapshot as an argument only satisfies
+     it when the field name appears in that body.** r255 and r259 passed fields into helpers FROM the
+     decision, which works. Here I first passed `_previousWidths` in at the CALL SITE, which does not
+     -- the body sees only the parameter name. Reading the field directly is both simpler and what
+     the contract is actually asking for.
+
+274. **`awk` ate the regex escapes again while editing the pattern**, turning `\s` into `s` and
+     `\w` into `w`, which compiled and made the contract match nothing -- reported as "FillCellsCommand
+     must declare snapshot fields". Same failure recorded earlier in this program with the same cause.
+     Written through a file instead. A contract edited by a tool that silently mangles its regex is
+     worth no more than no contract.
