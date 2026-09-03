@@ -1962,3 +1962,29 @@ it is the kind of thing a per-command copy of the comparison would have got inco
 188. The companion tests carry across: an autofill where the numbers already match but a target
      carries a note is a real edit, and the shared comparison catches it because the comment snapshot
      is one of the five.
+
+## r239 -- the trio is closed
+
+189. **`GroupedApplyStyleCommand` completes the three commands r236 identified.** Outstanding 45 ->
+     **44**. It has two undo snapshots rather than five -- cells with their style-only entry AND its
+     provenance tag, and the rich-text runs it rewrites when the style diff touches run fonts -- and
+     both are consulted, which is what the r237 contract now enforces for it.
+     The provenance tag is the clause worth pointing at: `StyleOnlySource` records whether a
+     style-only entry came from a row or a column default, and `Revert` restores it precisely because
+     losing it leaves a stale tag behind. So it is part of what the command writes, and therefore
+     part of what "unchanged" has to mean. A comparison of the style id alone would have called a
+     provenance change nothing.
+
+190. **The grouped case gets its own test for the same reason r234's batch case did.** Sheet A
+     already carries the style and sheet B does not: the batch is a real edit even though half of it
+     changes nothing. That is the TrueForAll-not-Any argument again, this time across sheets rather
+     than across cells -- and it is the direction where getting it wrong suppresses a genuine edit
+     rather than merely wasting an entry.
+
+191. **Where the remaining 44 stand.** The thirteen-command cluster r233 named is down to ten, and
+     what is left of it splits cleanly: the ones that write cells through their own bespoke snapshot
+     shapes (each needs its own decision method, as these three did), and the pivot/filter groups
+     whose obstacle is a re-render rather than a comparison. The shared machinery -- `SameCell`, its
+     coverage contract, `CellWriteSnapshots.NothingChanged`, and the snapshot-participation contract
+     -- is now built and proven on three commands, so the remaining applications are work rather than
+     design.
