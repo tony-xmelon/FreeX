@@ -2937,3 +2937,38 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      not done when its instances are fixed, it is done when something fails if a new instance appears.
      Fifty-one rounds of no-op work produced exactly one durable artifact per defect, and it was
      always the contract, never the fix.
+
+## r269 -- sync-over-async: an inventory, not a ban
+
+315. **Nine blocking calls in the FreeX app layers; all nine safe, for THREE different reasons.**
+     That is why this round produced an inventory rather than a rule. A blanket "never block on a
+     task" contract would be a false one -- two of the nine are correct precisely because they block.
+
+316. **The 159 `.Result` hits were noise and the survey said so before any of them was read.**
+     Filtering for task-shaped receivers left ZERO: they are property accesses named Result. Counting
+     first, reading second, kept a whole afternoon of false leads out of the round.
+
+317. **Six of the nine are one deleted line away from hanging the application.**
+     `MainWindow.ClipboardCommands.cs` blocks the WPF UI thread on `IPlatformClipboard` calls with
+     `GetAwaiter().GetResult()`. `WpfPlatformClipboard`'s methods `await _dispatcher.InvokeAsync(...)`,
+     which on the UI thread would post a continuation to the thread already blocked -- a hang with no
+     exception, no log line, no crash dump. What saves them is one branch:
+     `if (_dispatcher.CheckAccess()) return action();`. Nothing referenced that coupling from either
+     end; now a test does, and it fails if the fast path moves after an await as well as if it is
+     deleted.
+
+318. **The PDF exporter's blocking call is unreachable, and finding that out was the point.**
+     `PortablePdfDocumentExporter`'s path-taking overload blocks on `AtomicExportExecutor`, which
+     awaits WITHOUT `ConfigureAwait(false)` in three places and has two bare `await using` disposals --
+     so a UI-thread caller WOULD deadlock. It has no production caller: the Avalonia PDF router passes
+     a Stream and binds to the other overload. Recorded as reachable-if-called rather than fixed,
+     because fixing the executor's awaits without a caller to protect is a change no test would
+     justify -- and the inventory entry says which change to make first if a caller appears.
+
+319. **Sentry's two are correct because the process is dying.** Flushing crash telemetry at shutdown
+     has no continuation to starve. Worth stating explicitly: it is the entry that stops someone
+     "fixing" all nine to look consistent.
+
+320. **Three failure modes, three probes.** A new blocking call in an unlisted file names the file; a
+     changed count in a listed file reports "expected 2, found 1"; deleting the clipboard fast path
+     fails with the sentence explaining what hangs. An inventory that cannot fail is a comment.
