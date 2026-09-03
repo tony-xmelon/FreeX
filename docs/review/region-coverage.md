@@ -2138,3 +2138,29 @@ it is the kind of thing a per-command copy of the comparison would have got inco
 208. The last test in the file targets `alignWithMargins` deliberately: it is the SIXTEENTH field,
      and a comparison that transcribed fifteen would pass every other test in the file. When a guard
      is wide, the test that matters is the one aimed at its far end.
+
+## r245 -- the obstacle turned out to be the record
+
+209. **`SetColumnWidthCommand` and `SetRowHeightCommand` fixed; outstanding 39 -> 37.** These are the
+     two commands r216 re-ranked from tier 2 to tier 3, and the note it left was that
+     `DrawingAnchorResizeHelper.ResizeFor*Range` RESIZES every anchored shape, picture and text box
+     while reading like a snapshot line -- so deciding "no change" meant predicting that resize, and
+     the field-count ranking that had put them in tier 2 was wrong about them.
+
+210. **It is not a prediction any more, and the reason is worth naming: the thing that made them hard
+     is the thing that makes them decidable.** The resize helper hands back each object WITH its old
+     size, because Revert needs that. So the obstacle r216 identified -- a hidden mutation -- is
+     itself the complete record of what was mutated. Comparing what the helper returned against what
+     the objects now hold is exact where predicting the resize would have been guesswork.
+     That is the r237 invariant arriving from the other direction. r237 said the undo snapshots ARE
+     the record of what a command writes; here the mutation and the snapshot are the same call.
+
+211. **The tests that matter are the drawing ones.** A guard comparing only column widths would pass
+     "set the same width twice" and "change the width", and still be wrong about a sheet with a shape
+     anchored in the range. Two of the six target exactly that, and reverting the guards fails three
+     of the six.
+
+212. r216 wrote that these two stayed on the debt "rather than being fixed on the strength of a
+     ranking now known to be wrong for them". Twenty-nine rounds later that judgement reads well: the
+     right move was to wait until the decision could be made from a record rather than from a
+     prediction, and the machinery that allowed it did not exist yet.
