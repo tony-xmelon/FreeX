@@ -3006,3 +3006,42 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      helper's two catches left the other, so the test correctly still passed. Removing both fails it.
      A probe that does not reproduce the failure it was written for proves nothing about the test --
      the same trap as r241's inconclusive build and r259's green probe.
+
+## r271 -- throw-on-missing lookups, and where the data has no test
+
+326. **Two classes examined; the interesting result came from crossing them.** Empty `catch {}` (11
+     sites) turned out to be one generated file plus five identical WPF paginator pairs -- narrow,
+     typed catches around `GetPageNumber` on a not-yet-paginated FlowDocument, each with a working
+     fallback. Correct, undocumented, and not defects. `.First()`/`.Single()`/`.Last()` with no
+     predicate (14 sites) are all safe: most are `group.First()` inside a `GroupBy`, and the rest have
+     explicit emptiness guards -- `backups.Count == 0` returns, `stops.Length == 0` returns,
+     `selectableSheetIds.Count > 0` gates.
+
+327. **The 34 predicate forms share ONE shape: a lookup into a curated static plan by enum.** They
+     throw when the plan loses an entry, so each is safe exactly as far as that plan is tested. That
+     reframed the round: the question was never "is this call site defensive" but "does the DATA it
+     assumes have a test".
+
+328. **Cross-referencing found two plans with ZERO test references, both looked up with `.Single()`
+     from live UI paths.** `FreeXBackstageHomePanePlan` -- the Avalonia backstage selects a row
+     descriptor and a pin command per recent file, so a missing row throws while rendering the File
+     menu's recent list. `DialogRangePickerRegistrations` -- resolved by target id, so a typo'd or
+     removed id throws while BUILDING a dialog, with a stack trace pointing at LINQ rather than at
+     the id. Neither is broken today; neither had anything keeping it that way.
+
+329. **Two fences of deliberately different strength, and the difference is stated rather than
+     blurred.** The backstage plan is public, so its test CALLS the planner and asserts each enum
+     value resolves to exactly one entry -- behavioural, and true regardless of how the plan is
+     written. The registrations are a private static of the Avalonia MainWindow with string literals
+     at the call sites, so that one reads source. Weaker, and the strongest available.
+
+330. **The lower-bound assertion caught a fourth parse bug.** The registrations use target-typed
+     `new("range.x", ...)`; my regex expected `new DialogRangePickerRegistration(...)` and matched
+     nothing, which would have made the contract pass while checking zero ids. Four rounds, four
+     catches: r263 (missing closing paren), r265 (CRLF), r266 (twice, on member lists), r271 (target-typed
+     new). Every contract in this program now carries one, and it has never once been wasted.
+
+331. **The first backstage probe broke the build, which makes it inconclusive rather than passing.**
+     Deleting the Pinned row left invalid syntax, so the test run used stale binaries -- r241's lesson.
+     The compiling probe flips the row's Kind instead, and it fails THREE tests at once: Pinned
+     resolves to zero and Recent to two, which is exactly the pair of conditions `.Single()` throws on.
