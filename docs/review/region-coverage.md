@@ -1937,3 +1937,28 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      obstacle, r236 corrected r234's sufficiency, r237 corrected r236's remedy), which is worth
      recording as a property of this kind of work rather than as three separate mistakes: each layer
      looks complete until you try to build on it.
+
+## r238 -- the second command through, and one registration I nearly got away with
+
+186. **`AutofillCommand` joins `FillCellsCommand`, and the comparison is now shared rather than
+     duplicated.** Outstanding 46 -> **45**. Both keep the same five undo snapshots, so rather than
+     copy fifty lines the decision moved into `CellWriteSnapshots.NothingChanged`, which takes the
+     snapshot lists as arguments. Taking the lists rather than reading the command is the point: they
+     are the complete record of what gets written, so passing all of them is what makes the answer
+     complete -- and the r237 contract still verifies it, because a call that passes every field
+     mentions every field.
+
+187. **The registration nearly slipped through, and the honest version of this round includes that.**
+     I added `AutofillCommand.cs` to the r237 contract's list with a `perl` substitution that did not
+     match, ran the contract, saw it pass, and moved on. It passed because the list still contained
+     only `FillCellsCommand` -- so Autofill's completeness was not being checked at all while I was
+     removing it from the debt list on the strength of that check. Caught by grepping for the entry
+     rather than trusting the green result.
+     The general shape is worth naming: an opt-in contract reports success for anything not opted in,
+     so "the contract passed" says nothing about a command until you have confirmed the command is IN
+     it. That is the same failure mode as r232's ceiling arithmetic and r227's stale binaries -- a
+     green result answering a question I had not actually asked.
+
+188. The companion tests carry across: an autofill where the numbers already match but a target
+     carries a note is a real edit, and the shared comparison catches it because the comment snapshot
+     is one of the five.
