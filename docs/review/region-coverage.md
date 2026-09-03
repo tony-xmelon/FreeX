@@ -3234,3 +3234,39 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      without a 64 MB fixture, so claiming the behavioural test covers all thirteen call sites would
      have been false. Proved by removing one cap: the contract names the file, the line, and which
      protection is missing.
+
+## r277 -- attacking the meta-pattern instead of guessing another class
+
+363. **Two consecutive rounds found a class fixed once and never fenced, so this round went after
+     that pattern rather than picking another region at random.** The pattern is enumerable: the
+     repository records every past fix. 1,878 round-numbered test files exist against 27 contract
+     tests, so the overwhelming majority of past fixes pinned one bug without closing its class.
+
+364. **r169's fence guards the callers, not the hazard -- and that is a distinct failure mode from
+     "no fence at all".** `DataFolderLabelParityTests` asserts four hardcoded shell files call
+     `ResolveDataFolderLabel(_optionsStore.StorePath)` and never the parameterless overload. It is a
+     real contract and it works, for exactly those four paths. A fifth caller anywhere else -- FreeX,
+     another dialog, a new shell -- still got the wrong folder, and no test in the repository could
+     see it.
+
+365. **The hazard was still live, on a public method of a shared type used by all three apps.**
+     `ApplicationFrameDescriptor.ResolveDataFolderLabel()` defaulted to
+     `PlatformApplicationDataPathProvider.LocalInstance` and returned `%LOCALAPPDATA%\{Product}`,
+     while every app stores its options under `%APPDATA%`. The store-path overload carried the same
+     wrong default on its fallback branch.
+
+366. **r169 had already written down the correct policy and applied it one branch too narrowly.**
+     `AppStoragePathPlanner`'s own follow-up comment says every sister app resolves through
+     `Instance` and the honest placeholder is `%APPDATA%`. That reasoning corrected the exception
+     branch and left the convenience defaults pointing at the local root, so the success branch --
+     the one that actually returns a directory -- kept reporting the wrong one.
+
+367. **Memory of this item was partly wrong, and checking beat trusting it.** The note recorded "two
+     now-dead overloads awaiting removal". Only the parameterless one is dead; the string overload is
+     live and called by all six production sites. Deleting both, as the note implied, would have
+     broken every shell.
+
+368. **Fixed at the hazard rather than the call list, and proved by reverting.** Both defaults now
+     name `Instance`. All three new tests fail on the old code and pass on the new, so this is a
+     behaviour change and not a documentation exercise. One of them guards itself: if the two roots
+     ever coincide on the host, it says so instead of passing vacuously.
