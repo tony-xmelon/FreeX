@@ -1907,3 +1907,33 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      restores rich-text runs from its own. The parallel snapshots exist precisely so undo is
      complete. The structure that makes the no-op question hard is the structure that makes undo
      correct.
+
+## r237 -- undo-completeness and no-op-completeness are the same list
+
+183. **The invariant this whole sub-thread was circling, stated plainly at last.** A command's UNDO
+     snapshots are, by construction, the complete record of everything it writes -- that is what
+     makes undo correct. So its no-op decision is complete exactly when it consults every one of
+     them, and incomplete the moment it skips one. The two properties are the same list.
+     That turns "be careful" into a mechanical check.
+     `R237_NoOpDecisionUsesEverySnapshotContractTests` scans a command's `_*Snapshot` fields and
+     requires the method that makes its no-op decision to reference each one. Adding a sixth snapshot
+     without extending the comparison compiles cleanly and silently narrows the guard; this fails
+     instead. Proved by deletion: dropping the `_phoneticGuideSnapshot` clause makes it fail and name
+     the field.
+     The list is opt-in, which keeps it a ratchet on commands that have adopted a decision method
+     rather than a claim about the ones that have not.
+
+184. **`FillCellsCommand` is the first through, and it needed all FIVE of its snapshots** -- cells
+     and style, hyperlinks and metadata, rich-text runs, phonetic guides, and comments. Outstanding
+     47 -> **46**. Two of the four tests are companion cases a cell-only comparison would have got
+     wrong: a fill where only a hyperlink differs, and one where only a note differs.
+
+185. **r236's own proposed remedy was ALSO incomplete, and this round caught it.** r236 said the fix
+     for these commands was to capture `CellEditCompanionSnapshot` instead of parallel tuples. That
+     composite covers cells, rich text, hyperlinks, metadata and phonetic guides -- but NOT comments,
+     which `FillCellsCommand` writes and snapshots separately. Following r236's remedy literally
+     would have produced a guard that misses a fill carrying a note. Three rounds in a row have now
+     found the previous round's confident statement to be one level too shallow (r234 fixed r233's
+     obstacle, r236 corrected r234's sufficiency, r237 corrected r236's remedy), which is worth
+     recording as a property of this kind of work rather than as three separate mistakes: each layer
+     looks complete until you try to build on it.
