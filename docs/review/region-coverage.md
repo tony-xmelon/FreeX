@@ -1850,3 +1850,30 @@ it is the kind of thing a per-command copy of the comparison would have got inco
 176. The batch case has its own test for a reason: a batch is a no-op only when EVERY cell in it is
      unchanged (`TrueForAll`, not `Any`). Getting that backwards would suppress a multi-cell edit
      because one of its cells happened to match -- a suppression bug hiding inside a no-op fix.
+
+## r235 -- closing a limit that was written down, and a count that under-reports the work
+
+177. **r221's Paste guards said in the source what they could not do; r235 made that sentence
+     false.** They caught "there was nothing to paste" and explicitly did not catch "the pasted
+     values equalled what was already there". With r234's comparison built, both `PasteCellsCommand`
+     and `PasteSpecialCellsCommand` now use it, and pasting a block back over itself -- which people
+     do constantly by pasting twice -- is reported for what it is.
+     Worth noting the mechanism: those two were ALREADY off the debt list, because r221's partial
+     guard was enough to make them declare. So this improvement moves no counter at all. A round's
+     number is not the same as a round's work, and the direction of that error matters: a count that
+     under-reports is safe, a count that over-reports is the thing r229 and r231 refused to create.
+
+178. **Two commands came off the debt for free, by delegation.** `ExternalTextPasteValuesCommand` and
+     `FormControlInteractionCommand` both hand their whole edit to `EditCellsCommand`, which r234
+     fixed -- so they now report correctly and only the per-class source scan cannot see it. They
+     move to `DeclaresIsNoOpThroughAHelper`, whose machine-checked delegate claim (r223) covers them.
+     `FormControlInteractionCommand` needed one extra step of argument, recorded with the entry: it
+     DOES write control state of its own, but only inside `if (_applied)`, which is the redo path --
+     and redo only runs for an entry that was pushed, which a no-op never is. So on first Apply it is
+     pure delegation. r231 observed that delegation propagates a defect; this is the same mechanism
+     running the other way, and it is why fixing `EditCellsCommand` was worth doing first.
+
+179. **My arithmetic was wrong before the test corrected it.** I set the ceiling to 45 expecting four
+     removals and the contract found 47 -- because two of the four were already off the list. The
+     ratchet caught my own bad count, which is the second time this session a mechanical check has
+     corrected a number I asserted (see r232). Outstanding 49 -> **47**.
