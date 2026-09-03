@@ -2114,3 +2114,27 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      than typed, so the pairing comes from the code that already exists rather than from me reading
      twenty names twice. The test that pins it picks a field deliberately far from the first, because
      a comparison that stopped early would still pass a test that only checked orientation.
+
+## r244 -- a record that looks like a value and is not, for the fourth time
+
+206. **`SetHeaderFooterCommand` fixed; outstanding 40 -> 39.** Sixteen fields, and r243's argument is
+     what made attempting it reasonable: the r237 contract enforces that all sixteen participate, so
+     width stopped being the obstacle. r242 had explicitly skipped this command as "heavy"; the
+     contract is what changed.
+
+207. **Six of the sixteen are picture sets, and they are why this one still needed care.**
+     `WorksheetHeaderFooterPicture` is a record, so `==` compares its fields -- but `ImageBytes` is a
+     `byte[]`, which records compare BY REFERENCE. The snapshot is taken with `DeepClone`, which
+     copies the array. So a comparison written with `Equals` would have compiled, read correctly to
+     any reviewer, and never once reported a no-op.
+     That is the FOURTH instance of this trap in the program (r231's scenario/custom-view records,
+     r242's `DataValidation` clones, r236's parallel snapshots, now this) and the sharpest, because
+     here the thing that breaks the comparison is the same `DeepClone` that makes UNDO correct. The
+     defensive copy and the equality check pull in opposite directions.
+     `SameHeaderFooterPictures` compares content, including `ImageBytes.AsSpan().SequenceEqual`, and
+     the test that pins it hands the command a separate object holding identical bytes -- which is
+     precisely what the dialog does after a round trip through the model.
+
+208. The last test in the file targets `alignWithMargins` deliberately: it is the SIXTEENTH field,
+     and a comparison that transcribed fifteen would pass every other test in the file. When a guard
+     is wide, the test that matters is the one aimed at its far end.
