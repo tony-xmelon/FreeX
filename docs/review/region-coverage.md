@@ -5467,3 +5467,27 @@ on that discipline rather than lowering them: a real implementation disagreeing 
 persuasive, and it was reporting faithfully on a document I had built badly.
 
 Remaining for this oracle: FreeP's .pptx, which LibreOffice also reads.
+
+## r347 — the oracle completes: LibreOffice reads all three apps' output
+
+r345 (ODS) and r346 (.docx) asked an independent implementation whether our files mean what we
+intended. This finishes the set with FreeP's .pptx.
+
+A two-slide deck -- a titled shape, speaker notes, a 1x2 table with text in both cells, and a second
+shape on slide two -- converted to .odp:
+
+- **Both slides** arrive as `draw:page`.
+- **The table is a table**: one `table:table`, two `table:table-column`, one `table:table-row`, two
+  `table:table-cell` -- structure, not flattened text boxes.
+- **Every string survives**: the title, the second slide's body, and both cell texts.
+- **Speaker notes survive** as notes content, not as a stray shape.
+
+**All three apps now verified against an implementation that shares no code with them, and all three
+are clean.**
+
+One process note, small but the same shape as r346's two: my first check reported `table:table` as
+ABSENT while two cells were present, which reads like a table flattened into loose cells. It was my
+grep -- the pattern had a trailing space and `<table:table>` carries none. Checking the element
+properly showed the full structure. Three rounds running, the thing that looked like a defect was in
+the measurement rather than the product, and each took one command to settle. The oracle is only as
+good as the question put to it.
