@@ -5405,3 +5405,36 @@ stability claim from a comparator that cannot see differences is worth nothing, 
 probes that was a live possibility rather than a formality.
 
 Lane green: FreeX.Core.IO 6334 passed, 0 failed.
+
+## r345 — an independent implementation reads FreeX's ODS correctly
+
+r334-r344 checked the three OOXML writers against a schema validator. ODS has no equivalent validator
+to hand, but it has something better available on this machine: LibreOffice, the reference
+implementation of the format. This ledger already records that the format-fidelity harness is
+same-implementation round-trip and therefore structurally blind to wire-format bugs -- LibreOffice is
+the oracle that is not.
+
+A multi-feature workbook (two sheets, a bold header, a currency-styled number, a formula, a merged
+range, a hyperlink, a comment) was written to `.ods` and handed to LibreOffice headlessly:
+
+- **Values** -- converted to CSV, every cell reads back correctly.
+- **The formula recomputed.** `SUM(B2:B2)` produced 1234.5 in LibreOffice's own evaluation, so it was
+  parsed as a formula rather than salvaged as a cached value.
+- **Round-tripped as a formula.** FreeX writes `table:formula="of:=SUM([.B2:.B2])"` -- correct
+  OpenFormula, with the `of:` prefix and bracketed reference syntax -- and LibreOffice re-emits it as
+  `<f aca="false">SUM(B2)</f>` when converting to .xlsx.
+- **Structure survives** -- both sheets by name, and the merge as `A5:C5`.
+
+**Clean, by an oracle that shares no code with us.** Every other check in this program's file-format
+rounds has been FreeX reading FreeX, or FreeX against a schema; this is the first that asks a
+different implementation whether the file means what we intended.
+
+Not committed as a test, deliberately: it depends on LibreOffice being installed, and a test that
+silently skips on machines without it would report green while checking nothing -- the failure mode
+this program keeps finding. The commands are recorded here instead so the check is repeatable by
+hand:
+
+```
+soffice --headless --norestore --convert-to csv  --outdir <dir> <file>.ods
+soffice --headless --norestore --convert-to xlsx --outdir <dir> <file>.ods
+```
