@@ -4454,3 +4454,36 @@ rebuilding -- the error count went to zero, which located the cause in one step 
 surrounding convention is not a style preference here; it is load-bearing.
 
 Lanes green: FreeW.Core.IO.Tests 1939/0, FreeP.App.Presentation.Tests 5915/0.
+
+## r315 — the read side of the culture class
+
+The third and last side of a class that had been fixed seven times before it was ever fenced. r275
+scans PARSES in source; r313 proved the WRITE side behaviourally. Nothing opened a file under another
+culture, so a parse a source scan cannot see -- inside a custom tokenizer, a date splitter, a
+third-party reader -- was free to misread numbers on a German machine.
+
+The workbook is written once under the invariant culture, then loaded under de-DE, fr-FR and tr-TR,
+and the loaded MODEL is compared rather than re-saved bytes: it is the values the user sees that
+matter, and comparing models isolates the reader from anything the writer might also get wrong.
+
+**All four adapters are clean** -- XLSX, ODS, native JSON and SpreadsheetXML read identically in
+every culture.
+
+**The first fail-probe passed, and that was the useful part of this round.** Flipping ODS's number
+parse from invariant to current culture did NOT fail the test: `NumberStyles.Float` does not allow
+group separators, so `"1.5"` under de-DE does not parse as `15` -- it fails to parse at all, and the
+reader's own second attempt (which was still invariant) rescued it. My probe had created a
+parse-FAILURE path, not a wrong-VALUE path, which is not the defect being guarded against. Flipping
+BOTH attempts failed exactly the three ODS cases and left the other nine green, so the test does have
+power over that reader. Recorded because the distinction generalises: this test can only catch a
+culture leak that changes a value, and .NET's stricter number styles turn many leaks into failures
+that a fallback then hides. It is a real guard with a stated blind spot, not a proof of absence.
+
+**Also a fixture correction**: the first version compared values with `BeEquivalentTo`, which threw
+`No members were found for comparison` on these value types -- twelve red tests that said nothing
+about the product. Value equality (`Be`) is the right assertion for a record.
+
+Lane green on freshly built binaries: 6309 passed, 0 failed. The first run after the probe showed
+four ODS failures because the restore had not been rebuilt -- the same stale-binary trap as r310 and
+r313, and the third time this program has read its own probe leftovers as a regression. The tell is
+always the same: failures in tests the change could not plausibly touch.
