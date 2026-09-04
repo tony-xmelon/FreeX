@@ -6042,3 +6042,48 @@ area punishes.
 
 The defect stands as documented in r355/r356: B2 loses its binding after a sibling row is deleted,
 and R82's assertion on it stays annotated until step 5 lands.
+
+## r360 -- the headless swallow, one level up (FreeW + FreeP, FIXED)
+
+New dimension: tests that cannot fail for reasons OTHER than r353's `?.`. Scanned every `[Fact]`
+/`[Theory]` in the three apps for a body with no assertion. 708 candidates, refined to 20; nearly all
+false positives -- tests delegating to helpers named `AssertSharedEdgeIsDouble`,
+`RunDuplicateScenario`, `ShouldPreserveVerbatim`. As usual the finding came from READING a survivor,
+not from the count.
+
+The survivor: `DocumentViewCellShadingBordersTests.SetCellShading_InBodyText_IsNoOp`, whose comment
+says "document unchanged is verified implicitly by reaching this line" -- which verifies nothing --
+and which ends `if (!ran) return;`. That is the signature of the headless-swallow class this
+codebase already fixed once.
+
+The per-test swallow IS gone: `HeadlessUiThread.Run` now propagates the body's exceptions, which was
+the fix. But the probe that fix introduced kept the same shape ONE LEVEL UP:
+
+    private static readonly Lazy<bool> BackendAvailable = new(() => {
+        try { ...new DocumentView(); LoadDocument; Measure... ; return true; }
+        catch (Exception) { return false; }
+    });
+
+It catches everything, so a genuine regression in `DocumentView` construction or measurement is
+indistinguishable from "this machine has no drawing backend". Either way the answer is "unavailable"
+and every `if (!ran) return;` in the assembly -- 1044 of them -- returns before asserting. The suite
+reports a full green having executed none of its bodies. Nothing asserted that the probe had
+succeeded.
+
+DEMONSTRATED, not argued: forcing the probe to throw gives 1 failed and 20 PASSED, where the 20 are
+`DocumentViewCellShadingBordersTests` running nothing at all. Without a guard that run is clean green.
+
+Fix keeps the legitimate environment skip -- a machine with no backend genuinely cannot run these --
+and makes it OBSERVABLE. The probe's exception is retained instead of discarded, and
+`R360_HeadlessBackendIsAvailableTests` fails once, loudly, carrying the real cause. Applied to FreeW
+and FreeP, which had the identical structure.
+
+The general shape is worth naming, because this is its third appearance in this codebase (async-void
+Dispatch, 154 tests; the per-test catch, 21 tests; now the probe): AN ENVIRONMENT CHECK THAT DECIDES
+WHETHER TESTS RUN IS ITSELF UNTESTED. Whenever a suite can skip itself, something must assert that it
+did not.
+
+Correction to a standing note: FreeP.App.Avalonia.Tests is recorded as unable to run on this machine.
+That is stale -- its backend probe succeeds and the suite runs 741 tests here.
+
+Regression check: FreeW.App.Avalonia.Tests 2297/0, FreeP.App.Avalonia.Tests 741/0.
