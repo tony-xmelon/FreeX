@@ -6320,3 +6320,31 @@ wired.
 All three malformed-file failures found in r365 are now fixed.
 
 Regression check: FreeX.Core.IO.Tests 6342/0.
+
+## r367 -- the same malformed-input method against FreeW and FreeP (clean, suites kept)
+
+r365/r366 found three real defects in FreeX by loading deliberately malformed files rather than
+reading code. The two hand-built readers had never been put through that, so they were next: 15
+malformed .docx bodies and 14 malformed .pptx slides -- negative and overflowing measurements,
+non-numeric offsets, gridSpan of 0 and of int.MaxValue, non-hex colours, alpha past its maximum,
+references to numbering/styles/relationships that do not exist, duplicate and zero shape ids, tables
+with no grid, deeply nested tables, an empty shape tree.
+
+Every one opened. 15/15 and 14/14, no exceptions.
+
+The contrast with FreeX is the finding, and it is structural rather than a matter of care. FreeW and
+FreeP PARSE THEIR OWN XML, uniformly through TryParse, so a value they cannot use is simply ignored
+-- the failure mode is a missing property, never a refused document. FreeX hands the package to
+ClosedXML, whose failure mode for an impossible value is an EXCEPTION, so every value FreeX's
+normalizers let through becomes a load abort. Its three defects were not carelessness; they were the
+cost of delegating parsing to a library with different failure semantics, where the normalizer layer
+has to anticipate everything the library rejects.
+
+That also says where to look next in FreeX rather than in the siblings: any file-supplied value that
+ClosedXML validates is a candidate, and only a fixture proves it either way.
+
+Both probes are kept as suites -- `R367_MalformedDocumentDoesNotThrowTests` and
+`R367_MalformedPresentationDoesNotThrowTests` -- rather than deleted, because "the reader ignores
+what it cannot use" is a contract worth holding: the cheapest way to break it is a well-meant
+`int.Parse` or an indexer added to a reader later. Negative control run: making the open throw fails
+all 15, so the assertions execute.
