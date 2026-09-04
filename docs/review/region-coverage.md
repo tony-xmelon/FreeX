@@ -4692,3 +4692,23 @@ rebuild before its failures mean anything. Second, I nearly published a false re
 naming another session's work. The check that caught it cost one rebuild; the report would have cost
 somebody else a debugging session on a bug that does not exist. Verify before attributing, and
 attribute to a build before attributing to a person.
+
+## r321 — composing r320's fix
+
+r320's fix put state on a SHEET-level list from inside a command
+(`DeletedSourceDrawingObjectNames`). That is the shape of fix most likely to be wrong in the second
+call rather than the first, so this round tests the orderings that touch it twice rather than adding
+another single-rename case:
+
+- rename twice -- one object survives under the final name, and the intermediate tombstone (for a
+  name no source anchor ever bore) is harmless;
+- rename then delete -- nothing comes back, neither the regenerated copy nor the original anchor;
+- rename, undo, redo -- exactly one tombstone for the anchor, not two, and one object under the new
+  name. The count is asserted directly, because a redo re-running `Apply` after `Revert` is the
+  concrete way this fix would leak entries.
+
+All pass; the fix composes. A clean result rather than a finding, and worth the round: the value of
+a guard added to a mechanism I had just changed is highest immediately after changing it, while I
+still know which orderings are load-bearing.
+
+Lane green: 6325 passed, 0 failed.
