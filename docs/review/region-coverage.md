@@ -6348,3 +6348,50 @@ Both probes are kept as suites -- `R367_MalformedDocumentDoesNotThrowTests` and
 what it cannot use" is a contract worth holding: the cheapest way to break it is a well-meant
 `int.Parse` or an indexer added to a reader later. Negative control run: making the open throw fails
 all 15, so the assertions execute.
+
+## r368 -- the last-chance recovery path threw on its own stream (FIXED)
+
+Followed r367's conclusion -- look in FreeX, where ClosedXML validates file-supplied values -- with a
+second, broader fixture set: 24 malformed worksheets covering dimension refs, merged cells, column
+min/max and widths, row heights, pane splits, selections, hyperlink refs, data-validation and
+conditional-format sqrefs, autofilter refs, outline levels and shared formulas. Nineteen opened. Five
+threw, deterministically across two runs.
+
+Four of the five threw the SAME exception from FreeX's own code, not ClosedXML:
+
+    ArgumentException: Update mode requires a stream with read, write, and seek capabilities
+    at XlsxFileAdapter.StripOrphanedSharedFormulaSlaves(MemoryStream)
+
+That is the LAST-CHANCE path: a `<f t="shared" si="N"/>` with no master is a known corruption, and
+FreeX strips those slaves and retries the open. It opens the package in `ZipArchiveMode.Update` --
+but `CreateClosedXmlParsePackage` returns the CALLER'S stream unchanged whenever nothing needed
+sanitizing, and that stream can be read-only or already closed by the earlier attempt (a closed
+MemoryStream reports `CanWrite` false). So the recovery for a repairable workbook threw, and made it
+unopenable. The strip was also mutating a stream its caller still owned.
+
+Fixed by copying to a writable stream first when the given one cannot be written. The copy must be
+EXPANDABLE, and getting that wrong was instructive: the first attempt used `new MemoryStream(bytes)`,
+which wraps the array at fixed capacity, so the strip's rewrite threw `NotSupportedException`
+instead -- one unopenable file traded for another, and the probe caught it immediately.
+`MemoryStream.ToArray()` is documented to work on a disposed instance, which is exactly the state
+being recovered from.
+
+`R368_OrphanedSharedFormulaFallbackOpensTests` pins both halves: the file opens, and the recovered
+cell KEEPS ITS CACHED VALUE (42), because "swallow the sheet" would also satisfy a does-not-throw
+test. Revert probe fails both.
+
+FOUR DEFECTS REMAIN from this fixture set, and the stream fix is what exposed their real causes --
+the ArgumentException had been masking them. All are the r365/r366 shape, a file-supplied value
+ClosedXML rejects, and each needs a normalizer guard:
+
+- `<col min="0" ...>` and `<col min="99999" max="99999">` -> ArgumentOutOfRangeException.
+  Columns are 1..16384; clamp or drop, next to the row guard in `XlsxWorksheetGridXmlNormalizer`.
+- `<dataValidation sqref="%%%">` -> ArgumentNullException.
+- `<mergeCell ref="@@@">` -> NullReferenceException, raised inside
+  `ClosedXML.Excel.XLWorkbook.LoadSpreadsheetDocument`. Notable because the sanitizer already has a
+  `MergeCellWorksheetPathsToStrip` member, so the machinery exists and simply does not consider a
+  malformed ref.
+
+Recorded rather than rushed, with the exception and the location for each.
+
+Regression check: FreeX.Core.IO.Tests 6344/0.
