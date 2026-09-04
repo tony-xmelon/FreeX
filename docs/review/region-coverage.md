@@ -4062,3 +4062,34 @@ it is the kind of thing a per-command copy of the comparison would have got inco
 512. **Proved with the shape a real mistake takes.** Marking one ordinary option `[JsonIgnore]` --
      what happens when someone adds an attribute to the wrong line -- fails the test with the
      property named and both values shown: `saved [True] loaded [False]`.
+
+## r304 -- bounding r303's class across the sibling apps
+
+513. **Checked before writing anything, and the siblings did NOT have r303's gap.** FreeX's
+     forty-two-option DTO had two options round-tripped; FreeW's six and FreeP's three are each
+     named repeatedly in their own dedicated test files. The values are covered.
+
+514. **What is not covered there is the NEXT option.** Those tests name settings individually, so a
+     seventh FreeW option would simply have no test and a persistence failure on it would be
+     invisible. Enumerating the properties is redundant with the per-option tests today and is the
+     only thing that will cover the option added tomorrow.
+
+515. **The guard immediately earned its keep by refusing to pass two options it could not vary.**
+     `AutoFormat` and `AutoCorrect` are nested settings objects -- whole option PAGES. Treating an
+     unrecognised type as "passing" would have quietly excluded them; the failure said so instead,
+     and the fix was to recurse into them. A nested object that fails to serialise resets a whole
+     page of settings at once, not one checkbox.
+
+516. **Two reflection traps, both fixed rather than worked around.** An INDEXER is a property to
+     reflection but cannot be read without arguments -- one nested type has one, and it threw
+     `TargetParameterCountException` rather than reporting anything about persistence. And the nested
+     types do not override `Equals`, so structural comparison was needed or every page would have
+     compared unequal and reported loss that was not there.
+
+517. **Proved on a nested page, which is the case the flat version would miss.** Marking
+     `AutoCorrect` `[JsonIgnore]` fails with the property named -- and the two objects print
+     identically, so only the structural comparison catches it.
+
+518. **A stale-binary reading again, and again caught by rebuilding rather than believing.** The
+     verification run reported one failure because `FreeW.slnx` does not contain the shared test
+     project, so it still linked the probe's assembly. Rebuilding that project gave 445/445.
