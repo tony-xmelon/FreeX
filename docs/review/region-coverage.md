@@ -6931,3 +6931,23 @@ connected session (this one is still `Disc`, see r362).
 No claim, no fix. Recorded because the trail was three steps from being reported as a defect, and the
 thing that stopped it was running a control on a result that looked too uniform -- the same tell as
 r370's eleven identical exceptions and r375's nine.
+
+### r383 addendum -- the order dependency, as far as it is actually known
+
+Chased the mechanism behind "passes in the suite, fails filtered". Established: the class sits in
+`[Collection(AvaloniaParityCapture)]`, which is `DisableParallelization = true` with an
+`ICollectionFixture<AvaloniaCaptureProcessLease>` -- a lease capping concurrent capture processes,
+NOT a renderer initialiser. So the collection does not explain it, and the mechanism is still
+unidentified.
+
+What is reproducible, and enough to act on: the full assembly passes 2283/0, and the same class run
+under a `--filter` fails with `PixelSize` 1x1. Stated as the phenomenon rather than dressed up as a
+diagnosis.
+
+The operational consequence is the useful part: **a filtered single-class run of a parity-capture
+test is not trustworthy in this assembly** -- it can report a failure that the full run does not have.
+That is exactly how a probe executes, which is why r383's TIFF reading was worthless, and it is worth
+knowing before anyone debugs one of these tests alone and chases a phantom.
+
+Not pursued further. The remaining questions need a connected session (this one is still `Disc`) and
+the mechanism matters less than the caveat.
