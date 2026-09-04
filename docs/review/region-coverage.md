@@ -4997,3 +4997,27 @@ Worth stating plainly, since it is the second time in three rounds: both r329 an
 something whose information was already present and merely unreachable -- an explanatory note stuck
 in a manifest, and a `0/1` count on a line that scrolls past. Neither was a missing capability. The
 work was making what the tool already knew arrive where someone would act on it.
+
+## r331 — the Avalonia half does not run here, and says nothing about it
+
+r328 opened the WPF capture; the obvious next step was the Avalonia one, which would make a
+local two-shell comparison possible without Docker. It does not work, and the way it fails is worth
+recording.
+
+The tool builds cleanly as a plain `net10.0` exe. Run on Windows with the same arguments the WPF tool
+accepts, it **hangs and prints nothing at all** -- no banner, no error, no partial manifest -- until
+killed. Two attempts, 150s and 600s, produced an empty log and zero files. It is built for the
+Linux/Xvfb route, so this is outside its documented contract; the defect is not that it declines to
+run but that it declines silently, leaving an operator to guess between "still working", "wrong
+arguments" and "wrong platform".
+
+That is the same family as r329 and r330 -- information the tool has and does not surface -- but
+unlike those it sits behind a platform boundary I cannot verify a fix against here. Writing a
+fail-fast guard I could not exercise on the platform it targets would be worse than naming it: I
+would be guessing at what the Linux route needs, and a wrong guard would break the one route that
+works.
+
+**Correcting r328's phrasing.** I wrote that "only the Linux/Avalonia half needs Docker+Xvfb; the
+Windows half needs nothing I do not have". True of the WPF tool, and I let it imply that the Avalonia
+tool might substitute on Windows. It does not. A cross-shell comparison still requires the Docker
+route; what is available locally is the WPF side alone.
