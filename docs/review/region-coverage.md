@@ -4908,3 +4908,32 @@ No code change this round. The survey's value is that the ChartEx write-back is 
 against the aspects cx can represent, by tracing each candidate to its reader and writer rather than
 by matching names -- which is what r322 warned about after name-matching would have reported three
 handled aspects as unpatched.
+
+## r328 — testing my own claim: the WPF parity capture runs here
+
+I had been ending rounds by saying the remaining work included "running the parity-capture suite,
+which reaches paths these headless lanes structurally can't" -- listed as something I could not do.
+That was an assumption I had never tested, so this round tested it.
+
+**It runs.** `FreeX.ParityCapture.Wpf.exe --parity-capture=<dir>
+--parity-capture-target=dialog.Options.EaseOfAccess` completed in about a second, wrote a 744x521
+PNG plus a manifest, shut down cleanly and left no stray process. The image is 20 KB, so it is not
+one of the blank renders this codebase is prone to. Only the LINUX/Avalonia half needs Docker+Xvfb;
+the Windows half needs nothing I do not have.
+
+**A real obstacle found on the way, and fixed.** Two leftover MSBuild WPF temp projects
+(`FreeX.ParityCapture.Wpf_llrvpq2r_wpftmp.csproj`, `FreeX.App.Host_yw3jtym5_wpftmp.csproj`) sat in
+their source folders from interrupted builds. They are untracked, so they are not a repository
+problem -- but they break `dotnet build <folder>` outright with MSB1050 ("contains more than one
+project or solution file"). Anyone building either of those two projects by folder path, as every
+build in this program has done, hits a hard failure whose message says nothing about temp files.
+Deleted; both build cleanly again.
+
+**The correction matters more than the capability.** I had repeated the "I can't run parity capture"
+line across several rounds, and it had started to function as a boundary on what this program could
+examine -- while being an untested assumption about my own tooling. Checking it cost one build and
+one 300-second timeout. The lesson generalises past this tool: an assumption about what I cannot do
+deserves the same probe as an assumption about what the code does, and it is cheaper to test than to
+carry.
+
+Capability now available for future rounds: WPF dialog and surface captures, per-surface, locally.
