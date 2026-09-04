@@ -4395,3 +4395,39 @@ r310 and r311 each found real bugs invisible to suites that covered their areas 
 lesson from both is that the next defect will come from a dimension no test varies, not from a
 region no one has read. What is true is that every item this program has recorded as outstanding has
 now been either fixed or re-examined and found not to be outstanding.
+
+## r313 — saving the same workbook twice produced two different files
+
+I said the next defect would come from a dimension no test varies rather than a region no one has
+read, so I looked for such a dimension instead of asserting it. Three candidates were measured and
+found already covered: the 1904 date system (74 production sites, varied by many tests), all 71
+settable `Sheet` properties (every one with real production use is set by at least two tests), and
+culture (42 test files switch it). The gap was inside that last one: the suite exercises only de-DE,
+fr-FR, en-US and en-GB -- all Latin, none with Turkish case mapping -- which is exactly where r286
+and r311 lived. And r275 fenced the culture class on the PARSE side only, saying so explicitly; the
+write side had no fence.
+
+So rather than pattern-match `ToString()` calls (a `ToString()` has no type prefix to key on, so a
+regex would be all noise), I varied the dimension: save the same workbook under de-DE, fr-FR and
+tr-TR and require identical output. **The write side is clean** -- ODS, native JSON and
+SpreadsheetXML are byte-identical across all three cultures, and XLSX is identical part-for-part.
+
+**What it found instead was worse than a locale leak**: `_rels/.rels` differed between two saves of
+an unchanged workbook. The packaging layer gives the root `officeDocument` relationship a RANDOM id
+(`Rb8ce4c41530e4534`, then `R7ea447fa93bb4cbf`) while its siblings get `rId1`/`rId2`. Every XLSX
+save produced a different file. That costs the user wherever a file is compared rather than opened:
+version control shows a change that is not one, sync and backup tools re-upload an identical file,
+content-hash caches miss. `XlsxRootRelationshipIdNormalizer` now assigns it the next free `rIdN`.
+
+**The control is the reason any of this is trustworthy.** My first version compared raw bytes and
+reported XLSX as culture-dependent under all three cultures. It is not -- a control saving twice
+under the SAME culture also differed. Comparing raw bytes measured the clock and the id, not the
+locale. Without that control I would have recorded three culture bugs that do not exist.
+
+**Two things the fix got wrong before it got right, both caught by existing tests**: the first
+version renamed every ill-formed root id and broke three customXml tests -- a customXml root
+relationship's id IS referenced by its property sidecar binding, so my premise that root ids are
+never referenced was wrong; it is true only of `officeDocument`, which readers find by Type. And the
+call initially split `NormalizeWorkbookForSchema(); return;`, which an existing source contract
+anchors on. I moved my call rather than loosen that contract: accommodating a new change by
+weakening the guard that caught it is how a suite stops meaning anything.
