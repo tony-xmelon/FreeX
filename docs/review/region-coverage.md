@@ -3474,3 +3474,33 @@ it is the kind of thing a per-command copy of the comparison would have got inco
 404. **Installed where the status control is constructed, not at startup.** The reporter needs the
      built control; setting it earlier would have captured a null and traded a silent failure for a
      NullReferenceException inside the failure path -- the worst possible place for one.
+
+## r284 -- finishing r282's triage, and correcting r282's numbers
+
+405. **CORRECTION to finding 394: the counts it reports are wrong.** r282 said "207 catch blocks
+     ... 169 carry a comment ... 38 bare". The script behind those figures used a conditional `my`
+     in Perl, which retains its previous value across iterations, so the classification leaked
+     between sites. Recounted with a method that cannot drift -- walk from the opening brace to the
+     first line that is neither blank nor comment -- the real figures are **196 empty-bodied
+     catches: 167 commented, 29 bare**.
+
+406. **The r282 fixes stand, because they were read by hand rather than trusted from the count.**
+     The four dialog funnels were each opened and confirmed empty before being changed, and the
+     strengthened r270 contract found the fourth independently of the scan. A wrong census did not
+     produce a wrong fix -- but it did produce a wrong log entry, which is what this corrects.
+
+407. **All 29 remaining bare catches triaged, and none is a defect.** The clusters are FreeP media
+     and recording teardown (process, device and session shutdown), culture probing, and dialog
+     chrome. Every one is a narrow exception type with an obvious fallback.
+
+408. **The five in FreeX's computation layers were read line by line, because there a swallow
+     changes a number.** Three `OverflowException` catches in rounding fall through from a decimal
+     precision correction to the double path; a calendar that will not accept Gregorian keeps its
+     own; an unavailable region contributes no currency label. All correct, and now all commented,
+     which moves them from "silent" to "explained".
+
+409. **Fenced where a swallow costs a result, not everywhere.** The contract requires a comment on
+     empty catches in the formula, IO, model, command and app-service layers only. The UI layers are
+     full of legitimate best-effort teardown where demanding a comment on each would be noise, and
+     r270/r282/r283 already fence the part of the UI that matters. Proved by deleting one comment:
+     it names the file and line.
