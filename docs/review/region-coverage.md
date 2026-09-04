@@ -4301,3 +4301,49 @@ compiled assembly, yet `dotnet build` reported success without refreshing the te
 so a full rerun showed my own new tests failing against probe binaries. `--no-incremental` on both
 the production project and the test project was needed. A build that says nothing is not the same as
 a build that did something.
+
+## r311 — slicer selections are file data, so they must match by the file's rules
+
+Followed r310's lens: the bug there survived because the persistence layer and the presentation
+layer answered the same question differently. Asked where else that split exists, and found it in
+the pivot/slicer stack.
+
+`XlsxPivotSlicerCacheData`, `XlsxSlicerTimelineStateRewriter` and the filter engine all decide
+whether two slicer items are the same item with `OrdinalIgnoreCase`. The presentation layer matched
+those same persisted strings with `CurrentCultureIgnoreCase`. That is not a stylistic difference:
+ICU collation ignores characters such as a soft hyphen, so `"Total­Revenue"` and
+`"TotalRevenue"` compare EQUAL culture-sensitively and UNEQUAL ordinally. The visible costs are a
+tile shown as selected that the filter does not include, and two distinct source values collapsing
+into a single tile so one of them cannot be selected at all.
+
+**Fixed, in identity roles only** (`SlicerLayoutModel`, `SlicerTimelinePanePlanner`,
+`PivotFieldItemsReader`, `PivotFieldFilterPlanner`, `SlicerTimelineSourceReader`,
+`GetPivotDataFormulaPlanner`, `PivotTableSlicerCommands`, `PivotFieldFilterDialog`):
+`HashSet`/`Contains`/`Distinct`/`Equals` over persisted values now use `OrdinalIgnoreCase`.
+`PivotTableSlicerCommands` mattered most -- it is the only path by which a user selection reaches
+the model, and it deduplicated culture-sensitively.
+
+**Deliberately NOT changed, and the distinction is the point**: sorting. `OrderBy`, `Sort` and the
+locale ordering of displayed items stay `CurrentCultureIgnoreCase`, because which order a user sees
+names in IS their locale's question. Two sites were doing both jobs with one comparer -- a
+`SortedSet` that deduplicated and ordered at once -- and were split into an ordinal dedupe followed
+by a culture sort, so neither job borrows the other's answer. A test pins the ordering so the fix
+cannot silently become a byte-order sort. User-facing search boxes (`Contains(query, ...)`) also
+keep culture matching: type-to-find should be forgiving.
+
+**Proved before and after**: a platform probe first (r286's lesson -- the behavioural tests would
+have passed against unfixed code had the two comparers not actually disagreed), then reverting the
+comparer failed four of the seven tests. Lanes green: App.Presentation 5610/0, Core.Model 6701/0,
+Core.IO 6281/0.
+
+**Measured but NOT swept, with the count**: `PivotTableRefreshService` compares pivot row/column
+keys culture-sensitively in about thirty further places (`ColumnKeys`, `Details`, `Filters`,
+`MatrixWriter`, `Writers`). That is the same class, but those comparisons drive grouping and
+subtotal placement in the refresh engine, and changing thirty of them on the strength of a pattern
+match is how this program has produced false positives before. Named here as a bounded, measured
+follow-up rather than half-done.
+
+**Process, again**: two builds reported "Build succeeded / 0 Errors" while leaving the assembly
+older than the source, so a lane run showed my own new tests failing against probe binaries. I had
+also filtered build output to `error CS`, which would have hidden a non-CS failure. Check the
+artefact's timestamp, not the build's summary.
