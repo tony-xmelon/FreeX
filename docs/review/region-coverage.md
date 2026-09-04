@@ -5934,3 +5934,71 @@ sibling tests around it are the cheapest oracle for which half is wrong.
 
 Regression check: FreeX.Core.IO.Tests 6335/0 (one test more than r355's 6334, the replacement being
 two tests where there was one).
+
+## r358 -- StatusZoomControls dissolved, and the tripwire landed
+
+Third of r353's three, and the third to turn out not to be a product defect.
+
+`StatusZoomControls` really is missing `Grid.Column`, `Panel.ZIndex` and both `KeyboardNavigation`
+attributes -- but its PARENT carries all four. It is nested inside `StatusInteractiveControls`, a
+StackPanel with `Grid.Column="2"`, `Panel.ZIndex="1"` and `TabNavigation`/`ControlTabNavigation` set
+to `Cycle`. The zoom cluster used to be a direct child of `StatusBarGrid`; a refactor wrapped it, and
+the container took the whole responsibility over. Nothing is broken and there is no accessibility
+gap, so the Excel comparison this was deferred for is not needed -- the question dissolved on reading
+the parent element, one level up from where the test was looking.
+
+Which is the point worth keeping. The assertions did not just go stale, they went stale INVISIBLY: a
+refactor moved a keyboard-accessibility contract off the element under test, and the test kept
+passing because `?.` skipped every assertion that no longer applied. A stale test that FAILS is a
+five-minute fix; a stale test that passes is indistinguishable from coverage.
+
+Fixed by asserting each attribute on the element that owns it -- placement, stacking and tab-cycling
+on the container, sizing and background on the zoom cluster -- plus a containment assertion, because
+the four container assertions say nothing about the zoom controls unless the zoom controls are
+actually inside it. Negative control: deleting `KeyboardNavigation.TabNavigation` from MainWindow.xaml
+fails the test, which is exactly what the old form could not do.
+
+So all three of r353's "product defects" are resolved: two were wrong tests (r357, this one), one was
+an invalid fixture (r355), and the single genuine defect was R82's, still open with its cause
+diagnosed in r356. Stated plainly because r353's own write-up called all three product defects: the
+hardening was right and valuable, but the diagnosis attached to it was wrong two times in three.
+
+With every site resolved, the tripwire could finally land.
+`R358_AssertionsCannotBeSkippedByANullConditionalTests` bans
+`Attribute("x")?.Value.Should().Be("literal")` across tests/, freep/ and freew/.
+
+Deliberately narrow, to the shape that can never be intentional: a positive comparison against a
+non-null literal. A `?.` subject is legitimate when absence SATISFIES the assertion (`NotBe`,
+`BeNull`) or when the expected value can itself be null -- r353 reverted 87 of the first kind and
+several of the second -- so those stay legal and the guard has no false positives. Two known limits,
+recorded rather than hidden: an assertion split so the literal falls on the next line is not matched,
+and comment lines are skipped (the guard's own documentation quotes the banned shape, which is how
+the first run failed).
+
+Negative control: reverting the Custom Views `IsDefault` assertion to `?.` -- the exact line whose
+deletion-experiment started r353 -- is caught by file and line.
+
+Regression check: FreeX.App.Services.Tests 3576/0 including the new guard.
+
+### r358 addendum -- 17 environmental render failures, NOT this change
+
+The host lane came back 17/5400 failed after this round, having been 0/5400 earlier in the same
+session. Every one is a pixel test: PrintRenderer (7), chart render, two parity captures, the border
+accent swatches, and the tester-release pixel-snapped border smoke.
+
+Fingerprint confirmed rather than assumed: "Expected CountApproximateRgbPixels(page, 200, 30, 30) to
+be greater than 100, but found 0". Zero ink -- the render produced a blank bitmap, which is the
+known WPF blank-render mode on this machine, not a content difference.
+
+Causation is settled by the diff, not by argument: this round modified one XML-attribute assertion in
+`MainWindowXamlKeyTipTests.StatusBar.cs` and added one new source-scanning test. No production code,
+and nothing under print/render/chart/parity. Those 17 tests are running byte-identical code to main,
+so they fail on main on this machine right now.
+
+New data points for that failure mode, which the earlier notes did not have: it PERSISTS across a
+reaper run (RAM back to 19.4 GB free, still 0 ink), and the count was stable at 17 across two
+consecutive full runs rather than growing. So "the count grows" is not reliable as the sole
+signature -- the reliable one is zero-ink plus an unmodified render path.
+
+Pushed on that basis. Not claiming the lane is green: it is 5335/5400 with 17 known-environmental
+reds, and the same 17 would appear on a clean checkout here.
