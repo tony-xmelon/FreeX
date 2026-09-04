@@ -6683,3 +6683,29 @@ The difference is not diligence, it is failure semantics: a hand-written parser 
 cannot use, while a library that throws turns every unanticipated value into a lost document. Future
 robustness work on file handling should weight FreeX accordingly, and the two sibling apps' IO layers
 can be treated as low-risk until their feature surface grows.
+
+## r377 -- a deferred cleanup item that was already done, and would have been harmful to "finish"
+
+Went after a concrete named loose end rather than another sweep: the r169 path-overload class
+recorded two "now-dead overloads still awaiting removal". Both halves turned out to be wrong, and
+following the note would have removed a deliberate safety guard.
+
+`AppStoragePathPlanner.GetOptionsFilePathLabelOrFallback` is already gone. Its name survives only as
+a BANNED STRING in three source-contract tests, which exist to stop it returning.
+
+`ApplicationFrameDescriptor.ResolveDataFolderLabel()` (parameterless) still exists, but is no longer
+the hazard the note describes: it now defaults to `PlatformApplicationDataPathProvider.Instance`
+(%APPDATA%) rather than `LocalInstance`, and `R277_DataFolderLabelDefaultsToRoamingRootTests` pins
+that in both directions -- it MUST resolve the roaming root and MUST NOT resolve the local one. The
+test's own summary says the class is closed "at the hazard rather than at the list of places that
+touch it", which is precisely why the overload is kept: deleting it deletes the guard. Production
+call sites all pass an explicit store path; only the per-app wrappers and those tests reach the
+parameterless form, and that is the intended end state.
+
+Worth noting what that test does, because it is the discipline this program arrived at independently:
+before asserting the label is not the local root, it asserts the two roots DIFFER on this machine --
+otherwise the assertion would pass without discriminating. That is the vacuous-green shape r353 found
+620 instances of, guarded against here by an author who saw it coming.
+
+No code change. The finding is that a deferred-cleanup note aged into a harmful instruction, and the
+correction is recorded in memory so the next session does not act on it.
