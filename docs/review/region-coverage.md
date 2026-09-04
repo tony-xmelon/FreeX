@@ -3381,3 +3381,34 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      instance this session has the same cause: a probe build, then a verification run whose solution
      does not contain that test project. `--no-build` after a probe needs an explicit rebuild of the
      project under test, not of a solution that merely looks related.
+
+## r281 -- finishing the survey, then a class that came back clean
+
+389. **Completed the shared-tier assumption survey r279 opened instead of declaring it done after the
+     name check.** Two more dimensions, both clean: the only app-specific file extensions in shared
+     code are doc-comment examples and `AutosaveSnapshotStore`'s `.fxl`, which its own comment
+     already calls "shared cosmetic, not a format promise"; and the one spreadsheet limit
+     (`SurrogateSafeTruncation.SpreadsheetCellTextLimit`) is honestly named and consumed only by
+     FreeX. So the survey ends three-for-three checked, with two leaks found and fixed.
+
+390. **New class: resource lifetime -- and the dangerous subset does not exist here.** Every
+     unscoped disposable in the format layers is a `MemoryStream`, which holds no OS handle. There is
+     no undisposed `FileStream` or file-backed archive anywhere in production code, so the
+     locked-file failure this class usually produces has no source.
+
+391. **The real risk in the class is not a leak at all, and it is handled.** A `ZipArchive` opened
+     for `Create` or `Update` writes its central directory on DISPOSE: skip it and the output is not
+     a leaked handle, it is an invalid package. 74 such archives exist across the three apps; 70 use
+     the `using` form and the other four were each read in full and are deliberate -- they need the
+     archive disposed EARLY, before its backing stream is read back, so `using` cannot scope them,
+     and each pairs that with a `finally` or an `IDisposable` owner.
+
+392. **Fenced anyway, because the four hand-written pairings are exactly what a later edit breaks
+     silently.** The output still looks like a package; the failure surfaces as a corrupt file at the
+     user rather than an exception in the suite. Proved by deleting both disposals from the stripper:
+     the contract names the file, the line, and the variable.
+
+393. **A fourth detector false positive, and the code was right again.** The first draft reported
+     the sanitizer, whose archive is disposed by `using (archive)` on a later line -- a form the
+     detector did not know. Same shape as r268's delegation, r270's `_ = await` and r272's
+     `Task.Yield`: when a scan indicts long-standing code, the scan is the likelier suspect.
