@@ -6654,3 +6654,32 @@ The rule those five errors add up to: a probe reports the difference between the
 MODEL OF IT, and the model is wrong roughly as often as the product is. A probe result is worth
 acting on only after the probe itself has been shown to measure what it claims -- by a passing
 control, a known-bad input that fails, or corroboration from a neighbouring case.
+
+## r376 -- FreeP presentation round-trip fidelity (clean); the three-app sweep is symmetric
+
+Completes the round-trip method across all three apps: FreeX (r373), FreeW (r375), FreeP here.
+14 shapes written to .pptx and read back.
+
+ALL FOURTEEN SURVIVED: a tab in a run, leading and trailing spaces, astral-plane Unicode,
+right-to-left text, a 100,000-character run, bold, a fractional font size (13.5pt), a font family,
+the shape's name and its ALT TEXT -- which matters because it is the accessibility field most often
+dropped by a writer -- an empty paragraph between two full ones, 200 paragraphs, and a paragraph
+split into three runs with formatting on only the middle one.
+
+THE PROBE WAS CONTROLLED BEFORE THE RESULT WAS BELIEVED, which is the r375 rule applied to itself:
+corrupting the value the round-trip returns made the six text-reading cases report LOST while the
+eight reading other properties correctly stayed KEPT. A clean sweep from an unvalidated probe means
+nothing; this one is measuring what it claims.
+
+THE THREE-APP PICTURE IS NOW CONSISTENT, and it says something specific about where risk lives in
+this codebase:
+
+- FreeW and FreeP -- which parse and write their own XML -- took 29 malformed inputs (r367) and 26
+  round-trip shapes (r375, here) without a single defect.
+- FreeX -- which delegates parsing to ClosedXML -- produced eight load-abort defects from 35
+  malformed fixtures (r365-r369) and needed its own round-trip pass (r373) to confirm the write side.
+
+The difference is not diligence, it is failure semantics: a hand-written parser ignores what it
+cannot use, while a library that throws turns every unanticipated value into a lost document. Future
+robustness work on file handling should weight FreeX accordingly, and the two sibling apps' IO layers
+can be treated as low-risk until their feature surface grows.
