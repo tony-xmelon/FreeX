@@ -3633,3 +3633,32 @@ it is the kind of thing a per-command copy of the comparison would have got inco
 432. **Recording a clean survey is the point of this log, not padding it.** Finding 356 did the same
      for zip-slip. The value is that the next pass does not re-derive these three, and that the
      method is written down alongside the verdict.
+
+## r289 -- fencing a decision the codebase had already made everywhere
+
+433. **New class: writable static collections shared across threads.** FreeX recalculates and saves
+     off the UI thread, and a `Dictionary` written concurrently does not merely throw -- it can
+     corrupt its bucket chain and spin forever. That presents as a frozen application with no
+     exception and no stack, which is the worst diagnostic shape a defect can have.
+
+434. **Every one of them is already `[ThreadStatic]`, and one carries the reasoning.** The formula
+     engine's named-formula recursion guard, both Avalonia ribbon icon caches, the grid's two
+     text-measurement caches, and FreeW's render diagnostics -- with
+     `AvaloniaRibbonIcons` stating "no need for a lock because the dictionaries are never shared".
+     The remaining ~190 static collections are `readonly` lookup tables, initialised once and only
+     read.
+
+435. **Worth fencing precisely because it is clean.** The decision is invisible in the code that
+     benefits from it: a new cache added without the attribute looks exactly like the correct ones
+     and fails only under concurrency, on someone else's machine, without a stack trace.
+
+436. **The eighth detector false positive, and the code was right for the eighth time.** The first
+     draft reported `ShrinkToFitFontSizeCache` and `CommandIconMonochromeCache` -- expression-bodied
+     PROPERTIES over the `[ThreadStatic]` backing fields above them. Splitting the line on `=` read
+     their `=>` as an assignment. The first draft of the same scan had also reported 1,149 static
+     methods as caches; both exclusions are now stated in the code with the reason.
+
+437. **Two guards keep it honest.** The scan must find more than fifty fields, so a shape change
+     cannot silently empty it; and removing `[ThreadStatic]` from the text-measurement cache makes it
+     name that field. `readonly`, `Concurrent`, `Immutable` and `Frozen` are excluded deliberately --
+     drawing those distinctions is what separates a contract from a nuisance.
