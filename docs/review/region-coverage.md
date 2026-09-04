@@ -5303,3 +5303,30 @@ package skeleton comes from ClosedXML rather than hand-built `XElement`. That la
 reusable one -- it predicts where to look first if this class ever surfaces again.
 
 Lanes green: FreeX.Core.IO 6331/0, FreeP.App.Presentation 5921/0, FreeW.Core.IO 1947/0.
+
+## r341 — schema validity is not data survival
+
+r334-r340 established that all three writers produce schema-valid packages at both the rich and
+degenerate ends. That is a statement about parsing, not about content: a package can be perfectly
+valid and still be missing what the user put in it. Degenerate content is where the two diverge,
+because "there is nothing here" is a defensible thing for a reader to conclude and a wrong thing to
+do with a structure the user created deliberately.
+
+So each app was asked whether its degenerate content comes BACK:
+
+- **FreeX** -- two empty sheets beside a populated one. All three return. An empty sheet is a sheet;
+  dropping it loses structure the user made.
+- **FreeP** -- an empty slide before and after a populated one. All three return. Dropping one would
+  renumber every slide after it.
+- **FreeW** -- two consecutive empty paragraphs between text. Both return, in place. Those are blank
+  lines the user typed, and a reader that skips "empty" content reflows the document.
+
+**All clean.** No fixes this round.
+
+The distinction is the point, and it is not hypothetical for this codebase: r310's defect (a
+single-sheet save keeping the wrong sheet) and r320's (a rename leaving a duplicate) were both
+content losses through paths that produced perfectly valid files. A schema validator would have
+passed every one of them. Adding these three tests costs almost nothing and closes the gap between
+"the file parses" and "the file says what it said before".
+
+Lanes green: FreeX.Core.IO 6332/0, FreeP.App.Presentation 5922/0, FreeW.Core.IO 1948/0.
