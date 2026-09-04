@@ -4213,3 +4213,50 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      The first probe reported four passes with the source unchanged. Checking the edited line before
      believing the result is now the routine -- and it is the only thing separating a real green from
      a meaningless one.
+
+## r309 — the hand-written-copy class, closed at the hazard
+
+r307 surveyed nineteen field-by-field copies; r308 guarded the ones a reflection helper can reach.
+This round finished the remainder and then stopped guarding call sites, because naming N of them
+does nothing about caller N+1 (r277).
+
+**Extended the reflection guards** to the last three types from the survey with a public
+parameterless `Clone()`: `CellGradientFill` (FreeX), `FloatingPlacement` and `Source` (FreeW). The
+helper's own `NotBeEmpty` assertion rules out a vacuous pass, so a type with no scalars would fail
+rather than appear covered.
+
+**Added a shape contract** —
+`R309_InitializerClonesCopyEveryMemberContractTests`. A `Clone()` written as `=> new(...) { ... }`
+enumerates what it copies in one place, so the omission is mechanically visible: every settable
+instance member the type declares must appear as a constructor argument or an initializer
+assignment. Thirteen such copies exist across the three apps; all thirteen are complete. This covers
+the two the reflection helper cannot touch — `RtfReader.State` (private nested, fields not
+properties) and `EmbeddedObject` (passes members as constructor arguments) — and, unlike a list of
+types, it covers the copy someone writes next.
+
+**Guarded `PreservedParts.CopyFrom`** (`R309_PreservedPartsCopyFromCompletenessTests`): all seven
+members are reference-typed so the scalar helper sees nothing, and it is a statement body so the
+shape contract does not either. It is also the copy with the most at stake — these are parts of an
+opened package FreeW does not model, carried forward so a derived document saves without dropping
+what it never understood. Three tests: every member carried, no mutable state shared with the
+source, and a census pin so an added member fails until someone looks. All pass; the copy is
+correct.
+
+**A false positive, the eleventh of its family.** The contract's first run reported four incomplete
+copies — `EmbeddedObject.IsLinked`, `FloatingPlacement.IsFloating`, `ShapeEffectLst.HasAny`,
+`WordArt.IsFloating`. All four are computed read-only properties whose values follow from members
+the clone already carries; my field regex read `public bool IsFloating => ...;` as a field with an
+initializer. The code was right every time. The exclusion and the reason are now in the regex's own
+doc comment, where the next reader of that line will need them.
+
+**Proved it can fail**: removing the single initializer assignment from `InlineTableInfo.Clone` made
+the contract report exactly that member; restored, and `git diff HEAD` confirmed clean.
+
+**Not covered, with the reason**: `CellFontColorFilterCommand.Capture` (`FilterCommand.cs:838`) is
+not a self-copy — it captures filter state *from* a `Sheet`. Deciding which of a sheet's members
+belong to that capture is a judgement about what filter state means, not something derivable from
+the type, so a mechanical guard here would either be vacuous or wrong. It stays a reviewed-by-hand
+site.
+
+With this the class r307 opened is closed: every hand-written copy is either behaviourally guarded,
+covered by the shape contract, or recorded above with why it cannot be.
