@@ -6856,3 +6856,43 @@ clamping would also stop the crash while quietly altering data; and five ordinar
 Excel's own maximum and the above-Excel value that does survive -- are still written as numbers.
 
 Regression check: FreeX.Core.IO.Tests 6365/0.
+
+## r382 -- a corrupt workbook now says so in FreeX's own words (FIXED; r370 reclassified)
+
+Reopened r370, where a missing required package part was classified as "diagnostic quality, not a
+defect" because no shell references `WorkbookInvalidException`. The severity was right; the reasoning
+was wrong, and following it through the shell is what showed why.
+
+`MainWindow.ReportAsyncCommandFailure` prints `exception.Message` VERBATIM inside its
+command-failed template. The shell does not need to know the exception TYPE, because it shows the
+TEXT -- so what the adapter throws is literally what the user reads. Opening a workbook missing
+`xl/styles.xml` therefore said
+
+    Specified part does not exist in the package.
+
+while this same adapter already owned
+
+    The workbook could not be read because the file is not a valid .xlsx package (it may be
+    corrupted, truncated, or not actually an Excel file).
+
+and used it only for the not-a-zip case. A missing `[Content_Types].xml` was worse still: a bare
+NullReferenceException, which reads to a user as a crash rather than a diagnosis.
+
+Checked before changing, and it settles the design question: package corruption ALREADY surfaces as
+`WorkbookInvalidException` -- `LoadWorkbook_WithDuplicateZipEntryNames_ThrowsWorkbookInvalidException`
+pins it. So this aligns the missing-part case with a contract that exists rather than inventing one.
+
+Translated at the load boundary rather than at the six-plus `new XLWorkbook(...)` sites in the
+fallback chain, with a deliberately narrow predicate: the packaging layer's own "does not exist in
+the package" sentence, and a NullReferenceException whose stack is inside DocumentFormat.OpenXml or
+ClosedXML. `WorkbookPasswordProtectedException`, cancellation, and every other failure keep their own
+type and message, so this cannot flatten an informative error into a generic one -- the r363 hazard.
+The original is carried as `InnerException` (a constructor the type lacked), so the readable sentence
+reaches the user without the diagnosable cause being lost.
+
+Four tests: three missing parts each produce the readable message WITH an inner exception, and a
+well-formed workbook still opens -- the last one being what stops "report invalid" from being
+satisfied by failing everything.
+
+Regression check: FreeX.Core.IO.Tests 6369/0, FreeX.App.Services.Tests 3579/0,
+FreeW.Core.IO.Tests 1968/0 (the exception type is shared).
