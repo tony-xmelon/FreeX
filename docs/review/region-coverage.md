@@ -5053,3 +5053,40 @@ for the same reason. Validated with the PowerShell parser and by running it.
 **Two assumptions of mine were wrong in two rounds**: that parity capture could not run here (r328),
 and that Docker was unavailable (r331/r332). Both were load-bearing in how I described the review's
 limits, and both cost one command to check.
+
+## r333 — the cross-platform parity comparison, run for real
+
+r331 and r332 each corrected an assumption of mine about what I could run. This round used what they
+established: the **full WPF-vs-Linux-Avalonia parity comparison ran end to end**, the thing I had
+twice described as out of reach.
+
+`Run-LinuxParityCapture.ps1` published linux-x64, ran the capture under xvfb in an owned container,
+validated a nonblank PNG at the requested dimensions, and removed its container. Then
+`FreeX.ParityCompare` captured both shells and compared 180 surfaces.
+
+**The fidelity gate passes.** 115 surfaces present in both shells, `"passed": true`, and **0 hard
+regressions**. The largest diffs are the documented chrome-by-design set -- `backstage.Info` 18.4%,
+`backstage.Account` 16.4%, `backstage.Export` 16.0%, `dialog.CreateTable` 8.3% -- every one marked
+`hardRegression: false`, matching what the matrix already records about the Avalonia shell's extra
+toolbar row and native title bar. So cross-platform rendering is healthy at current main, verified
+rather than assumed.
+
+**But the suite cannot pass its own default invocation.** `RESULT: FAIL`, exit 1, on a clean tree
+with a passing fidelity gate -- entirely from the name-box contract. It requires the Linux
+`popup.nameBoxDropdown` to carry `evidenceProvenance: native-x11-root-crop` from a separate physical
+selector; the default Linux capture route produces `managed-popup-diagnostic` instead, and the
+contract is evaluated unconditionally (`Program.cs`: `comparison.Passed && nameBoxContract.IsValid`
+decides both the printed result and the return code). There is no flag to skip it.
+
+So anyone running the documented command on a healthy tree gets a red result caused by the capture
+route rather than by the code. That is r317's lesson at suite scale: a gate that cannot pass teaches
+people to ignore it, and the next real parity regression arrives in a report they have learned to
+skim past.
+
+**Not fixed, deliberately.** The two candidate remedies -- have the compare tool drive the physical
+selector, or report the contract as not-evaluated when the capture route cannot produce its evidence
+-- differ in what they promise, and someone made this a hard gate on purpose to force authoritative
+evidence. Weakening it from the outside is exactly what r324 declined to do to a contract that had
+just caught something. Recorded with the file, the deciding line, and both options.
+
+Artifacts (198 MB of captures and diff images) removed; the container removed itself.
