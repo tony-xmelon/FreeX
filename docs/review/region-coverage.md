@@ -4347,3 +4347,51 @@ follow-up rather than half-done.
 older than the source, so a lane run showed my own new tests failing against probe binaries. I had
 also filtered build output to `error CS`, which would have hidden a non-CS failure. Check the
 artefact's timestamp, not the build's summary.
+
+## r312 — auditing my own deferrals: two of three were not real
+
+The open items this program was carrying were three. Investigating them rather than restating them
+dissolved two.
+
+**1. r311's "~30 more culture-sensitive comparisons in PivotTableRefreshService" is NOT r311's
+class, and my note saying so was wrong.** r311's defect was presentation code matching *persisted
+file values* by different rules than the IO layer that wrote them. The refresh engine's keys are a
+different thing: `GroupKeyText` formats them with `CultureInfo.CurrentCulture` deliberately, because
+that string IS the row label the user sees -- a German user should keep seeing the `0,5-1` bucket.
+Comparing culture-formatted strings with culture rules is consistent, not confused. The genuine
+hazard here -- captions persisted under one culture, reopened under another -- was already found
+(r174/r176) and fixed at `MatchesFieldKeyCandidate`, which tries the culture spelling first and then
+a culture-INVARIANT candidate, deliberately leaving the DISPLAYED spelling local. Changing those
+sites to ordinal would regress a solved problem. Removed from the follow-up list.
+
+**2. r309's `CellFontColorFilterCommand.Capture` was a misattribution.** `FilterCommand.cs:838` is
+inside `FilterUndoSnapshot` (which begins at line 808); `CellFontColorFilterCommand` ends well
+before it. My r309 note took the wrong enclosing type from a scan and then reasoned about the wrong
+thing. The real member is already guarded: r252's
+`R252_FilterSnapshotComparisonCoverageContractTests` compares `Matches` against `Capture` field for
+field and fails if `Capture` reads a sheet member `Matches` does not -- verified passing. Removed
+from the follow-up list.
+
+**3. PRN's whitespace-split read stands, and is accurately recorded.** The cost is documented in the
+adapter's own remarks, pinned by `R298_PrnWhitespaceReadShiftsLeadingEmptyColumnsTests`, which tells
+whoever changes it to invert those assertions rather than delete them. Recovering column positions
+means inferring fixed-width boundaries, which changes how every real `.prn` imports -- Excel asks
+the user through its Text Import Wizard rather than guessing. This is a product question, not an
+oversight.
+
+**Surveyed and clean, with a fence**: comparer PAIRING. r311 fixed a comparer answering the wrong
+question; the worse failure is a comparer whose `Equals` and `GetHashCode` answer different ones --
+keys that compare equal but hash differently, so a dictionary stores duplicates and a lookup misses
+an entry that is present, with no exception and no wrong value. All eleven explicit string-hashing
+sites across the three apps pair correctly. `R312_EqualityComparersHashAndCompareAlikeContractTests`
+now holds that, and it reads only rules NAMED on both sides -- a side naming none is using its
+members' default rule, which the contract cannot see and must not guess about. Proved it fails by
+making one comparer hash ordinally while comparing case-insensitively; it named the file and both
+rules.
+
+**Where the review actually stands.** The follow-up list is now one item (PRN), and that one is a
+product decision with a test pinning it. This does not mean no defects remain in the codebase --
+r310 and r311 each found real bugs invisible to suites that covered their areas well, and the honest
+lesson from both is that the next defect will come from a dimension no test varies, not from a
+region no one has read. What is true is that every item this program has recorded as outstanding has
+now been either fixed or re-examined and found not to be outstanding.
