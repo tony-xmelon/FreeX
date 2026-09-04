@@ -5656,3 +5656,44 @@ passing before is what they should do.
 
 Regression check: FreeX.Core.Model.Tests 6707/0, FreeX.Core.IO.Tests 6334/0,
 FreeP.App.Presentation.Tests 5928/0.
+
+## r352 -- sweeping the r351 shape, and a tripwire that was vacuous (FreeW)
+
+Swept the r351 defect shape across all three apps: a MUTATION applied through a `?.` chain, which
+does nothing at all when the path is absent. `?.Remove()` is excluded -- removing something already
+missing is the intended no-op. That leaves three sites. Two are `chartXml.Root?` /
+`worksheetXml.Root?` on documents that cannot lack a root and would be unusable if they did.
+
+The third, `DocxWriter.LoadSmartArtLayoutTemplate`, stamps a diagram's gallery category into an
+embedded template's `dgm:catLst/dgm:cat` through the chain. A template without a `catLst` would keep
+the stock category silently, filing the diagram under the wrong gallery in Word.
+
+FALSE POSITIVE FIRST, and worth recording as such: `orgChart1-data-chain.xml` has no `dgm:cat` at
+all, which looked like a live instance. It is loaded by a different code path that never applies a
+category. Tracing the consumer before believing the finding again earned its keep -- fourteenth time
+in this program. All four templates that DO take the category path carry the element, so there is no
+live bug; the `?.` was latent.
+
+Guarded anyway, per the standing rule about this shape: the writer now throws, naming the resource,
+so a template added without a `catLst` fails at the point of use rather than shipping a mislabelled
+diagram.
+
+Then the part worth the entry. A guard without a tripwire only converts a silent bug into a crash,
+so `R352_SmartArtLayoutTemplatesCarryACategoryTests` asserts the four templates carry the element.
+Its first draft was written as
+
+    root.Element(Dgm + "catLst")?.Element(Dgm + "cat").Should().NotBeNull(...)
+
+and PASSED when pointed at `orgChart1-data-chain.xml`, which has no `catLst` whatsoever: the `?.`
+short-circuits, so `.Should()` never runs. The test for the silent-no-op defect was itself a silent
+no-op. It only surfaced because the negative control was run against a real file known to lack the
+element -- the four real templates went green either way, so nothing else in the round would have
+caught it.
+
+Two things follow. First, `?.` before an ASSERTION is the same hazard as `?.` before a mutation, and
+a fluent-assertion library makes it invisible because the expression still compiles and reads
+correctly. Second, "prove the test can fail" is not satisfied by reasoning about the assertion; only
+running it against a genuinely bad input distinguishes a real check from a vacuous one. Both are now
+recorded in the test itself, since that is where the next reader will need them.
+
+Regression check: FreeW.Core.IO.Tests 1953/0.
