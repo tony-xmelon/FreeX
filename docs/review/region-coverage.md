@@ -3824,3 +3824,32 @@ it is the kind of thing a per-command copy of the comparison would have got inco
 
 467. **Proved by regressing ODS alone: the no-value ODS case fails while xml and json keep passing.**
      A theory that failed for all three would have meant the test, not the adapter.
+
+## r296 -- correcting two of this program's own recorded gaps
+
+468. **CORRECTION to r295: "five AvaloniaUiTaskGuard call sites pass no explicit reporter" was
+     already closed.** They do pass none, and since r283 that is fine -- the guard resolves
+     `(onFailure ?? FallbackFailureReporter)` and `MainWindow` installs the fallback. The note was
+     stale, carried from r282 without re-checking. r292 finding 453 wrote down that a recorded gap is
+     a note to RE-EXAMINE rather than a settled verdict; r295 then failed to apply that to its own
+     list, three rounds later.
+
+469. **Closed with evidence rather than a second claim.** r283's tests drove `ObserveAsync`; the five
+     call sites use `Run`, the fire-and-forget overload. These pin `Run` specifically -- reporting
+     reached the way the real callers reach it -- and the assertions wait on the reporter instead of
+     asserting immediately, since a fire-and-forget path would otherwise pass or fail on timing.
+
+470. **CORRECTION to r291: the stated blocker for the active-sheet difference was also wrong.** r291
+     said matching Excel "means threading the active sheet into the save path". It does not:
+     `Workbook.ActiveSheetIndex` is already on the model every adapter receives, so a single-sheet
+     writer could select it without any new plumbing.
+
+471. **That one is left open deliberately, and now for the real reason.** It changes the BYTES of
+     every existing single-sheet save -- which sheet lands in the file -- so it is a product decision
+     about matching Excel, not a defect fix, and r292's warning already tells the user which sheet
+     was kept. Recorded as ready-to-implement with the correct reason, rather than as blocked by an
+     obstacle that does not exist.
+
+472. **Two stale notes in one round is the pattern worth naming.** This log is the program's memory,
+     and a wrong entry in it is worse than no entry: it stops the next pass from looking. Both were
+     found by re-reading my own gaps against the code instead of quoting them forward.
