@@ -6277,3 +6277,46 @@ requirements/hints record that would need a new member and a new scan. Recorded 
 rather than half-wired at the end of a session.
 
 Regression check: FreeX.Core.IO.Tests 6339/0.
+
+## r366 -- finishing r365: an out-of-range style index also aborted the load (FIXED)
+
+r365 left this one open as "needs plumbing". That was true but not a reason to stop, and finishing it
+turned out to be the more interesting half.
+
+A cell's (or row's) `s` indexes `cellXfs`. Nothing in the format stops it naming an entry that does
+not exist, and ClosedXML answers with `ArgumentOutOfRangeException`, aborting the whole load. Same
+user cost as r365: one bad attribute, no workbook.
+
+The first attempt was wrong in an instructive way. I added the pass as SELF-GATING -- it does its own
+cheap streaming scan and returns immediately when there is nothing to do -- so that it needed no
+entry in the sanitizer's requirements record. It never ran. `XlsxClosedXmlLoadPackageSanitizer`
+returns the source package untouched at the top when `!requirements.RequiresAny`, so a package whose
+ONLY problem is a bad style index never reaches the archive phase at all. The requirements record is
+not bookkeeping around the gate; it IS the gate. A self-gating step is unreachable by construction.
+
+So the member was added properly: `HasOutOfRangeCellStyleIndexes` on the record, in `RequiresAny`,
+scanned in the scanning path, `true` in the catch-all that force-enables everything for an unreadable
+package, and `false` in the hints-only fast path (no archive there to scan, and no hint exists for
+this yet -- worth knowing, since a caller supplying complete hints will not get this repair).
+
+`XlsxWorksheetCellStyleIndexNormalizer` counts `cellXfs` by counting `xf` children rather than
+trusting `cellXfs/@count` -- a file corrupt enough to carry a bad index is exactly the file whose
+declared count cannot be trusted -- then streams each worksheet and only materializes an XDocument
+for one that actually has an out-of-range index.
+
+An existing guard caught a real mistake in the new code, which is worth recording as the guard
+working: `R276_PackageXmlReadersAreCharacterCappedContractTests` failed because my `XmlReader.Create`
+used a bare `new XmlReaderSettings { IgnoreWhitespace = true }` instead of
+`SecureXmlReaderSettings.Create()`, which sets DtdProcessing, XmlResolver and the character cap
+together. An XML-bomb-hardening contract, enforced on source text, stopped a new reader opening a
+hole in it. Fixed by using the shared factory.
+
+`R366_OutOfRangeStyleIndexStillOpensTests` covers a cell index, a row index (`row/@s` with
+`customFormat`, which throws the same way), and `s="0"` -- the default format and a real entry --
+because stripping that would silently drop formatting from every ordinary workbook. Fail-before was
+observed directly: both malformed cases threw `ArgumentOutOfRangeException` until the requirement was
+wired.
+
+All three malformed-file failures found in r365 are now fixed.
+
+Regression check: FreeX.Core.IO.Tests 6342/0.
