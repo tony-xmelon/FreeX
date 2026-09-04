@@ -4973,3 +4973,27 @@ have shown the defect immediately.
 full-suite route but not the targeted one. Whether their targeted ids are stale or those surfaces
 were never targetable is a question for whoever maintains the surface catalog; the tool now says so
 instead of exiting quietly.
+
+## r330 — answering r329's handoff instead of leaving it
+
+r329 ended by handing off a question: are `dialog.AdvancedFilter`, `dialog.DataTable` and
+`dialog.ForecastSheet` stale targeted ids, or were they never targetable? The code answers it, so
+handing it off was the wrong call.
+
+**Never targetable.** The targeted route is not a lookup over the same catalog the full suite walks
+-- it is a hardcoded `if/else if` chain supporting 23 enumerated ids plus three prefix families
+(`dialog.FindReplace.*`, `dialog.PivotTableOptions.*`, `dialog.PageSetup.*`), against 116 surfaces
+the full-suite route produces. The three ids were never in it. So a promoted per-surface baseline can
+only ever cover the targeted subset, which is also why a full-suite capture is not comparable to it
+(r329).
+
+**The tool already explained itself, in the one place nobody looks.** `AddMissing` records a note
+naming every supported id -- but only in `manifest.json`, which no one opens after a run that
+appeared to succeed. Now that r329 makes such a run fail, the failure prints that note, so it carries
+its own answer instead of sending the reader to the JSON to discover the id never existed. Verified:
+the unsupported id prints the full supported list and exits 2; a supported id still exits 0.
+
+Worth stating plainly, since it is the second time in three rounds: both r329 and r330 fixed
+something whose information was already present and merely unreachable -- an explanatory note stuck
+in a manifest, and a `0/1` count on a line that scrolls past. Neither was a missing capability. The
+work was making what the tool already knew arrive where someone would act on it.
