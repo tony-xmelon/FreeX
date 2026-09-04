@@ -4182,3 +4182,34 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      reader assume every member is covered.
 
 535. **Proved by deleting one assignment: `Value1: source [r307-Value1] clone []`.**
+
+## r308 -- closing the hand-written-copy class instead of one instance per round
+
+536. **r307 surveyed nineteen hand-written copies and guarded one; guarding the rest one per round
+     would have cost fourteen rounds and produced fourteen near-identical files.** The property is
+     identical for every one of them, so the machinery is written ONCE
+     (`CloneCompletenessAssertions`) and a type is covered by being named.
+
+537. **Nine types now guarded across all three apps.** FreeX: `CellStyle` (44 assignments),
+     `DataValidation`, `ChartDataTableModel`. FreeW: `ShapeEffectLst`, `PageSettings`, `WordArt`,
+     `Chart`. FreeP: `FieldRun`, `AnimationScaleBehavior`. With r305-r307's `AppOptions.CopyFrom`,
+     `FreeWOptions.Clone` and `ConditionalFormat.Clone`, and the four that were already guarded, the
+     class is closed at every site with a parameterless `Clone()`.
+
+538. **Every one passes: none of the nine drops a scalar member today.** The guards exist for the
+     member added tomorrow, which is the whole argument for reflection over a hand-maintained list --
+     a list has to be extended by the same person who forgot the assignment.
+
+539. **The helper states its own limit rather than implying completeness.** Scalars only:
+     reference-typed members need per-type construction, and a generic way to build them would be
+     guessing. A guard that covers the scalars completely and SAYS SO is worth more than one that
+     appears to cover everything.
+
+540. **One shared helper is a single point of failure, so it was probed rather than trusted.** A
+     broken helper would silently disarm all nine guards at once. Deleting one assignment from
+     `CellStyle.Clone` fails with `Superscript: source [True] clone [False]`.
+
+541. **The perl-edit-did-not-apply trap for the third time in three rounds, caught the same way.**
+     The first probe reported four passes with the source unchanged. Checking the edited line before
+     believing the result is now the routine -- and it is the only thing separating a real green from
+     a meaningless one.
