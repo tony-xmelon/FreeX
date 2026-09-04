@@ -4032,3 +4032,33 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      `perl` substitution silently failed to match, the field was never added, and the run reported six
      meaningless passes. Verifying the edit landed -- not the test result -- is what distinguished
      that from a real green.
+
+## r303 -- configuration, the round trip a user notices as "my settings keep resetting"
+
+507. **`AppOptionsStoreTests` covers the store's MECHANICS well and round-trips two options out of
+     forty-two.** Path resolution, atomic write, unwritable targets, invalid JSON and schema
+     compatibility are all pinned; whether a given setting survives a restart is not.
+
+508. **Driven by reflection, so it is complete by construction rather than by a maintained list.**
+     r302 needed a separate completeness guard because its assertions named fields one by one;
+     enumerating the properties is the better shape once a type is this wide, and it covers a
+     forty-third setting the day someone adds one.
+
+509. **Run through `SaveToPath`/`LoadFromPath` rather than a bare serializer.** Both call
+     `Normalize()`, so the expectation is normalised the same way -- otherwise a legitimate
+     normalisation would be indistinguishable from a value that failed to persist, and the test
+     would have reported a defect that was not there.
+
+510. **Forty-one of forty-two persist. The one that does not is correct.**
+     `LastPersistenceError` reports the outcome of the CURRENT save or load; persisting it would show
+     the user a stale failure on every subsequent launch, long after the disk had space again. It has
+     `[JsonIgnore]` and a private setter -- and reflection still reports it writable, so the
+     exclusion is necessary, not cosmetic.
+
+511. **Excluded by name WITH the reason, and the reason is itself a test.** An unexplained exclusion
+     is how a real persistence bug gets filed away as "known", so a separate test asserts the field
+     is transient rather than leaving that as a comment.
+
+512. **Proved with the shape a real mistake takes.** Marking one ordinary option `[JsonIgnore]` --
+     what happens when someone adds an attribute to the wrong line -- fails the test with the
+     property named and both values shown: `saved [True] loaded [False]`.
