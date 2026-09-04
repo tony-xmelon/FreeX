@@ -7149,3 +7149,45 @@ Lanes: FreeP.App.Presentation.Tests 5947/5947 green. Full FreeP.slnx has 14 fail
 SlideCanvas/RichTextEditor/RenderCompare/dialog pixel-render tests; `query session` reports session 1
 `Disc`, the disconnected-session condition from r362 that returns blank WPF bitmaps. None touch slide
 ids and the lanes that do are green.
+
+## r390 - R82 rich-value binding across a row delete: fixed, and r355's premise corrected
+
+Closed the longest-standing open lead in this ledger. r355 recorded it as "CONFIRMED DEFECT, root
+cause known, fix pending", and left the assertion as `?.` on purpose so it could not report a pass it
+had not earned -- the right call, and the reason the lead survived intact to be finished here.
+
+**The defect (fixed).** Rich-value placeholders all serialize identically (`t="e"`, no formula,
+`<v>#VALUE!</v>`) whatever entity their `vm` points at, so a same-address hit cannot by itself prove
+the target is the same cell rather than a same-signature sibling shifted up by a delete. The guard in
+`CellValueMatchesCapturedNativeMetadata` answered by refusing the whole signature group whenever its
+count changed -- but a delete ALWAYS changes that count, so cells that never moved lost their
+bindings too. Excel keeps a rich value bound across a row delete.
+
+Fix: localise the shift instead of refusing wholesale. `ComputeStableRowFrontier` finds the first row
+that exists in BOTH source and target yet differs in content; a cell strictly above it provably did
+not move, because an insert or delete above it would itself have changed a row at a smaller index,
+contradicting that row being the first. Such cells bypass the ambiguity guard; everything at or below
+stays refused exactly as before. Rows present on only one side deliberately do NOT establish a
+frontier -- see below.
+
+**r355's premise was wrong about its own fixture, and correcting it mattered.** Hardening the
+existing assertion to `!` still failed after the fix, and the fixture is why: every row holds ONLY
+the identical placeholder, so deleting row 2, 3, 4 or 5 produces byte-identical output. Nothing
+distinguishes "B2 kept its entity" from "B2 now holds what B3 held", and binding `vm="10"` there on
+the assumption B2 stayed put would be precisely the silent cross-binding the guard exists to prevent.
+Refusing is CORRECT for that sheet, so the `?.` stays with the reasoning rewritten. Excel never faces
+the question because it knows a delete happened; FreeX reconstructs intent by diffing source XML
+against the saved model, and that sheet carries no evidence of where the delete was.
+
+The fix is therefore proven on a fixture that DOES carry the evidence -- the realistic shape, where
+the rich-value column sits beside a column identifying each row, as Stocks/Geography sheets actually
+are. There row 3's content changed and rows above it did not, so B2 keeps `vm="10"` (hardened to `!`)
+while B3 and B4 still refuse the stale bindings of the rows that used to sit there. Proven able to
+fail by neutering the frontier: the new test throws on the dropped attribute, the other two stay
+green.
+
+Had I trusted the note's stated target instead of re-deriving it, the "fix" would have been to force
+the binding through -- shipping the cross-binding the guard was built to stop. Second time in this
+program a pending-work note's PREMISE, not its diagnosis, was the thing that needed checking.
+
+Lane: FreeX.Core.IO.Tests 6370/6370 green, 64 skipped.
