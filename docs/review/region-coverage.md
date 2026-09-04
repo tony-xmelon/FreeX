@@ -5697,3 +5697,85 @@ running it against a genuinely bad input distinguishes a real check from a vacuo
 recorded in the test itself, since that is where the next reader will need them.
 
 Regression check: FreeW.Core.IO.Tests 1953/0.
+
+## r353 -- 600+ XML assertions that could not fail (all three apps, FIXED + 3 defects found)
+
+r352 found a tripwire that passed against the very input it existed to reject, because a `?.`
+short-circuited before `.Should()` ever ran. This round asked how far that goes. It goes a long way:
+623 attribute assertions across 123 files, in every app.
+
+PROVED BEFORE FIXING, on the product rather than in the abstract. `CustomViewsDialogXamlTests` pins
+`IsDefault="True"` on the Custom Views dialog's Show button. I deleted that attribute from the XAML
+-- a real regression; Enter stops activating the default button -- and ran the suite. 18 passed, 0
+failed, including the test whose only job is that attribute. Restored immediately.
+
+The mechanical part: `element.Attribute("x")?.Value.Should()...` becomes `!.Value`, so a missing
+attribute throws instead of skipping. The discriminator took two corrections, and the corrections are
+the useful part of this entry:
+
+1. First cut excluded only `.BeNull()`. Wrong: every NEGATIVE assertion (`NotBe`, `NotContain`, ...)
+   is SATISFIED by absence -- `DoesNotResurrectModeledPageSetupAttributes` asserts
+   `Attribute("copies")?.Value.Should().NotBe("3")`, and no attribute at all is the strongest way to
+   pass that. 87 sites, reverted.
+2. Second cut still broke tests whose EXPECTED VALUE is itself null or nullable
+   (`Should().Be(percent ? "1" : null)`, `expectedDxfId` typed `string?`, WML tri-state `w:val` where
+   absent means on). Not detectable syntactically -- the expected value is a runtime expression.
+
+So the discriminator is empirical, not syntactic: convert, run, and revert whatever turns red. Green
+means the attribute is present, where `!` costs nothing today and fails loudly the day it disappears.
+
+THREE FAILURES SURVIVED THAT TRIAGE -- assertions expecting a non-null literal against an attribute
+that is genuinely absent. These are live product defects that vacuous assertions have been hiding:
+
+- `Backlog_CellMetadataTests.FullSave_...ButKeepsItOnUneditedCell`: A2 carries `vm="1"` in the source
+  and is never edited; after a full save the `vm` is GONE. The test's own message says "vm must be
+  reattached on a full save". Rich-value/linked-data metadata is dropped from unedited cells.
+- `R82_CellMetadataRichValueDeleteShiftTests`: the same `vm` loss on B2 after a row delete.
+- `ColorScaleAdvancedOptionsTests.RoundTrip_ColorScaleIndexedColors_WritesTintedResolvedRgbColors`:
+  all three `color` elements are written with no `rgb` attribute at all, which is the entire point of
+  the test.
+
+Worth noting how these hid: in the first test the SIBLING assertion (A3 must have no `vm`) is written
+in the safe form, so one direction was real and the other vacuous, in the same test, on adjacent
+lines. Nothing about reading it suggests a problem.
+
+Those three sites are left as `?.` WITH a comment naming the defect, so main stays green; hardening
+them is the fix's acceptance test, in the rounds that follow. Everything else stays hardened.
+
+Deliberately deferred to the next round: a source-contract tripwire banning the `?.Value.Should()`
+subject form. It cannot be added until those three are fixed, or it fails on the three sites that are
+documenting the defects.
+
+Regression check: FreeX.Core.IO.Tests 6334/0, FreeX.App.Services.Tests 3575/0,
+FreeW.Core.IO.Tests 1953/0, FreeP.App.Presentation.Tests 5928/0.
+
+### r353 addendum -- the WPF host lane
+
+Two more vacuous assertions, and they are a different sub-species from the IO ones: the attribute was
+never going to be found, because the LOOKUP was wrong.
+
+`MainWindowXamlKeyTipTests.RibbonSurface_IsReachableByKeyboardTabTraversal` asked for
+`Attribute(keyboardNavigation + "KeyboardNavigation.TabNavigation")` against an
+`XNamespace` of `clr-namespace:System.Windows.Input;assembly=PresentationFramework`. A XAML
+attached-property attribute is written unnamespaced (`KeyboardNavigation.TabNavigation="Continue"`),
+so the namespaced lookup could never match anything. MainWindow.xaml has all three values; the test
+verifying the ribbon is keyboard-reachable had simply never checked. Lookup corrected, and the
+assertions now run and pass.
+
+`MainWindowXamlKeyTipTests.StatusBarAggregates_AreConstrainedAwayFromZoomControls` is the opposite
+and is left open: `Grid.Column`, `Panel.ZIndex` and both `KeyboardNavigation` attributes really are
+absent from `StatusZoomControls`. This is not a redesign that made columns obsolete -- the sibling
+`StatusStatsViewport` still carries `Grid.Column="1"` and that assertion passes. So either the XAML
+lost four attributes or the test wants what the product no longer intends. Deciding is a
+BEHAVIOUR question (should the status-bar zoom cluster be its own tab cycle?), and the standing rule
+as of 2026-09-04 is to settle those against Excel rather than by my own judgement, so it is annotated
+in place and left for a round that can check.
+
+Three failures in this lane are NOT mine: `QuickAccessToolbarWindowBroadcastTests` (x2) and
+`MainWindowSourceHygieneTests.BackstageSaveAs`, all failing with "Application services are not
+initialized" out of `App.get_Services`. That is host initialisation order, in files this round does
+not touch, and nothing in an XML attribute assertion can reach it. Recording rather than fixing,
+and explicitly NOT claiming they pass on main -- only that they are unrelated to this change.
+
+FreeX.App.Host.Tests: 5347/5400 with 48 skipped before this round's two fixes; the two keytip
+failures are now fixed and the other three are the pre-existing ones above.
