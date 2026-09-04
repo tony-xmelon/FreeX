@@ -5228,3 +5228,26 @@ carried.
 
 Lanes green: FreeP.App.Presentation.Tests 5918/0, FreeW.Core.IO.Tests 1943/0 (r335's three tests plus
 the new one).
+
+## r338 — finishing the class instead of waiting for it to resurface
+
+r334 fixed one `txBody` site; r337 found a second because a later fixture happened to include a
+table. Rather than wait for a third fixture to expose a third site, I enumerated them: five
+`txBody` constructions in `PptxPackageWriter`, of which one hardcodes a paragraph (fine), one is the
+already-correct "no body at all" branch, and three take the model's paragraph list.
+
+The third is `BuildNotesTxBodyEl`, and it had the same defect. Fixed, with a test, and the fix proved
+by reverting.
+
+**Its reachability is weaker than the other two, and the entry says so.** Clearing a slide's notes
+sets `Slide.Notes` to null rather than to an empty body, so no editing path demonstrably reaches it;
+what does is loading a `.pptx` whose notes slide carries a body with no paragraph. I fixed it anyway
+because leaving one of three identical sites is precisely how r334 came to need r337 -- and because
+the cost of a wrong guess here is a redundant three-line guard, while the cost of the other guess is
+another round.
+
+That closes the class in this writer by enumeration rather than by encounter. The distinction is
+worth keeping: r337 found its site because a fixture grew, which is luck; this one was found by
+asking how many sites exist, which is not.
+
+Lane green: FreeP.App.Presentation.Tests 5919 passed, 0 failed.
