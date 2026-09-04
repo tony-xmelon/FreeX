@@ -3976,3 +3976,31 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      parts once (r300). Everything else reproduces itself exactly. That is a stronger statement about
      the persistence layer than any single feature test in this program has produced, and it needed
      no list of features to make.
+
+## r301 -- the round-trip property applied to the clipboard
+
+496. **The idempotence idea moved off the persistence layer and onto the pipeline the user touches
+     most: copy and paste.** The property is the same shape -- what the writer emits, the reader must
+     reconstruct -- but the pipeline is entirely different code.
+
+497. **Both halves were pinned; the relationship between them was not.**
+     `ClipboardSerializerTests` asserts what `Serialize` produces for a given grid, and what
+     `Deserialize` yields for a given string, each against text typed into the test. Nothing fed the
+     writer's output to the reader, so "copy in FreeX, paste in FreeX, get the same cells" -- the only
+     property a user depends on -- was unchecked. r290's shape exactly: two directions covered, the
+     relation between them not.
+
+498. **The escaping is correct.** Twelve cases pass, including the three that break naive schemes:
+     the field delimiter (tab), the row separator (both LF and CRLF), and the quote character used to
+     escape them. Leading and trailing spaces, empty cells, and text that already looks quoted also
+     survive, as does a sparse grid's SHAPE -- gaps come back as gaps rather than closing up.
+
+499. **Proved by a plausible regression rather than a contrived one.** Dropping `'\t'` from the
+     quoting predicate -- the shape of an "optimisation" that notices most cells contain no tab --
+     fails exactly the tab case and nothing else. A cell containing a tab would otherwise paste as two
+     cells and shift every column after it.
+
+500. **A probe that silently does not apply proves nothing, and this one did not the first time.**
+     The `perl` substitution failed on the escaped quotes, the source was unchanged, and the run
+     reported twelve passes that meant nothing. Caught by checking the edited line before trusting
+     the result -- the same discipline the stale-binary readings needed.
