@@ -6236,3 +6236,44 @@ No defect on any of the three. Worth noting WHY this one came back clean where t
 this is the exact ground the 12-wave crash-hunt program worked over, and the comments left behind at
 those sites are load-bearing -- they are why the next person adding an `async void` here will guard
 it. Test infrastructure has had no equivalent pass, which is where r360 and r361 found their defects.
+
+## r365 -- a malformed row index made a workbook unopenable (FIXED)
+
+New class, from the input-validation surface: what a HOSTILE OR CORRUPT file does to the reader. The
+question that matters for a spreadsheet app is not "does it parse" but "does one bad attribute cost
+the user the whole document".
+
+Parsing itself is in good shape -- 611 `TryParse` against 2 `Parse` in the IO layer, and both of the
+two are provably safe (one filters to hex digits and requires exactly 32 before parsing pairs; the
+other is gated by an `IsPositiveInteger` that is itself a `TryParse`, so an overflowing value is
+removed before it can be re-parsed).
+
+So the check was made empirically instead: eleven malformed worksheets, each loaded and the outcome
+recorded. Eight opened. THREE THREW, and a throw here means the workbook does not open at all:
+
+- `<row r="0">` and `<row r="99999999">` -> "Row number must be between 1 and 1048576"
+- `<c s="999999">` -> ArgumentOutOfRangeException on the style index
+
+The row cases are the instructive ones. Row `r` was already normalized to "an unsigned integer or
+nothing", which is why `-5` and a 20-digit index opened fine -- they fail to parse and get dropped.
+But 0 and 99999999 ARE valid unsigned integers; they are just outside the grid. They passed the
+normalizer untouched and reached ClosedXML, which threw and aborted the load. The guard was written
+against malformed SYNTAX and never against an impossible VALUE.
+
+Fixed in `XlsxWorksheetGridXmlNormalizer`: a row whose index is outside 1..1048576 is dropped, and
+the rest of the sheet loads. That is what Excel does -- it repairs and opens rather than refusing.
+
+`R365_MalformedRowIndexStillOpensTests` pins it at 0, 99999999 and uint.MaxValue, and asserts the
+SURVIVING rows still carry their values, because dropping the whole sheet would also satisfy a
+does-not-throw test. A fourth case pins row 1048576 -- the last valid row -- against an off-by-one
+that would drop real data. Revert probe: the three malformed cases fail without the fix and the valid
+one passes in both states, which is the correct shape for a test guarding over-reach.
+
+STILL OPEN, deliberately: the style index. `<c s="999999">` still aborts the load. The fix needs the
+`cellXfs` count at normalization time, and neither route to it is small -- threading a count through
+`NormalizeWorksheetRoot`/`NormalizeSheetDataElement`/`NormalizeRowElement` plus their canonicality
+checks, or adding a pass to `XlsxClosedXmlLoadPackageSanitizer`, whose every step is gated through a
+requirements/hints record that would need a new member and a new scan. Recorded with both locations
+rather than half-wired at the end of a session.
+
+Regression check: FreeX.Core.IO.Tests 6339/0.
