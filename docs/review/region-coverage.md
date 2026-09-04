@@ -6780,3 +6780,39 @@ true (a control that lies).
 Regression check: FreeP.App.Presentation.Tests 5945/0. FreeP.App.Host.Tests shows 12 SlideCanvas
 render failures, which are the r362 environmental mode -- `query session` still reports this session
 `Disc`, so WPF composition is dead; nothing in this change renders.
+
+## r380 -- the parity name-box gate no longer reports PASS for work it never did (FIXED)
+
+Last of the three deferred items. Unlike r378 and r379 this is not an Excel-behaviour question at
+all: it is the vacuous-green class this program has been chasing since r353, in the parity tooling.
+
+`FreeX.ParityCompare` compares a Windows capture against a Linux one. The name-box dropdown contract
+is a PAIR contract, so a single-side run (`--win-only` / `--linux-only`) cannot evaluate it. The
+runner handled that by hard-coding
+
+    new NameBoxDropdownPairContractResult(true, [])
+
+and printing `name-box pair : PASS`. A gate announcing success for work it did not do -- exactly the
+shape of r353's 620 assertions and r360's backend probe, and worse here, because this output is read
+as evidence that Linux parity holds.
+
+Checked before changing: `NameBoxDropdownPairContract.Validate` itself is honest. A missing surface,
+a `captured:false` surface, wrong dimensions, or evidence provenance that is not
+`native-x11-root-crop` all produce real failures rather than a silent pass. The defect was only in
+the caller.
+
+Fixed by giving the result a `WasEvaluated` flag (defaulting true, so the real path is untouched) and
+reporting three states rather than two: PASS, FAIL, and `NOT EVALUATED (single-side run)`. The run's
+own pass/fail is deliberately unchanged -- `--win-only` and `--linux-only` are legitimate modes and
+must not start failing -- so the fix is purely that the output stops implying a check happened.
+
+Tests assert the SOURCE, not the tool's behaviour, because running it needs two real captures and a
+Linux container. That is weaker than executing it and the entry says so rather than implying
+otherwise. Three assertions: the single-side result is constructed as not-evaluated, the printed
+status is driven by `WasEvaluated` and not only `IsValid`, and -- the one that stops the fix being
+satisfied by doing nothing -- a two-sided run still calls the real `Validate`.
+
+That closes all three deferred items put to the user: `picLocks` (r378), the ChartEx dialog options
+(r379), and this.
+
+Regression check: FreeX.App.Services.Tests 3579/0, FreeX.ParityCompare.Tests 49/0.
