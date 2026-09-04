@@ -6745,3 +6745,38 @@ found the bug); an all-default picture writes no element and reloads locked; and
 writes for that picture.
 
 Regression check: FreeX.Core.IO.Tests 6356/0.
+
+## r379 -- chartEx charts no longer offer options the cx format cannot store (FIXED)
+
+Second of the three deferred items the align-with-Excel rule settles, and like r378 the rule decides
+it without needing a judgement call.
+
+The chart options dialog offered "Plot visible cells only" and "Rounded corners" for every chart.
+Premise verified before changing anything: `PptxChartWriter` emits `c:plotVisOnly` and
+`c:roundedCorners` in the CLASSIC namespace only, and the cx part has no equivalent -- so on a
+waterfall, treemap or histogram a user could tick either box, have it silently do nothing, and find
+it gone at the next open. PowerPoint does not offer either control for those chart types.
+
+`ChartDisplayOptionsPlanner.SupportsClassicChartAreaOptions` is the inverse of the existing
+`SupportsChartExTitleLayout`, so the two capabilities partition the dialog: title position and
+alignment are chartEx-only, plot-visible and rounded-corners are classic-only.
+
+GREYED RATHER THAN HIDDEN, deliberately. PowerPoint hides these controls, but this dialog already
+answers "capability does not apply to this chart kind" by DISABLING -- one line above, title
+position/alignment are shown disabled for a classic chart. Mixing both idioms in a single dialog
+would be worse than either, and the defect (a control that silently does nothing) is cured the same
+way. Recorded because it is a deliberate departure from the letter of the rule.
+
+ENFORCED IN TWO PLACES, which is the part worth keeping. Disabling the field is a UI affordance; the
+commit path now refuses the values too. A disabled field still round-trips a value through
+`ChartDisplayOptionsDialogInput`, and any caller can construct one directly, so gating only the plan
+would have left the setting writable on a chart that cannot store it -- the same defect somewhere
+quieter and harder to find.
+
+Three tests, including one asserting the two capabilities are exact inverses. That relationship is
+what stops a later edit leaving some chart kind with both false (a control that does nothing) or both
+true (a control that lies).
+
+Regression check: FreeP.App.Presentation.Tests 5945/0. FreeP.App.Host.Tests shows 12 SlideCanvas
+render failures, which are the r362 environmental mode -- `query session` still reports this session
+`Disc`, so WPF composition is dead; nothing in this change renders.
