@@ -6709,3 +6709,39 @@ otherwise the assertion would pass without discriminating. That is the vacuous-g
 
 No code change. The finding is that a deferred-cleanup note aged into a harmful instruction, and the
 correction is recorded in memory so the next session does not act on it.
+
+## r378 -- picture lock flags now persist (FIXED; a deferred item the Excel rule settles)
+
+The r377 approach again: take a named deferred item and check it against the tree. This one was real,
+and the standing rule -- match what Excel does -- decides it without needing anyone's judgement.
+
+`PictureModel.LockAspectRatio` (Format Picture > Size > "Lock aspect ratio") and
+`PictureModel.Locked` (Properties > "Locked") were documented as session-only, with reading and
+writing `a:picLocks` left as "deferred follow-up work". Confirmed empirically before touching
+anything: unlock a picture on both axes, save, reload -- both come back TRUE, and `picLocks` never
+appears in the drawing part. Excel persists both, so FreeX should.
+
+Implemented on the pattern r317/r318 established for `Title`, `IsDecorative` and `IsVisible`: read in
+`XlsxWorksheetDrawingParts` (new record fields plus a `ReadPictureLocks` helper), mapped onto the
+model in `LoadSheetXmlLayoutApplication`, written by `XlsxWorksheetDrawingObjectWriter` at both
+picture-anchor sites.
+
+MY FIRST IMPLEMENTATION WAS WRONG, AND MY OWN TEST CAUGHT IT -- which is the argument for writing the
+partial-state case rather than only the all-on and all-off ones. Emitting just the flag that changed
+(`noChangeAspect="0"`) loses the other: the reader treats an attribute absent from a PRESENT element
+as false, per the OOXML defaults, so a picture with only the aspect lock cleared came back fully
+unlocked. The asymmetry is between "absent ELEMENT means locked" -- this codebase's documented
+default, and Excel's authored one -- and "absent ATTRIBUTE means false", which is the schema. Fixed
+by making a written element fully self-describing: all three attributes, always.
+
+Byte-stability is preserved deliberately and pinned by a test: both model properties default to
+locked, and the element is emitted ONLY when a flag departs from that, so an ordinary picture
+produces exactly the XML it did before. Writing `picLocks` unconditionally would have churned every
+drawing part in every existing workbook for nothing.
+
+Four tests: both flags survive; clearing only the aspect lock leaves the other set (the case that
+found the bug); an all-default picture writes no element and reloads locked; and an Excel-style
+`<a:picLocks noChangeAspect="1"/>` reads as aspect-locked but movable, which is what Excel actually
+writes for that picture.
+
+Regression check: FreeX.Core.IO.Tests 6356/0.
