@@ -4747,3 +4747,36 @@ change. FreeW removes the reconciliation, FreeP makes the write-back explicit pe
 matched on a mutable name -- and that is where the duplicate came from.
 
 Lanes green: FreeW.Core.IO 1941/0.
+
+## r323 — the formula engine, by an invariant that needs no Excel
+
+The formula engine is one of the areas this program had not touched. The obvious dimension is error
+propagation, and the obvious test -- "every function propagates an error argument" -- is one I
+cannot honestly write: Excel's rules for which functions swallow errors are intricate, this machine
+has no Excel to check against (Excel COM is not registered here), and asserting my belief about
+Excel would encode a guess as a contract. That is how this program has produced false findings
+before.
+
+So the test asserts something narrower that needs no external ground truth: whatever a VALUE-taking
+function does with a literal `#REF!`, it must do the same when that error arrives through a cell
+reference. There is no semantics under which those two differ, so a disagreement is a bug whatever
+Excel does. The function list comes from `BuiltInFunctions.Names`, so a function added tomorrow is
+covered by construction.
+
+**Every value-taking built-in agrees** -- more than a hundred examined, no disagreements.
+
+**The first run reported fourteen, and all fourteen were mine.** Twelve were reference-taking
+functions (`ROW`, `COLUMN`, `COLUMNS`, `AREAS`, `SHEET`, `COUNT`, `ISREF`, `ISFORMULA`, ...), where
+the two spellings are not two ways of passing the same thing: `A1` is a location and `#REF!` is a
+broken location, so `ROW(A1)` answers 1 while `ROW(#REF!)` answers #REF! -- and `ROW` is not
+entitled to look at what A1 CONTAINS. My invariant was true only of functions that consume a value,
+and the qualifier is now in the summary rather than implied. The other two were `HSTACK`/`VSTACK`,
+where `RangeValue` has no value equality, so two structurally identical ranges compared unequal --
+fixed by comparing rendered content.
+
+That the census came back clean is the result; that it took a corrected premise to get there is the
+part worth remembering. A census is only as good as the invariant behind it, and an invariant that
+sounds obviously true ("an error is the same error however it arrives") can still be false for a
+whole category of the things being censused.
+
+Lane green: FreeX.Core.Formula.Tests 5245 passed, 0 failed.
