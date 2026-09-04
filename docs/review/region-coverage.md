@@ -7315,3 +7315,59 @@ Lanes: FreeX.Core.IO.Tests 6378/6378 green. Default suite green across every lan
 change (Services 3583, Integration 978, Model 6707, Calc 2057, Formula 5253). Two failures elsewhere
 are pre-existing: a source guard on SlicerTimelinePanePlanner.cs (a file this change never touches,
 so it fails identically on origin/main) and a WPF chart dialog in the r362 disconnected-session set.
+
+## r394 - Resolving the failures I had been attributing instead of reading
+
+Three defects, found by diagnosing failures earlier rounds waved away. Two of them were mine.
+
+### 1. A stale guard pinning an implementation a real fix had deleted
+
+`BuildSlicerTiles_AvoidsLinqMaterializationScaffolding` required
+`new SortedSet<string>(StringComparer.CurrentCultureIgnoreCase)` in the slicer planner. r311 REMOVED
+that line deliberately: one culture-aware set was deciding both which items exist and how they are
+ordered, so two source values the IO layer keeps distinct could collapse into a single tile. Identity
+is ordinal; ordering is the user's locale. The guard had been red ever since, pinning the very code
+r311 deleted -- worse than no guard, because it pressures the next person to revert a real fix to get
+green. Rewritten to pin r311's INVARIANT (ordinal identity, culture-aware ordering) with a tripwire
+against reintroducing the conflated set.
+
+### 2. An r379 regression I misattributed twice
+
+`ChartDisplayOptionsDialog` expected `PlotVisibleOnly` false and got null. That is not a
+disconnected-session render artifact, which is what I called it at r389 and again at r393 -- I read
+the test NAME and pattern-matched instead of reading the message. Cause: r379 (mine) made the classic
+chart-area capability enforced on COMMIT rather than only by greying the control, because a chartEx
+chart has nowhere to store "plot visible cells only" and a disabled field still round-trips a value
+through the dialog input. The gate is correct; the fixtures predated it, flagging a Stock chart as
+IsChartEx and expecting classic options to commit. Corrected in the WPF test and its Avalonia twin,
+plus a NEW classic-chart case -- without it, a gate that swallowed the option everywhere would look
+identical from the chartEx test alone.
+
+**Exact accounting for r389, replacing the blanket claim I made there.** `query session` now reports
+session 1 `Active` where it previously read `Disc`, and the SlideCanvas/RichTextEditor/RenderCompare
+tests pass with no code change. So 12 of those 14 failures were genuinely environmental and 2 were
+this r379 regression. The whole FreeP solution is now green, all 8 assemblies.
+
+### 3. The user is told about a worksheet loss they just agreed to
+
+Found by running FreeX.App.Host.Logic.Tests, which is NOT in DefaultTests and so had gone unrun for
+several rounds. `MultiSheetWorkbookWithChart_SaveAsCsv_WritesWhenConfirmationAccepted` saw 2 message
+boxes, not 1. First suspicion was my own r393 CSV change; reverting the provider left it failing, so
+not mine. Capturing the prompts showed the same fact twice:
+
+    [1] Possible Data Loss ... only the current worksheet's data will be saved ... Keep this format?
+    [2] File Saved with Warnings ... Only "Sheet1" was saved; "Sheet2" was not.
+
+r292 added the second one reasoning "Excel warns before doing it and FreeX did not" -- but FreeX
+already did, through the R69 lossy-format gate, which fires on the SAME `Sheets.Count > 1` condition
+and is called by BOTH shells. The warning duplicated an existing one and left R69 red across r292 and
+r310. Excel asks once and then saves silently.
+
+Fix: `WorkbookSaveService` suppresses the post-save sheet-loss warning only for formats the pre-save
+gate covers. The distinction is the whole point -- `LossyFormatFeatureLossPlanner` documents .xml,
+.html/.mht and .pdf as NOT gated, and there the warning is the user's only notice, so suppressing it
+everywhere would delete the notice rather than de-duplicate it. R394_SheetLossIsReportedOnceTests
+pins both halves.
+
+Lanes: full solution build green; DefaultTests 31 assemblies, 0 failures. FreeP.slnx all 8 green.
+FreeX.App.Services 3590, FreeX.App.Host.Logic 1509.
