@@ -5859,3 +5859,42 @@ target is right and the guard needs narrowing to the addresses a delete could ac
 disturbed. Left annotated with that diagnosis; fix is the next round.
 
 Regression check: FreeX.Core.IO.Tests 6334/0.
+
+## r356 -- attempted R82's guard, proved the approach wrong, REVERTED
+
+Tried to narrow the signature-count guard from the whole sheet to the part a shift could have
+reached. The idea: a shift only ever moves content EARLIER in row-major order, so an address whose
+source and target still agree everywhere before it cannot have had a different cell shifted into it.
+Compute the first divergent address, exempt everything ahead of it.
+
+B2 started passing. B3 started FAILING -- it gained MSFT's stale `vm="11"`, the exact cross-binding
+the guard exists to prevent. Strictly worse than the defect: losing a binding is recoverable, binding
+a cell to the WRONG rich-value entity is silent corruption.
+
+The fixture shows why, and it is the whole point of the original design. R82's sheet is one column of
+four cells that serialize IDENTICALLY (`t="e"`, `<v>#VALUE!</v>`). After deleting row 3, source has
+B2..B5 and target has B2..B4, with every surviving cell textually indistinguishable from the one that
+used to occupy its address. The first divergence is at B5 -- the only address that stops existing --
+so B2, B3 and B4 all sort ahead of it and all get exempted. The shift is INVISIBLE to any comparison
+of the XML, because the cells are identical; only the COUNT reveals that a delete happened, and a
+count says nothing about WHERE.
+
+So the information needed to distinguish "B2 never moved" from "B3 is now a different cell" is not
+present in the two snapshots. No refinement of the comparison can recover it. That is not a flaw in
+the attempt, it is the reason the original author reached for an all-or-nothing count in the first
+place.
+
+The real fix is the one the code's own comment names as the missing piece: the source snapshot "is
+never remapped for structural edits", unlike model-tracked state, which `RowColumnShiftHelpers`
+relocates in place when the edit is applied. Remap the snapshot's cell addresses when a row/column
+insert or delete happens, and address identity becomes trustworthy again -- B2 stays B2, B3's entry
+is deleted with its row, B4's entry becomes B3 carrying its own `vm="12"`. Every binding then follows
+its own cell, and the ambiguity guard becomes unnecessary for the delete case rather than being
+approximated. That is a real piece of work in the snapshot/shift layer, not a predicate tweak, and it
+is the correct next step for this defect.
+
+Reverted in full; the production file is back at HEAD and R82 keeps its annotation. Recorded because
+a rejected approach with a proven reason is worth more than an untried idea -- the next attempt
+should not start here.
+
+Regression check after revert: R82 2/2, and FreeX.Core.IO.Tests is unchanged from r355's 6334/0.
