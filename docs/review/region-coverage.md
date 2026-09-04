@@ -4672,3 +4672,23 @@ HEAD is r319, and my only uncommitted change is 27 lines in `SelectionPaneComman
 those tests reference -- so this arrived from another session's commit via a rebase, not from this
 work. Recorded here rather than fixed, because a parallel session is likely mid-change in that area
 and racing them would be worse than naming it.
+
+### r320 correction — the "regression on main" was mine, and it was stale binaries again
+
+The entry above reported 19 stable failures on sheet-scoped defined names and attributed them to
+another session's commit arriving via a rebase. **That was wrong.** A `--no-incremental` rebuild of
+`FreeX.Core.Model.Tests` makes the lane 6701 passed / 0 failed. There is no regression, and nothing
+of another session's is broken.
+
+What actually happened: rebasing onto origin/main brought new upstream sources into a tree whose
+build artifacts were incremental, and the mixed result failed a coherent-looking cluster of tests.
+The cluster is what made it convincing -- nineteen failures all on one feature reads exactly like a
+real regression, not like a build problem.
+
+Two things worth keeping from it. First, this is the SIXTH stale-binary incident in this program,
+and the newest variant: the trigger was not my own probe but a REBASE, so "I did not touch anything
+since the last good run" was not a defence -- upstream had. Any run after a rebase needs a clean
+rebuild before its failures mean anything. Second, I nearly published a false regression report
+naming another session's work. The check that caught it cost one rebuild; the report would have cost
+somebody else a debugging session on a bug that does not exist. Verify before attributing, and
+attribute to a build before attributing to a person.
