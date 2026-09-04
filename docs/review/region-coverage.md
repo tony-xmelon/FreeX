@@ -6896,3 +6896,38 @@ satisfied by failing everything.
 
 Regression check: FreeX.Core.IO.Tests 6369/0, FreeX.App.Services.Tests 3579/0,
 FreeW.Core.IO.Tests 1968/0 (the exception type is shared).
+
+## r383 -- a false trail, stopped before it became a claim (no fix; two facts established)
+
+Reopened r363's aside that a failed picture decode "falls back to a default size". The caller does
+exactly that -- `PictureInsertionPlacementPlanner.CreateInsertPictureCommand` silently substitutes
+`DefaultSize` -- and the Avalonia file picker offers `.tif`/`.tiff`/`.webp`, so if Skia cannot decode
+a TIFF the picture inserts at a fixed 240x140 with no warning, while the WPF host (WIC) inserts it
+correctly. That would be both a silent wrong result and a cross-shell parity defect.
+
+IT IS STILL UNRESOLVED, and the interesting part is why.
+
+Built a minimal 4x2 baseline TIFF and proved the FIXTURE valid first: WPF/WIC decoded it as 4x2.
+Avalonia's `Bitmap` then reported 1x1 -- a successful decode with wrong dimensions, which would be
+worse than failing because no fallback triggers. That looked like the defect.
+
+A control killed it. A PNG produced by the same headless decoder ALSO came back 1x1, so the reading
+was worthless. Then the control itself came under suspicion (a never-written `WriteableBitmap` might
+save degenerately), and the tiebreak was an EXISTING test that asserts real capture dimensions:
+`ConsolidateDialogLifecycleRegressionTests` expects 380 and, run alone, gets 1.
+
+So the decoder reports 1x1 in that context -- and the TIFF result says nothing about TIFF.
+
+THE SECOND FACT, found on the way: that test PASSES in the full suite (2283/0) and FAILS in
+isolation. Its outcome depends on what ran before it. That is worth knowing on its own -- anyone
+running it alone sees a failure that is not real -- and it is what made the probe misleading, since a
+single-test run is exactly how a probe executes.
+
+WHAT IS ESTABLISHED: WIC decodes baseline TIFF; the insert path silently substitutes a default size
+when decoding fails; the picker offers TIFF. WHAT IS NOT: whether Avalonia/Skia decodes TIFF at all,
+which needs a real display rather than the headless harness -- the Linux capture route, or a
+connected session (this one is still `Disc`, see r362).
+
+No claim, no fix. Recorded because the trail was three steps from being reported as a defect, and the
+thing that stopped it was running a control on a result that looked too uniform -- the same tell as
+r370's eleven identical exceptions and r375's nine.
