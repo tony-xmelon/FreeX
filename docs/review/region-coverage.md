@@ -6433,3 +6433,38 @@ rejects, and the guards were consistently written against malformed SYNTAX rathe
 VALUES.
 
 Regression check: FreeX.Core.IO.Tests 6352/0.
+
+## r370 -- package-level fixtures: one bad fixture, four diagnostics, no new defects
+
+Took the method that found eight defects in worksheet parts to the parts it had never touched:
+`workbook.xml`, `styles.xml`, `sharedStrings.xml`, the theme, calcChain and `[Content_Types].xml`.
+19 fixtures. The result is worth recording mostly for what it stops the next reviewer doing.
+
+ELEVEN OF THE NINETEEN ARE ONE BROKEN FIXTURE, NOT ELEVEN DEFECTS. Every `workbook.xml` variant --
+sheet with no name, empty name, a 200-character name, illegal characters, duplicate names, sheetId 0,
+an r:id that does not resolve, a defined name with a bad ref, an empty defined name, a localSheetId
+out of range -- threw the IDENTICAL `ArgumentOutOfRangeException (Parameter 'id')`. Varying the input
+did not vary the failure, which means the thing under test was never reached: replacing `workbook.xml`
+wholesale broke the part/relationship wiring, and every case failed at that same earlier point.
+Reporting them would have been eleven phantom defects, and the tell was uniformity, not any
+individual result. Same lesson as r355, where an assertion failed because its FIXTURE could not
+satisfy it: a probe's own validity has to be established before its output means anything. To test
+those attributes properly the fixture must PATCH the existing workbook.xml, not replace it.
+
+FIVE OPENED CLEANLY, which is a real robustness result: a `sharedStrings` count that disagrees with
+its contents, an empty `sst`, a `styleSheet` with no `cellXfs` at all, a removed `calcChain`, and a
+workbook declaring no sheets.
+
+THE REMAINING FOUR are a diagnostic-quality issue rather than a defect. Removing a required part --
+`styles.xml`, `sharedStrings.xml`, the theme -- surfaces the framework's own
+`InvalidOperationException: Specified part does not exist in the package`, and removing
+`[Content_Types].xml` surfaces a bare `NullReferenceException`, where FreeX has a purpose-built
+`WorkbookInvalidException` carrying an actionable message for exactly this ("the file is not a valid
+.xlsx package (it may be corrupted, truncated, or not actually an Excel file)").
+
+Checked before calling it user-facing: NO shell references `WorkbookInvalidException` -- the type
+appears only in Core.IO, Free.Shared.Opc, FreeW's reader and tests. So the shells treat it exactly as
+they treat any other open failure, and the user sees the same generic message either way. The cost is
+to whoever reads a log or a crash report, not to the person opening the file. Recorded, not fixed:
+changing load error semantics for a diagnostic improvement is not worth the regression risk against
+the eight real defects this method has already banked.
