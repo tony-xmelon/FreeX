@@ -3662,3 +3662,34 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      cannot silently empty it; and removing `[ThreadStatic]` from the text-measurement cache makes it
      name that field. `readonly`, `Concurrent`, `Immutable` and `Frozen` are excluded deliberately --
      drawing those distinctions is what separates a contract from a nuisance.
+
+## r290 -- two clean shapes, then the payload r275 never carried
+
+438. **Static event subscriptions: clean.** The only subscriptions to process-lifetime events
+     (`AppDomain.CurrentDomain.UnhandledException`, `TaskScheduler.UnobservedTaskException`) are the
+     crash handlers installed once at startup, which are meant to live for the process. Nothing
+     subscribes a window or dialog to something that outlives it.
+
+439. **Undisposed disposable fields: clean, and the ninth false positive.** The lone hit,
+     `PresentationVideoExportSession`, holds a `CancellationTokenSource` field -- but the source is
+     created with `using var` and the field is a NON-OWNING reference, cleared in a `finally` that
+     runs before the `using` disposes. The scan looked for a literal `.Dispose()` and could not see
+     that ordering.
+
+440. **The gap worth closing: r275 proved a NUMBER survives every format adapter, and nothing ever
+     checked a FORMULA.** That is the payload a user would be most upset to lose, and a silent
+     flattening turns a live model into static numbers on one save/open cycle.
+
+441. **Nine adapters keep the computed value; four of the five formula-capable ones keep the
+     formula.** Split deliberately into two assertions, because losing an expression in a format with
+     nowhere to put it is correct, while losing the RESULT is data loss in any format.
+
+442. **DIF's "failure" was my classification, not the adapter -- the tenth false positive.** The
+     first draft listed DIF as formula-carrying and it failed. The adapter's own header says "Single
+     sheet, values only ... No formulas, formats, or structure", which is what the real format
+     supports and what Excel writes for it. Pinned as a deliberate flattening test rather than
+     quietly dropped from the list, so the intent survives.
+
+443. **Proved by disabling SLK's formula branch: exactly one test failed and the value test still
+     passed.** That separation is the evidence the two assertions are independent rather than one
+     check wearing two names.
