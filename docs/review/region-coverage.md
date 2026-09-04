@@ -3693,3 +3693,30 @@ it is the kind of thing a per-command copy of the comparison would have got inco
 443. **Proved by disabling SLK's formula branch: exactly one test failed and the value test still
      passed.** That separation is the evidence the two assertions are independent rather than one
      check wearing two names.
+
+## r291 -- the loss that is inherent, and the warning that is missing
+
+444. **Measured which formats survive a multi-sheet workbook, because nothing tested it.** r275
+     covered a number and r290 a formula; the sheet COUNT was unchecked. `json`, `ods` and `xml`
+     round-trip all three sheets with their names. `csv`, `prn`, `slk`, `dif` and `html` return one
+     sheet.
+
+445. **The surviving sheet is the FIRST one, and its content arrives intact.** That is a defensible
+     convention and it is now pinned -- keeping a different sheet's data would silently substitute
+     content the user was not looking at, which is worse than losing it.
+
+446. **Worth knowing rather than fixing: Excel keeps the ACTIVE sheet, FreeX keeps the first.** A
+     user on Sheet3 who saves as CSV gets Sheet1. That is a behavioural difference from Excel, not a
+     defect in itself, and changing it means threading the active sheet into the save path.
+
+447. **The real gap, named rather than half-built: FreeX does not warn.** Excel says only one sheet
+     will be saved; FreeX discards the rest silently. The pipeline already has the channel --
+     `WorkbookSaveExecutionResult.Warnings`, displayed by the WPF host -- but only the XLSX path
+     populates it, and both the display method and its resource strings are XLSX-specific. Wiring a
+     general loss warning needs new strings in two shells and UI this environment cannot exercise, so
+     it is recorded here the way r282's residual was, instead of being shipped unverified.
+
+448. **The boundary is pinned so a regression is loud.** A multi-sheet format quietly dropping to one
+     sheet is silent data loss of exactly the kind these formats are chosen to avoid. Proved by
+     making the ODS writer emit only the first sheet: exactly one test fails, and the single-sheet
+     formats keep passing.
