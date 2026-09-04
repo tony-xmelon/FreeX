@@ -4151,3 +4151,34 @@ it is the kind of thing a per-command copy of the comparison would have got inco
 
 529. **Proved by deleting one assignment: `AutoCorrectEnabled: source [False] clone [True]`** -- the
      exact shape of a property added to the type and forgotten in the clone.
+
+## r307 -- surveying the whole hand-written-copy class, then filling its largest hole
+
+530. **Generalised r305/r306 instead of guessing the next instance: nineteen hand-written
+     field-by-field copies exist across the three apps with five or more assignments.** The largest
+     are `Sheet.Clone` (94), `ConditionalFormat.Clone` (62), `TextDocument.Clone` (52),
+     `AppOptions.CopyFrom` (43) and `CellStyle.Clone` (44).
+
+531. **Four already carry completeness guards, and one of them records that this class has bitten
+     here before.** `Sheet.Clone`'s own summary lists "the previously missed fields" --
+     `BackgroundImage`, the outline levels, the comment authors -- and
+     `SheetClone_CanonicalCopyPreservesEveryFieldAndIndependentLists` is what keeps them there.
+     `CellStateSnapshot`, the picture clone and the slicer copy-state are guarded too.
+
+532. **`ConditionalFormat.Clone` was the largest unguarded one, and its failure mode is the quiet
+     kind.** Duplicating a sheet or pasting formats copies every rule through it. A dropped field
+     does not remove the rule -- it changes ONE ASPECT of it, a colour scale's midpoint or an icon
+     set's reversal, so the formatting still applies and merely applies differently. That is much
+     harder to notice than a rule that disappeared.
+
+533. **Complete today for every scalar member; the guard is for the fifty-ninth property.** Fifty-
+     eight assignments maintained by hand will eventually gain one nobody adds, and a hand-written
+     test would have to be extended by the same person who forgot -- which is the argument for
+     reflection rather than a list, made once in r303 and reused since.
+
+534. **The test states its own limit rather than implying completeness.** Reference-typed members
+     (ranges, colour stops, icon criteria) need per-type construction and are left to the existing
+     behavioural tests; naming them in the test keeps the boundary visible instead of letting a
+     reader assume every member is covered.
+
+535. **Proved by deleting one assignment: `Value1: source [r307-Value1] clone []`.**
