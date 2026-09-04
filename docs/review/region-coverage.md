@@ -5276,3 +5276,30 @@ FreeW's writer looking for a class that is not there.
 Six schema tests now cover the .docx writer across combined features and degenerate shapes.
 
 Lane green: FreeW.Core.IO.Tests 1947 passed, 0 failed.
+
+## r340 — the degenerate end, on all three writers
+
+r336 validated a feature-RICH package for each app; r339 did the degenerate end for FreeW. This
+finishes the symmetry, because the two ends fail for opposite reasons and a fixture built for one
+never reaches the other. r334's defect lived at the degenerate end (an empty text body), r335's at
+the rich end (a table beside other features) -- so covering only one would have missed a real bug
+either way.
+
+**FreeX** -- a workbook whose only sheet has no cells; a sheet whose last cell was cleared back to
+blank; a merged region spanning cells that carry no values. All validate.
+
+**FreeP** -- a deck whose slide has no shapes; a shape with NO text body, which is a different state
+from r334's empty one and takes a different branch. Both validate.
+
+All clean. Combined with r339, the degenerate end is now covered for all three writers, and the one
+place it found something was FreeP's empty `txBody` -- already fixed at all three of its sites by
+r334, r337 and r338.
+
+**What the whole seven-round sequence (r334-r340) actually established**, since "seven rounds, four
+fixes" undersells the negative results: schema validity is now pinned for all three apps at both the
+rich and degenerate ends; the "conditional mandatory element" class exists in FreeP's writer (three
+sites, all fixed) and at exactly one spot in FreeW's (fixed); FreeX has it nowhere, because its
+package skeleton comes from ClosedXML rather than hand-built `XElement`. That last point is the
+reusable one -- it predicts where to look first if this class ever surfaces again.
+
+Lanes green: FreeX.Core.IO 6331/0, FreeP.App.Presentation 5921/0, FreeW.Core.IO 1947/0.
