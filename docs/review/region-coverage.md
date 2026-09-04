@@ -5522,3 +5522,23 @@ depth, the failure mode is no longer missing bugs -- it is inventing them.
 
 All seven formats FreeX and its siblings write are now verified against an implementation that
 shares no code with them.
+
+### r331 refinement — the Avalonia capture never starts on Windows, and my proposed fix would not have run
+
+r331 recorded that the Avalonia capture "declines silently" on Windows and proposed a fail-fast guard
+as the obvious remedy, deferred because I could not verify it on the platform it targets. r332 later
+established Docker IS available here, which removed that blocker -- so the deferral was revisited.
+
+One diagnostic settled it: the tool hangs identically on `--help` and on `--version`, producing zero
+bytes before being killed. It never reaches argument handling. The block is at STARTUP, not in the
+capture path.
+
+Two things follow. The finding is sharper than r331 stated -- not "declines silently" but "never
+starts". And **the fix I proposed would not have worked**: a guard inside the capture code cannot run
+when nothing gets as far as parsing `--parity-capture`. Had I implemented it in r331 as the obvious
+remedy, it would have shipped as a guard that never fires, and looked like a fix.
+
+Left unfixed deliberately, now for a better-founded reason than r331 gave: the block is in Avalonia
+app startup on a platform this tool does not target, its product impact is nil (a dev tool, and the
+Linux route it exists for works -- r333 ran the full comparison through it), and locating it means
+debugging desktop-lifetime initialisation rather than adding a guard anywhere.
