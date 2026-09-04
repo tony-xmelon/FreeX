@@ -6206,3 +6206,33 @@ it: matching `catch (Exception)` followed by `return false;` flags every method 
 out-param error message on the line before the return. `QuickAccessToolbarCustomizationFile` looked
 like silent data loss and is the opposite -- it builds a full user-facing message. Only a body whose
 ENTIRE content is a bare return is a candidate.
+
+## r364 -- resource management, disposal and async void in product code (clean)
+
+Three surfaces this program had not touched, all in product code.
+
+FILE RESOURCES. Zero `FileStream`, `ZipArchive`, `StreamWriter`, `StreamReader` or
+`FileSystemWatcher` is constructed outside a `using` anywhere in FreeX, FreeW, FreeP or the shared
+tier. That matters more here than usual: a leaked handle in an IO path reaches the user as "the file
+is in use by another process" on their next save, which is indistinguishable from an external cause.
+
+DISPOSABLE FIELDS. One class holds a disposable it never disposes --
+`SisterAvaloniaFileCommandWorkflow._destructiveActionGate`, a `SemaphoreSlim` in a sealed class that
+is not `IDisposable`. NOT a defect: `SemaphoreSlim` only allocates an unmanaged wait handle if
+`AvailableWaitHandle` is read, which this never does, and there is one instance per window rather
+than one per operation. Checked instead of "fixed" -- adding IDisposable here would have propagated a
+disposal contract through two shells for no benefit.
+
+The gate's use is correct on inspection: `WaitAsync(0)` so a second concurrent destructive action is
+dropped rather than deadlocking, and `Release()` in a `finally` so an exception cannot strand it.
+
+ASYNC VOID. 25 total, 11 of them ordinary event handlers. All 14 of the remaining ones are guarded by
+a try/catch covering the whole body. Several carry comments explaining exactly why -- the clearest
+being `FreeWRibbonPortableCommands.CompleteAsync`, which notes that Avalonia has no dispatcher-level
+unhandled-exception hook, so an escaping exception "tears the whole process down", and reports
+through `RibbonCommandFaultReporter` instead.
+
+No defect on any of the three. Worth noting WHY this one came back clean where the test tree did not:
+this is the exact ground the 12-wave crash-hunt program worked over, and the comments left behind at
+those sites are load-bearing -- they are why the next person adding an `async void` here will guard
+it. Test infrastructure has had no equivalent pass, which is where r360 and r361 found their defects.
