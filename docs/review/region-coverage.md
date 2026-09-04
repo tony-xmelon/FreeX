@@ -3600,3 +3600,36 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      than a finding. Rewritten as a plain character scan -- no pattern, nothing to escape. Proved by
      loosening the converter to pass parentheses through: the test names the offending translated
      pattern.
+
+## r288 -- three classes surveyed, three clean, and no contract invented for them
+
+427. **Unsigned underflow in grid arithmetic: clean.** `CellAddress` is `(SheetId, uint Row, uint
+     Col)` and 1-based, so `row - 1` at row 1 yields 0 -- outside the valid range -- and the type
+     performs NO validation, so an invalid address would be silent rather than throwing. Of 122
+     decrements, the ones that flow directly into a `new CellAddress` all guard inline with
+     `Row > 1 ? Row - 1 : 1u`.
+
+428. **The one that looked unguarded was the seventh false positive of this program.**
+     `CopyFromAbovePlanner.GetSourceCell` decrements with no inline check -- because its caller
+     returns null first when `Row <= 1`. The guard is one level up, and the boundary already has its
+     own test, `CreateEdit_DoesNothingOnFirstRow`.
+
+429. **No contract added, deliberately.** A source scan for "unguarded decrement" would have to
+     understand a guard placed in the caller, which is precisely the shape that just fooled a
+     line-level grep. After seven false positives from scans in this program, adding an eighth
+     brittle one would cost more than the invariant it protects -- and the invariant is already
+     covered behaviourally where it is reachable.
+
+430. **Local-vs-UTC time in persisted data: clean.** Zero `DateTime.Now` anywhere in
+     `FreeX.Core.IO`, `Free.Shared.IO`, `Free.Shared.Opc`, `FreeW.Core.IO` or `FreeP.Core.IO`. The 29
+     `DateTime.Now` uses in production are in UI and in the formula functions where local time is the
+     correct answer.
+
+431. **OOXML document timestamps: correct on every axis, checked rather than assumed.**
+     `saveTimestamp ?? DateTimeOffset.UtcNow`, formatted by `ToW3CDtf` as
+     `ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ", InvariantCulture)`, and read back with
+     `AssumeUniversal | AdjustToUniversal` so the round trip cannot drift with the reader's zone.
+
+432. **Recording a clean survey is the point of this log, not padding it.** Finding 356 did the same
+     for zip-slip. The value is that the next pass does not re-derive these three, and that the
+     method is written down alongside the verdict.
