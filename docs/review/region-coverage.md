@@ -5148,3 +5148,32 @@ The lens is worth restating because it keeps working: eight existing validators 
 defect sat behind them, because each validated a package containing only its own feature. What found
 it was combining features in one package -- the same shape as r310 (nothing varied which sheet was
 active) and r324 (nothing varied how many times a region was rebuilt).
+
+## r335 — the same lens on .docx: every table FreeW wrote was schema-invalid
+
+r334's lens carried straight across. FreeW has twenty-one `OpenXmlValidator` tests and every one
+validates a document built for its own feature -- BuildingBlockGallery, CheckBox, Citation, TabIndex,
+one content-control per file. So this wrote ONE document combining styled paragraphs, a table, an
+inline image, a hyperlink and an empty paragraph, and validated the whole package.
+
+**`w:tbl` had `w:tr` where `w:tblGrid` belongs.** `CT_Tbl` is `tblPr, tblGrid, rows` and the grid is
+mandatory, but the writer emitted it only `if (table.ColumnWidthsPt.Count > 0)`. Reachable through
+the model's own factory: `Table.Create(rows, columns)` builds a uniform table and assigns no widths,
+so inserting a table and saving produced an invalid `.docx`.
+
+Fixed by always emitting the grid. `w:w` is optional on `w:gridCol`, so when the model has no widths
+the grid declares the column COUNT and lets Word autofit, rather than inventing measurements.
+
+**The fix broke an existing test, and that test was right.** `Table_WithoutShadingOrWidths_
+StillRoundTrips` asserts a width-less table comes back width-less. Now that a grid is always written,
+the reader -- which called `DxaToPoints(gridCol.Attribute("w")?.Value)` unconditionally -- invented a
+width from an attribute that was not there. So the reader had a latent bug the writer had been hiding
+by never emitting a width-less grid. It now takes widths only when EVERY column declares one, since
+a partial set would misalign the columns it does describe.
+
+That is the second time in two rounds that a schema violation sat behind validators that all passed,
+and the first time the fix exposed a matching hole on the read side. Worth noting the sequence: the
+failing existing test was the thing that found the reader bug, and the temptation was to treat it as
+fallout from my change.
+
+Lane green: FreeW.Core.IO.Tests 1943 passed, 0 failed.
