@@ -5817,3 +5817,45 @@ environmental -- and I nearly did dismiss it, having written "host initialisatio
 addendum before reading the call site.
 
 FreeX.App.Host.Tests filtered run: 195/195.
+
+## r355 -- the first of r353's three: one was never a defect
+
+Took r353's `vm` finding and asked the question the standing rule now demands first: is the shape the
+test expects a shape Excel actually produces? No `vm` appears anywhere in the 55 .xlsx files in the
+repo, so there was no direct sample -- but the product's own code settles it. The snapshot writer's
+comment says XLDAPR dynamic-array markers "are not represented with a t=e placeholder", so the
+codebase already knows `vm` occurs on ordinary cells. `c@vm` is valid on any cell. The fixture's
+shape is legitimate and the expectation was right.
+
+Then the probe: A2 really is saved as `<c r="A2" s="0"><v>42</v></c>`, no `vm`. It looked like a
+confirmed defect.
+
+It is not. `Backlog_CellMetadataTests.CreateSourcePackage` builds its package from a saved EMPTY
+workbook and swaps in hand-authored worksheet XML -- so the package has no `xl/metadata.xml` at all,
+and `vm="1"` indexes into a part that does not exist. `XlsxWorksheetGridXmlNormalizer.
+NormalizeMetadataIndex` drops an index that exceeds the available count, deliberately and correctly:
+a dangling `vm` is corruption, and Excel would repair it too. The product was right; the FIXTURE was
+invalid. R49 proves the point from the other side -- it passes, and it builds a real metadata part
+with `valueMetadata count="4"`.
+
+Fixed by making the fixture real: `CreateSourcePackage` now optionally writes a structurally valid
+`xl/metadata.xml`, its content-type override and its workbook relationship, and the `vm` test asks
+for two entries. The assertion is hardened to `!` and passes -- the product preserves `vm` on the
+unedited cell and drops it on the edited one, both correct.
+
+Fifteenth false positive in this program, and the most instructive: an assertion can be vacuous
+BECAUSE the fixture cannot satisfy it. Hardening it converts a silent pass into a failure that looks
+exactly like a product defect. "Verify the premise" has to extend to the fixture, not just the
+production path.
+
+R82's `vm` failure is a REAL defect and is now diagnosed. Its fixture does build a proper metadata
+part (count="14"), so the above does not explain it. The cause is the signature-count guard in
+`CellValueMatchesCapturedNativeMetadata`: rich-value placeholders all serialize identically, so a
+same-address hit cannot prove identity, and the guard refuses the whole signature group whenever its
+count changed -- which a row delete always does. B2 loses its binding even though B2 never moved. The
+safety goal is met (B3 correctly refuses the stale `vm="11"`) but the blast radius is the whole group
+rather than the ambiguous members. Excel keeps a rich value bound across a row delete, so the test's
+target is right and the guard needs narrowing to the addresses a delete could actually have
+disturbed. Left annotated with that diagnosis; fix is the next round.
+
+Regression check: FreeX.Core.IO.Tests 6334/0.
