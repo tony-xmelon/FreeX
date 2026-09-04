@@ -6951,3 +6951,37 @@ knowing before anyone debugs one of these tests alone and chases a phantom.
 
 Not pursued further. The remaining questions need a connected session (this one is still `Disc`) and
 the mechanism matters less than the caveat.
+
+## r384 -- text encoding on import/export (clean; the advice chain checks out end to end)
+
+Fresh surface: encoding, where the failure mode is mojibake and the user complaint is "my accents
+turned into question marks".
+
+READING IS ROBUST. Five encodings of the same non-Latin sample -- UTF-8 with BOM, UTF-8 without,
+UTF-16 LE with BOM, UTF-16 BE with BOM, and Windows-1252 -- all round-trip exactly through
+`CsvFileAdapter.Load`. BOM detection and the big-endian case are the two that usually break; neither
+does.
+
+WRITING LOOKED LIKE A DEFECT AND IS NOT. A plain CSV save turns `日本語` into `???`, `Ω` into `O` and
+the emoji into `??`. That is Excel's behaviour too -- plain `.csv` is written in the OS ANSI code
+page, which is why Excel ships a separate "CSV UTF-8" -- and the adapter says so in a comment that
+predates this review, naming the pipeline that reports it.
+
+The reason my probe saw silent loss is that it called `Save`, while the app calls `SaveWithWarnings`.
+Checked what the user actually gets:
+
+    Some text could not be represented in the Western European (Windows) encoding used for this file
+    type and was replaced with '?'. Save as "CSV UTF-8 (Comma delimited)" or "Unicode Text" instead
+    to preserve it exactly.
+
+That is better than Excel's own generic warning: it names the encoding, what happened, and the way
+out.
+
+THEN THE STEP THAT HAS BEEN PAYING ALL SESSION -- following the advice to see whether it is true. The
+warning names two formats, so: do they exist, and do they work? Both are real adapters registered in
+`WorkbookFileAdapterCatalog` (`CsvUtf8FileAdapter`, `UnicodeTextFileAdapter`), and a round-trip of the
+same CJK and astral-emoji sample through each PRESERVES it exactly. The advice is not decoration.
+
+No defect. Eighth time in this stretch a probe result that looked like a finding dissolved on the
+premise check -- here the codebase's own comment named the design before I could misreport it, which
+is an argument for reading the comment at the site before writing the ledger entry.
