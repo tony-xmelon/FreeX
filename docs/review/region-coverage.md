@@ -5779,3 +5779,41 @@ and explicitly NOT claiming they pass on main -- only that they are unrelated to
 
 FreeX.App.Host.Tests: 5347/5400 with 48 skipped before this round's two fixes; the two keytip
 failures are now fixed and the other three are the pre-existing ones above.
+
+## r354 -- the three red tests on main (FIXED)
+
+r353's host-lane run left three failures that were NOT mine -- my commit touched only test files and
+docs, and the worktree was origin/main plus that commit, which makes these red ON MAIN. A live red
+outranks anything on the deferred list, so they came first.
+
+`MainWindowSourceHygieneTests.BackstageSaveAs_ForcesSaveDialogInsteadOfExistingPathSave` pinned the
+literal `RunGuardedUiCommand("Backstage Save As", SaveAsFromBackstageAsync)`. The source now reads
+`RunGuardedUiCommand("Save Workbook As", SaveAsFromBackstageAsync)`. Nothing is broken: the guard
+label was renamed, and it is user-facing error text, so the rename looks deliberate. The test is
+about Save As running THROUGH the guard rather than being invoked bare, and the label is incidental
+to that, so it now matches by callback and accepts any label. A source-contract test should pin the
+structure it is defending, not every literal it happens to sit next to -- over-pinning is what makes
+these tests break on unrelated edits and get "fixed" by loosening the wrong half.
+
+The two `QuickAccessToolbarWindowBroadcastTests` failures are a PRODUCT bug, and a worse one than the
+test failure suggested. `ShowOptionsDialog`'s commit path called
+`App.Services.GetService(typeof(ICrashAnalytics))`. That line already tolerates the service being
+unregistered -- the `is ICrashAnalytics` test -- but `App.Services` THROWS when the container itself
+is absent, and the call sits in the MIDDLE of the commit. So an absent container did not merely skip
+the crash-analytics opt-in: it aborted the whole commit after some settings had been applied, and
+before `RebuildQuickAccessToolbar`, the sibling-window QAT broadcast, and the worksheet-view settings
+ever ran. A partial Options commit, with the user's other choices silently lost.
+
+Fixed with the accessor this codebase already provides for exactly this, `App.TryGetServices`, so an
+absent container behaves like an absent service -- the case the line was already written to handle.
+
+Both fixes have a natural fail-before: these are the tests that were failing, with
+"Application services are not initialized" out of `App.get_Services` for the QAT pair.
+
+Worth noting what found this. Neither defect was discovered by looking for it; both surfaced because
+r353 forced a full run of a lane whose 5 failures I first had to separate into "mine" and "not mine".
+The partial-commit bug had been sitting behind a test failure that was easy to dismiss as
+environmental -- and I nearly did dismiss it, having written "host initialisation order" in the r353
+addendum before reading the call site.
+
+FreeX.App.Host.Tests filtered run: 195/195.
