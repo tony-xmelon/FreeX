@@ -3352,3 +3352,32 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      first run of the ribbon lane showed three failures because its last build had been the revert
      probe, and the FreeW/FreeP solution builds do not include that test project. Rebuilding gave
      55/55. `--no-build` reports whatever was compiled last, not what is on disk.
+
+## r280 -- finishing the class r279 opened
+
+383. **r279 fixed one instance of "a shared component names one app"; this round finished the class
+     rather than moving on.** Two candidates remained from the same survey.
+
+384. **The Avalonia ribbon renderer is clean, and that is a result worth recording.** It carries no
+     FreeX-keyed resource lookups at all, so the WPF leak had no twin there -- a negative that was
+     checked rather than assumed from the WPF finding.
+
+385. **The shared PDF writer's default header comment read "FreeX portable PDF".** FreeX and FreeW
+     each pass their own name on their direct export paths, which is exactly why nobody noticed:
+     both apps looked correct.
+
+386. **FreeP took the FreeX name on every vector export, and FreeW took it whenever Skia was
+     unavailable.** `SkiaPdfWriter.WriteToBytesWithPortableFallback` called the portable writer with
+     no header, so it silently DROPPED the caller's choice and fell back to the shared default --
+     including on the one path where FreeW had bothered to pass "FreeW portable PDF".
+
+387. **Fixed at both levels, because fixing either alone leaves the bug.** The shared default is now
+     product-neutral, so the shared tier no longer guesses on any app's behalf; and the fallback
+     threads the caller's header through instead of discarding it. FreeP now names itself through one
+     constant used by both its shells.
+
+388. **A third stale-binary reading, and the pattern is now clear enough to state.** The shared lane
+     reported one failure because its last build was the revert probe; rebuilding gave 435/435. Every
+     instance this session has the same cause: a probe build, then a verification run whose solution
+     does not contain that test project. `--no-build` after a probe needs an explicit rebuild of the
+     project under test, not of a solution that merely looks related.
