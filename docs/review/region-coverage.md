@@ -6395,3 +6395,41 @@ ClosedXML rejects, and each needs a normalizer guard:
 Recorded rather than rushed, with the exception and the location for each.
 
 Regression check: FreeX.Core.IO.Tests 6344/0.
+
+## r369 -- the last four malformed-file defects (FIXED; the set is closed)
+
+Finished the four r368 recorded rather than fixed. All are the shape r365 and r366 established: a
+file-supplied value that is syntactically well-formed but names nothing, which ClosedXML answers with
+an exception instead of ignoring, aborting the load and costing the user the whole workbook.
+
+COLUMNS. `NormalizeColumnElement` already dropped a `min`/`max` that is not an unsigned integer --
+the identical guard the row index had, with the identical gap. 0 and 99999 parse perfectly well and
+name no column; a reversed span (`min=10 max=2`) describes nothing either. Both reached ClosedXML as
+`ArgumentOutOfRangeException`. Columns are 1..16384 and a span must run forwards, so such a
+definition is dropped and the sheet loads.
+
+REFERENCES. `mergeCell/@ref="@@@"` surfaced as a `NullReferenceException` raised inside
+`XLWorkbook.LoadSpreadsheetDocument`, and `dataValidation/@sqref="%%%"` as an
+`ArgumentNullException`. The instructive part: normalizers that ALREADY validate both refs exist --
+`XlsxWorksheetMergeCellsNormalizer` drops a `mergeCell` whose ref fails `NormalizeCellRange` -- but
+they run only on the save/source-preservation pass and were never wired into the ClosedXML LOAD path.
+The validation was written; it just was not reachable from where the crash happens.
+
+`XlsxWorksheetMalformedReferenceNormalizer` drops those elements on the load path, reusing
+`XlsxSqrefParser.NormalizeCellRangeList` rather than writing a third reference parser, and also drops
+a `mergeCells`/`dataValidations` wrapper left empty, which is itself invalid. Wired as a proper
+requirements member, following r366's lesson that a self-gating step never runs.
+
+`R369_MalformedWorksheetReferencesStillOpenTests` covers all five malformed shapes plus three
+over-reach guards that matter more than the does-not-throw ones: the sheet's CONTENT survives a
+dropped column, a valid 1..16384 span is untouched, and a well-formed `A1:B2` merge still round-trips
+into `MergedRegions`. Dropping the sheet, or dropping every merge, would satisfy the negative tests
+alone.
+
+The malformed-file set opened in r365 is now closed: 11 + 24 fixtures, eight defects found, eight
+fixed. Every one had the same cause -- FreeX delegates parsing to a library whose failure mode for an
+impossible value is an exception, so its normalizer layer must anticipate everything that library
+rejects, and the guards were consistently written against malformed SYNTAX rather than impossible
+VALUES.
+
+Regression check: FreeX.Core.IO.Tests 6352/0.
