@@ -6627,3 +6627,30 @@ is worse on main than none: the dictionaries would sit unpopulated and unused, a
 would have to decide whether they were scaffolding or dead code. The value of the round is that the
 next attempt starts with the four insertion points named, the undo location corrected, and the one
 genuinely hard step identified -- which is what r359 was missing.
+
+## r375 -- FreeW document round-trip fidelity (clean)
+
+r373's method against FreeW's writer/reader pair, which had never been checked this way: build a
+document, save as .docx, read it back, compare the model. 12 shapes.
+
+ALL TWELVE SURVIVED EXACTLY: a tab inside a run, leading and trailing spaces (which need
+`xml:space="preserve"` in WordprocessingML exactly as they do in SpreadsheetML), astral-plane Unicode,
+right-to-left text, a 100,000-character run, bold, a fractional font size (13.5pt, which is stored as
+half-points and so is the size most likely to round badly), a font family, an empty paragraph between
+two full ones -- easy to drop when serialising -- 500 paragraphs, and a paragraph split into three
+runs with formatting on only the middle one.
+
+This matches r367, where 15 malformed .docx bodies all opened. FreeW's IO layer is in good shape in
+both directions, which is consistent with it parsing and writing its own XML rather than delegating.
+
+MY FIXTURE WAS WRONG FIRST, for the fifth time in this program, and the shape is now familiar enough
+to state as a rule. `TextDocument.CreateEmpty()` already contains one empty paragraph, so
+`Blocks.OfType<Paragraph>().First()` read THAT rather than the content under test, and nine of the
+twelve cases reported `InvalidOperationException: Sequence contains no elements`. Nine simultaneous
+identical failures is the same tell as r370's eleven identical exceptions: when every case fails the
+same way, suspect the harness, not the product. Fixed by reading the last non-empty paragraph.
+
+The rule those five errors add up to: a probe reports the difference between the product and MY
+MODEL OF IT, and the model is wrong roughly as often as the product is. A probe result is worth
+acting on only after the probe itself has been shown to measure what it claims -- by a passing
+control, a known-bad input that fails, or corroboration from a neighbouring case.
