@@ -3853,3 +3853,37 @@ it is the kind of thing a per-command copy of the comparison would have got inco
 472. **Two stale notes in one round is the pattern worth naming.** This log is the program's memory,
      and a wrong entry in it is worse than no entry: it stops the next pass from looking. Both were
      found by re-reading my own gaps against the code instead of quoting them forward.
+
+## r297 -- auditing this log against the code, after it produced two wrong entries
+
+473. **r296 found two stale entries, so this round checked the log's other load-bearing claims
+     rather than picking a new region.** The claims that can rot are the ones with no enforcing
+     contract: a contract-backed statement (r286's "zero culture-sensitive StartsWith", r289's
+     "every writable static collection is ThreadStatic") is re-proved on every run, while a recorded
+     COUNT is just a sentence.
+
+474. **r267's ledger claims verified.** `OutstandingCeiling` is still `0` and
+     `KnownNoOpCapableNotYetFixed` is still empty, with r267's own note explaining why
+     `MoveRangeCommand` was the last entry.
+
+475. **r274's claim verified, and the four apparent counter-examples are not projects.** Re-running
+     the scan finds 62 production projects and 4 never named by a test: two are gitignored
+     `*_wpftmp` MSBuild artifacts in the working tree, and two live under `freep/TestSupport/`, which
+     the original exclusion pattern would have skipped as harnesses. `Free.Shared.TextSearch` was
+     indeed the only one, and it has tests now.
+
+476. **CORRECTION to finding 405: r284's census is the PRE-fix state, and reads as though it were
+     current.** It records "196 empty-bodied catches: 167 commented, 29 bare". Today the total is
+     unchanged at 196, but the split is 172 commented / 24 bare -- exactly the five sites r284 itself
+     commented in the same round (three `OverflowException` catches in rounding, the calendar fallback,
+     the currency-label sweep).
+
+477. **The generalisation is small and worth stating: record the state AFTER the round's own change,
+     or say which state it is.** A census taken before the fix and written up after it is not wrong
+     about anything that happened -- it is just no longer a description of the code, which is what a
+     later reader will use it as.
+
+478. **Three claims checked, two held, one drifted -- and the one that drifted did so by the round's
+     own hand rather than by anyone else's edit.** That is the failure mode worth watching in a log
+     this long: not that the code moves away from the note, but that the note was never a description
+     of the code that shipped.
