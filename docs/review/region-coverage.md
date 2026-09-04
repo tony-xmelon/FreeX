@@ -5111,3 +5111,40 @@ tree still returns FAIL and exit 1 for a reason that is about capture plumbing r
 Worth noting that the correction came from asking one more question -- "is there a route that DOES
 satisfy it?" -- after I had already written the finding up. The finding was real; the sweeping half
 of the sentence was not, and it took one grep to find that out.
+
+## r334 — clearing a shape's text produced a schema-invalid .pptx
+
+FreeP already runs `OpenXmlValidator` in eight places, and this ledger's own notes call the pptx
+writer a recurring source of element-order and relationship-allocation bugs -- exactly the class a
+schema validator catches. But each of those eight validates a deck built for its own feature, so
+every one is a SINGLE-feature package, and a part that is well-formed alone can still be wrong beside
+a neighbour. So this writes one deck carrying several shape kinds together and validates the whole
+package.
+
+**It failed immediately**, and on something simpler than an ordering interaction:
+`The element has incomplete content. List of possible elements expected: <a:p> @
+/p:sld[1]/.../p:txBody[1]`. `CT_TextBody` requires at least one `a:p`, and the writer emitted a
+`txBody` with none whenever the model's paragraph list was empty.
+
+**Reachable two ways in the product, not just in my fixture** -- which is the part that makes it a
+defect rather than a fixture artefact:
+
+- `SlideShape.Text = ""` creates a `TextBody`, clears its paragraphs and adds none. So typing text
+  into a shape and then clearing it again leaves exactly this state.
+- `HeaderFooterCommandPlanner` creates header/footer placeholders with `TextBody = new TextBody()`.
+
+Either way, saving produced a package that violates the schema -- the shape of defect PowerPoint
+reports as a file needing repair. `TextBody`'s own doc comment says the list "may be empty for a
+shape with no text", so the model is behaving as designed and the writer was not honouring it.
+
+Fixed by emitting an empty `a:p` carrying only `endParaRPr` when the list is empty, which is what
+Office itself writes for an empty text box. Proved by reverting: both tests fail without it. The
+second test drives the product path (`Text = "typed"` then `Text = ""`) rather than the synthetic
+one, so the guard survives someone deciding the fixture was unrealistic.
+
+Lane green: FreeP.App.Presentation.Tests 5917 passed, 0 failed.
+
+The lens is worth restating because it keeps working: eight existing validators all passed while the
+defect sat behind them, because each validated a package containing only its own feature. What found
+it was combining features in one package -- the same shape as r310 (nothing varied which sheet was
+active) and r324 (nothing varied how many times a region was rebuilt).
