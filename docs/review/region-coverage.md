@@ -3565,3 +3565,38 @@ it is the kind of thing a per-command copy of the comparison would have got inco
 420. **`Contains` deliberately excluded from the fence.** Unlike its siblings it is ordinal by
      default, so requiring a comparison on its 458 call sites would be noise -- the same
      distinction-drawing that kept r278's directory APIs out of that contract.
+
+## r287 -- generalising r286, and a hazard that turns out to be structurally blocked
+
+421. **r286's defect shape generalises to "match with one semantics, index with another", so the
+     round surveyed the whole family. It is clean.** Zero culture-aware `IndexOf`; zero
+     `IndexOf`-plus-`Length` arithmetic anywhere; no sorted structure keyed by a string with a
+     comparer that disagrees with how it is searched. The one culture-aware `CompareInfo` use is
+     FreeW's index ORDERING, where culture-awareness is correct -- and it is tie-broken with
+     `StringComparer.Ordinal` so the sort stays deterministic.
+
+422. **Floating-point keys checked and cleared on the platform's actual behaviour, not folklore.**
+     The `Dictionary<double,>` and `HashSet<double>` uses are frequency counts and date serials, and
+     .NET normalises both `NaN` and negative zero when hashing, so the "-0.0 and NaN are unfindable"
+     failure does not apply.
+
+423. **FreeW compiles the user's Find pattern into a Regex with NO match timeout.** That is only
+     survivable because wildcard syntax cannot express a catastrophically backtracking expression:
+     everything outside a bracket class goes through `Regex.Escape`, and the syntax has no grouping
+     construct, so the `(a+)+` shape has no way to be written.
+
+424. **Measured before believing it, and the measurement contradicted the theory.** The round began
+     from "ten consecutive `*` should blow up". It does not -- 400 characters of non-matching text
+     with ten stars completes in single-digit milliseconds, because `*` becomes a lazy `.*?` and the
+     engine optimises the sequence. The ReDoS risk is real in principle and absent in fact.
+
+425. **So the deliverable is the PROPERTY, not a fix.** Four tests pin that regex syntax typed into
+     Find arrives escaped, that the translated pattern is still valid, that wildcards still match,
+     and that the ten-star case stays fast. The risk they guard is a future "richer wildcards" change
+     that passes more syntax through and silently removes the reason the missing timeout is safe.
+
+426. **The first draft of that property test was itself the bug.** Expressing "an unescaped bracket"
+     as a regex needs its own escaping, and getting it wrong produced `RegexParseException` rather
+     than a finding. Rewritten as a plain character scan -- no pattern, nothing to escape. Proved by
+     loosening the converter to pass parentheses through: the test names the offending translated
+     pattern.
