@@ -5177,3 +5177,25 @@ failing existing test was the thing that found the reader bug, and the temptatio
 fallout from my change.
 
 Lane green: FreeW.Core.IO.Tests 1943 passed, 0 failed.
+
+## r336 — the lens completes the set: FreeX is clean, and the reason matters
+
+r334 and r335 applied one lens -- validate a package carrying SEVERAL features at once, rather than
+one built for a single feature -- and each found a schema violation sitting behind validator tests
+that all passed. This closes the set with the third app.
+
+**FreeX is clean.** A workbook combining two sheets, two registered styles, a merged range, a
+hyperlink, a comment and a formula validates with no schema errors. Verified, not assumed, and with
+a content-based vacuity guard (the package must actually contain the `mergeCell` and `hyperlink` it
+claims to combine) rather than a size heuristic -- r335's first attempt failed on a 3902-byte package
+because I had guessed 4096 as a floor, which measured my guess and nothing else.
+
+**Why two of three apps failed the same lens is the useful part.** FreeX's `.xlsx` skeleton comes
+from ClosedXML, which constructs the package structurally; FreeP and FreeW hand-build their XML with
+`XElement`. Hand-built XML is where "emit this child only when we have a value for it" produces a
+missing MANDATORY element -- FreeP's `txBody` without an `a:p`, FreeW's `w:tbl` without a
+`w:tblGrid`. Both defects were conditional emission of a required element, and both apps that had
+them build their parts by hand. That is a structural prediction about where to look next in those two
+writers, not a coincidence about two features.
+
+Lane green: FreeX.Core.IO.Tests 6328 passed, 0 failed.
