@@ -3747,3 +3747,31 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      and twice the second look found an existing seam that made it testable. Recording a gap is
      right; treating that record as permanent is not -- the next round should re-examine it rather
      than inherit the earlier verdict.
+
+## r293 -- a real data-loss bug, found by extending the previous round's measurement
+
+454. **Extending r291/r292's save-loss survey to charts, shapes and hyperlinks turned up something
+     unexpected: ODS lost all three.** The chart and shape were default-constructed and may be
+     legitimately skipped, but the hyperlink was a real link on a real text cell -- and ODS is the
+     rich format, keeping sheets, styles, formulas and named ranges.
+
+455. **This was not a format limit. The ODS adapter had NO hyperlink handling on either side.** ODF
+     carries a link as `text:p/text:a/@xlink:href`; a grep for "hyperlink", "text:a" or "xlink"
+     across both the reader and the writer returned nothing. Every link was dropped on save, and
+     every link in a file from LibreOffice was dropped on open.
+
+456. **The loss was invisible in the way that matters most.** The reader flattens the paragraph, so
+     the link's visible TEXT survived. The cell looked right; only clicking it revealed the target
+     was gone -- which is why a round-trip test on values would never have caught it, and did not.
+
+457. **Fixed on both sides, and the write side worked first try while the read side did not.** The
+     writer emitted correct `text:a` immediately; three tests still failed. Dumping the actual
+     content.xml rather than re-reading the diff showed the markup was right, which located the fault
+     in the reader: the hook sat inside the FORMULA branch of the cell chain, so ordinary linked text
+     never reached it. Moved after the whole branch chain, where it covers formula, value and
+     style-only cells alike.
+
+458. **One test reads markup this adapter does not write.** LibreOffice nests a formatted link inside
+     a `text:span`, so the anchor is not a direct child of the paragraph. The reader uses
+     `Descendants` for exactly that reason, and the test rebuilds a package with the span shape --
+     otherwise the fix would round-trip our own files and still fail on everyone else's.
