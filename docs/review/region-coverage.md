@@ -4937,3 +4937,39 @@ deserves the same probe as an assumption about what the code does, and it is che
 carry.
 
 Capability now available for future rounds: WPF dialog and surface captures, per-surface, locally.
+
+## r329 — using r328's capability: a capture that captured nothing reported success
+
+r328 established that the WPF parity capture runs locally. This round used it, and the first thing
+it found was in the harness rather than the product.
+
+A full-suite capture writes 116/116 surfaces in about 13 seconds, none failed, no degenerate
+dimensions (smallest 208x136), no blank renders. Diffing that against the promoted baseline in
+`docs/parity/dialog-visual-assets/wpf-capture` showed twenty-plus differences, several halving in
+byte size -- which looks exactly like content loss. **It is not evidence of one**: the wave notes
+show those baselines are promoted from TARGETED per-surface captures, several of which seed
+dialog-specific fixtures, while a full-suite run renders each dialog from generic state. Different
+route, different content, no regression demonstrated. Reporting those twenty as visual regressions
+would have been r316's census mistake at scale.
+
+**Trying to separate route from regression is what found the real defect.** Re-capturing three of
+the big movers with `--parity-capture-target` produced no files at all -- and the tool said
+`wrote 0/1 surfaces` on a line that scrolls past, then **exited 0**. An explicitly requested surface
+that captured nothing reported success. The documented way to refresh a promoted baseline is exactly
+this per-surface route, so a mistyped or no-longer-reachable id yielded no file, no error and a green
+exit, leaving whatever was already in the output directory to be promoted as though it were fresh.
+
+Fixed: an explicit target that captures nothing now writes an error naming the id and exits 2, and
+the startup carries the capture's outcome into the process exit code instead of `Shutdown()`'s
+default 0 -- which also means a THROWN capture no longer exits green. Verified: bad target 2, good
+target 0, full suite 0.
+
+**A method note, because it nearly cost the finding.** My first exit-code measurement piped the run
+into `grep`, so `$?` was grep's status and every run looked like 0. My own notes warn about exactly
+that. Measuring again without the pipe is what showed the fix working -- and, before the fix, would
+have shown the defect immediately.
+
+`dialog.AdvancedFilter`, `dialog.DataTable` and `dialog.ForecastSheet` are reachable in the
+full-suite route but not the targeted one. Whether their targeted ids are stale or those surfaces
+were never targetable is a question for whoever maintains the surface catalog; the tool now says so
+instead of exiting quietly.
