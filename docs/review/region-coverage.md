@@ -6127,3 +6127,43 @@ for zero dimensions.
 Regression check for this round's own changes, both run inside the degraded environment:
 ChartRenderingTests 20/20, MasterLayoutRoundTripTests 17/17. Lane totals are reported as-is and NOT
 claimed green: FreeW.App.Host 1915/1930, FreeP.App.Host 2529/2540.
+
+## r362 -- the WPF render failures: root cause found, and it is not our code
+
+r361 characterised the mode as "WPF measurement returns zero" and left it there. That was still a
+description, not a cause, so this round found the cause. It took three probes.
+
+1. Session state. `query session` shows the session running the tests, ID 1 (anton), in state
+   **Disc** -- DISCONNECTED. The console is a different session (ID 2). `SESSIONNAME` is empty and
+   the only display is a virtual one named "WinDisc", both consistent with that.
+
+2. Does measurement actually break? NO. A bare `TextBlock.Measure` in a plain PowerShell process
+   returns 159.8 x 31.9. So "measurement returns zero" -- my r361 wording -- was wrong. Measure is
+   fine.
+
+3. Does COMPOSITION break? Yes, completely. Eight lines of PowerShell, no project code:
+   draw a red rectangle into a `DrawingVisual`, render it into a `RenderTargetBitmap`, count
+   non-transparent pixels. Expected ~3200. **Got 0.**
+
+So the failure is `RenderTargetBitmap.Render` producing an empty bitmap in a disconnected Windows
+session, reproducible with no FreeX, FreeW or FreeP code in the process at all. Everything follows:
+the zero-ink pixel assertions, the zero `CountPixelDifferences`, and the pagination failures -- a
+`PageBox` whose `ActualWidth/ActualHeight` are 0 is a visual that never composed, so the paginator
+split a page that would otherwise have fitted.
+
+That accounts for all 43 failures across the three WPF host lanes (FreeX 17, FreeP 11, FreeW 15),
+all of which were 0 earlier in this same session, on the same commit.
+
+TRIAGE TEST for the future, worth more than the diagnosis itself, because this mode has confused
+this project repeatedly and previously had no cause attached:
+
+    query session        # is this session's state Disc?
+    ... render a rectangle into a RenderTargetBitmap and count pixels; 0 means composition is dead
+
+Remedy is not in code: reconnect the session (or run these lanes from a connected one). Nothing
+should be "fixed" in response to these failures, and no test should be weakened to accommodate them.
+
+Two corrections this produced. My r361 entry named the wrong mechanism -- measurement, when it is
+composition. And the standing note that the failure count "grows between runs" is unreliable: it was
+stable at 17 across consecutive runs here, because the session's state is not degrading, it is simply
+disconnected.
