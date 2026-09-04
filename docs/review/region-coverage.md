@@ -5438,3 +5438,32 @@ hand:
 soffice --headless --norestore --convert-to csv  --outdir <dir> <file>.ods
 soffice --headless --norestore --convert-to xlsx --outdir <dir> <file>.ods
 ```
+
+## r346 — LibreOffice reads FreeW's .docx correctly, and nearly caught me twice
+
+r345 used LibreOffice as an oracle for ODS. It reads .docx too, so the same check extends to FreeW --
+the first time this program has asked an independent implementation whether a FreeW file means what
+was intended.
+
+**Everything resolves.** A document with a styled heading, body text, a hyperlink, a 2x3 table and a
+trailing empty paragraph converts cleanly: all text in order, the table as a real table (one
+`table:table`, six `table:table-cell`), and the hyperlink with its exact URL.
+
+**Two things looked like defects and were mine.**
+
+1. LibreOffice showed no heading -- the styled paragraph arrived as plain text. The document
+   referenced `<w:pStyle w:val="Heading1"/>` while `styles.xml` defined no styles at all, which looks
+   exactly like a writer emitting a dangling style reference. It is not: the product defines the
+   style first (`FreeWSampleDocumentFactory` does `document.Styles["Heading1"] = new DocumentStyle{…}`
+   before referencing it), and my fixture invented the id from nothing. Rebuilt the way the product
+   does it, `styles.xml` carries `w:styleId="Heading1"` and LibreOffice resolves it.
+2. Then the heading still had no `outline-level`, which looks like FreeW not marking headings as
+   document structure. Also mine: `DocumentStyle.OutlineLevel` exists and `DocxWriter` emits
+   `w:outlineLvl` when it is set. My fixture did not set it.
+
+Both were caught by asking where the product gets the value before believing the file was wrong --
+the same check that turned r316's twenty-four "losses" into six. An external oracle raises the stakes
+on that discipline rather than lowering them: a real implementation disagreeing with us is
+persuasive, and it was reporting faithfully on a document I had built badly.
+
+Remaining for this oracle: FreeP's .pptx, which LibreOffice also reads.
