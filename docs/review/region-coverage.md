@@ -4629,3 +4629,46 @@ each found something a well-covered area was hiding, and the method that found t
 exhausted. It means every item this program recorded as outstanding has been fixed, or re-examined
 and found not to be outstanding, or (in the two lock fields' case) traced to a decision recorded in
 the product rather than a gap.
+
+## r320 — renaming a loaded drawing object duplicated it
+
+Extending r316's question to the other two drawing kinds found something better than a census: a
+user-visible defect in the rename path, and a correction to what r316 concluded.
+
+**r316's `Name` finding was wrong.** It reported that a source-loaded picture discards a rename.
+True of the model in isolation; not true of the product. Every command that edits a drawing's
+format, text or name clears `IsSourceLoaded` first, so the writer regenerates the object instead of
+replaying its XML -- and `SelectionPaneCommands` says so in a comment describing the exact discard
+r316 rediscovered. The mechanism was already understood and handled. r316 measured a state no user
+can reach, which is what a reflection census does when the product's edit path does more than set a
+property.
+
+**What the realistic path does instead: it duplicates.** R124 fixed "rename is discarded" by
+clearing the flag so the writer emits a fresh anchor under the new name. But the merger decides
+which ORIGINAL anchors to supersede by matching each model's CURRENT name
+(`GetRewrittenSourceObjectNames`), so after a rename nothing matches the original -- it is copied
+through beside the regenerated object. Renaming a loaded picture, text box or shape left a SECOND
+copy bearing the old name, and again on every subsequent rename. Fixed by recording the old name in
+`DeletedSourceDrawingObjectNames`, which exists for exactly this ("keep this original anchor out of
+the merge"); undo withdraws it, so undoing a rename restores the object rather than deleting its
+source XML. Proved by removing the fix: all three kinds came back as
+`{"Renamed", "Picture 1"}`.
+
+**A census I had to throw away.** The first version of this round censused all 42 shape and 25
+textbox members by reflection, reporting 34 and 16 discards. Both numbers were meaningless: the
+product clears the flag on edit, and setting every member at once produces mutually invalid objects
+-- with the flag cleared, the mass-mutated textbox vanished from the file entirely. The replacement
+makes the edits the product makes, the way it makes them, through the real command. A census is the
+right tool when a field is just data (r316's picture attributes); it is the wrong tool when reaching
+the field goes through behaviour.
+
+Lanes: Core.IO 6319/0 after the rename tests were added, App.Presentation 5610/0.
+
+**Unrelated regression found on main, reported not absorbed**: `FreeX.Core.Model.Tests` has 19
+stable failures clustered entirely on sheet-scoped defined names (`NamedRangeTests`,
+`R92_FormulaAuditingServiceScopedNameTests`, `FormControlInteractionServiceTests`,
+`R163_DataValidationDateListDisplayTests`). That lane was 6701/0 earlier in this same session, my
+HEAD is r319, and my only uncommitted change is 27 lines in `SelectionPaneCommands` which none of
+those tests reference -- so this arrived from another session's commit via a rebase, not from this
+work. Recorded here rather than fixed, because a parallel session is likely mid-change in that area
+and racing them would be worse than naming it.
