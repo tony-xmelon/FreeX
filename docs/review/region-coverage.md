@@ -7012,3 +7012,34 @@ No defect. Two method notes worth keeping, both of which changed the result here
 an INVALID value cannot tell normalisation from data loss, and a probe that SKIPS a property type has
 not covered it -- the skip list is a finding to chase, not a footnote. Both were the difference
 between "two settings lost" and an accurate clean result.
+
+## r386 -- the ClosedXML concurrency gate holds (clean; pinned)
+
+Fresh surface: concurrency beyond `async void`. The concrete hazard here is named in the code --
+ClosedXML's `XLWorkbook` construction and population touch PROCESS-GLOBAL static state, so a
+background startup prewarm or a second window can corrupt a concurrent load. The adapter serialises
+every load and save on one static `ClosedXmlGate`.
+
+AUDITED AS A FENCE, not as a set of callers, which is the r277 distinction. The lock sits at ONE
+chokepoint per direction -- `LoadCore` and `SaveCoreUnlocked` -- and each has EXACTLY ONE call site,
+inside the lock. Every public and internal entry point delegates inward: `Load`,
+`LoadWithWarnings` (x2), `Save`, `SaveWithWarnings`, and `SavePreservingVbaProject` (the macro-adapter
+path). The startup prewarmer, which the gate's own comment names as the race it exists to prevent,
+goes through the public `Save`/`Load` rather than reaching past them.
+
+Stress-tested as well as read: 48 load-plus-save cycles at parallelism 8 across 8 distinct workbooks,
+verifying every cell value on the way back. Zero failures.
+
+BUT THE STRESS TEST WAS NOT KEPT, deliberately. It cannot fail reliably -- with the gate removed it
+passes or fails on timing -- so keeping it would add a test that reports green for a broken
+invariant, which is the exact shape this program has spent rounds deleting. The four tests kept are
+deterministic source contracts: each core has one caller, that caller holds the lock, every entry
+point delegates to it, and no other production file constructs an `XLWorkbook` at all.
+
+That last one immediately corrected me. I had read the seven constructions as living in
+`XlsxFileAdapter.cs`; the test failed and named `XlsxFileAdapter.Save.cs`, which holds the seventh
+(inside `SaveCoreUnlocked`, so gated). The exclusion now matches the file PREFIX rather than the one
+file I believed held them all -- a test catching its author's misreading before the entry was
+written.
+
+No defect.
