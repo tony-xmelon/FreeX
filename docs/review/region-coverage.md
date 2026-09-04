@@ -7071,3 +7071,33 @@ call fails on the first command with "undo must restore the document exactly".
 No defect. Fifty-three commands remain uncovered -- the ones needing images, revisions, bookmarks,
 fields or content controls to construct -- so this is a sample, not a proof over the whole command
 set, and the entry says so rather than implying the layer is verified.
+
+## r388 -- extending the undo coverage, and the guard earning its place twice
+
+Extended r387 from 14 commands to 20 by adding an image-bearing paragraph to the fixture, since the
+image family carries the most fields for a `Revert` to miss -- size, alt text, rotation and flips,
+crop on four edges, border colour/width/dash. `SetImageSize`, `SetImageAltText`, `SetImageRotation`,
+`SetImageCrop`, `SetImageBorder` and `ResetImageSize` all RESTORE EXACTLY.
+
+The interesting part is that the vacuity guard from r387 fired TWICE, both times on MY fixture rather
+than on the product:
+
+- `ResetImageSize(3, 0, 48, 24)` against an image already 48x24 changes nothing. Passing a command
+  the state it is meant to produce is the classic way to write a test that proves nothing.
+- `SetShapeWrapping` returns early unless `ShapeAt(context)` finds a SHAPE, and the fixture has an
+  IMAGE. The command did nothing because it was aimed at the wrong object; the writer emits wrapping
+  correctly for a floating image, which was checked before assuming otherwise.
+
+Either would have been reported as "undo verified" by a test that only compared before against after.
+Both instead surfaced as "must actually change the document" -- and the second one had me reading the
+writer for a dropped-field defect that does not exist, which is exactly the trip r383 took. The guard
+turned a two-hour false trail into two minutes.
+
+Dropped `SetShapeWrapping` rather than bending the fixture: shapes need their own, and a command
+aimed at absent state is not coverage.
+
+No defect. Coverage is now 20 of 67 commands; the rest need revisions, bookmarks, fields, content
+controls or drawing groups to construct, and the ledger keeps saying so rather than implying the
+layer is done.
+
+Regression check: FreeW.Core.IO.Tests 1969/0.
