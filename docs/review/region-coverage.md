@@ -3532,3 +3532,36 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      `Task.Run`, the `CanBeCanceled` guard, the registration and the throw -- the shape a refactor
      produces when it "simplifies" a cancellation path -- makes the contract name the file, line and
      parameter.
+
+## r286 -- a real defect, found by a theory that first looked wrong
+
+415. **New class: `StartsWith(string)` without a `StringComparison` compares with the CURRENT
+     CULTURE.** In a parser that is unsound, because the slicing that follows a match is ordinal.
+     ICU skips ignorable characters -- zero-width joiner, ZWNJ, soft hyphen -- and ordinal indexing
+     does not, so the operator is read from one interpretation of the string and its operand from
+     another.
+
+416. **The codebase had already fixed this class everywhere else and left seven behind.** Zero
+     culture-sensitive `IndexOf`, zero `EndsWith` -- and six `StartsWith` calls splitting
+     SUMIF/COUNTIF criteria operators plus one in FreeW's wildcard search. The same file's line 150
+     already used `StringComparison.OrdinalIgnoreCase`, so the convention was known and the operator
+     splitter simply missed it.
+
+417. **The first behavioural tests PASSED against the unfixed code, and the honest response was to
+     doubt the test rather than the theory.** They summed numeric labels, where a garbage operand
+     matches nothing -- and "matches nothing" was also the correct answer for that data, so the two
+     readings agreed by luck. `SUMIF` returned 0 either way.
+
+418. **A direct assertion on the platform settled it: `"<ZWJ>>=5".StartsWith(">=")` is TRUE
+     culture-sensitively and FALSE ordinally.** The defect was real; the test was blind. Rewritten so
+     a cell holds the criteria text itself, making the correct answer 20 and the buggy answer 0 --
+     four tests then failed on the unfixed code and pass on the fixed one.
+
+419. **This is the mirror of the program's recurring lesson.** Six times a detector indicted correct
+     code and the scan was the suspect. Here a test exonerated broken code, and the test was the
+     suspect. "Verify the premise" cuts both ways: a passing test is evidence only if it could have
+     failed.
+
+420. **`Contains` deliberately excluded from the fence.** Unlike its siblings it is ordinal by
+     default, so requiring a comparison on its 458 call sites would be noise -- the same
+     distinction-drawing that kept r278's directory APIs out of that contract.
