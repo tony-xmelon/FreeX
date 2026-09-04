@@ -4712,3 +4712,38 @@ a guard added to a mechanism I had just changed is highest immediately after cha
 still know which orderings are load-bearing.
 
 Lane green: 6325 passed, 0 failed.
+
+## r322 — r320's class asked of both sister apps: neither has it, for two different reasons
+
+r320's defect needed a specific precondition: a model that is BOTH editable and replayed from
+preserved XML, reconciled by a mutable key. FreeX had all three (the merger supersedes originals by
+matching the model's current NAME, which a rename changes). The question is whether FreeW and FreeP
+share it.
+
+**FreeW cannot, by construction.** A run carries either a modelled `InlineImage` -- which the writer
+emits in full and the `SetImage*` commands edit -- or an opaque `PreservedDrawing` for a drawing the
+reader could not model, which has no editable fields at all. The two are mutually exclusive, so
+there is nothing to reconcile. Verified rather than assumed: editing a loaded image's alt text and
+resizing it both survive a save and leave exactly one image, not two.
+
+**FreeP has the precondition but handles it better than FreeX did.** A `ChartShape` can be modelled
+AND carry `PreservedChartExXml` -- a verbatim `cx:chartSpace` replayed on save. `BuildChartExDoc`
+parses that payload and patches each modelled aspect into it (title, legend, area formatting, series
+layouts, shape properties, colour scales, data points, data labels), which is the mature form of
+what FreeX's source-loaded rewriter does. The completeness question r316 would ask -- is that patch
+list complete? -- has a deliberate answer: each patch is gated on an explicit
+`ChartEx*EditRequested` flag, so an aspect is written only when an authoring command actually asked
+for it. The in-code reason is exactly right: "a null high-level value can mean that a preserved
+native legend has not been materialized yet". Patching unconditionally would clobber preserved
+native state with model defaults, which is a worse failure than not patching.
+
+I checked that by reading the two methods rather than matching their names against the model's
+property list. Name-matching would have reported `PlotAreaFill`, `LegendOverlay` and
+`LegendManualLayout` as unpatched, and all three are handled -- the same false-positive shape that
+made r316's raw census 24 findings when six were real.
+
+**So FreeX was the outlier, and the reason is worth keeping**: it reconciles by a key the user can
+change. FreeW removes the reconciliation, FreeP makes the write-back explicit per aspect, FreeX
+matched on a mutable name -- and that is where the duplicate came from.
+
+Lanes green: FreeW.Core.IO 1941/0.
