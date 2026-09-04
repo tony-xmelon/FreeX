@@ -5614,3 +5614,45 @@ Fail-before is genuine -- the probe failed on the unfixed writer with the two va
 then passed.
 
 Regression check: FreeP.App.Presentation.Tests 5928/0, FreeP.App.Host.Tests 2540/0.
+
+## r351 -- theme font patch silently swallowed the edit (shared, FIXED)
+
+Followed r350's lens into the neighbouring builder. `BuildThemeFormatSchemeXml` and
+`BuildThemeFontSchemeXml` sit next to each other and use the same preserve-the-source-verbatim
+pattern, so having found a gap in one, the other was the obvious place to look. It had a worse one.
+
+`DrawingMlThemeXml.TryPatchNativeFontScheme` applied the caller's typeface through a `?.` chain:
+
+    fontScheme.Element(A + "majorFont")?.Element(A + "latin")?.SetAttributeValue("typeface", ...)
+
+A source `a:fontScheme` missing `a:majorFont` or its `a:latin` therefore SILENTLY SWALLOWED the
+edit -- the method returned the unchanged XML as though it had patched it, so the theme font the
+user picked never reached the file. No error, no diagnostic, and a saved document that looks
+correct. On top of that the returned XML failed validation, because `CT_FontCollection` requires
+`latin`, `ea` and `cs` in that order: the probe package came back with "The element has incomplete
+content" on `minorFont` and "has unexpected child element" on `majorFont`.
+
+This is a SHARED helper with two consumers, so both apps had it: FreeP through
+`PptxPackageWriter`, and FreeX through `WorkbookTheme.WithFonts`, whose result is exactly the XML
+that gets saved. Neither had a test with a partial native scheme.
+
+Fix: `ApplyLatinTypeface` creates whatever the source omitted -- the collection itself (seated
+major-before-minor), then `latin`/`ea`/`cs` -- applies the typeface, and re-seats the three required
+children at the front in schema order, which leaves script-specific `a:font` children after them
+untouched.
+
+This is the standing "never let reflection-shaped code silently no-op" rule showing up in plain
+LINQ-to-XML. The rule is about the SHAPE -- a nullable handle plus a null-conditional call -- not
+about reflection, and it is worth restating that way, because that shape is far more common in
+XML patching than it is in reflection.
+
+Pinned by `R351_ThemeFontPatchCreatesMissingStructureTests` (6 tests, in FreeX.Core.Model.Tests
+where the shared helper is already covered): missing `latin` still receives the typeface, a missing
+collection is created in order, the required three come first, script-specific fonts survive after
+them, a complete scheme keeps its East-Asian/complex-script detail, and FreeX's own `WithFonts`
+carries the change through. Revert probe: 4 of the 6 fail on the unfixed helper. The 2 that pass in
+both states are the preservation tests -- they exist to catch the fix DAMAGING a good scheme, so
+passing before is what they should do.
+
+Regression check: FreeX.Core.Model.Tests 6707/0, FreeX.Core.IO.Tests 6334/0,
+FreeP.App.Presentation.Tests 5928/0.
