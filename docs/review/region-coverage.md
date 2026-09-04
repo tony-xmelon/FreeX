@@ -7191,3 +7191,39 @@ the binding through -- shipping the cross-binding the guard was built to stop. S
 program a pending-work note's PREMISE, not its diagnosis, was the thing that needed checking.
 
 Lane: FreeX.Core.IO.Tests 6370/6370 green, 64 skipped.
+
+## r391 - Culture sensitivity in the file-format writers: swept clean, now pinned
+
+A dimension this program had not swept, and a severe one: a number formatted under a German or
+French locale corrupts every file the writer produces, and does so ONLY for users running that
+locale -- never on the machine that wrote the code. Save-as-PDF is table stakes for all three apps
+and PDF is float-dense, so the blast radius covers FreeX, FreeW and FreeP alike.
+
+**Result: no defect found.** Measured, not assumed:
+
+- FreeX .xlsx save under de-DE/fr-FR/tr-TR, scanning every XML part: clean.
+- FreeP .pptx write under the same three, scanning EVERY attribute of every part for a value that is
+  wholly a comma-decimal: clean.
+- No bare `ToString()` on any floating-point value in `FreeX.Core.IO`, `Free.Shared.Opc`,
+  `Free.Shared.Drawing`, `FreeP.Core.IO` or `FreeW.Core.IO` (139 bare calls exist; all are on
+  integers).
+- No `string.Format` without a provider anywhere in those IO layers.
+- `PortablePdfWriter` funnels every value through one `FormatNumber` helper that passes
+  `InvariantCulture` -- correct by design.
+
+**Two instrument errors, both caught by the round's own rules.** The first probe failed identically
+in all three cultures at the SETUP line (`GetSheetAt(0)` on a workbook with no sheet) -- the
+"every case fails the same way, suspect the harness" tell. The second reported a false positive I
+manufactured myself: `"1E-07".Replace('.', ',')` contains no `.`, so the suspect string was just
+`1E-07`, which legitimately appears in the output.
+
+**What was missing was protection, not correctness.** `FormatNumber` is a single chokepoint, which
+is the right design and exactly the shape a later edit erodes: one `$"{value}"` written next to the
+helper instead of through it is silently correct on the author's machine. So the probes became three
+permanent tests pinning the OUTPUT rather than the helper, each self-checking that the culture
+actually took effect before trusting a pass. The PDF test was proven able to fail by making
+`FormatNumber` culture-sensitive: it caught 15 corrupted numbers including colour components,
+then the writer was restored and verified byte-identical.
+
+Lanes: Free.Shared.Pdf.Tests 232/232, FreeX.Core.IO.Tests 6373/6373, FreeP.App.Presentation.Tests
+5950/5950.
