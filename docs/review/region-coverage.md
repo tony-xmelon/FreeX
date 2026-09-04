@@ -3807,3 +3807,20 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      fallback path reads a cell's whole subtree when it finds no value paragraph -- which now
      contains the annotation -- so a cell holding ONLY a note would have taken the note's text as its
      VALUE, showing a comment as if it had been typed into the grid.
+
+## r295 -- bounding the class r293/r294 opened
+
+465. **Asked whether ODS was the first of several or the only one, and it was the only one.**
+     `SpreadsheetXml` and `NativeJson` -- the other two formats that keep every sheet -- already
+     round-tripped both hyperlinks and cell comments. So the class r293 and r294 fixed had exactly
+     one holder, which is a result worth recording: it CLOSES the class rather than leaving an open
+     question about the rest of the adapter set.
+
+466. **Pinned as one theory over the rich formats, not three copies.** The property is identical for
+     each, so a future rich format joins the list rather than acquiring its own test. The valued-cell
+     case and the no-value case are separate, because the second is what exposed all three ODS skips
+     -- the writer's early return, the reader's blank-cell DoS guard, and the table bounds -- and the
+     first reaches none of them.
+
+467. **Proved by regressing ODS alone: the no-value ODS case fails while xml and json keep passing.**
+     A theory that failed for all three would have meant the test, not the adapter.
