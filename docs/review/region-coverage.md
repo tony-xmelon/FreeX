@@ -3504,3 +3504,31 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      full of legitimate best-effort teardown where demanding a comment on each would be noise, and
      r270/r282/r283 already fence the part of the UI that matters. Proved by deleting one comment:
      it names the file and line.
+
+## r285 -- a class that promises something the signature cannot keep
+
+410. **New class: a cancellation token accepted and then ignored.** It is worse than never offering
+     one. The signature promises the work can be cancelled, a caller wires Cancel to it, and the
+     button does nothing -- which the user experiences as a hang, not as a failure.
+
+411. **All 65 token-taking methods observe their token; the class is clean.** The three the scan
+     first flagged have no body to observe it with -- a positional record property and two interface
+     declarations -- so they were never candidates.
+
+412. **The sharper variant came back clean too, and it took reading the code to know that.**
+     Exactly one method passes `CancellationToken.None` while holding a real token:
+     `WorkbookProgressStageRunner` uses it on the continuation that observes an ABANDONED task's
+     fault. That continuation must run precisely because cancellation already fired -- passing the
+     cancelled token would suppress it and reintroduce the unobserved exception it exists to
+     prevent. Sixth detector false positive of the program, and the code was right every time.
+
+413. **Fenced rather than fixed, which is the honest description of this round.** The contract
+     requires that a method accepting a token references it, with two exclusions that are real
+     rather than convenient: a bodiless declaration has nothing to observe the token WITH, and a
+     positional record parameter is a property. Including either would report well-formed code,
+     which is exactly how the five earlier detectors went wrong.
+
+414. **Proved against a realistic regression, not a token deletion.** Dropping the token from
+     `Task.Run`, the `CanBeCanceled` guard, the registration and the throw -- the shape a refactor
+     produces when it "simplifies" a cancellation path -- makes the contract name the file, line and
+     parameter.
