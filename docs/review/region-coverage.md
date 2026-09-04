@@ -5491,3 +5491,34 @@ grep -- the pattern had a trailing space and `<table:table>` carries none. Check
 properly showed the full structure. Three rounds running, the thing that looked like a defect was in
 the measurement rather than the product, and each took one command to settle. The oracle is only as
 good as the question put to it.
+
+## r348 — the remaining four FreeX formats against LibreOffice
+
+r345-r347 checked ODS, .docx and .pptx against an independent implementation. FreeX writes four more
+formats a spreadsheet can round-trip: DIF, SLK, HTML and SpreadsheetXML. All four were handed to
+LibreOffice.
+
+**All four clean.** Values, signs and decimals correct in every one, and the formula cell's computed
+total (1234.25) arrives in all four.
+
+**The interesting part was a false alarm I nearly filed.** The first run showed DIF and SLK exporting
+the formula row as EMPTY -- `Total,` with no number -- while SpreadsheetXML got it right. That reads
+like two writers dropping a formula cell.
+
+They were reporting faithfully. My fixture called `SetFormula` and never recalculated, so the cell
+carried a formula and no computed value; SLK duly wrote `C;Y4;X2;K"";ESUM(R[-2]C:R[-1]C)` -- the
+formula correct, the cached value an empty string, because that is what the model held. Giving the
+cell the value a recalc leaves behind, both export `Total,1234.25`. SpreadsheetXML "got it right"
+only because LibreOffice recomputed the formula it wrote.
+
+HTML looked like a third failure -- no output at all -- and was also mine: LibreOffice opens HTML in
+Writer unless told otherwise, so the conversion produced a text document rather than a sheet. With
+`--infilter=calc_HTML_WebQuery` it reads correctly.
+
+**Five measurement errors in six rounds** (r345's grep, r346's two fixture gaps, r347's grep, and
+these two). Every one looked like a product defect, and every one was answered by asking where the
+value comes from before believing the file was wrong. That ratio is worth stating plainly: at this
+depth, the failure mode is no longer missing bugs -- it is inventing them.
+
+All seven formats FreeX and its siblings write are now verified against an implementation that
+shares no code with them.
