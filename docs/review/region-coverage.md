@@ -5090,3 +5090,24 @@ evidence. Weakening it from the outside is exactly what r324 declined to do to a
 just caught something. Recorded with the file, the deciding line, and both options.
 
 Artifacts (198 MB of captures and diff images) removed; the container removed itself.
+
+### r333 refinement — "cannot pass" was too strong
+
+r333 said the parity suite "cannot pass its own default invocation". The first half is right and the
+phrasing overreached, so here is the precise version.
+
+A route that satisfies the contract exists and has worked:
+`Run-FreeXLinuxInteractionValidation.ps1 -PhysicalOnly -PhysicalProbeSelector name-box-dropdown-parity`,
+recorded passing `1/1` in wave183 with an authoritative unscaled 208x136 crop. It is a SEPARATE
+tool. `FreeX.ParityCompare` never invokes it, its `--help` does not mention it, and its only way to
+consume that evidence is the general `--skip-capture --lin-dir <dir>` path with a hand-assembled
+capture directory.
+
+So the accurate statement is: the suite CAN pass, but only through a multi-tool workflow that the
+compare tool's own interface does not describe. Running the documented single command on a healthy
+tree still returns FAIL and exit 1 for a reason that is about capture plumbing rather than the code
+-- which is the part worth fixing, and still a product call about which of the two remedies to take.
+
+Worth noting that the correction came from asking one more question -- "is there a route that DOES
+satisfy it?" -- after I had already written the finding up. The finding was real; the sweeping half
+of the sentence was not, and it took one grep to find that out.
