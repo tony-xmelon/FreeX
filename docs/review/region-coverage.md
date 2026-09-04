@@ -3944,3 +3944,35 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      formatting.** After a round trip, editing the Heading1 style no longer unbolds that text,
      because the bold is now on the run. That is the kind of consequence a size comparison surfaces
      but never explains, which is why the round did not stop at "17 bytes larger".
+
+## r300 -- the idempotence sweep, finished across all three apps
+
+490. **FreeP completes what r298 (FreeX) and r299 (FreeW) began.** All three apps' persistence
+     layers have now been asked the same question -- does saving what you just loaded reproduce what
+     you saved -- and the answer is known for each rather than assumed for any.
+
+491. **Split into three properties, because one "the bytes match" assertion cannot distinguish
+     their failures.** The writer is DETERMINISTIC; a round trip preserves the PART SET; the round
+     trip CONVERGES. Each fails for a different reason and each names a different defect.
+
+492. **Establishing determinism FIRST is what made the rest interpretable.** `ppt/presProps.xml`
+     differs between the first and second save at IDENTICAL length -- the signature of a regenerated
+     identifier. Had the writer been nondeterministic, every save of an unedited file would dirty it,
+     which version control and external-modification detection both read as a real edit. It is not:
+     writing one model twice is byte-identical, so the difference is the READER normalising, not the
+     writer inventing.
+
+493. **PPTX keeps all 15 parts and converges after one reload.** Theme goes 3004 to 3068 bytes and
+     then never moves; `presProps` changes once at constant length. Same shape as r299's HTML: a
+     one-time normalisation, not compounding growth.
+
+494. **Compared by PART, not by raw bytes.** A zip's container metadata is not the adapter's output,
+     and comparing it would have reported a difference that means nothing -- the kind of false
+     positive that makes a property test get deleted rather than fixed.
+
+495. **What the sweep found, across three apps and fifteen adapters: one real defect and two declared
+     normalisations.** PRN shifts values left when leading columns are empty (r298, documented rather
+     than changed); FreeW's HTML materialises heading-implied bold (r299); FreeP's PPTX rewrites two
+     parts once (r300). Everything else reproduces itself exactly. That is a stronger statement about
+     the persistence layer than any single feature test in this program has produced, and it needed
+     no list of features to make.
