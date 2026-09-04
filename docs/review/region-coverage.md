@@ -5251,3 +5251,28 @@ worth keeping: r337 found its site because a fixture grew, which is luck; this o
 asking how many sites exist, which is not.
 
 Lane green: FreeP.App.Presentation.Tests 5919 passed, 0 failed.
+
+## r339 — the same enumeration on FreeW: clean, and that is the finding
+
+r338 closed FreeP's `txBody` class by counting the sites rather than waiting for fixtures to trip
+over them. Applied here to the writer that produced r335's `tblGrid` defect, on the states a
+feature-demonstrating fixture never contains:
+
+- an EMPTY table cell -- the direct analogue of FreeP's empty `txBody`, since `CT_Tc` requires a
+  block-level child just as `CT_TextBody` requires an `a:p`. r335's fixture put text in every cell
+  and could not have found it;
+- a document with every block deleted;
+- a table row that lost its last cell.
+
+**All three validate.** FreeW guards each of these already.
+
+That result is worth a round on its own. After r334, r337 and r338 -- three fixes of one shape in one
+writer -- the live hypothesis was that "emit a required child only when a value exists" is how these
+hand-built writers are written generally. It is not. FreeP's writer had it three times and FreeW's
+had it once, in a spot (`tblGrid`) whose conditional was about WIDTHS rather than about content. The
+pattern was specific to one writer, and knowing that stops the next reader from going through
+FreeW's writer looking for a class that is not there.
+
+Six schema tests now cover the .docx writer across combined features and degenerate shapes.
+
+Lane green: FreeW.Core.IO.Tests 1947 passed, 0 failed.
