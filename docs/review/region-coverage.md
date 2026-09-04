@@ -5542,3 +5542,37 @@ Left unfixed deliberately, now for a better-founded reason than r331 gave: the b
 app startup on a platform this tool does not target, its product impact is nil (a dev tool, and the
 Linux route it exists for works -- r333 ran the full comparison through it), and locating it means
 debugging desktop-lifetime initialisation rather than adding a guard anywhere.
+
+## r349 -- PDF export against an independent extractor (clean)
+
+Dimension: the PDF backends, checked with an oracle that shares no code with us
+(`pdftotext`, poppler, shipped with Git for Windows). Motivation: every existing PDF test asserts
+our own raw output (`pdf.Should().Contain("(Hello) Tj")`) -- the same-implementation pattern the
+LibreOffice sweep exists to escape. Nothing checked that a real reader can recover the text, which
+is what "search and copy/paste in the exported PDF" means for a user.
+
+Probe: one page, ASCII plus an accented word, written by BOTH backends and extracted.
+
+- `PortablePdfWriter` (dependency-free, WinAnsi Helvetica) -- text recovered exactly.
+- `SkiaPdfWriter` (embeds/subsets fonts) -- text recovered exactly.
+
+No defect. Three further checks, all correct as built:
+
+- `PortablePdfDocumentExporter` preflights via `PortablePdfTextCapabilityPlanner` and refuses with a
+  clear message before writing, so the WinAnsi limit surfaces as a message, not corrupt output.
+- `SkiaPdfDocumentExporter` does NOT apply that WinAnsi gate. This is the right split and worth
+  stating, because the tempting bug is the opposite: letting the fallback's capability constrain the
+  primary path, which would block Unicode export on the backend that handles it.
+- `PdfBackendFallbackExecutor` truncates the stream (`Position = 0; SetLength(0)`) before running the
+  portable fallback, so a partial Skia write cannot be appended to. It skips truncation on a
+  non-seekable stream, but the catch filter is `IsSkiaUnavailable`, which is decided on first use --
+  before bytes exist -- so the corrupt-append case is not reachable from these callers.
+
+Not pinned in-repo, deliberately: extractability of the SKIA output cannot be asserted without a PDF
+text extractor as a test dependency. Its objects are compressed, so a `strings`-level check for a
+ToUnicode CMap is inconclusive (it returned 0 for both files that extracted perfectly -- a detector
+that would have produced two false findings had I trusted it). The portable side's guarantee IS
+pinned already, by the existing `/Encoding /WinAnsiEncoding` assertion.
+
+Standing gap confirmed, not a regression: `FreeX.App.Host` (the WPF shell) has no PDF exporter --
+the FreeX side of the "Save as PDF in every app and platform" requirement is still Avalonia-only.
