@@ -3448,3 +3448,29 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      to a UI layer this environment cannot exercise, so it is left open and named here rather than
      invented and shipped unverified. Five direct `AvaloniaUiTaskGuard` call sites pass no reporter
      for the same reason.
+
+## r283 -- closing the residual r282 left open
+
+400. **r282 named an unfixed gap rather than papering over it, so this round closed it instead of
+     opening a new class.** The four consolidated dialog funnels reported nowhere: with no
+     `onFailure` the shared guard caught the exception and dropped it, so a failing OK button still
+     did nothing visible. Naming it was right; leaving it there would not have been.
+
+401. **The error surface did not need inventing -- the shell already had one.** `MainWindow` reports
+     its own guarded failures to the status line. `AvaloniaUiTaskGuard` now falls back to an app-wide
+     reporter when a caller supplies none, and the window installs its existing status-line writer
+     into it, so a failure raised in a dialog is worded exactly like one raised in the shell.
+
+402. **Five tests pin the behaviour AND its boundaries, because a reporter that fires too often is
+     its own defect.** An explicit reporter still wins and the fallback does not also fire (no double
+     message); cancellation never reaches it (dismissing a picker is not an error); a throwing
+     reporter does not escape the dispatcher boundary; and no reporter installed stays harmless, which
+     is what keeps headless construction and the test lane working.
+
+403. **Proved by reverting the one-line fallback: exactly one test failed, and it was the right
+     one.** The other four passed on the reverted build, which is the check that they are pinning the
+     boundaries rather than quietly depending on the fix.
+
+404. **Installed where the status control is constructed, not at startup.** The reporter needs the
+     built control; setting it earlier would have captured a null and traded a silent failure for a
+     NullReferenceException inside the failure path -- the worst possible place for one.
