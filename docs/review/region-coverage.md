@@ -4431,3 +4431,26 @@ never referenced was wrong; it is true only of `officeDocument`, which readers f
 call initially split `NormalizeWorkbookForSchema(); return;`, which an existing source contract
 anchors on. I moved my call rather than loosen that contract: accommodating a new change by
 weakening the guard that caught it is how a suite stops meaning anything.
+
+## r314 — the same question asked of the sister apps
+
+r313 found FreeX's XLSX save was not reproducible. FreeW and FreeP write OPC packages too, and the
+shared tier is known to mirror FreeX and then drift, so the honest move was to ask rather than to
+assume the defect generalises -- or that it does not.
+
+**Both are clean.** A .docx and a .pptx each save byte-identically twice over, once the parts that
+record a timestamp are excluded by name rather than hoped to be stable. FreeX's defect came from the
+packaging layer it uses for XLSX specifically, not from anything shared. Guards are now in place in
+both apps, with vacuity checks -- the package must contain `_rels/.rels` and more than three parts --
+because a test that compares two empty dictionaries passes forever and means nothing.
+
+**A mistake worth recording, because it was mine and it was loud.** My FreeP test declared
+`namespace FreeP.App.Presentation.Tests`, which is not what that project uses (`FreeP.App.Compositor
+.Tests`). Declaring it made `FreeP.App.Presentation` a visible namespace, which then shadowed the
+`Presentation` TYPE in every sibling file importing the model: one new file's namespace stopped the
+whole project compiling, in files I had not touched. I diagnosed it by removing my own file and
+rebuilding -- the error count went to zero, which located the cause in one step and ruled out the
+"this project was already red" explanation I would otherwise have reached for. Matching the
+surrounding convention is not a style preference here; it is load-bearing.
+
+Lanes green: FreeW.Core.IO.Tests 1939/0, FreeP.App.Presentation.Tests 5915/0.
