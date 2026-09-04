@@ -7227,3 +7227,45 @@ then the writer was restored and verified byte-identical.
 
 Lanes: Free.Shared.Pdf.Tests 232/232, FreeX.Core.IO.Tests 6373/6373, FreeP.App.Presentation.Tests
 5950/5950.
+
+## r392 - Every FreeX adapter round-trips numbers under a foreign locale
+
+Closes r391's stated gap. r391 pinned three writers (.xlsx, .pptx, PDF) by scanning their output;
+this covers the whole adapter surface in one reflection-driven contract, so a format added later is
+covered the day it appears rather than the day someone remembers to write a test for it.
+
+A ROUND TRIP is the stronger instrument. Scanning bytes catches a writer emitting a comma decimal;
+a round trip also catches a reader parsing one with the wrong culture, and the case where writer and
+reader are both culture-sensitive and cancel out on the author's machine while corrupting the file
+for everyone they exchange it with. The text formats are the real exposure -- CSV, DIF, SLK, PRN are
+numbers-as-text by definition.
+
+**Result: all 18 adapters preserve 3.14 under de-DE, fr-FR and tr-TR.** Covered: CSV, CSV-UTF8, DBF,
+DIF, HTML, legacy XLS, MHT, native JSON, ODS, PDF, PRN, SLK, SpreadsheetXML, Unicode text, and the
+XLSX/XLSM/XLTX/XLTM family. Three (DBF, legacy XLS, PDF) are load-or-save-only and say so with
+NotSupportedException; the test REPORTS them in its failure message rather than skipping silently,
+because a silent skip is how a contract quietly stops covering what it names. The query is pinned at
+>= 18 so it cannot shrink to a confident green over zero coverage.
+
+Proven sensitive, not vacuous: making `DelimitedTextWorkbookWriter` format numbers with
+CurrentCulture turned 3.14 into **3** on reload -- real data loss -- and the contract caught it.
+Writer restored and verified byte-identical against a backup.
+
+### Open lead (characterised, deliberately not changed here)
+
+FreeX picks the CSV DELIMITER from the locale -- `;` on de-DE -- and `CsvFileAdapter`'s own comment
+explains why: "';' ... precisely because ',' is their decimal mark", citing "decimal-comma numbers
+like 1,50". But `DelimitedTextWorkbookWriter` formats the NUMBER invariantly, so FreeX writes
+`3.14;` -- a combination no locale produces. Excel on de-DE writes `3,14;`, and would import
+FreeX's `3.14` as TEXT. The read path was already made bicultural (TryParseFiniteNumber tries
+CurrentCulture then InvariantCulture, which is why the round trip above passes); the write path never
+was. The asymmetry is the defect.
+
+Not fixed in this round on purpose. The four call sites need different answers -- CsvFileAdapter uses
+a locale delimiter, CsvUtf8FileAdapter a fixed ',' (locale decimals there would SPLIT fields, which
+is exactly how the sensitivity probe above corrupted 3.14 into 3), UnicodeTextFileAdapter a tab --
+and any fix needs a guard for the case where the list separator equals the decimal separator. Making
+a four-adapter output change at the tail of a round, without Excel available to confirm per-format
+behaviour, is how r356 earned a full revert. Worth its own round.
+
+Lane: FreeX.Core.IO.Tests 6376/6376 green, 64 skipped.
