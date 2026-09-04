@@ -7101,3 +7101,51 @@ controls or drawing groups to construct, and the ledger keeps saying so rather t
 layer is done.
 
 Regression check: FreeW.Core.IO.Tests 1969/0.
+
+## r389 - FreeP presentation-command undo, and the write-time slide-id defect it exposed
+
+Applied r387/r388's undo-verification method to FreeP's `IPresentationCommand` (137 implementations):
+apply a command, assert the deck ACTUALLY changed, revert, assert the deck is byte-for-byte what it
+was. Six commands covered (InsertSlide, DeleteSlide, DuplicateSlide, MoveSlide, SetSlideHidden,
+SetShapeHidden).
+
+**Two instrument errors before the real finding.** The first comparison hashed the written .pptx and
+reported InsertSlide's undo as broken. Three controls disagreed with each other, which is the tell:
+(1) three back-to-back writes of one deck hashed identically -> the writer IS deterministic; (2) a
+part-by-part diff reported no differences at all; (3) a timestamp probe showed ZIP entry stamps move
+with the wall clock -- in FreeX's writer too, and in what Office itself writes, so not a defect.
+Hashing package BYTES is therefore timing-sensitive, and the failure was an artifact of the
+instrument. Rewrote the comparison to read part CONTENT.
+
+**The defect (fixed).** With content comparison the difference was concrete and survived:
+
+    before        : sldId 256, 257, 258
+    after insert  : 256, 257, 258, 259
+    after undo    : 256, 258, 259     <- slide 1 changed identity, permanently
+
+Not an undo defect. `PptxPackageWriter` allocated slide ids while walking slides in document order,
+seeding `usedSldIds` as it went. A slide with no id yet -- a freshly inserted one -- took the next
+counter value, 257; the slide that ALREADY owned 257 was reached later, collided, and was reassigned
+to 258, its successor to 259. The writer stores the result back on the model (`slide.NumericId = ...`),
+so **saving a deck permanently changed the identity of slides the user never touched**, and the
+command's Revert had nothing to do with it.
+
+Slide ids are not cosmetic: `p:sldZmObj/@sldId` zoom targets, custom shows and section membership all
+reference slides by id, so a save that renumbers them silently repoints those references. The writer
+already patches zoom targets at write time, which is evidence the coupling was known.
+
+Fix: clear every id the deck already uses BEFORE handing any out -- one pre-pass raising the counter
+above the deck's maximum, bounded at `int.MaxValue` so a deck sitting on ST_SlideId's ceiling cannot
+push the counter out of range. The inserted slide now takes a fresh 259, existing slides keep
+256/257/258, and undo restores exactly. This matches PowerPoint, which never renumbers an existing
+slide on insert; only a genuine duplicate is still reassigned.
+
+Both tests proven able to fail by neutering the pre-pass (`Take(usedSldIds.Count)`, which is empty
+there) -- 2 failed with the expected message, restored, verified identical to the backup. A first
+attempt at that revert probe silently did nothing because `python` is not installed on this machine
+and the heredoc never ran; the resulting "Passed" was stale and would have been a false proof.
+
+Lanes: FreeP.App.Presentation.Tests 5947/5947 green. Full FreeP.slnx has 14 failures in
+SlideCanvas/RichTextEditor/RenderCompare/dialog pixel-render tests; `query session` reports session 1
+`Disc`, the disconnected-session condition from r362 that returns blank WPF bitmaps. None touch slide
+ids and the lanes that do are green.
