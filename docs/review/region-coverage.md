@@ -3720,3 +3720,30 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      sheet is silent data loss of exactly the kind these formats are chosen to avoid. Proved by
      making the ODS writer emit only the first sheet: exactly one test fails, and the single-sheet
      formats keep passing.
+
+## r292 -- closing r291's gap, because the seam was already there
+
+449. **r291 recorded "FreeX does not warn when a save discards worksheets" as needing UI this
+     environment cannot exercise. That was wrong, and re-checking it beat trusting it.**
+     `WorkbookSaveService` already has a portable chokepoint that asks the adapter what it can do
+     (`IWarningCollectingFileAdapter`) and returns warnings through a channel the WPF host already
+     displays. The warning goes through the same place, so not one call site changed.
+
+450. **Declared as a capability, not a list of extensions.** `ISingleSheetFileAdapter` is a marker on
+     the six adapters that can hold one sheet, mirroring the interface beside it whose own comment
+     explains the reasoning: a new single-sheet format surfaces the warning by implementing it,
+     without every call site learning its name.
+
+451. **A declaration can drift from behaviour, so it is checked against behaviour.** Each adapter is
+     given three sheets, round-tripped, and its survival count compared against whether it declares
+     the marker. Dropping the marker from `DifFileAdapter` fails that test by name and count -- so
+     the warning cannot quietly start crying wolf, or quietly stop firing.
+
+452. **The message names the sheets rather than counting them.** "2 sheets were not saved" leaves the
+     user to work out which; the point of warning at all is that they can still act before closing
+     the file. Singular and plural are pinned separately so the sentence stays a sentence.
+
+453. **The r283 pattern, and now a habit worth stating.** Twice a gap was recorded as blocked on UI,
+     and twice the second look found an existing seam that made it testable. Recording a gap is
+     right; treating that record as permanent is not -- the next round should re-examine it rather
+     than inherit the earlier verdict.
