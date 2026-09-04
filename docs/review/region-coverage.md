@@ -4875,3 +4875,36 @@ why it differs** -- the test was already printing the part name and I had been f
 the output.
 
 Four consecutive full-lane runs green afterwards: 6327 passed, 0 failed.
+
+## r327 — FreeP's ChartEx write-back is complete; four candidate gaps, four resolved
+
+r322 established that FreeP patches each modelled aspect into a preserved `cx:chartSpace` and gates
+each patch on an explicit `ChartEx*EditRequested` flag. It did not ask the completeness question that
+r316 would: does every command that edits one of those aspects actually SET its flag, and does every
+aspect the UI offers actually reach the file?
+
+**The flag pairing is disciplined.** All four flags exist and all four are set; every write to a
+gated aspect is immediately followed by its flag, and each command's `Revert` restores the PREVIOUS
+flag value rather than clearing it, so an undo cannot strand the chart in "edit requested" state.
+
+**Four candidate gaps, each traced rather than pattern-matched:**
+
+- `Title`, `Legend`, area formatting, series aspects -- patched and flag-gated. Fine.
+- `TitleOverlay` -- I thought this was lost, because the create-a-new-title branch writes `overlay`
+  and the common case is a title that already exists. The update branch writes `overlay`, `pos` and
+  `align` too. Fine, and I had to read the second branch to know it.
+- `RoundedCorners`, `PlotVisibleOnly` -- read and written ONLY in the classic `c:` namespace. These
+  are not cx concepts, so the writer is right not to emit them.
+
+**The one residue is an affordance, not data loss.** `ChartDisplayOptionsPlanner` exposes
+`RoundedCorners` and `PlotVisibleOnly` for every chart, gating only `SupportsChartExTitleLayout` on
+`IsChartEx`. So the options dialog offers a waterfall or histogram chart two toggles that cannot
+affect its file. Nothing is corrupted and nothing is silently discarded from a format that could
+hold it -- the format has nowhere to put them. The fix, if wanted, is one more capability flag
+beside the one already there. Recorded rather than done: it changes what a dialog shows, which is a
+product call rather than a correctness one.
+
+No code change this round. The survey's value is that the ChartEx write-back is now known-complete
+against the aspects cx can represent, by tracing each candidate to its reader and writer rather than
+by matching names -- which is what r322 warned about after name-matching would have reported three
+handled aspects as unpatched.
