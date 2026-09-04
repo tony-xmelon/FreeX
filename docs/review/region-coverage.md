@@ -4592,3 +4592,40 @@ in one command, the test result is meaningless unless the build's error count wa
 for `error CS` is not the same as checking that count.
 
 Lane green twice: 6311 passed, 0 failed.
+
+## r319 — PRN reads its columns from position; the last carried item is closed
+
+This is the item the program had been carrying since r298, and it was the right call to leave it
+until the change could be made narrow enough to be safe. It now can be.
+
+.prn writes fixed-width, so a cell's column IS its position, but the reader numbered
+whitespace-separated tokens sequentially and discarded position. A row whose leading columns were
+empty came back shifted left -- a value saved in B2 with A2 empty loaded into A2 -- which made .prn
+the one adapter whose save-load-save could change a workbook's shape.
+
+The columns are now recovered the way Excel's Text Import Wizard suggests them: a character position
+blank on EVERY line is a separator, and the runs between separators are the columns. What makes this
+safe rather than the sweeping rewrite r298 declined:
+
+- **Tokenization is untouched.** Fields are still cut on whitespace runs exactly as before, so no
+  file separates differently. Only the column INDEX comes from position.
+- **The map is used only on evidence of a grid**: more than one column, and some line indented past
+  the first. A file with no empty leading column takes the old sequential path unchanged -- which is
+  precisely the case where a reader change could introduce a difference but never remove one.
+- **Ambiguity falls back rather than guessing.** Where a line packs two tokens into a width another
+  line fills completely, the rest of that line reverts to sequential columns instead of overwriting
+  a cell, and a test pins that no token is dropped.
+
+`R298_PrnWhitespaceReadShiftsLeadingEmptyColumnsTests` is INVERTED rather than deleted, exactly as
+its own summary instructed a year of rounds ago: it now asserts the value keeps its column, and it
+remains the assertion that would notice if the inference were removed or bypassed. The adapter's
+remarks are rewritten too -- they described the shift as a documented cost, and leaving that text in
+place would have been worse than the bug, since the next reader would trust it.
+
+Lane green: 6315 passed, 0 failed.
+
+**The carried list is now empty.** That is not a claim that no defects remain -- r310 through r318
+each found something a well-covered area was hiding, and the method that found them is not
+exhausted. It means every item this program recorded as outstanding has been fixed, or re-examined
+and found not to be outstanding, or (in the two lock fields' case) traced to a decision recorded in
+the product rather than a gap.
