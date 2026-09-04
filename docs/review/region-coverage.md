@@ -6591,3 +6591,39 @@ writer cannot serialise is the asymmetry -- recorded, not fixed, because guardin
 The result worth taking from this round is the negative one: the write path handles the string and
 numeric edge cases that most commonly corrupt spreadsheets, and the overflow path already matches
 Excel end to end.
+
+## r374 -- R82's fix, attempted and measured: three steps of five are trivial, two are not
+
+r359 costed R82's fix at five steps. This round built three of them to find out which estimates were
+wrong, then reverted rather than half-land a change to metadata preservation. The estimate is now
+grounded rather than guessed.
+
+WHAT WAS BUILT AND WORKS: `Sheet.ValueMetadataIndices` / `CellMetadataIndices` (step 1); the shift
+wiring (step 3); and undo capture/restore (step 4). All three compile and are behaviour-neutral,
+since nothing populates the dictionaries.
+
+THREE CORRECTIONS TO r359's ESTIMATE, all in the cheaper direction:
+
+- Step 3 is FOUR call sites, not 31. The 31 I counted are individual dictionary calls; they cluster
+  into four blocks -- one each in `DeleteRowsCommand` and `InsertDeleteRowsCommand`, two in
+  `InsertDeleteColumnsCommand` -- and every block ends with `sheet.CellPhoneticGuides`, which makes
+  the insertion point unambiguous. The helpers really are generic over `TValue`, so no new shift code
+  is needed.
+- Step 4 is NOT in `RowColumnShiftHelpers.CaptureAddressBearingState`, where r359 said to look. That
+  record does not carry the comment family at all. Undo for these dictionaries lives in
+  `RowColumnMutationSnapshot`, as a field plus a `CaptureDictionary` and a `RestoreDictionary` line.
+  Three lines, and the pattern is copy-exact from `HyperlinkMetadata`.
+- Step 1 is two properties, as expected.
+
+THE REAL COST IS STEP 2, and r359 understated it. "Populate at load, in `XlsxSourcePackage.Capture`"
+assumed that method walks worksheet cells with a sheet correspondence to hand. It does not -- its
+per-worksheet loops are save-side patch paths keyed by worksheet PATH, with no Sheet. And the load
+path cannot supply the values either, because it goes through ClosedXML, which does not surface
+`vm`/`cm` at all. So step 2 is a NEW pass over the source worksheet XML at load, correlating each
+worksheet part to its Sheet and parsing the attributes -- not a line in an existing loop.
+
+REVERTED, deliberately. Three-fifths of a fix to the code whose job is preventing metadata corruption
+is worse on main than none: the dictionaries would sit unpopulated and unused, and the next person
+would have to decide whether they were scaffolding or dead code. The value of the round is that the
+next attempt starts with the four insertion points named, the undo location corrected, and the one
+genuinely hard step identified -- which is what r359 was missing.
