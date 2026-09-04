@@ -4260,3 +4260,44 @@ site.
 
 With this the class r307 opened is closed: every hand-written copy is either behaviourally guarded,
 covered by the shape contract, or recorded above with why it cannot be.
+
+## r310 — a single-sheet save must keep the sheet the user is looking at
+
+r309's log listed this as a product decision deliberately left open: FreeX keeps the FIRST sheet on
+a single-sheet save where Excel keeps the ACTIVE one. **That entry was wrong, and the correction is
+the finding.** FreeX had already made the decision — `DelimitedTextWorkbookWriter` states the rule
+outright ("Real Excel's CSV/TXT Save-As exports the active sheet, not the first sheet in tab
+order"), and DIF, PRN and SLK all follow it. Five of six writers were right. There was no product
+question here, only one writer that had not been brought along.
+
+**Bug 1 — `HtmlTableWriter` exported `Sheets[0]`.** A user who switched tabs and saved as HTML got a
+different sheet than the one on screen, silently. Fixed to the active sheet with the same bounds
+check the other writers use.
+
+**Bug 2 — the sheet-loss warning named the wrong survivor, and it was mine.** r292's
+`SingleSheetSaveWarningPlanner` reported `sheets[0]` as the sheet that was saved. Against writers
+that keep the active sheet, that is exactly inverted: the user was told their current sheet had been
+discarded and some other sheet kept. A warning that misnames what survived is worse than no warning,
+because it is the one message the user acts on before closing the file. Fixed to the active sheet,
+with the discarded list computed by exclusion rather than `Skip(1)`.
+
+**Why r292's own six tests did not catch it**: none of them ever made a sheet other than the first
+one active, so the bug was invisible to a suite that otherwise covers this planner well. The new
+tests vary precisely that, and one of them checks the warning against the bytes the adapter actually
+wrote rather than against a constant — the warning and the file have to agree.
+
+**Guarded the hazard too**: `NoSingleSheetWriterSelectsItsSheetByPosition` fails on any `Sheets[0]`
+in a single-sheet adapter or its writer, so the next one cannot reintroduce this. Its first run
+reported the fixed line itself — my explanatory comment names `Sheets[0]` — which would have
+punished writing the explanation down; it now reads code only.
+
+**Proved both fixes can fail**: reverting the HTML writer failed the HTML case and the contract;
+reverting the planner failed exactly the two tests that vary the active sheet, and neither of the
+two that do not. Full lanes green afterwards: FreeX.Core.IO.Tests 6281 passed / 0 failed,
+FreeX.App.Services.Tests 3575 passed / 0 failed.
+
+**A process note worth keeping**: after each revert probe the restored source was newer than the
+compiled assembly, yet `dotnet build` reported success without refreshing the test project's copy,
+so a full rerun showed my own new tests failing against probe binaries. `--no-incremental` on both
+the production project and the test project was needed. A build that says nothing is not the same as
+a build that did something.
