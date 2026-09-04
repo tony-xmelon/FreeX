@@ -5199,3 +5199,32 @@ them build their parts by hand. That is a structural prediction about where to l
 writers, not a coincidence about two features.
 
 Lane green: FreeX.Core.IO.Tests 6328 passed, 0 failed.
+
+## r337 — testing r336's hypothesis: half right, and the half that held found another defect
+
+r336 predicted that FreeP's and FreeW's hand-built writers would have MORE mandatory elements
+emitted conditionally. Tested on both.
+
+**FreeW: no.** A document adding a header, an empty footer, a footnote, an endnote and a bookmark to
+r335's fixture validates clean. So the `tblGrid` bug was a single site, not a pattern -- worth
+knowing, because "hand-built writers are riddled with this" would have been the easy conclusion from
+two data points and it is not what the evidence says.
+
+**FreeP: yes, at a second site.** A table cell whose text body exists but has no paragraphs writes a
+`txBody` with no `a:p` -- r334's exact defect, in the table-cell writer rather than the shape writer.
+r334 fixed one and left the other.
+
+The telling detail: the neighbouring `else` branch, for a cell with NO text body at all, already
+emits `<a:p/>` with the comment *"Empty txBody is required by spec"*. The author knew the rule and
+had written it down three lines away; the gap was the case where a body exists and is empty. Fixed
+the same way.
+
+**What this says about the lens.** r334's fix was correct and incomplete, and nothing in that round
+could have revealed the second site: its fixture had no table. The multi-feature idea is what found
+both -- first by combining features to expose the class, then by adding one more feature to find the
+class's second instance. A prediction that is half wrong is still worth testing; the half that held
+was a real bug and the half that failed corrected an over-generalisation I would otherwise have
+carried.
+
+Lanes green: FreeP.App.Presentation.Tests 5918/0, FreeW.Core.IO.Tests 1943/0 (r335's three tests plus
+the new one).
