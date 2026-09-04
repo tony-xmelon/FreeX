@@ -4819,3 +4819,27 @@ contract can live anywhere.
 slicer test failing, which briefly looked like the probe had found a second real defect.
 
 Lane green: FreeX.App.Avalonia.Tests 2282 passed, 0 failed.
+
+## r325 — closing the gap r324 measured in itself
+
+r324 added a shell-rebuild guard and then, by probing, found that it did NOT cover the
+slicer/timeline pane's detach: removing that guard left the test green. I recorded the gap rather
+than closing it, on the grounds that no seam opens the pane. That was wrong -- the seam existed.
+
+Two conditions had to hold at once, and each explains why the first attempt missed:
+`RefreshSlicerTimelinePane` builds its header only when the ACTIVE SHEET has a slicer, and
+`RefreshFromSharedWorkbook` returns early while the window is not visible. Showing the window and
+adding a slicer anchored to the active sheet meets both, with no production change: `window.Session`
+is already reachable from this lane, which existing tests here have used all along.
+
+The new test refreshes twice so the second pass meets a close button the first already parented --
+the exact sequence the pane's own comment describes ("a plain window resize is enough ... the second
+refresh with the pane open would take the shell down"). **It fails with the guard removed and passes
+with it**, which is what r324's version could not do.
+
+Worth keeping: r324's probe did its job, and the value came from probing a PASSING test. It would
+have been easy to add the rebuild test, see green, and record the class as covered. Removing each
+guard in turn is what turned "this passes" into "this covers the sheet-tab path and not the pane" --
+and that, once stated, was specific enough to close in one round.
+
+Lane green: FreeX.App.Avalonia.Tests 2283 passed, 0 failed.
