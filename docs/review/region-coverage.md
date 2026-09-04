@@ -3412,3 +3412,39 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      the sanitizer, whose archive is disposed by `using (archive)` on a later line -- a form the
      detector did not know. Same shape as r268's delegation, r270's `_ = await` and r272's
      `Task.Yield`: when a scan indicts long-standing code, the scan is the likelier suspect.
+
+## r282 -- a fence of mine that tested the shape and not the substance
+
+394. **New class: exceptions swallowed silently.** 207 catch blocks across the three apps have no
+     executable body; 169 carry a comment explaining why, which makes them deliberate. The 38 bare
+     ones were the candidates, and most are legitimate best-effort teardown.
+
+395. **Four of them were UI task funnels, and r270's contract could not see them.**
+     `TheGuardHelpersStillCatch` asserted that a guard has a `catch`. Three copies in
+     `ReferencesDialogs` and a fourth in `StyleDialog` had one -- binding `ex` into an EMPTY body. So
+     a failing OK button, or Add/Edit/Copy source, did nothing at all: no message, no log, no crash.
+     `MainWindow`'s equivalent funnel reports to the status bar, which is what the others should have
+     been doing.
+
+396. **This is r277's failure mode found in my own fence, one round after naming it.** A contract
+     that checks a catch EXISTS tests the shape; what matters is whether anything is done with what
+     it caught. Strengthened to require the bound exception be used, and that immediately found the
+     fourth funnel, in `StyleDialog`, which the hand survey had missed.
+
+397. **A fifth detector false positive, code right again.** The strengthened check first indicted
+     `AvaloniaUiTaskGuard` itself: a lookahead meant to skip the `when (ex is not ...)` filter also
+     excluded `onFailure?.Invoke(ex)`. The filter sits on the catch line, which the scan already
+     starts after, so the lookahead was never needed. Same lesson as r268, r270, r272 and r281.
+
+398. **The lower-bound assertion earned its keep in the same round it was written for.**
+     Consolidating four funnels removed four discards, the population fell 16 to 12, and the floor
+     tripped instead of letting the scan quietly shrink. Lowered to 8, keeping the previous headroom,
+     with the reason recorded rather than the number silently adjusted.
+
+399. **Stated plainly rather than overclaimed: this is not yet a user-visible fix.** The four dialogs
+     now route through the shared `AvaloniaUiTaskGuard`, so there is ONE place to attach reporting
+     instead of four -- but FreeW's Avalonia dialogs have no error surface and no logging sink, so
+     with no `onFailure` supplied the failure is still silent. Building that surface is a real change
+     to a UI layer this environment cannot exercise, so it is left open and named here rather than
+     invented and shipped unverified. Five direct `AvaloniaUiTaskGuard` call sites pass no reporter
+     for the same reason.
