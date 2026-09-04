@@ -4529,3 +4529,35 @@ own history says sweeping that many at once on the strength of one measurement i
 get made. They are declared in the test, so they can no longer regress silently or be forgotten.
 
 Lane green: 6311 passed, 0 failed.
+
+## r317 — closing r316's declared losses, and fixing a flaky guard I had just added
+
+**Two of r316's six declared losses are now fixed.** `XlsxSourceDrawingGeometryRewriter` patched
+`cNvPr@descr` for a source-loaded picture but not its two neighbours, so editing a picture's Title
+or marking it Decorative was kept for a picture FreeX authored and silently dropped for one loaded
+from a file. The shape path has always patched `title`, and the fresh writer emits both -- only the
+picture's source-loaded path was behind. Proved by removing the fix: the census named exactly
+`Title` and `IsDecorative`.
+
+**r316's reasons for the other three were wrong, and that matters more than the fix.** I wrote that
+`IsVisible`, `LockAspectRatio` and `Locked` are "not written back onto replayed XML", which implies
+a freshly authored picture keeps them. It does not: `picLocks`, `noChangeAspect` and `cNvPr@hidden`
+appear NOWHERE in the drawing writer, so these are model state the .xlsx layer never records by any
+path. That is a wider gap than the source-loaded class, and a reader chasing my original wording
+would have gone looking in the wrong place. Reasons are now accurate.
+
+**A flaky test I had introduced two rounds earlier.** The full lane failed once on r313's tr-TR case
+-- a test with no pictures, which my picture change could not touch -- and passed on the repeat and
+in isolation. Cause: r313 and r315 set `CultureInfo.CurrentCulture` on the calling thread and
+restored it in a finally. The culture is thread-scoped, xUnit runs other tests in parallel and
+resumes async work on pooled threads, so the setting could be observed by, or restored on, a thread
+other than the one doing the work. Both now run their save/load on a dedicated thread that carries
+the culture and is joined. Three consecutive full-lane runs are green.
+
+That failure was worth more than the fix. A flaky guard in this position is not merely noise: it
+teaches the next reader to disbelieve it, so the real culture regression it exists to catch gets
+waved through as "that one's flaky". I also nearly misread it as a regression from the picture
+change, which is the same trap as the stale-binary runs -- the tell was the same, a failure in a
+test the change could not plausibly reach.
+
+Lane green three times: 6311 passed, 0 failed.
