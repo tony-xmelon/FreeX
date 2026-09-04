@@ -6167,3 +6167,42 @@ Two corrections this produced. My r361 entry named the wrong mechanism -- measur
 composition. And the standing note that the failure count "grows between runs" is unreliable: it was
 stable at 17 across consecutive runs here, because the session's state is not degrading, it is simply
 disconnected.
+
+## r363 -- swallowed exceptions in PRODUCTION code (clean)
+
+Moved off test infrastructure and onto product code, taking the class that has been most productive
+on the test side: a failure that is silently discarded. In production the cost is higher -- a user
+who is never told their data did not persist.
+
+Surveyed every `catch` in FreeX, FreeW, FreeP and the shared tier that could swallow:
+
+- 29 EMPTY catch blocks. All justified. Most are narrow typed catches over genuinely optional work
+  (`catch (XmlException)` on hand-authored native XML, `Directory.Delete` cleanup). The one cluster
+  worth naming is seven `try { x.Revert(ctx); } catch { }` sites across `Commands`,
+  `DataTableCommand`, `DuplicateSheetsCommand` and `SubtotalCommand`. Those look alarming -- a
+  swallowed rollback leaves a half-applied document -- but each is immediately followed by `throw;`
+  or by returning a failure outcome carrying the ORIGINAL message. Swallowing there is correct: if
+  the best-effort revert's own exception escaped, it would replace the exception that actually
+  explains the failure. SubtotalCommand documents exactly this in nine lines of comment.
+
+- 8 truly silent `catch (Exception) { return null/false; }` sites. All deliberate and documented:
+  `DecodePictureSize` returns null so insertion falls back to a default size, and
+  `TryOpenStartupDocument` states that an unreadable startup document returns null "matching the
+  existing launch failure policy". Speech engines and context-menu renderers are availability probes.
+
+- Every SAVE, EXPORT and AUTOSAVE path -- the highest-stakes subset, checked deliberately -- either
+  filters (`when (ex is IOException or UnauthorizedAccessException)`, `when (IsUnsupportedReplaceFailure(ex))`)
+  or returns a failure the user sees (`WorkbookSaveExecutionResult.Failed(ex)`,
+  `OperationOutcome<...>`). `AutosavePeriodicTaskLoop` captures the exception into a local rather
+  than discarding it.
+
+No defect. Recorded because the negative result is worth as much as a finding here: this class
+produced real bugs three times in the test tree (async-void Dispatch, the per-test catch, the backend
+probe) and zero times in product code, which says the discipline is applied where it is written down
+and lost where it is not -- test infrastructure has no reviewer.
+
+The detector was noisy in the usual way and is worth writing down so the next sweep does not repeat
+it: matching `catch (Exception)` followed by `return false;` flags every method that sets an
+out-param error message on the line before the return. `QuickAccessToolbarCustomizationFile` looked
+like silent data loss and is the opposite -- it builds a full user-facing message. Only a body whose
+ENTIRE content is a bare return is a candidate.
