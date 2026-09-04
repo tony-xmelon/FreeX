@@ -4125,3 +4125,29 @@ it is the kind of thing a per-command copy of the comparison would have got inco
 524. **Proved by deleting one assignment: `ShowGridlines: source [False] target [True]`.** That is
      precisely the shape of the real mistake -- a property added to the type and forgotten in the
      copy.
+
+## r306 -- bounding r305's class in FreeW, where the copy is shallow ON PURPOSE
+
+525. **`FreeWOptions.Clone()` is the sibling of FreeX's `CopyFrom` -- six fields copied by hand --
+     and NO test called it at all.** Its purpose makes the failure specific: it captures the Options
+     dialog's OPEN-TIME state for the reload-before-write merge, so a field it forgets is one the
+     merge believes was never edited, and the user's change to it is discarded on OK, silently.
+
+526. **The nested pages are shared by reference DELIBERATELY, and the type says why.** "Production
+     code never mutates AutoFormat or AutoCorrect in place -- an edit always assigns a freshly built
+     replacement object." So unlike r305's FreeX lists, independence is NOT the property here.
+     Asserting it would have contradicted a documented design decision; the sharing is pinned
+     instead, so a future move to deep copying is a decision rather than a drift.
+
+527. **The guard-the-guard test earned its place immediately.** `AutoFormatOptions` has VALUE
+     equality, so a freshly constructed default instance compares equal to the default -- meaning
+     the completeness test would have "passed" on a field it never actually varied. The guard said
+     so, and the fix was to flip a flag inside the nested object rather than merely construct one.
+
+528. **That asymmetry is worth recording: `AutoFormatOptions` has value equality and
+     `AutoCorrectOptions` does not.** r304 needed structural comparison for the latter; this round
+     needed content variation because of the former. Two sibling settings types, two different
+     equality behaviours, and a test that assumes either one is wrong half the time.
+
+529. **Proved by deleting one assignment: `AutoCorrectEnabled: source [False] clone [True]`** -- the
+     exact shape of a property added to the type and forgotten in the clone.
