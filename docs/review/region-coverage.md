@@ -4004,3 +4004,31 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      The `perl` substitution failed on the escaped quotes, the source was unchanged, and the run
      reported twelve passes that meant nothing. Caught by checking the edited line before trusting
      the result -- the same discipline the stale-binary readings needed.
+
+## r302 -- the round-trip property where failure costs the most
+
+501. **Autosave is the highest-stakes writer/reader pair in the three apps: it exists to give a user
+     back work they never saved.** A sidecar that loses a field is a recovery prompt naming the wrong
+     document, or a snapshot that cannot be matched to its original.
+
+502. **Unlike r301's clipboard, the pair IS exercised end-to-end** -- several workflow tests write a
+     real sidecar and read it back through production code. So the relationship was covered.
+
+503. **What was not covered is COMPLETENESS.** No test asserted that every field survives, so a field
+     added to the DTO later could be dropped by the serializer and the entire suite would stay green,
+     because nothing looks at it. All five round-trip correctly today.
+
+504. **The guard derives the field list by reflection rather than trusting a hand-written one.**
+     Adding a sixth property fails it immediately -- proved by doing exactly that -- while the
+     round-trip test keeps passing, which is the correct split: one says "the fields we check
+     survive", the other says "these are all the fields there are".
+
+505. **Malformed input pinned too, because of WHERE this code runs.** A truncated sidecar is precisely
+     what a crash mid-write leaves behind, and the recovery sweep reads every sidecar it finds.
+     Throwing on one bad file would fail the whole sweep -- so empty, non-JSON and truncated input all
+     return null rather than throwing.
+
+506. **The r301 lesson repeated itself within one round, and the check caught it.** The first probe's
+     `perl` substitution silently failed to match, the field was never added, and the run reported six
+     meaningless passes. Verifying the edit landed -- not the test result -- is what distinguished
+     that from a real green.
