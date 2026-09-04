@@ -5898,3 +5898,39 @@ a rejected approach with a proven reason is worth more than an untried idea -- t
 should not start here.
 
 Regression check after revert: R82 2/2, and FreeX.Core.IO.Tests is unchanged from r355's 6334/0.
+
+## r357 -- the colour-scale "defect" was a wrong test (FIXED, no product change)
+
+Second of r353's three, and the second to dissolve on inspection.
+`RoundTrip_ColorScaleIndexedColors_WritesTintedResolvedRgbColors` asserted through a `?.` chain and
+so never ran. Probing what the writer actually does:
+
+- UNEDITED round-trip: the saved stops keep their source spelling, `indexed="12" tint="-0.25"` and so
+  on, with no `rgb`.
+- After editing one stop: every stop is written as resolved rgb -- `FFC86432` for the value just set,
+  and `FF4583C1` for the untouched max.
+
+Both are correct. Preserving an untouched rule's own spelling is what Excel leaves on disk, and it is
+this codebase's source-preservation rule. The decisive corroboration is three tests up in the SAME
+file: `RoundTrip_ColorScaleThemeColors_WritesThemeIndexAttributes` says the writer "must round-trip
+the original theme/tint attributes instead of flattening to sRGB". The indexed test demanded exactly
+the flattening its sibling forbids.
+
+It was also wrong on the number. It expected the max stop to be (91,131,171); the palette resolves it
+to (69,131,193) -- which the sibling load test asserts, and passes. So the test contradicted a
+passing test in its own file on both the behaviour AND the value, and nothing noticed for as long as
+it has existed, because the assertion could not execute.
+
+Replaced with the two contracts that are real: an unedited rule keeps indexed/tint and gains no
+`rgb`, and an edited rule writes resolved rgb for every stop and keeps no stale `indexed`. Negative
+control run: putting the old (91,131,171) back fails with "Expected ... FF5B83AB, but FF4583C1
+differs", which proves both that the new assertion executes and that the old expectation was wrong.
+
+Sixteenth false positive, and the second in a row where a vacuous assertion concealed a WRONG TEST
+rather than a product defect. That is now the dominant outcome of hardening r353's sites: of the
+three "product defects" it reported, two were bad tests. The lesson is specific -- an assertion that
+has never executed has also never had its EXPECTED VALUE checked, so both halves are suspect, and the
+sibling tests around it are the cheapest oracle for which half is wrong.
+
+Regression check: FreeX.Core.IO.Tests 6335/0 (one test more than r355's 6334, the replacement being
+two tests where there was one).
