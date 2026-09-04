@@ -5375,3 +5375,33 @@ asks whether the bytes stop changing, the other whether the content does.
 With r342 this closes generation stability for all three writers.
 
 Lane green: FreeX.Core.IO 6333 passed, 0 failed.
+
+## r344 — closing r343's stated limitation, and two probes that would not fail
+
+r343 said of itself that it compared a shape -- counts and two cells -- so drift in a part it never
+read would be invisible. This compares EVERY part of the package, generation over generation, and it
+is stronger than r313's control: there the same in-memory model was saved twice, here the model goes
+back through the READER between saves, so a part that survives writing but is re-read slightly
+differently surfaces on the next write.
+
+**Every part is byte-identical across three generations.**
+
+**The interesting part is that I could not make it fail on purpose.** Two attempts to prove it had
+teeth, both by breaking the product:
+
+1. Reverting r313's relationship-id normalizer. Passed.
+2. Making that normalizer emit a random id per save. Passed.
+
+Neither is a flaw in the probes -- it is a fact about the architecture, and a useful one. Those paths
+only run on a FRESH workbook save; generations two and three take the source-package path, which
+replays the root `.rels` VERBATIM. The random id is therefore frozen at generation one and cannot
+drift, which is exactly why r313's control (two saves of a fresh model) caught the defect while a
+generation loop structurally cannot. The two tests are not redundant; they cover different halves of
+the same save.
+
+Rather than ship a comparison whose power was unproven, the test now demonstrates its own
+sensitivity: a workbook with one extra cell must compare as DIFFERENT, asserted in the same test. A
+stability claim from a comparator that cannot see differences is worth nothing, and after two failed
+probes that was a live possibility rather than a formality.
+
+Lane green: FreeX.Core.IO 6334 passed, 0 failed.
