@@ -6985,3 +6985,30 @@ same CJK and astral-emoji sample through each PRESERVES it exactly. The advice i
 No defect. Eighth time in this stretch a probe result that looked like a finding dissolved on the
 premise check -- here the codebase's own comment named the design before I could misreport it, which
 is an argument for reading the comment at the site before writing the ledger entry.
+
+## r385 -- options persistence, every property (clean)
+
+Another fresh surface: application settings, where the failure mode is a preference the user changes
+that quietly does not survive a restart. Done exhaustively rather than by sampling -- reflect over
+every readable/writable property on `AppOptions`, set a non-default value, save, reload, compare.
+
+43 properties. 41 mutated automatically, and 39 of those round-tripped unchanged. The other four all
+turned out to be deliberate:
+
+- `LastPersistenceError` is `[JsonIgnore]` with a private setter. It records the last persistence
+  failure, so persisting it would be circular.
+- `DefaultFormat` normalises. The probe first set the nonsense value "probe-value" and saw ".xlsx"
+  come back, which proves nothing -- so it was rerun with real ones. `.xlsx` and `.fxl` are kept,
+  nonsense falls back to `.xlsx`, and `.json` becomes `.fxl`, which `NormalizeDefaultFormat` does on
+  purpose: `.json` is the LEGACY workbook format and an old options file naming it is migrated
+  forward rather than left pointing at something the app no longer writes.
+- The two `List<string>` properties my reflection skipped -- and they are the ones where loss would
+  hurt most, being user-authored. Tested separately: `QuickAccessToolbarCommands` round-trips in
+  ORDER (order is the toolbar's meaning), and `SpellCheckCustomDictionaryWords` round-trips SORTED,
+  including `café` and `日本語`. Different handling of two same-typed properties, each matching what
+  the data means.
+
+No defect. Two method notes worth keeping, both of which changed the result here: a probe that sets
+an INVALID value cannot tell normalisation from data loss, and a probe that SKIPS a property type has
+not covered it -- the skip list is a finding to chase, not a footnote. Both were the difference
+between "two settings lost" and an accurate clean result.
