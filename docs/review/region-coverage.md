@@ -4561,3 +4561,34 @@ change, which is the same trap as the stale-binary runs -- the tell was the same
 test the change could not plausibly reach.
 
 Lane green three times: 6311 passed, 0 failed.
+
+## r318 — hiding a picture now survives the save
+
+The third of r316's declared losses turned out to be a plain user-visible bug rather than a format
+limitation. `SelectionPaneCommands` is the Selection Pane's eye toggle: it sets
+`PictureModel.IsVisible`, and nothing wrote it. Hide a picture, save, reopen -- it is back. The
+format has a place for this (`cNvPr@hidden`); FreeX simply never read or wrote it.
+
+Threaded end to end: `XlsxPicturePackagePart` gained `IsHidden`, the reader gained
+`ReadNonVisualHidden` beside its existing `descr`/`title`/decorative readers, both picture model
+construction sites set `IsVisible`, all three fresh-write paths emit the attribute, and the
+source-loaded rewriter patches it -- so an authored picture and a loaded one behave the same, which
+is the failure mode r316 exists to catch. Proved by removing the writer and rewriter lines: the
+census named exactly `IsVisible`.
+
+**The remaining two are a documented decision, not an oversight, and I had it backwards.**
+`PictureModel.Locked`'s own doc comment says reading/writing `a:picLocks` is deferred follow-up
+(R111-model-drawing-object-lock-1-1) and the field is session-only by design. `LockAspectRatio` is
+the same pair. So the census's last two entries now cite that decision rather than reading as
+undiscovered gaps -- the difference between "nobody noticed" and "someone decided", which is exactly
+what a reader of this list needs to know.
+
+**Two mistakes of mine in one round, both from the same cause.** My two perl edits for the two model
+construction sites BOTH matched the first site, so it got a duplicate `IsVisible` and the second got
+none. The build failed with CS1912 -- and the test run chained after it reported "Passed", because
+`--no-build` happily tested the previous binary. That is the fourth stale-binary read in this
+program. The lesson has now cost enough that it is worth stating plainly: when a build and a test run
+in one command, the test result is meaningless unless the build's error count was zero, and grepping
+for `error CS` is not the same as checking that count.
+
+Lane green twice: 6311 passed, 0 failed.
