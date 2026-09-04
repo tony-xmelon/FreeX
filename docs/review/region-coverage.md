@@ -5021,3 +5021,35 @@ works.
 Windows half needs nothing I do not have". True of the WPF tool, and I let it imply that the Avalonia
 tool might substitute on Windows. It does not. A cross-shell comparison still requires the Docker
 route; what is available locally is the WPF side alone.
+
+## r332 — Docker was a second disk bomb, in a place the hygiene tooling never looked
+
+r331 ended saying cross-shell comparison "still needs the Docker route", which I had never checked
+was available. r328's lesson applied again: **Docker is installed and running here.** The base image
+the documented Linux capture wants, `freex-linux-interactive:ubuntu24.04`, is already built.
+
+Looking at what else was there found the round's actual result. `docker system df` reported **79.9 GB
+of images and 77.6 GB of build cache**. 147 of those images were per-run parity-capture artifacts --
+`freex-linux-interactive-app-<app>-<hash>:current`, about 2 GB each, one per Linux capture run, 76
+for FreeX and 71 more for FreeW and FreeP. This machine's documented disk history is a 132 GB bin/obj
+bomb that the reaper was written to clear; a comparable one had been accumulating in Docker, which
+the reaper does not look at.
+
+Removed the 147 per-run images: **79.9 GB down to 23.8 GB**. Non-forced, so anything still referenced
+would have been skipped -- none were. The unhashed base tags survive, so the next capture does not
+rebuild from scratch.
+
+**The care here was in what I did NOT do.** Sixteen containers are running on this daemon and they
+are the user's own Nextcloud and nginx-proxy stack, not FreeX test containers. A `docker system
+prune`, the obvious command for a 158 GB report, could have taken down real services. The build cache
+(77.6 GB, 21.5 GB reclaimable) is likewise shared with whatever else builds here and was left alone.
+Scoped deletion of images this project's own tooling created is defensible; a broad prune on a
+machine running someone's production stack is not, whatever the disk figure says.
+
+The reaper now REPORTS leftovers (all three apps, matching only images with a per-run hash so base
+tags are excluded) and prints the scoped reclaim command, rather than deleting anything itself --
+for the same reason. Validated with the PowerShell parser and by running it.
+
+**Two assumptions of mine were wrong in two rounds**: that parity capture could not run here (r328),
+and that Docker was unavailable (r331/r332). Both were load-bearing in how I described the review's
+limits, and both cost one command to check.
