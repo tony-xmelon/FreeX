@@ -4487,3 +4487,45 @@ Lane green on freshly built binaries: 6309 passed, 0 failed. The first run after
 four ODS failures because the restore had not been rebuilt -- the same stale-binary trap as r310 and
 r313, and the third time this program has read its own probe leftovers as a regression. The tell is
 always the same: failures in tests the change could not plausibly touch.
+
+## r316 — the source-loaded dimension, measured field by field
+
+A drawing loaded from .xlsx replays its original XML on save, so a model edit is dropped unless a
+save-time rewriter patches that specific field. This codebase has fixed that class repeatedly, one
+field at a time, and carries 176 test references to `IsSourceLoaded` -- all of them EXAMPLES. What
+was missing is completeness: nothing said which fields are covered, so a field added to the model
+joined the unpatched set silently.
+
+So the field list is now derived by reflection, and every scalar member of `PictureModel` must be
+exercised, declared derived-on-load, or declared lost -- a new member belongs to none of those and
+fails the census until someone decides which it is, at the time it is added rather than when a user
+reports it.
+
+**Six members are genuinely not carried back**, and they are now declared and counted rather than
+silent: `Title`, `IsDecorative`, `IsVisible`, `LockAspectRatio`, `Locked`, and `Name`. `AltText`
+survives, which is what makes `Title` and `IsDecorative` look like gaps rather than design --
+they are the same accessibility concept written to neighbouring attributes.
+
+**`Name` is the interesting one, and it is structural.**
+`XlsxSourceDrawingGeometryRewriter` pairs a source-loaded picture with its physical `xdr:pic`
+element by MATCHING `cNvPr@name` against `PictureModel.Name`. Name is the identity key, so a rename
+cannot be written through the very mechanism that locates the element to write it to. That raised a
+worse hypothesis than a dropped rename: a renamed picture matches nothing and falls into positional
+pairing among the leftovers, so another picture's size edit might land on it. **I tested that and it
+does not happen** -- renaming the first of three pictures and resizing the third puts the resize on
+the third and leaves the others untouched. Hypothesis raised, tested, disproved, and the test kept.
+
+**Most of the first measurement was my own fault, not the product's.** The raw run reported 24 lost
+edits. Sizes and offsets "failed" by 0.00005 because they round-trip through EMUs; the four crops
+"failed" because I set them to 3.5 when a crop is a fraction clamped to 1; `Kind`, `ContentType` and
+`DrawingAnchorKind` "failed" because they are derived on load, and the camera-picture fields because
+they are meaningless for an embedded image. Six real losses out of twenty-four reported. Reporting
+the twenty-four would have been worse than reporting nothing.
+
+**Bounded follow-up, with exact names**: the five non-structural declared losses (`Title`,
+`IsDecorative`, `IsVisible`, `LockAspectRatio`, `Locked`) each need a save-time rewriter patching
+their `cNvPr` attribute. That is five OOXML writer changes in the drawing path, and this program's
+own history says sweeping that many at once on the strength of one measurement is how false fixes
+get made. They are declared in the test, so they can no longer regress silently or be forgotten.
+
+Lane green: 6311 passed, 0 failed.
