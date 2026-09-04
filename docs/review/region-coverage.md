@@ -7269,3 +7269,49 @@ a four-adapter output change at the tail of a round, without Excel available to 
 behaviour, is how r356 earned a full revert. Worth its own round.
 
 Lane: FreeX.Core.IO.Tests 6376/6376 green, 64 skipped.
+
+## r393 - Plain CSV writes the locale decimal mark, as Excel does
+
+Acts on the lead r392 characterised. FreeX already took the CSV DELIMITER from the OS list separator
+because Excel does -- ';' on de-DE, and `CsvFileAdapter`'s own comment says why: "precisely because
+',' is their decimal mark". But the number was still written invariantly, so FreeX emitted `3.14;`,
+a combination no locale produces. Excel on such a machine imports that as TEXT, which means every
+number FreeX exported was unusable for exactly the user the localisation was for. Only the write path
+was wrong: the reader already tries the current culture then the invariant one, so FreeX read
+European files correctly and its own round trip stayed green -- the defect was invisible to any test
+that only went out and back.
+
+Fix: `DelimitedTextWorkbookWriter` takes an `IFormatProvider`, defaulting to invariant so no existing
+caller changes; `CsvFileAdapter` passes the current culture. Guarded -- a culture whose list separator
+IS its decimal separator keeps invariant numbers, since a decimal comma beside a comma delimiter
+splits one number into two fields (exactly how r392's sensitivity probe corrupted 3.14 into 3). Cells
+carrying an explicit number format are unaffected; those already render through NumberFormatter.
+
+**The suite caught two things I got wrong.** Routing the number through `WriteField` allocated a
+string per cell and broke `Save_StreamsNumericValuesWithoutPerCellStringAllocation` -- a real
+regression on the dense export path. Restored the zero-allocation direct write; it is safe because
+default double formatting emits no group separators, so the text can never contain the delimiter, and
+the guard above keeps that true. Two source guards pinning exact call-site text were updated to the
+new signature with their INTENT unchanged.
+
+**This overrides a prior deliberate decision, and that deserves stating.** `R275_CultureProbeTests`
+pinned invariant decimals for nine text formats, reasoning that "the decimal separator is part of the
+wire format and must not follow the operator's locale". That is right for eight of them -- SLK, DIF,
+SpreadsheetML, JSON and HTML specify their number syntax, and csvutf8/delimited/prn write a FIXED
+delimiter. Plain CSV is the exception: it specifies nothing, and its delimiter already follows the
+locale. So r275's list was NARROWED rather than discarded, with the reasoning recorded in place.
+
+Caveat recorded honestly: real Excel is not available here (COM is not registered), so this rests on
+documentary evidence -- the adapter's own comment describing genuine European exports containing
+"decimal-comma numbers like 1,50", and the fact that `3.14;` is a combination no locale writes. The
+standing rule is to match Excel; if that reading is ever shown wrong, the change is one provider
+argument.
+
+Correction to my own earlier rounds: r275 had ALREADY probed culture across these text formats, so
+r391/r392 partly re-covered existing ground. r392's reflection-driven all-adapter contract and the
+PDF/PPTX coverage remain additions, but I overstated their novelty at the time.
+
+Lanes: FreeX.Core.IO.Tests 6378/6378 green. Default suite green across every lane that can see a CSV
+change (Services 3583, Integration 978, Model 6707, Calc 2057, Formula 5253). Two failures elsewhere
+are pre-existing: a source guard on SlicerTimelinePanePlanner.cs (a file this change never touches,
+so it fails identically on origin/main) and a WPF chart dialog in the r362 disconnected-session set.
