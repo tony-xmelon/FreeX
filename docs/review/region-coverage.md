@@ -3918,3 +3918,29 @@ it is the kind of thing a per-command copy of the comparison would have got inco
 484. **The idempotence check is kept for the seven that pass.** It costs one theory and guards every
      format against a whole class of loss nobody has thought of yet, which is the property that made
      it worth writing.
+
+## r299 -- the same property, applied to a different app's adapters
+
+485. **r298's idempotence check carried over to FreeW, where reader and writer are entirely separate
+     code from FreeX's.** Five of six reproduce themselves byte-for-byte: DOCX, ODT, RTF, plain text
+     and WordML.
+
+486. **HTML does not, and the diff named the cause precisely.** A paragraph with
+     `StyleId = "Heading1"` and no direct formatting writes as `<h1>text</h1>`; the reader takes the
+     bold that `h1` IMPLIES and materialises it as direct run formatting, so the second save emits
+     `<h1><strong>text</strong></h1>`.
+
+487. **It converges -- 326, 343, 343, 343 -- and that is the first thing worth establishing.**
+     Unbounded growth would make every open-and-save cycle inflate the file; a single normalisation
+     is a different and much smaller thing. The test asserts the FIXED POINT rather than the mere
+     inequality, so a future change that made it compound would fail here.
+
+488. **Not "fixed", and for a reason that cuts the other way from r298's.** For HTML written
+     elsewhere, reading the implied bold PRESERVES the author's appearance -- correct for an import
+     path. It is only redundant for HTML this adapter produced itself. Removing it would trade
+     fidelity on foreign documents for byte-stability on our own.
+
+489. **The cost is named rather than left implicit: style-implied formatting becomes DIRECT
+     formatting.** After a round trip, editing the Heading1 style no longer unbolds that text,
+     because the bold is now on the run. That is the kind of consequence a size comparison surfaces
+     but never explains, which is why the round did not stop at "17 bytes larger".
