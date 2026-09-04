@@ -5576,3 +5576,41 @@ pinned already, by the existing `/Encoding /WinAnsiEncoding` assertion.
 
 Standing gap confirmed, not a regression: `FreeX.App.Host` (the WPF shell) has no PDF exporter --
 the FreeX side of the "Save as PDF in every app and platform" requirement is still Avalonia-only.
+
+## r350 -- fmtScheme style lists below the schema minimum (FreeP, FIXED)
+
+Swept the defect class that produced four bugs earlier in this program: a schema-REQUIRED child
+emitted only when its collection happens to be non-empty. Both hand-built writers were checked
+against every conditional-emission guard they contain -- 31 in `PptxPackageWriter`, 23 in
+`DocxWriter`.
+
+The class itself is now exhausted. The guarded elements in FreeW are `w:tabs` (optional) and the
+`w:hdr`/`w:ftr` ROOTS, which turned out not to be guarded at all: the `Count > 0` beside them gates
+the part's .rels, correctly, while the root is written unconditionally. The four instances fixed in
+r334/r335/r337/r338 were the four that existed.
+
+But the sweep found a NEIGHBOURING defect in the same file, of a shape the earlier fixes did not
+have. `BuildThemeFormatSchemeXml` handled an EMPTY style list (generic 3-slot defaults) and a full
+one (reuse verbatim, which is what stops real effect styles being discarded on save). All four lists
+are `minOccurs="3"` in DrawingML, and one or two entries fell BETWEEN those branches and were
+written straight back out. `OpenXmlValidator` rejects the package: "The element has incomplete
+content" on `fillStyleLst` and `lnStyleLst`. Reachable by opening a .pptx whose theme carries a
+short style list and saving it -- the file FreeP writes is then schema-invalid.
+
+Worth naming: this is the same guard the r334 comment says was already fixed once, for the empty
+case. Fixing the degenerate end of a range does not fix the range.
+
+Fix: one `StyleListEntries` helper behind all four lists. Empty still takes the defaults; a short
+list is padded to three by repeating its own LAST entry, not a stock placeholder, because a
+`fillRef`/`lnRef` `idx` is a 1-based index into the list -- slots 1..N must keep their positions, and
+a reference past N is already outside the source's contract, where the theme's own final style is
+the closer answer. Lists longer than three are untouched: the schema sets a minimum, not a cap.
+
+Pinned by `R350_ThemeStyleListsMeetSchemaMinimumTests` in both directions -- 1 and 2 entries
+validate, padding preserves slot 1, a complete list is written back verbatim IN ORDER, and a
+four-entry list keeps its fourth. The order and pass-through assertions matter as much as the
+padding: padding a short list would be worthless if it quietly reordered or truncated a good one.
+Fail-before is genuine -- the probe failed on the unfixed writer with the two validator errors above,
+then passed.
+
+Regression check: FreeP.App.Presentation.Tests 5928/0, FreeP.App.Host.Tests 2540/0.
