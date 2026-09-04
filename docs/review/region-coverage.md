@@ -3270,3 +3270,40 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      name `Instance`. All three new tests fail on the old code and pass on the new, so this is a
      behaviour change and not a documentation exercise. One of them guards itself: if the two roots
      ever coincide on the host, it says so instead of passing vacuously.
+
+## r278 -- following r277's new failure mode to its source
+
+369. **r277 surfaced a distinct failure mode -- a fence that guards the callers instead of the
+     hazard -- so this round enumerated that shape rather than picking a new region.** Source
+     contracts that ban a string in a fixed file list are mostly legitimate (dedup and ownership
+     rules are meant to be file-scoped). The dangerous subset is narrow: a ban on OUR OWN API,
+     written because that API is wrong.
+
+370. **Two candidates from that subset were checked and cleared, which is what kept the third
+     credible.** The `AllCells()` ban in `WorkbookSelectionStatsCalculatorTests` pins the
+     implementation strategy of one hot path and is properly file-scoped. `DataValidationPresetPlanner`
+     walks a selected range but caps it first with `CellCount > maxCellsToScan` -- the dense-scan
+     audit did its job, and re-walking its 86 call sites would have repeated a finished round.
+
+371. **The third was r277's own twin, and it was worse than r277.**
+     `AppStoragePathPlanner.GetOptionsFilePathLabelOrFallback` names `OptionsFileName`, the constant
+     `"options.json"` -- FreeX's file. FreeW stores `settings.json`, so the method reported a path
+     that has never existed on any FreeW install.
+
+372. **Three separate contracts in three apps banned it, and it had zero production callers.** FreeW
+     had `DiagnosticsOptionsPathParityTests`, FreeP had its ownership tests, FreeX never called it.
+     Three fences maintained around a method nobody used, none of which could stop a fourth app from
+     picking it up. Deleted -- the compiler now enforces what three tests were asserting, and all
+     three solutions build unchanged.
+
+373. **Deleting it did not close the class, and stopping there would have missed the point.**
+     `GetOptionsFilePath` is still public, still FreeX-shaped, and had no fence at all -- the same
+     hazard one level down, which is exactly how r277's overload survived r169. Replaced the three
+     per-app bans with one rule at the boundary: no FreeW or FreeP source may reach for this
+     planner's options-FILE APIs. Its directory APIs are deliberately excluded, since
+     `ProductDirectoryName` is ambient per app and banning those would forbid correct code.
+
+374. **The contract carries its own premise as a test.** If `OptionsFileName` ever becomes ambient
+     per app, the ban is forbidding correct code -- so a second test asserts the constant is still
+     fixed and says to delete the contract rather than work around it, instead of letting a rule
+     outlive its reason the way r169's did.
