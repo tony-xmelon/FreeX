@@ -3887,3 +3887,34 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      own hand rather than by anyone else's edit.** That is the failure mode worth watching in a log
      this long: not that the code moves away from the note, but that the note was never a description
      of the code that shipped.
+
+## r298 -- idempotence, which finds losses without needing to name them first
+
+479. **Tested a PROPERTY instead of a feature: save, load, save, compare the bytes.** Every previous
+     format round in this program had to know what to look for -- a number (r275), a formula (r290),
+     a sheet count (r291), a hyperlink (r293), a comment (r294). Idempotence needs no such list: a
+     second save that differs means the load lost something or invented something, whatever it was.
+
+480. **Seven of eight adapters reproduce themselves byte-for-byte. PRN does not, and the diff named
+     the fault immediately.** A value written in column B on a row whose column A is empty comes back
+     in column A. Confirmed directly: B2 = 9.5 in, A2 = 9.5 and B2 blank out.
+
+481. **NOT called a bug, because the adapter documents the strategy that causes it.** The write side
+     is fixed-width, so position encodes the column; the read side splits on runs of whitespace,
+     which discards position. The header says so and calls it "the minimal correct interpretation ...
+     how Excel re-imports one". What it did NOT say is the cost, and the cost is a silent column
+     shift plus a non-idempotent round trip.
+
+482. **So the deliverable is the declaration, matching r294's lesson.** A format's losses have to be
+     written down before they can be judged loss-or-bug; that is what let ODS drop hyperlinks and
+     comments for so long. The consequence is now in the adapter's own docs, and pinned by tests that
+     say to INVERT them rather than delete them if the reader ever gains position awareness.
+
+483. **The change itself is deliberately not made.** Recovering the columns means inferring
+     fixed-width boundaries from whitespace runs across lines -- Excel's Text Import Wizard heuristic
+     -- which changes how every real .prn imports, not only files FreeX wrote. That is a format
+     decision, not a review edit.
+
+484. **The idempotence check is kept for the seven that pass.** It costs one theory and guards every
+     format against a whole class of loss nobody has thought of yet, which is the property that made
+     it worth writing.
