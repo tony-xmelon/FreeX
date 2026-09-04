@@ -5330,3 +5330,28 @@ passed every one of them. Adding these three tests costs almost nothing and clos
 "the file parses" and "the file says what it said before".
 
 Lanes green: FreeX.Core.IO 6332/0, FreeP.App.Presentation 5922/0, FreeW.Core.IO 1948/0.
+
+## r342 — checking that my own fixes do not accumulate
+
+r341 showed degenerate content survives ONE round trip. That is not stability. The fixes r334, r337
+and r338 all work by ADDING an element the model did not have -- an empty `a:p` where a text body
+carried no paragraph -- and that is precisely the shape that accumulates: if the reader turns the
+added paragraph into real content, the next save adds another beside it, and a document grows a blank
+line per save. A single round trip cannot see it, because generation one is where it looks correct.
+
+So each fix was run three generations deep and compared against the first:
+
+- **FreeP** -- a shape with an empty text body, paragraph count compared across three save/load
+  cycles. Stable. The added `a:p` does not round-trip into a paragraph that then gets a sibling.
+- **FreeW** -- a document with an empty paragraph between two populated ones, three generations.
+  Stable, and the blank line stays exactly one.
+
+**All clean.** No fixes.
+
+This round exists because of what r334-r338 did rather than in spite of it: four fixes that make the
+writer emit something extra deserve a check that the something extra is idempotent, and the natural
+time to run it is immediately after, while the mechanism is still fresh. Convergence over generations
+is a property this ledger already knows about (r299/r300 tested it for whole packages); what was
+missing was applying it to the specific elements this sequence introduced.
+
+Lanes green: FreeP.App.Presentation 5923/0, FreeW.Core.IO 1949/0.
