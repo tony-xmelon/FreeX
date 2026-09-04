@@ -6512,3 +6512,48 @@ grouping and breaks its neighbours.
 
 Regression check: FreeX.Core.Formula.Tests 5253/0, FreeX.Core.Model.Tests 6707/0,
 FreeX.Core.IO.Tests 6352/0.
+
+## r372 -- second calc batch: 29/31 match, and one open question for real Excel
+
+Second semantics batch, different areas: the 1900 leap-year bug, date rollover, Excel's
+round-half-away-from-zero, error propagation, lookup and text corners. 31 formulas.
+
+TWENTY-NINE MATCHED, including several this codebase clearly got right on purpose: `=DATE(2024,1,0)`
+= 45291 (day zero is the previous month's last day), `=ROUND(-2.5,0)` = -3 (away from zero, not
+banker's), `=INT(-2.5)` = -3 while `=TRUNC(-2.7)` = -2, `=SEARCH` case-insensitive against `=FIND`
+case-sensitive, `=VALUE("1,234")` = 1234.
+
+ONE WAS MY EXPECTATION, AGAIN. I marked `=DATE(1900,2,29)` as 59; it is 60 -- serial 60 IS the
+phantom leap day, 59 is 28 February. FreeX was right, and its two neighbours in the same batch
+(`=DAY(60)` = 29, `=DATEVALUE("1900-03-01")` = 61) already agreed with it, which is the corroboration
+I should have read before writing the expectation down. Fourth expectation error in this program;
+they now outnumber my false positives from detectors.
+
+ONE IS A GENUINE DISCREPANCY, LEFT OPEN. `=COUNT(1/0)` returns `#DIV/0!` in FreeX. LibreOffice
+returns 0, and Microsoft's COUNT documentation says "arguments that are error values or text that
+cannot be translated into numbers are not counted" -- not "propagate". `=COUNTA(1/0)` is the same
+shape: FreeX propagates, LibreOffice returns 1, and the COUNTA documentation says it counts "any type
+of information, including error values".
+
+The oracle was built rather than recalled: a workbook written by FreeX, with every cached `<v>`
+stripped from formula cells so LibreOffice had to compute the answers itself, then converted to CSV
+headless. That same run independently confirmed r371 -- LibreOffice answers `=2^3^2` with 64.
+
+NOT CHANGED, deliberately. The current behaviour is not an oversight: `BuiltInFunctions
+.StatisticalCore.Aggregates` carries a comment stating that a bare erroring argument propagates
+"matching Excel and mirroring Count()'s direct-vs-range-sourced error asymmetry", and two tests pin
+it (`=COUNT(NA())` and `=COUNTA(NA())` both expect `#N/A`). Someone decided this deliberately and may
+have checked it against Excel. LibreOffice is Excel-COMPATIBLE, not Excel, and diverges in places,
+so it cannot settle a question against a documented deliberate decision.
+
+To settle it, run in real Excel (COM is not registered on this machine):
+
+    =COUNT(1/0)     expect 0   if the docs are right, #DIV/0! if FreeX is
+    =COUNTA(1/0)    expect 1   if the docs are right, #DIV/0! if FreeX is
+    =COUNT(NA())    expect 0
+    =COUNTA(NA())   expect 1
+
+If Excel agrees with the documentation, the fix is two lines -- `continue` instead of `return err` in
+`Count` and `CountA` -- plus updating those two tests and the comment. Recorded rather than done,
+because overturning a tested, deliberately-documented decision on an oracle that is not the authority
+is how a correct behaviour gets broken.
