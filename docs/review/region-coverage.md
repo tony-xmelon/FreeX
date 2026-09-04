@@ -4780,3 +4780,42 @@ sounds obviously true ("an error is the same error however it arrives") can stil
 whole category of the things being censused.
 
 Lane green: FreeX.Core.Formula.Tests 5245 passed, 0 failed.
+
+## r324 — the Avalonia shell, and a red lane r311 left behind
+
+The shell's known crash class is re-parenting a long-lived control without detaching it first, which
+Avalonia rejects at runtime. Three sites guard it explicitly against thirty-six that add a
+field-held control to a panel -- and what separates the safe majority from the dangerous few is
+whether the path can run TWICE. The existing launch guard constructs the window once and lays it out
+once, so the dimension that decides whether this class fires was never varied.
+
+`R324_ShellRebuildDoesNotThrowTests` drives each internal rebuild seam twice with a layout pass
+between, so the second pass meets controls the first already parented. **It passes, and it is not
+vacuous**: removing the sheet-tab detach guard fails it.
+
+**It covers less than it first appeared to, and the probe is how I know.** Removing the
+slicer/timeline pane's detach guard does NOT fail it -- that path only runs with the pane open, and
+nothing in the test opens it (there is no internal seam that would). So the claim is exactly: this
+guards the sheet-tab rebuild path. The pane's rebuild is still reachable only through parity capture
+or a new seam, and its own in-code comment already describes what happens without the guard ("a
+plain window resize is enough ... the second refresh with the pane open would take the shell down").
+Stating that precisely is worth more than a test description implying the whole class is covered.
+
+A source scan over the thirty-six add-sites was the alternative and was rejected: they cannot be
+classified textually into "runs once" and "runs again", and guessing would have produced a list of
+mostly-safe sites.
+
+**r311 left this lane red and I did not notice for thirteen rounds.** `PivotFieldFilterSourceTests`
+pins the comparer in `PivotFieldItemsReader` as source text, and r311 changed exactly that line from
+CurrentCulture to Ordinal. I ran App.Presentation, Core.Model and Core.IO for r311 -- not
+App.Avalonia, which is where this parity contract lives. The change itself stands (both shells share
+that reader, so parity is unaffected; what changed is that a culture-aware set no longer merges two
+source values the file keeps distinct), so the pin is updated to the new comparer with the reason
+recorded beside it. The lesson is about lane selection, not the fix: "the lanes that build the code I
+touched" is not the same set as "the lanes that assert about the code I touched", and a source-text
+contract can live anywhere.
+
+**Seventh stale-binary incident**, same shape: a `--no-build` run after a probe build reported the
+slicer test failing, which briefly looked like the probe had found a second real defect.
+
+Lane green: FreeX.App.Avalonia.Tests 2282 passed, 0 failed.
