@@ -6002,3 +6002,43 @@ signature -- the reliable one is zero-ink plus an unmodified render path.
 
 Pushed on that basis. Not claiming the lane is green: it is 5335/5400 with 17 known-environmental
 reds, and the same 17 would appear on a clean checkout here.
+
+## r359 -- R82's fix, scoped concretely (plan, not yet implemented)
+
+r356 proved the guard cannot be narrowed from the XML. This round establishes what the real fix
+costs, because "needs an architectural change" is not actionable and was hiding the fact that the
+pieces already exist.
+
+The vm/cm binding is the ONLY address-bearing state in this codebase that is not modelled. Comments,
+threaded comments, hyperlinks, hyperlink metadata, rich-text runs and phonetic guides are all
+`Dictionary<CellAddress, T>` on `Sheet`, and every structural edit shifts them via the GENERIC
+helpers `RowColumnShiftHelpers.ShiftCommentRowsUp/Down` and `ShiftCommentColumnsUp/Down`, which are
+already `<TValue>`. Rich-value metadata missed that treatment because it "lives purely in the
+pristine source XML snapshot" -- which is exactly why it cannot survive a shift.
+
+So the fix is to model it, not to out-think the ambiguity:
+
+1. `Sheet.ValueMetadataIndices` and `Sheet.CellMetadataIndices`, both
+   `Dictionary<CellAddress, string>` holding the raw `vm`/`cm` values.
+2. Populate at load, in `XlsxSourcePackage.Capture`, which already walks every worksheet's cells and
+   is the one place holding both the source XML and the Sheet.
+3. Shift them: one added line beside each existing dictionary in the 31 comment-shift call sites
+   across `DeleteRowsCommand`, `InsertDeleteColumnsCommand` and their siblings. The helpers are
+   generic, so no new shift code is needed.
+4. Capture/restore them in `RowColumnShiftHelpers.CaptureAddressBearingState` so undo is symmetric --
+   the step most likely to be missed, since a miss shows up only on undo of a delete.
+5. In `MergeWorksheetCellNativeMetadata`, consult the model for the address instead of guessing from
+   signature counts. The whole `BuildRichValueSignatureCounts` /
+   `CellValueMatchesCapturedNativeMetadata` ambiguity guard then becomes unnecessary FOR THE DELETE
+   CASE and can be reduced to its original t/formula/value equality check, which is what protects the
+   edited-cell case.
+
+Deliberately NOT started here. It is a model + commands + IO change in the code whose entire job is
+preventing metadata corruption, it needs the full IO lane (6335) plus the command suites plus a
+17-minute host lane to verify, and a half-applied version -- shifted but not restored on undo, say --
+would corrupt bindings in a way the current conservative behaviour does not. Losing a binding is
+recoverable; cross-binding to the wrong rich-value entity is not, and that is the failure mode this
+area punishes.
+
+The defect stands as documented in r355/r356: B2 loses its binding after a sibling row is deleted,
+and R82's assertion on it stays annotated until step 5 lands.
