@@ -3307,3 +3307,48 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      per app, the ban is forbidding correct code -- so a second test asserts the constant is still
      fixed and says to delete the contract rather than work around it, instead of letting a rule
      outlive its reason the way r169's did.
+
+## r279 -- the same leak as r278, one layer up, and visible to users
+
+375. **r278 found a shared API carrying FreeX-specific semantics, so this round asked how many others
+     the shared tier has.** Most hits are legitimate per-app catalogs -- `BrandThemes` and
+     `ProductThemeResourceProfiles` define all three apps by design. The leak is the opposite shape:
+     a shared component that hardcodes ONE app's identity and is used by all three.
+
+376. **The shared WPF ribbon renderer resolves its themed brushes under FreeX's key prefix.** Themed
+     brushes are generated per app by `WpfThemeApplier.BuildResources(theme, keyPrefix)`, so FreeX's
+     surface is `FreeXRibbonSurfaceBrush` and FreeP's is `FreePRibbonSurfaceBrush` -- a prefix FreeP's
+     own startup test pins. All three WPF hosts render through this renderer; it asked for the FreeX
+     key by name.
+
+377. **Traced end to end before calling it a bug, because the alternative was a plausible-looking
+     false positive.** FreeW's ribbon dictionary declares no brushes at all and FreeP passes no
+     dictionary, so in both sister hosts every lookup missed and painted the hardcoded fallback --
+     `Brushes.White`, `Brushes.Gray`, `#DADCE0` -- regardless of the active theme. Both apps ship a
+     Midnight theme, where that is a white ribbon body under dark chrome.
+
+378. **Nothing caught it because the fallbacks are exactly right for one app.** FreeX defines these
+     keys as `#FFFFFF` and `#DADCE0` -- the same values as the hardcoded fallbacks -- so under the
+     default light theme the sister apps render identically whether the lookup resolves or not. The
+     defect only appears in a non-FreeX app under a non-default theme, which is the intersection no
+     existing test covers.
+
+379. **The renderer already had the right abstraction available and bypassed it.**
+     `ProductThemeResourceProfile` carries a per-app `KeyPrefix`, and `RibbonWpfPopupAdapter` was
+     already reaching for a theme-neutral key first -- but its fallback was still the FreeX one, and
+     the neutral key is defined by no app, so it fell through too.
+
+380. **Fixed additively so the app the keys were named for cannot regress.** `RibbonThemeBrushes`
+     resolves the running app's prefix first, then the FreeX key, then the hardcoded brush; a test
+     pins that second step so the previous behaviour stays reachable. Five call sites across three
+     files now route through it.
+
+381. **Three host-lane failures were proved pre-existing rather than assumed so.** The lane has known
+     drift, but that is not evidence. Neutralising this round's change to its exact previous
+     behaviour and re-running left all three failing identically -- two QAT options-dialog broadcast
+     tests and a MainWindow source-hygiene contract, none of which touch ribbon brushes.
+
+382. **A stale-binary reading nearly went the other way, for the second time in three rounds.** The
+     first run of the ribbon lane showed three failures because its last build had been the revert
+     probe, and the FreeW/FreeP solution builds do not include that test project. Rebuilding gave
+     55/55. `--no-build` reports whatever was compiled last, not what is on disk.
