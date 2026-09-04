@@ -6557,3 +6557,37 @@ If Excel agrees with the documentation, the fix is two lines -- `continue` inste
 `Count` and `CountA` -- plus updating those two tests and the comment. Recorded rather than done,
 because overturning a tested, deliberately-documented decision on an oracle that is not the authority
 is how a correct behaviour gets broken.
+
+## r373 -- save/reload round-trip fidelity (clean, one narrow gap)
+
+Highest-stakes surface remaining, since the failure mode here is silent data loss rather than a
+refused file: set a value, save, reload, compare. 18 shapes chosen to be awkward.
+
+FIFTEEN SURVIVED EXACTLY, including the ones that usually do not: text containing a newline, text
+with leading spaces (which OOXML needs `xml:space="preserve"` for), a 32,767-character string,
+astral-plane Unicode (an emoji outside the BMP, so a surrogate pair), right-to-left text, negative
+zero, `double.Epsilon`, a value in the very last cell of the grid (row 1048576, column 16384), and
+sheet names with a space, an apostrophe, 31 characters, and CJK.
+
+TWO ARE CORRECT BY DESIGN and worth writing down so they are not "fixed" later:
+
+- Formula text loses its leading `=` (`=1+1` becomes `1+1`). That is how OOXML stores it -- `<f>1+1</f>`
+  -- so the round-trip is canonicalising, not losing.
+- 0.12345678901234566 comes back 0.123456789012346. Excel keeps FIFTEEN significant digits and this
+  matches it exactly; storing all 17 would be the deviation.
+
+ONE NARROW GAP. Saving a cell whose value is `double.MaxValue` throws
+`ArgumentException: Value can't be NaN or infinity`, which would leave the workbook unsaveable rather
+than losing one cell.
+
+Reachability was checked before calling it a defect, and it is very low: every arithmetic overflow
+路 `=1E308*10`, `=1E308+1E308`, `=10^309`, `=EXP(1000)`, `=-1E308*10`, a divide by a denormal 路
+evaluates to `#NUM!`, exactly as Excel does, and those workbooks save cleanly. So infinity never
+reaches the writer through a formula; the value has to be pushed in through the model API directly.
+Excel itself refuses numbers above 9.99999999999999E+307 at entry, so the model accepting one the
+writer cannot serialise is the asymmetry -- recorded, not fixed, because guarding it means changing
+`SetCell` semantics for a path no user reaches.
+
+The result worth taking from this round is the negative one: the write path handles the string and
+numeric edge cases that most commonly corrupt spreadsheets, and the overflow path already matches
+Excel end to end.
