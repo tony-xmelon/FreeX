@@ -3775,3 +3775,35 @@ it is the kind of thing a per-command copy of the comparison would have got inco
      a `text:span`, so the anchor is not a direct child of the paragraph. The reader uses
      `Descendants` for exactly that reason, and the test rebuilds a package with the span shape --
      otherwise the fix would round-trip our own files and still fail on everyone else's.
+
+## r294 -- the same loss again, and the document that should have caught both
+
+459. **Asked what ELSE the ODS capability profile failed to mention, and found comments.** The
+     adapter's header lists what round-trips faithfully and what is deliberately deferred (charts,
+     images, data validation, conditional formatting, pivot tables, freeze panes -- "an expected
+     ceiling, not a bug"). Hyperlinks and comments were in NEITHER list, and both were silently lost.
+
+460. **That absence is the systemic defect, not the two features.** The profile exists to decide
+     loss-or-bug, and a feature missing from it cannot be judged at all. Both are now listed, with a
+     note saying that anything added to the adapter belongs in one of the two lists.
+
+461. **Three separate places had to learn that a comment is content, and the first two fixes each
+     looked complete.** The writer emitted the annotation -- but only for cells that already had a
+     value, because the code sat below `if (cell is null) return`. Moving it above that fixed the
+     markup. The reader still saw nothing, because `hasInfo` -- a DoS guard that skips a "fully
+     blank" cell run in O(1) -- does not count a note as information. And the table bounds never
+     reached a comment-only address in the first place.
+
+462. **Each step was found by dumping the actual bytes, not by re-reading the diff.** Twice the
+     written XML proved correct while a test still failed, which put the fault on the read side both
+     times; the third time the XML was empty, which put it back on the write side. Reasoning about
+     which half was wrong would have been guesswork.
+
+463. **The DoS guard was corrected, not weakened.** The O(1) skip for huge repeat counts on blank
+     cells stays exactly as it was; only the definition of "blank" changed, to include a cell
+     carrying a note or a link.
+
+464. **One test earns its place by covering an interaction rather than a feature.** The reader's
+     fallback path reads a cell's whole subtree when it finds no value paragraph -- which now
+     contains the annotation -- so a cell holding ONLY a note would have taken the note's text as its
+     VALUE, showing a comment as if it had been typed into the grid.
