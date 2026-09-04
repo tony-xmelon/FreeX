@@ -4843,3 +4843,35 @@ guard in turn is what turned "this passes" into "this covers the sheet-tab path 
 and that, once stated, was specific enough to close in one round.
 
 Lane green: FreeX.App.Avalonia.Tests 2283 passed, 0 failed.
+
+## r326 — the other commands that clear the flag, and a flake I had built into r313
+
+**The r320 sibling question, answered.** r320 fixed the RENAME path, where clearing
+`IsSourceLoaded` regenerated the object under a new name while the merger -- which supersedes
+originals by matching the model's CURRENT name -- failed to drop the original. Format and text edits
+clear the same flag but do not change the name, so the merger should still match. It does: changing
+a source-loaded shape's fill and editing a source-loaded text box's text each leave exactly one
+object. A prediction, checked, because r320 exists precisely because a prediction about this merge
+was wrong once.
+
+**And a flake in r313 that took three hypotheses to run down -- all mine.** The reproducibility
+control failed roughly one full-lane run in four while passing in isolation every time.
+
+1. *Thread-local caches*: my r313 helper runs each save on a fresh thread, and this codebase uses
+   `[ThreadStatic]` for writable static caches, so a cold thread might differ from a warm one. I
+   added a warm-up save. **Failures went UP** -- hypothesis falsified by its own fix, which I
+   reverted rather than keeping a change that did nothing.
+2. *Writer parallelism*: load-dependence suggests scheduling. There is no `Parallel.For` or
+   `AsParallel` anywhere in the save path. Falsified.
+3. Then I stopped guessing and captured WHICH part differed: `docProps/core.xml` -- the part holding
+   `dcterms:created`. An earlier version of `StableContent` excluded it; the exclusion was lost when
+   I refactored that method to report part NAMES, and its summary, which still promised the
+   exclusion, was left in place. Two saves straddling a second boundary then differed.
+
+The code and its own doc comment had disagreed for three rounds, and the comment was the accurate
+one. Both hypotheses I chased were plausible, and both cost a full build-and-run cycle; asking the
+failure what it was measuring cost one. **Get the failure to name the thing before theorising about
+why it differs** -- the test was already printing the part name and I had been filtering it out of
+the output.
+
+Four consecutive full-lane runs green afterwards: 6327 passed, 0 failed.
