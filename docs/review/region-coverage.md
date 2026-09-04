@@ -6816,3 +6816,43 @@ That closes all three deferred items put to the user: `picLocks` (r378), the Cha
 (r379), and this.
 
 Regression check: FreeX.App.Services.Tests 3579/0, FreeX.ParityCompare.Tests 49/0.
+
+## r381 -- FreeX wrote a workbook it could not reopen (FIXED; r373's note was wrong twice)
+
+Went back to an item this program recorded and did not fix: r373's "saving `double.MaxValue` throws,
+and it is unreachable". Both halves were wrong.
+
+FIRST, THE MECHANISM. The save SUCCEEDS. It is the RELOAD that throws. ClosedXML serialises with
+Excel's 15 significant digits, and for a magnitude within a few ulps of `double.MaxValue` that rounds
+UP past it: `1.7976931348623157E+308` is written to the file as `1.79769313486232E+308`, which is
+larger than `double.MaxValue`, so reading it back yields Infinity and ClosedXML rejects it. Confirmed
+by dumping the cell XML rather than inferring.
+
+That is materially worse than the note claimed. A save that fails is visible and recoverable; a file
+that saves and then cannot be opened tells the user their work is stored and loses it afterwards.
+
+WHY r373 GOT IT WRONG, which is the transferable part: its probe wrapped save AND load in one try
+block and reported "THREW" for the pair, so it could not say which had failed -- and the label it
+printed named the save. A probe's GRANULARITY is part of what it measures, exactly as its expectations
+are (r355, r370, r375). Splitting the two calls was the whole diagnosis.
+
+SECOND, REACHABILITY. r373 checked formulas only. CSV import was checked here: `1.8e308`, `1e309` and
+a 309-digit literal are all rejected as numbers and load as TEXT, so import cannot produce the value
+either. The model API can, which is enough -- the defect is that the WRITER emits something the
+READER rejects, and no input path should be able to do that.
+
+THE FIX USES THE CODEBASE'S OWN KNOWLEDGE. `MaxExcelRepresentableNumber` already exists, with a
+comment saying values this close to `double.MaxValue` "re-parse as +/-Infinity after ClosedXML's own
+numeric round-trip, which would crash on reload" -- and it was applied to the DateTimeValue arm and
+not to the plain NumberValue arm one line above. The hazard was known and guarded in one place.
+
+Deliberately narrower than that constant, though: `SurvivesExcelPrecisionRoundTrip` asks only whether
+the value actually survives its own 15-digit serialisation. Using the constant would have reclassified
+every magnitude above Excel's limit as text, including `1.79769313486231E+308`, which round-trips
+perfectly well today. Fixing the unopenable file must not silently retype a band of working numbers.
+
+Nine tests: three extreme values reopen; the value is kept as TEXT with its digits intact, since
+clamping would also stop the crash while quietly altering data; and five ordinary numbers -- including
+Excel's own maximum and the above-Excel value that does survive -- are still written as numbers.
+
+Regression check: FreeX.Core.IO.Tests 6365/0.
