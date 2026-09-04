@@ -4093,3 +4093,35 @@ it is the kind of thing a per-command copy of the comparison would have got inco
 518. **A stale-binary reading again, and again caught by rebuilding rather than believing.** The
      verification run reported one failure because `FreeW.slnx` does not contain the shared test
      project, so it still linked the probe's assembly. Rebuilding that project gave 445/445.
+
+## r305 -- the other half of the settings journey: the hand-written copy
+
+519. **r303 proved every option PERSISTS; `CopyFrom` is the step that gets a reloaded value back
+     into the live object, and it assigns forty-odd fields by hand with nothing checking the list.**
+     Its own summary says it exists so shells and sibling windows can keep one options reference
+     while a reload is adopted -- so a field missing from that list is not a crash: the value is read
+     from disk correctly and then silently not copied, and the window keeps showing the old setting
+     until the app restarts.
+
+520. **It is complete today. The point is the next property added to the type.** Same shape as the
+     snapshot-completeness contracts that drove this program's no-op ledger to zero: the risk was
+     never that the current list is wrong.
+
+521. **The first draft reported TWO failures and BOTH were the test's fault.** `CopyFrom` ends with
+     `Normalize()`, which legitimately rewrites `DefaultFormat`, the font settings and both lists --
+     so "r305-DefaultFormat" was rejected as an extension, exactly as it should be, and the list
+     assertions compared against literals that normalisation had reshaped.
+
+522. **Normalising the EXPECTATION is what separates the two questions.** With that, the test
+     measures whether `CopyFrom` carries each field rather than whether an arbitrary test value
+     survives validation -- the same correction r303 needed, repeated here because the trap belongs
+     to the code under test, not to one round.
+
+523. **Aliasing pinned separately, because a value comparison cannot see it.** A list copied by
+     REFERENCE passes every equality check and still lets one window's edit rewrite another's
+     toolbar. The snapshot is taken after the copy and before mutating the source, so normalisation
+     reshaping a list cannot be mistaken for sharing.
+
+524. **Proved by deleting one assignment: `ShowGridlines: source [False] target [True]`.** That is
+     precisely the shape of the real mistake -- a property added to the type and forgotten in the
+     copy.
