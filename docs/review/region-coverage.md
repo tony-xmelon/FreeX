@@ -6087,3 +6087,43 @@ Correction to a standing note: FreeP.App.Avalonia.Tests is recorded as unable to
 That is stale -- its backend probe succeeds and the suite runs 741 tests here.
 
 Regression check: FreeW.App.Avalonia.Tests 2297/0, FreeP.App.Avalonia.Tests 741/0.
+
+## r361 -- more silent self-skips, and the environment signature widens
+
+Continued r360's sweep across every way a test can skip itself.
+
+CLEAN, and worth recording as such: there are ZERO environmental early-returns (`File.Exists`,
+`OperatingSystem.*`) in any test project, and the conditional-fact attributes -- `BenchmarkFact`,
+`WindowsClipboardFact`, `HeavyWorkbookRetestFact` -- are all honest. They set `Skip`, so the runner
+reports SKIPPED rather than passed, which is exactly the distinction r360 turned on.
+
+Six more of the r360 shape, though, in the `if (x is null) return;` form:
+
+- `ChartRenderingTests` (FreeW, 3): `if (chart is null) return; // no chart selected in test
+  environment -- acceptable`. Those three tests exist to prove a style, colour scheme and quick
+  layout reach the SELECTED chart; a null selection made all three pass having asserted nothing.
+- `MasterLayoutRoundTripTests` (FreeP, 3): the same on `TextStyles`, `ColorMap` and a layout
+  placeholder's `lstStyle`, each excused by a comment as "no X to round-trip".
+
+Probed all six by replacing the `return` with a failure: every one PASSED, so the values are present
+and the tests do run today. The guards are dead residue -- of the dangerous kind, since they convert
+a future regression into a green run rather than a red one. All six now assert the precondition.
+
+The environment note needs widening, and this is the more useful finding. Both WPF host lanes have
+degraded mid-session: FreeX 17 failures, FreeP 11, FreeW 15, from 0/0/0 earlier in this same session
+on the same code. The FreeX and FreeP failures are pixel tests with the known zero-ink fingerprint.
+The FreeW ones are NOT all pixel tests -- `PagedEditNoteRegionTests` and `HeaderFooterPaginatorTests`
+are pagination logic -- and the reason they fail is:
+
+    Expected panel.PageBoxes to contain 1 item(s), but found 2:
+    PageBox { ActualHeight = 0.0, ActualWidth = 0.0, ... }
+
+Zero-size visuals. So the mode is not "pixel tests return blank bitmaps", it is "WPF measurement
+returns zero", and everything layout-dependent fails downstream of that -- pagination included. A
+lane can therefore show failures that look like ordinary logic regressions while the cause is the
+same environmental one. Checking only whether a failing test is a "render test" is not enough; check
+for zero dimensions.
+
+Regression check for this round's own changes, both run inside the degraded environment:
+ChartRenderingTests 20/20, MasterLayoutRoundTripTests 17/17. Lane totals are reported as-is and NOT
+claimed green: FreeW.App.Host 1915/1930, FreeP.App.Host 2529/2540.
