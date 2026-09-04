@@ -6581,7 +6581,7 @@ ONE NARROW GAP. Saving a cell whose value is `double.MaxValue` throws
 than losing one cell.
 
 Reachability was checked before calling it a defect, and it is very low: every arithmetic overflow
-路 `=1E308*10`, `=1E308+1E308`, `=10^309`, `=EXP(1000)`, `=-1E308*10`, a divide by a denormal 路
+-- `=1E308*10`, `=1E308+1E308`, `=10^309`, `=EXP(1000)`, `=-1E308*10`, a divide by a denormal --
 evaluates to `#NUM!`, exactly as Excel does, and those workbooks save cleanly. So infinity never
 reaches the writer through a formula; the value has to be pushed in through the model API directly.
 Excel itself refuses numbers above 9.99999999999999E+307 at entry, so the model accepting one the
