@@ -6468,3 +6468,47 @@ they treat any other open failure, and the user sees the same generic message ei
 to whoever reads a log or a crash report, not to the person opening the file. Recorded, not fixed:
 changing load error semantics for a diagnostic improvement is not worth the regression risk against
 the eight real defects this method has already banked.
+
+## r371 -- chained exponentiation disagreed with Excel (FIXED)
+
+First round into the calculation engine. Method as before, but the oracle is Excel's documented
+semantics rather than a schema: 25 formulas covering the coercion and precedence corners where
+spreadsheet engines classically diverge -- text-to-number promotion, boolean arithmetic, `&`
+concatenation, mixed-type comparison, blank handling, `%` postfix, lazy `IF`, `SUM` versus `+` on
+text, unary binding.
+
+TWENTY-THREE OF TWENTY-FIVE matched Excel exactly, including the ones that are easy to get wrong:
+`="5"+1` = 6, `="a"+1` = #VALUE!, `=TRUE+1` = 2, `=1<"a"` = TRUE (any number sorts below any text),
+`=TRUE>1` = TRUE, `=1=TRUE` = FALSE, `=-2^2` = 4, `=100-10%` = 99.9, `=SUM(3,)` = 3.
+
+TWO WERE MY OWN FIXTURE ERROR: I labelled `=A1=0` and `=A1=""` as blank-cell cases while the fixture
+set A1 to text, so FreeX's FALSE was right and my expectation was wrong. Recorded because it is the
+r355/r370 pattern for the third time -- the probe's expectations need checking as carefully as the
+product's behaviour.
+
+ONE WAS REAL. `=2^3^2` returned 512; Excel returns 64. Excel evaluates operators of equal precedence
+LEFT TO RIGHT, `^` included, so it groups `(2^3)^2`. The parser was right-associative, and
+deliberately so -- its comment spelled out "right-associative: 2^3^2 = 2^(3^2) = 512". That is the
+mathematical convention and what most programming languages do; it is not what Excel does, and Excel
+is the authority for this product's formula semantics. Nothing caught it because nothing tested a
+chained exponent: the comment asserted the behaviour and no test verified it.
+
+Worth naming the failure mode. It does not error, it returns a plausible number -- so a user
+comparing FreeX against Excel on the same file sees a silent numeric disagreement, which is the worst
+kind for a spreadsheet.
+
+THE FIX EXPOSED A SECOND ISSUE, and this is the part worth reading. Making the parse a loop broke
+`ParserSafetyTests.Parser_DeepPowerChain_ThrowsFormulaParseException`: a 700-term chain used to be
+rejected because each link cost one RECURSIVE PARSE FRAME against MaxParseDepth. A loop parses it at
+depth 1 -- but still builds a tree one node deeper per link, and evaluation walks that tree
+recursively. The stack risk moved from parse to evaluate rather than disappearing, and this codebase
+has a documented history of uncatchable StackOverflow crashes. The chain is now charged against the
+same limit explicitly, so associativity is fixed and the safety property is kept.
+
+`R371_ExponentiationIsLeftAssociativeTests` pins three chains (`2^3^2`, `3^2^3`, `2^2^2^2`) and four
+surrounding precedence facts the fix must not disturb -- `-2^2` = 4, `2^-1` = 0.5, and `^` still
+binding tighter than `*` -- because an associativity change is exactly the kind that fixes one
+grouping and breaks its neighbours.
+
+Regression check: FreeX.Core.Formula.Tests 5253/0, FreeX.Core.Model.Tests 6707/0,
+FreeX.Core.IO.Tests 6352/0.
