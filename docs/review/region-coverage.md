@@ -7043,3 +7043,31 @@ file I believed held them all -- a test catching its author's misreading before 
 written.
 
 No defect.
+
+## r387 -- FreeW command undo restores the document exactly (clean; pinned)
+
+Fresh surface: the authoring command layer, where the failure mode is an undo that LOOKS like it
+worked. `IDocumentCommand` has 67 implementations, each with `Apply` and `Revert`, and a `Revert`
+that restores 95% of the state leaves a document the user believes they reverted.
+
+Method: build a document with paragraphs, mixed run formatting and a 2x2 table; hash its serialised
+.docx; apply a command; hash again; revert; hash again. Undo is correct only if the third hash equals
+the first.
+
+Fourteen commands covered, spanning the kinds that differ structurally -- block insert/delete,
+paragraph style and formatting, run formatting, wholesale run replacement, table row and column
+insert and delete, horizontal and vertical cell merges, and a block reorder. ALL FOURTEEN RESTORED
+EXACTLY.
+
+The test carries its own vacuity guard, which is the part worth copying. Between the first and second
+hash it asserts the document ACTUALLY CHANGED. Without that, a command whose `Apply` silently did
+nothing would sail through the undo assertion -- the state before and after a no-op revert being
+identical -- and the test would report a working undo for a command that never ran. Every one of the
+fourteen changed the document, so none of the fourteen results is vacuous.
+
+Kept as `R387_CommandUndoRestoresTheDocumentTests`, and proved it can fail: skipping the `Revert`
+call fails on the first command with "undo must restore the document exactly".
+
+No defect. Fifty-three commands remain uncovered -- the ones needing images, revisions, bookmarks,
+fields or content controls to construct -- so this is a sample, not a proof over the whole command
+set, and the entry says so rather than implying the layer is verified.
