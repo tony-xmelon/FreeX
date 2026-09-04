@@ -5355,3 +5355,23 @@ is a property this ledger already knows about (r299/r300 tested it for whole pac
 missing was applying it to the specific elements this sequence introduced.
 
 Lanes green: FreeP.App.Presentation 5923/0, FreeW.Core.IO 1949/0.
+
+## r343 — generation stability for the third writer, where the mechanism is built in
+
+r342 checked FreeW and FreeP; this completes it. FreeX is the one where the accumulation mechanism
+is not hypothetical: `ApplyPackagePostProcessing` re-captures each saved package as the SOURCE
+package for the next save, so whatever one save adds is replayed by the following one, by design.
+That is the same feedback loop r316-r320 worked in from the other side.
+
+Three generations, comparing sheet count, merged-region count, a cell value and a formula. **Stable
+at every generation.** No drift.
+
+Worth stating what this does and does not cover: it measures a shape (counts and two cells), not the
+whole package, so it would miss drift in a part nothing here reads. The stronger property -- byte
+stability across generations -- is r313's territory, and r313 found a real defect there (a random
+relationship id) which is now fixed. Between them the two cover the same loop from opposite ends: one
+asks whether the bytes stop changing, the other whether the content does.
+
+With r342 this closes generation stability for all three writers.
+
+Lane green: FreeX.Core.IO 6333 passed, 0 failed.
