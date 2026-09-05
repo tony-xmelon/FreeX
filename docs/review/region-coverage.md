@@ -8701,3 +8701,52 @@ That closes the FreeP table surface end to end: grid and spans, row heights, ban
 insets, cell text formatting, and now cell fill and borders.
 
 Lane: FreeP.App.Presentation.Tests 6021/6021 green.
+
+## r438 — the auto-driver's first defect: Insert PivotTable loses merged regions on Undo
+
+r417 built a reflection-driven driver over every `IWorkbookCommand` and reported a census rather than
+a bare pass. Its honest number was the point: 148 of 228 commands produced *no visible change* and
+were never really exercised, and 124 could not be constructed at all. This round attacked the
+construction half by measuring rather than guessing which types blocked it — across the shortest
+constructor of every unbuildable command, `Nullable<T>` (111), `IReadOnlyList<T>` (49) and `Guid`
+(45) dominated everything else by an order of magnitude — and widened the value factory to those
+three shapes plus `CellColor`. Lists are built with exactly ONE element, deliberately: an empty list
+constructs just as well and then makes every such command a no-op, which would have inflated
+"constructible" while exercising nothing — the same false-coverage trap the census exists to expose.
+
+`notConstructible` fell 124 → 49 and the driver immediately failed on one command: `AddPivotTableCommand`.
+
+**The defect.** Rendering a pivot clears its target rectangle through
+`PivotTableRefreshService.ClearTargetRange`, which unconditionally drops every merged region
+overlapping the range it clears. The undo path replays cell *values* only (`Snapshot`/`Restore` carry
+`(CellAddress, Cell?)` pairs), so a merge inside the rectangle was destroyed on insert and never came
+back on Undo.
+
+This is damage that still looks deliberate. After Undo every number and every label is exactly where
+the user left it, so the sheet reads as correctly restored — while a merged report heading has
+quietly become four separate cells, with no undo step remaining that would bring it back.
+
+**Why it survived.** The identical hole had already been found and fixed twice in the same file, for
+the sibling paths: `RefreshPivotTableCommand` (meta-F2, round154) and `MovePivotTableCommand`
+(sweep92-F1). Round154's own comment even names the cause — *"AddPivotTableCommand.Restore above only
+replays cell values, never MergedRegions"* — while patching the refresh path and leaving creation
+alone. Creation is the one command that necessarily lands a pivot on top of the user's existing
+layout, and so the one most likely to meet a merged heading in the first place. Hand-written
+per-command tests had covered the two paths somebody thought to write a line for; a driver that
+enumerates all 228 has no such preference, which is precisely the value of building one.
+
+**Fix.** `AddPivotTableCommand` captures the merges overlapping its target range before the first
+render and re-adds them in `Revert`, mirroring its two siblings. Scoped to the rectangle the render
+clears, so an unrelated merge elsewhere is never touched; cleared on the growth-guard failure path,
+where the guard's own rollback has already restored `MergedRegionsBefore` wholesale and holding the
+list would risk re-adding a live merge.
+
+**Tests.** `R438_AddPivotTableUndoRestoresMergedRegionsTests` pins all four directions: the heading
+returns; it returns *with its text*, since a merge re-added over cells whose values did not come back
+would be an empty box; a merge outside the rectangle is untouched, catching a capture scoped too
+widely; and a sheet with no merges gains none, catching a Revert that merged the rectangle outright.
+Proven to fail by neutering the re-add — two failures, the r438 heading case and the r417 driver
+itself — then restored and re-run green.
+
+Census after: `types=228 notConstructible=49 threw=0 noChange=148 exercised=31 failed=0`.
+`FreeX.Core.Model.Tests` 6716 passed / 0 failed.
