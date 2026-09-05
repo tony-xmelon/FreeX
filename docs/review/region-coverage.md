@@ -9130,3 +9130,48 @@ the r443 `HasEffect` contract now exercised 53 times in FreeP and 41 in FreeW.
 a distinct domain object -- a chart options record, a SmartArt shape, a content control -- with no
 shared head left to attack. Hand-feeding them one at a time is the low-yield path r405-r416 already
 exhausted in FreeX, and it should not be taken again on that evidence.
+
+## r448 — a damaged .pptx opened as an EMPTY presentation, silently
+
+First application of the malformed-input probe to FreeP's reader -- the technique recorded as this
+program's highest-yield lens (eight defects in FreeX, none in the siblings) and never aimed here,
+though r428 and r429 both lived in this file.
+
+**Method.** Rather than hand-writing broken XML, write a VALID three-slide deck with
+`PptxPackageWriter`, then mutate one zip entry at a time and read it back: garbage slide XML, a
+truncated slide, a dropped slide part, garbage `presentation.xml`, dropped `[Content_Types]`, absurd
+extents, relationships repointed at missing parts, a non-zip, an empty stream. Round-tripping a real
+package avoids guessing the format, which is what makes the probe trustworthy.
+
+**Result.** Six of nine behaved. Three did not, and one of those is severe.
+
+**The defect: a corrupt `presentation.xml` produced ZERO slides and no error.** The slide list is read
+as `presRoot.Element(sldIdLst)?.Elements(sldId)`, so a presentation part the reader does not
+recognise -- a partially written save, or simply an unexpected namespace -- silently yields an empty
+deck. The user opens their deck, sees an empty document, and the moment they save that window the
+original file is overwritten with nothing. The slides were still sitting in the package the whole time.
+
+This is the worst form of the shape this review keeps meeting: not a crash, but damage that looks
+deliberate. An empty presentation is a state the user could have caused themselves, so nothing on
+screen says the file was not read.
+
+**Fix.** A package that CARRIES slide parts but resolves none of them is damaged and now says so.
+The condition is deliberately narrow -- a genuinely slide-less package (which this writer produces
+for an empty `Presentation`) has no slide parts either and still opens silently. Only the
+contradiction is rejected: slides on disk, none reachable. The check matches the conventional
+`ppt/slides/slideN.xml` path rather than following relationships, precisely because the relationship
+graph is what may be damaged.
+
+**Deliberately NOT changed.** A single unreadable slide is still absorbed: the reader documents that
+"one malformed slide part must not cost the user the whole deck", which is right and matches
+PowerPoint recovering what it can. A test pins that recovery so this guard cannot erode it.
+
+**Recorded, not fixed** -- the honest remainder. That per-slide recovery is entirely SILENT: a
+corrupt, truncated or missing slide comes back blank with no signal to the caller, so a user may
+assume the slide was always blank and save over what was there. PowerPoint repairs too, but it tells
+you it did. Reporting it needs a damaged-parts channel out of the reader, which this codebase already
+has precedent for (FreeX's lossy-save gate, r408-r410, and "Report a discarded worksheet once"). That
+is a design change rather than a guard, so it is written down instead of half-built.
+
+Proven by neutering the guard: exactly one of the five tests fails, the four that do not depend on it
+still pass. `FreeP.App.Presentation.Tests` 6031 passed / 0 failed.
