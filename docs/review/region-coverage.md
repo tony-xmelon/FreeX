@@ -7612,3 +7612,36 @@ unguarded zip open reads an archive it just WROTE on the save path, so it correc
 adding one there would have been noise dressed as diligence.
 
 Lanes: full FreeW.slnx green, all 7 assemblies, 11,774 tests.
+
+## r402 - Auditing the shared protection surface, systematically rather than opportunistically
+
+r397 and r401 both came from one shape: a protection that exists and is applied correctly nearly
+everywhere, with a single path that reaches the hazard before the check. Rather than keep finding
+those by luck, this enumerates the shared guards and asks of each: does every consumer apply it, and
+in the right ORDER? 18 `*Guard` / `*Policy` / `*Sanitizer` / `*Limits` types live in the shared tier.
+
+**`WorkbookOpenSizeGuard`** -- one real gap, fixed in r401 (the strict .docx pre-pass decompressed
+before the check). Every other package reader in all three apps calls it.
+
+**`ExternalFileWriteConflictPolicy`** -- the data-loss one: it stops a save clobbering a file another
+program changed since load. All three apps apply it in both a coordinator and a persistence workflow.
+The interesting part is the RECOVERY path, where FreeP's source documents the failure precisely: if
+crash recovery does not re-establish the write-time baseline, the policy "silently treats 'unknown' as
+'unchanged'", so the first save after recovery overwrites a copy that changed while the app was gone.
+Checked all three apps across both shells, because a fix in one shell is not a fix in the app:
+FreeP re-arms in `RestoreAutosaveSnapshot`; FreeW routes recovery through the guarded
+`OpenSnapshotAsync` in Avalonia and `FileCommands.OpenSnapshot` in WPF; FreeX's WPF host re-arms in
+`SetCurrentFilePathForRecovery`, recomputing from the ORIGINAL file's current write time and leaving
+the guard off when the original is gone. Six of six covered.
+
+**`XmlTextSanitizer`** -- guarded by a source-scanning tripwire in each app. Memory warns this class
+of guard can go vacuously green, which is the r396 failure exactly, so I checked for that rather than
+trusting the pass: all three carry a `MustStayCovered` list naming real writer files, with the
+reasoning spelled out -- "if it no longer matches, the regex has gone stale rather than the bypass
+having gone away". That is the right design, and it is present in all three.
+
+**No defect. No code change.** The value is the negative plus the method: the ordering question ("is
+the guard reached before the hazard?") is what turned up r401, and asking it of every shared guard is
+cheaper than waiting for the next one to surface. The remaining shared policies are UI-level
+(dialog/zoom/ribbon/title) where the failure mode is cosmetic rather than data loss, so they were not
+pursued.
