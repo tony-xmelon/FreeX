@@ -9253,3 +9253,36 @@ the surrounding "empty is fine" handling dresses the result up as a legitimate f
 different remedy -- refuse (FreeP), refuse (FreeW), warn (FreeX) -- decided by how much of the user's
 document survived. None was reachable from another app's test suite, which is why fourteen rounds of
 per-feature tests found none of them and nine mutations found all three.
+
+## r451 — the same class again, this time in a SECONDARY format (.ods)
+
+r448-r450 probed each app's primary reader and stopped there. That left every secondary format
+unprobed -- ODS and ODT are ordinary user-facing open paths, reachable from the same Open dialog.
+
+**ODS had the identical defect.** A `content.xml` whose root the reader does not recognise produced a
+workbook with one default sheet and no cells, silently: 13 cells became 0, and the next save wrote
+that over the user's file.
+
+**FreeW's ODT adapter already guarded its equivalent** -- a missing `office:body/office:text` throws,
+with almost the sentence r449 later had to add to the .docx reader. So this is the same "one path
+fixed, siblings left" pattern that produced r438 and r441: somebody solved it once, in one adapter,
+and the fix never travelled. Aligning the sibling rather than inventing a contract.
+
+The guard asks only whether `office:body` exists, never whether it holds tables: a workbook with an
+empty sheet has a body and must still open, and a test covers exactly that so the narrowness is
+verified rather than asserted. A fourth test pins the adapter's DELIBERATE tolerance of a malformed
+`styles.xml` -- "content.xml is authoritative", which is right -- so this guard cannot quietly
+narrow it.
+
+**Probe results, all nine.** Before: garbage/truncated/dropped content.xml, not-a-zip and empty all
+threw; a garbage styles.xml, a dropped manifest and a dropped mimetype all round-tripped fully intact
+(good, and worth recording as cleared). Only the wrong-root case lost content. After: all nine behave.
+
+Verified against real files, which is the risk with any reader guard: the full `FreeX.Core.IO.Tests`
+lane -- including the ODS fidelity suites that read genuine LibreOffice output -- is 6428 passed / 0
+failed. Proven by neutering: only the damage test fails.
+
+**The class now stands at four**: FreeP .pptx, FreeW .docx, FreeX .xlsx, FreeX .ods. Two readers were
+already correct before being probed -- FreeW's ODT, and FreeX's xlsx at the workbook.xml level -- so
+the pattern is not universal carelessness but a fix that never propagated. ODT is the one remaining
+sibling of this family and it is already right.
