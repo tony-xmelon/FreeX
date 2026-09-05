@@ -7806,3 +7806,40 @@ the snapshot reaches the state its command touches, so coverage and instrument d
 rather than coverage outrunning it.
 
 Lane: FreeX.Core.Model.Tests 6710/6710 green, 47 skipped.
+
+## r408 - A save-loss gate that did not know what the writers discard
+
+Chased an integration path rather than a defect class: does the pre-save "possible data loss" gate
+actually cover what a plain-text save destroys? It did not.
+
+`LossyFormatFeatureLossPlanner`'s own contract is "would silently drop content the format can't
+hold", and it enumerated worksheet count and drawing objects (charts, shapes, pictures, text boxes).
+Measured what a SINGLE-sheet workbook loses through a .csv round trip:
+
+    comments after round trip   = 0
+    hyperlinks after round trip = 0
+    merges after round trip     = 0
+
+All discarded, and **no confirmation was shown**, because none of them was on the gate's list. The
+delimited writers enumerate cell values and nothing else -- the same reason charts are unrepresentable
+-- so this was an omission in the check, not a belief that annotations survived. The class doc
+asserted "a single-sheet workbook with none of those loses nothing there", which was simply untrue
+for any workbook carrying a comment.
+
+Fix: an annotation predicate beside the drawing one, covering comments (classic and threaded),
+hyperlinks, merged regions, data validations and conditional formats. The class doc's enumeration was
+updated too, since it had become a false statement of the rule.
+
+**The two controls are the test, not decoration.** A plain single-sheet workbook must still NOT
+prompt -- without that, "warn about everything" satisfies the three loss cases and the gate becomes
+noise the user learns to dismiss. And .xlsx must still not prompt, so broadening a plain-text rule
+does not leak into a format that loses nothing. Each loss case also pairs its warning with a measured
+round trip, so the test proves the loss rather than assuming it.
+
+Checked the r394 interaction deliberately: that round suppresses the post-save sheet-loss warning for
+gated formats, so widening the gate could in principle have silenced a warning. It cannot here -- the
+suppressed message only fires for multi-sheet workbooks, which the gate already covered on sheet
+count alone. FreeX.App.Host.Logic.Tests (which owns the R69 lossy-save tests) is green.
+
+Lanes: solution build green; DefaultTests 31 assemblies, 0 failures; App.Services 3595,
+App.Host.Logic 1509.
