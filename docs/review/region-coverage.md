@@ -8106,3 +8106,37 @@ sample now covers all five structural families: in-place edits, structural inser
 shifting, annotation layers, and workbook-level sheet operations.
 
 Lane: FreeX.Core.Model.Tests 6711/6711 green, 47 skipped.
+
+## r417 - Auto-driving every constructible command, and reporting the census honestly
+
+r405-r416 grew the undo sample to 27 commands one line at a time, out of 228. That only ever finds
+bugs in commands somebody chose to write a line for. This drives them all by reflection: construct
+from a value factory, apply, revert, compare.
+
+**The census, which the test asserts on rather than hiding:**
+
+    types=228  notConstructible=124  threw=0  noChange=81  exercised=23  failed=0
+
+Every command that visibly changed the workbook put it back. The honest reading is NOT "228
+covered": 124 need arguments a factory cannot invent (a StyleDiff, a filter criterion, a chart) and
+81 made no visible change with generic arguments. Publishing that split is the point -- a test that
+reported a bare green here would be claiming coverage it does not have, which is the failure this
+program keeps finding in its own instruments.
+
+Seeding the fixture with comments, links, validations, formats, merges and sizing moved 5 commands
+out of "no visible change" and into exercised (17 -> 22, then 23 once AllowEditRanges entered the
+description). Coverage here is a function of how much state the fixture carries, not just of the
+driver.
+
+Three floors keep it honest: >= 200 command types found, >= 20 exercised, and < 30 throwing. Each
+guards a different way the sweep could quietly stop testing -- the query missing the assembly, the
+factory ceasing to match constructors, or arguments becoming universally invalid.
+
+**Proven sensitive**: deleting one line from `MergeCellsCommand.Revert` makes it report
+`failed=1 MergeCellsCommand` by name, with the census alongside. Restored and verified.
+
+This complements the hand-written harness rather than replacing it: the 27 explicit cases test
+commands with fixtures chosen to make them meaningful, while this catches anything constructible that
+regresses -- including commands nobody has thought about yet.
+
+Lane: FreeX.Core.Model.Tests 6713/6713 green, 47 skipped.
