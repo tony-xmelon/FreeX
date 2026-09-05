@@ -8525,3 +8525,27 @@ Three cases exist to stop the others passing for the wrong reason:
 zero flattens the differences the author scaled to show".
 
 Lane: FreeP.App.Presentation.Tests 6000/6000 green.
+
+## r431 - Chart data labels, and the override no single-level test can catch
+
+Data labels print NUMBERS onto a chart, and a reader takes a printed number as fact more readily than
+a bar height, which they know is approximate. That makes a label defect the most direct form of the
+pattern these rounds keep finding. **No defect.**
+
+The model carries labels at three levels -- chart, series, point -- and the OVERRIDE relationship is
+as much a part of the data as the flags. A series whose own settings are lost falls back to the
+chart's and still shows labels: the chart looks finished, and shows different numbers than the author
+chose. That case is asserted directly, with the chart level asking for values and the series for
+percentages, so a writer that dropped the series object fails while every single-level assertion
+still passes. Verified by suppressing the series-level write: exactly that case fails and the four
+others stay green.
+
+Two other choices worth stating:
+
+- **Flags asserted individually, with a deliberate MIX of true and false.** A writer emitting one
+  flag for all of them passes a test that sets them all true -- the same trap as r424's banding flags
+  and r430's gridlines, now the sixth model where it applies.
+- **A gains-no-labels control.** Invented labels are the failure that matters here: they print
+  numbers onto a chart the author deliberately left clean.
+
+Lane: FreeP.App.Presentation.Tests 6005/6005 green.
