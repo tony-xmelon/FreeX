@@ -8462,3 +8462,38 @@ The inner-shadow case also asserts `HasOuterShadow` stays false: the two share f
 only by element, so a writer emitting an outer shadow for both would pass a values-only check.
 
 Lanes: full FreeP.slnx green, all 8 assemblies, 9,835 tests.
+
+## r429 - A chart series with a gap collapsed on reload
+
+Chart data through the pptx round trip. **Found the most consequential defect of these rounds.**
+
+A series of `{1.5, null, 3.5}` came back as `{1.5, 3.5}` -- the gap collapsed, shifting every later
+point ONE CATEGORY TO THE LEFT. The chart still draws, with its remaining bars relabelled against the
+wrong categories. A chart is the one shape whose content is a DATASET rather than an appearance: a
+lost shadow is cosmetic, a shifted series states something the author never measured, and nobody
+reads a chart wondering whether a point is missing.
+
+**Two of the three components were already correct**, which is why this survived:
+
+    writer          : correct -- writes ptCount=3 with points at idx 0 and 2, null omitted, per OOXML
+    numRef reader   : correct -- pre-sizes from ptCount and places each value by idx
+    numLit reader   : APPENDED in document order, ignoring idx entirely
+
+And `numLit` is the branch taken whenever a series has no formula behind it -- the ordinary case for a
+chart authored in FreeP rather than linked to a worksheet range. The correct numRef handling was
+masking a defect in the COMMON path, which is exactly why existing coverage missed it: any fixture
+with a formula reference exercises the branch that works.
+
+Fixed by mirroring the numRef branch, including its clamps against a hostile ptCount or a negative
+idx.
+
+The null was in the fixture deliberately, and the test comment predicted the failure mode before it
+failed: "the null is a missing measurement, not padding -- collapsing it shifts every later point one
+category left while leaving a chart that still looks plausible." Writing down what a loss would LOOK
+like is what made the assertion worth making; a test asserting only "values survive" with no gap in
+the data would have passed.
+
+Third defect this session with the same signature -- damage that still looks deliberate -- after
+r421's inverted rule precedence and r412's dropped rotation.
+
+Lanes: full FreeP.slnx green, all 8 assemblies, 9,840 tests.
