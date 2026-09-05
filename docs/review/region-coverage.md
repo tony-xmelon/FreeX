@@ -7645,3 +7645,36 @@ the guard reached before the hazard?") is what turned up r401, and asking it of 
 cheaper than waiting for the next one to surface. The remaining shared policies are UI-level
 (dialog/zoom/ribbon/title) where the failure mode is cosmetic rather than data loss, so they were not
 pursued.
+
+## r403 - The policies r402 waved off, and why that dismissal was wrong
+
+r402 finished by calling the remaining shared policies "UI-level ... cosmetic rather than data loss"
+and not pursuing them. That was an assumption dressed as a scope decision, and it was wrong on its
+face: `AutosaveRecoveryPolicy` decides whether to DELETE a crash snapshot, which is the opposite of
+cosmetic, and the dialog numeric policies parse user-typed numbers, which is the culture surface
+r391-r393 spent three rounds on. Swept them.
+
+**No defect. Three things checked, each measured or traced rather than reasoned about:**
+
+- **`DialogNumericTextPolicy` / `PageMarginTextPolicy`** take `CultureInfo` as an explicit parameter
+  rather than reaching for a global -- the right shape. The risk therefore moves to what callers
+  PASS: an invariant culture on a user-typed field rejects "3,14" for a German user. All 20 call
+  sites thread a culture variable, and both shells resolve it to `CultureInfo.CurrentCulture`
+  (FreeW's WPF `ColumnsDialog` directly, Avalonia via `DialogCulture`). No cross-shell divergence,
+  which was the specific thing worth checking since the two shells are written separately.
+- **`AutosaveRecoveryPolicy.ResolveDisposition`** is careful in exactly the place it matters:
+  declined -> Keep, accepted-and-recovered -> Delete, accepted-but-FAILED -> Quarantine. No path
+  deletes a snapshot whose recovery did not succeed, which is what protects a user whose snapshot is
+  their only copy.
+- **The snapshot timestamp** is written `ToString("O")` but read with a bare
+  `DateTimeOffset.TryParse` -- no format provider, so culture-sensitive parsing of a value that
+  orders the recovery candidates. Wrong ordering means offering the wrong snapshot and losing the
+  newer work. Measured across en-US, de-DE, th-TH, ar-SA, fa-IR and ja-JP -- deliberately including
+  the Buddhist and Umm al-Qura default calendars, which are where ISO parsing usually breaks: all
+  six parse to year 2026 with correct ordering. The round-trip format carries an explicit offset, so
+  it is unambiguous. Stylistically the parse should still name InvariantCulture, but the code is
+  correct and I am not editing it on a smell that measurement disproves (the r399 rule).
+
+The round's real content is the correction: "cosmetic" was a category I applied without checking, and
+one of the three items in it was a data-loss policy. Scope decisions made by assumption are the same
+error as findings made by assumption -- they just fail quietly instead of loudly.
