@@ -9360,3 +9360,42 @@ eight found already correct. The yield per round fell from 3-of-4 readers (r448-
 (r452) to 1-of-6 here, and the last was a message-quality fault rather than data loss. That curve is
 the honest signal that this technique is close to exhausted on the reader surface -- not that the
 remaining readers are unexamined, but that they were examined and were sound.
+
+## r454 — closing the half of r448 that was recorded as unfixable
+
+r448 fixed the case where NOTHING could be read and deliberately left the per-slide recovery alone,
+recording it as needing "a damaged-parts channel the reader does not have". r450 then built exactly
+that channel for FreeX, which made it clear what FreeP's should look like -- so this closes the gap
+rather than leaving it as a note.
+
+**The recovery itself was never the problem.** Absorbing one bad slide instead of losing the whole
+deck is right and matches PowerPoint. What was wrong is that PowerPoint TELLS you it repaired the
+file, while this reader replaced the slide with a blank one and said nothing. A blank slide is
+indistinguishable from one the author left blank, so the user has no reason to suspect anything --
+and the next save writes that blank over whatever the file still held.
+
+**The mechanism was NOT where I assumed, and the test caught it.** The obvious suspect was the
+documented per-slide `catch`, so the warning went there first -- and the tests failed with no
+warnings while still proving the slide had been blanked. `ReadSlide` opens with
+`if (xml?.Root is null) return slide;`: a slide part that will not parse yields a blank slide and
+never throws, so that catch is not even reached. The loss was quieter than the code that documents
+it. Writing the test first is what turned a wrong premise into a five-minute correction instead of a
+shipped non-fix.
+
+**Then the first correct fix was too expensive.** Detecting it in the caller meant parsing every
+slide part a second time -- on every open of every healthy deck, for decks that reach hundreds of
+slides. Rejected on the same reasoning as r450's root-only scan: a diagnostic for a rare damaged file
+must not tax every good one. The report is now raised inside `ReadSlide`, where the null root is
+already known, through an optional callback.
+
+**End to end, because a warning nobody carries is worth nothing.** `PptxReadResult` (shaped after
+FreeX's `XlsxLoadResult`, so the two apps report load damage the same way) → `ReadWithWarnings` →
+`PresentationFileOpenResult.LoadWarnings` → appended to the opened-file feedback. `Read` still exists
+unchanged, so every caller with nowhere to show a warning is unaffected -- including the autosave and
+new-window paths whose behaviour r448's blast-radius check had already verified.
+
+Five tests: the warning fires and names the slide; the rest of the deck still opens with exactly the
+damaged slide empty; an undamaged deck warns about nothing; and both open-path directions. Proven by
+neutering the report: two of five fail, the three not depending on it pass.
+
+`FreeP.App.Presentation.Tests` 6040 passed / 0 failed.
