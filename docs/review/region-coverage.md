@@ -9092,3 +9092,41 @@ failures are a parallel session's in-flight CI migration and none is mine: commi
 dynamically resolved `& $pwshSource`. Non-skipped totals are 5374 before and after this change, with
 the delta exactly those two new failures -- this round added none. Left to that session rather than
 raced, since they are pushing to those files every few minutes.
+
+## r447 — raising the FreeP and FreeW factory ceilings by measuring, not guessing
+
+The last recorded gap of my own: the sibling drivers exercised 6 of 137 (FreeP) and 12 of 129
+(FreeW), because most commands need domain arguments a blind factory cannot invent. r438 established
+the method -- measure which types actually block construction across every unbuildable command, then
+supply the few that dominate -- so the same probe was run against both apps rather than hand-adding
+types by taste.
+
+**FreeP has no dominant blocker.** Unlike FreeX (Nullable 111, IReadOnlyList 49, Guid 45, an order of
+magnitude clear of everything else), FreeP's 58 unbuildable commands were blocked by a long tail:
+`MasterEditTarget` 6, `ShapeFill` 5, `SlideShape` / `ShapeOutline` / `TextBody` 3 each, `Slide` 2,
+then singletons. Supplying that head, plus seeding a master and a layout, took `notConstructible`
+60 -> 41 and `exercised` **6 -> 12**.
+
+The seeding repeats r442's lesson deliberately: `MasterEditTarget` addresses a master BY ID, so the
+fixture seeds ids the factory then answers with. Seeded state the invented arguments cannot reach
+changes nothing -- that is how adding a table moved r442's census by exactly zero.
+
+**FreeW's head was `IReadOnlyList<T>` (13), but of DOMAIN element types**, so supplying `Run`,
+`Paragraph` and `Block` unlocked the lists as well as the bare parameters. `Action<T>` came next at
+7 -- callbacks the command invokes, for which a compiled no-op delegate is the correct double.
+`notConstructible` 47 -> 29, `exercised` **12 -> 18**.
+
+**No new defects in either app.** The added coverage is measured rather than claimed: `exercised`
+counts only commands that visibly changed the document AND then had their Revert verified, so +6 and
++6 are real checks, not merely successful constructions. Pins raised to 10 and 15 so the gain cannot
+quietly erode.
+
+State of the seam across all three apps: FreeX 71 exercised, FreeP 12, FreeW 18, all `failed=0`, plus
+the r443 `HasEffect` contract now exercised 53 times in FreeP and 41 in FreeW.
+
+`FreeP.App.Presentation.Tests` 6026 passed / 0 failed. `FreeW.App.Presentation.Tests` 3002 / 0.
+
+**What is left here is genuinely diminishing**: the remaining 29 and 41 unbuildable commands each need
+a distinct domain object -- a chart options record, a SmartArt shape, a content control -- with no
+shared head left to attack. Hand-feeding them one at a time is the low-yield path r405-r416 already
+exhausted in FreeX, and it should not be taken again on that evidence.
