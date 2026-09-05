@@ -8549,3 +8549,29 @@ Two other choices worth stating:
   numbers onto a chart the author deliberately left clean.
 
 Lane: FreeP.App.Presentation.Tests 6005/6005 green.
+
+## r432 - Chart legend and plot area, completing the chart surface
+
+Finishes the chart family after data (r429, one real defect), axes (r430) and labels (r431). **No
+defect.**
+
+**The hazard specific to this pair is that both manual layouts are separate objects of the SAME
+type.** A writer emitting one for both, or a reader assigning one to the other, leaves the legend and
+the plot area sitting in the same place -- and every single-layout assertion still passes. They are
+given different coordinates and asserted separately; swapping the writer's legend layout for the plot
+area's fails exactly that case, with the legend receiving X=0.1 instead of its own 0.8.
+
+**One fixture error, caught before it became a finding.** The first version set a legend LAYOUT
+without a legend POSITION and read the empty result as a dropped setting. Measured: with no legend
+the writer emits no `<c:legend>`, so a legend layout has nowhere to live and writing nothing is
+correct; with the position set, the layout survives. That is the fourth time an interdependent field
+has produced a false positive in these sweeps -- after r419's list fields, r428's effect flags and
+r427's overstated premise -- and it is now pinned by its own test rather than left as a bare
+companion in the fixture, so a future writer that persists an orphaned layout forces the reasoning to
+be revisited.
+
+The layout losses are quieter than the chart family's other failures: a legend in the wrong position
+or a plot area reverted to automatic still produces a correct, readable chart -- just not the one the
+author arranged, usually arranged to stop the legend covering the data.
+
+Lane: FreeP.App.Presentation.Tests 6014/6014 green.
