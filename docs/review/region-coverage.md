@@ -8047,3 +8047,29 @@ its picture-only property.
 `SmallCaps: wrote True, read False`. A sweep nobody has seen fail is just a green light.
 
 Lane: FreeW.Core.IO.Tests 1982/1982 green. Writer restored and verified.
+
+## r415 - The property-persistence sweep, third app
+
+Completes the set: r413 swept FreeP's shape properties, r414 FreeW's character formatting, this one
+FreeX's cell styles through an .xlsx round trip. All three exist because r412 found a real instance --
+an edit applied on screen, written nowhere, gone on reopen with no error.
+
+A spreadsheet hides that class best of the three. A dropped wrap setting or number format reads as a
+formatting quirk rather than a save bug, and the value it was protecting is still visible on screen,
+so nobody investigates.
+
+**18 properties swept. No defect** -- every simple cell-style property survives.
+
+Two instrument details that decide whether such a sweep is worth anything:
+
+- **Values must differ from each property's default.** A value equal to the default round-trips
+  trivially, so a writer emitting nothing at all would still pass. `Locked` defaults to true, so it
+  is tested with false; `FontSize` with 14.5 rather than 11.
+- **It has been seen to fail.** Neutering the mapper's `WrapText` line makes the sweep report
+  `WrapText: wrote True, read False`. Mapper restored and verified.
+
+`Dxf*` properties are excluded with a reason rather than filtered silently: they are the differential
+format slots conditional formatting uses, not a cell's own style, and do not travel through a cell's
+xf record.
+
+Lane: FreeX.Core.IO.Tests 6379/6379 green, 64 skipped.
