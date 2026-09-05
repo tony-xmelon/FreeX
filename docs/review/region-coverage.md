@@ -8267,3 +8267,32 @@ for running the aggregate even when a change looks confined to one app.
 
 Lanes: FreeX.Core.IO.Tests 6406/6406 green; solution build green; DefaultTests 30 assemblies with the
 single r358 failure now fixed.
+
+## r422 - Gradient fills: a real gap, documented rather than papered over
+
+The last complex member of `CellStyle` unswept after r420. Measurement found an asymmetry:
+
+    native .fxl : gradient survives with type, angle, stops and path bounds
+    .xlsx       : gradient DROPPED ENTIRELY, in both directions
+
+**This is real loss, not a theoretical gap.** Gradients are live everywhere else in the product:
+`StyleDiff` carries one, so a formatting command can apply it, and the cell renderer, print page
+planner and gridline planner all draw it. A user can set a gradient, see it on screen and in print,
+save to the primary format, and reopen to find it gone -- with nothing reported. Only the native
+format keeps it. Confirmed by tracing: `CellStyle.GradientFill` is referenced 49 times in production
+outside IO/Model, but only `NativeJsonAdapter` maps it.
+
+**Not fixed here, deliberately.** There is no gradient mapping in the xlsx path in either direction,
+so this is an unimplemented feature rather than a regression, and implementing it is feature work --
+the r399 rule about not shipping speculative production changes applies as much to adding a capability
+as to hardening a hazard.
+
+What the round DOES leave behind is a suite that tells the truth. Three tests pin the native format's
+correct behaviour (including the middle stop of a three-colour blend, whose loss reads as a design
+choice rather than a bug, and the path type's four inset bounds that a linear-only mapper would never
+touch). A fourth asserts the xlsx limitation AS IT STANDS, with a message saying that if it ever
+starts surviving, the test and this entry both need updating. A limitation nobody has written down
+looks identical to one nobody has noticed; asserting it makes the gap self-correcting instead of
+stale.
+
+Lane: FreeX.Core.IO.Tests 6410/6410 green, 64 skipped.
