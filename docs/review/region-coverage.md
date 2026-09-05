@@ -7575,3 +7575,40 @@ covered, and a second copy would be noise rather than protection.
 Recorded because the negative is the useful artifact: the next person to ask "can a crafted file make
 FreeP write outside its temp directory?" gets the four paths and their sanitizers rather than having
 to re-derive them.
+
+## r401 - A zip-bomb guard that ran after the expansion it exists to prevent
+
+Swept decompression limits with the cross-app-drift lens that found r397. The shared
+`WorkbookOpenSizeGuard` is used well: FreeX's xlsx/ods, FreeW's DocxReader and OdtFileAdapter, and
+FreeP's PptxPackageReader all call it. One branch slipped past.
+
+**The defect.** `DocxFileAdapter.Load` ran the strict pre-pass FIRST -- `StrictOoxmlTransform.IsStrict`
+opens the package to read `word/document.xml`'s namespace, then `RewriteStrictToTransitional`
+decompresses every part to rewrite namespaces -- and only handed the rewritten result to DocxReader,
+where the guard lives. Ordering makes the guard useless on that path: it runs on the OUTPUT of the
+expansion it was meant to bound.
+
+Measured, not argued:
+
+    WorkbookOpenSizeGuard on the archive : REJECTED (WorkbookTooLargeException)
+    StrictOoxmlTransform (runs first)    : COMPLETED, 408 KB in, 400 MB of parts, ~100ms
+
+The codebase's own guard calls the file a bomb; the strict path processes it regardless. A bigger pad
+is the same code path with a bigger number.
+
+Fix: check at the adapter entry, ahead of both decompressions, so strict and transitional routes are
+bounded by the same rule. DocxReader still checks its own stream -- cheap (central directory only)
+and keeps that path safe for its other callers.
+
+Three tests, and the two controls are the point. A CONTROL proves the fixture really is a bomb by the
+guard's own reckoning; without it the main test could pass by rejecting a harmless file. A POSITIVE
+control proves an ordinary strict document still opens; without it a guard that refused every strict
+file would look correct. Neutering the guard fails exactly the middle test, leaving both controls
+green.
+
+Two things checked rather than assumed: the Strict adapter is registered in
+`DocumentFileAdapterCatalog`, so this is reachable and not dead code; and `WordXmlFileAdapter`'s
+unguarded zip open reads an archive it just WROTE on the save path, so it correctly needs no guard --
+adding one there would have been noise dressed as diligence.
+
+Lanes: full FreeW.slnx green, all 7 assemblies, 11,774 tests.
