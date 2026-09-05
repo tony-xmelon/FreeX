@@ -7398,3 +7398,38 @@ session twice dismissed a failing test by pattern-matching its NAME to a known e
 (the disconnected-session WPF blank-render effect), and one of those was a live regression of my own.
 A correct general cause is the easiest way to wave away a specific real bug. Memory updated to
 supersede the old known-red entry with this baseline, the sweep command, and that lesson.
+
+## r396 - FreeW's document formats: the third app's culture coverage, and an instrument that was lying
+
+r391/r392 pinned FreeX's adapters, FreeP's .pptx writer and the shared PDF tier. FreeW was surveyed
+by INSPECTION only -- r395 made that gap explicit when it showed FreeW's 11,761 tests had not run
+once this session. This closes it, driving all 9 `IDocumentFileAdapter` implementations by reflection.
+
+The exposure in a word processor is formatting, not cell values: font sizes are half-points, indents
+and spacing twips, image extents their own units, and each is written as text. ODF lengths carry a
+unit suffix ("1.25cm") and HTML puts them in CSS, so a comma decimal there yields a document the
+reader rejects -- for that locale's users alone.
+
+**Result: no defect. All 9 adapters are invariant** (PdfFileAdapter is save-unsupported and is
+reported, not skipped silently).
+
+**The finding of this round is that my first instrument could not have caught anything.** It flagged
+attribute values that were WHOLLY a comma-decimal -- copied from the .pptx test, where that shape
+fits. It does not fit here: ODT writes "1.25cm" and HTML writes "font-size:10.5pt", so neither is
+ever an attribute that is entirely a number. The test passed, and would have passed with every
+formatter broken. Rewritten to flag a comma BETWEEN digits anywhere in an attribute, and to scan
+flat formats (HTML, RTF, MHTML) as whole text since their numbers live in CSS and control words.
+
+**And the corrected instrument was still only reaching one format.** Breaking OdtFileAdapter's
+length formatter produced 8 offenders including `page-width = 21,59cm` -- but HtmlFileAdapter, which
+sorts BEFORE Odt and so would have shown first, produced none. Its only decimal formatter, FormatPt,
+is used for image width/height alone, and the fixture had no image. Adding a fractionally sized image
+took proven coverage from 1 format to 3: the same break now yields
+`HtmlFileAdapter -> width="12,5pt"` and `MhtmlFileAdapter -> width=3D"12,5pt"` (MHTML shares the HTML
+writer). A green from an unexercised path is the failure mode this program keeps rediscovering, and
+twice in one round here.
+
+One self-inflicted error worth recording: adding the image paragraph FIRST displaced
+`Paragraphs.First()` and broke the round-trip control, which reads the font size from it. Reordered.
+
+Lane: FreeW.Core.IO.Tests 1974/1974 green. Production files restored and verified unchanged.
