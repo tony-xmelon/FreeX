@@ -8847,3 +8847,49 @@ exercised=71 failed=0`. `FreeX.Core.Model.Tests` 6716 passed / 0 failed.
 **Net across r438-r440**: one real defect fixed (pivot undo losing merged regions), commands whose
 undo is actually verified 31 -> 71, and the observer changed from a nine-field hand-written list to
 uniform reflection over workbook, sheet and cell -- which is what will catch the next one.
+
+## r441 — the undo driver crosses to FreeP, and finds a defect on its first run
+
+FreeX's driver had converged (r440: green across 71 exercised commands), so the question was not how
+to squeeze more out of it but where else the same blind spot exists. FreeP has ~137 command classes
+and no auto-driver at all: every FreeP undo test covers a command somebody chose to write a line for
+— exactly the gap that hid r438 in FreeX for fourteen rounds.
+
+Ported the driver, with the observer as uniform reflection over the presentation, its slides and
+their shapes. **Two failures on the first run. One was mine; one was real.**
+
+**The artifact, caught before it was claimed.** `SetSlideShowSettingsCommand` takes the PRIOR value
+as a constructor argument (`oldLoopUntilStopped`) rather than capturing it in Apply. The factory
+invents that argument, so Revert faithfully restores the invented value and the driver reads a failed
+undo. That is a limit of driving blindly, not a defect. Commands with an `old*` parameter are now
+counted as unbuildable — honestly, in the census, rather than silently passed.
+
+**The defect: undoing a slide title leaves behind the placeholder it created.** `Slide.Title` is a
+computed property whose SETTER creates a title placeholder and inserts it at index 0 when the slide
+has none. `SetSlideTitleCommand.Revert` wrote the old text back — and writing empty text into a shape
+that now exists cannot remove it. So on a slide with no title placeholder (a blank layout), typing a
+title and pressing Ctrl+Z leaves an empty "Click to add title" box the author never added. It is
+serialised into the .pptx, and because it goes in at index 0 every other shape on the slide shifts
+one place behind it.
+
+This is r438's shape in a different app: **undo restores the VALUE but not the STRUCTURE the value's
+setter created.** Both were found the same way and neither by a hand-written per-command test.
+
+Fix: Apply records whether a title placeholder existed; Revert removes the one it caused to be
+created, and otherwise takes the ordinary text-restore path. The flag is cleared on Revert so redo
+still works.
+
+`R441_UndoingASlideTitleRemovesThePlaceholderItCreatedTests` pins four directions: no placeholder
+survives undo on a slide that had none; an EXISTING title is restored rather than deleted (a fix that
+removed the placeholder unconditionally would pass the first test while destroying the author's
+title); the body shape returns to index 0; and redo still sets the title. Proven by neutering the
+flag — 3 of 5 fail, and the two that do not are exactly the two that do not depend on the fix.
+
+Census: `types=137 notConstructible=60 threw=1 noChange=70 exercised=6 failed=0`. Only 6 exercised
+against FreeX's 71, because most FreeP commands need domain objects the factory cannot invent — and
+six was still enough to find a real defect, which is the argument for widening the factory next
+rather than trusting the green. `FreeP.App.Presentation.Tests` 6026 passed / 0 failed.
+
+**Open, deliberately**: the same driver has not been built for FreeW (~360 command classes,
+`IDocumentCommand`, whose `Apply`/`Revert` take an `IDocumentCommandContext` that must be faked
+first). On this evidence it is the largest untested undo surface remaining in the repo.
