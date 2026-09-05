@@ -8378,3 +8378,33 @@ That completes character-level formatting across all three apps -- FreeW runs, F
 FreeP shape runs -- each with a demonstrated failure mode rather than only a green.
 
 Lane: FreeP.App.Presentation.Tests 5967/5967 green.
+
+## r426 - Picture crop and image bytes
+
+r413's shape sweep excluded `PictureFrameGeometry` as picture-only and gave it a dedicated test; the
+crop rectangle and the image part itself were covered by neither. **No defect** -- image bytes,
+content type, and all four crop edges survive.
+
+The crop is the case worth caring about, and its failure direction is unusual. Most losses in these
+sweeps REMOVE something the author added. A dropped crop does the opposite: it silently restores the
+whole original image, including whatever the author cropped OUT -- which may be precisely what they
+did not want in the deck. That inverts the usual severity argument, and it is why the "gains no crop"
+control is the strongest assertion in the file: an INVENTED crop would hide part of the author's
+image with no way to notice.
+
+Three fixture details, each of which would have produced a wrong result if guessed:
+
+- The crop lives on `SlideShape.PictureFormat`, not on the shape -- my first version compiled against
+  the shape and failed outright, which is the cheap kind of mistake.
+- The model documents a null `PictureFormat` as meaning "no crop", so the control accepts EITHER null
+  or all-zero. Asserting only the null form would have failed on a legitimate writer choice rather
+  than on a defect.
+- The four edges get four different values, so a writer emitting one for all four -- or transposing
+  left and right -- fails rather than passing on symmetry. A separate one-sided crop case covers the
+  common real edit, which a writer requiring all four edges would drop while passing the first test.
+
+**Proven sensitive**: suppressing the writer's `a:srcRect` fails both crop tests and leaves the
+image-part and control tests green -- exactly the split that says the failure is the crop and not the
+picture.
+
+Lane: FreeP.App.Presentation.Tests 5971/5971 green.
