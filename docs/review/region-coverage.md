@@ -8806,3 +8806,44 @@ changing state even the reflective describe cannot see.
 `R417` census after: `types=228 notConstructible=49 threw=0 noChange=109 exercised=70 failed=0`, with
 `exercised >= 65` and `notConstructible <= 55` now pinned so narrowing the driver shows up as a
 failure instead of a comfortable green. `FreeX.Core.Model.Tests` 6716 passed / 0 failed.
+
+## r440 — the driver was blind INSIDE each cell, and the phantom-undo lead judged
+
+Follow-up to r439, chasing its own recorded lead rather than leaving it as a list.
+
+**The `IsNoOp` lead is largely a non-finding, and saying so is the result.** r439 listed 7 commands
+that succeed, change nothing, and omit `IsNoOp` -- which matters because `CommandBus` pushes an undo
+entry exactly when `Success && !IsNoOp`, and r210 records the real damage: re-confirming a
+pre-populated value "pushed an undo entry that changed nothing, and that push clears redo". Checked
+one at a time:
+
+- `CopyRangeCommand` copies a range onto ITSELF under this fixture. A degenerate input, not a defect.
+- `SetCommentCommand` already implements the r213 equal-value guard; it appeared only because the
+  count-only observer could not see a comment's TEXT change. r439's contents-level describe fixed
+  that, which is why `exercised` moved 69 -> 70.
+- `SetWorksheetViewOptionsCommand` genuinely omits the guard, but all three public entry points
+  (`SetShowGridlines`, `SetShowHeadings`, `SetShowRulers`) pre-filter with
+  `All(... == value) -> SuccessfulNoOpEditResult()`, and the WPF host pre-filters again. No reachable
+  phantom entry today. Worth noting the asymmetry -- `UnmergeCellsCommand` deliberately self-guards
+  "because this command is public and must not rely on that caller discipline" -- but an unreachable
+  robustness gap is not a defect, and reporting it as one would be the false-positive pattern this
+  program exists to avoid.
+
+**The real find came out of checking the fourth.** `SetFormulaErrorIgnoredCommand` returns success
+and writes `cell.IgnoreFormulaError` -- and the driver's per-cell dump recorded only `Value` and
+`StyleId`. Every OTHER per-cell field was invisible: rich text, phonetic guide, array mode, the
+error-ignored flag. A command that changed one and failed to restore it read as a clean undo.
+
+`Describe` now reflects over each `Cell` with the same helper it uses for `Workbook` and `Sheet`,
+so the observer is uniform: nothing in the model is watched by a hand-written list any more.
+
+Proven to bite: neutering `SetFormulaErrorIgnoredCommand.Revert` to write `true` instead of the
+captured value fails the driver with `1,1.IgnoreFormulaError=False -> 1,1.IgnoreFormulaError=True`,
+which the Value/StyleId dump could not have seen. Restored and re-run green.
+
+`exercised` 70 -> 71, still `failed=0`. Census: `types=228 notConstructible=49 threw=0 noChange=108
+exercised=71 failed=0`. `FreeX.Core.Model.Tests` 6716 passed / 0 failed.
+
+**Net across r438-r440**: one real defect fixed (pivot undo losing merged regions), commands whose
+undo is actually verified 31 -> 71, and the observer changed from a nine-field hand-written list to
+uniform reflection over workbook, sheet and cell -- which is what will catch the next one.
