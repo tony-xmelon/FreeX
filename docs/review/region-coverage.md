@@ -9006,3 +9006,51 @@ Lanes: Host.Logic 1511 passed / 0 failed, Host.Tests 5374 / 0.
 **Left open**: 80 further local copies of `PumpDispatcher` across the test tree carry the identical
 Background sentinel. They are mechanical to convert but each belongs to tests this round did not
 touch; converting them wholesale would be a large blind edit. Recorded rather than half-done.
+
+## r445 — the release gate was red on main, and DefaultTests could not see it
+
+Found while verifying r444: the `FreeX.App.Host.Tests` lane had two failures that predate this
+session's work entirely.
+
+Two parallel-session commits changed source files without refreshing the generated evidence that
+records their hashes -- `freew/FreeW.App.Avalonia/MainWindow.cs` (commit 21b63ed2a0, "r283") and
+`shared/Free.Shared.Pdf.Skia/SkiaPdfWriter.cs`. Six committed artifacts still carried the old hashes,
+so `GeneratedDocsPreflightTests` and `FreeWMailMergeDialogParityEvidenceGeneratorTests` were failing
+on main.
+
+**Why nobody noticed:** these deterministic doc-contract tests live ONLY in the Host/UI lane. Every
+affected session ran `FreeX.DefaultTests.slnx`, saw 31 lanes green, and pushed -- while the
+tester-release gate stayed broken. This is the recurring failure mode already recorded in
+`freex-release-doc-contract-gate`; it has now recurred.
+
+**Running the generators is NOT the same as repairing the staleness**, which is the part worth
+recording:
+
+- The FreeP manifest regenerated with **1058 changed lines**, of which exactly ONE was a genuine
+  stale hash. The rest was this machine's PowerShell serialising JSON differently from whatever
+  produced the committed file (4-space and double-spaced colons versus 2-space).
+- The FreeW design-dialog generator embeds `GeneratedAtUtc` and a commit SHA, so it self-churns on
+  every run, and running it here also added a **BOM** to the `.md`.
+
+Committing either would have been formatting churn dressed as a fix, and would have flipped the
+failure onto whoever regenerates next in a different environment. Both were reverted and the stale
+hashes updated surgically instead. Generator output was kept only where it was genuinely clean --
+the shell-platform file, whose regeneration was exactly two real hash refreshes and nothing else.
+
+Result: six files, six single-line diffs, no reformatting, no timestamp movement, no BOM.
+`FreeX.App.Host.Tests` 5374 passed / 0 failed (was 5372 / 2).
+
+**Postscript -- the fix landed twice, and this commit keeps only the analysis.** While this was being
+verified, a parallel session pushed "ci: fix both push-gate failures and make the local gate able to
+catch them", repairing the same six artifacts. Rebasing onto it found every one of my hash edits
+already applied, so this commit reduced to the ledger entry alone. The repair is in main either way
+and no stale hash remains; what survives here is the reasoning, which is the part that would
+otherwise have to be rediscovered: that a green DefaultTests run does not mean the release gate is
+green, and that re-running a generator can produce 1058 lines of environment-specific churn (or a new
+BOM) around a single genuinely stale hash. Recording it this way rather than deleting the entry,
+because the next person to meet a stale evidence artifact needs the trap, not the diff.
+
+**The standing lesson**: a green DefaultTests run does not mean the release gate is green. Any round
+that edits source under `freew/`, `freep/` or `shared/` should expect these artifacts to go stale,
+and repairing them means finding the changed HASH, not re-running the generator and committing
+whatever falls out.
