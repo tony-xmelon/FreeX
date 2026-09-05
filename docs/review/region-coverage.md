@@ -7543,3 +7543,35 @@ it if the chain ever changes. If this is revisited, the cheap hardening is `Conf
 
 An instrument note, since perl bit again exactly as memory records: rewriting a C# interpolated string
 with perl ate the `$"`, producing a syntax error rather than silent damage this time.
+
+## r400 - Path traversal from document content: clean, and already pinned
+
+A high-severity class not previously swept: OPC packages are zip archives, and any code that writes a
+part to disk using a name taken from the document lets `..` escape the target directory -- an
+absolute path is worse still, since `Path.Combine` discards its base when the second argument is
+rooted. Opening a crafted file would write attacker-chosen bytes to an attacker-chosen location.
+
+**No defect. Every write path traced to its sanitizer:**
+
+- **No zip extraction exists at all** -- no `ExtractToFile`/`ExtractToDirectory`, and no
+  `Path.Combine` fed an entry's `FullName`/`Name` anywhere in production. The class's most common
+  form is absent by construction.
+- **OLE activation** (`OleActivationService`, the one production `Path.Combine(dir, <document
+  name>)`): `OleActivationPlanner.SafeFileName` normalises `\` to `/`, takes `Path.GetFileName`,
+  and rejects empty, `.`, `..`, any surviving separator, and control characters, then forces the
+  extension to the resolved safe one. Production only ever builds a plan through that planner, and
+  activation separately refuses executable/script extensions.
+- **Media, transition-sound and playback temp files**: the file NAME is generated (prefix + random),
+  and the extension comes from `OpcMediaTypes` -- an allowlist dictionary keyed by content type with
+  a hard-coded fallback (`bin`/`mp3`/`mp4`), so a hostile content type cannot produce an arbitrary
+  extension.
+- **Caption tracks**, the only place a document string reaches the extension: a strict allowlist
+  (`vtt|ttml|dfxp|srt`), defaulting to `vtt` for anything else.
+
+**Already pinned, too.** The OLE tests feed `"..\outside\Budget.xlsx"` and `"../../payload"`
+through the planner. No test added -- the guard this class depends on is exactly the one already
+covered, and a second copy would be noise rather than protection.
+
+Recorded because the negative is the useful artifact: the next person to ask "can a crafted file make
+FreeP write outside its temp directory?" gets the four paths and their sanitizers rather than having
+to re-derive them.
