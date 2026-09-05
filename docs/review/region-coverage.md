@@ -8408,3 +8408,28 @@ image-part and control tests green -- exactly the split that says the failure is
 picture.
 
 Lane: FreeP.App.Presentation.Tests 5971/5971 green.
+
+## r427 - Table cell text formatting, and a claim I had to walk back
+
+The intersection of r423 (cell TEXT survives) and r425 (run FORMATTING survives in a shape body),
+covered by neither. **No defect.**
+
+**The round's real content is a correction to its own premise.** I justified the test by asserting a
+table cell travels a wholly different writer path from a shape. Checking that instead of asserting it
+showed it is only half true: the cell's `a:txBody` WRAPPER is built separately -- A namespace, its own
+bodyPr and lstStyle, its own empty-paragraph rule -- but the paragraphs inside go through the SAME
+`BuildParaEl`/`BuildRunEl` the shape path uses. r425 had therefore already covered how a run's
+properties serialise.
+
+What was genuinely uncovered, and what the round keeps: that the cell path reaches that shared builder
+at all, and that formatting does not LEAK BETWEEN CELLS. The leakage case is the one no single-cell
+test can make -- a writer emitting one cell's run properties for the whole row satisfies every other
+assertion in the file -- so it earns its place even after the premise shrank.
+
+Worth recording because the failure mode is one this session keeps producing: a plausible
+justification for a test, written before checking whether it holds. It cost nothing here because the
+test is still useful, but the same habit is what made r419 file six false positives and r411 conclude
+a feature was missing when it was merely named differently. The fix is the same each time -- verify
+the premise before it becomes the reason.
+
+Lane: FreeP.App.Presentation.Tests 5976/5976 green.
