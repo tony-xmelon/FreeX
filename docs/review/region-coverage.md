@@ -8164,3 +8164,38 @@ at the wrong thing.
 `AllowBlank: wrote False, read True`. Restored and verified.
 
 Lane: FreeX.Core.IO.Tests 6382/6382 green, 64 skipped.
+
+## r419 - Paragraph formatting, and what a naive property sweep gets wrong
+
+Companion to r414's run-formatting sweep. Paragraph formatting fails differently and worse: a lost
+bold is at least visible on the word it was applied to, while a lost indent, keep-with-next or
+page-break-before changes where the text SITS. The user sees a reflowed document rather than a
+missing setting, and looks for the cause in the wrong place.
+
+**No defect.** Every simple paragraph property survives a .docx round trip.
+
+**The first run reported six failures and every one was the fixture.** That is the finding worth
+keeping, because the six were not random -- they were all INTERDEPENDENT fields, which run formatting
+does not have:
+
+    ListLevel / ListStartOverride / ListMarkerText  need ListKind to make the paragraph a list
+    LineHeightPt                                    needs LineRule = Exact (auto writes the multiple)
+    LineSpacingIsSet                                needs a LineSpacing value to record
+    ShadingColorHex                                 needed an actual colour, not "probe-ShadingColorHex"
+
+Setting one field in isolation and calling the empty result a dropped value would have filed six bugs
+that do not exist -- and, worse, would have made the next real one indistinguishable from the noise.
+Each dependency was verified individually before being encoded: `LineHeightPt = 21.5` with
+`LineRule = Exact` round-trips to 21.5, and with the default auto rule it correctly comes back 0.
+
+The companions live in a documented switch, and a second test pins WHY each exists: if a future
+writer learns to persist an exact height without a rule, that test fails and the companion becomes
+removable, rather than sitting forever as an unexplained special case that might be masking a defect.
+
+**Proven sensitive**: neutering the writer's `PageBreakBefore` emission makes the sweep report it.
+
+The generalisable lesson for the six sweeps built so far: a per-property sweep is only sound where
+properties are INDEPENDENT. Where they are not, the sweep must model the dependency or it manufactures
+false positives at exactly the rate the model has interdependent fields.
+
+Lane: FreeW.Core.IO.Tests 1984/1984 green.
