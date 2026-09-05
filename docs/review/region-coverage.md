@@ -7509,3 +7509,37 @@ same failure this program keeps finding in its own instruments; r396 hit it twic
 
 No test added. A timing assertion on a structurally-safe pattern would be flaky and would pin the
 machine's speed rather than a property. The finding is the reasoning, recorded here.
+
+## r399 - Sync-over-async on the UI thread: hazard present, deadlock not reproducible
+
+Third hang class after r397 (user-typed regex, real) and r398 (file-fed regex, clean). Blocking on a
+task from a UI thread whose continuations capture that context is the classic permanent freeze.
+
+**The count is not the finding.** 330 `.Result` / `.Wait()` / `GetAwaiter().GetResult()` occurrences
+exist in production code. Reporting that number as issues would be pattern-matching: most read an
+already-completed task, and blocking is only fatal where a captured SynchronizationContext is the one
+being blocked.
+
+Narrowed by measurement instead. `FreeX.App.Services` has 37 awaits but only 7 `ConfigureAwait(false)`
+(the shared tier is much better: 43 of 66), and `PortablePdfDocumentExporter.Save(path)` blocks with
+`GetAwaiter().GetResult()` on `AtomicExportExecutor.ExecuteAsync`, whose chain has several awaits that
+DO capture context (`return await ExecuteCoreAsync(...)`, `await using var output = ...`). On paper
+that is the textbook deadlock.
+
+**It does not reproduce.** Ran the path on a thread carrying a single-threaded SynchronizationContext
+that queues continuations and never drains them -- so any posted continuation deadlocks by
+construction. Result: completes, twice, and the second run wrote a **4.9 MB** PDF (32,000 cells), so
+the payload was genuinely large enough to force real async file I/O rather than synchronous
+completion. The file size was added to the probe precisely because "large workbook" is not the same
+claim as "large written file" -- the print plan clamps the range, and without checking bytes the
+negative would have rested on an assumption.
+
+**No production change.** The hazard is real in shape and the codebase's own convention (the shared
+tier's ConfigureAwait discipline) points the other way, but I could not demonstrate a failure, and
+editing production code on a hazard that survives a deliberately hostile probe is speculation. What
+is recorded instead: the exact call, the awaits that capture context, and the probe that would catch
+it if the chain ever changes. If this is revisited, the cheap hardening is `ConfigureAwait(false)` on
+`ExecuteCoreAsync` and the `await using` sites in AtomicExportExecutor.
+
+An instrument note, since perl bit again exactly as memory records: rewriting a C# interpolated string
+with perl ate the `$"`, producing a syntax error rather than silent damage this time.
