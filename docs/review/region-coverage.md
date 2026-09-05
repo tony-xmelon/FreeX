@@ -8893,3 +8893,45 @@ rather than trusting the green. `FreeP.App.Presentation.Tests` 6026 passed / 0 f
 **Open, deliberately**: the same driver has not been built for FreeW (~360 command classes,
 `IDocumentCommand`, whose `Apply`/`Revert` take an `IDocumentCommandContext` that must be faked
 first). On this evidence it is the largest untested undo surface remaining in the repo.
+
+## r442 — the undo driver reaches FreeW: no defect, and two lessons about the instrument
+
+Closes the gap r441 recorded as the largest untested undo surface left. FreeW's `IDocumentCommand`
+takes an `IDocumentCommandContext`, but that context is only a document plus an optional revision
+author, so the fake is four lines.
+
+**No defect found.** After the two corrections below the driver is green across 12 exercised
+commands. That is the honest result and it is weaker evidence than r441's: 12 of 129, because most
+FreeW commands need a selection or a dialog-values object this factory cannot invent. Recorded in the
+assertion message so nobody reads the green as "FreeW undo is verified".
+
+**Correction 1 -- the driver scanned less than it claimed.** FreeX and FreeP keep every command in
+the interface's own assembly, so `typeof(I...Command).Assembly` is complete for them. FreeW does not:
+the dialog-apply commands live in `FreeW.App.Presentation`. The first version silently skipped that
+whole project while still printing a confident census. Now scans both assemblies; `types` 125 -> 129.
+A driver that scans less than it claims is exactly the instrument failure this program keeps finding
+in other people's tests, and it should not ship in its own.
+
+**Correction 2 -- seeded state only counts if the invented arguments can reach it.** The largest
+census bucket was `noChange=67`: commands that construct fine and do nothing to a document of plain
+paragraphs. Adding a table moved the census by EXACTLY ZERO -- because the factory answers 1 for
+every int, so a block index is always 1, and the table had been appended at index 4 where no command
+ever pointed at it. Moving the table to index 1 took `exercised` 7 -> 12 and `threw` 8 -> 1: seven of
+those commands had been throwing only because block 1 was not a table. The lesson generalises to the
+FreeX and FreeP fixtures, and is why the table's position now carries a comment explaining it.
+
+**Proven to bite**, since a green from an unvalidated instrument is worth nothing: neutering
+`DeleteTableRowCommand.Revert` to re-insert the removed row at index 0 instead of `_removedAt` fails
+the driver with `North 120 -> South 98`. Restored and re-run green. (A first neuter attempt -- an
+early `return` -- was abandoned because it broke the compiler's null-flow analysis rather than the
+behaviour, so it proved nothing.)
+
+Census: `types=129 notConstructible=47 threw=1 noChange=69 exercised=12 failed=0`.
+`FreeW.App.Presentation.Tests` 3002 passed / 0 failed.
+
+**State of this seam across all three apps**: FreeX 71 exercised / 0 failed, FreeP 6 / 0, FreeW 12 / 0,
+each with a pinned floor so narrowing shows up as a failure. Two real defects came out of building
+them (r438, r441), both the same shape -- undo restoring a VALUE but not the STRUCTURE that value's
+setter created. The remaining ceiling in all three is the same: commands needing domain arguments a
+blind factory cannot invent. Raising that is a matter of teaching each factory its app's few
+dominant argument types, exactly as r438 did for FreeX by measuring rather than guessing.
