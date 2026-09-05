@@ -7843,3 +7843,43 @@ count alone. FreeX.App.Host.Logic.Tests (which owns the R69 lossy-save tests) is
 
 Lanes: solution build green; DefaultTests 31 assemblies, 0 failures; App.Services 3595,
 App.Host.Logic 1509.
+
+## r409 - The web-page formats: closing the gap the planner documented against itself
+
+`LossyFormatFeatureLossPlanner`'s own comment said ".xml, .html/.mht, and .pdf are not (yet) checked
+at all and are a known gap". Measured what that gap costs, round-tripping a workbook through each
+adapter:
+
+    html / mht   : comments LOST, hyperlinks LOST, merges kept
+    xmlss / json / ods : all kept
+
+So saving a commented workbook as a web page discarded the comments and hyperlinks with no
+confirmation. Fixed -- but deliberately NOT by adding .html to the plain-text set r408 widened,
+because the formats are not equivalent: **merged regions survive a web-page round trip**. Warning
+about a merge here would describe a loss that does not happen, and r408's own control exists to
+forbid exactly that; a prompt that cries wolf is one the user learns to click through, which costs
+more than the warning gains. The web-page targets get their own predicate: drawings, comments and
+hyperlinks, not merges.
+
+Scope stated honestly in the code: validations and conditional formats were NOT measured for these
+formats, so no claim is made about them. `.xml`, `.json` and `.ods` keep everything measured and stay
+ungated, correctly. `.pdf` remains unexamined here.
+
+**Then my own r394 test failed, which is the part worth recording.** It asserted `.html` is NOT
+gated, and therefore that the post-save sheet-loss warning must survive for it. True when written;
+false now, BY DESIGN, because r409 gated it. Left alone, that assertion would have pinned the very
+gap this round closed -- a test defending a bug because the bug was true on the day it was written.
+
+Rewritten around the property r394 actually cared about, which is unchanged: across all six
+single-sheet adapters, a discarded worksheet must reach the user EITHER as the pre-save confirmation
+OR as the post-save warning -- never neither, with WorkbookSaveService preventing both. That
+invariant survives future changes to which formats are gated, where the original could not.
+
+An instrument note: the first default-suite check reported "8 assemblies" because a `tail -8` in my
+own pipeline truncated it, and the exit code came from `tail`. Re-run with full capture: 31
+assemblies, 0 failures. Second time this session my own shell plumbing manufactured a clean-looking
+result -- the same class as the earlier `head -25`, and the same lesson memory records for
+`dotnet test` itself: read the total, not the absence of failures.
+
+Lanes: solution build green; DefaultTests 31 assemblies / 0 failures; App.Services 3602;
+App.Host.Logic 1509.
