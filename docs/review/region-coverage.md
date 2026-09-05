@@ -9434,3 +9434,44 @@ protected sheet -- because the defect was the divergence, not any one method.
 
 Proven by neutering both guards: four of six tests fail, and the two that pass are the two that do
 not depend on them. `FreeX.Core.Model.Tests` 6722 passed / 0 failed.
+
+## r456 — a wall-clock gate that fails for reasons unrelated to the defect it guards
+
+r455's verification produced one failure in `FreeX.DefaultTests`:
+`R126_..._ScopedSheetLookupScalesLinearlyWithSheetCount`, which builds 100 and 3,000 sheets and
+requires the cost ratio to stay under 4 where the old `Sheets.FirstOrDefault` scan made it grow ~30x.
+
+**Not a regression, and not the test's design being careless.** It passed three times out of three in
+isolation immediately afterwards, and the same lane had passed 6,722/0 minutes earlier. r455 added a
+protection guard to two comment commands and cannot touch named-formula rewriting. The test is also
+already well built -- best-of-N on both sides, a floored denominator -- and its own comments record an
+earlier round of flakiness being tuned out. It simply measures WALL CLOCK, and the large side does
+30x the setup, so machine load can inflate it.
+
+**One failure in roughly eight full-suite runs this session.** Rare, but a test that goes red for
+reasons unrelated to the defect it guards erodes the property that makes this suite worth running --
+that a red is a real signal, which is the assumption every round of this review depends on.
+
+**Added rather than replaced.** The timing test can still catch an O(N) scan reached through a helper
+a source check cannot see, so it stays. Alongside it is a deterministic guard for the specific
+regression it exists to catch: that the owning sheet is found by `workbook.GetSheet(sheetId)` and that
+no `Sheets.FirstOrDefault` / `.First(` / `.Single(` / `.Where(` scan is reintroduced. Machine load
+cannot affect it, and it fails in 49ms rather than three seconds of measurement.
+
+The third test asserts the guard is reading the file it claims to -- without it, a moved or renamed
+source would make every assertion above vacuously green, which is precisely the instrument failure
+this programme keeps finding in other people's tests and has twice nearly shipped in its own
+(r443's unasserted list, r452's silently-unmatched substitution).
+
+Proven by reintroducing the exact scan: both scan assertions fail, the file-identity one still passes.
+
+**Postscript to r456 -- the codebase caught this round too.** The first version of this guard walked
+parent directories by hand to find the repository root, and `TestWorkspaceFileLocatorSourceGuardTests`
+failed it by name: test sources must use the shared `TestWorkspaceFileLocator` rather than
+re-implementing the workspace walk. Rewritten to use `FindWithFailureMessage`, which also replaced my
+hand-written "did we find the root" assertion with a better failure message.
+
+That is the second time in this sweep an existing source-contract guard has corrected new code of
+mine -- R276 caught a hand-rolled `XmlReaderSettings` in r450 -- which is the strongest evidence
+available that those guards earn their keep. Both were caught by running the full lane rather than
+only the new tests, which is the argument for verifying wider than the change looks like it touches.
