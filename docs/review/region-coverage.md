@@ -9054,3 +9054,41 @@ because the next person to meet a stale evidence artifact needs the trap, not th
 that edits source under `freew/`, `freep/` or `shared/` should expect these artifacts to go stale,
 and repairing them means finding the changed HASH, not re-running the generator and committing
 whatever falls out.
+
+## r446 — 76 copies of the pump, all carrying the sentinel r444 proved wrong
+
+r444 fixed the two shared `PumpDispatcher` helpers and recorded 80 further local copies as a
+follow-up. 77 of those carried the identical `Background` sentinel, so 77 files' worth of UI tests
+could still assert against a window that had not finished settling.
+
+They are not patched in place -- they are deleted. Each now delegates to the single fixed
+implementation (`R49MainWindowTestHarness` or `DispatcherTestPump`), which removes 605 lines of
+copy-paste and, more to the point, removes the drift that let one proven-wrong sentinel survive in 77
+places. 76 files, 605 deletions against 153 insertions.
+
+**The work was in what NOT to convert.** A mechanical sweep would have broken three things:
+
+- Six files post at `Background` DELIBERATELY -- dialog automation that clicks OK on a modal, and a
+  DPI test whose assertion depends on the deferred-refresh priority by name. Untouched.
+- `StaTestRunnerClipboardIsolationTests` posts a Background callback on purpose, to prove stale
+  dispatcher work does not leak between STA runs. Converting it would have destroyed the test.
+- `RibbonResizeCoordinatorTests` calls `_window.UpdateLayout()` before pumping; only the pump portion
+  was delegated so the layout pass survives.
+
+**Corroboration for r444, found while sweeping**: `MainWindowRibbonKeyTipTests` already contained a
+hand-rolled `PumpDispatcherIdle` using `SystemIdle`. Someone had hit the Background gap before and
+worked around it locally rather than fixing the shared pump -- independent evidence that the sentinel
+was the real problem, arrived at without knowing r444's reasoning.
+
+**Process note, the same trap twice in three rounds**: the first pass reported "files changed: 0"
+because the sources are CRLF and the patterns used `\n`. Caught by checking the change COUNT, not the
+exit status -- a substitution that silently matches nothing exits 0 and looks like success.
+
+Verification: Host.Logic 1511 passed / 0 failed. Host.Tests 5371 passed / 3 failed, where all three
+failures are a parallel session's in-flight CI migration and none is mine: commit 3ad77c0c39 put
+`ForEach-Object -Parallel` (PowerShell 7 only) into `tools/Test-RepositoryPreflight.ps1`, and
+`GeneratedDocsPreflight_RunsAllGeneratedDocumentationChecks` asserts a literal `& pwsh -NoProfile
+-File $resolvedScriptPath -Check` that their refactor of `Test-GeneratedDocs.ps1` replaced with a
+dynamically resolved `& $pwshSource`. Non-skipped totals are 5374 before and after this change, with
+the delta exactly those two new failures -- this round added none. Left to that session rather than
+raced, since they are pushing to those files every few minutes.
