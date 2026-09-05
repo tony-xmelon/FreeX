@@ -9175,3 +9175,39 @@ is a design change rather than a guard, so it is written down instead of half-bu
 
 Proven by neutering the guard: exactly one of the five tests fails, the four that do not depend on it
 still pass. `FreeP.App.Presentation.Tests` 6031 passed / 0 failed.
+
+## r449 — the same silent blank-document defect in FreeW's .docx reader
+
+Same probe as r448, aimed at FreeW: write a valid document with the real writer, mutate one zip entry
+at a time, read it back.
+
+**FreeW's reader is markedly more robust than FreeP's.** Eight of nine mutations already behaved --
+garbage, truncated and dropped `document.xml` threw, a non-zip and an empty stream threw, and both a
+dropped `[Content_Types]` and relationships repointed at missing parts round-tripped fully intact.
+Worth stating plainly, because the probe's value is as much in what it clears as in what it finds.
+
+**The ninth was r448's exact sibling.** `documentXml.Root?.Element(w:body)` is null-tolerant, so a
+`word/document.xml` whose root is unrecognised -- a partially written save, an unexpected namespace --
+read no blocks at all. The `if (document.Blocks.Count == 0) Blocks.Add(new Paragraph())` fallback
+immediately after then manufactured a convincing blank page from it: four paragraphs and 44 characters
+gone, no error, one empty paragraph shown. Saving overwrites the original with that.
+
+The fallback itself is right -- a Word document always has at least one paragraph. What was wrong was
+reaching it by way of a body that was never found.
+
+**Fix**, mirroring r448's narrowness: a document part that exists and parses but carries no `w:body`
+is reported as damaged. A genuinely empty document still has `<w:body>`, so it opens exactly as
+before -- and a test asserts that the writer really does emit one, rather than assuming it, since the
+whole narrowness claim rests on it.
+
+**Two readers, one shape.** FreeP resolved zero slides and returned an empty deck; FreeW found no
+body and returned a blank page. Both from a null-tolerant lookup on the part that names the content,
+both silent, both destructive on the next save. Neither reader was reachable by the other's test
+suite, which is why one probe found both and fourteen rounds of per-feature tests found neither.
+
+Proven by neutering the guard back to its old behaviour (an empty body rather than a throw, which is
+exactly what the code used to fall through to): one of four tests fails, the three not depending on
+it pass. A first neuter attempt was discarded because it broke the compiler's null-flow analysis
+instead of the behaviour -- the same trap as r442's.
+
+`FreeW.Core.IO.Tests` 1988 passed / 0 failed.
