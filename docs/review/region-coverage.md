@@ -9399,3 +9399,38 @@ damaged slide empty; an undamaged deck warns about nothing; and both open-path d
 neutering the report: two of five fail, the three not depending on it pass.
 
 `FreeP.App.Presentation.Tests` 6040 passed / 0 failed.
+
+## r455 — a protected sheet could still be altered through the one comment command that skipped the guard
+
+A new lens, using the command drivers built in r417/r441/r442: protect a sheet with NO permissions
+granted, then drive every constructible command at it and see what still changes the document.
+
+**Of 66 commands that change an unprotected sheet, 27 still changed a protected one -- and 25 of
+those are correct.** That judgement is the round's real work, because the naive reading is 27 defects.
+Excel's sheet protection governs cell content and objects; it does not govern workbook structure
+(`AddSheetCommand`), view settings (`SetFreezePanesCommand`, `SetWorksheetViewModeCommand`), page
+setup, calculation options, or protection management itself (`UnprotectSheetCommand` must work on a
+protected sheet, obviously). FreeX's `SheetProtectionPermission` enum is EXACTLY Excel's fifteen
+Protect Sheet permissions, in Excel's order, so anything outside it is outside the model by design
+rather than by omission -- and that enum, not my recollection of Excel's UI, is what settled it.
+
+**The two that were wrong were an inconsistency inside one file.** `SetCommentCommand` and
+`DeleteCommentCommand` refuse when "Edit objects" is withheld. `ShowHideCommentCommand` and
+`ShowAllNotesCommand`, sitting beside them and touching the same objects, did not.
+
+That matters because a note's pinned state is **persisted**: `ShownComments` is written to the xlsx
+VML and to the native JSON and read back on load. So it is a durable change to the document, not a
+view toggle -- which is exactly what I checked before calling it a defect, since a session-only
+setting would have made the missing guard correct.
+
+Both now honour the permission. `ShowAllNotesCommand`'s guard sits BEFORE its undo snapshot, so a
+refused command leaves no Revert behind that could later restore state the user never reached; a test
+pins that specifically.
+
+Six tests, including the two that keep this narrow: granting "Edit objects" still allows pinning
+(protection is a permission model, not a blanket ban), and an unprotected sheet is untouched. A sixth
+asserts the CONSISTENCY rather than each command alone -- all four comment commands refuse the same
+protected sheet -- because the defect was the divergence, not any one method.
+
+Proven by neutering both guards: four of six tests fail, and the two that pass are the two that do
+not depend on them. `FreeX.Core.Model.Tests` 6722 passed / 0 failed.
