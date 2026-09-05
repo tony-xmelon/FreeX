@@ -8433,3 +8433,32 @@ a feature was missing when it was merely named differently. The fix is the same 
 the premise before it becomes the reason.
 
 Lane: FreeP.App.Presentation.Tests 5976/5976 green.
+
+## r428 - Shadow alpha lost a step on every save
+
+Shape effects -- shadows and glow -- through the pptx round trip. Found a real precision defect.
+
+**Alpha lost one step per save-and-reload.** It is a byte in the model and a percentage in the file,
+and BOTH conversions used integer division: `0x40` wrote as 25098 (truncated from 25098.04) and read
+back as 63.99 -> `0x3F`. Fixed by rounding on read -- adding half the divisor before dividing
+recovers the original.
+
+**The number that makes this worth reporting: without the fix, 4 of 8 alpha values fail and 4
+survive.** Truncation is only lossy where the conversion lands mid-step, so about half of all values
+round-trip unharmed. A single-value spot check had a coin-flip chance of reporting success, which is
+why the test uses a spread (0x00, 0x01, 0x40, 0x7F, 0x80, 0xC0, 0xFE, 0xFF) rather than the value the
+shadow test happened to pick. Verified by reverting: exactly 0x40, 0x7F, 0x80 and 0xFE fail.
+
+Two design choices carried in from earlier rounds' mistakes:
+
+- Effects sit behind `Has*` flags, so setting a shadow's blur without `HasOuterShadow` writes nothing
+  -- CORRECTLY. That is r419's interdependence trap, so the flags are set explicitly rather than
+  discovered as false failures, and a test pins the interdependence so a future writer that starts
+  persisting orphaned values forces the reasoning to be revisited.
+- Alpha defaults to a NON-ZERO 0x80, which r424 showed is where a probe most easily tests nothing, so
+  it is probed with a different value.
+
+The inner-shadow case also asserts `HasOuterShadow` stays false: the two share field shapes and differ
+only by element, so a writer emitting an outer shadow for both would pass a values-only check.
+
+Lanes: full FreeP.slnx green, all 8 assemblies, 9,835 tests.
