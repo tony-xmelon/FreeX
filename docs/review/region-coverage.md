@@ -8349,3 +8349,32 @@ default tests nothing, and default-true booleans are where that is easiest to mi
 obvious probe value is exactly the one that hides the bug.
 
 Lane: FreeP.App.Presentation.Tests 5964/5964 green.
+
+## r425 - Shape text formatting, completing the character sweep across all three apps
+
+The FreeP counterpart to r414 (FreeW runs) and r415 (FreeX cell styles). Text on a slide is what the
+audience reads, and a dropped run property is invisible to the AUTHOR until the deck is projected --
+by which point the file has been saved over the original many times.
+
+**No defect.** Every simple run property survives a .pptx round trip.
+
+Two instrument details specific to this model:
+
+- **Nearly every property is nullable with a null default**, which changes what a probe must check.
+  Setting a `bool?` to true and reading back null is a loss -- but so is reading back FALSE, and a
+  sweep asking only "is it truthy" would miss the second. Values are compared exactly.
+- **Token properties carry format-defined vocabularies.** `UnderlineStyleToken` takes DrawingML
+  tokens like `sng`, not arbitrary text, so probing with "probe" would be rejected on write and read
+  back null for a legitimate reason -- a false positive of exactly the kind r419's interdependent
+  fields produced. They are probed with real tokens.
+
+**Proven sensitive**: suppressing the writer's `spc` attribute makes the sweep report
+`CharacterSpacingHundredthsPt: wrote 150, read (null)`.
+
+A gains-nothing control sits alongside, since every other assertion only checks that something set
+survives.
+
+That completes character-level formatting across all three apps -- FreeW runs, FreeX cell styles,
+FreeP shape runs -- each with a demonstrated failure mode rather than only a green.
+
+Lane: FreeP.App.Presentation.Tests 5967/5967 green.
