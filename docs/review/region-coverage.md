@@ -7716,3 +7716,37 @@ recorded here rather than left implicit.
 **No defect. No code change.** All 18 shared guards and policies have now been through the
 consumer-and-ordering question that produced r401. Two of the eighteen had real gaps and both are
 fixed (r401's guard ordering, r397's missing timeout in the same family of thinking); the rest hold.
+
+## r405 - FreeX command undo: the third app finally gets the r387 treatment
+
+r387/r388 pinned "a command's Revert restores the document exactly" for FreeW and r389 for FreeP.
+FreeX -- the app with the most commands, 243 `IWorkbookCommand` implementations -- never got it. That
+gap existed because the method was invented while working on the siblings, not because FreeX was
+checked and cleared.
+
+**Result: no defect.** ClearContents, InsertRows, DeleteRows, InsertColumns and DeleteColumns all
+restore exactly, including the state most at risk from a structural edit.
+
+**Two instrument decisions carried over from the earlier rounds, both load-bearing:**
+
+- **Compare the MODEL, not a written package.** r389 wasted a cycle on a "broken undo" that was only
+  ZIP entry timestamps moving with the wall clock. Reading values/formulas/style ids straight off the
+  workbook sidesteps that entirely and pins what the user actually keeps.
+- **Assert the workbook ACTUALLY CHANGED between apply and revert.** A command whose Apply silently
+  did nothing satisfies an undo assertion trivially; this guard caught two bad fixtures of mine in
+  FreeW and one in FreeP.
+
+**And one this round added.** The first snapshot covered cell value, formula and style only -- but
+row heights, column widths and merged regions are precisely what insert/delete row and column
+commands shift, so the instrument did not reach the state most likely to be lost. Widened to include
+them, with the fixture seeding a row height, a column width and a merge so there is something to
+lose. A separate test then asserts the snapshot really CONTAINS all four kinds of state, because a
+projection that silently omits a field produces a confident green over exactly the case it was
+widened to catch -- the r396 failure, and the same shape as the `MustStayCovered` guard r402 found
+protecting the XML sanitizer tripwires.
+
+Six commands of 243 is a sample, not a sweep, and the entry says so rather than implying the family
+is cleared. The value is that the harness now exists in the third app, so extending coverage is
+adding a line per command.
+
+Lane: FreeX.Core.Model.Tests 6709/6709 green, 47 skipped.
