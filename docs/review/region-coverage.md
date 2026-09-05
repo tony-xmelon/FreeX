@@ -8624,3 +8624,31 @@ observation and become the default assumption: any boolean whose default is true
 probe against a writer that emits nothing at all.
 
 Lane: FreeX.Core.IO.Tests 6415/6415 green, 64 skipped.
+
+## r435 - All sixteen conditional-format rule types, exhaustively
+
+r421, r433 and r434 covered four rule types by hand. Rather than continue one at a time, this drives
+the WHOLE enum from `Enum.GetValues`: **16 types, all surviving as themselves.** No defect.
+
+Rule TYPE is the one field in this family where a loss cannot be subtle. A `DuplicateValues` rule
+that returns as `UniqueValues` highlights the exact COMPLEMENT of the intended cells -- every row the
+author wanted marked is now unmarked and vice versa -- and the sheet still looks deliberately
+formatted. Verified sensitive by swapping that one token in the writer's mapping: the sweep names it,
+"DuplicateValues: came back as UniqueValues".
+
+The enum-driven form is what makes this different from writing sixteen cases: a rule type added later
+is covered the day it appears rather than the day someone remembers. The floor assertion (>= 10
+types) guards the query itself, so a refactor that shrank the enum lookup could not turn the sweep
+into a confident green over nothing.
+
+Companions are supplied per type -- a text rule gets its needle, a formula rule its formula, a date
+rule its period -- because a rule with no condition describes nothing and a writer would be RIGHT to
+skip it. Without that the sweep would have reported five false positives, the same interdependence
+trap as r419, r428 and r432. The four text rules also assert the needle itself survives, since a
+ContainsText rule that keeps its type but loses its text stops doing what the author asked while
+remaining a valid rule.
+
+This closes the conditional-format surface: rule types (all 16), cell-value fields and priority
+pairing (r421, one real defect), colour scales and thresholds (r433), data bars and icon sets (r434).
+
+Lane: FreeX.Core.IO.Tests 6421/6421 green, 64 skipped.
