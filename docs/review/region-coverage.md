@@ -8227,3 +8227,43 @@ Three of the thirteen cases exist to stop the others passing for the wrong reaso
 naming the edge.
 
 Lane: FreeX.Core.IO.Tests 6395/6395 green, 64 skipped.
+
+## r421 - Conditional-format priorities were paired with the wrong rules on load
+
+r418 established only that a CF rule survives at all, which is the weakest useful claim. Testing the
+fields that decide WHICH cells a rule highlights found a real defect.
+
+**Rules came back wearing each other's priorities.** Written in document order with priorities 5, 1,
+9, they reloaded as:
+
+    LessThan  (owned 1) -> priority 5
+    GreaterThan (owned 5) -> priority 1
+    Equal     (owned 9) -> priority 9
+
+Each rule kept its own operator and value but inherited a neighbour's priority. Priority decides
+which rule wins where two overlap, so **precedence was inverted on load** -- silently. Nothing looks
+broken; the wrong rule's colour simply wins, and a colour is read as fact.
+
+Diagnosis took three checks and each mattered: the WRITTEN file was correct
+(`greaterThan priority="7"`, `lessThan priority="3"`), so this was read-side, not a writer bug; three
+scrambled priorities showed ClosedXML enumerates rules PRIORITY-ASCENDING while the raw priorities
+arrive in DOCUMENT order and are consumed positionally; and the container-attribute queue is
+deliberately advanced in lockstep, so sorting only the priorities would have fixed one pairing by
+breaking another. They are sorted as PAIRS.
+
+**I also corrected my own test.** The original asserted a lone rule keeps a literal priority of 7.
+Measured: a single rule is written as `priority="1"` regardless, which is harmless -- priority has no
+meaning except relative to other rules, and Excel renumbers on save too. That assertion would have
+pinned a number the format never promises while missing the property that was genuinely broken. The
+replacement keys on each rule's own identity rather than position, since enumeration order
+legitimately changes.
+
+**And my own r358 guard caught a vacuous assertion I wrote in r412**, two rounds ago:
+`transform!.Attribute("flipH")?.Value.Should().Be("1")` -- the `?.` short-circuits when the attribute
+is missing, so it passes on the input it exists to catch. It went unnoticed because that guard lives
+in the FreeX Services lane and r412 only ran FreeP's; a cross-cutting source guard only fires when
+its OWN lane runs. Hardened to `!.Value`, and the full-suite run is what surfaced it -- an argument
+for running the aggregate even when a change looks confined to one app.
+
+Lanes: FreeX.Core.IO.Tests 6406/6406 green; solution build green; DefaultTests 30 assemblies with the
+single r358 failure now fixed.
