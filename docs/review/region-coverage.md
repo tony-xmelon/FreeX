@@ -8015,3 +8015,35 @@ argument for the sweep over another hand-written case: it finds the properties n
 name.
 
 Lane: FreeP.App.Presentation.Tests 5955/5955 green.
+
+## r414 - The same sweep against FreeW's character formatting
+
+r413's property-persistence sweep found its class in FreeP; this is the FreeW counterpart. Character
+formatting is the same exposure in a word processor -- a lost bold is applied on screen, gone on
+reopen, and invisible until someone reads the printed page.
+
+**25 properties swept. No defect.** Three came back "not kept" and all three were explained, not
+reported:
+
+- `ColorHex` and `HighlightColorHex`: wrote `FF0000`, read `#FF0000`. The reader canonicalises the
+  leading `#`. A representation difference, not a loss -- my fixture omitted the `#`. The permanent
+  test normalises both sides, because a sweep that reports three false positives on its first run
+  teaches its readers to ignore it.
+- `CharacterShadingHex`: came back null with the DEFAULT pattern. Investigated rather than filed:
+  the writer emits `w:shd`, and CT_RPr has a single shading slot, so `val="clear"` is
+  indistinguishable from a legacy highlight. Measured across patterns:
+
+        Clear (default) -> colour returns as HighlightColorHex
+        Solid / Pct10 / Pct25 / Pct50 -> returns as CharacterShadingHex, pattern intact
+
+  The colour survives every time; only the field carrying it changes, and Word has the same
+  ambiguity. Not a defect.
+
+The exclusion for the Clear case is paired with a test asserting the colour still survives, so the
+exclusion documents a known ambiguity rather than hiding a loss -- the same discipline r413 used for
+its picture-only property.
+
+**Proven sensitive**: neutering the writer's `SmallCaps` emission makes the sweep report
+`SmallCaps: wrote True, read False`. A sweep nobody has seen fail is just a green light.
+
+Lane: FreeW.Core.IO.Tests 1982/1982 green. Writer restored and verified.
