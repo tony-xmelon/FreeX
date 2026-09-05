@@ -8497,3 +8497,31 @@ Third defect this session with the same signature -- damage that still looks del
 r421's inverted rule precedence and r412's dropped rotation.
 
 Lanes: full FreeP.slnx green, all 8 assemblies, 9,840 tests.
+
+## r430 - Chart axis settings
+
+r429 covered the chart's DATA; the axis decides how that data is READ, and its losses share the same
+signature. **No defect.**
+
+The fixture is built around the sharpest case rather than a generic one. Its values sit at 41, 42 and
+43 with an explicit 40-45 axis, so an axis that lost its minimum and rebased to zero would draw three
+bars of nearly equal height -- a perfectly plausible chart making a DIFFERENT claim than the author's.
+That is why `Min`/`Max` are asserted as values rather than merely as non-null: a bound returning 0
+instead of 40 is not a missing setting, it is a different statement about the data.
+
+Three cases exist to stop the others passing for the wrong reason:
+
+- **Gridline visibility in both directions.** `HasMajorGridlines` defaults to TRUE and
+  `HasMinorGridlines` to false, so each is set to the opposite of its own default -- the r424 rule,
+  which has now applied in five separate models. Probing both as true would let a writer emitting
+  nothing pass on the major one.
+- **Value axis vs category axis.** Two separate objects written into one chart part; a writer that
+  emitted the value axis for both, or read them back onto the wrong one, passes every single-axis
+  assertion.
+- **A gains-no-bounds control.** Invented bounds are the worst failure here, because they would CLIP
+  the author's data out of view rather than merely rescale it.
+
+**Proven sensitive**: suppressing the writer's `c:min` fails the range case with "an axis rebased to
+zero flattens the differences the author scaled to show".
+
+Lane: FreeP.App.Presentation.Tests 6000/6000 green.
