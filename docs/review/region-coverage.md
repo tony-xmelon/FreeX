@@ -7883,3 +7883,38 @@ result -- the same class as the earlier `head -25`, and the same lesson memory r
 
 Lanes: solution build green; DefaultTests 31 assemblies / 0 failures; App.Services 3602;
 App.Host.Logic 1509.
+
+## r410 - Finishing the loss map, and finding a third profile in the process
+
+r409 closed the web-page half of the planner's documented gap but left three things declared rather
+than measured: validations/conditional formats for the web-page formats, and `.xml` and `.pdf`
+entirely. Declaring a gap is not the same as knowing what is in it, so this measured them.
+
+    html / mht : validations LOST, conditional formats LOST
+    xmlss (.xml) : validations LOST, conditional formats LOST
+    pdf : import throws NotSupportedException -- export-only, no round trip exists
+
+**The new defect is .xml.** SpreadsheetML keeps every worksheet AND comments, hyperlinks and merged
+regions -- r409 measured that -- so it belongs to neither existing rule, and it was ungated
+entirely. But it silently discards data validations and conditional formats. A user saving a
+validated workbook as .xml lost the rules with no prompt.
+
+That makes three distinct loss profiles, each measured, none collapsible:
+
+    plain text  : everything but cell values
+    web page    : comments, hyperlinks, validations, formats -- KEEPS merges
+    .xml        : validations and formats ONLY
+
+Collapsing them would either under-warn (a validation vanishing silently) or over-warn (prompting
+about a merge that survives). Each format's rule now has a control test pinning that it stays as
+narrow as its actual loss, because an inaccurate prompt is one the user stops reading -- the same
+reasoning r408 and r409 used, now applied three times over.
+
+**`.pdf` stays ungated as a DECISION.** Its adapter refuses to import ("PDF import is read-only"), so
+no round trip exists to lose anything through, and choosing PDF already says the user wants a
+rendering rather than a workbook; Excel does not prompt there either. Pinned with a test so the
+omission reads as a decision rather than the next round's "known gap". The class comment that named
+.xml, .html/.mht and .pdf as unchecked is replaced -- two are now covered and the third is explained.
+
+Lanes: solution build green; DefaultTests 31 assemblies / 0 failures (verified with full capture, not
+a truncated pipeline); App.Services 3606.
