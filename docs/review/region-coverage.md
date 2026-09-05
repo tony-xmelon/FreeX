@@ -8601,3 +8601,26 @@ interdependent-field false positives (r419, r428, r432) -- this is a new species
 with an inaccurate name. The others fail loudly once noticed; this one only ever misleads a reader.
 
 Lane: FreeX.Core.IO.Tests 6411/6411 green, 64 skipped.
+
+## r434 - Data bars and icon sets, completing the conditional-format rule types
+
+The two remaining rule types after r421 (cell-value) and r433 (colour scales). **No defect.**
+
+Both share the family's failure mode -- a rule that loses a field still paints, just differently --
+but the icon set has the sharpest instance found so far. **A lost `Reverse` flag inverts the meaning
+of every icon in the range**: the rows the author flagged as good come back marked bad, and the sheet
+still looks like a working icon set. That is not merely a lost setting; it is a sheet that now says
+the opposite of what its author meant, with nothing to indicate it. Verified sensitive by forcing the
+writer to emit `reverse="0"`.
+
+A data bar's `ShowValue` is milder but the same shape: hiding the numbers behind the bars leaves a
+column the reader can only compare by eye, and losing the flag silently restores them.
+
+**Three fields here default to TRUE** -- `DataBarShowValue`, `DataBarGradient`, `IconSetShowValue` --
+so each is probed with the opposite of its own default. That rule has now been needed in EIGHT
+separate models across the three apps (r415 Locked, r418 four validation flags, r424 banding, r430
+gridlines, r431 label flags, r433 thresholds, and these). It has stopped being a per-model
+observation and become the default assumption: any boolean whose default is true will pass a naive
+probe against a writer that emits nothing at all.
+
+Lane: FreeX.Core.IO.Tests 6415/6415 green, 64 skipped.
