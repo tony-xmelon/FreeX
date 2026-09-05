@@ -7954,3 +7954,35 @@ message naming what is at risk) is the shape FreeX converged on independently ac
 the sibling had the better answer first; and the premise error above is the third distinct way this
 session has manufactured false confidence -- after a wrong inherited premise (r355/r287/r292) and an
 instrument that could not fail (r396/r398), now a search whose vocabulary did not match its target.
+
+## r412 - Rotating an inherited-geometry shape was never saved
+
+Extended FreeP's undo harness from 6 commands to 12, adding the shape-level ones the original set
+never reached (AddShape, DeleteShape, MoveShape, FlipShape, BringToFront, PasteSlide) and a second
+shape per slide, since z-order and alignment commands are no-ops on a single shape.
+
+**The change-gate then rejected FlipShape**, because flipping produced a byte-identical package. That
+gate exists to stop a no-op passing as a restore; here it surfaced a product bug instead -- the third
+time this session it has paid for its one line.
+
+`PptxPackageWriter` guarded the ENTIRE `<a:xfrm>` element on `ShapeHasExplicitTransform`, which
+tested offset and extent only. A shape inheriting its geometry -- a pristine placeholder -- has
+neither, so **rotating or flipping it wrote nothing at all**: the edit lived in memory, vanished on
+save, and the shape came back unrotated on reopen with no error. Flipping a shape WITH a transform
+round-tripped correctly, which is what isolated the condition.
+
+Fix: count rotation and flip in that predicate. It does not reintroduce the hazard the original guard
+existed for -- `<a:off>`/`<a:ext>` are still emitted only when the shape has its own values, and both
+are independently optional in CT_Transform2D, so the output is an xfrm carrying just
+`rot`/`flipH`/`flipV`, which is what PowerPoint writes for a rotated placeholder. Single call site,
+so the widening is local.
+
+**My own test was wrong first, and its control caught it.** `Descendants(A + "xfrm").First()` finds
+the shape TREE's `<p:grpSpPr>` transform -- which always exists with zeroed off/ext -- not the
+shape's. The control asserting "an unedited inherited shape writes no transform" failed, which is
+precisely its job; without it I would have read a false signal off the group transform and concluded
+the writer was already correct. Fixed to select the shape's own `spPr`.
+
+Reverting the fix fails exactly the two persistence tests and leaves the control green.
+
+Lanes: full FreeP.slnx green, all 8 assemblies, 9,799 tests.
