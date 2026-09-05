@@ -7918,3 +7918,39 @@ omission reads as a decision rather than the next round's "known gap". The class
 
 Lanes: solution build green; DefaultTests 31 assemblies / 0 failures (verified with full capture, not
 a truncated pipeline); App.Services 3606.
+
+## r411 - Do the siblings warn before a lossy save? (Yes -- and my first answer was wrong)
+
+r408-r410 fixed FreeX's lossy-save gate three times. Natural cross-app question: do FreeW and FreeP
+warn at all? First search said no -- and that was **my error, not a finding**. I grepped for FreeX's
+vocabulary (`LossyFormat`, `FeatureLossConfirmation`, `PossibleDataLoss`) and read the empty result as
+"the feature is absent". FreeW calls it `DocumentSaveCompatibilityPlanner`. A cross-app search has to
+be by CONCEPT, or absence-of-match reads as absence-of-feature -- which would have "justified"
+building a gate FreeW already had.
+
+**FreeW: present, and more mature than FreeX's was.** Measured its plan for six document/target
+combinations. It is TARGET-CAPABILITY based -- it warns on what the format can hold -- with
+content-aware bullets added for what this document actually carries:
+
+    txt + bold    -> warns: "Plain text keeps only characters and paragraph breaks" + rich-formatting bullet
+    txt + table   -> warns: same, plus "Tables may be removed"
+    txt plain     -> warns: format bullet only
+    rtf + table   -> warns: "an interchange format with a supported subset"
+    html + table  -> warns: "document-to-HTML conversions, not full Word round-trips"
+    docx + table  -> no warning
+
+I initially read the rtf/html cases as false alarms, because my own round-trip probe showed bold and
+tables SURVIVING both. Reading the messages corrected that: they say "may remove or simplify" and
+name the format's nature rather than claiming a specific loss, which is accurate and is what Word
+does. A boolean looked wrong; the actual text was right.
+
+**FreeP: no gate, and correctly so.** Its writable formats are .pptx/.potx/.ppsx -- the same package
+with different content types, identical fidelity -- plus .pdf, which is export-only. There is no
+lossy save to warn about. An absent gate here is the right answer, not a gap, which is worth
+recording so a future round does not "fix" it.
+
+**No defect. No code change.** Two things worth carrying: FreeW's design (per-target profile + a
+message naming what is at risk) is the shape FreeX converged on independently across r408-r410, so
+the sibling had the better answer first; and the premise error above is the third distinct way this
+session has manufactured false confidence -- after a wrong inherited premise (r355/r287/r292) and an
+instrument that could not fail (r396/r398), now a search whose vocabulary did not match its target.
