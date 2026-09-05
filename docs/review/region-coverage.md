@@ -8965,3 +8965,44 @@ r358 guard exists to catch, in my own new test. Always check the substitution co
 exit status.
 
 `FreeP.App.Presentation.Tests` 6026 passed / 0 failed. `FreeW.App.Presentation.Tests` 3002 / 0.
+
+## r444 — the UI test harness reported "settled" while the window was still working
+
+r443's verification run produced one failure in `FreeX.App.Host.Logic.Tests`:
+`R62_NameBoxStructuredTableTests.NameBoxEnter_WithExistingTableName...` found the selection still at
+A1 after Enter had been handled. It was not caused by anything in r438-r443 -- it passed alone, and
+passed on a full re-run of its own lane. Rather than dismiss it as a flake or attribute it falsely,
+the thing underneath it turned out to be provable on its own.
+
+**`PumpDispatcher` posted its sentinel at `Background`.** `PushFrame` therefore returned as soon as
+Background-priority work had drained, which leaves two gaps:
+
+- work the window posted at `ContextIdle`, `ApplicationIdle` or `SystemIdle` -- all BELOW Background
+  -- was still queued, and
+- work posted BY work the pump had just run was still queued, which is exactly how a UI settles in
+  practice, one stage handing off to the next.
+
+Every UI test in these lanes calls it and then asserts, treating it as "the window has settled". Both
+gaps therefore turn such assertions into races decided by machine load rather than behaviour.
+
+`R444_PumpDispatcherDrainsIdleWorkTests` pins both, and **both fail against the old Background
+sentinel** -- the gap is demonstrated, not argued. The sentinel now goes at `SystemIdle`, the lowest
+priority, so the frame runs until everything above it has drained including work queued while
+draining. A 10-second deadline means a component that re-posts forever fails its own test slowly
+instead of hanging a 20-minute lane with no output to diagnose.
+
+Applied to both copies: `R49MainWindowTestHarness` (the Host.Logic lane) and the shared
+`DispatcherTestPump` (64 files in the Host lane).
+
+**Not claimed**: that this explains the R62 failure. It is the harness gap that makes such a failure
+possible; the specific one was never reproduced.
+
+Cost, stated plainly: the Host.Logic lane went 3m19s -> 4m19s. Draining to true idle is simply more
+work than draining to Background, and a UI lane that reports settled before the UI has settled is
+not worth its speed.
+
+Lanes: Host.Logic 1511 passed / 0 failed, Host.Tests 5374 / 0.
+
+**Left open**: 80 further local copies of `PumpDispatcher` across the test tree carry the identical
+Background sentinel. They are mechanical to convert but each belongs to tests this round did not
+touch; converting them wholesale would be a large blind edit. Recorded rather than half-done.
