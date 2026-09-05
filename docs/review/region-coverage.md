@@ -9286,3 +9286,40 @@ failed. Proven by neutering: only the damage test fails.
 already correct before being probed -- FreeW's ODT, and FreeX's xlsx at the workbook.xml level -- so
 the pattern is not universal carelessness but a fix that never propagated. ODT is the one remaining
 sibling of this family and it is already right.
+
+## r452 — two record-based importers accepted any text file as an empty workbook
+
+Extends the sweep from packaged formats into the record/section text importers, on the same reasoning
+that took r451 into ODS: they are ordinary Open-dialog paths, and the earlier boundary was arbitrary.
+
+**Findings and non-findings, from one probe run over four readers:**
+
+- `SpreadsheetXmlFileAdapter` -- **already correct**, rejecting a wrong root outright. It is what made
+  the other two look inconsistent.
+- `HtmlFileAdapter` -- reads 0 cells from markup with no tables. **Deliberately left alone**: an HTML
+  page with no table legitimately has nothing to import, and that is not corruption. Treating it as
+  damage would reject valid input, which is the opposite mistake.
+- `SlkFileAdapter` and `DifFileAdapter` -- **both accepted arbitrary text as an empty workbook.**
+  SYLK skips unrecognised records, so any file at all produced a blank sheet; DIF returned an empty
+  workbook whenever `SkipToDataSection` found nothing. A save then wrote an empty file over whatever
+  the original was.
+
+**Not a header check, deliberately.** SYLK's spec puts an `ID` record first and DIF begins with
+`TABLE`, and enforcing that would have been the obvious fix -- but real writers vary, and rejecting a
+file that plainly IS the format is the worse error. Each reader instead asks the narrow question: did
+ANYTHING here parse as this format? SYLK accepts any recognised record id (generously including the
+ones it skips as carrying no cell data -- the guard exists to reject foreign files, not to police
+which records a writer emits), and DIF accepts a DATA section even when it holds zero rows.
+
+Both narrowness cases are pinned by tests -- a header-only SYLK file and an empty DIF table both open
+-- because the whole distinction is between "empty because the format says so" and "empty because
+this was never the format". Emptiness alone cannot tell those apart, which is exactly why the silent
+version was dangerous.
+
+Proven by neutering both guards: precisely the two rejection tests fail, the four others pass.
+`FreeX.Core.IO.Tests` 6434 passed / 0 failed.
+
+**Where the class stands after five rounds** (r448-r452): six readers fixed across three apps, and
+three found already correct before being touched -- FreeW's ODT, FreeX's SpreadsheetML, and xlsx at
+the workbook.xml level. The consistent shape is not carelessness but a fix that never propagated:
+every app contains an adapter that gets this right sitting beside one that did not.
