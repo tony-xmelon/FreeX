@@ -8199,3 +8199,31 @@ properties are INDEPENDENT. Where they are not, the sweep must model the depende
 false positives at exactly the rate the model has interdependent fields.
 
 Lane: FreeW.Core.IO.Tests 1984/1984 green.
+
+## r420 - Borders and fills: closing a gap inside r415's own sweep
+
+Not an untouched corner -- a hole in my own instrument. r415 swept `CellStyle` by filtering to
+bool/double/string/int properties, which silently skipped every complex one: borders, fill colours,
+fill patterns, gradients, theme references. A filter that quietly drops the richest half of a model
+reports green over what it never looked at, which is the failure this program keeps finding in its
+own tools rather than in the product.
+
+They are also the formatting users notice most. A table whose borders vanish on reload looks broken
+in a way a lost font size does not, and a row that loses its fill becomes indistinguishable from the
+rest of the sheet.
+
+**No defect.** Border styles and colours, fill colours, font colours and fill patterns all survive.
+
+Three of the thirteen cases exist to stop the others passing for the wrong reason:
+
+- **Per-edge assertions.** A writer that emitted only the first edge would pass a test that checked
+  "a border survives".
+- **A transposition case** with four DIFFERENT styles, because every edge set identically cannot
+  detect left and right being swapped.
+- **A stays-absent control.** Every other assertion checks that something SET survives; without this,
+  a reader that invented a Thin border on every cell would satisfy all of them.
+
+**Proven sensitive**: neutering the mapper's `BorderLeft` emission fails all six border cases,
+naming the edge.
+
+Lane: FreeX.Core.IO.Tests 6395/6395 green, 64 skipped.
