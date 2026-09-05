@@ -8296,3 +8296,31 @@ looks identical to one nobody has noticed; asserting it makes the gap self-corre
 stale.
 
 Lane: FreeX.Core.IO.Tests 6410/6410 green, 64 skipped.
+
+## r423 - FreeP table structure through the pptx round trip
+
+Tables are FreeP's most structured shape -- a column-width list, rows with their own heights, and
+cells carrying spans, insets and their own text bodies -- so they have the most places to lose
+something. FreeP is also where r412's real persistence bug was found, which is why it was worth
+looking here rather than at a quieter app.
+
+**No defect.** Grid, per-cell text, per-row heights, horizontal spans and vertical spans all survive.
+
+Three of the six cases exist to stop the others passing for the wrong reason:
+
+- **Text asserted in EVERY cell**, not the first. A writer that emitted only the first row, or only
+  the first cell of each row, would pass a spot check and fail this.
+- **Row heights differ per row** (370840 and 470840), so a reader that applied the first row's height
+  to all of them is caught. Identical heights would have hidden that.
+- **A gains-no-spans control.** Every other assertion checks that something SET survives, so a reader
+  that defaulted GridSpan to 2 or marked cells merged would satisfy all of them.
+
+Span loss is the case worth naming: a merged cell that returns unmerged does not look corrupt. The
+table simply shows an extra boundary where the author had one wide cell, and a reader assumes the
+layout was always that way. That is the same shape as r421's inverted precedence and r412's dropped
+rotation -- damage that presents as a design choice rather than an error.
+
+**Proven sensitive**: suppressing the writer's `gridSpan` attribute fails the horizontal-merge case
+with "must still span two columns, but found 1".
+
+Lane: FreeP.App.Presentation.Tests 5961/5961 green.
