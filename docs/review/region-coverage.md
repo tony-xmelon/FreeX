@@ -7986,3 +7986,32 @@ the writer was already correct. Fixed to select the shape's own `spPr`.
 Reverting the fix fails exactly the two persistence tests and leaves the control green.
 
 Lanes: full FreeP.slnx green, all 8 assemblies, 9,799 tests.
+
+## r413 - Generalising r412: does every shape edit reach the file?
+
+r412 found that rotating or flipping an inherited-geometry shape wrote nothing. That was found one
+property at a time, which only works if you happen to test the right property. This sweeps the class:
+reflection over every writable bool/long/double/string/enum property on `SlideShape`, each set to a
+distinctive value, written, read back, compared.
+
+**19 properties swept. No new defect.** Two came back not-kept and BOTH were my fixture, not the
+product:
+
+- `LegacyFxpKind` -- preserved verbatim for the legacy .fxp format's byte-stable round trip. It
+  describes an fxp shape kind and has no pptx representation, so not carrying it is correct.
+- `PictureFrameGeometry` -- written and read only on the PICTURE path, which an auto-shape fixture
+  cannot reach. Verified separately with a real picture shape: `ellipse` round-trips intact.
+
+Both were checked rather than reported. A sweep that lists its own fixture limitations as findings is
+worse than no sweep, because each false positive costs someone a real investigation.
+
+The exclusions live in a named dictionary WITH reasons, not a silent filter, and the picture case has
+its own test -- so the exclusion documents where the coverage went rather than hiding it. The query
+is pinned at >= 15 properties so it cannot shrink into a confident green over nothing.
+
+**Proven to catch the class it generalises.** Re-breaking r412's fix makes the sweep report FlipH,
+FlipV and RotationDeg -- including FlipV, which r412's own targeted tests never covered. That is the
+argument for the sweep over another hand-written case: it finds the properties nobody thought to
+name.
+
+Lane: FreeP.App.Presentation.Tests 5955/5955 green.
