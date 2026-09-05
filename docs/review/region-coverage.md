@@ -9323,3 +9323,40 @@ Proven by neutering both guards: precisely the two rejection tests fail, the fou
 three found already correct before being touched -- FreeW's ODT, FreeX's SpreadsheetML, and xlsx at
 the workbook.xml level. The consistent shape is not carelessness but a fix that never propagated:
 every app contains an adapter that gets this right sitting beside one that did not.
+
+## r453 — the sweep's last reader, and where this lens stops paying
+
+Final pass of the malformed-input sweep, over every remaining importer in FreeW and FreeP.
+
+**Six readers probed, five already correct.** Worth recording as carefully as the fixes, because it is
+what says the earlier findings were a propagation failure rather than a systemic one:
+
+- FreeW `Wordml2003FileAdapter` -- rejects a wrong root and garbage. Correct.
+- FreeW `WordXmlFileAdapter` -- explicitly sniffs the root and throws naming both schemas it accepts.
+  Correct, and notably the most careful of the lot.
+- FreeW `MhtmlFileAdapter` -- throws `FormatException`. Correct.
+- FreeW `HtmlFileAdapter` -- reads no text from markup with none. **Left alone**: an HTML page with
+  no body text is legitimate input, not damage.
+- FreeW `RtfFileAdapter` -- imports a non-RTF file as plain text. **Left alone**: lenient, but the
+  content is all there, so nothing is lost and nothing is hidden.
+- FreeP `FxpFormat` -- no silent loss; every malformed case threw. But two threw the WRONG THING.
+
+**The finding: a bare NullReferenceException reached the user as their error message.** Well-formed
+JSON that is not a presentation (`{}`, or any object missing what `ToModel` dereferences)
+deserialises into a DTO of nulls and fails deep inside it. `PresentationNativeCommandOutcomePlanner`
+shows `Exception.Message` verbatim, so the user opening such a file was told "Object reference not
+set to an instance of an object" -- about a file this reader already owns an accurate sentence for.
+
+This is not a new judgement: FreeX made exactly this fix in r382, converting the bare NRE from a
+missing `[Content_Types].xml` into the adapter's own words while keeping the original as
+InnerException. The same remedy applies here, and a test pins the InnerException so the diagnosis
+survives for whoever reads a log.
+
+`FreeP.App.Presentation.Tests` 6035 passed / 0 failed. Proven by neutering the catch: three of four
+tests fail, and the one that does not is the one that does not depend on it.
+
+**Where this lens stands.** Across r448-r453 the probe covered fourteen readers: six defects fixed,
+eight found already correct. The yield per round fell from 3-of-4 readers (r448-r450) to 2-of-4
+(r452) to 1-of-6 here, and the last was a message-quality fault rather than data loss. That curve is
+the honest signal that this technique is close to exhausted on the reader surface -- not that the
+remaining readers are unexamined, but that they were examined and were sound.
