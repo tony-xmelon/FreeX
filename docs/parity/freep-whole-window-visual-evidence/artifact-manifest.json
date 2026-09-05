@@ -100,7 +100,7 @@
     },
     {
       "path": "shared/Free.Shared.Ribbon.Wpf/RibbonWpfRenderer.cs",
-      "sha256": "4be363f8590e428b2a7bcb6a47dbdf763d5c02e5a77af060f413b667d156f80a"
+      "sha256": "89ca4d648f33b7ab72249f3d5ed5be45781f6952f1ebbf7778f356eb34d449bd"
     },
     {
       "path": "shared/Free.Shared.Ribbon.Avalonia/AvaloniaRibbonRenderer.cs",
