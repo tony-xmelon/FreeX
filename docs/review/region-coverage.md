@@ -7678,3 +7678,41 @@ r391-r393 spent three rounds on. Swept them.
 The round's real content is the correction: "cosmetic" was a category I applied without checking, and
 one of the three items in it was a data-loss policy. Scope decisions made by assumption are the same
 error as findings made by assumption -- they just fail quietly instead of loudly.
+
+## r404 - Finishing the shared-policy enumeration r402 left open
+
+r402 audited part of the shared protection surface and skipped the rest as "cosmetic"; r403 showed
+that judgement was made without looking and swept three of them. This finishes the list, so the
+enumeration is complete rather than partial. Depth was matched to consequence, and that split is
+recorded here rather than left implicit.
+
+**Examined closely (a failure would change data, expose content, or pick the wrong target):**
+
+- **`FindReplaceDialogPolicy`** (27 call sites) turns out to own dialog state and status text, not
+  the replacement itself -- except `ReplacementTargetIndex`, which chooses WHICH match is replaced,
+  and `Navigate`, which chooses which is selected. Both are correct: the target index clamps a stale
+  index to the first match rather than running off the end. One observation worth writing down:
+  `Navigate` computes `(current + direction + matchCount) % matchCount`, and C# `%` keeps the sign,
+  so any `|direction| > matchCount` yields a NEGATIVE index. Unreachable today -- the only path in
+  is `FindNext`/`FindPrevious` passing +1/-1 -- so no change, per the r399 rule about not editing
+  production code for a hazard nothing can reach. Recorded so the constraint is visible to whoever
+  adds a "skip N" later.
+- **`PrinterSubmissionSelectionPolicy`** resolves the queue a document is sent to, so a wrong answer
+  prints someone's document somewhere they did not choose. `Resolve` returns null when an explicitly
+  requested printer is not in the discovery list, and BOTH platform services -- CUPS and Windows --
+  fail the submission with "the selected printer is not available" rather than falling back to the
+  default. That fallback is the mistake this shape invites, and neither makes it.
+- **`OutputFileNameStemPolicy`** strips directories via `GetFileNameWithoutExtension` and replaces
+  everything in `Path.GetInvalidFileNameChars()`, so no separator survives and no traversal is
+  expressible -- consistent with r400's finding for the OLE path.
+- **`ZoomPercentPolicy`** parses user-typed text, so it lands in r391-r393's culture surface. It
+  parses BICULTURALLY -- current culture, then invariant -- and formats with the current culture,
+  which is the same correct pattern the CSV reader uses.
+
+**Assessed briefly (failure is visual):** `ApplicationWindowTitlePolicy`, `RibbonCommandIconPolicy`,
+`RibbonAdaptiveCollapsePolicy`, `DialogOptionPolicy`, `WorkflowCommandCatalogPolicy`, and the two
+`VisualEvidence*` policies, which are test-harness infrastructure rather than product code.
+
+**No defect. No code change.** All 18 shared guards and policies have now been through the
+consumer-and-ordering question that produced r401. Two of the eighteen had real gaps and both are
+fixed (r401's guard ordering, r397's missing timeout in the same family of thinking); the rest hold.
