@@ -7775,3 +7775,34 @@ Still a sample: 14 of 243. The honest framing is unchanged -- this is not a swep
 harness with a growing sample, and the ledger says so.
 
 Lane: FreeX.Core.Model.Tests 6710/6710 green, 47 skipped.
+
+## r407 - Annotation layers, and the change-gate earning its keep twice
+
+Extended the FreeX undo harness again: 17 commands now (from 14), adding ClearComments,
+ClearHyperlinks and ToggleWorksheetAutoFilter. These were chosen because they touch state the
+snapshot could NOT see, so adding them meant deepening the instrument -- which is the more valuable
+half of the work.
+
+The snapshot now also records comments, hyperlinks, data-validation and conditional-format counts,
+and the autofilter reference. All 17 restore exactly.
+
+**The change-gate caught two of my own mistakes in one round, which is the point of it.**
+
+1. The clear-* commands need something to clear. With an empty fixture their Apply is a no-op and the
+   gate rejects them -- correctly, because a test that clears nothing proves nothing about restoring
+   it. Seeded the fixture with comments and a hyperlink.
+2. `ToggleWorksheetAutoFilter` then failed the gate too, and that one was more interesting: the
+   command changes ONLY `Sheet.AutoFilter`, which the snapshot did not record, so the instrument
+   could not see the command work at all. Had the gate not existed, that test would have passed while
+   comparing a workbook the command never visibly touched -- a green proving nothing, over a command
+   nobody had verified. Added the autofilter reference and column count.
+
+That is twice in one round that "assert the thing actually changed" turned a silent pass into a
+visible gap. It is the cheapest assertion in the suite and has now caught bad fixtures in FreeW
+(two), FreeP (one), and FreeX (two).
+
+Still 17 of 243. The number matters less than the shape: each addition now tends to reveal whether
+the snapshot reaches the state its command touches, so coverage and instrument depth grow together
+rather than coverage outrunning it.
+
+Lane: FreeX.Core.Model.Tests 6710/6710 green, 47 skipped.
