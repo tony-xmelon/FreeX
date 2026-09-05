@@ -8140,3 +8140,27 @@ commands with fixtures chosen to make them meaningful, while this catches anythi
 regresses -- including commands nobody has thought about yet.
 
 Lane: FreeX.Core.Model.Tests 6713/6713 green, 47 skipped.
+
+## r418 - Validation and conditional-format rules, the worse half of the persistence class
+
+r413-r415 swept the styling models. Validation rules are the harder case and the worse failure mode:
+a dropped style is visible, whereas a validation rule that loses its operator or its bounds keeps
+LOOKING like a rule while silently no longer enforcing what the user set. The cell still shows its
+dropdown; it just stops rejecting the values it was created to reject, and nothing on screen says so.
+
+**No defect.** Every simple `DataValidation` property survives an .xlsx round trip, and both rule
+types survive at all.
+
+The probe-value choice is what makes this test worth having: `AllowBlank`, `ShowDropdown`,
+`ShowInputMessage` and `ShowErrorMessage` all default to TRUE, so testing with true would round-trip
+trivially through a writer that emitted nothing whatsoever. Every value is set distinct from its
+default -- the same trap r415 avoided for `Locked`.
+
+Two "survives at all" controls sit beside the sweep, because if rules did not round-trip at all then
+every per-property comparison would fail for one shared reason and the detail would be noise pointing
+at the wrong thing.
+
+**Proven sensitive**: neutering the mapper's `IgnoreBlanks` assignment makes the sweep report
+`AllowBlank: wrote False, read True`. Restored and verified.
+
+Lane: FreeX.Core.IO.Tests 6382/6382 green, 64 skipped.
