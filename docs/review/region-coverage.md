@@ -8575,3 +8575,29 @@ or a plot area reverted to automatic still produces a correct, readable chart --
 author arranged, usually arranged to stop the legend covering the data.
 
 Lane: FreeP.App.Presentation.Tests 6014/6014 green.
+
+## r433 - A test that promised more than it checked
+
+Colour-scale thresholds, and the reason they were missing. **No defect** -- thresholds survive.
+
+**The finding is about my own test.** r421 contained
+`AColourScaleKeepsItsColoursAndThresholds`, which asserted the three colours and never set or checked
+a threshold at all. A test whose NAME claims more than its body does is the quietest way a suite
+lies: nobody reading it fails, nothing goes red, and anyone auditing coverage by test name -- which is
+how coverage usually gets audited -- ticks thresholds off the list and moves on. It is worse than an
+absent test, because an absent test is visible.
+
+Renamed to `AColourScaleKeepsItsColours`, and the missing half written as its own case. Thresholds
+deserve it: the same three colours anchored to percentile 50 rather than to a number of 42 paint an
+entirely different sheet, and both look like a working colour scale.
+
+Probe values differ from the model's defaults (Min / Percentile-50 / Max), the r424 rule, now applied
+in its seventh model. **Proven sensitive**: forcing the writer to emit a default Min cfvo fails with
+"Min is the default, so a lost type silently reverts to auto-scaling".
+
+Worth noting alongside the other instrument failures these rounds have turned up -- vacuous
+assertions (r358, and one I wrote in r412), silent type filters (r420), unexercised paths (r396),
+interdependent-field false positives (r419, r428, r432) -- this is a new species: an accurate test
+with an inaccurate name. The others fail loudly once noticed; this one only ever misleads a reader.
+
+Lane: FreeX.Core.IO.Tests 6411/6411 green, 64 skipped.
