@@ -8073,3 +8073,36 @@ format slots conditional formatting uses, not a cell's own style, and do not tra
 xf record.
 
 Lane: FreeX.Core.IO.Tests 6379/6379 green, 64 skipped.
+
+## r416 - FreeX undo coverage 17 -> 27, and two more gate catches
+
+Extended the harness with the cell-SHIFTING family, which the earlier rounds never touched: those
+edited cells in place, while these move data. A partial Revert is hardest to notice here -- the grid
+still looks plausible, just with values one column left of where they belong.
+
+Added: InsertCells (down and right), DeleteCells (up and left), CopyRange, MoveRange, FillCells,
+AllowEditRange, ClearConditionalFormats, ClearDataValidation, and RemoveDuplicateRows. **27 commands
+now covered, all restoring exactly.**
+
+**The change-gate caught two more of my mistakes**, which is now its sixth and seventh across the
+three apps:
+
+- `RemoveDuplicateRows` removed nothing, because every row in the shared fixture is deliberately
+  distinct. Rather than add duplicates to the shared fixture -- which would change what every OTHER
+  command is tested against -- it got its own, with two separate duplicate pairs so a Revert that
+  restores only the last removed row still fails.
+- `AllowEditRange` changed only `Sheet.AllowEditRanges`, which the snapshot did not record. Same
+  shape as r407's autofilter: the gate refused to let a command be "tested" against a snapshot that
+  could not see it work. Added the collection, and the snapshot self-check now asserts the autofilter
+  and validation lines are present too.
+
+That is the pattern worth naming from these rounds: extending coverage keeps revealing snapshot gaps,
+so the instrument deepens alongside the sample instead of the sample outrunning it. Every command
+added since r405 has either passed immediately or exposed something the snapshot could not see --
+never a silent green.
+
+Still 27 of 243, and the harness is a sample rather than a sweep. What has changed is that the
+sample now covers all five structural families: in-place edits, structural insert/delete, cell
+shifting, annotation layers, and workbook-level sheet operations.
+
+Lane: FreeX.Core.Model.Tests 6711/6711 green, 47 skipped.
