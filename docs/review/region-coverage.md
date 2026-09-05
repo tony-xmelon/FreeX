@@ -8750,3 +8750,59 @@ itself — then restored and re-run green.
 
 Census after: `types=228 notConstructible=49 threw=0 noChange=148 exercised=31 failed=0`.
 `FreeX.Core.Model.Tests` 6716 passed / 0 failed.
+
+## r439 — widening what the undo driver can SEE, and the phantom-undo lead
+
+r438 ended by naming the honest gap: 148 of 228 commands were counted as constructible but produced
+no visible change, so their Revert was never checked at all. This round attacked that half.
+
+**The gap was mostly in the observer, not the commands.** Splitting the 148 showed 87 were *refused*
+with a guard message ("Chart was not found", "Cannot delete the only sheet") — the fixture legitimately
+gives them nothing to act on — leaving 61 that reported SUCCESS while appearing to change nothing.
+Reading a sample of those explained it: the driver's `Describe` was a hand-written list of nine
+fields, blind to print areas, view options, protection, freeze panes, outlines, tab colour and the
+rest of a `Sheet`'s very large surface.
+
+**Fix: make `Describe` reflective.** It now walks every public property of `Workbook` and each `Sheet`.
+A hand-listed observer only sees state somebody thought to add a line for — the same blind spot as
+the hand-written per-command sample r417 was built to escape — and it rots silently as the model
+grows. Reflection means a field added tomorrow is watched the day it appears.
+
+- silent-success 61 → 23
+- commands whose Revert is actually checked (`exercised`) **31 → 70**
+
+**Two properties are excluded, by name and with justification.** The first reflective run produced 14
+"failures", every one of them either `ContentVersion` or `StyleCount`. Neither is document state:
+`ContentVersion` is documented as a monotonic counter that caches key on, so winding it back on undo
+would leave those caches believing stale results are current — bumping it forward is *correct*; and
+`StyleCount` counts the interned style pool, which is appended and shared, never reference-counted,
+exactly as Excel's own style table accumulates. The exclusion is two literal names rather than a
+pattern, because a rule broad enough to be convenient is broad enough to hide the next real defect.
+
+**Contents, not counts.** `Describe` renders collections by joining their elements rather than
+counting them, so a command that edits a comment's text or a validation's operator *in place* and
+fails to restore it can no longer hide behind an unchanged collection size. This is safe from
+spurious diffs because the default `object.ToString` returns the stable type NAME, not an identity
+hash. It raised `exercised` to 70 and was proven to bite: neutering `SetCommentCommand.Revert` to
+write a wrong value — leaving the count identical — fails the driver, where the count-only version
+saw nothing. (The first neuter attempt *removed* the entry, which a count-only observer would also
+have caught; that proved nothing about the upgrade and was redone.)
+
+**No new defects.** After the exclusions the widened driver is green across all 70. That is the
+honest result: the widening bought coverage, not another bug.
+
+**Recorded lead, deliberately not "fixed".** `CommandBus` pushes an undo entry exactly when
+`Success && !IsNoOp`, so a command that succeeds, changes nothing, and omits `IsNoOp` leaves a
+phantom undo step — the user presses Ctrl+Z, nothing happens, and the edit they wanted is one
+keystroke further away. Of the 23 silent successes, 16 correctly report `IsNoOp`; 7 do not:
+`CopyRangeCommand`, `PasteCommentsCommand`, `SetCommentCommand`, `SetFormulaErrorIgnoredCommand`,
+`SetRowOutlineGroupCollapsedCommand`, `SetWorksheetViewOptionsCommand`, `UnprotectWorkbookCommand`.
+Two were checked and are NOT defects: `CopyRangeCommand` copies a range onto itself under this
+fixture (a degenerate input), and `UnmergeCellsCommand` — which does set `IsNoOp` — removes only an
+exactly-matching region by design, with production callers pre-filtering. The remaining five are
+unverified and must be judged one at a time before any is called a bug; several are likely to be
+changing state even the reflective describe cannot see.
+
+`R417` census after: `types=228 notConstructible=49 threw=0 noChange=109 exercised=70 failed=0`, with
+`exercised >= 65` and `notConstructible <= 55` now pinned so narrowing the driver shows up as a
+failure instead of a comfortable green. `FreeX.Core.Model.Tests` 6716 passed / 0 failed.
