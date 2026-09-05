@@ -9211,3 +9211,45 @@ it pass. A first neuter attempt was discarded because it broke the compiler's nu
 instead of the behaviour -- the same trap as r442's.
 
 `FreeW.Core.IO.Tests` 1988 passed / 0 failed.
+
+## r450 — the third reader, the same silent loss, and a different right answer
+
+Completes the sweep begun in r448. All three apps' primary readers have now been probed the same way:
+write a valid file with the real writer, mutate one zip entry at a time, read it back.
+
+**FreeX is the most robust of the three.** Eight of nine mutations threw properly -- including the
+top-level `workbook.xml` wrong-root case that BOTH siblings failed silently -- and it names package
+corruption with its own sentence (r382's `WorkbookInvalidException`). The one hole was a worksheet
+part whose root element is not `<worksheet>`: ClosedXML loads that as an EMPTY sheet, every other
+sheet intact, nothing said. A 13-cell workbook came back with 1.
+
+**Reported, not refused -- deliberately different from its siblings.** r448 and r449 rejected the
+file because there was nothing left to open: no slides, no body. Here eleven of twelve cells' worth of
+other sheets are perfectly fine, and refusing the workbook would destroy more value than the damage
+did. Excel's own behaviour is the guide: it opens what it can and tells you it repaired the file.
+This adapter -- unlike FreeP's reader, which is why r448 recorded that half rather than fixing it --
+already owns a warning channel (`LoadWithWarnings`), so the fix uses the mechanism that exists.
+
+**Cost control.** The scan reads only each sheet part's ROOT element via `XmlReader`, not the whole
+part: these files reach hundreds of megabytes and this load path has been tuned for exactly that. A
+non-seekable stream is skipped rather than buffered, and every failure to inspect leaves the load
+untouched -- a diagnostic must never be the thing that stops a file opening.
+
+**The codebase caught me.** The first version hand-rolled its `XmlReaderSettings` with the DTD and
+resolver protections but no character cap, and R276's contract test failed it by name, pointing at
+`SecureXmlReaderSettings.Create()`. That is a source-contract guard working exactly as intended
+against new code -- worth recording, because these tests are usually only seen when they drift.
+
+Three tests: the warning fires and names the part; the damage is real and costs that sheet's cells
+(asserted, not assumed, so the warning is not noise); and a healthy workbook warns about nothing,
+because a warning that cries wolf trains the user to dismiss the one that matters. Proven by
+neutering the scan: only the warning test fails.
+
+`FreeX.Core.IO.Tests` 6424 passed / 0 failed.
+
+**The sweep's shape, across all three.** One probe, three readers, three findings of one family: a
+null-tolerant lookup on the part that names the content, so an unrecognised root yields nothing and
+the surrounding "empty is fine" handling dresses the result up as a legitimate file. Each needed a
+different remedy -- refuse (FreeP), refuse (FreeW), warn (FreeX) -- decided by how much of the user's
+document survived. None was reachable from another app's test suite, which is why fourteen rounds of
+per-feature tests found none of them and nine mutations found all three.
