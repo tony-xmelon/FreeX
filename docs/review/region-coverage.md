@@ -7433,3 +7433,44 @@ One self-inflicted error worth recording: adding the image paragraph FIRST displ
 `Paragraphs.First()` and broke the round-trip control, which reads the font size from it. Reordered.
 
 Lane: FreeW.Core.IO.Tests 1974/1974 green. Production files restored and verified unchanged.
+
+## r397 - Find-with-wildcards could freeze FreeW's window, and r287 had cleared it
+
+A new dimension: unbounded regex backtracking. 39 regexes are constructed in production parsing code
+and NONE passes a match timeout -- but a missing timeout only matters where a pattern can explode and
+the input is user-driven, so the count is not the finding. Tracing them, FreeX's formula regexes
+already pass `FormulaSafetyLimits.RegexTimeout`; the user-supplied-pattern path was hardened there.
+FreeW's Find-with-wildcards was not.
+
+**The defect, measured.** `TextSearch.FindAll(useWildcards: true)` compiles the typed needle with no
+timeout. Against a 40-character run of 'a':
+
+    6 wildcards  ->   373 ms
+    8 wildcards  ->  did not finish in 5 s
+
+Find runs on the UI thread, so that is a frozen window with no error and nothing to cancel: the user
+kills the process and loses unsaved work. The needle is something they typed, not a hostile file.
+
+**r287 examined this exact class and cleared it.** Its reasoning: wildcard syntax has no grouping and
+no counted quantifier, so the `(a+)+` shape cannot be written, therefore the missing timeout is
+survivable. The first half is true and its tests still pin it. The conclusion does not follow -- the
+classic exponential case needs no group at all. `*a*a*a*b` becomes `.*?a.*?a.*?a.*?b`, where each
+wildcard can split the text many ways and the failures multiply. r287's measurement used ten
+CONSECUTIVE stars, which collapses immediately; stars SEPARATED by literals are the dangerous shape.
+It measured the wrong shape and generalised from it.
+
+Fix: an explicit 1s `WildcardMatchTimeout`, mirroring the sibling app's precedent, with a timeout
+turned into "no more matches" exactly as the existing malformed-pattern path behaves. A `yield return`
+cannot sit inside a try/catch, hence the small `MatchWithinTimeout` helper. After the fix 8, 12 and 16
+wildcards all complete at ~1s -- one timeout ends enumeration, so the ceiling is per search, not per
+position.
+
+r287's tests are KEPT and its doc comment corrected in place: the structural property it pins is real
+and worth guarding; only its conclusion was wrong. The lesson recorded there is that "this syntax
+cannot express the textbook bad pattern" is not the same claim as "this syntax cannot be slow".
+
+Third time this session a prior round's PREMISE rather than its diagnosis was the thing to check
+(r355's fixture, r292's "Excel warns and we do not", now r287's structural argument). The pattern is
+consistent: each was a correct observation carried one inference too far.
+
+Lanes: full FreeW.slnx green, all 7 assemblies, 11,771 tests.
