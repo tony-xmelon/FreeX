@@ -8674,3 +8674,30 @@ group is how an author shadows an assembled diagram as a single object rather th
 piece. The test pins what that comment asserts.
 
 Lane: FreeP.App.Presentation.Tests 6017/6017 green.
+
+## r437 - Table cell fill and borders, closing the table surface
+
+The last uncovered part of the table after r423 (structure), r424 (styling flags) and r427 (cell
+text). **No defect.**
+
+Cell-level fill and borders are OVERRIDES -- a highlighted total row, a boxed heading -- applied on
+top of whatever the table style already paints. That is what makes their loss quiet: the cell falls
+back to the table style and still looks styled, just no longer emphasised. The table stays attractive
+and stops saying what the author meant it to.
+
+Two assertions carry the round:
+
+- **Four edges with four DIFFERENT widths.** Identical borders cannot detect a transposition, so the
+  widths are 1/2/3/4pt; feeding the writer's left edge the bottom's outline fails with "Expected Left
+  to be 1.0, but found 4.0". Same reasoning r420 used for FreeX cell borders, and the reason both
+  files use distinct values rather than a single representative one.
+- **A fill stays in its own cell.** The assertion no single-cell test can make: a writer that emitted
+  one cell's fill for the whole row satisfies every other case here while repainting the neighbour.
+
+A gains-nothing control completes it, since an invented cell fill emphasises a row the author did not
+choose -- the inverse failure, and the one every survives-what-was-set assertion is blind to.
+
+That closes the FreeP table surface end to end: grid and spans, row heights, banding flags, style id,
+insets, cell text formatting, and now cell fill and borders.
+
+Lane: FreeP.App.Presentation.Tests 6021/6021 green.
