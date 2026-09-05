@@ -7750,3 +7750,28 @@ is cleared. The value is that the harness now exists in the third app, so extend
 adding a line per command.
 
 Lane: FreeX.Core.Model.Tests 6709/6709 green, 47 skipped.
+
+## r406 - Cashing the cheque r405 wrote
+
+r405 ended by saying extending FreeX command-undo coverage was "a line per command". That is the kind
+of claim worth testing immediately, because if it were wrong the harness would be less useful than
+advertised. It held: eight more commands went in as single lines, plus one that needed its own
+fixture.
+
+Coverage now 14 commands (was 6): ClearContents, InsertRows, DeleteRows, InsertColumns,
+DeleteColumns, MergeCells, UnmergeCells, ApplyStyle, SetRowHeight, SetColumnWidth, AddSheet,
+RenameSheet, and MoveSheet. Chosen to reach state the first six did not touch -- merges as their own
+operation rather than as collateral of a row shift, style ids, the row/column sizing the snapshot was
+widened for in r405, and workbook-level sheet identity and order.
+
+**No defect. All 14 restore exactly**, and each cleared the "must actually change the workbook" gate,
+so none is a silent no-op passing the undo assertion for free.
+
+`MoveSheet` needed its own test rather than a line: sheet ORDER is workbook-level state, and the
+shared fixture has one sheet, so there is nothing to reorder. A `Check` line for it would have failed
+the change-gate -- which is the gate doing its job, and a good illustration of why it is there.
+
+Still a sample: 14 of 243. The honest framing is unchanged -- this is not a swept family, it is a
+harness with a growing sample, and the ledger says so.
+
+Lane: FreeX.Core.Model.Tests 6710/6710 green, 47 skipped.
