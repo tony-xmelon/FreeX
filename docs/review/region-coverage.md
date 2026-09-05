@@ -7371,3 +7371,30 @@ pins both halves.
 
 Lanes: full solution build green; DefaultTests 31 assemblies, 0 failures. FreeP.slnx all 8 green.
 FreeX.App.Services 3590, FreeX.App.Host.Logic 1509.
+
+## r395 - Whole test-surface sweep: the baseline, measured rather than assumed
+
+r394 showed that `FreeX.App.Host.Logic.Tests` sits outside `FreeX.DefaultTests.slnx`, had gone unrun
+for several rounds, and had quietly accumulated three reds -- one of them a real user-facing defect.
+That makes the default aggregate an incomplete gate, and any lane outside it can rot unobserved. So
+this round measured the whole surface instead of inferring it.
+
+Enumerated every test project (`find . -name '*.csproj' | xargs grep -l 'Microsoft.NET.Test.Sdk'`)
+-- **34** of them -- and ran each SERIALLY with a build, because concurrent lanes abort each other's
+assemblies.
+
+**Result: 58,946 passed / 181 skipped / 0 failed. 34 of 34 projects green.** No build errors, no
+missing summaries. That covers FreeX, FreeW (7 projects), FreeP (7) and the shared tier, including
+the lanes DefaultTests never touches: `FreeX.App.UI.Tests` (1110), `Free.Shared.Ribbon.Wpf.Tests`
+(55), `FreeX.App.Host.Logic.Tests` (1509), and the whole FreeW and FreeP solutions.
+
+Worth stating plainly: FreeW's seven suites (11,761 tests) had not been run once in this session --
+r391's survey reached FreeW's writers by inspection only. They are green, but that was an assumption
+until now.
+
+The practical consequence is that **the codebase no longer has a known-red list**, so from here a red
+test is a real signal rather than something to explain away. That matters more than the number: this
+session twice dismissed a failing test by pattern-matching its NAME to a known environmental cause
+(the disconnected-session WPF blank-render effect), and one of those was a live regression of my own.
+A correct general cause is the easiest way to wave away a specific real bug. Memory updated to
+supersede the old known-red entry with this baseline, the sweep command, and that lesson.
