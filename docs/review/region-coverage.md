@@ -8935,3 +8935,33 @@ them (r438, r441), both the same shape -- undo restoring a VALUE but not the STR
 setter created. The remaining ceiling in all three is the same: commands needing domain arguments a
 blind factory cannot invent. Raising that is a matter of teaching each factory its app's few
 dominant argument types, exactly as r438 did for FreeX by measuring rather than guessing.
+
+## r443 — checking HasEffect's claim instead of trusting it (FreeP + FreeW). Verified clean.
+
+The drivers already honoured `HasEffect`: a command reporting no effect was skipped, because the bus
+skips it too and driving it anyway would test a path production never takes. That is right — but it
+left the claim itself unchecked, and the claim is load-bearing.
+
+`PresentationCommandBus` and `DocumentCommandBus` skip such a command ENTIRELY: no `Apply`, no undo
+entry. So a command that answers false while it WOULD have changed the document makes the user's
+action vanish — they click, nothing happens, there is no error message and nothing to undo. That is
+worse than a crash, because nothing tells them the edit did not happen.
+
+Both drivers now apply the command anyway when it claims no effect and require the document to be
+genuinely unchanged. **Result: clean in both apps.** No FreeP or FreeW command lies about `HasEffect`.
+
+Two things make that a real green rather than a comfortable one:
+
+- **Reachability is asserted.** `claimedNoEffect` is counted into the census and pinned `> 0`, so if
+  no command ever reaches the branch the test fails instead of passing vacuously. Without it the new
+  assertion could sit there forever describing a path nothing takes.
+- **Proven to bite.** Forcing `SetSlideTitleCommand.HasEffect` to return `false` fails the driver,
+  naming the command and the change it would have made. Restored and re-run green.
+
+Two process notes, both the same trap: the assertion and the neuter were each first applied with a
+`perl` substitution that silently did not match, and each produced a PASS that meant nothing. The
+first would have shipped a collected-but-never-asserted list -- the exact vacuous-assertion shape the
+r358 guard exists to catch, in my own new test. Always check the substitution count, never the
+exit status.
+
+`FreeP.App.Presentation.Tests` 6026 passed / 0 failed. `FreeW.App.Presentation.Tests` 3002 / 0.
