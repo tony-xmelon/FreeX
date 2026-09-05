@@ -8652,3 +8652,25 @@ This closes the conditional-format surface: rule types (all 16), cell-value fiel
 pairing (r421, one real defect), colour scales and thresholds (r433), data bars and icon sets (r434).
 
 Lane: FreeX.Core.IO.Tests 6421/6421 green, 64 skipped.
+
+## r436 - Group-shape effects, with the path difference verified first
+
+r428 covered effects on an ordinary shape. **No defect** on the two remaining shape kinds.
+
+**The premise was checked before it became the reason** -- r427's lesson applied deliberately.
+Effects are emitted from exactly two places: `BuildSpPrEl`, which ordinary shapes AND pictures both
+route through, and `BuildGrpSpPrEl`, used only by groups. So r428 already reached pictures
+transitively, and GROUPS were the genuinely untested path. Had I assumed three separate paths, two
+thirds of this round would have been redundant work presented as coverage.
+
+The picture case is still asserted, cheaply, for a reason worth distinguishing: sharing a builder
+proves the serialisation is common, not that the picture path REACHES it. Confirmed by the
+sensitivity probe -- neutering the group builder's effect element fails only the group case and
+leaves the picture one green, which is what says the two paths really are distinct.
+
+The group builder carries its own warning comment that omitting the element "silently drops a
+group-level shadow on every save", and a group is the shape most likely to carry one: shadowing a
+group is how an author shadows an assembled diagram as a single object rather than shadowing each
+piece. The test pins what that comment asserts.
+
+Lane: FreeP.App.Presentation.Tests 6017/6017 green.
