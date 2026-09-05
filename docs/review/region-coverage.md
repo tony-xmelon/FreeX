@@ -8324,3 +8324,28 @@ rotation -- damage that presents as a design choice rather than an error.
 with "must still span two columns, but found 1".
 
 Lane: FreeP.App.Presentation.Tests 5961/5961 green.
+
+## r424 - Table styling: banding flags, style id, cell insets
+
+Extends r423 to the parts of a table that decide how it LOOKS rather than how it is shaped. Same
+fixture, three more cases, no defect.
+
+**The banding flags are the interesting case, because of an asymmetry in their defaults.**
+`BandRow` starts TRUE and the other five start false. A probe that set every flag to true would pass
+even against a writer that emitted nothing for BandRow, since the reader's default already agrees.
+So each flag is set to the OPPOSITE of its own default, and BandRow is tested with false. Proven to
+matter: changing the writer to always emit `bandRow="1"` fails exactly that case -- and only that
+case -- with "defaults to true, so losing it looks like nothing happened".
+
+The other two follow the same reasoning as r420's borders. Four cell insets get four DIFFERENT
+values, so a writer that emitted one for all four, or transposed left and right, fails rather than
+passing on symmetry. The table style id is asserted because losing it does not empty the table -- it
+silently renders unstyled, which reads as a formatting choice rather than a fault.
+
+That is now the third distinct place this session where a DEFAULT-TRUE field needed its probe
+inverted: r415's `Locked`, r418's `AllowBlank`/`ShowDropdown`/`ShowInputMessage`/`ShowErrorMessage`,
+and these flags. The general rule the sweeps have converged on: a probe value equal to the property's
+default tests nothing, and default-true booleans are where that is easiest to miss, because the
+obvious probe value is exactly the one that hides the bug.
+
+Lane: FreeP.App.Presentation.Tests 5964/5964 green.
