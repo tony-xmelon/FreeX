@@ -7474,3 +7474,38 @@ Third time this session a prior round's PREMISE rather than its diagnosis was th
 consistent: each was a correct observation carried one inference too far.
 
 Lanes: full FreeW.slnx green, all 7 assemblies, 11,771 tests.
+
+## r398 - Regex-on-file-content: the untrusted half of r397's class, verified clean
+
+r397 fixed the user-TYPED pattern (FreeW's Find). The other half of the class is regexes fed FILE
+content, where merely opening a document could hang the app. Swept it; **no defect found.**
+
+What was checked, and how:
+
+- **`AccessibilityTextRules.DomainLikeTextRegex`** -- the strongest suspect, since domain-validation
+  patterns are a famous ReDoS family and this one nests `(?:[A-Z0-9-]{0,61}[A-Z0-9])?` inside
+  `(...)*`. It is reached from `IsDescriptiveHyperlinkText`, which the accessibility checker feeds
+  hyperlink display text loaded from the workbook -- genuinely file-controlled. MEASURED across four
+  adversarial shapes (repeated dots, 40-char labels, one long label, hyphen runs) up to 1,640
+  characters: every case completes in single-digit milliseconds. Safe, and for a structural reason:
+  each label is anchored by a mandatory literal `\.`, so segmentation is deterministic and the
+  bounded inner quantifier cannot interact across segments. That is exactly what makes FreeW's
+  wildcard case different -- `.*?` spans any character, dots included, so its segmentation is not
+  anchored at all.
+- **`SpellCheckService.IgnoredAddressSpanRegex`** and the `FormulaReferenceCycler` reference patterns
+  -- assessed structurally rather than measured: every repetition is anchored by a mandatory literal
+  (`/`, `@`, `.`, a quote), and the one alternation inside a quantifier (`(?:[^']|'')+`) has disjoint
+  branches, so no input can be split two ways. Recorded as reasoning, not measurement, deliberately.
+- **FreeX's formula regexes** already pass `FormulaSafetyLimits.RegexTimeout`; the user-supplied
+  pattern surface was hardened there long ago, which is why r397's fix had a precedent to mirror.
+
+**A probe error worth recording, because it produced a clean-looking result for the wrong reason.**
+The first run terminated every adversarial string with `!` and reported 0ms everywhere. But
+`NormalizeComparableText` trims a trailing `!` before the regex ever runs, so the input the engine
+saw was a well-formed domain that matched immediately -- the probe was measuring the normalizer, not
+the pattern. Re-run with `~` (not in the trim set) the timings were unchanged, which is what makes
+the negative result trustworthy. A green from an input that never reached the code under test is the
+same failure this program keeps finding in its own instruments; r396 hit it twice.
+
+No test added. A timing assertion on a structurally-safe pattern would be flaky and would pin the
+machine's speed rather than a property. The finding is the reasoning, recorded here.
