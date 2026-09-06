@@ -10220,3 +10220,43 @@ be tuned to stay green is a liability rather than coverage. The surface is recor
 clean so the next round does not re-drive it.
 
 No code changed this round.
+
+## r479 - a real no-op defect, no user can reach it, and a claim I had to retract
+
+Invariant driven: pressing OK on a dialog without changing anything must not destroy the redo stack.
+FreeX drove this across its command surface in r208-r211; the mechanism is that `UndoRedoStack.Push`
+clears redo, so a command reporting an effect it did not have discards a pending redo.
+
+Driving it against FreeP's EditingSession found `SetShapeFillCommand`: it never overrode
+`HasEffect` (which defaults to true), so re-applying a shape's own fill left the model byte-identical
+and cleared redo. Neutering the added guard reproduces it exactly, so the defect is real at the API
+level.
+
+It is NOT reachable by a user, and the correction matters more than the fix. I wrote that "pressing
+OK in the fill dialog silently discarded the user's redo history". That was false. `SetSelectedFill`
+has no production caller at all - FreeP's shape-fill UI is not wired yet - so I asserted a user path
+without tracing it. The codebase caught it: the single failing test was
+R202_CommandDeclaresHasEffectContractTests, an allowlist of commands deliberately inheriting the
+default, each with a reason checked by two verifiers. This command's entry read "callers supply a
+freshly built fill, never the shape's own", and that reason is ACCURATE.
+
+The guard was kept anyway, and the justification is now recorded as what it is - pre-emptive. The
+r202 reason is a claim about CALLERS, so it expires silently the moment a fill picker that
+pre-selects the current colour is wired, which is how PowerPoint's behaves. One comparison that
+cannot expire was preferred to a premise that must be re-checked whenever a caller appears. This
+sits on the r460 line and could reasonably have gone the other way; what could not stand was the
+claim about the dialog.
+
+The guard is deliberately narrow: only exactly-comparable fills (both null, both None, two Solids
+with equal resolved colour, alpha and theme reference) count as equivalent; gradients and pictures
+still report an effect, because a redundant undo entry is a nuisance and a swallowed edit is data
+loss. A theme reference and a literal colour that resolve alike are treated as DIFFERENT, since
+re-theming moves one and not the other.
+
+Two vacuity traps were caught on the way. The probe's selection-based setters were inert until a
+control - a genuinely changing value - showed it also "survived", proving nothing was selected. Then
+`DuplicateCurrentSlide` + `Undo` moved the current slide, so the fill command targeted a slide
+without the shape; the narrowness tests failed and exposed it, which is the only reason the earlier
+"DEFECT" reading was re-verified rather than shipped on a vacuous fixture.
+
+FreeP 8 lanes 9910/0.
