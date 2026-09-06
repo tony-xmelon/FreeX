@@ -10859,3 +10859,30 @@ anyway: the map's value is that the next reviewer can tell "checked and sound" f
 and those are indistinguishable in a codebase that simply works.
 
 No code changed this round.
+
+## r501 - a crafted .pptx killed FreeP on open, uncatchably
+
+The most severe defect of this stretch, and it came from a class derived rather than listed. r477
+verified the READERS' recursion guards for group shapes and content controls; SmartArt rebuilds its
+hierarchy by recursing over parent-of CONNECTIONS, a separate structure that sweep never touched.
+
+What made it survive is that it looks handled. BuildNode already refuses a CYCLE - a path set stops
+an id being revisited - so the obvious hazard is covered and the code reads as defended. Nothing
+bounded DEPTH. A chain of points recursed once per link, and a 5,000-node chain is a small file: a
+few dozen bytes per point. StackOverflowException cannot be caught, so the process dies with no
+error, no recovery and no autosave, while merely OPENING a deck.
+
+Confirmed the hard way: the probe did not fail, THE TEST RUN ABORTED, with the trace repeating
+BuildNode. That is also why the suite ships with no neuter - removing the guard does not turn a test
+red, it kills the host process. The impossibility of neutering safely is the severity argument, and
+the test says so rather than leaving the absence to look like an oversight.
+
+The bound is 64, the same ceiling and the same reasoning as MaxShapeGroupNestingDepth IN THIS VERY
+READER, which already guards the shape tree. The sibling pattern again, this time between two
+structures in one file. Narrowness pinned: a ten-level diagram keeps all ten levels, so nothing an
+author would actually create is touched; the 5,000-chain now reads to depth 66 instead of dying.
+
+Sweep note: the raw signature - a self-recursive method in a writer or layout path - gave 312 hits,
+almost all recursion over UI trees the app builds itself and therefore bounded by construction.
+Narrowing to recursion over FILE-CONTROLLED nesting gave 23, and the SmartArt pair was the one that
+mattered. FreeP 8 lanes 9951/0.
