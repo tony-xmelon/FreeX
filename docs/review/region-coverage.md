@@ -10387,3 +10387,28 @@ defect survived. The empty case is documented in the suite as a control, not as 
 Also checked and left alone: effectLst itself is appended, which is correct relative to ln, and only
 scene3d/sp3d/extLst could follow it. That is a narrower case with no demonstrated path, so it was not
 hardened on a hypothesis (r460). FreeP 8 lanes 9926/0.
+
+## r484 - the same defect mirrored, in the file next door
+
+r483 fixed ZoomFrameBorderXml APPENDING a:ln, which put it after an existing a:effectLst. Rather than
+wait for a scan to surface the sibling, it was checked directly: ZoomFrameGeometryXml carried the
+same class of defect from the OPPOSITE end. It called AddFirst, placing a:prstGeom BEFORE an existing
+a:xfrm. CT_ShapeProperties puts the transform first and the geometry second, so geometry can be
+neither appended nor put unconditionally first - and any zoom frame that has been moved or resized
+carries an xfrm.
+
+Measured before fixing: `prstGeom,xfrm` where the schema wants `xfrm,prstGeom`, and
+`prstGeom,xfrm,solidFill` where it wants `xfrm,prstGeom,solidFill`. Controls (empty spPr, existing
+fill) were already correct. Fixed by inserting after an existing xfrm and falling back to AddFirst
+only when there is none; neutering it fails 2 of 5 with controls green.
+
+The family was CLOSED rather than sampled: every file in FreeP.Core.Model mentioning spPr was
+checked, and only these two actually mutate one. ChartShape, Slide and SmartArtShape merely name it.
+
+The blind spot repeated exactly, and that is the round's real content. In both files the empty-spPr
+case passes either way - old code and new both produce the right single-element result - so the
+obvious test, written against a bare zoom frame, would have gone green against BOTH defects. Two
+writers in the same folder shipped mirrored ordering bugs, and the most likely reason is that the
+natural test for each was vacuous in exactly the same way. Both suites now carry that case as a
+labelled control rather than counting it as coverage.
+FreeP 8 lanes 9931/0.
