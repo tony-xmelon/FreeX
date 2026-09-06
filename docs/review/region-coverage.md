@@ -10358,3 +10358,32 @@ covers the branch from one that merely runs it.
 Deliberately NOT changed: the three-run case leaves an empty run behind. It is legal, invisible, and
 PowerPoint does the same; pruning it would be a behaviour change made on a hypothesis (r460).
 FreeP 8 lanes 9920/0.
+
+## r483 - a zoom border that made the deck schema-invalid
+
+Continued through r481's untested-type list, triaging the remaining 17 by logic density rather than
+picking the first name. ZoomFrameBorderXml won: 373 lines, one entry point, 65 branches, named by no
+test - and its only two callers (SetZoomObjectPropertiesCommand, SetSummaryZoomTilePropertiesCommand)
+had no tests either, so the whole zoom-format path was dark.
+
+DrawingML CT_ShapeProperties is a SEQUENCE: xfrm?, geometry?, fill?, ln?, effects?, scene3d?, sp3d?,
+extLst?. The writer APPENDED a:ln, so whenever the frame already carried an a:effectLst the border
+landed after it. The package stays well-formed XML and becomes schema-invalid, which PowerPoint
+reports as a presentation needing repair and "repairs" by discarding content.
+
+Reachable two ways, neither exotic: this same class writes shadow, glow, soft-edge and reflection
+into that effectLst, and any imported deck with a styled zoom already has one.
+
+Measured before fixing: `effectLst,ln` where the schema wants `ln,effectLst`, and
+`solidFill,effectLst,ln` where it wants `solidFill,ln,effectLst`, while the empty-spPr and
+existing-fill controls were already correct. Fixed at all six line-attachment sites through one
+helper that inserts before the first schema successor (effectLst, effectDag, scene3d, sp3d, extLst)
+rather than appending. Neutering it fails 3 of 6 tests with the controls still green.
+
+The detail worth keeping: THE EMPTY-FRAME CASE PASSES EITHER WAY. A test written against a bare zoom
+frame - the obvious way to write one - could never have caught this, which is a fair guess at why the
+defect survived. The empty case is documented in the suite as a control, not as coverage.
+
+Also checked and left alone: effectLst itself is appended, which is correct relative to ln, and only
+scene3d/sp3d/extLst could follow it. That is a narrower case with no demonstrated path, so it was not
+hardened on a hypothesis (r460). FreeP 8 lanes 9926/0.
