@@ -10496,3 +10496,33 @@ was left alone (r460). Recorded here with the measurement so the next reader of 
 have to redo it.
 
 No code changed this round.
+
+## r488 - finishing the 52 candidates r487 declined to chase
+
+r487 stopped at "52 candidates, heuristic too weak". That was a real gap in the record, so the set
+was worked to completion instead of left as a judgement call.
+
+FIRST, THE INSTRUMENT WAS WRONG. The sweep matched inside COMMENTS and string literals: four of the
+"file-derived reader" hits were prose like `<c>i / (values.Count - 1)</c>` in a doc comment. Stripping
+comments and strings (preserving offsets so line numbers stay usable) takes 52 candidates down to 19
+actual code sites. A third of the original list was never code.
+
+ALL 19 THEN VERIFIED, none defective, each for a concrete reason:
+- Statistics (VAR/VARA/STDEV/STDEVA, VARP/VARPA, STEYX): every one guards, and the thresholds match
+  Excel exactly - #DIV/0! below 2 samples for VAR/STDEV, below 1 for VARP, below 3 for STEYX. My
+  filter only recognised comparisons against 0/1/2, so `xs.Count < 3` read as unguarded.
+- RoundedMean divides by nums.Count with no guard of its own, and both callers guard first.
+- PresentationPdfExporter divides by `(seriesList.Count + 1)` - never zero; the regex matched the
+  inner token.
+- Distribute Rows/Columns use INTEGER division, which throws rather than yielding NaN, but both
+  HasEffect paths return false below 2 rows/columns and the bus skips a command reporting no effect,
+  so Apply is unreachable with an empty list.
+- The remainder divide by fixed constant arrays (ChicagoSymbols, HTML entity symbols) or by a
+  collection the loop is already iterating.
+
+So the honest count for this shape is 52 raw -> 19 real -> 0 defects. Worth recording next to r486,
+where the same style of sweep found seven genuine defects: the difference is that r486's shape had a
+precise signature (a lower-bound guard on a parsed double) while this one is a syntactic pattern that
+most code satisfies safely. A sweep is only as good as how specific its shape is.
+
+No code changed this round.
