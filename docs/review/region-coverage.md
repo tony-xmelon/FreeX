@@ -9591,3 +9591,41 @@ quietly stops stacking pairs would otherwise go green while testing nothing.
 redo (r457/r458, one defect each in FreeX and FreeP), and now sequences. Three contracts, three apps,
 all pinned with floors so narrowing shows up as a failure. Four real defects came out of building it,
 and every clean result is recorded as plainly as the fixes.
+
+## r460 — the sequence contract in both siblings, and a finding I decided NOT to fix
+
+r459 brought command-sequence undo to FreeX. Carried to FreeP and FreeW, because a clean result in one
+app says nothing about another: porting the REDO contract the same way in r458 found a real defect in
+FreeP after FreeX's was already fixed.
+
+**Both clean.** FreeP and FreeW unwind stacked pairs correctly through their real buses. Each is
+proven capable of failing before the green is trusted -- neutering `DuplicateSlideCommand.Revert` to
+leave the duplicate in place fails FreeP's in both stack positions.
+
+**The interesting part is a finding I am recording rather than fixing.** FreeW's run threw
+`InvalidCastException` on two pairs. Investigating rather than reporting it:
+
+- `TableAt` is `(Table)context.Document.Blocks[index]` -- an unchecked cast with no bounds check.
+- None of the nine commands that use it override `HasEffect`, so all inherit the default `true`.
+- `DocumentCommandBus.Execute` gates on `HasEffect`, so those commands tell the bus "I will change
+  the document" and then crash if the block is not a table.
+- FreeP's equivalents DO bounds-check in `HasEffect` (`_slideIndex >= 0 && < Count`), so the
+  inconsistency is real.
+
+**But I could not demonstrate a production path.** FreeW's UI issues a table command only with the
+caret inside a table, synchronously, against the document as it stands; and `Push` invalidates redo,
+so the stale-index-through-redo route is closed. My probe produced the throw only because its factory
+addresses blocks by a CONSTANT index, so after a first command changes the block structure the second
+targets a block of the wrong kind -- a pair the app never builds.
+
+Hardening nine core editing commands on a hypothesis is speculative scope, and reporting an
+unreachable fragility as a defect is the false positive this programme keeps having to catch. So the
+throws are COUNTED (`incoherentPairs`, pinned at <= 6 so a sharp rise surfaces) rather than silenced
+or failed, with the reasoning written where the next reader meets it. If a production path is ever
+found, the fix is small and obvious: override `HasEffect` to verify the block is a table.
+
+`FreeP.App.Presentation.Tests` 6046 passed / 0 failed. `FreeW.App.Presentation.Tests` 3003 / 0.
+
+**The undo seam is now complete across three apps and three contracts** -- single-command undo, redo,
+and sequences -- each pinned with floors. Four defects came out of building it; every clean result is
+recorded as plainly.
