@@ -10260,3 +10260,37 @@ without the shape; the narrowness tests failed and exposed it, which is the only
 "DEFECT" reading was re-verified rather than shipped on a vacuous fixture.
 
 FreeP 8 lanes 9910/0.
+
+## r480 - auditing the r202 census's own premises
+
+r479 turned up a documented decision whose stated reason was a claim about CALLERS, and that class of
+reason expires silently when a caller appears. The r202 allowlist holds 30 such decisions, each a
+falsifiable sentence, so they were audited as claims rather than trusted as documentation.
+
+Method: for every entry whose reason asserts that no production caller (or only a gated one) can
+reach the command, trace TWO hops - command construction, then whether anything outside
+EditingSession reaches the session method that builds it. One hop is not enough and would have
+produced false alarms: `new AddChartSeriesCommand(...)` does appear in production code, in
+EditingSession itself, which is the API layer rather than a user path. That is the same distinction
+r479 turned on.
+
+Result: every audited premise still holds.
+- AddChartSeries, RemoveChartSeries, RemoveChartCategory, MoveChartSeries, AddChartCategory: zero
+  callers beyond EditingSession, so "no production caller" remains true.
+- ReorderShapeAnimationCommand: the shell calls AnimationPaneSession.MoveAnimation, a different type
+  my first name-only grep matched; the gated animation-pane path the reason describes is intact.
+- SetChartTitleCommand: a production planner DOES call editor.SetChartTitle, which looked like an
+  expired premise. It is not: BuildChartTitleMutationPlan only sets ShouldApply when the chart has no
+  title at all, so it can never issue an equal-value set. The reason holds in substance.
+
+So the census, written 278 rounds earlier, is still accurate everywhere it was checked. The one
+premise that had quietly become fragile was SetShapeFillCommand's, addressed in r479 - and notably it
+was fragile not because it was wrong but because it was SHAPED to expire: a claim about callers, in
+an app whose UI is still being wired.
+
+The transferable point is about documentation as a review target. A recorded reason is a testable
+assertion, and auditing a set of them is cheap, bounded, and independent of the lens families that
+r476-r477 showed are exhausted. What it cannot do is find defects in code nobody wrote a reason
+about.
+
+No code changed this round.
