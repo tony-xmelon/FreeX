@@ -10801,3 +10801,31 @@ did not apply, and then a STALE TEST BINARY that re-ran the previous assembly an
 earlier output verbatim. The second is the more dangerous - a probe that "confirms" a result it never
 recomputed. Deleting the output file before each run is what exposed it.
 FreeP 8 lanes 9948/0.
+
+## r499 - a new class, derived from the defects rather than guessed
+
+r490's map ends by saying new classes get added as they are identified. This is the first one added
+that way, and it came from the defects themselves rather than from a list of things that go wrong in
+general: r483, r484 and r498 all involve REWRITING existing XML, and the invariant behind that whole
+family is save idempotence - save, reload, save again, and the two packages must match.
+
+That invariant is worth more than any one of those fixes. Accumulation (an element re-added on every
+save because the rewrite removes some children and not others - r498's static finding), reordering,
+and nondeterminism (a fresh GUID or timestamp in a part) all appear as drift between consecutive
+saves, and all three are INVISIBLE to a test that saves once.
+
+Result: FreeP's save is idempotent across the exercised surface - 15 parts, save2 and save3
+byte-identical. The guard is proved by injecting a GUID into presentation.xml, which fails it with
+the drifting part named.
+
+Two things are built into the test rather than left in my head. It compares SAVE2 AGAINST SAVE3, not
+save1 against save2: the first save comes from an in-memory model and the second from a parsed one,
+so they may legitimately differ where the reader normalises, and comparing the wrong pair would have
+produced a false failure. And it records what it does NOT cover - the deck is built in memory, so it
+exercises the writer's own output rather than the preserved-source-XML paths where r483/r484/r498
+live.
+
+That limitation was found, not assumed. A synthetic Zoom shape carrying preserved XML was added to
+reach those paths, and the probe's own non-vacuity counter showed it NEVER REACHED THE PACKAGE
+(partsMentioningZoom=0). Rather than keep a test that looks like it covers that path, the shape was
+removed and the gap written into the class docs. FreeP 8 lanes 9949/0.

@@ -41,6 +41,7 @@ defects outside that shape.
 | Mutable toolkit visual in a static field | r495 | 4 defects (FreeW pens); tripwire added |
 | Native interop: handle leaks, wrong-OS calls | r496 | clean; 51 P/Invokes, pairing and dispatch both correct |
 | Equality semantics: mutable dictionary key | r497 | clean; value-equality keys and mutable types are disjoint sets |
+| Save idempotence (accumulation, reorder, nondeterminism) | r499 | clean for the in-memory surface; guard added |
 
 ## Known unswept - named so they are a decision, not an oversight
 
