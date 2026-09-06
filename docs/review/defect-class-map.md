@@ -42,6 +42,7 @@ defects outside that shape.
 | Native interop: handle leaks, wrong-OS calls | r496 | clean; 51 P/Invokes, pairing and dispatch both correct |
 | Equality semantics: mutable dictionary key | r497 | clean; value-equality keys and mutable types are disjoint sets |
 | Save idempotence (accumulation, reorder, nondeterminism) | r499 | clean for the in-memory surface; guard added |
+| File-controlled loop count (hang, not OOM) | r500 | clean; already guarded in FreeX, no sibling gap |
 
 ## Known unswept - named so they are a decision, not an oversight
 

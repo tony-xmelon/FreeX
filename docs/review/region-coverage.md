@@ -10829,3 +10829,33 @@ That limitation was found, not assumed. A synthetic Zoom shape carrying preserve
 reach those paths, and the probe's own non-vacuity counter showed it NEVER REACHED THE PACKAGE
 (partsMentioningZoom=0). Rather than keep a test that looks like it covers that path, the shape was
 removed and the gap written into the class docs. FreeP 8 lanes 9949/0.
+
+## r500 - the sibling of r492's class, already closed before I looked
+
+Derived another class from the same lineage. r492 found a file-controlled value driving an
+ALLOCATION; its sibling is a file-controlled value driving a LOOP COUNT - the same untrusted input,
+a different failure (a hang rather than an OutOfMemoryException), and not covered by the allocation
+sweep because no allocation appears in the code.
+
+Signature: an int/uint/long parsed from a file that then bounds a for/while/Enumerable.Range. 277
+reader files, 6 hits, 2 distinct sites.
+
+Both already handled, and the first one better than I would have written it.
+XlsxWorksheetRowColumnLayoutReader clamps <col min max> to the model's column count, with a comment
+naming this exact hazard - "so a tiny file can't drive a multi-billion-iteration loop (OOM / hang).
+Excel itself clamps <col> max to the sheet's column count. Mirrors OdsFileAdapter.Read.cs's
+repeat-count clamp." That comment makes a claim about a SIBLING, which r480 established is the kind
+of statement worth testing rather than trusting: the ODS clamps are real, four of them
+(Math.Min(rowRepeat, MaxRow), two on column repeat, and a column-overflow guard).
+
+The FreeP hit was a false positive - `count` there is `tokens.Count`, a list length that my regex
+matched only because a variable of the same name was parsed elsewhere in the file. And the one
+genuinely file-driven repeat in FreeP, ReadRepeat's ST_TLTimeNodeRepeatCount, is bounded by its own
+arithmetic: the value is a percentage scaled by 100000, so even int.MaxValue yields about 21,474, and
+it feeds playback timing rather than a load-time loop.
+
+So the class was closed before I arrived, in two apps, by someone who understood it. Recording it
+anyway: the map's value is that the next reviewer can tell "checked and sound" from "never looked at",
+and those are indistinguishable in a codebase that simply works.
+
+No code changed this round.
