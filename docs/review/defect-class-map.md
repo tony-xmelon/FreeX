@@ -35,12 +35,15 @@ defects outside that shape.
 | `async void` in production | r491 | clean; 14 non-handler sites, all fully guarded |
 | Cancellation token accepted then ignored | r491 | clean; 5 candidates, all declarations or expression-bodied |
 | Integer overflow / unbounded size from a file | r492 | 1 defect: an .ods decimal-places count allocated 4 GB |
+| Local time where UTC is meant | r493 | clean; 35 sites, all legitimately local |
+| Equals without GetHashCode | r493 | closed by the compiler: TreatWarningsAsErrors, no NoWarn for CS0659/CS0661 |
 
 ## Known unswept - named so they are a decision, not an oversight
 
 - Resource disposal: streams, bitmaps and fonts not disposed on exception paths.
-- `DateTime.Now` where `UtcNow` is meant, and time-zone-dependent comparisons.
-- Equality/`GetHashCode` contracts on model types used as dictionary keys.
+- Equality SEMANTICS: a dictionary key whose equality depends on a MUTABLE field, so mutating it
+  after insertion strands the entry. The compiler closes the structural half (r493); this half it
+  cannot see, and no precise textual signature for it has been designed yet.
 - Thread-affinity of statics beyond the brush/pen audit already recorded in memory.
 - P/Invoke and native-interop boundaries in the Windows-only projects.
 

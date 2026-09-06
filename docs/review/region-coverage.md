@@ -10636,3 +10636,28 @@ format can express instead of silently losing every decimal - pinned by its own 
 Sweep shape: an int parsed from a file that then sizes an allocation (`new T[n]`, `new string(c, n)`,
 `new List<T>(n)`, `Enumerable.Repeat`). 3,893 files, 3 hits, 1 real - the other two are the Format
 Cells planner, already clamped. FreeX 31 lanes 46238/0.
+
+## r493 - two more classes, one closed by the compiler rather than by me
+
+LOCAL TIME WHERE UTC IS MEANT. 35 sites across 3,893 production files, and the interesting part is
+that nearly all of them SHOULD be local: Excel's NOW() and TODAY() are local by definition, so are
+printed header/footer dates, the Insert Date command, a date picker's "Today", and the Backstage
+greeting. The defect shape is narrower than the grep - a local timestamp COMPARED WITH or STORED
+BESIDE a UTC one - so the sweep was narrowed to files containing both. Four files qualified; in each
+the two uses are unrelated concerns (FreeX's Backstage formats a greeting with DateTime.Now while
+separately holding _currentFileSourceLastWriteTimeUtc for the external-write guard). Clean, and the
+write guard's UTC values stay confined to the guard where they belong.
+
+EQUALS WITHOUT GETHASHCODE. Closed by construction rather than by a sweep, which is a better outcome
+than a clean scan: Directory.Build.props sets TreatWarningsAsErrors=true, and no NoWarn anywhere
+suppresses CS0659 or CS0661 (the only suppressions are WFO0003, a WinForms designer warning, and two
+nullable codes in one tool). A production type that overrode Equals without GetHashCode could not
+compile, and the build is green, so none exists. The 8 production types that do override Equals
+necessarily carry both.
+
+That conclusion covers the STRUCTURAL half only, and the map now says so. The semantic half - a
+dictionary key whose equality depends on a mutable field, so mutating it after insertion strands the
+entry - is invisible to the compiler and has no precise textual signature yet, so it goes back on
+the unswept list in its own right rather than being waved through with the class.
+
+Unswept list: eight at r490, four now.
