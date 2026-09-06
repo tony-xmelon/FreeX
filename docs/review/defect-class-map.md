@@ -48,6 +48,7 @@ defects outside that shape.
 | Decompression bomb (zip bomb) | r505, r506 | clean; honest, lying and zip64-sentinel forms all closed, measured |
 | Event-subscription leak (source outlives subscriber) | r507 | clean; 2 static subscriptions, both process-lifetime by design |
 | Autosave racing the user's edits | r508 | clean; every shell snapshots on the dispatcher thread |
+| Path built from document content (traversal) | r509 | clean; one site, sanitised upstream; reserved names measured harmless |
 
 ## Known unswept - named so they are a decision, not an oversight
 

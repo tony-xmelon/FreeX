@@ -11061,3 +11061,34 @@ mistake.
 Class swept, nothing to fix.
 
 No code changed this round.
+
+## r509 - a path built from document content, and two of my own claims corrected
+
+New class: a file path assembled from text the DOCUMENT supplies. r471 established that nothing
+extracts archive entries to disk, but an export or an OLE activation writes a file whose name may
+come from the payload, which is the same traversal hazard through a different channel.
+
+3,992 files, ONE site: OleActivationService's Path.Combine(directory.Path, plan.FileName) - and the
+highest-stakes one possible, because activation hands the result to the OS shell, as its own comment
+says: "whatever is registered for the extension runs".
+
+It is sanitised, and carefully. SafeFileName normalises backslashes to forward slashes BEFORE calling
+Path.GetFileName - the ordering that matters, since GetFileName alone does not strip a Windows
+separator on every platform - then rejects empty, "." and "..", any surviving separator and any
+control character, falling back to Embedded.{ext}. The extension is independently forced to an
+allowlist. My sweep could not see any of this because the sanitiser lives in a different file from
+the Path.Combine, which is the ordinary reason a single-file scan reports a false positive.
+
+Then I corrected myself twice in one round. Reserved Windows device names (CON, NUL) are not rejected
+by SafeFileName, so I hypothesised that an object named CON.docx would redirect to the console
+device. Measured: .NET creates CON.docx and NUL.xlsx as ORDINARY FILES in a subdirectory on this
+platform. Hypothesis refuted.
+
+And the probe that suggested it was itself misread. I wrote the measurement script to /tmp/con.ps1,
+PowerShell failed to find it, and I concluded the CON device had swallowed the write - a satisfying
+story. `ls` showed the file present at 587 bytes: the failure was bash-to-PowerShell path
+translation, nothing to do with device names. A result that confirms the hypothesis you arrived with
+deserves more suspicion than one that refutes it, and this one got it only because checking was
+cheap.
+
+No code changed this round.
