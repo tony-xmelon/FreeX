@@ -9940,3 +9940,37 @@ fails 8 of 11; swapping the exception type fails exactly one - that assertion, a
 As in r468, no production path to a non-finite coordinate was demonstrated. The justification is the
 shared-boundary contract behind three apps, a single choke point every number already passes
 through, and a failure mode nothing else reports.
+
+## r470 - a culture sweep that came back clean, and a probe that was lying about it
+
+Lens: a non-invariant number written into a file. Under de-DE an unqualified `double.ToString()`
+emits `1,5`, and every OOXML numeric field is defined invariant - so this corrupts a save for a
+large fraction of the world's users. FreeX already carries tests for it (R24, R108, R145, R275);
+FreeW and FreeP carried none, which is the sibling-gap shape this review keeps meeting.
+
+Source sweep, all three apps plus shared, using brace-matched full call expressions rather than
+line greps (a line grep reported 289 suspects, nearly all false: the provider sits on a
+continuation line). Result: 121 numeric parse calls in IO, every one provider-qualified - the single
+flag was a false positive naming `currencyCulture`. Of 487 `ToString` calls in 164 writer files, 96
+lack a provider and all are non-numeric receivers (XDocument, StringBuilder, enum, Guid). The one
+value-formatting fallback, `HtmlTableWriter`'s `_ => value.ToString()`, is unreachable for numbers
+because `NumberValue` is handled above it - and that arm already guards non-finite.
+
+The instrument lesson is the round's real content. The obvious runtime check - save a document under
+de-DE, assert no comma-decimals - passed for both .docx and .pptx, and the result was WORTHLESS.
+Printing the matches showed the only period-decimals in either file were the `version="1.0"` of each
+part's XML declaration: both formats express every measurement as an integer (twips, EMU, 60000ths
+of a degree), so there was no decimal surface for a locale to corrupt. A guard of that shape would
+have passed forever while testing nothing, and it would have looked like coverage.
+
+So the added test targets chart series values, the one genuine decimal carrier in the format, and
+pins its own premise: `TheChartActuallyContainsADecimalValue` fails if values stop being written as
+decimals, rather than letting the culture assertions quietly become vacuous. Proving it can fail
+took two attempts - neutering the value formatter at line 331 PASSED, because that is the ChartEx
+path my test never reaches. Neutering all 27 invariant uses failed 4 of 6, and bisecting found the
+line actually covered: `BuildNumericDataChildren` at 2751, whose neuter alone fails the same 4.
+
+No FreeW test was added. Its .docx path has no decimal surface to assert on, so the test would be
+the vacuous one described above; recording that is more honest than banking a green.
+
+No defect found. Recorded as plainly as a fix.
