@@ -10412,3 +10412,27 @@ writers in the same folder shipped mirrored ordering bugs, and the most likely r
 natural test for each was vacuous in exactly the same way. Both suites now carry that case as a
 labelled control rather than counting it as coverage.
 FreeP 8 lanes 9931/0.
+
+## r485 - a file-controlled animation scale could be infinite
+
+Next type off r481's list: AnimationAmountSemantics, 149 lines that no test named. Its
+TryParseScaleValue ended with `scale >= 0`, which rejects NaN and negatives only as a SIDE EFFECT of
+how those compare, and lets POSITIVE infinity through - .NET parses "Infinity" and overflows "1e999"
+to it.
+
+The values are chosen by the FILE: PptxPackageReader copies FromX/ToX/ByX verbatim out of the
+animation XML. The whole path was traced rather than assumed - parser accepts infinity,
+ResolveScaleAxes returns (INF, INF), and the consumers are SlideShowPlaybackPlanner and
+SlideShowPlaybackFramePlanner, which build the per-frame transform while a presentation is running.
+
+Third boundary in the family of r468 (PDF) and r469 (XPS): a non-finite double accepted because
+nothing had asked the question. The guard now names the cases it rejects instead of catching two of
+them by accident, and an unusable value falls back to the preset's own default - the recovery every
+other unreadable attribute already gets, rather than a new failure mode.
+
+Both directions pinned: "120%" and the raw OOXML "120000" still parse, a readable behaviour still
+beats the default, and the neuter fails 5 of 14.
+
+Method note: the finding came from reading the ONE guard expression at the end of a parse method and
+asking which values satisfy it, not from a scan. `x >= 0` is a common shape and is wrong for exactly
+one input class; that is worth carrying to other parsers. FreeP 8 lanes 9945/0.
