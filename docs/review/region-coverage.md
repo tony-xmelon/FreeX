@@ -9475,3 +9475,44 @@ That is the second time in this sweep an existing source-contract guard has corr
 mine -- R276 caught a hand-rolled `XmlReaderSettings` in r450 -- which is the strongest evidence
 available that those guards earn their keep. Both were caught by running the full lane rather than
 only the new tests, which is the argument for verifying wider than the change looks like it touches.
+
+## r457 — redo was never tested at all, and the first thing it found was real
+
+Nineteen rounds of this programme have driven undo. None drove REDO -- in any of the three apps. Undo
+is half of what a user relies on: Ctrl+Y after Ctrl+Z must put back exactly what Ctrl+Z removed, and
+a command whose Revert does not reset the state its Apply captured produces a THIRD state the user
+never made.
+
+The gap was visible in this programme's own history and I missed it: r441's fix had to clear an
+"I created this placeholder" flag on Revert *specifically so a second Apply would work*, and I wrote
+a redo test for that one command without ever asking whether the contract held generally.
+
+**Extending the r417 driver found one failure across all 71 exercised commands**:
+`AddPivotTableToNewWorksheetCommand`, differing by the SHEET ID itself.
+
+`Workbook.AddSheet` mints a brand-new `SheetId` on every call, so undo-then-redo gave the pivot's
+worksheet a different identity than the first Apply produced. Anything holding the original id -- a
+later command still on the redo stack, a formula, a chart's source range, a sheet-scoped name --
+then points at a sheet that no longer exists.
+
+**`AddSheetCommand` already solved this**, caching its id and re-creating the sheet with it under a
+comment naming R16 and spelling out the consequence: "breaking any later redo-stack command that
+captured the original id". The pivot command creates a worksheet the same way and never got the same
+treatment. That is the fifth time this sweep has found a contract established once and not
+propagated to its sibling (r438, r441, r451, r455).
+
+Fix mirrors R16 exactly, including keeping `_createdSheetId` across Revert so the identity survives
+to the redo -- with a comment saying so, because a later reader would otherwise "tidy" that null
+assignment back in. Apply's own failure path still clears it, since nothing was created there.
+
+Five tests, and the two that matter most are not the headline: the redone sheet must actually BE in
+the workbook under that id (remembering the id is not enough), and undo must still remove the
+worksheet ENTIRELY (keeping the id must not keep the sheet). A fifth pins the consistency with
+`AddSheetCommand`, because the defect was the divergence.
+
+Proven by neutering the id reuse: both redo tests fail and so does the driver. `FreeX.Core.Model.Tests`
+6730 passed / 0 failed.
+
+**Still open, deliberately**: the FreeP and FreeW drivers do not yet check redo. The contract is
+identical and the change is small, but each needs its own verification run, so it is recorded rather
+than bolted on unverified.
