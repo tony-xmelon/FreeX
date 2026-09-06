@@ -10886,3 +10886,29 @@ Sweep note: the raw signature - a self-recursive method in a writer or layout pa
 almost all recursion over UI trees the app builds itself and therefore bounded by construction.
 Narrowing to recursion over FILE-CONTROLLED nesting gave 23, and the SmartArt pair was the one that
 mattered. FreeP 8 lanes 9951/0.
+
+## r502 - the sibling check for r501, and a defect that did not replicate
+
+r501 killed FreeP with a deep SmartArt chain, so FreeW - which reads the same dgm data model - was
+the obvious next question. THE DEFECT DOES NOT APPLY THERE. FreeW links the hierarchy ITERATIVELY,
+one parent.Children.Add per parOf connection, so there is no read-time recursion to overflow. Same
+file format, same feature, different construction, and the construction is what decided it.
+
+What FreeW does have is an unguarded recursive Flatten over those children, where FreeP's builder
+carries a path set that refuses a cycle. The asymmetry is real. The reachability is NOT, and three
+attempts failed to establish it:
+- The first probe read cleanly and the result was VACUOUS: the points I injected lacked the dgm:t
+  text structure, so they never entered the graph at all.
+- With text added, texts=R showed the reader accepting them - but one node came back, so the cxn
+  links were not producing the parent/child structure I had assumed.
+- I stopped there rather than keep bending the probe until something broke.
+
+The path-based guard was added anyway, labelled defensive in the code with the failed reproduction
+recorded, so nobody later reads it as a demonstrated defect. Path-based rather than a global visited
+set on purpose: a global set would silently change output for a valid document where a point is
+legitimately reachable twice, which would be a real regression traded for a hypothetical one.
+
+The justification is r501 itself - the identical shape in the sibling was reachable and killed the
+process outright - and it is the same standing given to r468, r469 and r498. Recording the failure to
+reproduce matters as much as the guard: the next person to look here starts from "unproven, and here
+is what was tried" rather than repeating it. FreeW 7 lanes 11797/0.
