@@ -19,7 +19,7 @@ defects outside that shape.
 | Non-finite double written to a file | r468, r469, r485, r486 | 11 defects across PDF, XPS, pptx, xlsx |
 | Protection bypassed by a mutator | r455, r471 | 11 defects |
 | Mutation without change notification / undo | r472 | guard added, no defect |
-| Schema element ordering in OOXML | r483, r484 | 2 defects, both corrupting the saved file |
+| Schema element ordering in OOXML | r483, r484, r498 | 2 defects; widened from the zoom writers to every writer in r498 |
 | Equal-value setter clears redo | r479, r480 | 1 defect + census premises audited |
 | Culture-sensitive NUMBER formatting | r470 | clean; the naive test proved vacuous |
 | Culture-sensitive STRING casing/comparison | r490 | clean; 392+178 invariant uses, no bare ToLower |

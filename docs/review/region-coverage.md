@@ -10771,3 +10771,33 @@ missing from the dictionary, which is the same defect arriving by a different ro
 
 Every class named on the map is now swept. That is not the same as every possible class having been
 identified, and the map says so in its own words.
+
+## r498 - widening a class whose row was narrower than its name
+
+The map's "Schema element ordering in OOXML" row cited r483 and r484, but those rounds only covered
+the two ZOOM writers. The row claimed a class and delivered two files, which is the kind of gap a
+coverage map is supposed to prevent rather than create - so this round widened it to every writer.
+
+Refining to r483's ACTUAL shape is what made it tractable: not "an Add on an ordered element", which
+is 281 sites and mostly correct because building a fresh element in order is fine, but "an Add onto a
+PRE-EXISTING element found by lookup", which may already hold later-sequence children. That is 3
+sites.
+
+Two are right by construction. XlsxSourceDrawingGeometryRewriter carries an explicit comment that
+xfrm must be first and inserts accordingly; DocxWriter uses AddFirst for xfrm, which IS first in
+CT_ShapeProperties. The third, PptxChartWriter.UpdateChartExShapeProperties, removes the existing
+fill and ln, re-adds the fill with AddFirst - correct - and then APPENDS ln, while never removing
+effectLst. Statically that is r483 exactly.
+
+I COULD NOT REPRODUCE IT, and the fix is labelled accordingly. A probe that gave a chartEx an spPr
+carrying an effectLst and asked for a chart-area outline produced no a:ln at all, so the path from
+ChartAreaOutline to that line is not one I established. The order-correct insertion was applied
+anyway on the same standing as r468 and r469 - provably identical when no effect element is present,
+correct when one is - with the failed reproduction recorded in the code so nobody later mistakes it
+for a demonstrated defect.
+
+Two of my own traps on the way, both of which manufacture false confidence: a perl edit that silently
+did not apply, and then a STALE TEST BINARY that re-ran the previous assembly and reproduced the
+earlier output verbatim. The second is the more dangerous - a probe that "confirms" a result it never
+recomputed. Deleting the output file before each run is what exposed it.
+FreeP 8 lanes 9948/0.
