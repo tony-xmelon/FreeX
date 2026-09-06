@@ -10689,3 +10689,29 @@ Three instrument failures on the way, each of which would have produced a false 
   still green.
 
 Unswept list: eight at r490, three now. FreeP 8 lanes 9948/0.
+
+## r495 - four static pens that could crash rendering intermittently
+
+Fifth class off r490's list, and the documented Avalonia hazard was live: the first render thread to
+touch a mutable visual takes ownership of it, and any later thread throws "The calling thread cannot
+access this object because a different thread owns it". Intermittent, and it reads as a flaky test
+rather than a defect.
+
+Where it hid is the instructive part. FreeW's DocumentView declares its comment, revision and
+proofing BRUSHES as ImmutableSolidColorBrush - the author knew the rule - while the four PENS in the
+SAME declaration block were plain Pen wrapping a mutable SolidColorBrush. Sibling drift inside one
+block: exactly what a scan catches and a reader's eye slides past.
+
+The sweep had to be toolkit-aware to be worth anything. WPF Freezables are safe ONCE FROZEN, and
+FreeP's SelectionAdorner freezes all twelve of its pens and brushes; [ThreadStatic] caches are safe
+by construction, which is what AvaloniaRibbonIcons uses for its DrawingImage caches. Without those
+two refinements the signal was 98 hits; with them, 6 - of which 4 were real.
+
+The sweep also flagged MY OWN r494 change, the ConditionalWeakTable<byte[], Bitmap> picture cache.
+Checked rather than waved through: Bitmap is not an AvaloniaObject, carries no VerifyAccess
+ownership check, and this codebase already holds decoded bitmaps across renders in its inline-image
+layouts. Allowlisted with that reasoning stated in the test.
+
+Kept as a tripwire because a one-off fix would not hold for an intermittent failure: reintroducing a
+single plain Pen fails it by name. Unswept list: eight at r490, two now.
+FreeW 7 lanes 11797/0.

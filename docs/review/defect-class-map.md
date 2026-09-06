@@ -38,13 +38,13 @@ defects outside that shape.
 | Local time where UTC is meant | r493 | clean; 35 sites, all legitimately local |
 | Equals without GetHashCode | r493 | closed by the compiler: TreatWarningsAsErrors, no NoWarn for CS0659/CS0661 |
 | Undisposed resource / per-paint allocation | r494 | 1 defect: a picture fill decoded a Bitmap on every paint |
+| Mutable toolkit visual in a static field | r495 | 4 defects (FreeW pens); tripwire added |
 
 ## Known unswept - named so they are a decision, not an oversight
 
 - Equality SEMANTICS: a dictionary key whose equality depends on a MUTABLE field, so mutating it
   after insertion strands the entry. The compiler closes the structural half (r493); this half it
   cannot see, and no precise textual signature for it has been designed yet.
-- Thread-affinity of statics beyond the brush/pen audit already recorded in memory.
 - P/Invoke and native-interop boundaries in the Windows-only projects.
 
 ## What the map is for
