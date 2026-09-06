@@ -11092,3 +11092,27 @@ deserves more suspicion than one that refutes it, and this one got it only becau
 cheap.
 
 No code changed this round.
+
+## r510 - a command that throws halfway, checked in all three buses
+
+Derived from the undo lineage (r438, r441, r479): if Apply throws PARTWAY, the model is half-edited.
+Two ways that becomes a defect - push the undo entry before applying and the stack describes work
+that never happened, or push nothing and the user is left with a half-edited document and no way to
+undo it. The second is the one that actually bites, because it looks like nothing went wrong.
+
+Closed in all three, and closed the same way in each: HasEffect first, Apply inside a try, a
+best-effort revert on throw, rethrow so the shell still reports the failure, and the push only after
+a successful apply. FreeP's comment spells out why the rethrow matters there specifically - its
+Execute returns void rather than FreeX's CommandOutcome, so swallowing would silently report
+success.
+
+FreeW carries the subtlety the other two do not need. Its composite command reverts the children that
+ALREADY APPLIED when child K throws - "a command that throws on run K leaves runs 0..K-1 rewritten"
+- and wraps each child's Revert in its own try/catch so a child unhappy about half-applied state
+cannot mask the original exception. That is the difference between rolling back a command and
+rolling back a batch, and only one of the three has batches deep enough to need it.
+
+Class swept, nothing to fix. Recorded because a bus that pushes after Apply looks identical to one
+that pushes before until you read the ordering, and the failure only appears when something throws.
+
+No code changed this round.

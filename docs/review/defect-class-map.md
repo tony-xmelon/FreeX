@@ -49,6 +49,7 @@ defects outside that shape.
 | Event-subscription leak (source outlives subscriber) | r507 | clean; 2 static subscriptions, both process-lifetime by design |
 | Autosave racing the user's edits | r508 | clean; every shell snapshots on the dispatcher thread |
 | Path built from document content (traversal) | r509 | clean; one site, sanitised upstream; reserved names measured harmless |
+| Apply throws mid-mutation (torn edit, phantom undo) | r510 | clean; all three buses roll back and push only on success |
 
 ## Known unswept - named so they are a decision, not an oversight
 
