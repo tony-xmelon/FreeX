@@ -10940,3 +10940,24 @@ depth cap, an explicit accumulator, and flat enumeration. Worth recording precis
 reader who finds no MaxDepth constant in FreeX should not conclude what I nearly did.
 
 No code changed this round.
+
+## r504 - the same class one layer up, in evaluation rather than reading
+
+r501-r503 closed unbounded recursion over nesting a FILE controls, in the READERS. The same shape
+exists one layer up: a defined NAME whose formula references another name. FreeX stores named
+formulas as text (Workbook._scopedNamedFormulas), so `A = B` and `B = A` is expressible, and
+resolving it recurses through evaluation rather than parsing - which is why the parse-depth guards
+r477 verified would not have caught it.
+
+Checked, and closed: TryEvaluateNamedFormula routes through EvaluateNamedFormulaText, which keeps a
+_namedFormulaVisiting set and returns #REF! on re-entry, "to match Excel's circular-reference
+behaviour". Aligned with Excel rather than invented, which is the standard this codebase holds
+itself to.
+
+The detail worth keeping is the KEY. It is (name, defining scope), not just the name, and the code
+explains why: a name resolves sheet-scoped-first then workbook-global, so keying on the calling
+cell's sheet would conflate two different definitions and either miss a real cycle or refuse a legal
+one. That is a subtlety I would probably have got wrong writing it from scratch, and it is the
+reason to read a guard before concluding it is adequate rather than merely present.
+
+No code changed this round.
