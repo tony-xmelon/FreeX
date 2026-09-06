@@ -10558,3 +10558,32 @@ Avalonia file, which is the one that actually blocks.
 Second time this session a repo guard has corrected a change of mine (R276's XmlReaderSettings,
 TestWorkspaceFileLocator's directory walker were the others), and each was caught only by the FULL
 lane, never by the filtered run. FreeP 8 lanes 9945/0, FreeW 7 lanes 11796/0.
+
+## r490 - string culture swept clean, and the class map made explicit
+
+Two deliverables. FIRST, the class this program had not swept: r470 covered culture-sensitive NUMBER
+formatting, but never string casing or comparison - the Turkish-I hazard, where "I".ToLower() is not
+"i" and an extension or format check silently stops matching.
+
+Result: clean, with the instrument validated rather than assumed. No bare ToLower()/ToUpper()
+anywhere in 3,992 production files, and the scan is trustworthy because the same regex shape finds
+392 ToLowerInvariant and 178 ToUpperInvariant calls - the codebase casts invariantly by habit. The 67
+`IndexOf(x)` hits were all either List<T>.IndexOf (a collection lookup, culture-irrelevant) or the
+CHAR overload, which is ordinal: TextToColumnsSplitter's qualifier and FlashFill's delimiter are both
+`char`, checked individually rather than assumed from the name.
+
+SECOND, docs/review/defect-class-map.md. This ledger is chronological, so what has been swept is
+implied rather than stated, and after 273 rounds that is a real gap in the record. The map lists
+every defect CLASS driven across the codebase with its rounds and outcome, and - the part a
+chronological log cannot show - names the classes known to be UNSWEPT: resource disposal, async void
+in production, ignored cancellation tokens, DateTime.Now vs UtcNow, equality/GetHashCode contracts,
+static thread affinity beyond the recorded brush/pen audit, integer overflow on file-controlled
+sizes, and native interop.
+
+The map is explicitly a coverage map, not a proof of absence: a class marked closed means the sweep
+was designed, validated against a known positive, and run to completion - not that the code holds no
+defect outside that shape. Naming the unswept classes turns them from an oversight into a decision,
+and orders the next rounds by how precisely each could be expressed as a signature, which is the
+criterion r488 arrived at.
+
+No code changed this round.
