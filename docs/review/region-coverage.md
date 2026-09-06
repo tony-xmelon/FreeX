@@ -10193,3 +10193,30 @@ substantially exhausted; what still pays is picking an invariant and driving a w
 it.
 
 No code changed this round.
+
+## r478 - hostile input across every string-taking planner in all three apps
+
+Followed r477's own conclusion - pick an invariant and drive a whole surface - onto a surface this
+program had never driven: the dialog planners, which are the code that parses what a user types.
+Invariant: no planner may fail on a string a user can type or paste. 817 planner files across the
+three apps; every public static planner method taking only string parameters was invoked with 18
+hostile values (empty, whitespace, comma-decimal, Arabic-Indic digits, control characters, a
+surrogate pair, "=1/0", quotes, backslash, format specifiers, a 5,000-character string).
+
+Result: 190 methods, 3,420 invocations, ZERO real defects. FreeX 95 methods, FreeW 59, FreeP 36.
+
+The 50 flags it did raise were all my classifier being wrong, twice, in the same way. First
+FreeW's HeaderFooterDialogPlanner.ParseSlot raised 34 ArgumentOutOfRangeExceptions - a DELIBERATE
+throw carrying a message and parameter name, and its callers pass fixed ribbon strings rather than
+user text, so refusing an unknown slot is correct. Then FreeP's ChartPointOptionsPlanner.ParseColor
+raised 16 FormatExceptions reading "must be blank or a six-digit #RRGGBB color" - equally
+deliberate, and ChartAxisDisplayOptionsDialogSessions catches FormatException at two sites and turns
+it into a validation result. This codebase validates by throwing descriptive exceptions that callers
+convert, so an exception TYPE cannot classify a defect here; only tracing the caller can.
+
+Not kept as a gate. To be a useful guard it would need a heuristic separating deliberate throws from
+framework ones by message text, which is exactly the kind of tuning r473 rejected: a test that must
+be tuned to stay green is a liability rather than coverage. The surface is recorded as driven and
+clean so the next round does not re-drive it.
+
+No code changed this round.
