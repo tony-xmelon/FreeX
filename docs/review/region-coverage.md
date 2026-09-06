@@ -10159,3 +10159,37 @@ re-run: to be useful it would have to match on asserted BEHAVIOUR rather than fi
 what r471's and r472's censuses do directly and more cheaply.
 
 No code changed this round.
+
+## r477 - six probes, six areas already defended
+
+A round that found nothing, recorded because WHICH areas are defended, and by what, is worth as much
+to the next round as a defect.
+
+- FreeX UI mutator census (r472's invariant applied to FreeX): does not transfer. MainWindow exposes
+  five public zero-argument methods; FreeX routes edits through the command bus by construction, and
+  R417 already drives that surface. attempted=5 is too small a sample to call coverage, so it is
+  reported as inapplicable rather than clean.
+- FreeX formula parsing under pathological input: already covered by R463 (hostile arguments) and
+  R72 (lambda recursion depth), and parse nesting is bounded by FormulaSafetyLimits.MaxParseDepth
+  with MaxNestedFunctionLevels = 64.
+- FreeW .docx nesting from a crafted file: guarded - MaxNestedWordPackageAltChunkDepth = 32 and
+  MaxContentControlNestingDepth.
+- FreeP .pptx group-shape nesting: guarded by MaxShapeGroupNestingDepth.
+- FreeP r172 external-write guard after crash recovery: implemented AND tested (checked in r476).
+- FreeP PDF export: present in both shells.
+
+One apparent finding was traced and dismissed. In PptxPackageReader four functions take `groupDepth`
+and three recurse, but only two test it against MaxShapeGroupNestingDepth - exactly the
+one-path-guarded-sibling-left shape. Reading the call CYCLES rather than counting the checks shows
+it is deliberate: `ReadGrpSp` recurses back into `ReadShapesFromTree` and `ReadDspGrpSp` back into
+`ReadDspElement`, and both of those guard at entry, so every cycle crosses a check exactly once. The
+code even names the hazard it is defending ("Same uncatchable-StackOverflow guard as the slide shape
+tree"). Counting guard sites would have produced a false report; following the recursion did not.
+
+Read together with r476, the pattern in this stretch is that the cheap structural signals - matching
+file names, counting guards - now generate false positives faster than findings, while the behaviour
+censuses of r471 and r472 still find real defects. The lens families this program has been mining are
+substantially exhausted; what still pays is picking an invariant and driving a whole surface against
+it.
+
+No code changed this round.
