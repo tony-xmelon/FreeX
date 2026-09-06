@@ -10611,3 +10611,28 @@ matches declarations that have no body at all.
 
 Both classes were confirmed by checking every candidate individually, which is the whole reason the
 counts are trustworthy: the raw signal was 14 and 5, the verified signal was 0 and 0.
+
+## r492 - a crafted .ods killed FreeX with OutOfMemoryException on open
+
+Third class off r490's list, and the first to yield a defect. OdsStyleTable read
+`number:decimal-places` from the file, guarded it with `d > 0` - a LOWER BOUND ONLY - and handed it
+to `new string('0', d)`. A document declaring decimal-places="2000000000" asked for a
+two-billion-character string: four gigabytes of UTF-16, allocated while merely OPENING the file.
+
+This is r486's shape in its INTEGER form, which is exactly why the class was on the unswept list:
+that sweep covered doubles, and int has the same lower-bound-only failure with a different fatal
+outcome - an allocation instead of an Infinity.
+
+The consequence was confirmed, not assumed. Neutering the bound does not produce a wrong format, it
+produces System.OutOfMemoryException on two of the three absurd cases. That is the difference between
+"unbounded allocation, looks risky" and a demonstrated crash on opening a document.
+
+The bound came from the codebase rather than my judgement: FormatCellsNumberFormatPlanner already
+clamps the Format Cells dialog with Math.Clamp(decimals, 0, 30), 30 being Excel's documented maximum
+for number formats. Using the same figure aligns the reader with its sibling and with Excel instead
+of inventing a limit. It CLAMPS rather than rejects, so a file asking for 500 places keeps the 30 the
+format can express instead of silently losing every decimal - pinned by its own test.
+
+Sweep shape: an int parsed from a file that then sizes an allocation (`new T[n]`, `new string(c, n)`,
+`new List<T>(n)`, `Enumerable.Repeat`). 3,893 files, 3 hits, 1 real - the other two are the Format
+Cells planner, already clamped. FreeX 31 lanes 46238/0.

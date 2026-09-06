@@ -34,6 +34,7 @@ defects outside that shape.
 | Throwing XML navigation on file input | r487 | clean; 8 sites, none file-derived |
 | `async void` in production | r491 | clean; 14 non-handler sites, all fully guarded |
 | Cancellation token accepted then ignored | r491 | clean; 5 candidates, all declarations or expression-bodied |
+| Integer overflow / unbounded size from a file | r492 | 1 defect: an .ods decimal-places count allocated 4 GB |
 
 ## Known unswept - named so they are a decision, not an oversight
 
@@ -41,7 +42,6 @@ defects outside that shape.
 - `DateTime.Now` where `UtcNow` is meant, and time-zone-dependent comparisons.
 - Equality/`GetHashCode` contracts on model types used as dictionary keys.
 - Thread-affinity of statics beyond the brush/pen audit already recorded in memory.
-- Integer overflow on file-controlled sizes (the non-finite sweep covered doubles only).
 - P/Invoke and native-interop boundaries in the Windows-only projects.
 
 ## What the map is for
