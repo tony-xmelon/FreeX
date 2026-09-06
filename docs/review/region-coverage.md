@@ -10587,3 +10587,27 @@ and orders the next rounds by how precisely each could be expressed as a signatu
 criterion r488 arrived at.
 
 No code changed this round.
+
+## r491 - two classes off the unswept list, both clean
+
+r490's map named eight unswept classes so they would be a decision rather than an oversight. Two are
+now swept, taking the list from eight to six.
+
+ASYNC VOID IN PRODUCTION. An exception escaping an async void terminates the process, and the earlier
+dispatch program covered TEST helpers only. 3,893 production files: 23 async void methods, 9 of them
+event handlers - the one legitimate use, since the framework invokes them and there is no Task to
+return. Of the remaining 14, all are guarded, and the check was sharpened past "contains a try",
+which proves nothing: the real escapes are an await BEFORE the try, a catch of only a specific type,
+and a `throw;` that rethrows. None present. The single flag was a false positive of my own regex -
+`catch (Exception ex) when (ex is not OutOfMemoryException)` is a general catch with a filter my
+pattern did not model, and excluding OOM is the correct choice rather than a gap.
+
+CANCELLATION TOKEN ACCEPTED THEN IGNORED. 5 candidates, all false. Three are record parameter lists
+and delegate declarations, which have no body to ignore anything in. The other two - CupsPrintDialog
+.ShowAsync and MailMergeEngine.AuthorRuleAsync - do pass the token onward and were flagged only
+because they are EXPRESSION-BODIED, so my brace-matching captured the wrong text. Two instrument
+flaws worth recording with the result: this sweep cannot see expression-bodied members, and it
+matches declarations that have no body at all.
+
+Both classes were confirmed by checking every candidate individually, which is the whole reason the
+counts are trustworthy: the raw signal was 14 and 5, the verified signal was 0 and 0.
