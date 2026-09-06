@@ -37,7 +37,7 @@ defects outside that shape.
 | Integer overflow / unbounded size from a file | r492 | 1 defect: an .ods decimal-places count allocated 4 GB |
 | Local time where UTC is meant | r493 | clean; 35 sites, all legitimately local |
 | Equals without GetHashCode | r493 | closed by the compiler: TreatWarningsAsErrors, no NoWarn for CS0659/CS0661 |
-| Undisposed resource / per-paint allocation | r494 | 1 defect: a picture fill decoded a Bitmap on every paint |
+| Undisposed resource / per-paint allocation | r494, r512 | 2 defects: picture fills and picture shapes each decoded a Bitmap per paint |
 | Mutable toolkit visual in a static field | r495 | 4 defects (FreeW pens); tripwire added |
 | Native interop: handle leaks, wrong-OS calls | r496 | clean; 51 P/Invokes, pairing and dispatch both correct |
 | Equality semantics: mutable dictionary key | r497 | clean; value-equality keys and mutable types are disjoint sets |

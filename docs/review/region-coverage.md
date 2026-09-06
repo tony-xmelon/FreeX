@@ -11140,3 +11140,28 @@ format by index rather than forming a chain, and FreeP's slide inheritance is a 
 for a guard to do.
 
 No code changed this round.
+
+## r512 - the leak r494 missed, on the commoner path
+
+Three clean rounds in a row, so this one went back to where defects have actually been found and
+applied r494's shape - expensive work inside a paint method - to the renderers that round never
+checked. Signature: a method taking a DrawingContext whose body decodes an image or builds a
+FormattedText. 25 hits, and most are FormattedText, which is unavoidable in immediate-mode rendering
+and not a leak.
+
+One was real. r494 cached the decode behind picture FILLS; RenderPicture draws picture SHAPES - a
+different path in the same file, still decoding a fresh Bitmap on every paint and never disposing it.
+The three Dispose calls in that method are on the clip, alpha and transform SCOPES, which is exactly
+the kind of thing that makes a leak read as handled. Picture shapes are far commoner than picture
+fills, so this is the larger of the two.
+
+Fixed by extracting ONE seam both paths call rather than copying the lookup. That is better than a
+copy twice over: a picture used as a shape and as a fill now holds one decode instead of two, and the
+behaviour has a place to be asserted directly instead of inferred from a rendered frame.
+
+Two process notes. The editor warned the file had changed on disk; `git diff` confirmed the only
+uncommitted change was mine, which is the check the shared-worktree hazard calls for rather than
+assuming. And my first neuter DID NOT COMPILE - I spliced over the wrong line and left a dangling
+reference. A compile error is not a failing test and proves nothing; replacing the whole method body
+gave a valid neuter that fails 3 of 4, with the different-image narrowness test correctly still green.
+FreeP 8 lanes 9952/0.
