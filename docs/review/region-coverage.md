@@ -9675,3 +9675,38 @@ Proven by neutering the detector: three of six fail, and the three that pass are
 not depend on it.
 
 `FreeP.App.Presentation.Tests` 6052 passed / 0 failed.
+
+## r462 — the round-trip sweep carried to FreeW: clean, and the false-positive rate is the lesson
+
+r461's reflective round-trip sweep found real data loss in FreeP, so it was carried to FreeW's .docx
+path on the same reasoning that made r458 worth doing after r457: a defect in one app says nothing
+about its siblings either way.
+
+**Eleven apparent losses, all false positives.** The blind sweep reported 8 lost properties on `Run`
+and 3 on `Paragraph`. Every one is gated by a prerequisite the blind probe did not supply, and five
+were re-tested DIRECTLY rather than reasoned about, because the whole point of the exercise is that
+inference is what produces false findings:
+
+- `RevisionAuthor` / `RevisionDateXml` -- with `Revision = Inserted`, both round-trip exactly
+  ("Ada Lovelace", "2026-01-02T03:04:05Z").
+- `MarkRevisionAuthor` / `MarkRevisionDateXml` -- with `MarkRevision = Inserted`, both survive.
+- `HyperlinkTooltip` -- with `HyperlinkUrl` set, survives.
+- `CommentId` / `IsCommentReference` -- with a real comment in `document.Comments`, the id, the
+  reference flag AND the comment's text all survive.
+
+The remainder (`FieldCodeVisible`, `FieldLocked`, `MoveRevisionId`, `EndsSpanningField`) are gated the
+same way -- by a field, a move revision, a spanning field -- and are recorded as unverified rather
+than claimed.
+
+**The number worth carrying forward is the ratio.** Across r461 and r462 this technique produced 25
+apparent losses and 1 real defect: a 96% false-positive rate, entirely explained by r419's rule that a
+value field is meaningless without its mode field. That does not make the sweep useless -- it found
+real, reachable data loss in FreeP that fourteen rounds of hand-written property tests had missed --
+but it does mean the sweep is worthless without the re-probe step, and anyone running it who reports
+the raw list will be wrong nearly every time.
+
+**Verified clean**, no code change. Recorded so the next round does not re-probe the same surface.
+
+FreeW's revision attribution in particular is worth having checked: tracked-change author and
+timestamp are collaboration data, and losing them silently would be the same class as r461 with a
+worse blast radius.
