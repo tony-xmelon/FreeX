@@ -40,12 +40,14 @@ defects outside that shape.
 | Undisposed resource / per-paint allocation | r494 | 1 defect: a picture fill decoded a Bitmap on every paint |
 | Mutable toolkit visual in a static field | r495 | 4 defects (FreeW pens); tripwire added |
 | Native interop: handle leaks, wrong-OS calls | r496 | clean; 51 P/Invokes, pairing and dispatch both correct |
+| Equality semantics: mutable dictionary key | r497 | clean; value-equality keys and mutable types are disjoint sets |
 
 ## Known unswept - named so they are a decision, not an oversight
 
-- Equality SEMANTICS: a dictionary key whose equality depends on a MUTABLE field, so mutating it
-  after insertion strands the entry. The compiler closes the structural half (r493); this half it
-  cannot see, and no precise textual signature for it has been designed yet.
+(None outstanding: every class named on this map has been swept. That is NOT a claim that every
+possible defect class has been enumerated - see "What the map is for" below. New classes get added
+here as they are identified, and the list being empty means the identified ones are done, not that
+identification is finished.)
 - P/Invoke and native-interop boundaries in the Windows-only projects.
 
 ## What the map is for

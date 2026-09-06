@@ -10741,3 +10741,33 @@ another platform by construction.
 
 Unswept list: eight at r490, one now - equality semantics, which stays listed precisely because no
 signature for it has been designed, not because it has been skipped.
+
+## r497 - designing the signature the map said did not exist
+
+The last class on r490's list stayed there because I had written that no precise textual signature
+for it existed. That was a statement about my effort, not about the problem, so this round designed
+one.
+
+THE SHAPE. The hazard needs two things together: a type used as a dictionary or set KEY, and equality
+computed over MUTABLE state. Either alone is harmless - a mutable class keyed by REFERENCE is fine,
+because mutation cannot move an identity hash, and an immutable value type is fine however it is
+keyed. So the signature is the CONJUNCTION: a key type that is a record (value equality over every
+property) or carries a custom Equals, AND has settable properties.
+
+Two passes over 3,992 files: collect key types from Dictionary/ConcurrentDictionary/SortedDictionary/
+HashSet/Immutable* declarations, discard built-ins, then resolve each to its declaration. 138 key
+types, 79 resolved. Strict signature: ZERO.
+
+VALIDATED BEFORE BELIEVED, because a zero from an unproven detector is worth nothing. Relaxing to
+each half separately shows both fire: 32 key types have settable properties (SlideShape, Slide,
+ShapeAnimation, TableCell...) and 13 have value equality (ScalarValue, the Pdf draw ops, PivotKey).
+The two sets are DISJOINT, which is exactly the safe configuration - the value-equality keys are
+immutable, and the mutable types are keyed by reference.
+
+One was read rather than counted. PivotKey has a hand-written Equals, so the count could not settle
+it: its Values is get-only and set in the constructor, and - the part worth checking - its Equals and
+GetHashCode BOTH use StringComparer.CurrentCultureIgnoreCase. Had they disagreed, entries would go
+missing from the dictionary, which is the same defect arriving by a different route than mutability.
+
+Every class named on the map is now swept. That is not the same as every possible class having been
+identified, and the map says so in its own words.
