@@ -10989,3 +10989,28 @@ size. Zip64 and data-descriptor forms were not exercised, so the claim is that t
 does not work, not that no construction could.
 
 No code changed this round.
+
+## r506 - closing the gap r505 declared on itself
+
+r505 ended by bounding its own claim: the bypass was measured for a single deflate entry with a
+patched central-directory size, and zip64 and data-descriptor forms were not exercised. A stated
+limitation is a debt, so this round paid it.
+
+Three constructions, all measured against the same 200 MB expansion from a 204 KB archive:
+
+- STREAMED / DATA DESCRIPTOR (sizes written in a trailing descriptor rather than the local header,
+  the form r505 skipped): declared 209,715,200 - honest - and the guard REJECTS it.
+- CENTRAL-DIRECTORY LIE: declared 1,024, guard accepts, and the read yields exactly 1,024 bytes.
+  r505's finding reproduces in this form: the lie bounds the attacker to the lie.
+- ZIP64 SENTINEL: the declared size patched to 0xFFFFFFFF, the value that means "the real size is in
+  the zip64 extra field". It reads as a literal 4 GiB declaration and the guard REJECTS it, so the
+  sentinel is safe whether or not it is honoured.
+
+Every path ends safely: declare honestly and be refused, declare small and be truncated to that
+declaration, or use the sentinel and be refused.
+
+One limit remains and is stated rather than implied: a GENUINE zip64 archive - sentinel plus a valid
+zip64 extra field carrying the real size - needs an entry above 4 GiB to construct, which is not
+practical here. What is measured is that the sentinel VALUE does not slip past the guard.
+
+No code changed this round.
