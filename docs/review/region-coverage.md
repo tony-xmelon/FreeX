@@ -10294,3 +10294,39 @@ r476-r477 showed are exhausted. What it cannot do is find defects in code nobody
 about.
 
 No code changed this round.
+
+## r481 - the undo driver was filing real changes as no-ops
+
+r480 ended by naming its own limit: auditing recorded reasons cannot find defects in code nobody
+wrote a reason about. So this round looked for code nobody wrote a TEST about - production types with
+zero references from any test file. 39 of 297 types in FreeP.Core.Model, with one dense cluster: the
+whole MasterEditCommands.cs family.
+
+That flag was a false positive by name, because R441 enumerates commands reflectively and names
+nothing. Instrumenting the driver's own buckets turned it into a real finding: of 137 command types,
+only 12 were EXERCISED. 83 were noChange, 41 notConstructible. All six Slide Master commands sat in
+noChange.
+
+The cause is a fingerprint blind spot. `Reflect` renders a collection element through ToString(),
+which for a model object is the constant type name, so `pr.Masters` read as "[...SlideMaster]"
+whatever happened inside it. Slides get an explicit per-shape walk; masters and layouts had none.
+Those six commands were applying REAL changes and being filed as no-ops - counted by the census while
+nothing about their undo or redo was checked. The driver's existing "contents, not a count" comment
+defends against an edit hiding behind an unchanged collection SIZE; this was the same defect one
+level down, an edit hiding behind an unchanged element RENDERING.
+
+Two fixes, both in the driver's own idiom. Walk masters and layouts explicitly. Then seed a
+placeholder carrying the id the factory actually invents (uint -> 2), because five of the six address
+a shape BY ID and an empty master left them nothing to act on - r447's and r442's lesson one level in:
+seeding the container is only half of it, the ids have to line up.
+
+Result: exercised 12 -> 18, noChange 83 -> 77, failed=0. No new defects, but six commands moved from
+unverified to verified, and the floor rose from 10 to 16 with its "Only 6 today" message corrected.
+The floor sits below the current count deliberately: a genuine gain should not be required to keep
+the suite green, but a regression is caught - removing the master walk drops exercised under the
+floor and fails.
+
+Instrument note: the first neuter PASSED, which meant the edit had never applied - the multiline
+perl-on-CRLF trap. Redone by line range it fails correctly. That is the third time this session a
+neuter's own failure to apply nearly certified a fix that had not been tested.
+FreeP 8 lanes 9910/0.
