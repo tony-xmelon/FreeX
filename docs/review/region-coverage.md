@@ -9769,3 +9769,34 @@ shapes a future edit turns into a null reference. Proven capable of failing by m
 kind throw, which the sweep reports by kind, document state and context.
 
 `FreeW.App.Presentation.Tests` 3004 passed / 0 failed.
+
+## r465 — the clipboard, and a neuter that passed (which was the useful part)
+
+The clipboard is the least trustworthy input any of these apps takes: whatever the user copied from
+any application on the machine, arriving with no format claim to check, and parsed on a keystroke.
+That profile is exactly what made the malformed-input lens productive on the file readers.
+
+**`ClipboardSerializer.Deserialize` is clean.** Eighteen hostile inputs -- ragged rows, a lone CR, a
+NUL, a 200,000-character line, 20,000 rows, 20,000 columns, five thousand consecutive quotes, lone
+surrogates, RTL overrides, C0 controls -- and none throws, none hangs, with quote-aware splitting
+staying correct throughout (an embedded newline inside quotes still yields two cells; comma text
+stays one cell, because this is TSV and not CSV).
+
+**One result led somewhere: the NUL survives into the cell.** That is correct for a parser, but it
+points at a known past defect class -- an XML-illegal character in cell text used to abort the WHOLE
+save, not the cell -- and the clipboard is a live path into it. Re-checked through that new entry
+path: all six hostile strings save and reload with the neighbouring cell intact. The class stays
+fixed.
+
+**The neuter that passed is the finding worth recording.** To prove that second test could fail, the
+obvious move was to disable `XmlTextSanitizer` -- and the test still PASSED. The xlsx save path does
+not route cell text through that sanitizer at all, so the test was not guarding what I assumed it
+was. A test whose neuter passes is not a passing test; it is an unproven instrument, and every green
+this programme reports depends on knowing the difference.
+
+It was re-proven against the actual historical defect instead -- a save that throws when any cell
+text contains a control character, which is precisely what used to happen -- and it fails as it
+should. The clipboard test was proven the same way. Neither is trusted on the strength of its first
+green.
+
+`FreeX.Core.Model.Tests` 6732 passed / 0 failed. `FreeX.Core.IO.Tests` 6435 / 0.
