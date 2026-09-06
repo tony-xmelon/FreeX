@@ -9868,3 +9868,43 @@ or deliberate. No code change this round.
 What makes this worth a ledger entry rather than silence: two adapters showed a signature this review
 has fixed five times, and both turned out to be right. A programme that has just found six instances
 of a class is exactly the one most likely to see a seventh that is not there.
+
+## r468 — a PDF export that reported success and produced a file no reader can open
+
+The shared `Free.Shared.Pdf` tier, untouched by this review and sitting behind all three apps' PDF
+export. Probed with edge cases a laid-out document can present: no pages, zero and negative page
+sizes, degenerate rectangles, non-finite coordinates, 500 pages.
+
+**Most behaved, and one already had the right answer**: a document with no pages throws
+*"Portable PDF export requires at least one rendered page"* -- deliberate, and precisely the kind of
+precondition check this finding turns out to be about.
+
+**The defect: a NaN or Infinity coordinate was formatted straight into the content stream**, giving
+operators like `NaN NaN 10 10 re f`. Neither is a PDF number, so the page cannot be parsed -- while
+the file still carries a correct `%PDF-` header and `%%EOF` trailer and looks entirely healthy. An
+export that reports success and writes a file no reader will open is the same shape as r448-r454's
+silent losses, on the way out rather than the way in.
+
+**My first detector was wrong, and the control caught it.** Searching the raw file bytes for "NaN"
+reported a hit on a KNOWN-GOOD control rectangle -- content streams are Flate-compressed, so
+arbitrary byte sequences appear. The real check decompresses the streams and inspects the operators
+a reader would parse; with that, the control is clean (`10 10 100 50 re`) and the NaN cases are not.
+Keeping a control in a probe is the cheapest way to find out the probe is lying.
+
+**Fixed despite no demonstrated production path, and the difference from r460 is the point.** r460
+declined to harden nine command classes on a hypothesis. This is ONE guard at the single choke point
+every number in the file already passes through, in a shared writer that already refuses two other
+preconditions with clear messages, whose contract is "hand me laid-out ops, get a valid PDF".
+FreeX's pagination does reject non-finite scale fractions, so no live path was found -- recorded in
+the test rather than implied away.
+
+Throwing rather than clamping, for the same reason the writer already throws: a non-finite coordinate
+means a real layout bug upstream, and a message naming it is worth more to whoever diagnoses it than
+a silently corrupt file.
+
+Nine tests, including the two that keep it narrow: ordinary content still exports with clean
+operators, and a very large but FINITE coordinate is still accepted -- rejecting those would break
+exports that work today.
+
+`Free.Shared.Pdf.Tests` 241 passed / 0 failed; FreeX DefaultTests 31 lanes / 0; FreeW 3004 / 0;
+FreeP 6052 / 0 -- the sibling runs being the ones that matter for a shared-tier guard.
