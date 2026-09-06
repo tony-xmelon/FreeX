@@ -11039,3 +11039,25 @@ sweep that finds nothing, and the fix is the same discipline as everywhere else 
 once, then compare.
 
 No code changed this round.
+
+## r508 - the autosave racing the user, checked in all four shells
+
+New class, and a plausible one: a 30-second autosave timer serialising a document while the user is
+typing into it would produce a torn snapshot - and the snapshot is precisely the copy that matters
+after a crash, so the failure would surface only when it is least recoverable.
+
+Closed by design in all four shells, by two different mechanisms. The WPF hosts drive the timer
+through WpfAutosaveTimer over an IWpfDispatcherTimer, so the tick arrives on the UI thread; FreeX
+states the consequence outright - "the Tick fires on the dispatcher thread so workbook access is safe
+without additional synchronisation". Both Avalonia shells wrap the snapshot in
+AvaloniaBoundedDispatcherTransaction.TryExecute, marshalling it onto the dispatcher with a timeout.
+
+The Avalonia variant carries a deliberate trade worth recording: the transaction is BOUNDED, so if
+the UI thread is busy the snapshot is SKIPPED rather than blocking. Missing one autosave tick is
+better than freezing the window, and it is the same reasoning behind the emergency-snapshot timeout.
+That is a choice someone made, not an accident, and reading it as a missing wait would be the
+mistake.
+
+Class swept, nothing to fix.
+
+No code changed this round.
