@@ -45,6 +45,7 @@ defects outside that shape.
 | File-controlled loop count (hang, not OOM) | r500 | clean; already guarded in FreeX, no sibling gap |
 | Unbounded recursion over file-controlled nesting | r501, r502, r503 | 1 defect (FreeP, fatal); every nesting structure in all three readers enumerated |
 | Recursive resolution in EVALUATION (named formulas) | r504 | clean; cycle-detected per (name, scope), returns #REF! as Excel does |
+| Decompression bomb (zip bomb) | r505 | clean; guard + .NET truncation close both paths, measured |
 
 ## Known unswept - named so they are a decision, not an oversight
 

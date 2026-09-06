@@ -10961,3 +10961,31 @@ one. That is a subtlety I would probably have got wrong writing it from scratch,
 reason to read a guard before concluding it is adequate rather than merely present.
 
 No code changed this round.
+
+## r505 - a hypothesis the measurement reversed
+
+New class: the decompression bomb. All three readers call the shared WorkbookOpenSizeGuard (FreeX 6
+sites, FreeP 4, FreeW 1, plus the ODS adapter), so the class is wired rather than merely available -
+the r480 check.
+
+Reading the guard raised what looked like a real hole. It inspects `entry.Length`, and its own
+summary says so: "The checks inspect declared sizes only and never decompress." A zip's central
+directory is written by whoever made the file, so the obvious conclusion is that an archive can
+declare a small size, pass the guard, and then expand without limit. I was drafting that as a
+characterised residual risk.
+
+The measurement says otherwise. An honest archive expanding to 200 MB from 204 KB is REJECTED
+(WorkbookTooLargeException). Patching the central directory's uncompressed-size field to 1024 does
+get the archive ACCEPTED by the guard - and then reading the entry yields exactly 1,024 bytes,
+because .NET's ZipArchive truncates the entry stream at the declared length. The lie bounds the
+attacker to the lie.
+
+So both paths are closed, and the "declared sizes only" design is sound BECAUSE of the runtime
+behaviour it delegates to, not in spite of it. Static reading alone concluded the opposite, with a
+plausible-sounding argument; a twenty-line experiment settled it in one run.
+
+Scope stated honestly: this was measured for a single deflate entry with a patched central-directory
+size. Zip64 and data-descriptor forms were not exercised, so the claim is that the obvious bypass
+does not work, not that no construction could.
+
+No code changed this round.
