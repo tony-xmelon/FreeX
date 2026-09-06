@@ -9516,3 +9516,47 @@ Proven by neutering the id reuse: both redo tests fail and so does the driver. `
 **Still open, deliberately**: the FreeP and FreeW drivers do not yet check redo. The contract is
 identical and the change is small, but each needs its own verification run, so it is recorded rather
 than bolted on unverified.
+
+## r458 — the redo contract ported to both siblings, and an existing test that had to be argued with
+
+r457 recorded that FreeP and FreeW's drivers did not yet check redo. Porting it took one line each.
+
+**FreeW: clean.** All 18 exercised commands redo exactly. Recorded because a lens that only ever
+reports findings is not measuring anything.
+
+**FreeP: the same defect as FreeX, on the first run.** `DuplicateSlideCommand` calls
+`SlideCloner.CloneSlide` on every Apply, which mints a new `Slide.Id`, so undo-then-redo produced a
+slide with a different identity than the first Apply created. `SlideCloner.CloneSlidePreservingIdentity`
+already existed for exactly this need -- `Revert`'s own comment names it -- so the fix is to use the
+identity-preserving clone on redo.
+
+**Then the full lane failed, and the failure was the interesting part.** An existing test,
+`DuplicateSlideCommand_InheritsSectionMembershipAcrossUndoAndRedo`, explicitly asserted the redone
+duplicate gets a DIFFERENT id. My change contradicted a committed assertion, which is the point at
+which "I found a defect" has to be re-examined rather than pushed through.
+
+Three pieces of evidence decided it:
+
+1. The assertion carries no rationale, and came from a commit titled "Preserve section membership when
+   duplicating slides" -- a different concern. It reads as behaviour observed and written down.
+2. The sibling app documents the OPPOSITE choice with an explicit reason: FreeX's `AddSheetCommand`
+   keeps its sheet id across redo under a comment naming R16 and the harm -- "breaking any later
+   redo-stack command that captured the original id".
+3. The harm is concrete IN FREEP, not merely inferred from FreeX: hyperlinks store `TargetSlideId`,
+   and this very file's slide-delete path already snapshots and restores links whose target id
+   disappears. So duplicate -> link to the duplicate -> undo twice -> redo twice left the link
+   pointing at an id that no longer existed, while the slide sat visibly in the deck.
+
+The assertion is now inverted, with all of that written where the next reader will meet it, and the
+test's actual subject -- section membership following the duplicate -- left untouched.
+
+Five new tests, including two the headline does not cover: the redone duplicate must be a FRESH
+object (re-inserting the retained instance would make the command's field alias the live document, so
+a later edit would mutate the undo state), and identity must hold across REPEATED undo/redo cycles,
+which a fix that captured the id only once would fail on the second pass.
+
+Proven by neutering: two of the five fail plus the driver. `FreeP.App.Presentation.Tests` 6045 passed
+/ 0 failed, `FreeW.App.Presentation.Tests` 3002 / 0.
+
+**The redo contract now holds in all three apps** -- one defect each in FreeX and FreeP, none in
+FreeW, from a check that did not exist two rounds ago.
