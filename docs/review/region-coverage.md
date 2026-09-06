@@ -9560,3 +9560,34 @@ Proven by neutering: two of the five fail plus the driver. `FreeP.App.Presentati
 
 **The redo contract now holds in all three apps** -- one defect each in FreeX and FreeP, none in
 FreeW, from a check that did not exist two rounds ago.
+
+## r459 — command SEQUENCES, and a clean result worth keeping
+
+Every driver so far (r417, r441, r442, r457, r458) applies ONE command to a fresh fixture. Users
+stack edits and unwind them in order, which is a different contract: a command that captures its undo
+state at construction rather than at Apply, or that assumes the document still looks the way it did
+when it was built, passes every single-command test and fails on a stack.
+
+This drives PAIRS through the real `CommandBus` -- not Apply/Revert directly -- so the stack's own
+bookkeeping (push order, redo invalidation, the byte budget) is exercised too, then undoes everything
+and requires the workbook back exactly.
+
+**Result: 66 pairs, none failing.** No defect. FreeX's commands unwind correctly in sequence.
+
+**Kept rather than deleted, and the reason matters.** A test that finds nothing today is still what
+catches tomorrow's regression -- but only if it is known to be CAPABLE of failing, which is why every
+round of this programme neuters before trusting a green. Breaking `SetCommentCommand.Revert` to
+restore a wrong value fails it in both stack positions, naming the pair and the field:
+`SetColumnsHiddenCommand + SetCommentCommand [sh.Comments=[[A1, note]] -> [[A1, WRONG]]]`. A
+first neuter attempt was discarded because it produced a compiler error rather than a behaviour
+change, so it would have proven nothing.
+
+`pairsExecuted >= 60` is pinned for the same reason the other drivers pin their counts: a sweep that
+quietly stops stacking pairs would otherwise go green while testing nothing.
+
+`FreeX.Core.Model.Tests` 6731 passed / 0 failed.
+
+**Where the undo/redo seam now stands**, after r417 and r438-r459: single-command undo (71 exercised),
+redo (r457/r458, one defect each in FreeX and FreeP), and now sequences. Three contracts, three apps,
+all pinned with floors so narrowing shows up as a failure. Four real defects came out of building it,
+and every clean result is recorded as plainly as the fixes.
