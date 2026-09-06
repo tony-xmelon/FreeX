@@ -10526,3 +10526,35 @@ precise signature (a lower-bound guard on a parsed double) while this one is a s
 most code satisfies safely. A sweep is only as good as how specific its shape is.
 
 No code changed this round.
+
+## r489 - a UI-thread deadlock trap, latent, and a source contract that caught me
+
+Applying r488's lesson - a sweep is only as good as how specific its shape is - to blocking waits on
+Tasks. The first attempt returned 251 hits and was mostly `.Result` on dialogs and plans, not Tasks
+at all. Tightening to an unambiguous signature (GetAwaiter().GetResult(), .Wait(), and .Result only
+on a plain Task receiver, with comments and string literals stripped) gave 73, and restricting to
+shell code found the one that matters.
+
+`SisterAvaloniaFileCommandWorkflow.PromptSaveChangesSync` blocks on AvaloniaSaveChangesDialog.ShowAsync,
+waiting for a result only the UI thread can produce. Avalonia has no nested message pump, which is
+exactly why the identical shape is safe in the WPF sister (ShowDialog pumps) and fatal here - the
+hazard FreeW's own MainWindow comment describes, restored in r475.
+
+Traced to a conclusion rather than reported as a smell: THERE IS NO LIVE DEADLOCK. The WPF sister
+uses the sync gate correctly, FreeP's Avalonia MainWindow explicitly passes ConfirmCloseAllowedAsync
+instead of taking the default, and no Avalonia path reaches the sync gate. So the change is
+documentation, not behaviour (r479's reasoning): the safety rests on a fact about today's CALLERS,
+and the only warning lived in the caller that happened to learn it. Making it throw on the UI thread
+was considered and rejected - no demonstrated path, and it would break a legitimate background use.
+
+Then the codebase corrected me, and it was right. BackstageAndLifecycleOwnershipSourceTests asserts
+the portable adapter `NotContain("Avalonia")`: the renderer-neutral tier must not name a toolkit even
+in PROSE, because a comment naming toolkits is a step toward code that does. My first wording said
+"a deadlock under Avalonia" and broke it. Reworded to carry the same substance neutrally - safe only
+on a toolkit whose modal dialog pumps a nested message loop - with a note explaining why the wording
+is deliberately neutral so nobody restores the names. The explicitly named warning stays in the
+Avalonia file, which is the one that actually blocks.
+
+Second time this session a repo guard has corrected a change of mine (R276's XmlReaderSettings,
+TestWorkspaceFileLocator's directory walker were the others), and each was caught only by the FULL
+lane, never by the filtered run. FreeP 8 lanes 9945/0, FreeW 7 lanes 11796/0.
