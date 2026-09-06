@@ -10330,3 +10330,31 @@ Instrument note: the first neuter PASSED, which meant the edit had never applied
 perl-on-CRLF trap. Redone by line range it fails correctly. That is the third time this session a
 neuter's own failure to apply nearly certified a fix that had not been tested.
 FreeP 8 lanes 9910/0.
+
+## r482 - the untested branch behind a false signal
+
+Worked the rest of r481's list: 39 types in FreeP.Core.Model that no test file names, 20 of them
+commands the reflective driver covers anyway. Of the remaining 19, FindReplaceMatchResolver and
+FindReplaceRunSpanWriter stood out - replacing text across formatting runs is where off-by-one and
+formatting-loss defects live.
+
+The names were another false signal: both are reached through ReplaceOneCommand, which
+FindReplaceStaleMatchTests exercises. Following it one step further found the real gap. That file is
+the ONLY test touching these commands, and every paragraph it builds has a SINGLE run - so the
+multi-run branch of ApplyReplacement, which empties the runs between start and end, truncates the end
+run and splices the replacement into the start run, had no coverage at all. This is the third time a
+name-based coverage signal has been wrong while the trail from it was right (r476, r481, r482).
+
+The branch is not exotic. PowerPoint splits a run at every formatting change, so bolding one letter
+inside a word makes "beautiful" span three runs.
+
+Six cases probed before writing anything: two runs, three runs (middle run fully consumed), match
+ending the paragraph, empty replacement, longer replacement, and the single-run case as a control.
+All produce correct text and undo restores every touched run exactly. The code is right; the round
+adds coverage rather than a fix, and the tests are load-bearing - dropping the end-run truncation
+fails 4 of 10 while the single-run control still passes, which is what distinguishes a test that
+covers the branch from one that merely runs it.
+
+Deliberately NOT changed: the three-run case leaves an empty run behind. It is legal, invisible, and
+PowerPoint does the same; pruning it would be a behaviour change made on a hypothesis (r460).
+FreeP 8 lanes 9920/0.
