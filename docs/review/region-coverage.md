@@ -10128,3 +10128,34 @@ with it, so the documentation of a GUARANTEED DEADLOCK - why this path must not 
 workflow's synchronous Open overload - was invisible to tooling and to anyone reading the member
 list. Behaviour was never affected; the compiler accepts a comment between `=>` and its expression.
 The doc is now restored onto the live method and the dead signature removed.
+
+## r476 - a plausible-looking meta-lens that produces only false gaps
+
+Tried a meta-lens: compare TEST coverage across the three apps by topic, on the theory that a
+concept tested in two apps and absent in the third marks a gap - the shape that found r470 (FreeW and
+FreeP had no culture-save tests) and r471 (no protection census). Topic derived from test-file names
+with the round prefix and app prefix stripped. It flagged 16 topics present in FreeX and FreeW but
+missing from FreeP.
+
+Every candidate examined was a false gap:
+
+- RecoveryExternalWriteGuard, the most promising by far - r172's silent overwrite of a file changed
+  on disk while the app was gone. FreeP HAS the remediation (AdoptRecoveredPresentation arms
+  `_currentFileSourceLastWriteTimeUtc` and the read-only verdict) AND a regression test for it. The
+  topic diff missed it because FreeW calls the file RecoveryExternalWriteGuard and FreeP calls it
+  RestoreAutosaveSnapshotExternalWriteGuard. While there, both recovery routes were traced to
+  confirm they really do reach the arming point rather than trusting the doc comment that says so -
+  the Avalonia shell adopts an already-loaded presentation directly, the WPF host goes through
+  RestoreAutosaveSnapshot; both arm the guard.
+- CommentCommand: FreeP has 11 production files and 7 test files on comments.
+- ProtectionPassword, WordArtRoundTrip, PdfFileAdapter, EqualValueSetterNoOp: ZERO production code
+  in FreeP. These are features the app does not have (or, for PDF, has under different names -
+  export exists in both FreeP shells), not features it fails to test.
+
+So the instrument is unreliable in a specific and predictable way: sibling apps name the same
+concept differently, and an absent feature is indistinguishable from an untested one when the only
+evidence is a filename. Zero real findings from six verified candidates. Recorded so the lens is not
+re-run: to be useful it would have to match on asserted BEHAVIOUR rather than file names, which is
+what r471's and r472's censuses do directly and more cheaply.
+
+No code changed this round.
