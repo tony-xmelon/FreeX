@@ -9839,3 +9839,32 @@ since a moved directory would otherwise make it vacuously green -- the very fail
 prevent. Proven by reinstating the swallowing helper: the guard fires and names the file.
 
 `FreeW.App.Avalonia.Tests` 2298 passed / 0 failed.
+
+## r467 — closing the reader enumeration, and two apparent hits that were neither
+
+r466's generalised lesson -- "a fix applied file-by-file is not done until a tripwire says so; assume
+any 'fixed' claim without one is partial" -- was applied immediately to this review's own claims. The
+r448-r453 sweep said "fourteen readers". Re-checking the adapter list found **two never probed**:
+`DbfFileAdapter` and `MhtFileAdapter`. Both then showed the r452 signature -- arbitrary bytes loading
+as an empty workbook.
+
+**Both are non-defects, and reading the code is what settled it.**
+
+`MhtFileAdapter` deliberately falls back: *"treating the whole content as HTML so that a plain HTML
+file saved with a .mht extension still opens"*. So garbage is read as an HTML document containing no
+tables -- which r452 had already judged legitimate input rather than corruption, when it declined to
+guard `HtmlFileAdapter` for the same reason. Consistent with a decision this review already made.
+
+`DbfFileAdapter` carries the choice in a comment on the line itself: *"not a valid DBF header --
+yield an empty sheet rather than throwing"*. Deliberate, and the harm that justified r452's guards
+does not apply: DBF is READ-ONLY in FreeX (Excel's own DBF writer is deprecated, and the adapter
+matches), so there is no save that overwrites the user's original with an empty file. r458's rule --
+invert a committed decision only with real evidence -- says leave it.
+
+**The enumeration is now complete**: sixteen readers probed across three apps, six defects fixed
+(r448 FreeP .pptx, r449 FreeW .docx, r450 FreeX .xlsx, r451 .ods, r452 SYLK and DIF), ten found sound
+or deliberate. No code change this round.
+
+What makes this worth a ledger entry rather than silence: two adapters showed a signature this review
+has fixed five times, and both turned out to be right. A programme that has just found six instances
+of a class is exactly the one most likely to see a seventh that is not there.
