@@ -10036,3 +10036,34 @@ Not claimed as parity: the WPF host marks dirtiness through the undo stack and e
 rather than an event, so this census does not transfer to it; and FreeP has no document-protection
 feature at all - unimplemented, not defective. Recording both beats writing a test that implies
 otherwise. FreeW 7 lanes 11794/0.
+
+## r473 - twelve suspects, zero defects, and one inconsistency left deliberately unfixed
+
+Extended the r461 family (a pasted inline picture dropped on save) from one case to a census: apply
+each zero-argument mutator, write .docx, read it back, and diff the model BY PROPERTY PATH with an
+unedited control subtracted as normalisation noise. The path-level diff was necessary - a flat
+fingerprint reported 23 losses on a document nobody had edited.
+
+Twelve mutators were flagged. Verifying each individually left ZERO defects:
+- InsertHorizontalRule: the rule is a paragraph border, and the border survives (True -> True).
+- ConvertCurrentParagraphToTable: reload ADDS a border rather than losing one.
+- EnsureHeader / EnsureFooter: the header is empty (IsEmpty=True) and is not persisted - which is
+  what Word does. A header carrying text survives intact, checked directly.
+- InsertTextBox: reload GAINED text, so the question was whether the box flattens into body text. It
+  does not: the reloaded runs are `TEXT:Hello | SHAPE:Text Box` - one shape run, no duplication.
+
+Twelve to zero is the same ratio r419 measured, and is exactly why a census output is a list of
+questions rather than a list of findings.
+
+One real inconsistency was measured and deliberately NOT fixed: the DOCX reader populates
+`Run.Text` on a shape run while the editor's insert path leaves it empty, so `TextDocument.PlainText`
+reports different text for the same document before and after a save. Nothing double-renders (other
+text walkers explicitly `continue` on shape runs), no test pins the intended behaviour, and Word
+counts text-box text in word count and Find - so both sides have a case. Choosing one would be
+hardening on a hypothesis, which r460 already established is not worth doing; it is recorded here
+with its evidence for whoever owns that decision.
+
+Kept: two pins on the cases genuinely at risk and now known good. NOT kept: the census as a gate. At
+90 noise paths on an untouched document it needs shape-based filtering that makes it fragile rather
+than protective - the opposite of r471's and r472's censuses, which need no such tuning.
+FreeW 7 lanes 11796/0.
