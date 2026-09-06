@@ -9800,3 +9800,42 @@ should. The clipboard test was proven the same way. Neither is trusted on the st
 green.
 
 `FreeX.Core.Model.Tests` 6732 passed / 0 failed. `FreeX.Core.IO.Tests` 6435 / 0.
+
+## r466 — a test file kept the swallowing helper r360 removed, and the scan that found it was broken first
+
+r465 ended on a neuter that passed, so the next question was structural: which EXISTING tests are
+incapable of failing? The most extreme form is a test that asserts nothing at all.
+
+**The first scan returned zero, and that was the scanner, not the codebase.** Validating it against a
+deliberately assertion-free test showed it matched nothing -- a misplaced parenthesis in the awk
+`while` condition. A zero from an unvalidated instrument is indistinguishable from a clean result,
+which is the same trap as r465's passing neuter, one level up. Corrected, it returned 48 candidates.
+
+**Most of those 48 are false positives, and the failure modes are structural.** Sampling found
+assertions delegated to helpers (`R405`'s own `Check` asserts, and asserts well -- it even requires
+the command to have CHANGED something first, "or the undo assertion below proves nothing"), and
+expression-bodied test methods, which a brace-counting scanner cannot see at all. Text scanning
+cannot decide this question; it would need real parsing. The list was not reported as findings.
+
+**But one candidate was real, and it is a known defect class recurring.**
+`DocumentViewBookmarkMergeLifecycleTests` kept a PRIVATE copy of the pre-r360 `OnUiThread`, whose
+`catch (Exception) { return false; }` discards everything -- assertion failures included -- turning
+the `if (!ran) return;` after every call into an unconditional pass. r360 replaced that helper across
+the assembly precisely because of this, and its own comment puts the blast radius at "over a
+thousand" such guards. One file survived the migration.
+
+**Demonstrated, not argued.** Injecting a single failing assertion into one test body:
+`Failed 1/3` through the shared helper, `Passed 3/3` through the file's own. Same test, same failure,
+opposite verdicts.
+
+**No product bug was hidden today** -- all three tests pass either way, so the fix is preventative.
+Recording that plainly matters: the original round of this class found 21 hidden failures and 3
+product bugs, and it would be easy to imply the same here.
+
+Fixed by delegating to the shared helper, plus `R466_NoTestFileKeepsItsOwnSwallowingUiHelperTests` --
+a source scan over both apps, because this exact fix was already applied once and a copy still came
+back. The guard asserts it SCANNED something (`scanned > 10`) before asserting it found nothing,
+since a moved directory would otherwise make it vacuously green -- the very failure it exists to
+prevent. Proven by reinstating the swallowing helper: the guard fires and names the file.
+
+`FreeW.App.Avalonia.Tests` 2298 passed / 0 failed.
