@@ -10468,3 +10468,31 @@ Verification note, stated precisely: the FIRST FreeX run reported one failing la
 arithmetic fits a single flaky test rather than a regression, and matches this repo's documented
 capture-suite variance - but the test was NOT identified before it passed again, so the evidence is
 two matching clean runs rather than a named cause. FreeP 8 lanes 9945/0.
+
+## r487 - two more shape sweeps, no defect found
+
+r486 turned a single finding into seven by sweeping for its SHAPE rather than continuing a list, so
+two more shapes were swept the same way. Both came back clean, and recording which shapes are
+exhausted is the point.
+
+SHAPE 1 - throwing XML navigation on file input: `.Elements(...).Single()` / `.First()` in a reader
+turns a damaged document into an InvalidOperationException instead of a graceful refusal, which is
+exactly the r448-r454 family. 3,992 production files, 8 sites, NONE on file-derived XML. Five are in
+DocxWriter and operate on an embedded SmartArt TEMPLATE (`data.Root ?? throw ...`), where asserting
+the app's own resource shape is legitimate. The readers are clean, which is what r448-r454 was for.
+
+SHAPE 2 - division by a collection size: 52 candidate sites, and the heuristic is too weak to pursue
+exhaustively - most divisors are structurally non-zero because the code is already iterating that
+collection. This is r477's lesson restated: a cheap structural signal now produces false positives
+faster than findings. Rather than chase 52, the one FILE-DERIVED site was checked:
+PptxPackageReader:4035 divides by `nodeShapes.Length - 1` while matching a SmartArt layout.
+
+That one was MEASURED rather than argued, because operator precedence decides whether it throws:
+`(1.0 - minimumScale) * index` makes the left operand a double, so a single-node diagram yields
+value=NaN and an expected diameter of 0 rather than DivideByZeroException. The consequence is a
+missed layout match that falls through to generic handling - not a crash, not corruption. Whether a
+one-node diagram SHOULD match that layout is a semantics question the code does not answer, so it
+was left alone (r460). Recorded here with the measurement so the next reader of that line does not
+have to redo it.
+
+No code changed this round.
