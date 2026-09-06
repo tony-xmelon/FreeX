@@ -10011,3 +10011,28 @@ Also cleared this round, by tracing consumers rather than reasoning: no zip-slip
 are never extracted to disk), and no destructive partial save - the autosave coordinator writes to a
 temp lease, fsyncs and moves, and explicit saves serialize into memory before the file is touched.
 FreeW 7 lanes 11793/0.
+
+## r472 - the three properties every mutation must have, asserted as a census
+
+r471's ten bypasses came from an opt-in convention rather than a forgotten method, so the same
+instrument was pointed at the invariants that convention also carries. For every zero-argument
+mutator that actually changes the document: it must raise `DocumentChanged`, it must leave something
+on the undo stack, and undo must restore the document exactly.
+
+`DocumentChanged` is the load-bearing one. It is the ONLY signal that marks the document dirty, and
+it also refreshes the navigation, selection and reviewing panes - so a mutation that skips it means
+the close prompt never appears and the user's work is discarded without a warning. That is a worse
+outcome than any wrong-output defect this review has fixed.
+
+All twelve mutators comply: ConvertCurrentParagraphToTable, InsertBibliography, InsertBlankPage,
+InsertColumnBreak, InsertHorizontalRule, InsertIcon, InsertPageBreak, InsertTableOfAuthorities,
+InsertTableOfContents, RefreshBibliography, RefreshTableOfAuthorities, UpdateTableOfContents. So
+this is a guard, not a repair - and it was proved to be a real one: rewriting InsertHorizontalRule
+to touch `_doc.Blocks` directly instead of going through the editing session makes the census report
+"changed the document without raising DocumentChanged", exactly the silent-data-loss shape it exists
+to catch. A floor on the mutator count keeps it from going vacuous if the reflection filter rots.
+
+Not claimed as parity: the WPF host marks dirtiness through the undo stack and explicit MarkDirty
+rather than an event, so this census does not transfer to it; and FreeP has no document-protection
+feature at all - unimplemented, not defective. Recording both beats writing a test that implies
+otherwise. FreeW 7 lanes 11794/0.
