@@ -43,7 +43,7 @@ defects outside that shape.
 | Equality semantics: mutable dictionary key | r497 | clean; value-equality keys and mutable types are disjoint sets |
 | Save idempotence (accumulation, reorder, nondeterminism) | r499 | clean for the in-memory surface; guard added |
 | File-controlled loop count (hang, not OOM) | r500 | clean; already guarded in FreeX, no sibling gap |
-| Unbounded recursion over file-controlled nesting | r501, r502 | 1 defect (FreeP, fatal); FreeW checked, does not replicate |
+| Unbounded recursion over file-controlled nesting | r501, r502, r503 | 1 defect (FreeP, fatal); every nesting structure in all three readers enumerated |
 
 ## Known unswept - named so they are a decision, not an oversight
 

@@ -10912,3 +10912,31 @@ The justification is r501 itself - the identical shape in the sibling was reacha
 process outright - and it is the same standing given to r468, r469 and r498. Recording the failure to
 reproduce matters as much as the guard: the next person to look here starts from "unproven, and here
 is what was tried" rather than repeating it. FreeW 7 lanes 11797/0.
+
+## r503 - enumerating the nesting structures instead of stopping at the one that broke
+
+r501 fixed SmartArt depth in FreeP and r502 checked its sibling. Both are answers about ONE structure.
+The class is "unbounded recursion over nesting a FILE controls", so this round enumerated every such
+structure in the three readers and checked each, which is the difference between fixing a defect and
+closing a class.
+
+FreeP: shape groups (MaxShapeGroupNestingDepth = 64) and SmartArt point chains (MaxSmartArtNodeDepth
+= 64, added in r501). PowerPoint tables cannot nest, so there is no third structure.
+
+FreeW: nested tables (MaxTableNestingDepth = 64), content controls (MaxContentControlNestingDepth =
+64), altChunk word packages (MaxNestedWordPackageAltChunkDepth = 32), SmartArt (r502's cycle guard).
+The fifth candidate, Word FIELD CODES, nests in the format - { IF { =SUM } } - and needed checking
+rather than assuming: it is accumulated on an explicit _stack list, pushed on begin and popped on
+end. Iterative, so no recursion to overflow, and its growth is linear in the file's own size rather
+than amplified.
+
+FreeX: no depth constants at all, which looked like the gap until it was read. Its drawing reader
+walks nested groups with LINQ Descendants(), a flat enumeration that maintains its own stack
+internally. Immune by construction rather than by guard, which is why nothing to find here is the
+correct answer and not a missing one.
+
+So the class holds across all three, with three different mechanisms doing the work: an explicit
+depth cap, an explicit accumulator, and flat enumeration. Worth recording precisely, because a future
+reader who finds no MaxDepth constant in FreeX should not conclude what I nearly did.
+
+No code changed this round.
