@@ -9742,3 +9742,30 @@ making `ABS` throw on a text argument -- the sweep names the function and the ex
 quietly stops evaluating cannot pass while testing nothing.
 
 `FreeX.Core.Formula.Tests` 5254 passed / 0 failed.
+
+## r464 — the formula lens does not port, so the nearest equivalent was probed instead
+
+r463 swept FreeX's formula engine. The habit of this programme is to carry each contract to all three
+apps, so the first question was whether the siblings have one.
+
+**They do not, and that was checked rather than assumed.** FreeW has no formula evaluator -- its
+`FieldCode` is a Word field, a different construct -- and FreeP has none at all. r463 stands alone,
+which is worth recording so a later round does not go looking for a port that cannot exist.
+
+**The nearest equivalent WAS probed.** FreeW resolves Word fields, and
+`DocumentFieldDisplayPlanner.Resolve` is the same shape as a formula function: it reads document
+state and returns a value. It also runs on a hotter path than any single formula -- a field is
+resolved every time a header or footer is drawn -- so an exception there does not spoil one field, it
+takes down the render pass for the page.
+
+Eleven field kinds against three document states and four display contexts, chosen to be the awkward
+ones a resolver actually meets rather than merely the empty ones: a document with no blocks at all,
+properties that are empty strings rather than null, and a page count of zero or negative. **132
+resolutions, none throwing.**
+
+Kept as a permanent test despite the small surface, because the cost is 25ms and the resolver
+dereferences `document.Properties` and `context.PageNumberSection ?? document.Page` -- exactly the
+shapes a future edit turns into a null reference. Proven capable of failing by making the `Author`
+kind throw, which the sweep reports by kind, document state and context.
+
+`FreeW.App.Presentation.Tests` 3004 passed / 0 failed.
