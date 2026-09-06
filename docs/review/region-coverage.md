@@ -10661,3 +10661,31 @@ entry - is invisible to the compiler and has no precise textual signature yet, s
 the unswept list in its own right rather than being waved through with the class.
 
 Unswept list: eight at r490, four now.
+
+## r494 - a picture fill decoded a bitmap on every paint
+
+Fourth class off r490's list (resource disposal), and it found a real leak. MakePictureBrush is
+reached only through MakeBrush, and every caller of that is a Render method taking a DrawingContext -
+RenderBackground, RenderShape, RenderShapeEffects, RenderTableCellGeometry. So it ran once per PAINT,
+decoding a fresh Bitmap and handing it to an ImageBrush, which does not own or dispose its source,
+with no cache anywhere in the file. A slide holding one picture-filled shape grew native memory on
+every scroll, resize, animation tick and slide-show frame.
+
+Fixed by keying decoded bitmaps on the image array's IDENTITY. That is what makes caching safe here:
+no hashing cost, no staleness question because a different image is a different array, and the entry
+dies with the image data instead of outliving the deck. The bound moves from one bitmap per paint to
+one per distinct image. MakePictureBrush was widened from private to internal - the compiled-seam
+pattern this codebase already prefers over reflection - so the behaviour could be tested directly.
+
+Three instrument failures on the way, each of which would have produced a false green:
+- The hand-written 1x1 PNG did not decode, so the brush silently became Brushes.Transparent and the
+  first version of the test asserted against nothing. Replaced with a Skia-encoded PNG. A rejected
+  image is indistinguishable from a working one unless the test checks the brush TYPE.
+- Reading TileMode outside the dispatch threw on Avalonia's thread affinity. The first two tests
+  passed only because comparing references does not touch the object; every property read now happens
+  on the UI thread.
+- The first neuter PASSED because the perl edit had not applied (the CRLF trap, fourth time this
+  session). Redone by line range it fails 2 of 3, with the different-image narrowness test correctly
+  still green.
+
+Unswept list: eight at r490, three now. FreeP 8 lanes 9948/0.
