@@ -9908,3 +9908,35 @@ exports that work today.
 
 `Free.Shared.Pdf.Tests` 241 passed / 0 failed; FreeX DefaultTests 31 lanes / 0; FreeW 3004 / 0;
 FreeP 6052 / 0 -- the sibling runs being the ones that matter for a shared-tier guard.
+
+## r469 - the same non-finite defect in the XPS writer, and why the obvious fix was wrong
+
+Propagated r468 to its sibling instead of waiting for a second report. `PortableXpsWriter` formatted
+doubles through `F`/`FFraction` with no finite check, exactly as the PDF writer had, producing
+`<FixedPage Width="NaN">` and paths reading `M NaN,NaN L ...`. Neither is a number in the
+abbreviated geometry syntax, so the output is a well-formed OPC package wrapping an unparseable
+page - the r448-r454 shape again: damage that looks deliberate.
+
+Measured, not assumed. A probe wrote each case and inspected the extracted `.fpage` markup, keeping
+an ordinary rectangle as a control - the control stayed clean, which is what made the positives
+trustworthy after the PDF round's first detector reported a false hit on one.
+
+The interesting part was WHERE to refuse. This writer, unlike the PDF one, already has an
+exportability gate (`Analyze` -> `XpsExportabilityReport` -> `XpsUnsupportedContentException`) that
+declared these documents exportable, and line 204 shows mid-write refusals already using that type.
+Refusing in the writer's own idiom was the obvious move and would have been a defect: the only
+caller, `FreeWAvaloniaXpsExport`, answers `XpsUnsupportedContentException` by rasterising the SAME
+document through Skia. Measured directly - Skia accepts the non-finite rectangle and returns a
+5,785-byte PNG - so the writer's own idiom would have converted a broken coordinate into a silently
+blank page, trading one invisible failure for another. That fallback exists for content XPS cannot
+REPRESENT, not for input that is not a number.
+
+So the guard throws plain `InvalidOperationException`, matching the PDF sibling and passing straight
+through the fallback's catch. Because `XpsUnsupportedContentException` DERIVES from
+`InvalidOperationException`, every message-based assertion passes either way; a dedicated
+`NotBeOfType` assertion carries the choice. Neutering proved both directions: removing the guard
+fails 8 of 11; swapping the exception type fails exactly one - that assertion, and nothing else.
+
+As in r468, no production path to a non-finite coordinate was demonstrated. The justification is the
+shared-boundary contract behind three apps, a single choke point every number already passes
+through, and a failure mode nothing else reports.
