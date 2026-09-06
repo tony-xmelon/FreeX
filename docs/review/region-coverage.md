@@ -10067,3 +10067,34 @@ Kept: two pins on the cases genuinely at risk and now known good. NOT kept: the 
 90 noise paths on an untouched document it needs shape-based filtering that makes it fragile rather
 than protective - the opposite of r471's and r472's censuses, which need no such tuning.
 FreeW 7 lanes 11796/0.
+
+## r474 - a failed crash recovery still put a blank window on screen
+
+This round targeted the PATTERN rather than an area. "One path fixed, siblings left" has produced
+most of this review's findings (r438, r441, r451, r455, r457, r458, r469, r471), so instead of
+picking a new subsystem, sibling files were compared directly: same-named sources across the FreeW
+and FreeP shells, methods matched by name, flagged where one side carries a guard class the other
+lacks entirely. 12 candidates out of 27 comparable pairs.
+
+The first hypothesis was wrong. FreeW wraps recovery-window creation in try/catch and FreeP does
+not, which looked like a crash during crash recovery - but `RestoreAutosaveSnapshot` already catches
+read failures and returns false, so the corrupt-snapshot case never throws.
+
+The real defect was beside it. Both FreeP shells call `window.Show()` UNCONDITIONALLY and then
+return whether the snapshot loaded, so a recovery that failed still presented a blank presentation:
+unexplained on the startup path (deliberately best-effort and silent on failure), and through the
+manual "Recover Unsaved Presentations" command - which exists specifically to surface failures
+rather than swallow them - shown alongside the error saying recovery failed. FreeW already returns
+without showing anything. Fixed in both shells: on failure the window is closed and false returned.
+
+Verified by a SOURCE contract, not a behavioural test, and that is a genuine limitation rather than
+a stylistic choice: the path constructs and shows a live top-level window, FreeP.App.Host.Tests has
+no WPF Application to count windows against, and FreeP's Avalonia suite does not run on this
+machine. The codebase already uses source contracts in this position
+(AutosaveCoordinatorEmergencySnapshotTests). It is discriminating - reverting either shell
+independently fails exactly that shell's theory case - and it carries non-vacuity checks so the
+slice cannot silently stop covering the method. But it pins ordering, not observed behaviour, and is
+weaker than r471's and r472's censuses.
+
+Scan limitation recorded: only 27 of 107 same-named file pairs were comparable to the matcher, so
+this lens is not exhausted - the remaining pairs are unexamined, not cleared. FreeP 8 lanes 9906/0.
