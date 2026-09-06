@@ -10096,5 +10096,35 @@ independently fails exactly that shell's theory case - and it carries non-vacuit
 slice cannot silently stop covering the method. But it pins ordering, not observed behaviour, and is
 weaker than r471's and r472's censuses.
 
-Scan limitation recorded: only 27 of 107 same-named file pairs were comparable to the matcher, so
-this lens is not exhausted - the remaining pairs are unexamined, not cleared. FreeP 8 lanes 9906/0.
+Scan limitation recorded: 27 of the same-named file pairs were comparable to the matcher.
+CORRECTED in r475 - the "107" denominator first written here was wrong (see that entry).
+FreeP 8 lanes 9906/0.
+
+## r475 - correcting r474's coverage claim, and closing the sibling-drift lens
+
+r474 recorded "only 27 of 107 same-named file pairs were comparable". That denominator was WRONG,
+and the error was mine: the pair list came from `uniq -d` over the two apps' file lists
+CONCATENATED, so a basename appearing twice inside a single app (35 such names in FreeW alone)
+counted as a cross-app pair. The real intersection is 28 files. The scan compared 27 of them; the
+28th, AppLocalization.cs, declares no methods at the matched indentation. So coverage was 27 of 28,
+not 27 of 107 - the limitation I recorded overstated the gap by a factor of four. The r474 entry now
+points here.
+
+Worth noting how it was caught: not by re-reading the claim, but by trying to ACT on it. Widening
+the matcher to reach the "missing 80" pairs kept reporting 27 comparisons, and a diagnostic that
+printed why pairs were skipped reported COMPARABLE=27 SKIPPED=1 - 28 total, not 107. A recorded
+limitation is a claim like any other and can be wrong in the direction of false modesty.
+
+With the machinery fixed the lens was then extended to the third app, which r474 never covered:
+FreeX vs FreeW (12 comparable pairs) and FreeX vs FreeP (13) both flagged NOTHING. Across all three
+shells that is 52 comparable pairs, 6 flagged, and every flag verified as a legitimate difference in
+implementation rather than a missing guard - FreeW's MainWindow_KeyDown, TryHandleRibbonKeyTips,
+FindReplaceDialog and AutosaveCoordinator all check out. The sibling-drift lens is exhausted at file
+granularity.
+
+One real artifact came out of it. FreeW's `OpenRecentPathAsync` had a `/* ... */` block sitting
+INSIDE its own declaration: a rename left the previous signature commented out and took the XML doc
+with it, so the documentation of a GUARANTEED DEADLOCK - why this path must not use the shared
+workflow's synchronous Open overload - was invisible to tooling and to anyone reading the member
+list. Behaviour was never affected; the compiler accepts a comment between `=>` and its expression.
+The doc is now restored onto the live method and the dead signature removed.
