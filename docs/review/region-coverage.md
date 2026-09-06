@@ -11116,3 +11116,27 @@ Class swept, nothing to fix. Recorded because a bus that pushes after Apply look
 that pushes before until you read the ordering, and the failure only appears when something throws.
 
 No code changed this round.
+
+## r511 - a style that inherits from itself, six walkers deep
+
+Another in the r501/r504 lineage: a docx style whose basedOn chain forms a cycle - A basedOn B, B
+basedOn A. Word files carry that chain, so the shape is file-controlled, and resolving effective
+formatting walks it. It is a classic hazard in this format precisely because the chain is normally
+short and nobody thinks about the loop.
+
+Six walkers exist, and every one is guarded with the same idiom:
+
+    var seen = new HashSet<string>(StringComparer.Ordinal);
+    while (!string.IsNullOrWhiteSpace(current) && seen.Add(current) && ...)
+
+DocxReader's nested-package walk, DocumentParagraphFormattingResolver, DocumentRunFormattingResolver,
+DocumentNoteRegionPlanner, PreservedNumberingMarkerPlanner, and both shells' styles galleries. Six
+independent walkers converging on one idiom is a convention someone established rather than six
+lucky accidents, and it is the reason a cyclic basedOn chain is inert here.
+
+The class is FreeW-specific and that was checked, not assumed. FreeX's xlsx styles reference a parent
+format by index rather than forming a chain, and FreeP's slide inheritance is a fixed slide -> layout
+-> master depth of three, not a file-authored graph. Neither can express a cycle, so there is nothing
+for a guard to do.
+
+No code changed this round.
