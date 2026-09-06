@@ -9710,3 +9710,35 @@ the raw list will be wrong nearly every time.
 FreeW's revision attribution in particular is worth having checked: tracked-change author and
 timestamp are collaboration data, and losing them silently would be the same class as r461 with a
 worse blast radius.
+
+## r463 — the formula engine, hostile arguments: 4,960 evaluations, nothing thrown
+
+The largest surface this programme had not touched. The lens is the one that produced r448-r453 on
+the file readers, pointed at the evaluator: a bad argument is a RESULT in a spreadsheet, not a
+failure -- that is what `#VALUE!` and `#NUM!` are for -- so a function that THROWS does not spoil one
+cell, it takes down the recalculation pass for the whole workbook, and the user typed nothing more
+unusual than `=SQRT(-1)`.
+
+Every registered function against ten hostile argument lists: none at all, an empty string,
+unparseable text, a negative, a zero, an overflow to infinity, a range where a scalar is expected,
+far too many arguments, an error value AS an argument, and several empty strings.
+
+**496 functions x 10 sets = 4,960 evaluations. Zero throws, zero hangs.** FreeX's evaluator answers
+with error values throughout. That is a real result on a large surface, and it is recorded as plainly
+as a defect would be.
+
+**The other half of the contract was checked by READING, deliberately.** Deep nesting is the classic
+route to a `StackOverflowException`, which is uncatchable and kills the process -- so a probe that
+found the guard missing would have taken the test host down with it and told me nothing I could act
+on. `FormulaEvaluator` already documents a maximum recursive evaluation depth returning `#NUM!`
+"to prevent deeply nested formulas from causing a StackOverflowException that would crash the
+process", with further paren/brace/call recursion guards in `FormulaEvaluator.EntryLimits`. Guarded,
+and by someone who wrote down why.
+
+Kept as a permanent test rather than deleted: a function added tomorrow is covered the day it
+appears, which is the argument the reflective undo drivers rest on. Proven capable of failing by
+making `ABS` throw on a text argument -- the sweep names the function and the exact argument
+(`=ABS("not a number") :: InvalidOperationException`). `evaluated >= 4000` is pinned so a sweep that
+quietly stops evaluating cannot pass while testing nothing.
+
+`FreeX.Core.Formula.Tests` 5254 passed / 0 failed.
