@@ -10436,3 +10436,35 @@ beats the default, and the neuter fails 5 of 14.
 Method note: the finding came from reading the ONE guard expression at the end of a parse method and
 asking which values satisfy it, not from a scan. `x >= 0` is a common shape and is wrong for exactly
 one input class; that is worth carrying to other parsers. FreeP 8 lanes 9945/0.
+
+## r486 - the same guard shape, six more sites, kept as a tripwire
+
+r485 ended by noting that `x >= 0` after a double parse is wrong for exactly one input class and was
+worth carrying elsewhere. It was. A sweep of all three apps - 3,992 production files - found 11
+candidates, 7 of them real: a value taken straight from a FILE, validated only by a lower bound, so
+"Infinity" and the overflowing literal "1e999" both pass.
+
+One shape, different consequences:
+- PptxPackageReader: an animation `to="1e999"` became the literal "Infinity" via
+  AnimationScaleBehavior.Format and PptxPackageWriter wrote it back verbatim as x="Infinity". The
+  deck WE SAVE is the one PowerPoint refuses. This site bypassed r485 entirely, which guarded the
+  string parser while this one parses the double itself.
+- XlsxRichRunReader: an infinite font size from <sz val> into text layout.
+- PresentationMediaTranscriptPlanner (4 sites): INF/INF = NaN as a TTML caption frame rate, and
+  infinite caption times.
+- XlsxChartPartReader / XlsxSourceDrawingGeometryRewriter: infinite histogram bin width and geometry.
+
+The most useful candidate was the one needing NO fix. XlsxWorksheetXmlValueParser guards
+`floating > 0 && floating <= uint.MaxValue`, and that upper bound excludes infinity by construction.
+That is the better pattern, so it is allowlisted with the reason rather than given a redundant
+IsFinite call - where a natural bound exists, prefer it.
+
+Kept as a source tripwire across all three apps, because the shape is easy to reintroduce and reads
+as correct. It carries a non-vacuity floor (>1,000 files scanned) and removing a single guard makes
+it fail by name.
+
+Verification note, stated precisely: the FIRST FreeX run reported one failing lane (46,232 passed +
+1 failed); runs two and three were identical and clean (31 lanes, 46,233 passed, 0 failed). The
+arithmetic fits a single flaky test rather than a regression, and matches this repo's documented
+capture-suite variance - but the test was NOT identified before it passed again, so the evidence is
+two matching clean runs rather than a named cause. FreeP 8 lanes 9945/0.
