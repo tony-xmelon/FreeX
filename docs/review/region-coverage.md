@@ -11014,3 +11014,28 @@ zip64 extra field carrying the real size - needs an entry above 4 GiB to constru
 practical here. What is measured is that the sentinel VALUE does not slip past the guard.
 
 No code changed this round.
+
+## r507 - 905 candidates, 2 real questions, 0 defects
+
+New class: an event subscription that outlives its subscriber, which keeps the whole object graph
+behind a closed window alive.
+
+The naive signature - a `+=` with no matching `-=` - gives 905 hits and is worthless, because most
+are a window subscribing to its OWN child controls. Source and subscriber die together, so there is
+nothing to leak. The criterion that actually matters is whether the SOURCE OUTLIVES THE SUBSCRIBER,
+and the sharpest instance of that is a static event: SystemEvents, Application, CompositionTarget,
+TaskScheduler, SystemParameters, AppDomain.
+
+That signature gives 2, and both are correct by design. FreeX's App subscribes to
+SystemParameters.StaticPropertyChanged so the palette re-applies when the user toggles high contrast
+after launch - the subscriber is the WPF Application itself, which lives for the process.
+AppCrashHandlers subscribes to TaskScheduler.UnobservedTaskException, and a crash handler that
+unsubscribed would be useless. Neither can leak because neither subscriber dies before the source.
+
+Instrument note: the first version of this sweep TIMED OUT at ten minutes. It re-scanned each file
+for a matching `-=` once per match, which on a 29,000-line MainWindow is quadratic. Indexing the
+unsubscribes once per file made it instant. A sweep that does not finish is indistinguishable from a
+sweep that finds nothing, and the fix is the same discipline as everywhere else here: build the index
+once, then compare.
+
+No code changed this round.

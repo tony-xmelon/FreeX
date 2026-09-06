@@ -46,6 +46,7 @@ defects outside that shape.
 | Unbounded recursion over file-controlled nesting | r501, r502, r503 | 1 defect (FreeP, fatal); every nesting structure in all three readers enumerated |
 | Recursive resolution in EVALUATION (named formulas) | r504 | clean; cycle-detected per (name, scope), returns #REF! as Excel does |
 | Decompression bomb (zip bomb) | r505, r506 | clean; honest, lying and zip64-sentinel forms all closed, measured |
+| Event-subscription leak (source outlives subscriber) | r507 | clean; 2 static subscriptions, both process-lifetime by design |
 
 ## Known unswept - named so they are a decision, not an oversight
 
