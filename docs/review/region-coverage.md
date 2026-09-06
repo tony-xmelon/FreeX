@@ -9629,3 +9629,49 @@ found, the fix is small and obvious: override `HasEffect` to verify the block is
 **The undo seam is now complete across three apps and three contracts** -- single-command undo, redo,
 and sequences -- each pinned with floors. Four defects came out of building it; every clean result is
 recorded as plainly.
+
+## r461 — a pasted picture was dropped on save, silently; found by a reflective round-trip sweep
+
+Rounds r413-r437 tested property persistence BY HAND, one feature at a time -- exactly the pattern
+reflection beat in the undo work. This applies the same idea to the writer: set every writable
+property to a distinctive value, save, reload, compare.
+
+**Most of what it flagged was the r419 trap, and saying so is half the round.** The blind sweep
+reported 7 lost properties on `SlideShape`, 2 on `Run` and 5 on `Paragraph`. Re-probed with each
+one's PREREQUISITE supplied, every one of them round-trips correctly:
+
+- the four `Child*` transform fields need `Kind = Group` and a child (they are `a:chOff`/`a:chExt`);
+- `PictureFrameGeometry` needs an actual picture;
+- `HasExplicitZeroExtentTransform` needs zero extents;
+- the five bullet/numbering fields need `BulletKind` set (`Auto` for the AutoNum group, `Char` for
+  `BulletChar`) -- a value field is meaningless without its mode field;
+- `LegacyFxpKind` is a legacy .fxp field with no PowerPoint representation, by design.
+
+Fourteen apparent losses, thirteen false positives. A sweep like this is only worth running if every
+hit is re-tested with its prerequisite before anyone believes it.
+
+**The fourteenth was real.** `Run.InlineImage` still did not survive with the prerequisite satisfied,
+and the reason is blunt: `InlineImage` appears NOWHERE in `FreeP.Core.IO`. Neither writer nor reader
+knows it exists.
+
+The path is ordinary, not theoretical: `ExternalRichTextClipboardPlanner` and
+`ExternalXamlClipboardPlanner` build runs carrying `InlineImage` when rich text with a picture is
+pasted from another application. Saving writes no image part at all and leaves the run holding the
+bare U+FFFC object-replacement character -- so the user's picture becomes a stray box glyph, and the
+image is gone from the file for good. Measured exactly, not inferred: after a round trip the three
+runs read back `'before '`, `'<U+FFFC>'`, `' after'`, and the package contains no `media/` entry.
+
+**Fixed by reporting, not by implementing.** Writing inline pictures properly means turning them into
+positioned picture shapes -- a feature, and out of scope for a review round. Telling the user is not,
+and both siblings already do it (FreeX's `LossyFormatFeatureLossPlanner`, FreeW's
+`DocumentSaveCompatibilityPlanner`). FreeP had no save-side gate because its formats are all native --
+true of the FORMAT and false of the CONTENT, which is the assumption that let this through. This is
+the save-side mirror of the load-side channel r454 added to the same app.
+
+Six tests, and the two doing the most work are not the headline: the loss is asserted to be REAL (no
+media part is written, so the warning is not noise), and a picture inside a GROUPED shape is found
+too -- a scan walking only top-level shapes would report "nothing will be lost" while losing it.
+Proven by neutering the detector: three of six fail, and the three that pass are the three that do
+not depend on it.
+
+`FreeP.App.Presentation.Tests` 6052 passed / 0 failed.
