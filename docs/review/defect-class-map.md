@@ -39,6 +39,7 @@ defects outside that shape.
 | Equals without GetHashCode | r493 | closed by the compiler: TreatWarningsAsErrors, no NoWarn for CS0659/CS0661 |
 | Undisposed resource / per-paint allocation | r494 | 1 defect: a picture fill decoded a Bitmap on every paint |
 | Mutable toolkit visual in a static field | r495 | 4 defects (FreeW pens); tripwire added |
+| Native interop: handle leaks, wrong-OS calls | r496 | clean; 51 P/Invokes, pairing and dispatch both correct |
 
 ## Known unswept - named so they are a decision, not an oversight
 

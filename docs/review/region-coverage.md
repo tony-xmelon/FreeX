@@ -10715,3 +10715,29 @@ layouts. Allowlisted with that reasoning stated in the test.
 Kept as a tripwire because a one-off fix would not hold for an intermittent failure: reintroducing a
 single plain Pen fails it by name. Unswept list: eight at r490, two now.
 FreeW 7 lanes 11797/0.
+
+## r496 - the native-interop surface, swept clean
+
+Sixth class off r490's list. 51 P/Invokes across 3,992 files, and the class was split into the two
+sub-shapes that have a DEFINABLE violation rather than swept as a vague "check the interop".
+
+HANDLE LIFETIME. A call that returns a handle must have its release on every path.
+X11WindowActivator opens a display and closes it in a FINALLY, so the two early returns inside the
+try still release it, and the one before it is the null-display case with nothing to close.
+MainWindow.TaskbarIcon's LoadImage handles are owned in fields and destroyed both on replacement and
+in cleanup. Counting acquisitions against releases would have said "3 and 3, fine" without proving
+the pairing holds on early-return paths; reading the placement is what proves it.
+
+WRONG-OS CALL. A platform-specific import in a cross-platform assembly throws DllNotFoundException on
+the other platforms. Four cross-platform files carry native imports, and all four dispatch correctly.
+One - FreeW's AvaloniaSpeechEngine, which imports BOTH libc and ntdll.dll in the same file - was
+flagged by my guard grep and is a FALSE POSITIVE: it dispatches on
+RuntimeInformation.IsOSPlatform(OSPlatform.Windows) and an IsUnixSignalPlatform predicate, inside a
+try/catch. My scan only recognised OperatingSystem.Is*, so the instrument, not the code, was wrong.
+Recorded because the next person to run this sweep will hit the same gap.
+
+Every Windows-only import lives in a .Windows, .Wpf or App.Host project, so it cannot be reached from
+another platform by construction.
+
+Unswept list: eight at r490, one now - equality semantics, which stays listed precisely because no
+signature for it has been designed, not because it has been skipped.
