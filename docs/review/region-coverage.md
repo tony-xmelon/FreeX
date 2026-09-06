@@ -9974,3 +9974,40 @@ No FreeW test was added. Its .docx path has no decimal surface to assert on, so 
 the vacuous one described above; recording that is more honest than banking a green.
 
 No defect found. Recorded as plainly as a fix.
+
+## r471 - a read-only document that ten commands would still rewrite
+
+Lens: r455 found FreeX letting a protected sheet be altered through comment visibility. FreeW models
+Restrict Editing properly - `RestrictEditingEnforcementPolicy`, eleven operation kinds, and a test
+file covering typing, formatting, comments and history, all passing. So the question was not whether
+protection works but whether it is applied EVERYWHERE, and the way to answer that is a census, not
+another hand-written case.
+
+Under `ProtectionMode.ReadOnly`, every zero-argument public mutator on DocumentView was invoked and
+the document fingerprinted before and after. Avalonia: 6 of 92 rewrote the protected document -
+Insert/Update TableOfContents, Insert/Refresh Bibliography, Insert/Refresh TableOfAuthorities. WPF
+host: 4 of 81 - the three Refresh counterparts plus InsertPageNumberAtCaret. Word disables exactly
+these under "Restrict Editing - No changes (Read only)", so refusing is Word's behaviour rather than
+a judgement call.
+
+The host is the clearest statement of the pattern this whole review keeps meeting: its
+`InsertTableOfContents` and `InsertBibliography` ALREADY carried the guard while their `Refresh`
+counterparts, rewriting the same body content, did not - one path fixed, its sibling left, in the
+same file. `InsertPageNumberAtCaret` exists only on the WPF surface, so running the census on both
+toolkits rather than assuming parity is what found it.
+
+Fixed in each toolkit's own idiom: `if (IsEditingLocked) return;` on Avalonia,
+`AllowsRestrictEditingOperation(BodyTextEdit)` on WPF, placed on the core implementations so the
+delegating overloads are covered by one check rather than needing their own.
+
+Kept as a CENSUS rather than ten tests, deliberately. The defect is not that someone forgot a
+method; it is that the guard is opt-in, so the next method added can forget it too - and a census
+fails for a new unguarded mutator with nobody remembering to extend it. Each census ships with a
+companion test proving it is not inert (unprotected, those same methods do mutate) and a floor on
+how many methods it examined. Neutering the guards turns both censuses red while both companions
+stay green.
+
+Also cleared this round, by tracing consumers rather than reasoning: no zip-slip surface (packages
+are never extracted to disk), and no destructive partial save - the autosave coordinator writes to a
+temp lease, fsyncs and moves, and explicit saves serialize into memory before the file is touched.
+FreeW 7 lanes 11793/0.
