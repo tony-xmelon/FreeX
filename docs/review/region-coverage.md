@@ -11835,3 +11835,36 @@ mean the convention is established and understood; the defect is a single omissi
 missing practice. It is the same shape as r524's half-guards - one bound checked, the other
 forgotten - and it keeps appearing in REVERT paths specifically, because that is where an index is
 oldest by the time it is used.
+
+## r527 - stop enumerating shapes, drive the behaviour
+
+Five rounds of this class were spent chasing SYNTAX: casts (r520-r522), then pattern matches (r524),
+then inserts (r526). Each sweep found what its regex could see, and each time the next shape found
+more. This round stopped writing regexes and drove the behaviour instead - construct every command in
+FreeW's assembly with an index that cannot possibly be valid, run the whole HasEffect/Apply/Revert
+cycle, and require that none of them throws.
+
+It found one immediately: `SetDrawingGroupChildPositionCommand`, on both hostile indices.
+
+The reason it survived five sweeps is a single character. Its access is
+`context.Document.Blocks[_paragraphIndex]` - a FIELD - and every scan I wrote matched
+`Blocks\[[a-z]\w*[Ii]ndex\]`, whose leading `[a-z]` excludes an underscore. Four sites in the
+drawing-group commands were invisible to every previous pass for that reason alone. That is now the
+FOURTH time in eight rounds that the shape of the search decided the result: helper name (r522),
+app vocabulary (r525), first character (here).
+
+The census does not have that failure mode, because it never looks at source text. A command written
+tomorrow with a fresh spelling of the same mistake fails it without anyone inventing a matching
+pattern first.
+
+Two honesty notes on the fix. My regex reported five sites; only FOUR were unguarded - the fifth
+already had the bounds check and my substitution simply added a duplicate clause, which I removed
+after reading the result rather than trusting the substitution count. The `SUBS=9` against five sites
+was the tell that something had matched twice.
+
+The driver is deliberately limited: it only builds commands whose constructor arguments it can supply
+honestly - numbers, strings, bools, enums, delegates - and counts a command needing a live model
+object as unbuildable rather than feeding it a null, because a NullReferenceException from an invented
+argument would be the driver's failure and not the command's. A floor of 25 exercised commands keeps
+that honesty from hollowing the test out, and the assembly-count floor keeps the reflection query from
+silently reaching nothing.
