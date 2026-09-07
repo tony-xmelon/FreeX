@@ -11530,6 +11530,11 @@ namespace `FreeP.App.Presentation.Tests` the identifier `Presentation` resolves 
 than the model type; removing the probe restored the build, which isolated cause from correlation.
 Moving it to `FreeP.App.Host.Tests` avoided the collision entirely.
 
+CORRECTION (r520): the firewall claim above is TOO BROAD. FreeP's bus does wrap command
+execution, which is what I checked. FreeW's DocumentCommandBus.Execute calls Apply with NO try/catch,
+and none of its 159 shell call sites wrap it either -- so in FreeW a throwing Apply still escapes the
+command layer. Only FreeX and FreeP have the firewall.
+
 ## r519 - text functions on non-BMP characters, and dead code that encoded the wrong rule
 
 The class: how the three apps handle characters outside the Basic Multilingual Plane - emoji, rare
@@ -11563,3 +11568,72 @@ attempted from scratch.
 
 `IsSurrogatePairAt` stays: the byte-oriented LENB/MIDB/FINDB family uses it for real, which is the
 one place where pair-awareness is correct, since those functions count DBCS bytes.
+
+## r520 - resolving a deferred finding: the row commands were the undefended half of one family
+
+Two classes swept clean first. Sort STABILITY is a real Excel-alignment question, because .NET's
+`List.Sort` is introsort and unstable while Excel preserves the relative order of rows with equal
+keys. FreeX uses `List.Sort` in both its row sort and its sort-left-to-right sibling - and both end
+their comparator with `return a.OriginalIndex.CompareTo(b.OriginalIndex); // stable tiebreaker`, which
+makes the comparison total and the result Excel-stable. FreeW's `ParagraphSort` uses `OrderBy`, and
+documents the subtler half: direction comes from the comparer choice, NOT from reversing the results,
+because reversing would destroy the stability LINQ guarantees. Both deliberate.
+
+The HTML clipboard parser is clean too, and for the right reason: it is iterative (no recursion to
+overflow) and it CLAMPS `colspan`/`rowspan` to the sheet width, which blocks amplification - a tiny
+paste inflating into an enormous allocation. Row count stays proportional to the input that already
+sits in memory, which is not amplification.
+
+Then the round's real work: resolving r460, which recorded FreeW's unchecked `TableAt` cast and
+deferred it as "hardening on a hypothesis". Revisiting it, the deferral was reasoning about the wrong
+question.
+
+`TableAt` is `(Table)context.Document.Blocks[index]` - no bounds check, no type check. Three facts
+turn that from a hypothesis into a gap. First, the CELL commands in the same file have always used
+`TryGetCell`, which bounds-checks the index, type-checks the block, and is re-checked inside `Apply`;
+the row commands are the same family with the same exposure and simply never got it. Second,
+`HasEffect` defaults to `true` and none of these commands override it, so nothing gates the call.
+Third - and this corrects r518 - FreeW's bus does NOT wrap `Apply` in try/catch. FreeX returns a
+failed `CommandOutcome` and FreeP restores with `PushRedo`; FreeW's `Execute` calls `Apply` bare, and
+none of the 159 shell call sites wrap it either. So the throw leaves the command layer entirely.
+
+My r518 entry said the firewall gap was closed. It is closed in FreeP, which is what I checked. FreeW
+still has it, and I generalised from one sibling to three - the same mistake this review keeps
+finding in the code.
+
+So the question is not "can I prove a crash reaches a user?" but "is there any reason the row commands
+should be less defensive than the cell commands beside them?" There is none. All 18 call sites now go
+through `TryGetTable` and no-op on an invalid target, which is this file's established policy rather
+than a new one. Deliberately NOT done: adding a try/catch to FreeW's `Execute`. Catching mid-`Apply`
+would leave a half-mutated document with no undo entry - trading a loud crash for silent corruption.
+The fix belongs at the source, and that is where it went.
+
+Restoring the cast reproduces both failure modes exactly - `ArgumentOutOfRangeException` for the
+out-of-range index, `InvalidCastException` for a paragraph block - while the valid-target test stays
+green, which is what shows the guard did not turn a working command into a no-op.
+
+A red on main, found by this round's verification and not caused by it. The FreeW sweep came back
+11803/1 - a FULL total, so a real signal rather than an aborted run - failing in
+`DesignDialogEvidenceTests` with `KeyNotFoundException` from `JsonElement.GetProperty`.
+
+It traces to the parallel-session commit this round rebased onto, "Stop parity evidence from pinning
+hashes of constantly-edited sources". That change was right: pinning a SHA of every covered source
+made the artifact go stale on any unrelated edit, which is the same doc-contract friction r513/r514
+hit from the other side. But it updated the generator and the JSON and left THREE assertions in the
+test behind, each failing only once the previous one was fixed:
+
+  1. `GetProperty("SourceHashes")` - the property is deliberately gone, so this threw rather than
+     failed, which is why the run reported an exception instead of an assertion message.
+  2. `Contain("Get-ToolNormalizedTextSha256 -Path $resolved")` - the generator no longer hashes
+     covered sources at all, by neither that helper nor `Get-FileHash`.
+  3. `Contain("Stale evidence")` - the freshness gate survives but its wording changed with the
+     hashing removal.
+
+I verified it was pre-existing before touching it: on `origin/main` the test asserts `SourceHashes`
+while the committed JSON no longer contains it, and no follow-up had landed. My own changes are in
+FreeW's command layer and cannot reach a JSON evidence artifact.
+
+Each assertion is INVERTED to the contract that now holds rather than deleted - `SourceHashes` must
+be ABSENT, the generator must contain NO source hashing, and `-Check` must still refuse on the two
+conditions it actually rejects on. Deleting them would have left the intended new behaviour unpinned,
+so reintroducing the hashing would pass silently; this way it fails.

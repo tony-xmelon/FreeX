@@ -51,6 +51,9 @@ defects outside that shape.
 | Undisposed file handle on an exception path | r518 | clean; zero disposable locals created outside a using across all production code |
 | Truncated/damaged part in a package | r518 | DIVERGENCE recorded, not a bug: FreeX and FreeW throw XmlException; FreeP opens the deck, blanks the damaged slide and warns (naming the save-over hazard). Repair-on-open in FreeX/FreeW is a product gap vs Office, not a review fix |
 | Non-BMP text (surrogate pairs) in text functions | r519 | clean; FreeX counts UTF-16 units exactly as Excel does (LEN=4 for A+emoji+B, LEFT splits the pair), now pinned by test; four DEAD helpers implementing the other semantics removed as a trap |
+| Sort stability vs Excel | r520 | clean; FreeX's two List.Sort comparators both end in an OriginalIndex tiebreaker, FreeW's ParagraphSort uses OrderBy and takes direction from the comparer, not by reversing results |
+| Untrusted HTML paste (clipboard) | r520 | clean; iterative parser, colspan/rowspan clamped to sheet width so a small paste cannot amplify into a huge allocation |
+| Unchecked cast/index in command targets | r520 | FIXED in FreeW EditCommands: all 18 TableAt sites now use a validating TryGetTable, matching TryGetCell in the same file. Also CORRECTS r518 -- FreeW's bus does NOT wrap Apply, only FreeX and FreeP do |
 | Equality semantics: mutable dictionary key | r497 | clean; value-equality keys and mutable types are disjoint sets |
 | Save idempotence (accumulation, reorder, nondeterminism) | r499 | clean for the in-memory surface; guard added |
 | File-controlled loop count (hang, not OOM) | r500 | clean; already guarded in FreeX, no sibling gap |
