@@ -11774,3 +11774,36 @@ A note on r522, checked rather than assumed: that entry called `CrossReferences`
 and it was right - about `CaptionRangeFor`, which does bounds-check. The hole found here is in a
 DIFFERENT method with the same shape. No correction needed, but the distinction is worth stating,
 because "the file is fine" and "that method is fine" are not the same claim.
+
+## r525 - the scan that was shaped like one app, and the guard that caught what I forgot
+
+Two findings, and the second is the better one.
+
+**My r524 sweep was blind to two of the three apps.** Its regex searched `Blocks[...]` - which is
+FreeW's collection. FreeP indexes `Slides` and `Shapes`; FreeX indexes `Sheets`, `Rows`, `Columns`.
+So a sweep I described as covering the three command layers structurally could not have reported a
+single hit outside FreeW. Re-run with each app's own names: 27 sites, 24 guarded, 3 apparent
+offenders - one doc comment and two reached only through `for (var index = 0; index < Count; index++)`
+loops, whose guard lives in the CALLER and so fell outside the scanner's window. FreeX's
+`ColumnHeaderText` and `ResolveTotalsCell` are both bounded that way.
+
+So the class really is FreeW-specific, and now that is a checked statement rather than an artifact of
+a regex written in one app's vocabulary. This is the third time in six rounds that the SHAPE OF THE
+SEARCH, not the code, decided what got found.
+
+**The tripwire found what I had forgotten.** Extending r523's guard from casts to the indexing shape
+r524 fixed immediately failed - on `DeleteParagraphCommand`, whose Apply both reads `Blocks[index]`
+and calls `RemoveAt(index)` unchecked, and whose Revert calls `Insert(index, ...)`, which throws once
+the document holds fewer blocks than when the command was constructed. r524's own scan printed that
+exact line in its first output; I followed the pattern-match shape and never came back to it.
+
+Six more surfaced behind it, all in the drawing-group commands and all the same half-guard: a
+`_members` array of captured `(block, run)` coordinates where the run index is clamped with
+`Math.Min` or an upper-bound test and the block index is never checked, plus `_members[0]` indexed
+with no emptiness test. Seven fixes in total, ending with the scanner clean and both tripwire tests
+green. Neutering the DeleteParagraph guards reproduces `ArgumentOutOfRangeException` in three tests
+including the undo-after-shrink case, which is the capture-then-revert gap in its purest form.
+
+The lesson I want recorded is not "write tripwires". It is that the tripwire caught a defect the
+REVIEWER had already been shown and dismissed. A sweep's output is only as good as the attention that
+reads it, and an automated guard does not get bored halfway down the list.
