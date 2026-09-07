@@ -1,6 +1,6 @@
 # FreeW Shell Platform Parity
 
-Generated from WPF authority, Avalonia adapters, shared contracts, and focused-test source hashes. Run `tools/Generate-FreeWShellPlatformParityEvidence.ps1 -Check` to verify freshness.
+Records hand-authored parity findings for the WPF authority, Avalonia adapters, and shared-contract/focused-test inputs listed in `generatedInputs`. Run `tools/Generate-FreeWShellPlatformParityEvidence.ps1 -Check` to verify the generator still reproduces it.
 
 - Schema: `freex.freew.shell-platform-parity.v1`
 - Authority: FreeW WPF native PrintDialog/XpsDocumentWriter behavior, supplemented by the existing Avalonia shared PDF draw-op contract
@@ -31,4 +31,4 @@ The shared writer can emit a real OPC package with `FixedDocSeq.fdseq`, `FixedDo
 
 ## Freshness
 
-The JSON records SHA-256 hashes for every authority, implementation, shared contract, and focused-test input. `-Check` regenerates both artifacts in memory and fails if either committed artifact differs.
+This artifact records hand-authored parity findings for the authority, implementation, shared-contract, and focused-test inputs listed in `generatedInputs`. `-Check` regenerates both artifacts in memory and fails if either committed artifact differs from those declared findings, or if a listed input no longer exists; it does not detect edits to the contents of those files. When a listed source changes, the surfaces above must be re-verified by hand and this artifact regenerated.

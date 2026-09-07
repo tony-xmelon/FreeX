@@ -1,6 +1,6 @@
 # FreeW Media Dialog Parity Inventory
 
-Generated: 2026-09-05T10:19:43.3158260Z
+Generated: 2026-09-07T08:19:28.2368049Z
 
 Routes: 14 | Shell-wired: 14 | Shell follow-ups: 0
 
@@ -23,4 +23,4 @@ Routes: 14 | Shell-wired: 14 | Shell follow-ups: 0
 
 Ownership boundary: MainWindow, ribbon, Backstage, page-layout, and shared-shell routes are included in the completed integration.
 
-Run ``powershell -File tools/Generate-FreeWMediaDialogParityEvidence.ps1 -Check`` to verify source fingerprints are fresh.
+This inventory records hand-authored parity findings for the WPF authority and Avalonia surface files named above. Run ``powershell -File tools/Generate-FreeWMediaDialogParityEvidence.ps1 -Check`` to verify the generator still reproduces those declared findings; it does not detect edits to the contents of those files. When a listed source changes, the routes above must be re-verified by hand and this artifact regenerated.
