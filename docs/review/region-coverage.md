@@ -11704,3 +11704,36 @@ static` accessor shared by every caller, matching how `TryGetTable` is shared. A
 shaped `TryGetParagraph` for table-cell paragraphs already existed elsewhere in the file, which is
 evidence the validating accessor was always this codebase's convention - the inline casts were the
 outliers, not the guarded code.
+
+## r523 - what the sweep actually established: the cast was never the problem
+
+r522 ended with a method note - sweep by pattern, not by helper name - so this round ran that pattern
+against ALL production code rather than the four command directories. 42 unchecked casts of a
+collection element. Every one outside the command layer is safe BY CONSTRUCTION, and they are safe the
+same way:
+
+  - `ResolveTargets` and `ResolveParagraphIndices` filter on index range AND `is Paragraph` before any
+    caller casts.
+  - `ResolveBodyTextRanges` skips blocks that are `not Paragraph`, so `RunRangeWouldChange` can cast.
+  - `CaptionRangeFor` returns null unless the block is a paragraph, which is what makes the
+    CrossReferences ternary safe.
+  - `RevisionList` reaches its cast only through `case Paragraph paragraph when ReferenceEquals(...)`.
+  - The formula aggregation casts only indices already collected under `if (args[i] is RangeValue)`.
+  - FreeP's dialogs cast children of a panel the same method just built.
+
+So the class I have been fixing for three rounds is NOT "unchecked cast". A cast is harmless when the
+check sits beside the use. What made the command layer different is TEMPORAL: a command captures an
+index when it is constructed and dereferences it later - at `Apply`, at `Revert`, or from `HasEffect`
+before the bus even runs it - and the document can change in between. Everywhere else, resolution and
+use are adjacent, so there is no window.
+
+That reframing is worth more than the fixes. It gives the next round a sharper signature than "look
+for casts": look for an index STORED and dereferenced later. And it explains why all 32 defects sat in
+one file while 42 similar-looking expressions elsewhere were fine - not luck, and not inconsistent
+discipline, but the only place where the gap exists.
+
+The round's deliverable is the tripwire that keeps r520-r522 fixed: an unchecked element cast in any
+`*Command*.cs` across the three apps' model layers fails the test, with the rule stated narrowly - it
+applies where the temporal gap is, not to code where validation is adjacent. Comment lines are skipped
+deliberately, because r520's own explanation quotes the old cast verbatim and would otherwise trip its
+own guard. Planting one cast back fails the test and names the exact line.
