@@ -53,7 +53,7 @@ defects outside that shape.
 | Non-BMP text (surrogate pairs) in text functions | r519 | clean; FreeX counts UTF-16 units exactly as Excel does (LEN=4 for A+emoji+B, LEFT splits the pair), now pinned by test; four DEAD helpers implementing the other semantics removed as a trap |
 | Sort stability vs Excel | r520 | clean; FreeX's two List.Sort comparators both end in an OriginalIndex tiebreaker, FreeW's ParagraphSort uses OrderBy and takes direction from the comparer, not by reversing results |
 | Untrusted HTML paste (clipboard) | r520 | clean; iterative parser, colspan/rowspan clamped to sheet width so a small paste cannot amplify into a huge allocation |
-| Unchecked cast/index in command targets | r520 | FIXED in FreeW EditCommands: all 18 TableAt sites now use a validating TryGetTable, matching TryGetCell in the same file. Also CORRECTS r518 -- FreeW's bus does NOT wrap Apply, only FreeX and FreeP do |
+| Unchecked cast/index in command targets | r520, r521 | FIXED in FreeW EditCommands: 18 TableAt sites (r520) and 8 ParagraphAt sites (r521) now use validating TryGetTable/TryGetParagraph, matching TryGetCell in the same file. ParagraphAt was reached from HasEffect, so the no-op GATE was the throw site. Also CORRECTS r518 -- FreeW s bus does NOT wrap Apply, only FreeX and FreeP do |
 | Equality semantics: mutable dictionary key | r497 | clean; value-equality keys and mutable types are disjoint sets |
 | Save idempotence (accumulation, reorder, nondeterminism) | r499 | clean for the in-memory surface; guard added |
 | File-controlled loop count (hang, not OOM) | r500 | clean; already guarded in FreeX, no sibling gap |

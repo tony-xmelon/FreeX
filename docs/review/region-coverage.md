@@ -11637,3 +11637,33 @@ Each assertion is INVERTED to the contract that now holds rather than deleted - 
 be ABSENT, the generator must contain NO source hashing, and `-Check` must still refuse on the two
 conditions it actually rejects on. Deleting them would have left the intended new behaviour unpinned,
 so reintroducing the hashing would pass silently; this way it fails.
+
+## r521 - sweeping my own fix, and finding the sibling I had just left behind
+
+r520 guarded the table commands' block access. This round asked the obvious follow-up: does anything
+ELSE in that file reach a block the same way? It does, and I had walked past it twice.
+
+`ParagraphAt` is the identical unchecked cast - `(Paragraph)context.Document.Blocks[index]` - private
+and DUPLICATED in two command classes, `SetParagraphFormattingCommand` and
+`SetParagraphStyleCommand`. I read past both while fixing `TableAt`, in the very same file, in a round
+whose entire subject was that this codebase leaves siblings behind. The sweep of my own change is what
+found it, which is the argument for doing that sweep every time rather than when it feels warranted.
+
+This instance is worse placed than r520's. Both classes call it from `HasEffect` - the gate the bus
+consults BEFORE `Apply`, whose entire job is to answer "would this command change anything?" On a
+document where the honest answer is "no, that block is not a paragraph", it threw instead of
+answering. So the no-op check, the mechanism that exists to keep pointless commands out of the undo
+stack, was itself the crash site.
+
+All eight call sites now go through `TryGetParagraph`, matching `TryGetCell` and r520's
+`TryGetTable`: `HasEffect` returns false on an invalid target, `Apply` and `Revert` no-op. Restoring
+the cast reproduces both failure modes - `InvalidCastException` on a table block,
+`ArgumentOutOfRangeException` past the end - across three tests, while the valid-paragraph test stays
+green.
+
+One process note, small but exactly the kind that ships a bug. My scripted edit replaced a single
+statement under a braceless `if (_applied)` with two statements, so the second escaped the condition
+and referenced an out-of-scope variable. The compiler caught it. A scripted rewrite that changes the
+STATEMENT COUNT under an unbraced `if` is silently wrong whenever the new code happens to compile -
+here it did not, but the same edit against a `Revert` whose variable was in scope would have shipped a
+guard that never guards.
