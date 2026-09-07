@@ -51,6 +51,8 @@ defects outside that shape.
 | Path built from document content (traversal) | r509 | clean; one site, sanitised upstream; reserved names measured harmless |
 | Apply throws mid-mutation (torn edit, phantom undo) | r510 | clean; all three buses roll back and push only on success |
 | Style inheritance cycle (basedOn chain) | r511 | clean; six walkers, same visited-set idiom; siblings have no cyclic chain |
+| Image decoded on every render pass | r512, r513 | FIXED in FreeP Avalonia (shapes, fills) and FreeP WPF (shapes, bullets); FreeW watermark cache moved off a single evicting slot; FreeW's other decodes already cached, converter/import paths are not per-paint |
+| Undisposed Avalonia bitmap (no finalizer) | r513 | Avalonia's Bitmap declares no Finalize, so an abandoned one leaks permanently; the remedy is a never-evicting identity cache, NOT eager Dispose, which would risk a queued draw op replaying freed pixels |
 
 ## Known unswept - named so they are a decision, not an oversight
 

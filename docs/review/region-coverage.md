@@ -11165,3 +11165,93 @@ assuming. And my first neuter DID NOT COMPILE - I spliced over the wrong line an
 reference. A compile error is not a failing test and proves nothing; replacing the whole method body
 gave a valid neuter that fails 3 of 4, with the different-image narrowness test correctly still green.
 FreeP 8 lanes 9952/0.
+
+CORRECTION (r513): this fix bounds the leak to one bitmap per distinct image array; it does not
+make it zero. Avalonia's Bitmap has no finalizer, so the cached bitmaps are never reclaimed either -
+they simply live as long as the bytes that key them, which is the intended lifetime. Read nothing here
+as a claim that the GC cleans them up.
+
+## r513 - the sibling sweep for r512's per-render image decode, and a correction to r512 itself
+
+r512 fixed FreeP's Avalonia renderer decoding a picture's bytes on every paint. That fix is only as
+good as its sibling check, so this round asked the same question of every other place the three apps
+decode an image while drawing.
+
+Two more per-render decodes in FreeP's WPF renderer: `SlideCanvas.RenderPicture` (the direct sibling)
+and `DrawBulletPlacementWpf`, which decodes a picture bullet once per bullet per pass and so repeated
+even more often than the shape path did. Both now go through one `DecodePicture` seam keyed on the
+image array's identity. The WPF consequence is genuinely milder than Avalonia's and the entry says so:
+`BitmapImage` is GC-managed and the code already froze it, so nothing leaked and nothing was
+thread-bound - what repeated was the decode work. Caching is safe there precisely BECAUSE the image is
+frozen; a frozen Freezable is shareable, so one instance can serve every caller.
+
+FreeW's Avalonia view decodes images in two places and both already cached, one of them keyed on array
+identity exactly as r512's fix is - which suggests FreeP's renderer was the outlier rather than the
+pattern. But the watermark cache held a SINGLE slot and simply abandoned its bitmap whenever a
+different image arrived, so alternating between two watermarks decoded afresh every switch.
+
+That raised the question the whole round turned on: does an abandoned Avalonia `Bitmap` cost anything,
+or does the GC reclaim it? I checked instead of assuming, by reflection in a lane that runs Avalonia:
+`Finalize` on `Avalonia.Media.Imaging.Bitmap` is declared on `System.Object` alone. There is no
+finalizer, so an undisposed Avalonia bitmap's native memory is never reclaimed. "The GC will get it"
+is false.
+
+That fact corrects r512's own entry. r512 bounded a per-paint leak to one bitmap per distinct image
+array, which is the important win, but it did not make the leak zero and the entry should not be read
+as saying so. Those bitmaps live as long as the byte arrays that key them - the intended lifetime, and
+deliberate: eager disposal would risk a recorded draw operation replaying a freed bitmap on the render
+thread, trading a bounded leak for a crash. The same reasoning drives the watermark fix, which moves to
+a `ConditionalWeakTable` that never evicts rather than to disposal.
+
+A `ConditionalWeakTable` cannot store null, so the decode FAILURE is remembered in a second table.
+Without that, a broken watermark would re-attempt its decode on every paint - the same cost this round
+removes, on the failing path.
+
+Instrument notes, because two of them were wrong first.
+
+The FreeW headless platform DOES NOT REALLY DECODE: a stream of eight garbage bytes constructs a
+`Bitmap` successfully, and distinct buffers can come back as one shared stub. Reference identity is
+therefore worthless as evidence in that lane - `Assert.Same` passes with or without a cache. I only
+found this because the first draft's assertions failed in ways that made no sense for an
+identity-keyed table, and I probed the platform rather than adjusting the assertions to fit.
+
+Allocation replaced identity, and the FIRST allocation budget was vacuous too: at `< 512` bytes the
+neuter still passed, because the stub decode is cheap enough to slip under it. The budget belongs at
+ZERO - a table hit allocates nothing at all. At zero the neuter fails with a concrete 224 bytes per
+re-decode and the restored code passes. That is the round's lesson in miniature: a threshold loose
+enough to be safe is loose enough to prove nothing.
+
+One repair worth recording. Splicing the failure branch in by matching `if (bitmap is null)` hit an
+EARLIER occurrence at the draw call site and corrupted it. `git checkout` is not available in a shared
+worktree, so I reconstructed the original three lines from `git diff` output and repaired it in place.
+Anchoring the search inside the target method, which is what the second attempt did, is the fix.
+
+The FreeP WPF tests assert cache identity, frozen-ness, and that equal-content buffers stay distinct;
+the neuter fails 1 of 3, with the frozen and distinct-buffer tests correctly still green since neither
+depends on caching. FreeP 8 lanes 9955/0 and FreeW 7 lanes 11799/0 - exactly +3 and +2 over
+r512's baselines, which is the five tests this round adds and nothing else.
+
+Not changed: `TextBodyFlowDocumentConverter.LoadBitmap` decodes per conversion, not per paint, and
+FreeW's picture-import paths dispose with `using`. Recorded so a later round does not re-examine them.
+
+FreeX completes the sweep and complicates it. Its Avalonia shell decodes in three places; two dispose
+with `using`, and the worksheet-background brush is cached with the old bitmap DISPOSED on eviction -
+under a comment that already states the fact I had just re-derived by reflection, that an Avalonia
+Bitmap is not finalizer-reclaimed. So FreeX has no per-render decode defect, and a previous round had
+independently found this class here.
+
+It also means the monorepo now carries TWO remedies for one class: FreeX disposes on eviction, FreeW
+(this round) never evicts. Both stop the leak and the difference is a real trade-off, not an oversight
+to normalise away. Eager disposal reclaims promptly but is only safe while no queued draw operation
+still references the bitmap; never evicting cannot crash but retains one bitmap per distinct image the
+document has used. I did not change FreeX to match, because its choice is deliberate, documented, and
+in place - churning it on a hypothesis about compositor timing is exactly the move r460 rules out.
+Recorded here so a future round sees a decided divergence rather than an accident, and knows the open
+question is whether FreeX's dispose-on-evict can race a frame in flight.
+
+One asymmetry, deliberate. FreeW's watermark path got a failure memo; FreeP's did not. FreeW NEEDED
+one because the single slot it replaced already cached the null, so omitting it would have been a
+regression I introduced. FreeP never memoised a failed decode, and adding one there would change
+observable behaviour: the undecodable-image diagnostic currently fires on every render, and memoising
+would silence all but the first. That is a reporting-cadence decision about a user-visible diagnostic,
+not a leak fix, so it does not belong in a round about decode cost.
