@@ -41,6 +41,8 @@ defects outside that shape.
 | Mutable toolkit visual in a static field | r495 | 4 defects (FreeW pens); tripwire added |
 | Native interop: handle leaks, wrong-OS calls | r496 | clean; 51 P/Invokes, pairing and dispatch both correct |
 | Interop marshalling: buffer size units, struct layout | r514 | clean; only 3 StringBuilder params exist repo-wide (all correct units) plus one HGlobal two-call buffer; NO managed delegate is ever handed to native, so the collected-callback crash class is absent; X11 LP64 layout now guarded |
+| Disposable ownership across an async boundary | r515 | clean; all 27 fire-and-forget sites checked by hand -- every one that hands over an object TRANSFERS ownership into the continuation rather than letting a using close under it |
+| Culture-sensitive ordering in a file-output path | r515 | FIXED in FreeX .fxl save (observable: mixed-case error codes reorder); FreeP media extensions made ordinal for consistency (not reachable); no culture-less ToLower/ToUpper, no string .Sort() |
 | Equality semantics: mutable dictionary key | r497 | clean; value-equality keys and mutable types are disjoint sets |
 | Save idempotence (accumulation, reorder, nondeterminism) | r499 | clean for the in-memory surface; guard added |
 | File-controlled loop count (hang, not OOM) | r500 | clean; already guarded in FreeX, no sibling gap |

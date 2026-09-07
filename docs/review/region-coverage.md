@@ -11310,3 +11310,68 @@ caches and every bin/obj, so a cold restore blew the timeout. Re-running with wa
 to 32 seconds and it STILL failed, now exposing the real assertion underneath. Had I stopped at the
 plausible environmental story, I would have filed a genuine contract break as machine noise. A
 timeout is a symptom that can hide a failure, not a verdict.
+
+## r515 - disposable ownership across async boundaries (clean), and culture-sensitive ordering in save paths (two fixed)
+
+Two classes the map named as identified-but-unswept.
+
+**Disposable ownership across an async boundary.** The violation is definable: a `using` scope that
+closes while an operation started inside it is still running. The scan looks for fire-and-forget
+(`_ = ...Async(...)`, bare `Task.Run`, `ContinueWith`) with a `using` in the enclosing method, and I
+validated it against a purpose-built known positive before trusting it - it flags that file, so a
+silent zero would have meant something. It found one candidate in 3,992 files.
+
+Rather than rest on a weak instrument (the backward walk uses an 80-line window and crossed a method
+boundary in one hit), I checked all 27 fire-and-forget sites in the repo by hand. Most are `await
+Task.Run(...)`, which is not fire-and-forget at all. Of the four that hand an object to an un-awaited
+call, every one is correct, and correct for the SAME reason: ownership TRANSFERS into the continuation
+instead of a `using` closing underneath it. `AutosavePeriodicTaskLoop` disposes the token source
+inside `CompleteStopAsync` after awaiting the run task; `OleActivationService` gives the temp file to
+the session and disposes it in the catch only on failure; `WindowsNativeRecordingCaptureEngine`
+deliberately defers disposal of a late-arriving capture device (r185); and `WorkbookProgressStageRunner`
+uses a `static` non-capturing continuation that touches nothing the `using` owns. Clean, and clean by
+construction rather than by luck.
+
+**Culture-sensitive ordering in save paths.** `OrderBy` on strings uses `Comparer<string>.Default`,
+which is CULTURE-SENSITIVE. That is fine for a user-visible list and wrong for anything that decides
+bytes in a file, because the same document then serialises differently under a different locale.
+
+FreeX's `.fxl` save ordered `DisabledFormulaErrorCodes` that way. This is a REAL, observable defect,
+not a theoretical one: the set is `OrdinalIgnoreCase` and its save-side validator compares
+`OrdinalIgnoreCase`, so a workbook can hold "#VALUE!" beside "#name?" - and those two order one way
+ordinally ('V' 86 before 'n' 110) and the other way under a culture collation. The test asserts the
+ordinal order through a real `Save`, and reverting the comparer flips it, which is what proves the
+bug was there.
+
+FreeP's `PptxPackageWriter` ordered its media-extension set the same way. I am labelling this one
+CONSISTENCY, not a bug: the extensions come from a canonical mapping function that returns lowercase
+constants, so no reachable input distinguishes the two comparers. It is still wrong for a set that is
+itself `OrdinalIgnoreCase` and whose order lands in the package, and it costs nothing to be right, but
+no test can demonstrate a failure and I am not going to imply otherwise.
+
+The rest of the class is clean and was swept exhaustively rather than sampled: zero culture-less
+`ToLower`/`ToUpper` in production, the five apparent `StartsWith`/`IndexOf` hits are one doc comment
+plus four `ReadOnlySpan<byte>.IndexOf(...u8)` (inherently ordinal), and every `.Sort()` with no
+comparer is over a numeric list.
+
+Lane choice followed r514's lesson - by CONTRACT, not by app. `docs/parity/freep-command-parity-inventory.json`
+references `PptxPackageWriter.cs`, and the generated-docs preflight that validates it lives in
+FreeX.UiTests, so that lane ran here even though the edit was in FreeP.
+
+Verification numbers: FreeX build clean, DefaultTests 46250/0 (+1 over r514, this round's one new test),
+FreeX.UiTests 6641 total, FreeP 8 lanes 9955/0 - the same total as r513, since the FreeP change here
+ships no test of its own.
+
+Getting those numbers took two runs, and the first one is the lesson. It reported "UiTests failed=3"
+and "FreeP failed=4", and every one of those seven was a lie told by an aborted run: the logs say
+`Test host process crashed : Out of memory`. The tell was not the failure count but the TOTAL -
+UiTests ran 4177 tests where it had run 6641, and FreeP.App.Host ran 276 where it had run 2555. Two
+thousand tests do not disappear; the host died partway and the runner still printed a per-assembly
+summary for what it had managed. Reading only the failure line would have sent me hunting for four
+phantom defects in an ordering change that cannot crash a test host.
+
+Two process details worth carrying forward. The reap that frees the memory ALSO deletes bin/obj, so
+the re-run had to rebuild - `--no-build` after a reap tests binaries that are not there. And the
+single remaining UiTests failure was the cold-cache preflight timeout again (the reap clears the
+NuGet caches too), diagnosed the way r514 established: the specific generator reports "up to date",
+and the test passes warm in 29 seconds against 5 minutes cold.
