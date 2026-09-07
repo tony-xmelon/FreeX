@@ -11868,3 +11868,33 @@ object as unbuildable rather than feeding it a null, because a NullReferenceExce
 argument would be the driver's failure and not the command's. A floor of 25 exercised commands keeps
 that honesty from hollowing the test out, and the assembly-count floor keeps the reflection query from
 silently reaching nothing.
+
+## r528 - the census ported, and the app where it would have been theatre
+
+r527's census works because it never reads source text, so it cannot be defeated by a helper name, an
+app's vocabulary, or a leading underscore. That makes porting it the obvious next move - the regexes I
+wrote for this class were all FreeW-shaped, as r525 established literally.
+
+**FreeP: ported, and clean.** 65 commands exercised at index 9999, 67 at -1 (the counts differ because
+some constructors reject a negative), none throwing. I checked that number rather than trusting the
+floor: raising the floor to an absurd value and reading the actual count back is the cheapest way to
+tell a passing census from a vacuous one. Worth stating that the stakes differ from FreeW's - FreeP's
+bus DOES wrap execution in try/catch (r518), so a throw there degrades to a failed command instead of
+escaping the command layer. This is a quality bar for FreeP and was a crash guard for FreeW.
+
+**FreeX: NOT ported, and the reason is measured rather than asserted.** 227 command classes, and ZERO
+constructible from primitive arguments alone - every one takes a `SheetId` or a model type. A census
+built on the same honest-arguments rule would exercise nothing at all while looking exactly like
+coverage in the test list. Shipping it would have been worse than skipping it: a green test that
+asserts nothing is a claim that the class is checked.
+
+The honest-arguments rule is what forced that conclusion, and it is worth keeping for that reason.
+A driver willing to pass nulls would have "exercised" all 227, reported a pile of
+NullReferenceExceptions, and buried any real finding in its own noise. FreeX's version of this class
+needs a different key anyway - its hostile input is a stale `SheetId` or an out-of-range
+`CellAddress`, not a bare int - and that is a separate piece of work with its own argument factory,
+not a port.
+
+Also noted: `TestCommandContext.GetSheet` throws `KeyNotFoundException` for a missing sheet. That is
+correct for a fixture but makes it unusable as a census harness, since every throw it produced would
+be the harness's and not the command's.

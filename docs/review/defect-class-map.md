@@ -59,6 +59,7 @@ defects outside that shape.
 | Captured index dereferenced after the document changed | r525 | FIXED 7 more in FreeW (DeleteParagraph read+RemoveAt+Insert, drawing-group _members coordinates, _members[0] with no emptiness test). Confirmed FreeP/FreeX clean with THEIR collection names -- r524 scan searched Blocks[] and was blind to both |
 | Insert at a captured index (upper bound is Count) | r526 | FIXED 1 of 9: DeleteTableRow.Revert checked the lower bound only. The other 8 across all three apps clamp correctly (Math.Clamp/Math.Min, bounded loops, or start at Count and only descend) |
 | Hostile index, driven behaviourally (not by regex) | r527 | FIXED 4 sites invisible to five prior sweeps because the index was a FIELD (_paragraphIndex) and every scan required a leading [a-z]. Census test now constructs every FreeW command with an impossible index and requires no throw |
+| Hostile index census, FreeP | r528 | clean; 65-67 commands actually exercised, none throws. NOT ported to FreeX: 227 command classes, zero constructible from primitives, so the census would exercise nothing while looking like coverage |
 | Equality semantics: mutable dictionary key | r497 | clean; value-equality keys and mutable types are disjoint sets |
 | Save idempotence (accumulation, reorder, nondeterminism) | r499 | clean for the in-memory surface; guard added |
 | File-controlled loop count (hang, not OOM) | r500 | clean; already guarded in FreeX, no sibling gap |
