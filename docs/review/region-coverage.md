@@ -11375,3 +11375,73 @@ the re-run had to rebuild - `--no-build` after a reap tests binaries that are no
 single remaining UiTests failure was the cold-cache preflight timeout again (the reap clears the
 NuGet caches too), diagnosed the way r514 established: the specific generator reports "up to date",
 and the test passes warm in 29 seconds against 5 minutes cold.
+
+## r516 - three classes clean by construction, and a fourth "finding" I retracted after reading the caller
+
+Four classes this round. Three came back clean. The fourth looked like a real crash-on-open, and was
+not: I retracted it, and the retraction is the most useful thing in this entry.
+
+**XML entity expansion / external entities (XXE, billion laughs).** These apps parse XML out of
+user-supplied zips, so this is a genuine attack surface: 392 `XDocument.Load`, 177 `XElement.Parse`,
+130 `XDocument.Parse`, 44 `XmlReader.Create`. It is clean, and clean twice over. The .NET default for
+all of those is `DtdProcessing.Prohibit`, so a DTD is rejected before an entity can expand; and every
+one of the 17 places that sets the property explicitly sets `Prohibit`, with all 13 `XmlResolver`
+assignments set to `null`. The single settings-less `XmlReader.Create` inherits the safe default.
+Nothing overrides the default anywhere, which is the only way this class can bite.
+
+**Catastrophic regex backtracking (ReDoS).** The vector that matters is a pattern the USER supplies -
+the REGEX* worksheet functions, Find/Replace, and wildcard criteria - not the fixed patterns. All of
+those route through constructors that pass `FormulaSafetyLimits.RegexTimeout`, and the
+`RegexMatchTimeoutException` handlers around them are therefore live rather than decorative, which is
+the specific way this check goes vacuous. The two timeout-less `new Regex("$.")` calls are
+non-backtracking sentinels.
+
+**Integer overflow in EMU/coordinate arithmetic from file input.** Clean: the conversions widen to
+`long` before multiplying, and the one `checked((int)...)` cast is preceded by a range test that
+bounds the input to 1584 points, so the product cannot approach `int` range and the `checked` can
+never fire.
+
+**Duplicate keys built from file-controlled ids -- a finding I RETRACTED.** `ToDictionary` over a key
+taken straight from untrusted XML throws `ArgumentException` on a repeat, and
+`XlsxRelationshipReader.LoadTargetsStrict` does exactly that for OPC relationship ids. I read the
+shape, matched it against this review's most recurring pattern - the shared
+`OpcRelationships.EnumerateInternalTargetMap` tolerates repeats via a `seenIds` set, first occurrence
+winning, while the "strict" variant does not - concluded "one path fixed, sibling left", changed it to
+first-wins, and wrote a test showing a revert reproduces the throw.
+
+The premise was wrong, and the existing test suite said so immediately: the FreeX lane failed on
+`XlsxWorkbookWorksheetPathMapMalformedTests.TryCreate_StrictDuplicateRelationshipIds_ReturnsNullInsteadOfThrowing`.
+Reading the caller settles it. The parameter is literally named `rejectDuplicateRelationshipIds`, the
+`catch (ArgumentException) when (rejectDuplicateRelationshipIds)` carries a comment saying strict
+callers deliberately reject ambiguous relationship maps, and it returns null so `TryCreate` keeps its
+contract for malformed packages. The throw never escapes; nothing crashes; no open fails. The
+divergence from the shared helper is the POINT of the "strict" variant, not drift.
+
+So I reverted the production change and deleted the test. My claim that "the whole open failed" was
+false, and it was false because I inferred a consequence from a call shape instead of reading the
+caller - the exact failure the premise-checking note exists to prevent, committed while looking
+straight at a pattern I have documented myself.
+
+One narrower thing survives as an unverified LEAD, deliberately not acted on. OPC relationship ids
+are `xsd:ID` and therefore case-sensitive, so `rId1` and `RId1` are two valid distinct relationships,
+yet the OrdinalIgnoreCase key treats them as one and triggers the rejection path. That would make a
+VALID package read as malformed. I did not act on it because both halves are unverified: whether
+Excel accepts such a package is an inference from the spec, not an observation (Excel COM is not
+registered on this machine), and switching the map to ordinal would change lookup semantics for
+sloppily-cased r:id references in real files. Acting would be hardening on a hypothesis against
+deliberate, documented, test-pinned behaviour. What would settle it: open a package with case-distinct
+relationship ids in real Excel.
+
+Verification note. Production is byte-identical to `origin/main` after the retraction, so this round
+ships documentation only, and the FreeX lane result that matters is the one that CAUGHT me: with my
+change in, `FreeX.DefaultTests` reported 46251/1 with a full total of 46406, and the single failure
+was the pre-existing contract test. A full total plus one failure is the shape of a real signal, in
+contrast to r515's aborted run - which is exactly why the totals are worth reading every time.
+
+`GeneratedDocsPreflight_PassesFromOutsideRepositoryWorkingDirectory` also failed twice here on its
+5-minute timeout and then passed in 15 seconds. It is inherently the slow variant: the generators it
+runs build a scratch console project into a RANDOMLY NAMED temp directory, so that path can never
+reuse obj output the way the in-repo variants do. Running `tools/Test-GeneratedDocs.ps1` directly
+takes 26 seconds and reports all checks passing, which is the authoritative answer on whether the
+docs are stale. Treat a 5-minute duration on that one test as a timing result and re-run it before
+attributing anything to it.

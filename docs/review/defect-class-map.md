@@ -43,6 +43,10 @@ defects outside that shape.
 | Interop marshalling: buffer size units, struct layout | r514 | clean; only 3 StringBuilder params exist repo-wide (all correct units) plus one HGlobal two-call buffer; NO managed delegate is ever handed to native, so the collected-callback crash class is absent; X11 LP64 layout now guarded |
 | Disposable ownership across an async boundary | r515 | clean; all 27 fire-and-forget sites checked by hand -- every one that hands over an object TRANSFERS ownership into the continuation rather than letting a using close under it |
 | Culture-sensitive ordering in a file-output path | r515 | FIXED in FreeX .fxl save (observable: mixed-case error codes reorder); FreeP media extensions made ordinal for consistency (not reachable); no culture-less ToLower/ToUpper, no string .Sort() |
+| XML entity expansion / external entities (XXE) | r516 | clean; .NET default is DtdProcessing.Prohibit and all 17 explicit settings say Prohibit, all 13 XmlResolver assignments are null; nothing overrides the safe default |
+| Catastrophic regex backtracking (ReDoS) | r516 | clean; every user-supplied-pattern path (REGEX* functions, Find/Replace, wildcard criteria) passes FormulaSafetyLimits.RegexTimeout, so the timeout handlers are live rather than decorative |
+| Integer overflow in EMU/coordinate math from file input | r516 | clean; conversions widen to long before multiplying, and the one checked((int)) cast is range-bounded to 1584pt upstream |
+| Duplicate key built from a file-controlled id | r516 | clean; the one ToDictionary over an untrusted id (XlsxRelationshipReader.LoadTargetsStrict) is caught BY DESIGN -- caller param is rejectDuplicateRelationshipIds, the catch is commented, and a test pins TryCreate returning null. See r516: my "fix" was RETRACTED |
 | Equality semantics: mutable dictionary key | r497 | clean; value-equality keys and mutable types are disjoint sets |
 | Save idempotence (accumulation, reorder, nondeterminism) | r499 | clean for the in-memory surface; guard added |
 | File-controlled loop count (hang, not OOM) | r500 | clean; already guarded in FreeX, no sibling gap |
