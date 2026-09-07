@@ -47,6 +47,7 @@ defects outside that shape.
 | Catastrophic regex backtracking (ReDoS) | r516 | clean; every user-supplied-pattern path (REGEX* functions, Find/Replace, wildcard criteria) passes FormulaSafetyLimits.RegexTimeout, so the timeout handlers are live rather than decorative |
 | Integer overflow in EMU/coordinate math from file input | r516 | clean; conversions widen to long before multiplying, and the one checked((int)) cast is range-bounded to 1584pt upstream |
 | Duplicate key built from a file-controlled id | r516 | clean; the one ToDictionary over an untrusted id (XlsxRelationshipReader.LoadTargetsStrict) is caught BY DESIGN -- caller param is rejectDuplicateRelationshipIds, the catch is commented, and a test pins TryCreate returning null. See r516: my "fix" was RETRACTED |
+| Shared mutable static collection (thread safety) | r517 | clean; all 12 runtime-mutated statics guarded by a gate lock, [ThreadStatic] isolation, or lock-on-collection; now enforced by a source tripwire with one documented WPF-affinity exemption |
 | Equality semantics: mutable dictionary key | r497 | clean; value-equality keys and mutable types are disjoint sets |
 | Save idempotence (accumulation, reorder, nondeterminism) | r499 | clean for the in-memory surface; guard added |
 | File-controlled loop count (hang, not OOM) | r500 | clean; already guarded in FreeX, no sibling gap |

@@ -11445,3 +11445,44 @@ reuse obj output the way the in-repo variants do. Running `tools/Test-GeneratedD
 takes 26 seconds and reports all checks passing, which is the authoritative answer on whether the
 docs are stale. Treat a 5-minute duration on that one test as a timing result and re-run it before
 attributing anything to it.
+
+## r517 - shared mutable static collections, and turning a one-off sweep into a standing check
+
+The class: a `static` collection MUTATED at runtime and reachable from more than one thread. Concurrent
+writes can tear a Dictionary's buckets or spin forever, and the symptom surfaces far from the cause.
+
+Of ~900 static collections, almost all are immutable lookup tables, which are safe to read
+concurrently. Narrowing to ones actually mutated after initialisation left 12, and all 12 are clean -
+by three deliberate idioms rather than by luck. A dedicated gate object guards the formula caches
+(`FormulaEvaluator.ParsedFormulaCache`, `Lexer.TokenCache`, both with LRU eviction and every read AND
+write inside the lock), the conditional-format reach cache, the sort session cache, and the
+render-fault reporter. `[ThreadStatic]` isolates the rest - the ribbon icon caches and FreeX's text
+measurement caches - which is the better answer there for a second reason: the cached values are
+thread-affine Avalonia/WPF objects, so per-thread ownership solves r495's affinity problem in the same
+stroke as the race. `DelimitedTextWorkbookWriter` locks its collection directly.
+
+One was a false positive of my own scan: `PresentationCommands.Shapes` is a static METHOD, and the
+"mutations" were `slide.Shapes.Remove(...)` on an instance property that merely shares the name. `\b`
+matches after a dot, so the pattern could not tell them apart.
+
+Because a clean sweep decays the moment someone adds the next cache, this round's deliverable is a
+TRIPWIRE rather than a note. It scans production sources for a mutated static collection whose file
+contains no synchronising construct at all. Two things about it are deliberate.
+
+It is honest about being weak. It cannot tell which lock protects which field, so it asks the weaker
+question that still catches the regression worth catching. A file that locks for an unrelated reason
+passes. A check this cheap earns its place by having NO false positives, not by being complete, and
+the entry says so rather than implying proof.
+
+And it carries the fixed version of the bug that fooled my own scan: the mutation pattern requires the
+field name NOT be preceded by a dot, so an instance member sharing a static's name no longer counts.
+
+It found one site the ad-hoc pass missed, `ComboBoxDropDownWheelBehavior.OpenComboBoxes` - because the
+tripwire also covers `Queue`/`Stack`. That one is genuinely safe by a mechanism no text scan can see:
+it holds WPF `ComboBox` references, `DispatcherObject` throws on cross-thread access, and the events
+that mutate it are raised on the UI thread. It is exempted BY NAME with that reasoning recorded, which
+is the right shape for an exemption - visible and justified, not a loosened pattern that would silently
+excuse the next real one.
+
+Proved it fires: planting an unguarded static `Dictionary` in a production project fails the test and
+names it exactly.
