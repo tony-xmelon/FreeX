@@ -40,6 +40,7 @@ defects outside that shape.
 | Undisposed resource / per-paint allocation | r494, r512 | 2 defects: picture fills and picture shapes each decoded a Bitmap per paint |
 | Mutable toolkit visual in a static field | r495 | 4 defects (FreeW pens); tripwire added |
 | Native interop: handle leaks, wrong-OS calls | r496 | clean; 51 P/Invokes, pairing and dispatch both correct |
+| Interop marshalling: buffer size units, struct layout | r514 | clean; only 3 StringBuilder params exist repo-wide (all correct units) plus one HGlobal two-call buffer; NO managed delegate is ever handed to native, so the collected-callback crash class is absent; X11 LP64 layout now guarded |
 | Equality semantics: mutable dictionary key | r497 | clean; value-equality keys and mutable types are disjoint sets |
 | Save idempotence (accumulation, reorder, nondeterminism) | r499 | clean for the in-memory surface; guard added |
 | File-controlled loop count (hang, not OOM) | r500 | clean; already guarded in FreeX, no sibling gap |
@@ -60,7 +61,6 @@ defects outside that shape.
 possible defect class has been enumerated - see "What the map is for" below. New classes get added
 here as they are identified, and the list being empty means the identified ones are done, not that
 identification is finished.)
-- P/Invoke and native-interop boundaries in the Windows-only projects.
 
 ## What the map is for
 

@@ -11255,3 +11255,58 @@ regression I introduced. FreeP never memoised a failed decode, and adding one th
 observable behaviour: the undecodable-image diagnostic currently fires on every render, and memoising
 would silence all but the first. That is a reporting-cadence decision about a user-visible diagnostic,
 not a leak fix, so it does not belong in a round about decode cost.
+
+## r514 - native interop: the marshalling half r496 did not cover, and a map that contradicted itself
+
+The class map listed "P/Invoke and native-interop boundaries" as unswept while ALSO carrying a row
+saying interop was swept clean in r496. Both were true of different things: r496 covered handle leaks
+and wrong-OS dispatch, not marshalling. The bullet was stale as written and has been removed, and the
+marshalling half is now swept and recorded as its own row. A map that disagrees with itself is worse
+than one with a gap, because a reader cannot tell which half to believe.
+
+Two sub-classes, taken in order of severity.
+
+A managed delegate handed to native code and then collected is the interop crash that actually kills
+processes. It is ABSENT here, and absent for a structural reason rather than by luck: no P/Invoke in
+the repo takes a delegate parameter, and the single `[UnmanagedFunctionPointer]` declaration runs the
+other way - `Marshal.GetDelegateForFunctionPointer` wrapping `PostMessageW`, which creates no native
+callback at all and is rooted in a static `Lazy<>` regardless. Nothing registers a native callback, so
+nothing can be collected out from under one. Worth recording precisely because "no hits" and "never
+looked" are indistinguishable afterwards.
+
+Buffer and size marshalling was swept exhaustively rather than by sample, because the surface turned
+out to be tiny: exactly THREE `StringBuilder` parameters exist across all interop, no array or span
+ever crosses the boundary, and there is one raw `AllocHGlobal` buffer. All correct, and correct in the
+unit each API actually specifies, which is where this class usually bites - `mciGetErrorString` and
+`GetDefaultPrinter` count CHARACTERS and are passed `Capacity` and a char count against matching
+buffers, while `EnumPrinters` counts BYTES and is passed a byte count from its own two-call probe.
+Two neighbouring APIs, two different units, both right. `DwmSetWindowAttribute` passes `sizeof(int)`
+against a `ref int`.
+
+One change. `X11WindowActivator` marshals an XEvent whose explicit field offsets and 192-byte union
+size are hardcoded LP64, guarded only by `OperatingSystem.IsLinux()`. The LP64 assumption lived solely
+in a comment. That is not hypothetical - linux-arm (32-bit) is a supported .NET RID that Avalonia runs
+on - and the failure mode is the bad kind: on ILP32 every offset past Type is wrong, so the event is
+corrupted rather than rejected. An `IntPtr.Size != 8` guard turns silent corruption into no activation.
+This follows the standing rule about guarding assumptions that fail silently; the comment stating the
+assumption is exactly what the guard should have been.
+
+The guard is unfalsifiable at runtime here - `IntPtr.Size` is 8 in every process that can run the
+suite - so a source contract is the only instrument available, and the test says so rather than
+pretending to behavioural coverage. It pins both the guard and the hardcoded `Size = 192` it protects,
+and fails when the guard is removed.
+
+A process failure of my own, caught by this round's verification rather than by design. r513 was
+pushed with a BROKEN DOC CONTRACT: editing FreeW's DocumentView.cs changed a content hash recorded in
+`docs/parity/freew-shell-platform-parity-*.json`, and the check that notices lives in the FreeX UI
+lane - not in the FreeW and FreeP lanes r513 ran. This is precisely the failure mode the release
+doc-contract note describes, and knowing about it did not stop me walking into it, because I chose the
+lanes by which APP I had touched rather than by which CONTRACTS my edit could break. A source edit in
+any app can invalidate a generated doc that only the FreeX UI lane validates.
+
+The diagnosis also had a false bottom worth recording. The test first failed as a five-minute
+TimeoutException, which looked environmental - and partly was, since I had just reaped the NuGet
+caches and every bin/obj, so a cold restore blew the timeout. Re-running with warm caches dropped it
+to 32 seconds and it STILL failed, now exposing the real assertion underneath. Had I stopped at the
+plausible environmental story, I would have filed a genuine contract break as machine noise. A
+timeout is a symptom that can hide a failure, not a verdict.
