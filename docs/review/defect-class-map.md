@@ -55,6 +55,7 @@ defects outside that shape.
 | Untrusted HTML paste (clipboard) | r520 | clean; iterative parser, colspan/rowspan clamped to sheet width so a small paste cannot amplify into a huge allocation |
 | Unchecked cast/index in command targets | r520, r521, r522 | FIXED in FreeW EditCommands: 18 TableAt (r520), 8 ParagraphAt (r521), 6 INLINE casts (r522, two also indexing Runs unguarded). Name-based sweeps missed the inline ones; the pattern sweep found them. Two sites outside the file are safe by construction. Also CORRECTS r518 |
 | Index captured at construction, dereferenced later | r523 | REFRAMED: the danger is the temporal gap, not the cast. All 42 element casts in production swept; every one outside the command layer is safe because resolution and use are adjacent. Command-layer regressions now blocked by a tripwire |
+| Pattern-match indexing without a bounds check | r524 | FIXED 38 sites in FreeW: Blocks[i] is Paragraph p type-checks safely but indexes FIRST. Half-guards that bounds-checked runIndex on the same line and missed the block index. Invisible to every cast-based sweep |
 | Equality semantics: mutable dictionary key | r497 | clean; value-equality keys and mutable types are disjoint sets |
 | Save idempotence (accumulation, reorder, nondeterminism) | r499 | clean for the in-memory surface; guard added |
 | File-controlled loop count (hang, not OOM) | r500 | clean; already guarded in FreeX, no sibling gap |

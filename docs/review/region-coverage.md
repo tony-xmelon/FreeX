@@ -11737,3 +11737,40 @@ The round's deliverable is the tripwire that keeps r520-r522 fixed: an unchecked
 applies where the temporal gap is, not to code where validation is adjacent. Comment lines are skipped
 deliberately, because r520's own explanation quotes the old cast verbatim and would otherwise trip its
 own guard. Planting one cast back fails the test and names the exact line.
+
+## r524 - the sharper signature pays: 38 half-guards a cast sweep could never see
+
+r523 replaced "look for unchecked casts" with "look for an index CAPTURED at construction and
+dereferenced later". This round ran that signature, and it found a class none of r520-r523 could have.
+
+The code does not cast. It pattern-matches: `Blocks[paragraphIndex] is Paragraph p`. That is a
+perfectly safe TYPE test - and it still indexes first, so an out-of-range block index throws
+`ArgumentOutOfRangeException` before `is` is ever evaluated. Every sweep I ran for `(Paragraph)`
+walked straight past 38 of these.
+
+What settles them as oversight rather than invariant is the expression itself:
+
+    Blocks[paragraphIndex] is Paragraph p && runIndex >= 0 && runIndex < p.Runs.Count
+
+The author was demonstrably thinking about bounds. They checked the RUN index, on the same line, and
+missed the BLOCK index. The image, shape, and drawing-group accessors repeat that shape 38 times, and
+`ShapeTextTargetResolver` two frames away already writes it correctly -
+`paragraphIndex >= 0 && paragraphIndex < Blocks.Count && ... is Paragraph` - so the right form was
+present in the codebase the whole time.
+
+Fixed: 35 accessors in EditCommands (24 positive, 11 negated), two Ungroup entry points, and one
+CrossReferences resolver whose sibling method `CaptionRangeFor` bounds-checks correctly ten lines
+away. Removing the 19 positive-shape guards reproduces `ArgumentOutOfRangeException` in exactly the
+three tests that use them, while the SetImageSize test - which goes through the negated shape, left
+intact - stays green, so the neuter is targeted rather than global.
+
+Four sites remain unguarded and are correct: three are `for (var i = 0; i < Blocks.Count; i++)` loop
+variables, and one runs only after `ShapeTextTargetResolver.TryGetShape` has validated the same index.
+My scanner reported all four because its guard pattern looked for `>=` and `< 0` and not for a loop
+condition - a false-positive shape worth remembering, since the fix is to read the four rather than to
+loosen the scan.
+
+A note on r522, checked rather than assumed: that entry called `CrossReferences` safe by construction,
+and it was right - about `CaptionRangeFor`, which does bounds-check. The hole found here is in a
+DIFFERENT method with the same shape. No correction needed, but the distinction is worth stating,
+because "the file is fine" and "that method is fine" are not the same claim.
