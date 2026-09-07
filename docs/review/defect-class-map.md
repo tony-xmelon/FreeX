@@ -50,6 +50,7 @@ defects outside that shape.
 | Shared mutable static collection (thread safety) | r517 | clean; all 12 runtime-mutated statics guarded by a gate lock, [ThreadStatic] isolation, or lock-on-collection; now enforced by a source tripwire with one documented WPF-affinity exemption |
 | Undisposed file handle on an exception path | r518 | clean; zero disposable locals created outside a using across all production code |
 | Truncated/damaged part in a package | r518 | DIVERGENCE recorded, not a bug: FreeX and FreeW throw XmlException; FreeP opens the deck, blanks the damaged slide and warns (naming the save-over hazard). Repair-on-open in FreeX/FreeW is a product gap vs Office, not a review fix |
+| Non-BMP text (surrogate pairs) in text functions | r519 | clean; FreeX counts UTF-16 units exactly as Excel does (LEN=4 for A+emoji+B, LEFT splits the pair), now pinned by test; four DEAD helpers implementing the other semantics removed as a trap |
 | Equality semantics: mutable dictionary key | r497 | clean; value-equality keys and mutable types are disjoint sets |
 | Save idempotence (accumulation, reorder, nondeterminism) | r499 | clean for the in-memory surface; guard added |
 | File-controlled loop count (hang, not OOM) | r500 | clean; already guarded in FreeX, no sibling gap |

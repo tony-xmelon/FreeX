@@ -11529,3 +11529,37 @@ print what was mutated and check it before reading the outcome. Second, the Free
 namespace `FreeP.App.Presentation.Tests` the identifier `Presentation` resolves to a namespace rather
 than the model type; removing the probe restored the build, which isolated cause from correlation.
 Moving it to `FreeP.App.Host.Tests` avoided the collision entirely.
+
+## r519 - text functions on non-BMP characters, and dead code that encoded the wrong rule
+
+The class: how the three apps handle characters outside the Basic Multilingual Plane - emoji, rare
+CJK, anything needing a surrogate pair. Index arithmetic over such text is a classic source of split
+characters and off-by-one truncation, and it is worth checking against the reference rather than
+against intuition, because the reference is deliberately unfriendly here.
+
+Excel counts UTF-16 CODE UNITS. `LEN("A" & emoji & "B")` is 4, not 3. `LEFT(...,2)` cuts the pair in
+half and returns a lone surrogate that renders as a replacement glyph. That looks like a bug and is
+not; it is the compatible answer, and a spreadsheet that "improves" on it produces different numbers
+from the same workbook.
+
+FreeX matches Excel exactly. `LEN` returns `text.Length`, and LEFT/RIGHT/MID slice by unit. Verified
+by test rather than by reading: LEN is 4, MID(2,2) returns the whole emoji, LEFT(2) returns 'A' plus
+the lone high surrogate, RIGHT counts from the end in units.
+
+The finding is what sat next to that code. The formula text layer carried FOUR private helpers -
+`TextElementIndexFromOneBasedPosition`, `AdvanceTextElements`, `CountTextElements`,
+`OneBasedTextPositionFromUtf16Index` - that walk text by SURROGATE PAIR instead of by unit. Every one
+was dead: repo-wide, each had exactly one reference, its own declaration. (`CountTextElements` looked
+live at three references until I read them - two belong to a different, genuinely used method of the
+same name in FreeP's `MathLayoutEngine`.)
+
+Dead code is usually cosmetic. This is the case where it is not. These helpers implement the OTHER
+semantics - the friendlier one Excel does not have - in the exact file where the text functions live.
+They read as the intended design. The plausible future accident is precise: someone sees an emoji
+split by LEFT, decides it is a bug, finds four ready-made helpers that fix it, wires them in, and
+silently breaks Excel compatibility for every LEN/MID/LEFT/RIGHT in the product. Removing them
+deletes the trap, and the tests added here make that specific change fail loudly if it is ever
+attempted from scratch.
+
+`IsSurrogatePairAt` stays: the byte-oriented LENB/MIDB/FINDB family uses it for real, which is the
+one place where pair-awareness is correct, since those functions count DBCS bytes.
