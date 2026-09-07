@@ -11667,3 +11667,40 @@ and referenced an out-of-scope variable. The compiler caught it. A scripted rewr
 STATEMENT COUNT under an unbraced `if` is silently wrong whenever the new code happens to compile -
 here it did not, but the same edit against a `Revert` whose variable was in scope would have shipped a
 guard that never guards.
+
+## r522 - the third pass, and why the first two sweeps missed it
+
+r520 fixed the sites reached through `TableAt`. r521 fixed the sites reached through `ParagraphAt`,
+found by sweeping r520's own fix. This round asked the same question again and found SIX more in the
+same file - and the reason is the lesson.
+
+Both earlier sweeps searched for a HELPER NAME. Six casts were written INLINE:
+`((Paragraph)context.Document.Blocks[paragraphIndex]).Runs[runIndex]`. No `ParagraphAt`, no `TableAt`,
+so neither name-based search could see them. Searching for the PATTERN - a cast of a collection
+element - found all six immediately, plus every remaining instance across the three apps' command
+layers in one pass.
+
+A name-based sweep only finds the code that already agreed to use the name. The sites most likely to
+be wrong are exactly the ones that never adopted the helper.
+
+Two of the six carried a SECOND unguarded index on top of the cast: `.Runs[runIndex]` with no bounds
+check, so a stale run index threw even when the block really was a paragraph. Both failure modes
+reproduce on reverting - `InvalidCastException` for the non-paragraph block, `ArgumentOutOfRangeException`
+for the stale run - and the three tests aimed at other commands stay green under that revert, which is
+what shows the neuter was targeted rather than global.
+
+The pattern sweep also found two sites OUTSIDE the command file, and both are safe by construction -
+recorded so a later round does not re-open them:
+
+  - `RevisionList.ResolveMarkAtBlockIndex` casts `blocks[index]`, but its only caller reaches it from
+    `case Paragraph paragraph when ReferenceEquals(paragraph, target)`. The pattern match proves the
+    type and the loop proves the index.
+  - `CrossReferences` casts `doc.Blocks[target.BlockIndex!.Value]` inside a ternary guarded by
+    `captionRange is { } range`, and `CaptionRangeFor` returns null unless the index is present AND
+    the block is a Paragraph. The guard is real, just several lines away from the cast.
+
+Consolidation: the two private `TryGetParagraph` copies r521 left in place are now one `internal
+static` accessor shared by every caller, matching how `TryGetTable` is shared. A third, differently
+shaped `TryGetParagraph` for table-cell paragraphs already existed elsewhere in the file, which is
+evidence the validating accessor was always this codebase's convention - the inline casts were the
+outliers, not the guarded code.
