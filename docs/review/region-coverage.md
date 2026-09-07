@@ -11807,3 +11807,31 @@ including the undo-after-shrink case, which is the capture-then-revert gap in it
 The lesson I want recorded is not "write tripwires". It is that the tripwire caught a defect the
 REVIEWER had already been shown and dismissed. A sweep's output is only as good as the attention that
 reads it, and an automated guard does not get bored halfway down the list.
+
+## r526 - insert-at-a-captured-index, and eight sites that were already right
+
+`List.Insert` throws once the index EXCEEDS `Count`, which makes "insert at an index captured
+earlier" a distinct signature inside the capture-then-revert class rather than a repeat of it: the
+legal upper bound is `Count`, not `Count - 1`, so a guard written for reading is wrong here in both
+directions - too strict by one, and absent where it matters.
+
+r525 fixed one instance almost incidentally, inside DeleteParagraphCommand's Revert. This round asked
+the signature on its own, across all three apps' command layers: nine sites.
+
+Eight were already correct, and their correctness is the useful part. FreeP clamps with `Math.Clamp`
+and `Math.Min` in three separate commands; FreeX's MoveSheets maintains its index explicitly across a
+RemoveAt; PresentationSectionMembershipSnapshot walks a loop bounded by `Count`; and two sites in
+FreeW's own EditCommands initialise `insertAt` to `cells.Count` and only ever move it DOWN, which is
+the neatest form of the guard because it cannot be got wrong later.
+
+The exception was `DeleteTableRowCommand.Revert`: it checked `_removedAt < 0` and stopped there. The
+lower bound guarded, the upper bound - the one `Insert` actually throws on - left open. A table that
+lost rows between Apply and Revert turned undo into an `ArgumentOutOfRangeException`. Neutering the
+new guard reproduces exactly that, while the ordinary-undo test stays green, which is what shows the
+guard did not turn a working undo into a silent no-op.
+
+That ratio is worth recording as much as the fix. Eight correct sites in three different codebases
+mean the convention is established and understood; the defect is a single omission against it, not a
+missing practice. It is the same shape as r524's half-guards - one bound checked, the other
+forgotten - and it keeps appearing in REVERT paths specifically, because that is where an index is
+oldest by the time it is used.

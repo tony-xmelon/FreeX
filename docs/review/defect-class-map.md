@@ -57,6 +57,7 @@ defects outside that shape.
 | Index captured at construction, dereferenced later | r523 | REFRAMED: the danger is the temporal gap, not the cast. All 42 element casts in production swept; every one outside the command layer is safe because resolution and use are adjacent. Command-layer regressions now blocked by a tripwire |
 | Pattern-match indexing without a bounds check | r524 | FIXED 38 sites in FreeW: Blocks[i] is Paragraph p type-checks safely but indexes FIRST. Half-guards that bounds-checked runIndex on the same line and missed the block index. Invisible to every cast-based sweep |
 | Captured index dereferenced after the document changed | r525 | FIXED 7 more in FreeW (DeleteParagraph read+RemoveAt+Insert, drawing-group _members coordinates, _members[0] with no emptiness test). Confirmed FreeP/FreeX clean with THEIR collection names -- r524 scan searched Blocks[] and was blind to both |
+| Insert at a captured index (upper bound is Count) | r526 | FIXED 1 of 9: DeleteTableRow.Revert checked the lower bound only. The other 8 across all three apps clamp correctly (Math.Clamp/Math.Min, bounded loops, or start at Count and only descend) |
 | Equality semantics: mutable dictionary key | r497 | clean; value-equality keys and mutable types are disjoint sets |
 | Save idempotence (accumulation, reorder, nondeterminism) | r499 | clean for the in-memory surface; guard added |
 | File-controlled loop count (hang, not OOM) | r500 | clean; already guarded in FreeX, no sibling gap |
