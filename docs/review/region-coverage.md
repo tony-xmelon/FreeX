@@ -11486,3 +11486,46 @@ excuse the next real one.
 
 Proved it fires: planting an unguarded static `Dictionary` in a production project fails the test and
 names it exactly.
+
+## r518 - probing a truncated part, and a three-app divergence in what "damaged file" means
+
+Two greppable classes first, both clean and both quickly. No disposable local anywhere in production
+is created outside a `using` - not one `FileStream`, `ZipArchive`, `StreamWriter`, `File.Open`, or
+`ZipFile.OpenRead` - so the file-handle-leak class that would show up as "the document is locked by
+another process" has no site to occur at. And the command-bus firewall my crash-hunt notes recorded as
+"deliberately left undone" is DONE: FreeP's bus wraps its command execution in try/catch and restores
+the entry with `PushRedo` on failure, mirroring FreeX's rollback. That note was stale; r510's finding
+that all three buses roll back is the current truth.
+
+Then a probe, because static sweeps keep coming back clean and the malformed-input method is the one
+that historically pays. Take a valid document, truncate one XML part mid-element, and open it.
+
+FreeX and FreeW both REFUSE: `XmlException` out of the reader, whether the truncated part is the main
+one (worksheet, document.xml) or a secondary one (styles.xml). No silent partial load in either.
+
+FreeP does something different, and better. It opens the deck, drops the unreadable slide's content,
+and reports:
+
+    "Slide 1 is damaged and was opened blank. Saving over the original would discard whatever it
+     still contains."
+
+That message is the model for this whole class. It states what was lost, and it names the SECOND
+hazard - that saving now would destroy whatever of the original survived - which is the part a plain
+"file is damaged" dialog leaves the user to discover by losing their data.
+
+So the finding is a divergence, not a bug: on the same malformed input, one app degrades with a
+precise warning and two refuse outright. Refusing is safe - no silent loss, no accidental overwrite -
+so I am NOT filing FreeX/FreeW as defective, and I did not "fix" them. But it is a capability gap
+against both FreeP and the Microsoft applications, which offer to repair a damaged file and open what
+survives rather than declining it. A file Excel would repair-and-open cannot be opened in FreeX at
+all. That is a product decision and a real feature, not something to bolt on inside a review round, so
+it is recorded here with the evidence and FreeP's message as the template.
+
+Two instrument notes. The first version of the FreeX probe truncated `sharedStrings.xml`, reported
+"loaded with 0 warnings", and proved NOTHING - that fixture has no sharedStrings part, so the mutation
+never applied. The tell was the absent "truncated ..." line in my own report, not the result. I now
+print what was mutated and check it before reading the outcome. Second, the FreeP probe placed in
+`FreeP.App.Presentation.Tests` broke compilation of unrelated files in that lane, because inside
+namespace `FreeP.App.Presentation.Tests` the identifier `Presentation` resolves to a namespace rather
+than the model type; removing the probe restored the build, which isolated cause from correlation.
+Moving it to `FreeP.App.Host.Tests` avoided the collision entirely.
