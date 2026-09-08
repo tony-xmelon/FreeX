@@ -11957,3 +11957,39 @@ zero there is the only thing separating "nothing failed" from "nothing ran". I c
 cause before believing it, too: the project it died on belongs to this whole-repo lane by design, the
 solution has not changed in many rounds, and r528 ran that same project at 741 passed. A run died;
 the lane is fine.
+
+## r530 - the class was clean; the thing keeping it clean had no test
+
+The signature came out of r529's own reading: `Workbook.RegisterSheetName` carries a comment about
+removing a handler before adding it so a reinsertion after undo cannot accumulate duplicates. That
+names a class - event subscriptions that MULTIPLY across undo/redo cycles - with a shape precise
+enough to sweep and behaviour precise enough to test.
+
+The class does not exist in this layer. Across the model and command projects there is exactly ONE
+event subscription, `sheet.NameChanged += HandleSheetNameChanged`, and it is the very site already
+using remove-first. The other ten hits my pattern returned were numeric `+=` on properties, matched
+because the right-hand side was an identifier. One real site, already correct.
+
+Those numeric hits turned out to be the interesting part, and the next question was better than the
+first: `chart.Top += insertedHeight` runs inside a row insert, so what puts it back? Undo restores
+chart position from a SNAPSHOT (`RestoreChartStructuralState`), not by subtracting the same amount,
+and that is the right design rather than an accident. The forward shift is conditional - it moves
+only charts at or below the inserted boundary and skips absolutely-anchored ones - so an inverse
+subtraction would have to reproduce that condition against row heights undo has already changed. The
+snapshot also captures the chart BY IDENTITY (`ChartPositionSnapshot` holds the chart reference), so
+the restore writes to the chart it measured rather than to whatever now sits at that index, which is
+exactly the property the last ten rounds have been arguing for and it was already here.
+
+**The deliverable: that restore was unpinned.** No test in the repository asserted a chart's position
+after an undo. The two lines writing `Left`/`Top` could have been deleted and the whole suite stayed
+green, while every undo of a row or column insert silently left charts displaced. Three tests now
+pin it - row insert, column insert, and the absolute-anchor case that must NOT move - and deleting
+those two lines fails exactly the two undo tests while the absolute-anchor test stays green, so the
+neuter is targeted and the tests are not vacuous.
+
+One trap worth recording, because it would have made this test green while proving nothing:
+`ChartModel.DrawingAnchorKind` DEFAULTS to `Absolute`, and the shift deliberately skips absolute
+anchors. A chart built with `new ChartModel()` never moves, so every assertion would have passed
+without exercising the code. The fixture sets `OneCell` deliberately, and each test asserts the chart
+actually MOVED before checking that undo put it back - the non-vacuity check belongs inside the test,
+not only in the neuter run.

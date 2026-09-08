@@ -74,6 +74,7 @@ defects outside that shape.
 | Image decoded on every render pass | r512, r513 | FIXED in FreeP Avalonia (shapes, fills) and FreeP WPF (shapes, bullets); FreeW watermark cache moved off a single evicting slot; FreeW's other decodes already cached, converter/import paths are not per-paint |
 | Undisposed Avalonia bitmap (no finalizer) | r513 | Avalonia's Bitmap declares no Finalize, so an abandoned one leaks permanently; the remedy is a never-evicting identity cache, NOT eager Dispose, which would risk a queued draw op replaying freed pixels |
 | Capture-then-apply index (FreeX) | r529 | clean; cells are KEY-addressed so no positional range exists, and 8 of 9 sheet-index sites are guarded/loop-bounded. MoveSheetCommand.Revert is unguarded but unreachable (sheets removed only by commands on one LIFO stack) and contained by the bus -- recorded with its trigger, not hardened |
+| Event subscription multiplying across undo/redo | r530 | clean; exactly ONE event subscription exists in the model+command layers and it already uses remove-first. Adjacent finding: chart position IS snapshot-restored on undo (identity-keyed), but nothing pinned it -- now covered |
 
 ## Known unswept - named so they are a decision, not an oversight
 
