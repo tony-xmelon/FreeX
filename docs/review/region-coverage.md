@@ -12210,3 +12210,44 @@ The find needed all three of the last rounds and none of them alone. r533 taught
 renders as an unchanged `[...ShapeAnimation; ...ShapeAnimation]` and the command is filed noChange.
 r534 unblocked the constructors. r535 made the arguments reach something. The floor moves 17 -> 32
 and records the progression (6, 12, 18, 19, 34).
+
+## r536 - two "defects" that were my instrument fabricating evidence, and the limit that explains them
+
+r535's fix was one command whose `Apply` was weaker than its own `HasEffect`, so this round ran the
+sibling sweep r521 requires. Statically the signature is unique: exactly ONE FreeP command tests a
+shape `Kind` in `HasEffect`, and it is the one already fixed. The census sweeps the broader class
+behaviourally for every constructible command through its false-no-effect check, which is how r535
+was found - so the only real gap is the 27 commands the census cannot construct at all.
+
+Reviewing my own r534 fallback showed why several stay blocked: it SKIPS parameterless constructors,
+so a type the fixture itself builds with `new()` - `ShapeAnimation` among them - can never be
+supplied. Allowing it (last, after richer constructors) dropped blocked types 27 -> 14 and turned the
+run RED on two commands.
+
+Both were my fabrications, and the diagnosis matters more than the fix.
+
+  CommentMutationCommand      sl1.co1.Author=Author -> sl1.co1.Author=
+  ReplaceCustomShowsCommand   pr.CustomShows=[] -> [PresentationCustomShow]
+
+Neither takes a target and mutates it. Both take the PREVIOUS STATE AS A CONSTRUCTOR ARGUMENT -
+`CommentMutationCommand(label, slideIndex, index, before, after)` and
+`ReplaceCustomShowsCommand(before, after)` - and `Revert` restores that argument. Supplying it is the
+CALLER'S contract. Invent it and the driver hands the command a before-state inconsistent with the
+model, then reports the command for faithfully honouring it. A default-constructed `SlideComment` has
+`Author = ""`, so undo "loses" an author the command was never told about.
+
+**The limit, stated so a later round does not rediscover it as a bug:** a census that invents
+constructor arguments cannot validate undo for commands that take the previous state as an argument.
+For those, "Revert restores `_before`" is true by construction, and any mismatch with the live model
+is the driver's fabrication rather than the command's failure.
+
+So the fallback is reverted rather than shipped with two red commands or - worse - with the census
+"fixed" to accept them. A false positive in an instrument is more expensive than a gap: the gap is
+visible in `notConstructible`, while a false positive invites the next round to change working code,
+which is exactly what r516 had to retract. The skip now carries that reasoning at the point of the
+decision.
+
+Coverage is unchanged at 34 exercised and no product code moved. The honest summary is that the
+sibling sweep found nothing new and the attempt to widen the census found a limit rather than a
+defect - which is worth a round, because the alternative was shipping an instrument that manufactures
+findings.
