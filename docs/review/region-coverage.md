@@ -12702,3 +12702,49 @@ later round should pin first, since r492 already found an OOM reachable through 
 The class is now swept in all three apps. What is NOT claimed: that every parse site in the repo is
 guarded. The sweep covered the IO layers, where file and clipboard input enters; parses in the app and
 presentation layers were not read.
+
+## r550 - the shared tier, where one parser serves all three apps
+
+r549 closed the three IO layers and recorded the app, presentation and SHARED layers as unread. The
+shared tier is the one that mattered: a parser there is reached by FreeX, FreeW and FreeP at once, so
+a single unguarded site is three defects wearing one coat.
+
+Measured first rather than read blind - 111 sites across those layers, but they do not carry equal
+risk, and saying so is the point. The app and presentation layers parse mostly USER INPUT from dialog
+fields, where returning false already means "reject what was typed"; the shared tier contains the two
+that read FILES.
+
+  - `DrawingMlCoordinateUnits.EmuToPixels(string?)` converts a coordinate straight out of drawing XML
+    and already returns 0 for anything unparseable. An overflowing literal returned INFINITY PIXELS.
+  - `OpcCustomDocumentProperties.GetDouble` reads a file-controlled custom property and already
+    returns null for unparseable input.
+
+Reproduced before fixing: the tests were written first and failed 5 of 8, with the three
+ordinary-coordinate cases passing, so the instrument was known good before the guard existed.
+
+`ZoomPercentPolicy` is the interesting third. It parses with `NumberStyles.Number`, which does NOT
+allow an exponent, so `1e400` cannot reach it - but a four-hundred-digit paste still overflows to
+Infinity, so the site is reachable by a duller route than the one the sweep was built around. What
+settles it as an omission rather than a judgement call is `PageMarginTextPolicy` in the SAME TIER,
+which already rejects with an explicit `IsNaN || IsInfinity`. One policy guards, its sibling does not.
+
+Not changed, deliberately: the app and presentation layers' remaining sites. They parse text a user
+typed into a box, the parse result is validated against a range immediately afterwards, and
+`ZoomPercentPolicy.TryParsePercentInRange` shows why that is usually enough - `ContainsPercent`
+rejects Infinity because every comparison against it fails, and `ClampPercent` bounds it. Guarding
+those would be hardening on a hypothesis (r460), and the ledger records the reasoning rather than
+implying the sweep covered them.
+
+Because the change is in the shared tier, verification is all three apps rather than the one whose
+test I wrote - the whole-repo FreeX lane plus every FreeW and FreeP lane.
+
+Process note, because it nearly shipped. After editing three files in two different shared projects I
+built ONE of them - `Free.Shared.Drawing` - saw "Build succeeded", ran the test I had written against
+that project, and moved on. The `ZoomPercentPolicy` edit in `Free.Shared.AppServices` did not compile
+at all: the `||` landed OUTSIDE the `if`'s closing paren. Only the three-app sweep caught it, and only
+because a shared-tier change forces a full build.
+
+Building the project your test happens to touch is not verifying the change; the unit of verification
+is every project you EDITED. A green test against project A says nothing about project B, and the
+failure mode is silent in exactly the way that matters - a passing test run alongside code that never
+compiled.
