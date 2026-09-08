@@ -12353,3 +12353,33 @@ enums and delegates (a command needing a live model object is counted unbuildabl
 null); and r537's before/after-pair skip, so a command that restores the state it was HANDED cannot
 be reported for honouring it. The remaining numbers are visible rather than hidden - 51 unbuildable,
 64 noChange, 0 threw - so the next round can see exactly where the reach ends.
+
+## r540 - the census answered every enum with its own default value
+
+r539 left FreeW's census reporting 64 noChange - commands that construct and then find nothing to
+do. r535 showed that bucket is where the coverage is, so I listed its members instead of guessing at
+the fixture. The list clustered, and one cluster made no sense: `SetCellAlignmentCommand`,
+`SetCellTextDirectionCommand`, `SetCellBordersCommand` and the merge commands were all filed
+noChange, in a census whose fixture already contains a 2x2 table at block index 0 that their
+arguments demonstrably reach.
+
+The cause is in the driver, not the fixture. `ValueFor` answered every enum with
+`Enum.GetValues(type).GetValue(0)`, and value 0 is almost always the type's own default -
+`TableCellVerticalAlignment.Top`, `VerticalMergeState.None`, `CellTextDirection.Horizontal`. So the
+census was asking each of these commands to set a property to the value it already held, observing
+that nothing changed, and filing that as the command having no effect. **Every "set an enum property"
+command in FreeW was invisible to its own undo census.**
+
+Answering with the LAST value instead: **exercised 10 -> 14**, noChange 64 -> 60, failures still 0.
+
+The part worth recording is where the fix already existed. FreeP's census does NOT have this bug - it
+takes `.Skip(1).FirstOrDefault()`, deliberately stepping past the default, which some earlier round
+worked out there. I built R539 by adapting r527's hostile-index census, which is the FreeW-local
+sibling and uses `GetValue(0)`, so I inherited the flaw by copying from the nearer relative rather
+than the better one. That is this program's most repeated finding - one path fixed, siblings left -
+turning up in the test instruments rather than the product, and it argues for reading ACROSS the
+three apps when building an instrument, not just the app being instrumented.
+
+r527 itself is left alone deliberately: its question is whether a command survives a hostile INDEX,
+and the enum argument is incidental to that. Changing it would alter what a different test means for
+no gain to its purpose.
