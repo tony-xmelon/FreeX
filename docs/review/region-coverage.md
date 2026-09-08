@@ -11993,3 +11993,46 @@ anchors. A chart built with `new ChartModel()` never moves, so every assertion w
 without exercising the code. The fixture sets `OneCell` deliberately, and each test asserts the chart
 actually MOVED before checking that undo put it back - the non-vacuity check belongs inside the test,
 not only in the neuter run.
+
+## r531 - snapshot aliasing: clean in all three apps, and clean for three different reasons
+
+The class: a command captures "previous state" by assigning a live collection or object to its
+snapshot field instead of copying it. The snapshot then mutates along with the model, and Revert
+restores the state the user is trying to undo. It is a silent undo failure with no exception to
+notice.
+
+**FreeX: closed at three levels, each checked.** Every snapshot in the command layer is a real copy -
+the six candidates my first pattern returned all turned out to be multi-line `.ToDictionary(...)`
+expressions, which the pattern could not see because it only excluded copy calls on the SAME line.
+That is the r522 lesson again in miniature: the shape of the search decided the first answer.
+
+Copying a dictionary still SHARES its values, so the second level matters more than the first. Those
+values are `HyperlinkMetadata`, `CellTextRun`, `CellPhoneticGuide` and `string` - all `sealed record`
+or immutable - so sharing them cannot corrupt a snapshot. The third level is the one interface that
+could still hide a mutable object: `RichTextRuns` is
+`Dictionary<CellAddress, IReadOnlyList<CellTextRun>>`, and a read-only interface can be backed by a
+live `List`. Nothing casts one back (`(List<CellTextRun>)` appears nowhere) and nothing mutates a
+stored entry in place - entries are always replaced wholesale.
+
+Worth stating why no test is added here: dictionary-level aliasing is ALREADY pinned by the ordinary
+undo tests, because Apply clears the very dictionary an aliased snapshot would point at, so those
+tests would fail. A new test would assert something already asserted, which r528 established is worse
+than none.
+
+**FreeW and FreeP: two shallow snapshots exist, and sharing is the CORRECT choice at both.**
+`ChangeDrawingGroupChildZOrderCommand` captures `Children.ToArray()` and `ChildOffsets.ToArray()`.
+The array copy shares the child objects, which is right because the command only changes ORDER -
+Revert restores the original ordering of the same objects, and copying the children would replace
+them with clones the rest of the document no longer references.
+
+One sequencing detail looked wrong and is not. `EnsureOffsetSlot` GROWS `ChildOffsets`, and it runs
+AFTER both snapshots are taken, so Revert restores a possibly shorter offsets list. That is faithful
+undo rather than a bug: the padding is an incidental normalisation, not user intent, and the
+pre-command state is what undo owes the user. The separate offsets snapshot is itself evidence the
+author reasoned about this. It is also already pinned - the command has undo assertions in
+`DrawingGroupModelTests` and `R199_GroupChildZOrderNoOpTests`.
+
+So this round adds no code and no test, deliberately. The value is that the class is now closed by
+NAMED MECHANISM in each app - immutable value types in FreeX, order-only mutation in FreeW/FreeP -
+rather than by an absence of grep hits, which is the difference between "checked" and "not looked at"
+that r503 and r511 established.
