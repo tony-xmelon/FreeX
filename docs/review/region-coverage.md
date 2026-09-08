@@ -12665,3 +12665,40 @@ Stated plainly: those five tests pin the geometry path behaviourally. The chart,
 are fixed by the same one-line contract and covered by the build and the lane sweep, not by their own
 behavioural tests - the fixture cost per site is high and the change is uniform. A later round wanting
 that coverage should start with axis min/max, which has the worst consequence.
+
+## r549 - FreeX's readers, and a reader that MANUFACTURES a NaN rather than passing one through
+
+The third app in the r547/r548 sweep, and the one where the write/read asymmetry is sharpest: r546
+found FreeX's WRITERS already guarded, which is exactly why its readers had to be checked separately
+rather than assumed to match.
+
+77 sites is too many to read honestly in one pass, so they were ranked by file first: 21 already
+carried a finite check, and the unguarded ones cluster where the values matter - drawing geometry (6),
+ODS column widths and row heights (7), gradient stops, theme tints, header/footer picture dimensions.
+Thirteen fixed.
+
+**The rotation reader is the find worth naming.** It normalises with
+
+    degrees = rotation / 60000;  degrees %= 360;  return degrees < 0 ? degrees + 360 : degrees;
+
+Infinity / 60000 is Infinity, and **Infinity % 360 is NaN**. So the reader did not pass a bad value
+through - it CONVERTED one bad value into a different one, and NaN then sails past `degrees < 0`
+because every comparison with NaN is false. A crafted `rot="1e400"` produced a NaN rotation on a
+picture, and since the writer refuses non-finite (r546), reading was the only way to get one there and
+nothing downstream would have explained where it came from.
+
+That is a third distinct way this class hides, alongside the two already recorded: `Math.Clamp` that
+bounds Infinity but passes NaN (r547, r548), and a comparison guard like `< 0` or `<= 0` that NaN
+defeats by failing every comparison (`ReadDrawingOutlineWidthPoints` here). All three LOOK like guards.
+The only reliable check is `double.IsFinite`, and the only reliable review method is reading the site
+rather than grepping for the presence of something guard-shaped.
+
+Five tests drive the picture path end to end - save a real .xlsx, patch `rot`, load it back - and
+neutering the guard fails all four hostile spellings while the ordinary 33-degree rotation stays
+green. As in r548, the remaining sites are fixed by the same one-line contract and covered by the
+build and lane sweep rather than by individual behavioural tests; the ODS width path is the one a
+later round should pin first, since r492 already found an OOM reachable through that file.
+
+The class is now swept in all three apps. What is NOT claimed: that every parse site in the repo is
+guarded. The sweep covered the IO layers, where file and clipboard input enters; parses in the app and
+presentation layers were not read.
