@@ -12507,3 +12507,34 @@ tie them to today's decision instead of to the invariant that makes the file val
 must still write 25000, and a value at the representable edge must pass through unclamped, so a fix
 that mangled real values could not hide behind the boundary cases. Reverting the formatters fails the
 boundary theory cases.
+
+## r545 - sweeping r544's own fix found the same defect at three more attributes
+
+r544 fixed the two percentage formatters and stopped there. The sibling sweep r521 requires found
+that the writer casts a double to a bounded integer in several more places, and one of them is the
+identical defect:
+
+  RotationDeg = double.PositiveInfinity   ->   <a:xfrm rot="9223372036854775807">
+
+`ST_Angle` is an xsd:int exactly as ST_Percentage is, so this is r544's defect at an attribute r544
+did not touch - one path fixed, siblings left, in my own fix from the previous round. Five `rot`
+sites route through a clamped `FormatAngleUnits` now, which is two more than the three my first grep
+listed; the substitution count is what showed the grep had been narrower than the code.
+
+The motion-path coordinates needed a DIFFERENT fix, and the difference is the point. `a:pt/@x` is
+`ST_Coordinate`, an xsd:LONG, so casting a coordinate to long is the right width and only the
+non-finite case is wrong. Clamping those to int would have been wrong - it would corrupt legitimate
+large coordinates - so `FormatCoordinate` guards non-finite and leaves the magnitude alone. Same root
+cause, different correct remedy, because the schema type differs. Treating "clamp to int" as the
+lesson from r544 rather than "honour the declared type" would have introduced a bug while fixing one.
+
+Two errors of mine worth recording. The regex `\(long\)seg\.([A-Z][0-9]?)` matched `seg.W` inside
+`seg.WR`, leaving a stray `R` and breaking the build - the compiler caught it, but a capture that
+matches a PREFIX of a longer identifier is a rewrite hazard whenever the property set has both `W`
+and `WR`. And my first angle test read the first `xfrm` in document order, which is the slide's group
+transform and carries no `rot`, so it failed with a NullReferenceException rather than a wrong value.
+A test that dies before asserting is not evidence about the product; selecting the element that
+declares the attribute fixed it.
+
+Thirteen tests now cover both attributes, including that an ordinary 45 degrees still writes 2700000
+and an ordinary crop still writes 25000. Reverting the angle formatter fails the boundary cases.
