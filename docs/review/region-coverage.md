@@ -12469,3 +12469,41 @@ is recorded as such rather than counted as a passing neuter.
 The strongest honest statement is therefore: the check is wired, it runs on every exercised command,
 the identical check in FreeP has caught real defects, and FreeW currently has none among the commands
 this census can reach.
+
+## r544 - an infinite crop wrote a number the file format cannot represent
+
+Five rounds of instrument work (r539-r543) found no product defects, so this round went back to
+product code with the technique the notes call highest-yield: feed extreme-but-representable values
+through a writer and read the file back.
+
+The first probe was nearly VACUOUS and saying so is the useful part. Reflecting over `SlideShape`'s
+writable `double` properties found exactly ONE - shape geometry is EMU longs - so a clean result
+there would have meant almost nothing. Counting what a probe actually exercised is the difference
+between "no defects" and "no test".
+
+Going at the writer instead: it formats doubles at ~13 sites and guards exactly TWO, both media
+milliseconds. `FormatPercentFraction` and `FormatSignedPercentFraction` scale a fraction by 100,000
+and cast straight to `long`. .NET's conversions saturate, so:
+
+  CropLeft = double.PositiveInfinity   ->   <a:srcRect l="9223372036854775807" .../>
+
+DrawingML percentages are `ST_Percentage`, an **xsd:int**. That value cannot be represented in the
+type at all, and PowerPoint rejects the file. NaN happens to be harmless (.NET converts it to 0), and
+a merely large finite value overflows the same way -- 1e18 saturates identically.
+
+Nothing upstream defends: `CropLeft`, `Brightness`, `Contrast`, `BiLevelThreshold` and `AlphaModPct`
+are plain auto-properties with no clamping, so the writer is the last place the invariant can hold -
+and the right place, because the constraint belongs to the FILE FORMAT rather than to any one command
+that might set the value.
+
+**The clamp is to what the format can hold, not to a semantic range.** `int` is a fact about
+ST_Percentage; "a crop cannot exceed 100%" would be a guess about intent that the schema itself does
+not make, and r516 is what guessing costs. Non-finite becomes 0, which is what .NET already produced
+for NaN.
+
+The tests pin the boundary rather than the policy: they assert the written attribute PARSES AS THE
+XSD:INT the schema declares, not that it equals some chosen substitute. Asserting a substitute would
+tie them to today's decision instead of to the invariant that makes the file valid. An ordinary crop
+must still write 25000, and a value at the representable edge must pass through unclamped, so a fix
+that mangled real values could not hide behind the boundary cases. Reverting the formatters fails the
+boundary theory cases.
