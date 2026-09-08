@@ -78,6 +78,7 @@ defects outside that shape.
 | Snapshot aliases live state (undo restores nothing) | r531 | clean in all three apps, by different mechanisms: FreeX copies every dictionary AND its value types are immutable records/strings (the one IReadOnlyList is never cast back or mutated in place); FreeW/FreeP hold two shallow snapshots where sharing element references is correct because only ORDER is mutated |
 | Excel exact-answer quirks (1900 leap year, near-zero arithmetic) | r532 | clean and pinned; 1900-02-29 handled explicitly with 1904-system support (279 test refs), and RoundTo15SignificantDigits on every arithmetic result gives Excel's 0.1+0.2-0.3 = 0 |
 | Stale or aliased dependency-graph edge | r532 | clean; SetDependencies clears before adding (symmetric for cell AND range precedents), and the cached-plan path shares only frozen/array data the graph never mutates |
+| FreeP undo census blind to nested model collections | r533 | FIXED (coverage): Describe now walks animations (+motion path), comments (+replies) and group children recursively; fixture seeds every slide with TWO of each so invented indices land. Exercised 18 -> 19 |
 
 ## Known unswept - named so they are a decision, not an oversight
 

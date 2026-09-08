@@ -12090,3 +12090,44 @@ time bound for the few scripts that build projects, rather than raising the shar
 weaken stall detection for every other script. Their measurement (71s warm, past five minutes cold on
 a shared runner) matches what I saw. The r516 procedure of "treat a 5-minute duration on that one test
 as timing and re-run it warm" is therefore RETIRED, and the memory note carrying it has been corrected.
+
+## r533 - the census could not see into animations, comments or groups, and seeing was only a third of it
+
+r532 measured that FreeP has the thinnest undo coverage of the three apps and named its undo
+CORRECTNESS as the next target. FreeP already has a census for that
+(`R441_EveryConstructiblePresentationCommandUndoesExactly`), so the useful question was not whether to
+write one but what the existing one is BLIND to.
+
+`Describe` fingerprints the presentation, and `Reflect` renders a collection element as its
+`ToString()` - for a model object, the bare type name. r481 fixed exactly this for masters and layouts
+and its comment predicted the next level. It was right. The walk reached slides' Shapes and
+masters'/layouts' Placeholders, and NOT `slide.Animations`, `slide.Comments`, a shape's `Children`
+(so nested groups), custom geometry, connection sites, media bookmarks, caption tracks, or a
+comment's replies. A command editing any of those applies a real change, produces an identical
+fingerprint, is filed as noChange, and has its undo and redo checked by nothing.
+
+Extending the walk did NOT fix that, and measuring is the only reason I know. Exercised stayed at
+exactly 18 - the pre-existing number - because the fixture seeds none of those containers, so the new
+walks had nothing to look at.
+
+Seeding them on slide 0 did not fix it either, which is r481's own lesson one level in: seeding the
+container is half of it, the invented arguments have to REACH it. The factory answers `int` with 1,
+so `RemoveShapeAnimationCommand(slideIndex: 1, animationIndex: 1)` addresses nothing when the only
+animation sits at index 0 of slide 0. Seeding EVERY slide, with TWO entries per list so an invented
+index of 1 lands on something, moved exercised 18 -> 19.
+
+So the honest result is a chain of three necessary conditions, only the third of which produced a
+number: walk the collection, seed the container, and make the seeded indices match what the factory
+invents. One more FreeP command now has its undo actually verified instead of silently skipped, and
+the walk is in place for every future command that touches an animation, a comment, or a group child
+- which is what r481 shows pays off later, since that round's identical fix is why masters and layouts
+are covered at all today.
+
+The floor moves 16 -> 17 and its message records the progression (6 at first writing, 12 before r481,
+18 before r533, 19 today) so a future fall reads as the sweep quietly stopping rather than the
+commands having improved.
+
+Recursion guard, because a group can contain a group: `ReflectShape` caps at depth 16. A group that
+contained itself - through a malformed file or a bad command - would otherwise recurse until the test
+host dies of an uncatchable StackOverflow, which r501 established is the one failure mode a test
+cannot report.
