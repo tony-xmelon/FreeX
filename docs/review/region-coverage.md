@@ -12383,3 +12383,35 @@ three apps when building an instrument, not just the app being instrumented.
 r527 itself is left alone deliberately: its question is whether a command survives a hostile INDEX,
 and the enum argument is incidental to that. Changing it would alter what a different test means for
 no gain to its purpose.
+
+## r541 - the fixture kept contorting to fit one invented index, so the driver started sweeping
+
+r540 left 55-60 commands in noChange, so I went after the largest remaining cluster: the six chart
+commands. `ChartAt(context, paragraphIndex, runIndex)` needs `Blocks[0]` to be a PARAGRAPH carrying a
+chart run. r539 had just moved a TABLE to `Blocks[0]`, because the table commands need it to be a
+table. Both are index 0 because 0 is the only int the factory invents.
+
+**No fixture satisfies both.** That is the point at which the pattern became visible: r481 lined up
+placeholder ids to 2, r535 moved a chart to slide 1 and shape id 2, r539 moved a table to block 0 -
+three rounds spent contorting the FIXTURE so that the one constant the driver invents happened to
+address the thing under test. The constant was the problem.
+
+The index is now a SEED the census sweeps (0, 1, 2), taking the first value that actually changes the
+document. A command whose target sits at block 1 is not a command with no effect; it is a command the
+driver was pointing at the wrong block.
+
+  exercised   14 -> 19
+  noChange    60 -> 55
+  failures     0
+
+Five more commands, no fixture change, and the conflict dissolves: table commands find the table at
+whatever index it occupies, chart commands find a paragraph at another. It also retires the trap
+rather than documenting it again - the fixture comment that warned "seeding the container is half of
+it, the arguments have to reach what you seeded" was true three times, and is now the driver's job
+instead of the reader's.
+
+Worth being precise about what this does NOT do. The 51 unbuildable are unchanged: they need live
+model objects the factory will not fake, which is r528's honesty rule and stays. And a command whose
+target needs a seed above 2 is still filed noChange - the sweep is bounded, because an unbounded one
+would turn a fast census into a slow one for diminishing return. Both limits are in the failure
+message rather than in my head.
