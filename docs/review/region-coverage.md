@@ -12169,3 +12169,44 @@ So: coverage of one KIND grew and coverage of the more valuable kind did not, an
 17 rather than moving, because nothing about verified undo improved. Recording the distinction is the
 point - a future round reading "27 blocked" instead of "39" should not read that as twelve more
 commands having their undo checked.
+
+## r535 - r534's null result was my own wrong id, and correcting it found a real defect
+
+r534 seeded a chart into the census fixture, measured no change in `exercised`, reverted the seed and
+recorded that "measurement refused to support the theory". The theory was right. The SEED was wrong:
+it gave the chart `Id = 6`, while every chart command looks up shape id **2** on slide index **1**,
+because that is what the factory invents for `uint` and `int`. I got wrong the exact detail r481 and
+r533 are about, and then wrote the null result up as if it had settled the question.
+
+That is worth stating plainly because the failure mode is subtle: a null measurement is only evidence
+about the thing you actually tested. I tested a chart the commands could not find, and concluded
+something about commands that need a chart.
+
+With the id corrected - the chart takes id 2 on slides 1 and 2, since slide 0 already owns id 2 for
+its body shape - **exercised went 19 -> 34**, the largest single gain in this census since it was
+written, and the run came back RED.
+
+**The defect: `ConvertSmartArtToShapesCommand` does not enforce its own precondition in Apply.**
+
+  HasEffect: ShapeHelper.Find(...) is { Kind: SlideShapeKind.SmartArt } && _converted.Count > 0
+  Apply:     FindContainingList(...) is not null && _converted.Count > 0 && index >= 0
+
+`HasEffect` requires the shape to BE SmartArt. `Apply` only required that some shape carry that id.
+Applied where that id is anything else, it removes that shape from the slide, inserts the stored
+conversion in its place, and drops every animation pointing at the id - destroying a shape it was
+never asked to convert. The animation removal itself is correct and deliberate (it mirrors
+DeleteShapeCommand, dropping build-list entries that would otherwise point at an absent shape); the
+bug is that Apply gets there at all. Apply now re-checks `Kind != SlideShapeKind.SmartArt` and
+returns, which is the precondition the command already advertises.
+
+Reachability, stated honestly: the bus consults HasEffect immediately before Apply, so the ordinary
+path cannot reach this. What makes it worth fixing rather than recording - the r529 test - is that
+this is not an inert guard on a hypothetical path. It is a command whose two entry points disagree
+about what they operate on, the disagreement is currently OBSERVABLE (the census reproduces it), and
+the fix makes Apply agree with the contract HasEffect already states rather than adding a new one.
+
+The find needed all three of the last rounds and none of them alone. r533 taught `Describe` to see
+`slide.Animations`; without it the failure signature - `sl1.Animations=[...] -> sl1.Animations=[]` -
+renders as an unchanged `[...ShapeAnimation; ...ShapeAnimation]` and the command is filed noChange.
+r534 unblocked the constructors. r535 made the arguments reach something. The floor moves 17 -> 32
+and records the progression (6, 12, 18, 19, 34).

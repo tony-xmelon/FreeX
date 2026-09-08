@@ -80,6 +80,7 @@ defects outside that shape.
 | Stale or aliased dependency-graph edge | r532 | clean; SetDependencies clears before adding (symmetric for cell AND range precedents), and the cached-plan path shares only frozen/array data the graph never mutates |
 | FreeP undo census blind to nested model collections | r533 | FIXED (coverage): Describe now walks animations (+motion path), comments (+replies) and group children recursively; fixture seeds every slide with TWO of each so invented indices land. Exercised 18 -> 19 |
 | FreeP census constructor blockers | r534 | blocked types 39 -> 27 via a recursive record/class fallback in the argument factory; twelve more commands now driven through HasEffect+Apply (so the false-no-effect check covers them), but exercised stayed 19 -- constructible is NOT exercised |
+| Apply weaker than its own HasEffect precondition | r535 | FIXED in ConvertSmartArtToShapesCommand: HasEffect required Kind==SmartArt, Apply required only that the id exist, so it destroyed a non-SmartArt shape and its animations. Found by the census once r533/r534/r535 made it reachable |
 
 ## Known unswept - named so they are a decision, not an oversight
 
