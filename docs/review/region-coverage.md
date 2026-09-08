@@ -12131,3 +12131,41 @@ Recursion guard, because a group can contain a group: `ReflectShape` caps at dep
 contained itself - through a malformed file or a bad command - would otherwise recurse until the test
 host dies of an uncatchable StackOverflow, which r501 established is the one failure mode a test
 cannot report.
+
+## r534 - twelve commands unblocked, and the honest number is that undo coverage did not move
+
+r533 left the census exercising 19 of FreeP's commands, with its own floor message saying the rest
+"need domain objects this factory cannot invent". That is a measurable claim, so I measured it: a
+throwaway probe ranked every command type with no usable constructor by what blocks it.
+
+**39 blocked types**, and unlike r447 - where `MasterEditTarget` alone blocked six constructors -
+there was no dominant blocker. After `IEnumerable<>` (4) and `ShapeAnimation` (2) the tail was nine
+distinct `Chart*Options` types blocking ONE constructor each. Nine hand-written cases would have
+unblocked nine commands and left the tenth for the next round.
+
+They are all POSITIONAL RECORDS, so the general fix is to build any record or class the way the
+commands themselves are built: from a constructor whose parameters the factory can already supply,
+recursively, capped at depth 4. That stays inside r528's honest-arguments rule - it composes a real
+value out of real parts and never passes null to satisfy a signature, so a NullReferenceException
+from a command would still be the command's fault and not the driver's.
+
+Blocked types fell **39 -> 27**.
+
+**And `exercised` stayed at exactly 19.** The twelve newly-constructible commands build fine and then
+change nothing. I tried the obvious next step - the fixture seeds no chart, so I seeded a chart shape
+on the theory that the Chart*Options commands had nothing to act on - and measured 19 again. That
+seed was reverted: it is fixture state added on a hypothesis that measurement refused to support,
+which is the r529 rule applied to my own change.
+
+What the fallback DOES buy is worth stating precisely, because "constructible" and "exercised" are
+different claims and only one of them is coverage. Those twelve commands are now driven through
+`HasEffect` and `Apply` every run, so the census's false-no-effect check - the one that catches a
+command reporting no effect while really changing something, which r443 added because the bus skips
+such a command entirely and the user's click vanishes - now covers twelve more commands than it did.
+None of them registers in `exercised`, which counts only commands that change state and get their
+undo verified.
+
+So: coverage of one KIND grew and coverage of the more valuable kind did not, and the floor stays at
+17 rather than moving, because nothing about verified undo improved. Recording the distinction is the
+point - a future round reading "27 blocked" instead of "39" should not read that as twelve more
+commands having their undo checked.
