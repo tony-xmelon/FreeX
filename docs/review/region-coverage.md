@@ -11898,3 +11898,62 @@ not a port.
 Also noted: `TestCommandContext.GetSheet` throws `KeyNotFoundException` for a missing sheet. That is
 correct for a fixture but makes it unusable as a census harness, since every throw it produced would
 be the harness's and not the command's.
+
+## r529 - FreeX cannot take the census, and the reason corrects r528
+
+r528 ended by saying FreeX needs its own hostile-index census with a `SheetId`/`CellAddress`
+argument factory, "separate work, not a port". Doing that work first meant asking what FreeX's
+hostile index actually IS, and the answer retires the recommendation.
+
+**Cells are addressed by KEY, not position.** `Sheet.GetCell` is
+`_cells.GetValueOrDefault((row, col))` and writing creates on demand. A sparse dictionary has no
+range to be out of, so "out-of-range `CellAddress`" is not a reachable state - it returns null or
+creates a cell. The whole capture-then-apply class comes from POSITIONAL indices into dense lists
+(FreeW's `Blocks[i]`, FreeP's `Slides[i]`); FreeX's cell layer has none. A census keyed on a hostile
+`CellAddress` would have exercised 227 commands and asserted nothing about this class.
+
+**The dense collection FreeX does have is sheets, and it is nine sites, eight clean.** Guarded
+(`DuplicateSheetsCommand` bounds-checks against `Count` - r526's insert bound, not `Count - 1`),
+loop-bounded (`StructuredTable*`, `InsertDeleteRows`), or resolved adjacent to use. The best of them
+is `Commands.cs:630`, a *Revert* that re-resolves its column through `FindIndex` instead of reusing a
+captured index - the shape that makes the whole class impossible, and it is already in the codebase.
+
+**The ninth is an asymmetry I am recording rather than fixing.** `MoveSheetCommand.Apply` validates
+both indices through `IsValidIndex`; its `Revert` calls `Workbook.MoveSheet(_toIndex, _fromIndex)`
+with no check, and `MoveSheet` does not check either - it indexes `_sheets` directly and calls
+`Insert`. That is r526's exact shape: Apply guards, Revert does not, and Revert holds the older
+index.
+
+I did not add the guard, because two independent facts make it inert. Sheets are removed ONLY by
+commands - `Workbook.RemoveSheet` has no non-command caller in production - and those commands share
+one LIFO undo stack per workbook, so a delete's undo always runs before an older move's. And the bus
+contains a throwing `Revert` deliberately: it calls `RollbackPopUndo(entry)` to keep the undo chain
+intact and returns a failed outcome. Adding an unreachable guard is hardening on a hypothesis, which
+is what r460 rules out and what r516 had to retract.
+
+What this entry buys a later round is the TRIGGER rather than the guard: if a non-command path to
+`RemoveSheet` is ever added, or sheet stacks ever become per-window rather than per-workbook, that
+Revert becomes live and should be guarded then.
+
+**The deliverable is that the existing guards were unpinned.** No test in 46,000 asserted that
+either command refuses an out-of-range index; both guards could have been deleted with the suite
+still green. Eight tests now pin the refusal, the clean message, and - because a guard that rejects
+AFTER mutating would satisfy an outcome-only assertion - that the sheet order is untouched. Removing
+both guards fails exactly 6 of the 8, with the two valid-input tests still green, so the neuter is
+targeted and the tests are not vacuous.
+
+Also worth noting for FreeX specifically: its bus wraps Apply, undo and redo in try/catch, so this
+class is a quality bar here as in FreeP, not the crash guard it was in FreeW.
+
+Verification numbers: FreeX build clean, DefaultTests 46265/0 on a full total of 46419, UiTests 6641
+total with its only failure the docs-preflight timeout - the script itself reports "Generated
+documentation checks passed" in 39 seconds and the test passes warm in 18, which is r516's recorded
+procedure rather than an assumption that a timeout is benign.
+
+The first DefaultTests attempt reported failed=0 passed=0 total=0 and exited 0. That is a DEAD RUN
+wearing the shape of a clean one: the log was 224 bytes, two header lines and no summary, against
+55KB for the real run. It is the same tell as the missing-`bc` episode - read the TOTAL, because a
+zero there is the only thing separating "nothing failed" from "nothing ran". I checked the plausible
+cause before believing it, too: the project it died on belongs to this whole-repo lane by design, the
+solution has not changed in many rounds, and r528 ran that same project at 741 passed. A run died;
+the lane is fine.
