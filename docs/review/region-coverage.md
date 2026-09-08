@@ -12036,3 +12036,57 @@ So this round adds no code and no test, deliberately. The value is that the clas
 NAMED MECHANISM in each app - immutable value types in FreeX, order-only mutation in FreeW/FreeP -
 rather than by an absence of grep hits, which is the difference between "checked" and "not looked at"
 that r503 and r511 established.
+
+## r532 - three clean probes, and a measurement that explains nineteen rounds of results
+
+Three probes into FreeX's calc/formula core, chosen because each has an EXACT right answer rather
+than a judgement call. All three came back clean AND already pinned:
+
+**The 1900 leap-year quirk.** Excel deliberately treats 1900 as a leap year, so serial 60 is the
+nonexistent 29 Feb 1900, and a spreadsheet that "fixes" this shifts every earlier date by a day.
+FreeX handles it explicitly - a dedicated parse case for `2/29/1900`, `effectiveYear == 1900` special
+cases, and 1904-date-system support throughout - under 279 test references and dedicated test files.
+
+**Excel's near-zero arithmetic correction.** `=0.1+0.2-0.3` must be exactly 0, not 5.55e-17. FreeX
+gets there by applying `RoundTo15SignificantDigits` to EVERY arithmetic result, which chains
+correctly: 0.1+0.2 rounds to exactly the double nearest 0.3, so the subtraction is exact. Pinned by
+`R77_ArithmeticResult15SigRoundingTests`.
+
+**Dependency-graph staleness and aliasing.** `SetDependencies` calls `ClearDependencies` first -
+remove-before-add, symmetric for both cell and range precedents - so a formula change cannot leave a
+stale edge. The aliasing question underneath it is more interesting, and the answer is the REVERSE of
+the naive expectation: the cached-template path deliberately SHARES its range list while the
+fresh-caller path COPIES. That is correct both ways round. The cached plan is built with
+`ToFrozenSet()` and `ToArray()`, so it owns immutable data that many cells can share as a memory win
+that copying would defeat; the caller's own list is mutable, so the graph copies it. I verified the
+invariant this rests on rather than assuming it: the graph never mutates a stored range list
+anywhere (zero sites).
+
+**The measurement.** Three clean probes here against 82 defects in FreeW's command layer over
+r520-r527 invited an explanation, so I measured instead of guessing. Counting `Revert` methods in
+production against test files that call `Revert`:
+
+| app   | Revert methods | test files calling Revert | ratio |
+|-------|----------------|---------------------------|-------|
+| FreeX | 233            | 383                       | 1.64  |
+| FreeW | 126            | 21                        | 0.17  |
+| FreeP | 132            | 14                        | 0.11  |
+
+FreeX's undo paths carry roughly TEN TIMES the test-file coverage per Revert method that FreeW's do,
+and fifteen times FreeP's. That is the likeliest explanation for this program's whole shape: r529's
+FreeX sweep came back clean and r520-r527's FreeW sweeps did not, and the difference is far more
+plausibly where the tests are than where the care was.
+
+It also names the next target concretely. FreeP has the THINNEST undo coverage of the three and has
+had the least defect-hunting in this program - r528's census cleared it, but that census only drives
+hostile INDEX arguments, which says nothing about whether Revert restores the right STATE. That is a
+different class with its own history here (r438 and r441 both found FreeP undo restoring a value
+without unwinding the structure the setter created), and it is where the numbers say to look next.
+
+**Superseded while this round was in flight.** A parallel session fixed the docs-preflight timeout I
+have been re-running warm since r514, and it reached the same diagnosis from the opposite direction:
+it failed the 0.8.188 RELEASE, not a review round. The fix is better than my workaround - a per-script
+time bound for the few scripts that build projects, rather than raising the shared bound, which would
+weaken stall detection for every other script. Their measurement (71s warm, past five minutes cold on
+a shared runner) matches what I saw. The r516 procedure of "treat a 5-minute duration on that one test
+as timing and re-run it warm" is therefore RETIRED, and the memory note carrying it has been corrected.

@@ -76,6 +76,8 @@ defects outside that shape.
 | Capture-then-apply index (FreeX) | r529 | clean; cells are KEY-addressed so no positional range exists, and 8 of 9 sheet-index sites are guarded/loop-bounded. MoveSheetCommand.Revert is unguarded but unreachable (sheets removed only by commands on one LIFO stack) and contained by the bus -- recorded with its trigger, not hardened |
 | Event subscription multiplying across undo/redo | r530 | clean; exactly ONE event subscription exists in the model+command layers and it already uses remove-first. Adjacent finding: chart position IS snapshot-restored on undo (identity-keyed), but nothing pinned it -- now covered |
 | Snapshot aliases live state (undo restores nothing) | r531 | clean in all three apps, by different mechanisms: FreeX copies every dictionary AND its value types are immutable records/strings (the one IReadOnlyList is never cast back or mutated in place); FreeW/FreeP hold two shallow snapshots where sharing element references is correct because only ORDER is mutated |
+| Excel exact-answer quirks (1900 leap year, near-zero arithmetic) | r532 | clean and pinned; 1900-02-29 handled explicitly with 1904-system support (279 test refs), and RoundTo15SignificantDigits on every arithmetic result gives Excel's 0.1+0.2-0.3 = 0 |
+| Stale or aliased dependency-graph edge | r532 | clean; SetDependencies clears before adding (symmetric for cell AND range precedents), and the cached-plan path shares only frozen/array data the graph never mutates |
 
 ## Known unswept - named so they are a decision, not an oversight
 
