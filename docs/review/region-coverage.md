@@ -12442,3 +12442,30 @@ rather than glossing: r535 had already contorted FreeP's fixture to match the co
 finds little new ground here. The change still earns its place - it removes the dependency on that
 contortion, so a future fixture edit cannot silently un-exercise commands - but as coverage it is
 small, and r538's bucket did more work in this round than the feature did.
+
+## r543 - the census I built last round was missing the check its sibling always had
+
+Comparing the two censuses once more, in the direction r540 established, turned up a gap in MINE.
+FreeP's has checked REDO since it was written - Apply, Revert, Apply again, and the second Apply must
+reproduce the first - and the FreeW census I wrote in r539 did not. That is this program's most
+repeated finding, one path fixed and siblings left, appearing in my own instrument one round after I
+wrote it, and about the sibling I had explicitly read while writing it.
+
+Redo is its own class here rather than a variation on undo: r457 and r458 both found a command that
+reapplied correctly EXCEPT for minting a fresh id, so the document read as identical while the
+identity underneath had changed. A census comparing only Apply against Revert cannot see that.
+
+**Result: no redo failures across the 19 exercised FreeW commands.**
+
+Evidence for that number, stated at its real strength. The check demonstrably EXECUTES and its
+assertion reports: comparing `redone` against `before` - a fingerprint that must differ, since the
+command changed the document - fails the census with the redo message, so the path runs and the
+assertion is wired. What I do NOT have is a behavioural neuter proving it catches a real redo defect
+in FreeW. I tried one - removing `_appliedAt = -1` from `InsertTableRowCommand.Revert` - and it was
+inert, because that command's Apply recomputes its insertion point rather than depending on the
+reset. That is a small positive fact about the command and no evidence at all about the check, so it
+is recorded as such rather than counted as a passing neuter.
+
+The strongest honest statement is therefore: the check is wired, it runs on every exercised command,
+the identical check in FreeP has caught real defects, and FreeW currently has none among the commands
+this census can reach.

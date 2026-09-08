@@ -86,6 +86,7 @@ defects outside that shape.
 | FreeW undo correctness (does Revert restore?) | r539 | clean; new census drives every constructible command with VALID arguments and requires Revert to restore the fingerprint exactly -- 10 exercised, 0 failures, neuter-verified. 51 unbuildable / 64 noChange record where its reach ends |
 | Census answers enums with their default value | r540 | FIXED in FreeW R539 (last value, not first): every set-an-enum-property command was setting the value it already held and being filed noChange. exercised 10 -> 14. FreeP already stepped past the default; the flaw came from copying the nearer sibling |
 | Census fixture contorted to one invented index | r541, r542 | FIXED: the index is a swept SEED (0,1,2), not the constant 0, so each command finds its own target. exercised 14 -> 19 with no fixture change; dissolves the conflict where chart commands need Blocks[0] to be a Paragraph and table commands need it to be a Table |
+| FreeW census missing the redo check | r543 | FIXED: Apply-Revert-Apply now verified against the first Apply, matching FreeP. No redo failures among 19 exercised commands; assertion verified to fire, but no behavioural neuter found for FreeW (the one tried was inert) |
 
 ## Known unswept - named so they are a decision, not an oversight
 
