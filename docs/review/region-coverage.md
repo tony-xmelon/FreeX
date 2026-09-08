@@ -12748,3 +12748,41 @@ Building the project your test happens to touch is not verifying the change; the
 is every project you EDITED. A green test against project A says nothing about project B, and the
 failure mode is silent in exactly the way that matters - a passing test run alongside code that never
 compiled.
+
+## r551 - verifying r550's own claim, which turned out to be mostly right and specifically wrong
+
+r550 asserted that the app and presentation layers were safe because they "parse text a user typed,
+and the result is range-validated immediately after", and left ~90 sites unread on that reasoning.
+This round checked the assertion instead of repeating it. The result is the reason the check was
+worth doing: the claim holds for most planners and fails for a few, and the failures are not random.
+
+**Where it holds, and why that is not luck.** FreeW's chart visual planner - the scariest-looking
+path, since its values come from a FILE rather than a dialog - is guarded in four separate places:
+`ChartValueAxisPlan.FromSeries` skips non-finite while accumulating, `CalculateNiceStep` refuses a
+non-finite step, and `BuildScatterAxis` opens with `values.Where(double.IsFinite)`. The consumer
+defends, so the parse sites feeding it do not have to. That is a genuine clean result, recorded so a
+later round does not re-open it.
+
+**Where it fails: the polarity of the range check.** Two spellings that read as the same rule behave
+oppositely against a non-finite value.
+
+    width > 0 && width <= 12        // ACCEPT form  - rejects NaN (fails >0) and Infinity (fails <=12)
+    || parsedSize <= 0              // REJECT form  - rejects NEITHER
+
+NaN fails every comparison, so the reject form does not reject it; and with no upper bound there is
+nothing for Infinity to fail either. `BordersAndShadingDialogPlanner` uses the accept form and is
+safe. `FontDialogPlanner` uses the reject form, so typing `1e400` - or literally `NaN` - into the font
+size box put a non-finite into `RunFormatting`, which text layout then reads.
+
+That is the FOURTH disguise this class wears, after `Math.Clamp` passing NaN (r547, r548), a bare
+comparison guard defeated by NaN (r549), and `rot % 360` manufacturing NaN from Infinity (r549). All
+four look like validation.
+
+Measured rather than assumed, again: FreeW guards in 3 of 12 dialog files, against FreeX 10 of 12 and
+FreeP 13 of 19. FreeW is the outlier here exactly as it was in r547's readers (0 of 12), so this round
+is scoped to FreeW's dialog layer - seven sites, fixed at the parse helpers so the guard holds
+whichever polarity a caller's range check uses.
+
+Eight tests, three of them non-vacuity cases pinning that ordinary sizes still pass, including 1638 -
+Word's own maximum - so a guard that rejected the top of the real range would fail. Neutering the font
+size guard fails exactly the three hostile spellings and leaves the ordinary sizes green.
