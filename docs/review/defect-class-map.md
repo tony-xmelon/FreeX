@@ -88,6 +88,7 @@ defects outside that shape.
 | Census fixture contorted to one invented index | r541, r542 | FIXED: the index is a swept SEED (0,1,2), not the constant 0, so each command finds its own target. exercised 14 -> 19 with no fixture change; dissolves the conflict where chart commands need Blocks[0] to be a Paragraph and table commands need it to be a Table |
 | FreeW census missing the redo check | r543 | FIXED: Apply-Revert-Apply now verified against the first Apply, matching FreeP. No redo failures among 19 exercised commands; assertion verified to fire, but no behavioural neuter found for FreeW (the one tried was inert) |
 | Numeric written outside what the format can represent | r544, r545 | FIXED in FreeP: an infinite/overflowing crop wrote srcRect l=9223372036854775807, but ST_Percentage is an xsd:int, so PowerPoint rejects the file. Writer now clamps to the format range; model has no clamping anywhere upstream |
+| Model double cast WIDER than the schema attribute type | r544, r545, r546 | FIXED in FreeP (percentages, angles) and FreeW (16 sites incl. shape/WordArt/group rotation); FreeX clean by construction. Signature: (long) into an xsd:int -- saturation lands outside the type; an (int) cast saturates to a representable value and is safe |
 
 ## Known unswept - named so they are a decision, not an oversight
 

@@ -12538,3 +12538,52 @@ declares the attribute fixed it.
 
 Thirteen tests now cover both attributes, including that an ordinary 45 degrees still writes 2700000
 and an ordinary crop still writes 25000. Reverting the angle formatter fails the boundary cases.
+
+## r546 - the same writer defect in FreeW, and the signature sharpened to explain who has it
+
+r544 and r545 found FreeP writing values its own model permits but the file format cannot represent.
+The cross-app sibling sweep this program keeps rewarding says to ask the same question of FreeX and
+FreeW.
+
+**FreeW: the same defect, at sixteen sites.** `DocxWriter` scales a model double and casts to `long`
+for every DrawingML attribute the schema declares as a bounded integer. Reproduced before fixing:
+
+  RotationAngle = +inf  ->  <a:xfrm rot="9223372036854775807">
+  BrightnessPct = -inf  ->  <a:lum bright="-9223372036854775808">
+  SaturationPct = 1e15  ->  <a:satMod val="1000000000000000000">
+
+Nothing upstream defends - `RotationAngle`, `BrightnessPct`, `ContrastPct`, `SaturationPct`,
+`TransparencyPct`, `ColorTemperature`, the crop edges and `BorderWidthPt` are all plain
+`public double { get; set; }` with no clamping - so the writer is the last place the invariant can
+hold, and the right place, because the constraint belongs to the FILE FORMAT rather than to any
+command.
+
+Five of the sixteen are rotations on SHAPES, WORDART, CHARTS, SMARTART and GROUPS rather than images.
+Fixing only the image path - the one the probe happened to reproduce - would have been this program's
+most repeated mistake committed in the round that exists to sweep for it.
+
+**FreeX: clean, and clean deliberately.** All three of its rotation writers call a `NormalizeRotation`
+that returns 0 for non-finite before taking `% 360`, and `XlsxSourceRectangleRatioCodec.Format` clamps
+to [-1, 1] BEFORE the cast, which handles infinity and NaN alike. FreeX already had both guards that
+r544 and r545 had to add to FreeP. That makes FreeP - and now FreeW - the outliers rather than FreeX
+the exception.
+
+**The signature is sharper than "double cast to an integer".** FreeW's RTF and WordML-2003 writers
+cast doubles to integers in five more places and are NOT defective, because they cast to `int`: .NET's
+floating-point conversions SATURATE, so `(int)` of infinity is `int.MaxValue`, which an xsd:int
+attribute can hold. The defect needs the cast width to EXCEED the declared width - `(long)` into an
+xsd:int - so that saturation lands outside the type. That is why FreeX's `Math.Clamp((int)...)` sites
+are safe even with the clamp after the cast, and it turns "look for casts" into a signature that
+predicts which sites are defective instead of listing candidates to read.
+
+The fix mirrors FreeP's r545 helper deliberately, so the three writers now hold the invariant the same
+way. Coordinates are explicitly NOT routed through it: `a:ext/@cx` is ST_PositiveCoordinate, an
+xsd:long, and clamping those to int would corrupt legitimately large geometry - r545's lesson that the
+remedy follows the declared type rather than the previous round's shape.
+
+Ten tests pin the boundary rather than a policy - each asserts the written attribute PARSES AS THE
+XSD:INT the schema declares, not that it equals a chosen substitute - so they survive a future
+decision to clamp differently but not a value the format cannot hold. Ordinary values must still
+write unchanged (45 degrees -> 2700000, +20% brightness -> 20000, 150% saturation -> 150000), so a fix
+that mangled real documents could not hide behind the boundary cases. Reverting the helper fails
+exactly the nine boundary cases and leaves the ordinary-values test green.
