@@ -12415,3 +12415,30 @@ model objects the factory will not fake, which is r528's honesty rule and stays.
 target needs a seed above 2 is still filed noChange - the sweep is bounded, because an unbounded one
 would turn a fast census into a slow one for diminishing return. Both limits are in the failure
 message rather than in my head.
+
+## r542 - porting r541's seed sweep to FreeP, and the instrument bug the throw count caught
+
+r540 established that the two censuses hold fixes the other lacks, so r541's seed sweep gets ported
+back. FreeP invented `int = 1` and `uint = 2` as CONSTANTS - and r535 moved a chart onto slide 1 with
+shape id 2 to meet them, which is the fixture contorting to fit the driver that r541 retired.
+
+One design difference, and it matters. FreeW could sweep a single number; FreeP cannot, because its
+two constants are NOT independent - a chart command needs `slideIndex 1` AND `shapeId 2` together, so
+one shared value cannot express the pair. The seed is therefore a PAIR, swept over four combinations,
+with the historical pair first so that everything exercised before this change still is.
+
+**The throw count is what caught my own bug.** First run: exercised 39 -> 40, and `threw` 6 -> 8. r538
+had classified that bucket and written that a seventh entry "reads as a new thing to look at", so I
+looked. The two newcomers - `SetShapeTextColumnCountCommand`, `SetSummaryZoomTileLayoutCommand` -
+were `TargetInvocationException`, constructor validation, r538's benign class. But they were NEW,
+and the reason was a regression I had just introduced: a later seed's constructor rejecting its
+argument threw out of the seed loop into the OUTER catch, so a command being exercised perfectly well
+at seed 0 was filed as `threw` instead. The sweep was losing coverage while appearing to add it.
+
+Catching construction per seed restores `threw` to exactly r538's six and leaves exercised at 40.
+
+The honest gain is therefore **one command**, against FreeW's five, and the reason is worth recording
+rather than glossing: r535 had already contorted FreeP's fixture to match the constants, so the sweep
+finds little new ground here. The change still earns its place - it removes the dependency on that
+contortion, so a future fixture edit cannot silently un-exercise commands - but as coverage it is
+small, and r538's bucket did more work in this round than the feature did.
