@@ -12587,3 +12587,42 @@ decision to clamp differently but not a value the format cannot hold. Ordinary v
 write unchanged (45 degrees -> 2700000, +20% brightness -> 20000, 150% saturation -> 150000), so a fix
 that mangled real documents could not hide behind the boundary cases. Reverting the helper fails
 exactly the nine boundary cases and leaves the ordinary-values test green.
+
+## r547 - the inverse direction: non-finite values ENTERING the model, and the overflow that gets them there
+
+r544-r546 defended the WRITE side in all three apps. The inverse question is the one r486 left open in
+FreeP and never asked of FreeW: what puts a non-finite value into the model in the first place?
+
+**The reachability argument is much stronger than "the file says Infinity".** Since .NET Core stopped
+throwing on overflow, `double.TryParse` returns TRUE with +/-Infinity for an ordinary-looking literal:
+
+  TryParseLengthPt("1e400pt", out var pt)  ->  true, pt = Infinity
+
+No hostile intent and no special token is required - a broken producer, a bad unit conversion upstream,
+or a copied stylesheet is enough. Reproduced end to end before fixing anything: pasting
+`<span style="font-size:1e400pt">` through the HTML importer left `FontSizePt = Infinity` in the model,
+and writing that document produced `w:sz="2147483647"`.
+
+That `w:sz` is worth noting precisely because it is NOT a schema violation: the writer casts to `int`,
+so .NET's saturation lands on a representable value, exactly as r546's sharpened signature predicts.
+The defect here is not the file - it is a non-finite sitting in the document model, which is the class
+r485 and r486 established as worth closing at the boundary.
+
+FreeW's twelve reader parse sites were read EXHAUSTIVELY rather than sampled, which is affordable at
+twelve and is what separates this from a grep count. Two use `NumberStyles.Integer` and cannot produce
+a non-finite at all; six were unguarded and are fixed; one (`ParseVmlOpacity`) was PARTIALLY guarded in
+a way worth recording - `Math.Clamp` bounds Infinity but PASSES NaN THROUGH, so the clamp that looked
+like a guard was not one.
+
+Every fix applies the site's OWN existing contract rather than a new policy: `TryParseLengthPt` already
+returns false for a length it cannot represent, the ODT and WordML readers already return null, the VML
+loop already skips unusable declarations, and `ParseVmlOpacity` already returns 1 for an absent value.
+Infinity is not a length, so it is reported the way every other unusable input already was. That is
+r535's argument - make the code agree with the contract it already advertises - rather than r516's
+mistake of inventing one.
+
+Nine tests, including two non-vacuity cases that pin ordinary values still parsing (12pt stays 12pt,
+16px still converts to 12pt) so a guard that rejected everything could not pass. The ODT case
+round-trips through the real adapter and rewrites one attribute afterwards, so the reader is exercised
+rather than a private helper. Neutering both guards fails six of the nine and leaves the three
+ordinary-value tests green.
