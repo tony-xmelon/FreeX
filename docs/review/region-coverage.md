@@ -12287,3 +12287,34 @@ their own terms, rather than just reverting and moving on. The tell was sitting 
 "both take before and after" - and only had to be recognised as mechanical rather than conceptual.
 
 Floor moves 32 -> 37, recording the progression (6, 12, 18, 19, 34, 39).
+
+## r538 - the census counted six throws and asserted they were harmless; nobody had looked
+
+The census buckets every command it drives, and one bucket - `threw` - was covered by a catch whose
+comment says "a generic argument can be invalid for a particular command; that is a limit of the
+factory, not a defect." That is an ASSUMPTION sitting where a finding would be, and the FreeW
+headless-swallow episode is what a catch like that costs when the assumption is wrong: 21 real
+failures, three of them product bugs, hidden behind a helper that filed them as acceptable.
+
+So I identified the six. They split cleanly, and the split is the result.
+
+**Five are constructor validation** - `SetPictureCropCommand`, `SetSummaryZoomTargetsCommand`,
+`SetSummaryZoomTilePropertiesCommand`, `SetZoomCoverImageCommand`, `SetZoomObjectPropertiesCommand` -
+each throwing `TargetInvocationException`, which is what reflection reports when the CONSTRUCTOR
+rejects an argument. A command validating its inputs and refusing an invented one is precisely the
+factory limit the comment claims, so for these the assumption holds.
+
+**One throws at execution and is a different animal.** `SetChartDataTableOptionsCommand` throws a
+bare `ArgumentException` - not wrapped, so it comes from Apply rather than construction. `ParseColor`
+rejects the factory's invented `"probe"` because it is not `#RRGGBB`.
+
+The interesting question is r510's: does a throw partway through Apply leave the model torn? Here it
+cannot, for a structural reason worth recording. Apply builds a NEW `ChartDataTableSettings`, styles
+it (which is where ParseColor runs), and only then assigns `chart.DataTable`. The single mutation of
+the chart happens after everything that can throw. Build-then-commit, not mutate-then-validate - and
+that ordering, not luck, is what makes the class impossible in this command.
+
+No code changed. What changed is that the comment now records the verified classification instead of
+an unexamined claim, so the next reader inherits the check rather than repeating it - and a SEVENTH
+entry appearing in that bucket is now visibly a new thing to look at rather than more of a number
+someone already decided was fine.
