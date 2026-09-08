@@ -83,6 +83,7 @@ defects outside that shape.
 | Apply weaker than its own HasEffect precondition | r535 | FIXED in ConvertSmartArtToShapesCommand: HasEffect required Kind==SmartArt, Apply required only that the id exist, so it destroyed a non-SmartArt shape and its animations. Found by the census once r533/r534/r535 made it reachable |
 | Census limit: commands taking the previous state as an argument | r536, r537 | NOT checkable, but now DETECTED mechanically (r537): the tell is two parameters of the same non-primitive type, so they are skipped and the rest of the fallback is safe to keep (exercised 34 -> 39, blocked 27 -> 20). CommentMutationCommand and ReplaceCustomShowsCommand take before+after as constructor args, so Revert restoring the invented before is correct by construction; inventing it manufactures false undo failures |
 | Census throw bucket assumed harmless | r538 | CHECKED: 5 of 6 are constructor validation rejecting invented arguments (the claimed factory limit); the 6th (SetChartDataTableOptions) throws at execution but cannot tear state -- Apply builds a new settings object and assigns it last |
+| FreeW undo correctness (does Revert restore?) | r539 | clean; new census drives every constructible command with VALID arguments and requires Revert to restore the fingerprint exactly -- 10 exercised, 0 failures, neuter-verified. 51 unbuildable / 64 noChange record where its reach ends |
 
 ## Known unswept - named so they are a decision, not an oversight
 

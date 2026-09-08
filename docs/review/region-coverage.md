@@ -12318,3 +12318,38 @@ No code changed. What changed is that the comment now records the verified class
 an unexamined claim, so the next reader inherits the check rather than repeating it - and a SEVENTH
 entry appearing in that bucket is now visibly a new thing to look at rather than more of a number
 someone already decided was fine.
+
+## r539 - FreeW gets the undo census it never had, and I pay the seeding lesson three times
+
+r532 measured FreeW at 126 `Revert` methods against 21 test files mentioning Revert - about a tenth
+of FreeX's ratio - and r527 had already built FreeW a hostile-index census that asks whether commands
+THROW. Nothing asked whether they UNDO. That is the instrument that found a real defect in FreeP
+three rounds after being sharpened (r535), so FreeW gets the same one.
+
+**Result: zero undo failures across 10 exercised commands**, and the census is proven able to fail -
+deleting one line from `InsertTableRowCommand.Revert` makes it fail and name the command with a
+readable diff (`doc.PlainText=cell 00<tab>cell 01 -> doc.PlainText=<tab>`).
+
+Getting to 10 cost the same lesson three times in one round, which is the part worth writing down.
+
+1. I wrote `Describe` carrying the exact blind spot r533 documented: a `Table` renders its `Rows` as
+   a row of bare type names, so every table command mutated the document invisibly and was filed
+   noChange.
+2. I seeded a table. The numbers did not move - the walk did not exist yet.
+3. I added the walk. The numbers STILL did not move, because the factory invents `int` as 0 and my
+   table sat at block index 2.
+
+Moving the table to block index 0 took exercised 7 -> 10. That is r481's ids and r535's slide index
+in a third costume, and it is now written into the fixture comment where the next person meets it:
+seeding the container is half of it, the arguments have to reach what you seeded.
+
+Two neuters, and the first one does not count. Deleting the `if (!TryGetTable(...)) return;` line
+left `revertTable` undefined, so the build failed - and a compile error proves nothing about a test,
+which is r512's lesson. Removing the mutation line instead keeps the method compiling and produces a
+real failure.
+
+The census carries the honesty rules its siblings earned: arguments invented only from primitives,
+enums and delegates (a command needing a live model object is counted unbuildable rather than fed a
+null); and r537's before/after-pair skip, so a command that restores the state it was HANDED cannot
+be reported for honouring it. The remaining numbers are visible rather than hidden - 51 unbuildable,
+64 noChange, 0 threw - so the next round can see exactly where the reach ends.
