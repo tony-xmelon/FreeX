@@ -12626,3 +12626,42 @@ Nine tests, including two non-vacuity cases that pin ordinary values still parsi
 round-trips through the real adapter and rewrites one attribute afterwards, so the reader is exercised
 rather than a private helper. Neutering both guards fails six of the nine and leaves the three
 ordinary-value tests green.
+
+## r548 - the same sweep in FreeP, and r486 turns out to have fixed one family and left four
+
+r547 closed FreeW's reader boundary and recorded FreeX's 77 and FreeP's 17 sites as unswept. FreeP
+first, because 17 can be read EXHAUSTIVELY rather than sampled.
+
+Two of the seventeen were already guarded, and both are r486's - `ReadMediaMilliseconds` and the
+animation `to` parser. The other fifteen were not, and they are not obscure: chart data points, chart
+axis MIN and MAX, chart marker size, chartEx colour positions, preset-geometry adjustments, custom
+GEOMETRY PATH coordinates, and the ink parsers in the PDF exporter.
+
+So r486 guarded the two parsers whose defect it had reproduced and left the rest of the same file
+alone. That is this program's most repeated finding, in my own earlier fix, and it is the second time
+in two rounds (r547 found the same shape in r486's FreeW-side gap). The detail that makes it sting is
+that r485's OWN LEDGER ENTRY records the mechanism -- ".NET parses 'Infinity' and overflows '1e999' to
+it" -- so the fact was written down two rounds before the sweep that should have followed it.
+
+Worth singling out:
+
+  - `axis.Min` / `axis.Max` from `<c:min val="1e400"/>`. An infinite axis bound feeds tick generation,
+    which is r485's unbounded-scale class rather than a cosmetic wrong number.
+  - `ParsePathDouble`, custom-geometry path coordinates, which propagate into the drawn path.
+  - The colour-alpha reader clamps with `Math.Clamp(value / 100000.0, 0, 1)` and so looked guarded.
+    It is not: Math.Clamp BOUNDS INFINITY BUT PASSES NaN THROUGH. That is the identical trap r547
+    found in FreeW's `ParseVmlOpacity`, in a different app, found only because the sweep read the
+    site instead of grepping for the presence of a clamp.
+
+Every fix applies the site's own existing contract - return null, return 0, skip the declaration -
+so an unrepresentable number is reported the way an unparseable one already was.
+
+Five tests drive the geometry-adjustment path end to end: write a real .pptx, patch one attribute the
+way a broken producer would, read it back, require every adjustment to be finite. Neutering that one
+guard reproduces all four hostile spellings verbatim (`read back as ∞`, `-∞`, `NaN`) while the
+ordinary-adjustment test stays green, so the neuter is targeted and the assertions are not vacuous.
+
+Stated plainly: those five tests pin the geometry path behaviourally. The chart, path and ink sites
+are fixed by the same one-line contract and covered by the build and the lane sweep, not by their own
+behavioural tests - the fixture cost per site is high and the change is uniform. A later round wanting
+that coverage should start with axis min/max, which has the worst consequence.

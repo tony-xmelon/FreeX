@@ -89,7 +89,7 @@ defects outside that shape.
 | FreeW census missing the redo check | r543 | FIXED: Apply-Revert-Apply now verified against the first Apply, matching FreeP. No redo failures among 19 exercised commands; assertion verified to fire, but no behavioural neuter found for FreeW (the one tried was inert) |
 | Numeric written outside what the format can represent | r544, r545 | FIXED in FreeP: an infinite/overflowing crop wrote srcRect l=9223372036854775807, but ST_Percentage is an xsd:int, so PowerPoint rejects the file. Writer now clamps to the format range; model has no clamping anywhere upstream |
 | Model double cast WIDER than the schema attribute type | r544, r545, r546 | FIXED in FreeP (percentages, angles) and FreeW (16 sites incl. shape/WordArt/group rotation); FreeX clean by construction. Signature: (long) into an xsd:int -- saturation lands outside the type; an (int) cast saturates to a representable value and is safe |
-| Non-finite ENTERING the model from a parsed file/clipboard | r547 | FIXED at 6 FreeW reader sites: double.TryParse returns true with Infinity on overflow (1e400), so no hostile token is needed. NumberStyles.Integer sites cannot; Math.Clamp bounds Infinity but passes NaN. FreeX/FreeP readers not yet swept |
+| Non-finite ENTERING the model from a parsed file/clipboard | r547, r548 | FIXED at 6 FreeW reader sites: double.TryParse returns true with Infinity on overflow (1e400), so no hostile token is needed. NumberStyles.Integer sites cannot; Math.Clamp bounds Infinity but passes NaN. FreeX/FreeP readers not yet swept FreeP swept exhaustively in r548 (15 of 17 sites unguarded; r486 had fixed 2). FreeX's 77 still unswept |
 
 ## Known unswept - named so they are a decision, not an oversight
 
