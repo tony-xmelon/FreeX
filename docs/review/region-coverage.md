@@ -12251,3 +12251,39 @@ Coverage is unchanged at 34 exercised and no product code moved. The honest summ
 sibling sweep found nothing new and the attempt to widen the census found a limit rather than a
 defect - which is worth a round, because the alternative was shipping an instrument that manufactures
 findings.
+
+## r537 - the limit r536 recorded turned out to have a mechanical tell
+
+r536 reverted a census widening because it produced two false findings, and recorded the reason: a
+command taking the PREVIOUS STATE as a constructor argument cannot be censused for undo, since Revert
+restoring an invented before-state is correct by construction. I treated that as a wall. It is not -
+those commands have a signature.
+
+  CommentMutationCommand(string label, int slideIndex, int index, SlideComment? before, SlideComment? after)
+  ReplaceCustomShowsCommand(IEnumerable<PresentationCustomShow> before, IEnumerable<PresentationCustomShow> after)
+
+**Two parameters of the same NON-PRIMITIVE type.** The non-primitive restriction is the whole trick:
+plenty of legitimate commands take two ints - a slide index and a shape index - so a naive
+"duplicate parameter type" rule would gut the census instead of sharpening it.
+
+With `TakesABeforeAfterPair` skipping exactly those, the parameterless-constructor fallback r536 had
+to withdraw goes back in:
+
+  exercised          34 -> 39
+  notConstructible   27 -> 20
+  failures            0
+
+Five more commands now have their undo verified, seven more are constructible, and nothing is
+fabricated. That recovers most of what r536's revert cost while keeping the property that made the
+revert right.
+
+The trade is stated in the code rather than hidden: a command taking two shapes for an HONEST reason
+- a connector's two endpoints, say - is skipped as well. That costs coverage, which is visible in
+`notConstructible`, instead of manufacturing a finding, which is not. Same asymmetry r536 argued, now
+paying for a much smaller exclusion: two command shapes rather than thirteen.
+
+Worth noting what made this round cheap: r536 wrote down WHY the two commands were unfixable, in
+their own terms, rather than just reverting and moving on. The tell was sitting in that description -
+"both take before and after" - and only had to be recognised as mechanical rather than conceptual.
+
+Floor moves 32 -> 37, recording the progression (6, 12, 18, 19, 34, 39).

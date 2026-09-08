@@ -81,7 +81,7 @@ defects outside that shape.
 | FreeP undo census blind to nested model collections | r533 | FIXED (coverage): Describe now walks animations (+motion path), comments (+replies) and group children recursively; fixture seeds every slide with TWO of each so invented indices land. Exercised 18 -> 19 |
 | FreeP census constructor blockers | r534 | blocked types 39 -> 27 via a recursive record/class fallback in the argument factory; twelve more commands now driven through HasEffect+Apply (so the false-no-effect check covers them), but exercised stayed 19 -- constructible is NOT exercised |
 | Apply weaker than its own HasEffect precondition | r535 | FIXED in ConvertSmartArtToShapesCommand: HasEffect required Kind==SmartArt, Apply required only that the id exist, so it destroyed a non-SmartArt shape and its animations. Found by the census once r533/r534/r535 made it reachable |
-| Census limit: commands taking the previous state as an argument | r536 | NOT checkable by this instrument. CommentMutationCommand and ReplaceCustomShowsCommand take before+after as constructor args, so Revert restoring the invented before is correct by construction; inventing it manufactures false undo failures |
+| Census limit: commands taking the previous state as an argument | r536, r537 | NOT checkable, but now DETECTED mechanically (r537): the tell is two parameters of the same non-primitive type, so they are skipped and the rest of the fallback is safe to keep (exercised 34 -> 39, blocked 27 -> 20). CommentMutationCommand and ReplaceCustomShowsCommand take before+after as constructor args, so Revert restoring the invented before is correct by construction; inventing it manufactures false undo failures |
 
 ## Known unswept - named so they are a decision, not an oversight
 
