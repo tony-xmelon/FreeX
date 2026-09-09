@@ -113,6 +113,7 @@ defects outside that shape.
 | One-sided accept form on a DURATION | r571 (rule), r573 | FIXED in AnimationPanePlanner and PresentationTransitionCommandPlanner: "seconds >= 0" admits Infinity, and (int)Math.Round(seconds*1000) then saturates to int.MaxValue ms -- about 24.8 days |
 | Tripwire watching one SPELLING of its own class | r486 (built), r574 (widened) | The r486 scan matched "out var name" only, missing "out value" / "out double x" -- so r571-r573 found by hand what it existed to catch. Widened + upper-bound rule encoded; found 4 more one-sided guards |
 | Non-finite chart scalar (68 call sites) | r574 (named), r575 (fixed) | FIXED in XlsxChartScalarReader.ReadOptionalDouble: manual-layout X/Y/W/H, chart page margins and trendline periods all read unguarded from the chart part. Named in r574 as an aside and nearly left open |
+| Non-finite into a cell via the FORMULA door | r562, r563, r569, r576 | PARTLY FIXED: VALUE("NaN") rejected in ValueScalar. Guarding the shared coercion broke 64 tests -- this engine has FUNCTIONS report domain errors. VALUE("1E309") still yields Infinity, pinned by an accessibility test; needs real Excel to settle |
 
 ## Known unswept - named so they are a decision, not an oversight
 

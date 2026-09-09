@@ -13557,3 +13557,39 @@ weaker than one recorded as an obligation, and the difference is whether the nex
 without re-deriving anything.
 
 FreeX build clean, DefaultTests 46463/0 on a full total of 46617.
+
+## r576 - the formula door, and two fixes that were too broad
+
+r562 disproved "a cell value cannot be non-finite"; r563 censused the typed and paste doors; r569
+closed the .ods reader. The remaining writer is the FORMULA engine's text-to-number coercion, and
+`=VALUE("NaN")` put NaN straight into a cell.
+
+**Three attempts, and the narrowing is the substance.**
+
+Attempt 1 guarded the shared `ExcelTextNumberParser.TryParse`: **64 failures**. The broken tests -
+`ExcelParity...`, `..._ReturnsNumError` - encode a deliberate design I had not understood: coercion
+DOES yield a non-finite, and each FUNCTION reports the domain error, so `PHI("1E309")` is #NUM! rather
+than #VALUE!. That is also why the arithmetic paths passed my probe: not by accident, by design.
+
+Attempt 2 guarded `ValueScalar` with `IsFinite`: **1 failure**.
+`AccessibilityCheckerServiceTests` deliberately pins `VALUE("1E309")>0` as TRUE, in a test whose
+subject is exactly this function's coercion and error semantics.
+
+Attempt 3 rejects **NaN only**, and the line is principled rather than convenient: "NaN" is not an
+Excel number literal at all, so no reading of `VALUE("NaN")` yields a number, whereas an OVERFLOW to
+Infinity is a magnitude outcome that a test deliberately pins. That is the same distinction Excel
+encodes as #VALUE! versus #NUM!. It is also COMPLETE for the defect actually reproduced: the original
+probe showed `VALUE("Infinity")` was already rejected by the parser, so NaN was the only reachable
+non-finite through this door.
+
+The 1E309 half is left unfixed and PINNED BY AN EXPLICIT TEST recording the current behaviour, the
+conflicting expectation, my reading that Excel answers #NUM!, the fact that Excel COM is not
+registered here, and what would settle it. Overturning a deliberately pinned expectation on an
+unverified reading is what r516 had to retract.
+
+**The lesson worth keeping: my eight tests passed under the change that broke 64 others.** Non-vacuity
+cases prove a guard does not over-reject WITHIN the surface they exercise; they say nothing about the
+other 46,000 tests. Only the full lane speaks for those, which is why the lane runs before every
+commit rather than after a suspicious one.
+
+FreeX build clean, DefaultTests 46472/0 on a full total of 46626.
