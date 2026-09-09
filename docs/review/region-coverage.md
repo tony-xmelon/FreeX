@@ -12864,3 +12864,38 @@ Instrument note. My first draft declared `namespace FreeP.App.Presentation.Tests
 `Presentation` resolve as a NAMESPACE and broke compilation of files I never touched. The existing
 tests use `FreeP.App.Compositor.Tests` for exactly that reason. A new test file can break a whole
 project without touching a line of it.
+
+## r554 - the input-source signature carried to the other two apps, and what it cleared
+
+r553 established that scoping by INPUT SOURCE predicts where this class lives, and applied it only to
+FreeP. This round asked the same question of FreeW's and FreeX's app and presentation layers, which is
+the sibling sweep r521 requires of any signature that works.
+
+**FreeW: nothing to fix, and the reason is structural.** Its 22 app-layer parse sites are almost all
+DIALOG planners - r551 already fixed seven - plus `ChartSmartArtVisualPlanner`, which r551 recorded as
+guarded in four places at the CONSUMER. FreeW's presentation layer simply has no file-controlled
+numeric surface beyond what is already covered: its file parsing lives in `FreeW.Core.IO`, swept in
+r547. A layer can be clean because of where its inputs come from, not because someone guarded it.
+
+**FreeX: one defect, in the reader nobody had reason to look at.**
+`ChartRenderPolicyPlanner.ParseErrorBarRangeCache` parses the `<c:v>` numeric cache out of a chart
+part's ERROR BAR xml. Reproduced before fixing: `<v>1e400</v>` parsed successfully to Infinity and was
+stored, and `NumberStyles.Float` accepts the literal `NaN` and `Infinity` too.
+
+The consequence is not cosmetic. Those values feed error-bar geometry in BOTH `ChartLayoutEngine` and
+`ChartRenderer.SeriesFormatting`, so an infinite one extends a bar without bound and reaches axis
+range - r485's unbounded-scale class rather than one wrong whisker.
+
+What makes this a good instance of the signature: the SAME FILE's other parse site, at line 51, is
+already guarded with an explicit `&& double.IsFinite(value)`. The author knew the class. The site they
+guarded reads a cell's display text; the one they missed reads chart XML. That is r526's ratio
+argument again - an omission against an established practice, in the same file, twenty lines apart.
+
+Also cleared, with the mechanism named: `TextToColumnsValueConverter` routes through a helper called
+`TryParseFiniteNumberWithValidGrouping` - the guard is in the name - and `ChartRenderPolicyPlanner`'s
+display-text path at line 51 carries its own `IsFinite`.
+
+Neuter note. My first attempt deleted `&& double.IsFinite(value))` and took the closing paren with it,
+so the build failed - r512's rule, a compile error proves nothing about a test. Replacing the
+condition with `&& true)` keeps the parens balanced, compiles, and fails exactly the five hostile
+spellings while both non-vacuity tests stay green.
