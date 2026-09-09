@@ -14374,3 +14374,41 @@ were decided by what Excel does rather than by what was convenient to implement.
 gone is the "undo restores the value but not the structure" class, and it is silent. Both halves were
 neutered independently — the clear (2 failures) and the restore (1) — because a fix that creates
 undo state and a fix that restores it are two claims.
+
+## r587 — asking the general question r586 only answered for one pair
+
+r586 fixed a workbook FreeX could save but not reload, and guarded the two COMMANDS that could create
+it. That leaves two questions it did not answer: is the table/autofilter pair the only such
+combination, and are those two commands the only roads to it?
+
+### Bounding the finding
+
+A pairwise probe places every ordered pair of overlapping entities — structured table, worksheet
+AutoFilter, merged region, data validation, conditional format, hyperlink — over the SAME range,
+saves, and reloads. Thirty pairs. The result is a clean bound rather than a new defect: **only
+table+autofilter, in both orders**, produces a file FreeX refuses to read. Every other combination
+round-trips. That is worth as much as a finding, because it says r586 was complete as a diagnosis and
+not merely the first instance of something wider.
+
+### But the commands were not the only road
+
+The probe builds the model DIRECTLY, and it still reproduced. r586's guards live in
+`ToggleWorksheetAutoFilterCommand` and `CreateStructuredTableCommand`, so any other road to the same
+model state — an `.fxl` load, a paste, a command not yet written — still produces the unreadable
+file. Guarding the paths known today is not the same as making the state unreachable.
+
+So the remedy moved to the WRITE chokepoint: `XlsxWorksheetAutoFilterXmlMapper.Save` now suppresses a
+worksheet autoFilter element that overlaps a structured table on the same sheet. The bad file becomes
+UNWRITABLE rather than merely unreachable, and the table keeps its own filter, which is what the
+overlap was expressing anyway.
+
+The overlap is computed on parsed `GridRange`s rather than on reference text, so a PARTIAL overlap
+("A1:B3" inside a table at "A1:D6") is caught as well as an exact match — ClosedXML refuses any
+overlap, not only an identical range, and a text comparison would have missed most of them.
+
+### Two layers, each verified alone
+
+Neutering the save-side guard fails the r587 tripwire while r586's command tests still pass, which is
+what defence in depth is supposed to look like: the layers are independent, and each was shown to
+carry weight on its own rather than inferred to. The commands give the user a clear message at the
+moment of the gesture; the writer guarantees the file.
