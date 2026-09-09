@@ -95,6 +95,7 @@ defects outside that shape.
 | Non-finite from a stored INK annotation | r555 | FIXED in SlideShowInkRenderPlanner: brush width and FreeP thicknessDip/opacity accepted Infinity and NaN while the trace coordinates beside them were already filtered. Math.Max(0.1, x) is NOT a guard -- it propagates NaN |
 | Non-numeric literal ranked as a number (Excel divergence) | r556 | FIXED in AutoFilterChecklistPlanner: text "NaN"/"Infinity" sorted in the numeric bucket, NaN ahead of every real number; Excel treats them as text. NOT a crash -- double.CompareTo gives a total order over NaN, so the comparer stays consistent |
 | Non-numeric literal ranked as a number -- FreeW half | r556, r557 | FIXED in ParagraphSort.TryParseNumber: "NaN" counted as parseable and sorted ahead of every real number in Word Sort > Number. Same non-crash reasoning as r556 (double.CompareTo is a total order) |
+| Non-finite from THEME format-scheme XML | r558 | FIXED in WorkbookTheme: shadow distance/direction, glow and soft-edge radius reached EmuToPixels(double) unguarded -- r550 had guarded only the STRING overload of that same shared helper. Guarding an overload is not guarding a method |
 
 ## Known unswept - named so they are a decision, not an oversight
 

@@ -12998,3 +12998,34 @@ before the fix and pass after.
 
 Writing a lesson into the ledger does not stop me repeating it a round later. What caught it both
 times was refusing to accept a partial reproduction as good enough.
+
+## r558 - theme effect geometry, and a shared helper whose OTHER overload was guarded
+
+r557 swept the three Core.Model layers and acted on one of the fourteen sites it listed. This round
+read the rest, ranked by r553's input-source question. Nine parse dialog or in-memory text. Five read
+a FILE, and two of those were defective.
+
+`WorkbookTheme.WithNativeFormatSchemeXml` parses a workbook's own format-scheme XML, so shadow
+distance and direction, glow radius, soft-edge radius and inner-shadow blur are all file-controlled.
+
+  - `ReadPositiveCoordinatePixels` guards with `coordinate <= 0` - r551's REJECT form, which stops
+    neither Infinity (fails the comparison) nor NaN (fails every comparison).
+  - `ReadAngleRadians` had NO range check at all, and an angle feeds sin/cos, so a non-finite
+    direction poisons BOTH shadow offsets even when the distance is perfectly ordinary. The test
+    records that case separately for exactly that reason.
+
+**The detail that makes this more than another site: the value lands in
+`DrawingMlCoordinateUnits.EmuToPixels(double)`, a bare division - and r550 guarded the STRING overload
+of that same method, in that same file, leaving the double one open.** My own fix, eight rounds ago,
+half-applied. The string overload is where a reader parses text itself; the double overload is where a
+reader parses first and converts second, which is exactly what WorkbookTheme does. Guarding an
+overload is not guarding a method.
+
+I fixed it at the theme readers rather than inside `EmuToPixels(double)`. That division is arithmetic
+on a number a caller has already decided to trust, and callers that have their own contract - "return
+0", "fall back to the default" - can express the failure meaningfully where the bare division cannot.
+Recorded so a later round sees a decision rather than an oversight.
+
+Both guards are neuter-verified INDEPENDENTLY, which is r555's lesson applied before it could bite:
+removing the coordinate guard fails five cases, removing the angle guard fails two, and together they
+account for all seven hostile cases. One neuter over a two-part fix would have proved only half of it.
