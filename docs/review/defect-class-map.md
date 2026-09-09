@@ -108,6 +108,7 @@ defects outside that shape.
 | Non-finite sparkline axis bound / line weight | r568 | FIXED in XlsxSparklineMapper. Also recorded: XlsxConditionalFormatClosedXmlMapper must NOT be guarded -- it mirrors ClosedXML's own numeric check by contract, so a finite test there would diverge from the library and reopen a quoting bug |
 | Non-finite entering the model from an .ods file | r562, r563, r569 | FIXED in OdsFileAdapter: the THIRD writer bypassing the evaluator. Both the office:value attribute and the text fallback needed guarding -- a value rejected by the first falls through and is re-parsed by the second |
 | Non-finite in the chartEx reader (cache + thresholds) | r570 | FIXED but NOT behaviourally tested: FreeX never writes a chartEx part (histograms save as classic chart1.xml), so no save-and-patch fixture can reach it -- the reader exists only for third-party files. Coverage rests on the build and lane sweep |
+| One-sided accept form admits Infinity | r551 (corrected), r571 | FIXED in the shared DialogNumericTextPolicy behind 55 dialog call sites. CORRECTS r551: an accept form excludes a non-finite value only when bounded on the side Infinity would exceed -- "value > 0" alone does not |
 
 ## Known unswept - named so they are a decision, not an oversight
 

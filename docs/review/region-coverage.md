@@ -12787,6 +12787,13 @@ Eight tests, three of them non-vacuity cases pinning that ordinary sizes still p
 Word's own maximum - so a guard that rejected the top of the real range would fail. Neutering the font
 size guard fails exactly the three hostile spellings and leaves the ordinary sizes green.
 
+CORRECTION (r571): this entry states that the ACCEPT form rejects a non-finite value. That holds
+for the example it cites, which carries BOTH bounds (width > 0 && width <= 12), and NOT in general.
+An accept form with only a LOWER bound - value > 0, value >= 0 - is satisfied by Infinity, which
+exceeds it rather than failing it; only NaN is caught, because NaN fails every comparison. r571 found
+exactly that in the shared DialogNumericTextPolicy behind 55 dialog call sites. The rule is: an accept
+form excludes a non-finite value only when it is bounded on the side Infinity would exceed.
+
 ## r552 - the eight files r551 named, read; one fix, and three "safe for a reason" results
 
 r551 measured FreeX at 10 of 12 guarded dialog files and FreeP at 13 of 19, then scoped its fixes to
@@ -13395,3 +13402,38 @@ in the same method, the same shape r554, r555 and r560 each recorded.
 
 Verification: FreeX build clean, DefaultTests 46437/0 on a full total of 46591 - identical to r569,
 which is the expected signature of a production-only change that adds no tests.
+
+## r571 - a rule of mine that was too broad, and the 55 call sites it cleared wrongly
+
+Reading the shared tier and FreeW.Core.IO census sites. Three `DocxReader` parses use
+`NumberStyles.Integer` and cannot produce a non-finite value at all; `HtmlCssFormatting` parses to
+`out _` purely as a shape test. The finding is in the shared tier.
+
+`DialogNumericTextPolicy` is the numeric-entry policy behind 55 call sites across FreeW's dialogs -
+chart size, column count and spacing, hyphenation zone. It sits beside `ZoomPercentPolicy`, which r550
+guarded, and `PageMarginTextPolicy`, which already rejects with an explicit IsNaN/IsInfinity. Two
+policies in that tier guard; this third did not.
+
+**The correction matters more than the fix.** r551 recorded that the ACCEPT form of a range check
+rejects both Infinity and NaN. That is true of the example it cites - `width > 0 && width <= 12`, which
+has BOTH bounds - and false in general. These wrappers are accept-form with only a LOWER bound
+(`value > 0`, `value >= 0`), and Infinity SATISFIES those rather than failing them. Only NaN was
+caught, because NaN fails every comparison.
+
+The corrected rule, now written into r551's entry: an accept form excludes a non-finite value only
+when it is bounded on the side Infinity would exceed.
+
+That correction is load-bearing rather than cosmetic, because I used r551's overbroad version to CLEAR
+sites in r553, r567 and r568. Re-checked: r553's `result is >= 0 and <= 100` and r567's
+`Math.Clamp(x, 0.1, 2.0)` are both two-sided, so those clearances stand. Had either been one-sided I
+would have recorded a defect as safe, and nothing later would have revisited it - a wrong rule
+propagates through every site it clears, which is why a rule stated once has to be re-checked when a
+counter-example turns up.
+
+The NaN cases stay in a test named `Nan_was_already_rejected_by_the_lower_bound`: they passed before
+the fix too, so they document which half of the problem the old guard covered rather than serving as
+evidence for this one. Both guards are independently neuter-verified at 4 and 3 failures, summing to
+the 7 the original reproduction showed.
+
+Shared-tier change, so verification is all three apps: FreeX DefaultTests 46446/0 on a full total of
+46600, FreeW 7 lanes 11875/0, FreeP 8 lanes 10002/0.
