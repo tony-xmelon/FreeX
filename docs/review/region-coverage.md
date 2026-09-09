@@ -12786,3 +12786,36 @@ whichever polarity a caller's range check uses.
 Eight tests, three of them non-vacuity cases pinning that ordinary sizes still pass, including 1638 -
 Word's own maximum - so a guard that rejected the top of the real range would fail. Neutering the font
 size guard fails exactly the three hostile spellings and leaves the ordinary sizes green.
+
+## r552 - the eight files r551 named, read; one fix, and three "safe for a reason" results
+
+r551 measured FreeX at 10 of 12 guarded dialog files and FreeP at 13 of 19, then scoped its fixes to
+FreeW. That left eight named files unread. Eight is exhaustible, so this round read them, and the
+value is mostly in the three that turned out to be SAFE FOR A REASON worth recording - a sweep that
+only reports fixes teaches the next round nothing about where not to look.
+
+**Fixed: FreeX's chart X-value cache.** `ChartLayoutRequestBuilder` builds scatter X values two ways,
+and only one is exposed. `ExtractScatterSeries` reads live CELL values, which cannot be non-finite
+because FreeX's evaluator returns `#NUM!` for an overflowing computation (`ArithNumberValues`). The
+`usesXValCache` path parses the chart part's CACHED TEXT, which is file-controlled. The comment on
+that line already states the intent - "a point whose cached text doesn't parse falls back to its
+positional index" - and an overflowing value parses SUCCESSFULLY, so it did not take that fallback.
+The fix makes the line honour the intent it documents.
+
+**Safe, and the reasons are the useful part.**
+
+  - `AutoFilterChecklistPlanner` builds a `SortKey` from parsed text and sorts with it, which is where
+    NaN normally breaks a comparer contract and makes `List.Sort` throw "IComparer.Compare() method
+    returns inconsistent results". It compares with `double.CompareTo`, which implements a TOTAL
+    ORDER - NaN sorts below everything and equals itself - so the comparer stays transitive. Had it
+    used `a < b ? -1 : a > b ? 1 : 0`, the same input would throw.
+  - FreeP's `AnimationPanePlanner` and `PresentationTransitionCommandPlanner` use the ACCEPT form
+    (`seconds > 0`), so NaN is already rejected, and both end in `(int)Math.Round(seconds * 1000.0)`,
+    where the `(int)` cast SATURATES to a representable int. An infinite duration therefore becomes an
+    absurd-but-bounded 24.8 days rather than a non-finite in the model - materially weaker than
+    FreeW's font size, which put Infinity into `RunFormatting` itself. Recorded rather than fixed:
+    changing working code on that strength of evidence is what r516 had to retract.
+
+So the polarity finding from r551 has a companion. The accept form rejects NaN but NOT Infinity;
+whether Infinity then matters depends on what the value is cast to next, and `(int)` saturation - the
+same mechanism r546 identified on the write side - is what makes these two harmless.
