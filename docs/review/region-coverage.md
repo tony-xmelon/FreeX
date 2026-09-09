@@ -13363,3 +13363,35 @@ that was never applied. Redone by line range.
 Also read and cleared this round: `SpreadsheetXmlFileAdapter.Load`'s width/height parses land in
 bounded layout paths, and `XlsxChartPartReader.Deferred` holds a fourth chart-cache path that is the
 next candidate.
+
+## r570 - the round I could not test, and why that is worth saying
+
+The chartEx reader (histogram, waterfall, funnel, box-and-whisker) has its own numeric cache and its
+own threshold parser, both unguarded and both file-controlled:
+`ReadChartExNumericCacheValues` is the FOURTH cached-plot-value site after r554's error-bar cache,
+r565's series cache and the classic reader, and `ParseChartExThreshold` supplies a histogram's
+underflow/overflow bin boundaries.
+
+**Three fixture attempts failed, and each was caught by an assertion rather than by my judgement.**
+First the patch text was not in the package - caught by a `patched.Should().BeTrue()` guard in the
+rewrite helper. Then the non-vacuity test showed the cache reader is gated behind an unresolvable
+defined-name formula, so an ordinary file never enters it. Then a throwaway diagnostic settled it:
+**FreeX saves a Histogram as a classic `chart1.xml` and never emits a chartEx part at all** - the
+saved package contains chart1.xml, colors1.xml and style1.xml, and the word "binning" is absent.
+
+That last fact is the useful one and belongs in the record. The chartEx READER handles a shape FreeX's
+WRITER never produces; it exists purely for files authored by Excel and other producers. That is
+exactly why the area is under-tested, and why no save-and-patch fixture can reach it. Reaching it
+needs a hand-built chartEx package with a full xlsx skeleton, which is a larger job than one round.
+
+So both guards are applied with the same one-line contract proven four times over, and **the honest
+scope is that they rest on the build and the lane sweep, not on a behavioural test.** r548 set that
+precedent for fifteen sites; the point of writing it down is that a ledger which reads identically
+whether or not the test exists is worth nothing to the next reader.
+
+One more per-path instance for the pile: `ParseChartExBinning`'s bin SIZE parse, ten lines above these
+two, already carried `double.IsFinite(width) && width > 0`. One guarded parse and two unguarded ones
+in the same method, the same shape r554, r555 and r560 each recorded.
+
+Verification: FreeX build clean, DefaultTests 46437/0 on a full total of 46591 - identical to r569,
+which is the expected signature of a production-only change that adds no tests.
