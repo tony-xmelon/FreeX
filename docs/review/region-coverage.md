@@ -13437,3 +13437,29 @@ the 7 the original reproduction showed.
 
 Shared-tier change, so verification is all three apps: FreeX DefaultTests 46446/0 on a full total of
 46600, FreeW 7 lanes 11875/0, FreeP 8 lanes 10002/0.
+
+## r572 - the correction paying off, in the file the corrected round had already edited
+
+r571 showed r551's accept-form rule was too broad. The duty that creates is not only to fix the new
+site but to revisit the clearances the OLD rule justified. r571 checked r553, r567 and r568; this round
+checked r551's own dialog layer, and that is where the defect was.
+
+`FontDialogPlanner` is the file r551 fixed. It guarded the font-size check, and in the same method
+guarded the KERNING path with an explicit `!double.IsFinite(parsedKerning)`. Twenty lines above,
+CHARACTER SPACING and POSITION go through a bare `TryParseRequiredDouble` with no bound of any kind.
+Reproduced: `CharacterSpacingPt` becomes Infinity, -Infinity or NaN and `PositionPt` becomes Infinity,
+all landing in `RunFormatting`, which text layout reads - the exact consequence r551 recorded for font
+size.
+
+Of the twenty parse sites in FreeW's presentation layer, the rest carry `&& double.IsFinite(...)`, so
+this is not a missing practice: r551 established it here and two paths in one method were left out.
+
+**One guarded path in a method says nothing about its neighbours.** That is now the fifth appearance -
+r554's two sites twenty lines apart, r555's ink coordinates versus width, r560's switch versus numeric
+branch, r570's bin size versus thresholds, and here inside a SINGLE METHOD that a previous round had
+already edited. The pattern is strong enough to state as a rule: reading a file to see whether it
+guards is not a check; reading each PATH is.
+
+r551's kerning fix is now pinned in the same test class, so the two paths cannot drift apart again.
+
+FreeW build clean, 7 lanes 11884/0.
