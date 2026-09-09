@@ -14257,3 +14257,64 @@ exactly that reason: dropping it cannot make the file loadable, but it converts 
 The committed tripwire asserts BOTH halves: no other attribute may abort a load, and those two must
 fail as `WorkbookInvalidException` and nothing else — so a future change that lets a raw library
 exception escape again fails the test even though the workbook was already unopenable.
+
+## r585 — enriching the fixture, and the difference between deleting and repairing
+
+### The probe could only ever mutate what the fixture contained
+
+r583 and r584 mutated a workbook of one sheet, one table and one data validation: 64 attribute
+kinds. That is the probe's own blind spot, and the honest next step was to attack it rather than to
+claim coverage. Growing the fixture by a chart, a conditional format, comments, a hyperlink and a
+merge took the surface from 384 mutants to 455 — and immediately exposed two more attributes that
+abort a load on any malformed value: `color/@theme` and `comment/@authorId`.
+
+That is the design claim from r584 being tested rather than asserted. The tripwire mutates the whole
+surface precisely so the table cannot rot, and the first time the surface grew, the table was found
+two entries short. Anything in this fixture is covered from that moment on; anything absent from it
+is not covered at all, and that is the limit of the test, now written into it.
+
+### Deleting a REQUIRED attribute is not a repair
+
+`comment/@authorId` did not behave like the r584 set. Dropping it moved the failure from the VALUE
+to the ABSENCE — the loader then failed because the attribute was missing, and the user was no
+better off. The same was true of `cellStyle/@xfId`, which r583 had filed as "unrepairable" on
+exactly that evidence.
+
+For a required attribute the principled remedy is Excel's: replace the unreadable value with the
+schema's own safe default instead of deleting it. Both of these are indexes whose zero entry always
+exists when the part exists at all — a comments part cannot have zero authors, and a stylesheet
+always has a first xf — so `0` is not a guess.
+
+`sheet/@sheetId` is deliberately NOT repaired this way: it must be UNIQUE across the workbook, so
+there is no constant that is safe to substitute. It stays a drop with the typed error, and stays the
+one documented residue.
+
+### Tightening a tolerance is part of the fix
+
+`cellStyle/@xfId` now opens, so it was removed from the known-unrepairable lists in BOTH tests. An
+over-broad tolerance is not harmless: it silently accepts a regression in the very case it names.
+Neutering the repair makes both tests fail on that attribute, which is what makes the tightened
+lists worth something.
+
+Running total for the probe: **19 -> 98 -> 2**. Of the ten failures the richer fixture found, eight
+are fixed and the two identity cases are now one, itself reduced to a typed error.
+
+### The full lane caught a mistake in r585's own fix
+
+The lane came back with `R583_...NoSingleOutOfRangeIntegerAttributeMakesTheWorkbookUnopenable`
+failing, and it was mine twice over.
+
+The defect: the two normalizers disagreed about the SAME attribute. The universal r583 rule runs
+FIRST and deleted an oversized `cellStyle/@xfId` before the typed r584 rule could repair it — so
+`xfId="4294967296"` stayed unopenable while `xfId="yes"` opened. The required-attribute policy now
+lives in one place (`TryGetRequiredDefault`) and both consult it, which is the only way two
+normalizers over one attribute can stay coherent.
+
+The process failure is the more useful half. When I tightened r583's known-unrepairable list I ran
+that test only ONCE — with the fix deliberately neutered, to prove the tightened list bit. It did
+bite, I saw two failures, restored the fix, and moved on without ever running it GREEN again. A
+neuter proves a test can fail; it says nothing about whether it passes. Both directions have to be
+observed, and only the full lane observed the second one.
+
+That is worth stating next to r512's rule rather than as a footnote: **a neuter and a green run are
+two different pieces of evidence, and doing one is not doing the other.**
