@@ -13280,3 +13280,33 @@ would have re-examined it.
 That is the concrete answer to why every round carries a non-vacuity case. It is not symmetry or
 ceremony: it is the only check that the fixture reaches the code at all, and a probe that reaches
 nothing agrees with a probe that finds nothing.
+
+## r567 - the clamp that works for three spellings and fails the fourth
+
+Continuing to read the r565 census. FreeP's presentation layer had 23 sites without a textual finite
+guard; reading them found one defect and confirmed the rest are guarded by shape.
+
+Most of the cluster is genuinely fine, and each reason is worth recording so the next reader does not
+re-derive it. `TryParseTtmlPercent` ends with the ACCEPT form `result is >= 0 and <= 100`. The caption
+timing parsers feed `TryCreateCaptionTimeFromTicks`, which guards at the CONSUMER with
+`!double.IsFinite(ticks) || ticks < 0 || ticks >= TimeSpan.MaxValue.Ticks` and carries a comment about
+Int64.MaxValue rounding to 2^63 as a double - an exemplary guard, and the reason r553's classification
+of those sites held up.
+
+The defect is a WordArt warp ADJUST GUIDE - `<a:gd name="adj" fmla="val 12500"/>`, read verbatim from
+the file. `TryReadGuideValue` has no finite check, and the consumer LOOKS defended:
+`Math.Clamp(guideValue / 50000.0, 0.1, 2.0)`.
+
+**The reproduction is the precise part: only `val NaN` fails.** Infinity, -Infinity and 1e400 are all
+correctly clamped into the band, because Math.Clamp really does bound them. This is the trap in its
+purest form - a guard that handles three of four spellings and silently passes the fourth, so any
+sampling that happened to try Infinity first would have called the site safe. Fourth appearance after
+r547's ParseVmlOpacity, r548's colour alpha and r555's ink stroke width.
+
+The test records that asymmetry rather than hiding it: the Infinity cases pass legitimately both
+before and after the fix, and they stay in the theory precisely to document that the clamp works for
+them. Only the NaN case is evidence, and the neuter fails exactly that one.
+
+Sibling of r560, which guarded connection-site guide tokens in the same custom geometry: a different
+guide list, in a different project, reached by reading the census rather than by following that fix
+outward. Twice now (r565, r567) the census has found what sibling-following could not.
