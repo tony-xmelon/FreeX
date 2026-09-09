@@ -13921,3 +13921,67 @@ pivot reader 3 of 14, ReadTint 5 of 23.
 One neuter did NOT compile — `if (false) start = 0;` raised CS0162 (unreachable code) — and by
 r512's rule a neuter that does not compile proves nothing, so it was redone as
 `!double.IsFinite(start) && interval < 0`, false at runtime but opaque to the compiler.
+
+## r579 — accept forms and reject forms are not the same screen
+
+Two defects, one rule encoded, and a tripwire that had to be caught being vacuous before it counted.
+
+### The distinction
+
+r574 encoded this file's own advice — "where a natural bound exists, prefer it to an IsFinite call"
+— as a tripwire exemption. That advice is true for an ACCEPT form and false for a REJECT form, and
+r579 is the round that noticed:
+
+- ACCEPT: `x > 0 && x <= 12` excludes Infinity AND NaN. NaN fails an accept, because every
+  comparison with NaN is false.
+- REJECT: `x is < 0 or > 100` (returning false) excludes Infinity — `Infinity > 100` is true — but
+  ADMITS NaN, for exactly the same reason: both of its comparisons are false.
+
+The two read alike. One is a screen; the other is half a screen.
+
+I also verified, by probe rather than by assumption, that `"NaN"` parses even under
+`NumberStyles.AllowLeadingSign | AllowDecimalPoint` — no exponent flag, no special-value flag. .NET
+checks the NaN/Infinity symbols independently of the style flags, so a narrow style set is not a
+screen either. (r550/r553/r559 said styles constrain a number's SPELLING, not its SIZE; this adds
+that they do not constrain its SPECIALNESS.)
+
+### The two sites
+
+- `NumberFormatColorMapper.TryParseThemeTint` — a number format's `[THEMEACCENT1 TINT 50%]`. A NaN
+  tint reached `theme.ResolveColor` and the HSL luminance maths behind it, the same destination as
+  r578's `XlsxColorReader` tint. Two tint readers in two projects; fixing one did not fix the other.
+- `AnimationPanePlanner.TryParseEasing` — FreeP's Smooth Start/End percentage. A NaN percent reached
+  `(int)Math.Round(percent * 1000)`, whose saturating conversion is 0, so typing "NaN" was silently
+  accepted AS ZERO rather than reported invalid. This is r573's file, fixed there for a different
+  shape — a same-file sibling that a different lens was needed to see.
+
+### A tripwire caught being vacuous
+
+The new reject-range rule was added to the r486 file and passed. Then I reverted one of the two
+fixes to check it could fail — and it still passed. The rule was vacuous, and the cause is worth the
+whole round:
+
+**my own explanatory comment pushed the reject range outside the scan's 400-character window.**
+
+r577 catalogued comment-displacement as a FALSE-POSITIVE mode of an ad-hoc scan. Here it was working
+in the other direction, as a false NEGATIVE, against the tripwire I was writing — and the more
+carefully a fix is documented, the more reliably it blinds the rule meant to protect it.
+
+The remedy is at the root rather than the window: all three rules now scan comment-stripped source
+(`StripComments`, block and line comments; string literals are left alone, since a guard cannot live
+in one). With that in place, reverting either fix makes the rule report the exact site:
+`NumberFormatColorMapper.cs:176` and `AnimationPanePlanner.cs:1634`.
+
+The general rule, which is r512's applied to the tripwire itself: **a tripwire is not trustworthy
+until reverting the fix it was written for is shown to make it fail.** A green tripwire and a
+vacuous one look identical.
+
+### Recorded clean
+
+- `FormulaEvaluator.RoundToExcel15SigDigits` — guarded by construction: the method returns early on
+  `!double.IsFinite(value)`, and what it parses is `value.ToString("G15")` of an already-finite
+  double.
+- The r486 exemption audit: I listed every site the upper-bound exemption saves (2) and read both.
+  `XlsxWorksheetXmlValueParser` (`floating > 0 && floating <= uint.MaxValue`) and
+  `BordersAndShadingDialogPlanner` (`width > 0 && width <= 12`) are both genuine ACCEPT forms, so
+  the exemption is correct in both and there is no reject-form hole hiding behind it.
