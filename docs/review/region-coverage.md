@@ -13029,3 +13029,34 @@ Recorded so a later round sees a decision rather than an oversight.
 Both guards are neuter-verified INDEPENDENTLY, which is r555's lesson applied before it could bite:
 removing the coordinate guard fails five cases, removing the angle guard fails two, and together they
 account for all seven hostile cases. One neuter over a two-part fix would have proved only half of it.
+
+## r559 - a Word table formula that sums to infinity, and a parser whose strip made most spellings unreachable
+
+r558 finished FreeX's Core.Model; this round read FreeW's and FreeP's, the halves that sweep left.
+
+`TableFormulaEvaluator` reads the operands of `=SUM(ABOVE)` and its relatives out of the document's own
+table cells, so every number it parses is file-controlled. Reproduced end to end: a table whose cells
+read 10, four hundred nines, and 20 evaluates `SUM(ABOVE)` to INFINITY, and that is what the field
+displays.
+
+The site is unusual and the difference is worth pinning rather than glossing. `TryParseCellNumber`
+strips every character that is not a digit, sign or point before parsing - to tolerate currency
+symbols, thousands separators and percent signs - and that strip makes the LITERAL spellings
+unreachable: "NaN" and "Infinity" reduce to an empty string and were already rejected. A test records
+that so a later round does not add a guard for a path that was never open. What survives the strip is a
+long run of DIGITS, which overflows on parse.
+
+That is now the THIRD site where a syntax restriction was mistaken for a magnitude restriction -
+`ZoomPercentPolicy` (r550, NumberStyles.Number forbids an exponent), `ParseWebVttFontSizePx` (r553, a
+regex forbids one), and this strip. The rule that generalises: NumberStyles, regexes and character
+filters constrain the SPELLING of a number, never its SIZE. Only IsFinite constrains the size.
+
+The non-vacuity cases pin the deliberate strip-then-parse behaviour - `$1,234.50` parses to 1234.50 and
+`12%` to 12 - so a guard that rejected anything unusual would fail loudly rather than quietly making
+every table formula evaluate to zero.
+
+Also confirmed, not yet fixed: FreeP's `ConnectionSiteHelper.TryResolveGeometryCoordinate` parses
+authored connection-site coordinates from CUSTOM GEOMETRY with no finite guard, and the result goes
+through `(long)Math.Round(x)` - r546's saturating-cast class landing in a coordinate. It needs FreeP's
+own fixture and its own eight-lane sweep, so it is the next round's work with the evidence already
+gathered rather than a loose end.

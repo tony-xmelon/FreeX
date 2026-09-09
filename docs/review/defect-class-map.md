@@ -96,6 +96,7 @@ defects outside that shape.
 | Non-numeric literal ranked as a number (Excel divergence) | r556 | FIXED in AutoFilterChecklistPlanner: text "NaN"/"Infinity" sorted in the numeric bucket, NaN ahead of every real number; Excel treats them as text. NOT a crash -- double.CompareTo gives a total order over NaN, so the comparer stays consistent |
 | Non-numeric literal ranked as a number -- FreeW half | r556, r557 | FIXED in ParagraphSort.TryParseNumber: "NaN" counted as parseable and sorted ahead of every real number in Word Sort > Number. Same non-crash reasoning as r556 (double.CompareTo is a total order) |
 | Non-finite from THEME format-scheme XML | r558 | FIXED in WorkbookTheme: shadow distance/direction, glow and soft-edge radius reached EmuToPixels(double) unguarded -- r550 had guarded only the STRING overload of that same shared helper. Guarding an overload is not guarding a method |
+| Digit-run overflow past a SPELLING restriction | r550, r553, r559 | FIXED in ZoomPercentPolicy, ParseWebVttFontSizePx and TableFormulaEvaluator. NumberStyles, regexes and character strips constrain how a number is SPELLED, never how BIG it is -- only IsFinite does that |
 
 ## Known unswept - named so they are a decision, not an oversight
 
