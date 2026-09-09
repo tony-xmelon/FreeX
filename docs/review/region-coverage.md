@@ -12929,3 +12929,38 @@ tests green, and neutered `ParseOptionalDouble` -- and the suite STAYED GREEN. M
 run over a two-part fix says nothing about the part your fixture does not reach. A second test now
 drives that attribute, and the two guards are independently neuter-verified: removing the first fails
 three cases, removing the second fails two.
+
+## r556 - an Excel-alignment divergence, and a test that passed for the wrong reason
+
+r551 measured FreeX's dialog layer as the best guarded of the three apps and this round read what that
+left. Exactly ONE file in FreeX's app and presentation layers has no finite guard at all:
+`AutoFilterChecklistPlanner`.
+
+**The crash hazard is not there, for a precise reason worth recording.** The checklist sorts through
+`CompareChecklistItems`, and a NaN sort key is the classic inconsistent-comparer bug -- .NET's introsort
+detects a comparer that violates its contract and throws `InvalidOperationException`. It cannot happen
+here because the comparison uses `double.CompareTo`, which defines a TOTAL ORDER over NaN
+(`NaN.CompareTo(NaN)` is 0, NaN is below everything), unlike the `<` and `>` operators. That is the
+inverse of this program's usual finding: code that LOOKS vulnerable and is safe by a specific
+mechanism, which is worth naming so a later round does not "fix" it.
+
+**The divergence is real.** `NumberStyles.Float` accepts the literal "NaN" and "Infinity", and an
+overflowing literal parses successfully, so a TEXT cell reading "NaN" landed in the checklist's NUMERIC
+bucket. Excel does not parse those tokens as numbers at all - typing NaN into a cell produces text, and
+its filter list sorts it with the other text. Reproduced: with a column of 10, "NaN", 2 the checklist
+returned "NaN", "2", "10" - the text sorted AHEAD of every real number.
+
+This is an alignment fix, not a hardening one, which matters because r516 is what happens when a guard
+is added on a hypothesis. The standing instruction is to match what Excel actually does, and Excel's
+number parser rejects these tokens.
+
+**My first test passed for the wrong reason, and only two of four cases exposed it.** I asserted that
+the hostile token sorts AFTER the numbers. That is true when the token is ranked as text - and equally
+true when it is ranked as `+Infinity`, the largest number, which lands last. So "Infinity" and "1e400"
+went green against the UNFIXED code while "NaN" and "-Infinity" failed, because those two sort BELOW
+every number and their wrongness is visible in the order.
+
+The fix was to give each case a TEXT SENTINEL chosen so the text-bucket order and the numeric-rank
+order differ - "AAA" for "NaN", "0zz" for "1e400". All four then fail before the fix and pass after.
+An assertion that is satisfied by both the right and the wrong answer is not a test, and a Theory can
+hide that in the cases that happen to agree.
