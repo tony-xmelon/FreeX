@@ -14508,3 +14508,39 @@ It catches the defect it was built for — and it named a sibling I had not chec
 `CreateStructuredTableCommand`, so r586's fix already covered it. The point is that the coverage is
 now DEMONSTRATED rather than assumed: I fixed one class and inferred the other, and the harness is
 what turned that inference into evidence.
+
+## r590 — enriching the audit fixtures: more coverage, no findings
+
+r585 and r589 both ended on the same limitation, so this round tested it rather than restating it:
+**a harness sees only what its fixtures contain.** The command-audit fixture was two sheets, a block
+of cells and one picture — so every command that operates on a table, a merge, a data validation, a
+conditional format, a comment or a hyperlink was either skipped or ran down an empty path, and the
+row/column-shift commands had no structures to move. Structure-shifting is the classic home of undo
+bugs, and it was entirely unexercised.
+
+The fixture now carries all of those, placed at row 10 and below — clear of the A1:C3 range the
+argument bank synthesizes, so it enriches what commands ENCOUNTER without changing what they act ON.
+
+| | before | after |
+| --- | --- | --- |
+| commands covered (undo audit) | 78 | **87** |
+| applied-and-reverted pairs | 251 | **277** |
+| failure outcomes observed | — | **492** |
+
+Both audits still pass. That is a clean negative and the honest way to report it: the undo discipline
+holds across a much richer state, including tables, merges, validations, formats, comments and
+hyperlinks being shifted by the insert/delete row and column commands. No fix, a permanent ~12%
+increase in what the audits exercise, and a stronger claim behind r589's green.
+
+### Checking the enrichment did not cost the capability
+
+Placing a structured table in the shared fixture is exactly the kind of change that could have
+destroyed what r589 built. If it had landed on the range the bank uses,
+`CreateStructuredTableCommand` would fail with "a table cannot overlap another table" instead of
+reaching the branch that clears a worksheet filter — the audit would still be green, and would
+silently no longer catch the defect it exists for.
+
+So the capability was re-verified rather than assumed: reverting r586's restore still makes the audit
+report `CreateStructuredTableCommand [filtered range] + wb.Sheets[0].AutoFilter = <null>`. **A
+coverage increase has to be shown not to have removed coverage**, which is not the same check as
+"the suite is still green" and does not come for free with it.
