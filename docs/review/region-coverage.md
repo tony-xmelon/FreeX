@@ -12964,3 +12964,37 @@ The fix was to give each case a TEXT SENTINEL chosen so the text-bucket order an
 order differ - "AAA" for "NaN", "0zz" for "1e400". All four then fail before the fix and pass after.
 An assertion that is satisfied by both the right and the wrong answer is not a test, and a Theory can
 hide that in the cases that happen to agree.
+
+## r557 - r556's sibling in FreeW, and I walked into r556's own trap one round later
+
+r556 fixed FreeX's AutoFilter checklist ranking the text "NaN" as a number. The sibling sweep asks
+whether the other apps sort text into numeric buckets the same way. FreeW does, in
+`ParagraphSort.TryParseNumber`, which decides Word's Sort > Number ordering for both paragraph lists
+and table rows.
+
+The comparer states its own contract in a comment - "unparseable keys sort after parseable ones" - and
+decides which is which with `double.TryParse`. That call accepts the literal "NaN" and "Infinity"
+WHATEVER NumberStyles it is given, and a long digit run overflows to Infinity even though
+`NumberStyles.Number` forbids an exponent. So "NaN" counted as parseable and, because `NaN.CompareTo`
+sorts below everything, landed ahead of every real number. Word extracts a leading NUMBER when sorting
+numerically; these are not numbers to it.
+
+Not a crash, and for the same reason as r556: the comparison is `vx.CompareTo(vy)`, a total order over
+NaN, so the comparer stays consistent and introsort never throws. Recorded so it is not mistaken for
+one.
+
+**I repeated r556's vacuity trap in the round immediately after documenting it.** My first draft
+asserted that the hostile token "sorts after the numbers" - satisfied when it is ranked as text AND
+when it is ranked as `+Infinity`, the largest number, which also lands last. Two of the four cases
+therefore went green against the unfixed code. Worse than the mistake itself, the test CARRIED A
+COMMENT CLAIMING the ordering "distinguishes the two behaviours for every case rather than only some",
+which was simply false.
+
+The tell was the same as last round: a partial failure. Two of four is not "mostly reproduced", it is
+a signal that the two halves differ in something the assertion does not capture. The repair is r556's:
+give every case an unparseable SENTINEL chosen so the numeric placement and the text placement differ
+- "AAA" for "NaN" and "Infinity", "zzz" for "-Infinity", "0abc" for a 400-digit run. All four then fail
+before the fix and pass after.
+
+Writing a lesson into the ledger does not stop me repeating it a round later. What caught it both
+times was refusing to accept a partial reproduction as good enough.

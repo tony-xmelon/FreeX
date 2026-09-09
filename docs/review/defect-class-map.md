@@ -94,6 +94,7 @@ defects outside that shape.
 | Non-finite from chart-part XML (presentation layer) | r552, r554 | FIXED in FreeX: scatter cached X values (r552) and the error-bar numeric cache (r554), both file-controlled and both feeding axis range. FreeW app layer clean by construction -- its file parsing lives in FreeW.Core.IO, swept in r547 |
 | Non-finite from a stored INK annotation | r555 | FIXED in SlideShowInkRenderPlanner: brush width and FreeP thicknessDip/opacity accepted Infinity and NaN while the trace coordinates beside them were already filtered. Math.Max(0.1, x) is NOT a guard -- it propagates NaN |
 | Non-numeric literal ranked as a number (Excel divergence) | r556 | FIXED in AutoFilterChecklistPlanner: text "NaN"/"Infinity" sorted in the numeric bucket, NaN ahead of every real number; Excel treats them as text. NOT a crash -- double.CompareTo gives a total order over NaN, so the comparer stays consistent |
+| Non-numeric literal ranked as a number -- FreeW half | r556, r557 | FIXED in ParagraphSort.TryParseNumber: "NaN" counted as parseable and sorted ahead of every real number in Word Sort > Number. Same non-crash reasoning as r556 (double.CompareTo is a total order) |
 
 ## Known unswept - named so they are a decision, not an oversight
 
