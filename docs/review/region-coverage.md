@@ -13190,3 +13190,32 @@ unverified against Excel, and r516 is what happens when I act on a hypothesis in
 
 No production change. The finding is that the remaining doors are shut, now held shut by a test that
 fires when they open.
+
+## r564 - a threshold that inverts its own rule, and evidence reported by what it proves
+
+The last unread sites from r557's Core.Model list. FreeP's `AnimationAmountSemantics` is guarded -
+both paths end in `IsUsableScale`, which r485 defined as `IsFinite && >= 0`. FreeX's
+`ConditionalFormatEvaluationMath.TryParseInvariant` is not, and it is public.
+
+A conditional-format rule's thresholds are stored as TEXT in the xlsx, so `NumberStyles.Any` accepting
+the literal "NaN" and "Infinity" is reachable from a file. A non-finite threshold does not merely
+mis-colour a cell, it INVERTS the rule: every ordering comparison against NaN is false so the rule
+matches NOTHING, `NotEqual` against NaN is true for every cell so it matches EVERYTHING, and
+`LessThan Infinity` formats every finite cell in the sheet.
+
+Two things make this grounded rather than speculative, and both were already in the repository. The
+intended contract is written down beside the code - an existing test named
+`MatchesCellValueNumeric_NonNumericThreshold_ReturnsFalse` pins that a threshold which is not a number
+makes the rule not apply, and "NaN" is not a number in that sense; it is a literal .NET happens to
+parse. And the same file already carries a `SetFinite` helper expressing this exact check, one method
+below the unguarded parser. So the fix restates a contract the file had already written twice.
+
+**The reporting changed this round, not just the testing.** Of eighteen cases, only six DISTINGUISH
+the fixed code from the unfixed: a rule like `Equal NaN` is already false without the fix, because
+every IEEE comparison against NaN is false, and it would pass either way. Those cases still have
+value - they document the contract and would catch a future change that made them true - but they are
+not evidence for this round, so they now live in a test named
+`These_spellings_were_already_false_for_an_unrelated_reason` and the demonstration rests on the six
+that actually discriminate. r556 discovered that trap by reading a partial failure, r557 repeated it,
+r561 designed around it, and here it decided how the evidence is PRESENTED. Counting eighteen green
+tests as proof of a fix six of them cannot see would have overstated the result.

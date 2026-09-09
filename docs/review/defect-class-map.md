@@ -101,6 +101,7 @@ defects outside that shape.
 | Non-numeric literal compared numerically -- merge surface | r561 | FIXED in MailMerge.CompareValues: identical text answered "no match" (NaN != NaN) and two different overlong numbers compared equal. Third surface in the alignment class after r556 and r557 |
 | Non-finite entering the model past the evaluator | r562 | FIXED in ExternalLinkModel: an external link's cached sheet data built NumberValue directly, bypassing the evaluator. Disproves r552's claim that a cell value cannot be non-finite -- true of the evaluator, not of the model |
 | Non-finite entering the model -- typed and paste doors | r563 | clean; CellEntryParser (4 paths incl. zero-denominator rejection) and PasteCommandFactory (4 branches) all guard. Held by a 32-case behavioural census, neuter-verified on both guard families |
+| Non-finite conditional-format THRESHOLD | r564 | FIXED in ConditionalFormatEvaluationMath.TryParseInvariant: a NaN threshold made NotEqual match every cell and every ordering rule match none; LessThan Infinity formatted the whole sheet. The file already carried SetFinite and a test pinning the intended contract |
 
 ## Known unswept - named so they are a decision, not an oversight
 
