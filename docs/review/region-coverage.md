@@ -14214,3 +14214,46 @@ than about anything it changed:
 Worth recording as a result in its own right: a new IO writer/reader in this codebase is now caught
 by two independent fences the day it is written. Both fences came out of earlier rounds of this same
 review program, and this is the first time they have fired on code the program itself introduced.
+
+## r584 — widening the probe: 98 aborted loads, and a table built from evidence
+
+r583 fed every integer attribute ONE malformed value. This round fed the same attributes five more
+(`-1`, `yes`, the empty string, `1.5`, a single space) and got **98 aborted loads out of 320
+mutants**. The same twenty-odd attributes reject anything they cannot parse, not merely a value that
+is too large — so r583 had found the tip of it, and the honest reading of that round's "what this
+does NOT cover" note was that the uncovered part was the bigger part.
+
+### Why this one needs a table when r583 did not
+
+r583 could be a single rule on the VALUE because no xlsx attribute may hold a decimal integer above
+`uint.MaxValue`, whatever the attribute is. Here the answer depends entirely on which attribute it
+is: `"true"` is legal in a boolean and fatal in an integer. So `XlsxMalformedTypedAttributeNormalizer`
+carries a table of (element, attribute) -> kind.
+
+The table is EVIDENCE, not a reading of the schema. Every entry is an attribute the probe
+demonstrated will abort a load, and each one's type was established by a DISCRIMINATING mutation:
+feeding `"true"` to all of them separates the boolean-typed, which accept it, from the numeric and
+colour ones, which throw. That is a better basis than my reading of ECMA-376 would have been, and it
+is checkable by anyone re-running the probe.
+
+### The probe corrected my first table
+
+The first draft typed every integer attribute as signed, on the reasoning that `relativeIndent`
+exists and a value in range for one is readable either way. Re-running the probe said otherwise:
+seven attributes still aborted on `-1`, because they are `xsd:unsignedInt` and a leading minus is as
+fatal to them as a word. The kind is now split into `UnsignedInteger` and `SignedInteger`, with
+`relativeIndent` the only signed one. Worth recording plainly: the probe caught a mistake in the fix
+that a careful reading of the fix would not have.
+
+### Result
+
+98 failures -> 12, and the character of the residue changed completely. Every remaining failure is
+confined to the two REQUIRED identity attributes (`cellStyle/@xfId`, `sheet/@sheetId`), and every one
+is now FreeX's own typed `WorkbookInvalidException`. No unhandled exception escapes the OpenXml
+dependency for any mutation kind on any attribute. `sheet/@sheetId` was added to the table for
+exactly that reason: dropping it cannot make the file loadable, but it converts a library
+`FormatException` into FreeX's own error, which is the trade r583 already recorded for it.
+
+The committed tripwire asserts BOTH halves: no other attribute may abort a load, and those two must
+fail as `WorkbookInvalidException` and nothing else — so a future change that lets a raw library
+exception escape again fails the test even though the workbook was already unopenable.
