@@ -13593,3 +13593,271 @@ other 46,000 tests. Only the full lane speaks for those, which is why the lane r
 commit rather than after a suspicious one.
 
 FreeX build clean, DefaultTests 46472/0 on a full total of 46626.
+
+## r577 — the remaining census clusters: data-validation bounds, a scatter category cache, and the SVG parser
+
+Finishing the small clusters left over from r565's repo-wide census (Shared.Ribbon.Avalonia,
+FreeX.Core.Model, FreeP.Core.Model, FreeW.Core.IO). Six defects fixed in three files; four sites
+re-read and recorded clean, two of them false positives of my own scanner.
+
+### Scanner false positives, and what they say about the scan
+
+- `WorkbookTheme.cs:506` — GUARDED. r558's `|| !double.IsFinite(angle)` is present; my own
+  explanatory comment for that fix pushed the `IsFinite` past the 7-line window the ad-hoc scanner
+  looks in.
+- `AnimationAmountSemantics.cs:125/131` — GUARDED, behind the named helper `IsUsableScale(scale)`
+  (r485: `double.IsFinite(scale) && scale >= 0`). There is no literal `IsFinite` anywhere near the
+  parse.
+
+Both are the same blind spot r574 found in the r486 tripwire: the rule was right, the *spelling*
+watched for was too narrow. A guard displaced by a comment and a guard behind a named helper are
+the two ways a correct fix reads as unguarded. Worth folding the named-helper case into the r486
+tripwire rather than repeating ad-hoc scans.
+
+### Defect 1 — data-validation bounds accepted Infinity, and PERSISTED it
+
+`DataValidationNumericBoundText.TryParseCore` (FreeX.Core.Model) is the ONE shared bound parser: the
+dialog-entry gate, live enforcement (`FreeX.Core.Commands.DataValidationBoundsParser`) and the
+save-side normalizer (`XlsxDataValidationClosedXmlMapper.NormalizeNumericFormulaForSave`) all call
+it. It gated the parse on `NumberStyles` plus `NumericTextGroupingValidator.HasValidGroupingShape`
+— which constrain a bound's SPELLING, never its SIZE. `HasValidGroupingShape` says so itself:
+"finite-value policy remain the caller's responsibility", and it returns true immediately for text
+with no grouping separator in it, which "1E+400" has not.
+
+The save path makes it concrete: a bound of `1E+400` parsed to +Infinity and was re-emitted through
+`ToInvariantString`, so FreeX wrote the literal text `Infinity` into formula1 — text Excel cannot
+read back as a bound, from a file that had been fine before the round trip. Reproduced exactly:
+`NormalizeNumericFormulaForSave(DvType.Decimal, "1E+400")` returned `"Infinity"`.
+
+Excel has no non-finite number and rejects such a bound outright, so the aligned behaviour is to
+fail the parse and let the normalizer's existing untouched-passthrough branch keep the original
+text. Fixed with `double.IsFinite(value) &&`.
+
+### Defect 2 — a scatter chart's X cache, written by FreeW itself
+
+`DocxWriter`'s scatter series builds its X values by parsing each CATEGORY's text, falling back to
+the 1-based ordinal for anything non-numeric; `BuildNumCache` then writes each value with
+`double.ToString`. A category of "1e400" therefore put `<c:v>Infinity</c:v>` into a chart part FreeW
+had just written.
+
+The sibling READ path in the same feature, `DocxReader.ReadNumberCache`, was guarded in r547. This
+write-side site was missed because it parses category TEXT, not a cache value — a sweep over cache
+parsing could not reach it. This is the third time a sibling has been missed because the sweep was
+organised by name or by file rather than by what the code actually does (r565, r567).
+
+### Defects 3-6 — the SVG parser, on genuinely external input
+
+`SvgIconParser` (Free.Shared.Ribbon.Avalonia) had four unguarded numeric entry points. I had this
+filed as low priority on the belief that it only reads repository-authored icon assets. That is
+wrong: FreeW's Insert Picture writes a **user-chosen .svg** to a temporary file and parses it here
+(`AvaloniaPictureRasterizerPort.RasterizeSvg` -> `SvgIconRasterizer.LoadFileToPaintedBounds`). The
+input is an arbitrary external file, so this is the malformed-input class, not an asset-hygiene one.
+
+- `SplitNumbers`'s flush (`<polygon points>`) admitted infinite coordinates into the geometry.
+- `ParseDouble` (element attributes: x/y/width/height/r/rx/ry/...). `BuildRect`'s own range test is
+  the REJECT form `w <= 0 || h <= 0`, which rejects NEITHER Infinity nor NaN — r551's shape exactly
+  — so the length had to be stopped at the parse.
+- `ParseGradientOffset`, both the `%` and bare spellings: each "bounded" the offset with
+  `Math.Clamp`, which bounds Infinity but PROPAGATES NaN (r547/r555/r567), so a stop offset of NaN
+  reached `GradientStop.Offset` unchanged. Two spellings, two guards — one alone leaves the other
+  reachable, as in r555.
+
+Each site now routes a non-finite number to the fallback it already had for a value it cannot read
+(dropped token / null / 0).
+
+### Verification
+
+Tests: `R577_DataValidationNonFiniteBoundTests` (FreeX.Core.IO.Tests),
+`R577_ScatterCategoryNonFiniteXValueTests` (FreeW.Core.IO.Tests), `R577_SvgNonFiniteNumberTests`
+(Free.Shared.Ribbon.Tests). Every guard neutered INDEPENDENTLY with `&& true`:
+
+| neuter | failures |
+| --- | --- |
+| `DataValidationNumericBoundText` | 8 of 11 |
+| `DocxWriter` scatter X | 5 of 6 |
+| `SplitNumbers` flush | 2 of 11 |
+| gradient offset, `%` spelling | 1 of 11 |
+| gradient offset, bare spelling | 1 of 11 |
+| `ParseDouble` | 2 of 11 |
+
+`ParseDouble`'s first neuter PASSED — the rect coverage did not exist yet, which is the r555 lesson
+repeating: fixing several sites in one function does not mean the tests drive several sites. The
+rect test was written, then the neuter re-run.
+
+Three test-authoring traps hit and recorded:
+- My first probe used `<path d="...">` and threw "cannot be rendered" even for the FINITE control —
+  an inert probe (r566). `<polygon points>` is what actually reaches `SplitNumbers`.
+- `Geometry.GetBounds()` needs a real Avalonia render interface, which the headless host lacks. The
+  assertions read the geometry's own points/rects instead.
+- The rect theory's non-finite cases left the drawing with no children at all, so `LoadFile` threw
+  rather than asserting. A valid companion `<line>` keeps the SVG renderable so the assertion is
+  about the rect, not about the file.
+- `NormalizeNumericFormulaForSave("NaN")` correctly returns "NaN" — the ORIGINAL text — so that case
+  would hold vacuously whether or not the guard exists. It is excluded from that theory with a note;
+  NaN rejection is proved non-vacuously at the parser instead.
+
+### Recorded clean
+
+- `HtmlCssFormatting.cs:206` (FreeW.Core.IO) — guarded r547. My earlier read returned empty because
+  I looked under `shared/Free.Shared.AppServices/`; the file is in `freew/FreeW.Core.IO/`.
+- `DocxReader.cs:8353` (`ParseVmlOpacity`) — guarded r547, with the Math.Clamp/NaN note already in
+  place.
+- `PivotSharedItemCaptionResolver.cs:32` — non-finite raw yields the caption "∞" instead of the raw
+  text. Display only: both consumers (`SlicerItemResolver`, `XlsxSlicerTimelineStateRewriter`'s
+  selection matching) derive the caption from this same resolver, so the two sides agree and nothing
+  is persisted. No change.
+
+### The Clamp rule, kept as a tripwire — and what it found on its first run
+
+`Math.Clamp` reads as "this value is now in range", and for Infinity it is; it PROPAGATES NaN. That
+has now cost five rounds (r547, r548, r555, r567, and r577's two gradient-offset spellings), which
+is enough repetitions to keep rather than to keep rediscovering. Added as a second `[Fact]` in the
+r486 tripwire file: a double parse whose name is clamped nearby, with no `IsFinite`/`IsNaN` in the
+window, is reported.
+
+The rule is deliberately narrow — it fires only where the parsed name is itself clamped. A parse
+with NO guard at all is not reported, because most such sites are legitimate and a blanket rule
+would be noise rather than signal. (That is also why today's six fixes did NOT trip the existing
+r486 rule and should not have: that rule watches for a guard that bounds only from below, and none
+of these had a guard at all.)
+
+It found two more defects immediately:
+
+- `XlsxChartTrendlineErrorBarReader:96` — `errBars/val/@val` from the chart part, clamped to
+  0..1000. `"NaN"` sailed through into `ChartModel.ErrorBarValue`. **r554 guarded this same
+  feature's error-bar range CACHE**, which lives in a different file, so following that fix by file
+  never reached the fixed VALUE read here. Fourth missed-sibling of the round.
+- `XlsxSourceRectangleRatioCodec.Parse` — a picture's `srcRect` crop percentage, clamped to -1..1.
+  `"NaN"` became a NaN crop ratio on the picture. `1e400` previously clamped to a FULL crop (1) and
+  now takes the same unreadable-value result as NaN, 0 — the aligned answer, since an OOXML srcRect
+  percentage is an integer and a picture silently cropped to nothing is worse than one not cropped.
+
+A companion scan for `Math.Min`/`Math.Max` (which also return NaN when either argument is NaN)
+found no sites at all.
+
+### Three more in FreeX.Core.Commands
+
+A census of that project's 22 parse sites (8 already guarded) surfaced three genuine ones:
+
+- `CalculationOptionsInputParser.TryParseMaxChange` — guarded by the REJECT form `parsed < 0`,
+  which rejects neither Infinity nor NaN (r551's shape). This is the iterative-calculation
+  convergence threshold, entered in Options in BOTH shells: Infinity declares every iteration
+  converged, NaN declares none converged. Excel rejects non-numeric input in that box.
+- `PivotCalculatedExpressionEvaluator.ReadNumber` — its scanner admits only digits and `.`, so no
+  exponent and no "NaN" spelling can reach the parse. A long enough run of digits overflows anyway.
+  A calculated field's result becomes a cell value.
+- `PivotTableRefreshService.ParseSharedItemScalarValue` — `raw` is a pivot-cache shared item read
+  straight out of the file, and the line minted `new NumberValue(number)` from it directly: another
+  door into the model invariant defended at r562/r563/r569/r576. Promoted from `private` to
+  `internal` for a compiled test seam rather than a reflection call.
+
+A fifth false-positive mode for the ad-hoc scan, recorded alongside the comment-displaced and
+named-helper ones: `PasteCommandFactory.TryParseExcelPasteNumber` reads bare, and is correct —
+**both** its callers apply `&& double.IsFinite(excelNumber)` (r563). A guard can live at the caller.
+
+### Three more from the same census: filter and sort thresholds
+
+- `PersistedCustomFilterCriterion.Matches` (`FilterConditionCommand`) — `Value` is a persisted
+  `customFilters/@val` read out of the FILE. A NaN threshold makes every ordering comparison false
+  (the filter hides every row) and makes `notEqual` true for every row. That is r564's
+  conditional-format threshold defect exactly, living in the autofilter. A criterion that is not a
+  usable number now falls through to the text comparison, which is what an unparseable one already
+  did.
+- `FilterCriterionInputParser.TryParseThreshold` — the typed side of the same thing ("> 1e400"): the
+  filter would hide every row while reporting no error at all. Now reports the error it already has.
+- `SortCommand.TryParseLiteralThreshold` — **r566 guarded `TryResolveIconSetBucket` in this very
+  file**; this literal resolver was its unguarded sibling, twenty lines of scrolling away. That is
+  r554/r555/r560/r570/r572's class again: reading a FILE to see whether it guards is not a check.
+
+### Recorded clean, by mechanism rather than by guard
+
+- `PivotTableRefreshService.Filters` label sort keys (four sites) — the parsed number is consumed
+  only by `leftNumber.CompareTo(rightNumber)`, a TOTAL order over NaN (r556), so no inconsistent
+  comparer is possible. More to the point, `TryParseNumberRangeUnderflowLabel` returns
+  `double.NegativeInfinity` **deliberately**, so a non-finite sort key is the design here and a
+  guard would break it.
+- `PasteCommandFactory.TryParseExcelPasteNumber` — bare, and correct: both callers apply
+  `&& double.IsFinite(excelNumber)` (r563).
+
+### Two more from the FreeX.Core.IO remainder, one of them a twin
+
+- `XlsxWorksheetAutoFilterCustomFilterMatcher` — the **IO-side twin** of
+  `PersistedCustomFilterCriterion.Matches` fixed above. Two implementations of one rule
+  (customFilters/@val -> a numeric predicate), so the defect lived in both and had to be fixed in
+  both. Finding the second one was not deduction: it came out of the same mechanical census that
+  found the first. A twin is not a sibling in the file-neighbourhood sense — nothing about the
+  Commands file points at the IO one.
+- `XlsxWorksheetScenarioMapper.ParseValue` — a scenario's input value is APPLIED to cells, so
+  `new NumberValue(number)` here is another door into the invariant defended at r562/r563/r569/r576.
+
+`DifFileAdapter:312` reads bare and is correct: both consumers apply `double.IsFinite(number) ?
+new NumberValue(number) : null`. That is the caller-guard mode again, and its own comment
+("not always a finite number ... parse leniently") is about a MISSING field, not a non-finite one --
+a comment that reads like a waiver but is not one.
+
+### Defect 17 — a font size with no bound, where the rule was already written down
+
+`XlsxStructuredTableStyleMetadataReader:142` read a table style's `sz/@val` straight out of the file
+with no bound at all, so an overflowing literal entered the model as an Infinite point size. This
+codebase already carries a NAMED rule for exactly that value — `IsSupportedFontSize`,
+`fontSize >= 1 && fontSize <= 409`, Excel's actual range — copied into five other files. The fix is
+to apply the rule that is already written down, not to invent one.
+
+Worth noting how those five copies divide: two also say `double.IsFinite`, three do not, and all five
+are correct — because the `<= 409` upper bound excludes Infinity on its own and NaN fails both
+comparisons. That is r574's encoded upper-bound rule holding up in the wild, and the reason the r486
+tripwire must not report a two-sided guard as an offender.
+
+### More false positives, and the fourth mode
+
+- `SpreadsheetXmlFileAdapter.Load:166/182` — GUARDED via the named helper `IsPositiveFinite`.
+- `XlsxDifferentialStyleReader:109` — GUARDED via its own `IsSupportedFontSize`.
+- `OdsStyleTable.TryParseCm` (three parses) — guarded by r549's `return double.IsFinite(px)` at the
+  function's EXIT, roughly 25 lines below each parse and so outside any window a proximity scan can
+  afford. That is the fourth mode.
+- `OdsBorder:67` — needs no guard: the parsed value feeds only a three-way
+  `pt >= 2 ? Thick : pt >= 1 ? Medium : Thin` bucket and never leaves the method, so Infinity picks
+  Thick and NaN picks Thin. Both are legitimate answers; neither is unbounded.
+
+Four false-positive modes, then, and every one of them is a guard the scan cannot SPELL rather than a
+guard that is missing: displaced past the window by a comment, hidden behind a named helper, applied
+at the CALLER, and placed at the function exit. That is the argument for encoding a rule in the
+tripwire — where it runs every time and its exceptions are written down — over re-running an ad-hoc
+scan and re-deciding each site by hand.
+
+### Still open, for the next round
+
+The FreeX.Core.IO census leaves 24 bare sites unread, notably `XlsxXmlAttributeReader:14` (a general
+attribute reader with 262 call sites into it — the same one-guard-behind-many-call-sites shape as
+r571's DialogNumericTextPolicy and r575's XlsxChartScalarReader), `XlsxColorReader:304` (tint, whose
+OOXML domain is -1..1), and `XlsxPivotTableReader.FiltersAndSorts:135`. FreeX.Core.Commands leaves 8.
+
+### The one test the fixes broke, and why the TEST was wrong rather than the fix
+
+The full FreeX lane came back `failed=1`: `XlsxSourceRectangleRatioCodecTests
+.ParseAndFormat_PreserveExistingNonFiniteBehavior` pinned `Parse("Infinity") == 1` and
+`Parse("NaN")` returning NaN — exactly the behaviour the srcRect fix removes.
+
+r576's lesson says a test standing in a fix's way may be encoding a deliberate design, and there the
+64 tests were: this engine has FUNCTIONS report domain errors, so the GUARD was narrowed. This one
+is the opposite case, and the evidence is on the record rather than in my judgement:
+
+- Its name says *Preserve Existing* behaviour, and `git log` puts it in commit `8bdbe0bb07`,
+  "centralize picture crop ratio conversion" — a refactor whose job was to prove that folding three
+  duplicated implementations into one codec changed nothing. It recorded what the duplicates
+  happened to do.
+- The tell is its Format assertion: it asserted the result equalled
+  `unchecked((int)nan).ToString(...)` — an expression the test computed itself from the same
+  undefined conversion. A test that asserts an output equals the undefined operation that produced
+  it asserts nothing about correctness and cannot fail if that operation changes.
+
+So the test changed. A srcRect percentage is an integer in OOXML (ST_Percentage), so "NaN" and
+"1e400" are not values the attribute can express at all, and Excel ignores an attribute it cannot
+read — leaving the picture uncropped. Cropping a picture to nothing on the strength of unreadable
+text is the worse failure. The replacement asserts the specified behaviour and, separately, pins
+`Format`'s three non-finite results as literals (`"0"`, `"100000"`, `"-100000"`) instead of as the
+conversion itself.
+
+The general rule this leaves: **a characterization test names what the code does; a specification
+test says why.** When a fix breaks one, read the commit that introduced it before deciding which of
+the two is in the way.
