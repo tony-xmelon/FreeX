@@ -13219,3 +13219,35 @@ not evidence for this round, so they now live in a test named
 that actually discriminate. r556 discovered that trap by reading a partial failure, r557 repeated it,
 r561 designed around it, and here it decided how the evidence is PRESENTED. Counting eighteen green
 tests as proof of a fix six of them cannot see would have overstated the result.
+
+## r565 - measuring what is left, and the sibling only a census could reach
+
+Nineteen rounds of this class have been driven by a question at a time - which layer, which app, which
+input source. This round asked how much is left, as a NUMBER, so the answer stops depending on which
+question I happen to ask next.
+
+**276 production parse sites** across all three apps and every layer (src 150, freep 73, freew 39,
+shared 14). **157 carry a finite guard within their own context. 119 do not.**
+
+The 119 is not a defect count, and the difference matters. My scanner detects the WORD `IsFinite`, not
+the property, and r551 established that an ACCEPT-form range check guards just as well: reading a
+systematic sample of twelve showed most are guarded a way no text scan can see - `> 0 && <= uint.MaxValue`,
+integer parses, dialog text range-validated on the next line. My very first pick in that sample was
+wrong for exactly that reason: I flagged `ParsePaneSplit` on the strength of its name, and reading it
+showed a correct accept-form guard. A name is a hypothesis; the line is the evidence.
+
+The sample also found a real one, and it is the kind only a census reaches.
+`XlsxChartSeriesRangeReader.ReadEmbeddedNumericCacheValues` reads a chart series' embedded numeric
+cache - the values actually PLOTTED - and stored Infinity from a `<c:v>1e400</c:v>`. That is the direct
+sibling of r554, which guarded the ERROR BAR cache in `ChartRenderPolicyPlanner` and left this one
+open. Not in the same file, not under the same name, not reachable by following r554's fix outward:
+r554 swept the file it was in, and the sibling lived somewhere else entirely. Twelve rounds of sibling
+sweeps by name, app and layer all missed it; counting every site in the repository did not.
+
+The fix uses the sparse array's own contract - an unusable point becomes null and the rest of the
+series survives, which is what it already did for unparseable text - and one test pins that
+granularity, so a fix that dropped the whole series would fail rather than pass quietly.
+
+The census numbers are recorded here so the next round starts from a measured position: 119 sites
+remain without a textual finite guard, most of them guarded by shape rather than by keyword, and the
+way to reduce that number honestly is to read them, not to widen the scan.
