@@ -13533,3 +13533,27 @@ everything or almost nothing. Three consecutive rounds did by hand what this tes
 automatically, and only reading the test itself explained why.
 
 FreeX build clean, DefaultTests 46456/0 on a full total of 46610. FreeW 7 lanes 11884/0.
+
+## r575 - closing the site r574 named and walked past
+
+r574 surfaced `XlsxChartScalarReader.ReadOptionalDouble`, called it the highest-leverage remaining
+site, and then spent the round fixing the tripwire instead - leaving it unfixed. This round closes it.
+
+The helper sits behind 68 call sites across the chart readers, every one reading an attribute out of a
+chart part: manual-layout X/Y/W/H (where a chart element is positioned), the chart's page margins
+(left, right, top, bottom, header, footer) and trendline forward/backward periods. All geometry, all
+file-controlled, none guarded. All five hostile spellings reproduced.
+
+The fix uses the helper's own contract - it already returns null for an attribute it cannot read, and
+every caller treats null as "not specified" - so an unusable value falls back to automatic layout
+rather than positioning a chart element at infinity. One helper, one line, 68 sites, and the full lane
+passes unchanged, which is the evidence that the guard costs nothing at the callers.
+
+**The process failure is the part worth keeping.** "Identified in a previous round" is how a site
+stays open indefinitely. r559 named `ConnectionSiteHelper` and r560 closed it the next round, but only
+because that entry was explicit and its evidence was already gathered; r574's mention was a passing
+remark inside a round about something else, and it nearly vanished. A finding recorded as an aside is
+weaker than one recorded as an obligation, and the difference is whether the next round can act on it
+without re-deriving anything.
+
+FreeX build clean, DefaultTests 46463/0 on a full total of 46617.
