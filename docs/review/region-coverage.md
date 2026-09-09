@@ -13155,3 +13155,38 @@ defended at every writer, not at the one writer I happened to be reading.
 One test pins that dropping an unusable cached cell does NOT discard its neighbours: the caller
 already skips nulls per cell, and a fix that failed the whole row would have passed the finiteness
 assertion while quietly emptying the cache.
+
+## r563 - the sibling sweep of a DISPROOF, and a census with my own blind spot in it
+
+r562 disproved "a cell value cannot be non-finite" by finding one writer that bypasses the evaluator.
+A disproof earns a sibling sweep exactly as a fix does: if one door was open, what are the others?
+
+The remaining doors into a cell value are TYPED ENTRY and PASTE, and both are guarded.
+`CellEntryParser`'s plain path is literally named `TryParseFiniteNumber`; its currency path carries an
+explicit `IsFinite`; its fraction path parses INTEGERS and rejects a zero denominator, so the quotient
+cannot be non-finite by arithmetic either. `PasteCommandFactory.ParseClipboardValue` guards all four of
+its branches - including inside `TryParseCultureGroupedNumber`, whose check sits at the END OF THE
+HELPER rather than beside the `NumberValue` construction. Reading the call site alone would have
+recorded that branch as unguarded; reading the helper settled it.
+
+So the invariant now holds at every writer, which is what r562's correction asked for. Since a clean
+sweep decays the moment someone adds the next parser, the result is kept as a CENSUS rather than a
+note: every hostile spelling is driven through both public entry points, and a future branch that
+admits a non-finite value fails without anyone remembering to check.
+
+**The neuter found a blind spot in my own census.** It passed with the currency guard removed, because
+`"$1e400"` never parses at all - `NumberStyles.Currency` does not allow an exponent, so the input fell
+through to text and exercised nothing. That is r559's own rule applied to the TEST rather than the
+code: NumberStyles constrains the SPELLING of a number, never its SIZE, so a hostile input has to be
+spelled in a way the target parser actually accepts. With a 400-digit run instead, the neuter fails
+properly. Both guard families are now proven live - removing the currency guard fails 2 cases, removing
+the two plain-number guards fails 16 of 32.
+
+**And one census failure was my expectation, not a defect.** I asserted `"1 1/0"` becomes text; it
+becomes a `DateTimeValue`, because the fraction parser correctly rejects the zero denominator and
+`DateTime.TryParse` accepts what is left. I corrected the test to assert the property it exists to
+check, and deliberately did NOT assert either way on date-parse leniency - that is a different class,
+unverified against Excel, and r516 is what happens when I act on a hypothesis instead.
+
+No production change. The finding is that the remaining doors are shut, now held shut by a test that
+fires when they open.

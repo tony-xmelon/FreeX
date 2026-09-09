@@ -100,6 +100,7 @@ defects outside that shape.
 | Non-finite reaching a correctly-sized coordinate cast | r560 | FIXED in ConnectionSiteHelper: custom-geometry connection sites saturated to long.MaxValue EMU. Unlike r546 the (long) cast is the RIGHT width for EMU, so the guard belongs at the parse, not the cast |
 | Non-numeric literal compared numerically -- merge surface | r561 | FIXED in MailMerge.CompareValues: identical text answered "no match" (NaN != NaN) and two different overlong numbers compared equal. Third surface in the alignment class after r556 and r557 |
 | Non-finite entering the model past the evaluator | r562 | FIXED in ExternalLinkModel: an external link's cached sheet data built NumberValue directly, bypassing the evaluator. Disproves r552's claim that a cell value cannot be non-finite -- true of the evaluator, not of the model |
+| Non-finite entering the model -- typed and paste doors | r563 | clean; CellEntryParser (4 paths incl. zero-denominator rejection) and PasteCommandFactory (4 branches) all guard. Held by a 32-case behavioural census, neuter-verified on both guard families |
 
 ## Known unswept - named so they are a decision, not an oversight
 
