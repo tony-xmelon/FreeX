@@ -12820,6 +12820,12 @@ So the polarity finding from r551 has a companion. The accept form rejects NaN b
 whether Infinity then matters depends on what the value is cast to next, and `(int)` saturation - the
 same mechanism r546 identified on the write side - is what makes these two harmless.
 
+CORRECTION (r562): this entry says a cell value cannot be non-finite because the evaluator returns
+#NUM! instead, and uses that to explain why the live-cell path beside the cached-text one was safe.
+That is true of the evaluator, and NOT true of the model in general: ExternalLinkModel builds a
+NumberValue DIRECTLY from an external link's cached sheet data, bypassing the evaluator entirely, and
+r562 found it storing Infinity. The fix here still stands on its own evidence -- the cached-text path
+was reproduced and neutered -- but the reason given for its NEIGHBOUR was weaker than stated.
 ## r553 - the signature that finally predicts, and a subtitle file nobody had swept
 
 r551 scoped by APP LAYER (which dialog files lack a guard) and r552 then found the defect in a path
@@ -13122,3 +13128,30 @@ under the culture-aware parse the surrounding comment carefully explains.
 
 This is the third app surface in the alignment class after r556 (FreeX's filter checklist) and r557
 (FreeW's numeric sort): a literal that .NET parses and the reference product does not.
+
+## r562 - an invariant I had been reasoning from, disproved by one parser
+
+r561 finished the merge surface; this round returned to the FreeX Core.Model sites r558 had summarised
+as clean rather than shown to be, on the principle that my own summary is not evidence.
+
+`ExternalLinkModel.ParseSheetDataSet` reads an external link's CACHED SHEET DATA - the last values
+Excel saw in the other workbook, stored in `xl/externalLinks/externalLink1.xml` - and builds a
+`NumberValue` from each. Reproduced across all four spellings: a cached `1e400` put `NumberValue(∞)`
+into the workbook model.
+
+**The site matters less than what it disproves.** r552 recorded, and reasoned from, the claim that
+"cell values cannot be non-finite -- the evaluator returns #NUM! instead", and used it to explain why
+the live-cell path next to a cached-text parser was safe by association. That claim is true of the
+EVALUATOR and false of the MODEL: an external link's cache is a door into cell values that does not go
+past the evaluator at all. r552's own fix stands on its own evidence, since that path was reproduced
+and neutered, but the reason it gave for its neighbour was weaker than stated, and r552's entry now
+carries that correction.
+
+The general lesson is about the shape of the argument rather than this parser. "X cannot happen
+because component Y prevents it" is only as strong as the claim that everything reaches X through Y,
+and that second half is the part I did not check. An invariant asserted about a MODEL has to be
+defended at every writer, not at the one writer I happened to be reading.
+
+One test pins that dropping an unusable cached cell does NOT discard its neighbours: the caller
+already skips nulls per cell, and a fix that failed the whole row would have passed the finiteness
+assertion while quietly emptying the cache.
