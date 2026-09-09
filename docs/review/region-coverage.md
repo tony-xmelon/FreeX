@@ -13861,3 +13861,63 @@ conversion itself.
 The general rule this leaves: **a characterization test names what the code does; a specification
 test says why.** When a fix breaks one, read the commit that introduced it before deciding which of
 the two is in the way.
+
+## r578 — the one-door guards, and a fix that made its own twin
+
+Five defects, continuing r577's census with the leads it left.
+
+### The door: XlsxXmlAttributeReader.ReadDoubleAttribute (33 call sites)
+
+Every one of its 33 call sites reads a BOUNDED quantity out of an xlsx part — page margins, pivot
+group start/end/interval, filter comparison values, top-10 counts, `calcPr/@iterateDelta` — so not
+one has a use for a non-finite number, and `null` is already the method's "absent or unreadable"
+result that every caller handles. One guard, 33 sites; the same shape as r575 (XlsxChartScalarReader,
+68 sites) and r571 (DialogNumericTextPolicy, 55).
+
+`@iterateDelta` is worth naming on its own: it is the FILE side of the iterative-calculation
+convergence threshold `CalculationOptionsInputParser` guards when it is TYPED, which r577 fixed
+yesterday. The typed side and the file side of one value are separate code, and fixing one says
+nothing about the other. That is the twin class again (r577's autofilter pair), and it keeps
+appearing because nothing in either file points at the other.
+
+### The consequence that was total rather than partial
+
+Pivot numeric-range grouping guarded its interval with `if (interval <= 0) interval = 1;` — r551's
+REJECT form, which rejects neither Infinity nor NaN. Both end in NaN, by different routes:
+`start + Math.Floor((number - start) / NaN) * NaN` is NaN, and for an INFINITE interval
+`Math.Floor(x / Infinity)` is 0 while `0 * Infinity` is NaN as well. So every value in the field
+landed in one bucket, and its label was the literal text `NaN-NaN`. Reproduced before fixing, and
+the reproduction is the string itself. `@startNum` reaches the same maths and needed the same guard.
+
+### A fix that created the asymmetry it was meant to end
+
+Guarding `ReadDoubleAttribute` covered `ReadPivotValueFilters`, which fills
+`PivotValueFilterModel.ComparisonValue`. But the x14/native shape of the same filter is read by a
+BESPOKE helper, `ReadNativePivotFilterDoubleValue`, that never goes through the shared door — two
+readers for one model field, differing only in which attribute names they look for. Guarding the
+door alone would have left the bespoke reader as the single remaining way in.
+
+That is worth stating as a rule, because it is a hazard of the one-door fix specifically: **closing a
+shared door is only a complete fix if nothing else opens onto the same room.** Before treating a
+one-door guard as covering its call sites, look for the bespoke sibling that bypasses it — search by
+the MODEL FIELD being filled, not by the reader's name.
+
+### A bound that is not a bound, again
+
+`XlsxColorReader.ReadTint` feeds all four of that reader's colour paths. A tint is a bounded
+modulation (-1..1 in the schema), and `WorkbookThemeTint.Apply` looks like it screens its input —
+`if (Math.Abs(tint) < NeutralTintThreshold) return color;` — but that test is FALSE for NaN, as every
+comparison with NaN is. So a non-finite tint went on into the HSL luminance maths and came back as
+saturated-cast channels: the colour silently changed. Same shape as Math.Clamp passing NaN through,
+in a different disguise.
+
+### Verification
+
+Tests: `R578_PivotNumberRangeGroupingTests` (Core.Model.Tests), `R578_XmlAttributeDoubleGuardTests`
+and `R578_ColorTintGuardTests` (Core.IO.Tests). Every guard neutered independently:
+ReadDoubleAttribute 5 of 10, the interval reject form 2 of 9, the start guard 1 of 9, the bespoke
+pivot reader 3 of 14, ReadTint 5 of 23.
+
+One neuter did NOT compile — `if (false) start = 0;` raised CS0162 (unreachable code) — and by
+r512's rule a neuter that does not compile proves nothing, so it was redone as
+`!double.IsFinite(start) && interval < 0`, false at runtime but opaque to the compiler.
