@@ -13090,3 +13090,35 @@ lines apart, and it is why "does this file contain a guard?" is the wrong questi
 The non-vacuity test pins that an ordinary authored site at 500/1000 of the path still maps to the
 shape's centre, so a guard that rejected every token would fail here rather than silently ignoring
 every authored connection site and always falling back to the bbox.
+
+## r561 - the merge surface, and a vacuity trap anticipated instead of discovered
+
+Mail merge is the strongest input-source case this class has: merge data comes from an EXTERNAL
+spreadsheet, CSV or database, so both sides of an `{ IF }` comparison are outside the document's
+control. `CompareValues` tries a numeric comparison first with `NumberStyles.Any`, which accepts the
+literal "NaN" and "Infinity".
+
+That is wrong twice over, and both were reproduced before fixing:
+
+  - An equality test on IDENTICAL TEXT answers "no match". `NaN == NaN` is false by IEEE rule, so
+    `{ IF Field = "NaN" }` takes the else branch on a field that literally reads NaN.
+  - Two DIFFERENT 400-digit numbers compare EQUAL, because both overflow to the same Infinity.
+
+Word compares numerically only when both sides really are numbers; the fix routes the rest into this
+method's own case-insensitive text fallback, three lines below the numeric branch.
+
+**The vacuity trap was anticipated this time rather than discovered from a partial failure.** The
+`Infinity` theory cases pass LEGITIMATELY against the unfixed code, because `Infinity == Infinity` is
+true and coincides with the correct answer - the same shape that made r556 and r557 go green on half
+their cases. Knowing that, the round carries a separate discriminator for the Infinity path: two
+DISTINCT overlong numbers that collapse to the same Infinity, which the unfixed code calls equal and
+the fixed code does not. r556 found this trap by reading a partial failure, r557 repeated it, and here
+it was designed around. Three rounds is what it took for the lesson to change the first draft rather
+than the second.
+
+Non-vacuity is pinned on both sides of the numeric path: `"9" > "10"` must stay FALSE, so a guard that
+pushed everything to text would break real numeric merges, and `"1,5"` vs `"1.5"` must stay distinct
+under the culture-aware parse the surrounding comment carefully explains.
+
+This is the third app surface in the alignment class after r556 (FreeX's filter checklist) and r557
+(FreeW's numeric sort): a literal that .NET parses and the reference product does not.

@@ -98,6 +98,7 @@ defects outside that shape.
 | Non-finite from THEME format-scheme XML | r558 | FIXED in WorkbookTheme: shadow distance/direction, glow and soft-edge radius reached EmuToPixels(double) unguarded -- r550 had guarded only the STRING overload of that same shared helper. Guarding an overload is not guarding a method |
 | Digit-run overflow past a SPELLING restriction | r550, r553, r559 | FIXED in ZoomPercentPolicy, ParseWebVttFontSizePx and TableFormulaEvaluator. NumberStyles, regexes and character strips constrain how a number is SPELLED, never how BIG it is -- only IsFinite does that |
 | Non-finite reaching a correctly-sized coordinate cast | r560 | FIXED in ConnectionSiteHelper: custom-geometry connection sites saturated to long.MaxValue EMU. Unlike r546 the (long) cast is the RIGHT width for EMU, so the guard belongs at the parse, not the cast |
+| Non-numeric literal compared numerically -- merge surface | r561 | FIXED in MailMerge.CompareValues: identical text answered "no match" (NaN != NaN) and two different overlong numbers compared equal. Third surface in the alignment class after r556 and r557 |
 
 ## Known unswept - named so they are a decision, not an oversight
 
