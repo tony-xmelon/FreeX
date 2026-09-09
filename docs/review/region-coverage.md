@@ -13463,3 +13463,35 @@ guards is not a check; reading each PATH is.
 r551's kerning fix is now pinned in the same test class, so the two paths cannot drift apart again.
 
 FreeW build clean, 7 lanes 11884/0.
+
+## r573 - the corrected rule finding what the old one cleared
+
+r571 corrected r551's accept-form rule; r572 applied the correction to r551's own file. This round
+applies it as a SEARCH: scan the dialog planners for accept forms bounded only from BELOW, the exact
+shape the old rule wrongly cleared. Of 71 parse sites across FreeP's and FreeX's presentation layers,
+three matched, in two files.
+
+`AnimationPanePlanner.TryParseTimingSeconds` and `PresentationTransitionCommandPlanner.TryParseSeconds`
+both guard with `allowZero ? seconds >= 0 : seconds > 0`. Infinity satisfies either bound; NaN is
+caught, because NaN fails every comparison - the same asymmetry as r567.
+
+**The consequence is concrete rather than cosmetic.** The accepted value goes through
+`(int)Math.Round(seconds * 1000.0)`, and .NET's floating-point conversion SATURATES, so an infinite
+duration becomes int.MaxValue milliseconds - about 24.8 days. That is r546's saturating-cast class
+arriving through a range check that looked like a guard, which is precisely the combination the
+corrected rule predicts.
+
+Four entry points are covered because each file exposes two wrappers with different `allowZero`
+values, and both guards are independently neuter-verified: removing the animation one fails 2 cases,
+removing the transition one fails 4, summing to the 6 the reproduction showed.
+
+The non-vacuity tests are deliberately specific rather than generic. They pin r192's rounding rule
+(1.005 seconds must produce 1005 ms, not the 1004 that truncation gave) and the "1.5s" suffix
+handling, so a guard cannot quietly alter behaviour those earlier rounds established while satisfying
+the finiteness assertions.
+
+Worth stating what this round demonstrates about the correction itself: r571 was not bookkeeping. A
+wrong rule does not merely mislabel one site - it becomes a SEARCH that skips a whole shape, and the
+three defects here sat in code that the old rule would have cleared on sight.
+
+FreeP build clean, 8 lanes 10012/0.
