@@ -14070,3 +14070,67 @@ an upper bound before the subtraction; `TimeScalar` (the TIME function) rejects 
 bounds each to 32767; `TryParseExcelFakeLeapDayValueText` builds its serial as `60 + TotalDays`,
 which is bounded in [60, 61) by construction. r580's site was the only unguarded one of the four,
 and it slipped through because its guard had to be on the MANUFACTURE, not on any parse.
+
+## r582 — the non-finite lens goes dry, and the lens rotates
+
+### Closing the previous lens honestly
+
+Searching by CONSEQUENCE rather than by unguarded parse (r580's boundary), all four shapes now scan
+dry across all three apps:
+
+| consequence | remaining unguarded sites |
+| --- | --- |
+| parsed double -> `new NumberValue(...)` | none |
+| parsed double -> written back to a file | none (the last was r581) |
+| parsed double -> NaN in an ordering comparison | none |
+| parsed double -> saturating `(int)`/`(long)` cast | none |
+| parsed double -> NaN-manufacturing arithmetic (`%`, `/x`, `x - Floor(x)`) | none |
+
+I then re-ran the sharpest of these at FOUR TIMES the window (2000 chars instead of 500) in case the
+dryness was an artefact of proximity, and it stayed dry. That is the closest thing to a convergence
+signal this program has produced — but it is still a coverage measure, not a proof: a consequence
+further from its parse than the window, or reached through a helper the scan cannot follow, is
+invisible to it. The claim is "these five shapes are dry", not "no non-finite defect remains".
+
+Per the lens-rotation method, a dry lens is a signal to change lenses rather than to grind.
+
+### New lens: an integer parse fails where a double parse overflows
+
+`int.TryParse` does NOT overflow to a sentinel the way `double.TryParse` does — it returns FALSE. So
+the entire class inverts: the risk is not a poisoned value flowing onward, it is the FALLBACK the
+caller substitutes when the parse "fails". And `XlsxXmlAttributeReader.ReadIntAttribute` returns
+`null` for BOTH "attribute absent" and "attribute present but unreadable", so no caller can tell a
+corrupt file from a default one.
+
+Tallying the 42 `ReadIntAttribute(...) ?? x` sites by fallback: 11 use `-1`, and every one of those
+pairs it with a reject (`.Where(index >= 0)`, `if (id <= 0) return false`) — a deliberate sentinel
+discipline. 11 use `0`, which is the correct OOXML default for most of them (`count`, `pageWrap`,
+`iconId`, `xfId`).
+
+So most of this lens is correct by design, and I am NOT proposing a policy change for the rest:
+whether a corrupt attribute should be defaulted or refused is a product question that needs real
+Excel to settle, and Excel COM is not registered on this machine. Recorded, not guessed.
+
+### The one decidable on the codebase's own terms
+
+`XlsxStructuredTableWriter` guards the TABLE id and not the COLUMN id, 68 lines apart in one file:
+
+    new XAttribute("id", table.Id > 0 ? table.Id : ExtractTrailingNumber(tablePath))   // guarded
+    new XAttribute("id", column.Id)                                                    // not
+
+Three independent places in this codebase already say a table/column id is a positive number: that
+table-id write, the column synthesizer (`Enumerable.Range(1, ...)`), and the reader's own
+`if (id <= 0 || ...) return false`. Only the column write had no such rule, so a `<tableColumn>`
+whose id was absent — or present but unreadable — arrived as 0 and was written back as `id="0"`,
+TWICE OVER when more than one column was affected. Duplicate ids inside a single table are
+self-contradictory whatever the schema says about the minimum, which is why this one needed no
+Excel to adjudicate.
+
+The fix assigns the smallest unused positive id, and leaves every valid id exactly as it is —
+autoFilter, sortState and calculated-column formulas all reference them, so renumbering a good id
+would break the references the id exists to serve.
+
+The obvious positional fallback (`index + 1`) is WRONG here, and the test says so: for columns
+`[id=2, id=0]` it hands the second column id 2, which the first already owns. I implemented that
+variant deliberately to check the test catches it — it does, reporting `"2" is not unique`. (The
+first attempt at that variant did not compile, and by r512's rule proved nothing until redone.)
