@@ -103,6 +103,7 @@ defects outside that shape.
 | Non-finite entering the model -- typed and paste doors | r563 | clean; CellEntryParser (4 paths incl. zero-denominator rejection) and PasteCommandFactory (4 branches) all guard. Held by a 32-case behavioural census, neuter-verified on both guard families |
 | Non-finite conditional-format THRESHOLD | r564 | FIXED in ConditionalFormatEvaluationMath.TryParseInvariant: a NaN threshold made NotEqual match every cell and every ordering rule match none; LessThan Infinity formatted the whole sheet. The file already carried SetFinite and a test pinning the intended contract |
 | Non-finite in a chart SERIES cache | r554, r565 | FIXED in XlsxChartSeriesRangeReader: the plotted-value cache stored Infinity while r554 had guarded only the error-bar cache in another file. Found by a repo-wide census (276 sites, 157 guarded), not by sibling-following |
+| Non-finite ICON-SET threshold | r564, r566 | FIXED in SortCommand.TryResolveIconSetBucket: a bare TryParse bypassed the helper r564 guarded, so a NaN threshold gave every cell the lowest icon and -Infinity the highest. All three threshold kinds (Number/Percent/Percentile) guarded |
 
 ## Known unswept - named so they are a decision, not an oversight
 

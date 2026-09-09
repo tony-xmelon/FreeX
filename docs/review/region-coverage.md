@@ -13251,3 +13251,32 @@ granularity, so a fix that dropped the whole series would fail rather than pass 
 The census numbers are recorded here so the next round starts from a measured position: 119 sites
 remain without a textual finite guard, most of them guarded by shape rather than by keyword, and the
 way to reduce that number honestly is to read them, not to widen the scan.
+
+## r566 - reading the census, and the non-vacuity test earning its place outright
+
+r565 measured 119 sites without a textual finite guard and said the honest way to reduce that number
+is to read them. This round read the two clusters that had never been swept for this class at all:
+`FreeX.Core.Commands` (18) and `FreeX.Core.Formula` (12). Thirty sites; one defect.
+
+Icon-set conditional formats parse their bucket thresholds with a BARE `double.TryParse` in
+`SortCommand.TryResolveIconSetBucket`, which does not go through
+`ConditionalFormatEvaluationMath.TryParseInvariant` - the helper r564 guarded two rounds ago. So r564
+fixed the CELL-VALUE rules and left the ICON-SET rules open, in a different project under a different
+name. Same relationship as r565's find: the sibling was not in the file the fix touched.
+
+A non-finite threshold collapses the scale silently rather than failing. Every comparison against NaN
+is false, so every cell takes the LOWEST icon; a `-Infinity` threshold is matched by every cell, so
+they all take the HIGHEST. The sheet still renders, with one icon everywhere. All three threshold
+kinds are guarded - Number, Percent and Percentile - because Percent feeds `min + (max-min)*pct/100`
+and Percentile feeds an index, so a bad value propagates differently through each.
+
+**The non-vacuity test earned its place outright.** My first fixture omitted the rule's `AppliesTo`
+range, so `GetEffectiveIcon` skipped the rule entirely: all four hostile cases returned null and
+"passed", and the ONLY failure was `Ordinary_thresholds_still_place_the_value_on_the_scale`. That one
+failure is what identified the probe as INERT rather than clean. Without it I would have recorded this
+path as guarded and moved on - a false negative, which is the expensive kind, because nothing later
+would have re-examined it.
+
+That is the concrete answer to why every round carries a non-vacuity case. It is not symmetry or
+ceremony: it is the only check that the fixture reaches the code at all, and a probe that reaches
+nothing agrees with a probe that finds nothing.
