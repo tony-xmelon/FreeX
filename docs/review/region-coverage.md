@@ -13337,3 +13337,29 @@ result is used for rather than what the call looks like.
 
 The non-vacuity test did double duty again: it proves the fixture actually loads the sparkline, which
 is exactly the failure r566 hit when a missing range left the whole probe inert.
+
+## r569 - the third door into a cell value, and a guard that only works in pairs
+
+Continuing through `FreeX.Core.IO`'s census sites. `OdsFileAdapter.ReadCellValue` turns an .ods cell's
+`office:value` into a `NumberValue` DIRECTLY, so `office:value="1e400"` put Infinity into the model.
+
+That is the THIRD door into a cell value bypassing the formula evaluator, after r562's external-link
+cache and the typed/paste doors r563 censused. It is also r562's own correction being applied where it
+pointed: that round disproved "a cell value cannot be non-finite" and concluded that an invariant
+asserted about the MODEL must be defended at EVERY writer, not the one being read at the time. This is
+the writer nobody had checked, found by working the census rather than by re-deriving the argument.
+
+**The neuters showed the two guards only work as a pair.** Neutering the TEXT branch alone fails all
+six cases rather than the two that use it, because a hostile `office:value` rejected by the attribute
+guard FALLS THROUGH to the text fallback, which re-parses the same hostile string from `<text:p>`.
+Guarding only the attribute would have looked correct in review and left the door open. Neutering the
+attribute branch alone fails exactly four, so each guard is also independently load-bearing.
+
+Process note: my first two substitutions both reported SUBS=0 - the patterns did not match the actual
+whitespace, and nothing would have changed. I caught it by checking the substitution COUNTS rather
+than the command's exit code, which is the only reason the round did not proceed to "verify" a fix
+that was never applied. Redone by line range.
+
+Also read and cleared this round: `SpreadsheetXmlFileAdapter.Load`'s width/height parses land in
+bounded layout paths, and `XlsxChartPartReader.Deferred` holds a fourth chart-cache path that is the
+next candidate.
