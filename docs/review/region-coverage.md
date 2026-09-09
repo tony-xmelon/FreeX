@@ -14454,3 +14454,57 @@ Both probes are committed as tripwires rather than deleted. A test that passes t
 place when it fences a property that a plausible future change would break: the day either reader
 adopts a strict parser, or hand-rolls a strict parse of its own, these fire. That is the same
 argument as r486's original tripwire, applied to a negative result instead of a positive one.
+
+## r589 — the audit that would have caught r586, built and shown to catch it
+
+### The static sweep was all false positives, and instructively so
+
+A per-class scan for commands whose `Apply` touches a sheet member their `Revert` never names
+produced nine candidates. Every one is a false positive, and they share a single cause: **this
+codebase does undo by SNAPSHOT**, and a snapshot restores whatever it captured without naming any
+member. `SetPrintAreaCommand` restores through `SetPrintAreas(...)`; `SortCommand`, `FilterCommand`,
+`EditCellsCommand` and the paste family all call `_snapshot.Restore(sheet)`; `AddSheetCommand`
+removes the whole sheet.
+
+That is the fifth distinct way a scan of this kind is blind (after comment-displaced, named-helper,
+caller-side and function-exit): **restored through a differently-named setter, or through a snapshot
+that names nothing at all.** The pattern that makes the code robust is exactly the pattern the scan
+cannot see.
+
+### So the question had to be asked at runtime
+
+This assembly already hosts `FailureOutcomeMutationAuditTests`, which runs every constructible
+command for real and compares a deep reflective `WorkbookFingerprint` across the call — built
+precisely because a textual pass "produced 365 hits across 73 files ... too noisy to trust". It
+audits the FAILURE convention. Its undo sibling did not exist, so r589 adds it: apply every command
+that succeeds, revert it, and require the fingerprint to come back.
+
+**78 commands, 251 applied-and-reverted pairs, zero violations.**
+
+### Calibration was the whole job
+
+The first run reported 40 violations, every one of them by design:
+
+- `ContentVersion` — a monotonic change counter; an undo is itself a change.
+- `NextStructuredTableIdWatermark` — whose own doc comment says "never decremented, including on
+  Undo", so a freed table id is never handed out twice.
+- `StyleCount` — the style registry grows and is not garbage-collected on undo.
+
+An audit that reports forty by-design violations is worse than no audit, because the next person
+reads past all of them. The three are excluded with their reasons written down.
+
+### Green is not the claim; CATCHING is
+
+A harness that passes proves nothing on its own — r585 had just taught that a probe covers only what
+its fixtures contain, and the existing fixtures have no worksheet AutoFilter, so
+`CreateStructuredTableCommand` never exercised the branch that clears one. A "filtered range" fixture
+was added for exactly that, and then r586's restore was reverted to see what the audit says:
+
+    CreateStructuredTableCommand [filtered range] + wb.Sheets[0].AutoFilter = <null>
+    CreateStyledStructuredTableCommand [filtered range] + wb.Sheets[0].AutoFilter = <null>
+
+It catches the defect it was built for — and it named a sibling I had not checked.
+`CreateStyledStructuredTableCommand` is the user-facing "Format as Table", and it delegates to
+`CreateStructuredTableCommand`, so r586's fix already covered it. The point is that the coverage is
+now DEMONSTRATED rather than assumed: I fixed one class and inferred the other, and the harness is
+what turned that inference into evidence.
