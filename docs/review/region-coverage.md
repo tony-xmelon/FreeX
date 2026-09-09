@@ -14318,3 +14318,59 @@ observed, and only the full lane observed the second one.
 
 That is worth stating next to r512's rule rather than as a footnote: **a neuter and a green run are
 two different pieces of evidence, and doing one is not doing the other.**
+
+## r586 — the probe's broken fixture was itself the finding
+
+### The lens went dry, and then didn't
+
+Enriching the fixture again — a pivot table, an autofilter, a third sheet — took the mutation surface
+from 455 to 605 attribute kinds and found **zero** new aborting attributes. Two consecutive
+enrichments (r585 found two, r586 found none) is a reasonable dry signal for the malformed-attribute
+lens at this fixture size.
+
+But the first run of that fixture reported **525 failures out of 530**, and the uniformity is what
+gave it away: attributes that had loaded perfectly in r585 were suddenly aborting. A baseline check —
+load the UNMUTATED fixture — said why:
+
+    InvalidOperationException: The range Sheet1!A1:D6 overlaps with the worksheet's autofilter
+
+The probe was inert and its 525 "findings" were an artefact. That is r566's lesson holding: validate
+the probe before believing it, and a suspiciously uniform result is the cheapest possible signal that
+something upstream is broken.
+
+### The artefact was a real defect, and a serious one
+
+I had built that fixture by setting a worksheet AutoFilter over a structured table's range. FreeX
+SAVED it happily and then refused to LOAD it. So the question was whether a user can reach that
+state, and they can, from both directions:
+
+- `ToggleWorksheetAutoFilterCommand` guards the range's validity and the sheet's protection, and
+  nothing else — selecting a table and clicking Filter sets a worksheet AutoFilter over it.
+- `CreateStructuredTableCommand` guards against another table, a merged region and a spill range —
+  but not an existing AutoFilter, so filter-first-table-second reaches the identical state.
+
+**A user can produce a workbook this application cannot reopen.** That is the worst outcome an edit
+can have, and neither path was covered.
+
+The second gap is a missed symmetry by the file's own standard: `CreateStructuredTableCommand`'s
+merge guard carries the comment "mirroring MergeCellsCommand's symmetric guard for the same
+tables-and-merges-don't-mix rule, just enforced from the other direction (merge created first, table
+attempted second)". The AutoFilter rule needed exactly that treatment and never got it.
+
+### Two directions, two different remedies, both from Excel
+
+- Filter over an existing table -> REJECT. Excel has no such state: clicking Filter inside a table
+  toggles the TABLE's own filter, and the table's filter is what the user was reaching for anyway.
+- Table over an existing filter -> CLEAR the worksheet filter. Excel does not refuse this; it
+  replaces the worksheet filter with the table's own, and the new table carries `HasAutoFilter = true`
+  so a filter survives either way.
+
+Asymmetric remedies for one invariant, because the two gestures mean different things — and both
+were decided by what Excel does rather than by what was convenient to implement.
+
+### Undo had to be extended, not just the guard
+
+`Apply` now CLEARS state, so `Revert` has to put it back: removing the table while leaving the filter
+gone is the "undo restores the value but not the structure" class, and it is silent. Both halves were
+neutered independently — the clear (2 failures) and the restore (1) — because a fix that creates
+undo state and a fix that restores it are two claims.
