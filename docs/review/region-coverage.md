@@ -13310,3 +13310,30 @@ them. Only the NaN case is evidence, and the neuter fails exactly that one.
 Sibling of r560, which guarded connection-site guide tokens in the same custom geometry: a different
 guide list, in a different project, reached by reading the census rather than by following that fix
 outward. Twice now (r565, r567) the census has found what sibling-following could not.
+
+## r568 - a fix, and a site where the fix would have been the bug
+
+Reading `FreeX.Core.IO`'s 37 census sites - the largest remaining cluster.
+
+**Fixed.** `XlsxSparklineMapper.ParseDoubleAttr` feeds `manualMin`, `manualMax` and `lineWeight`,
+attributes on `x14:sparklineGroup` in the worksheet part, so all three are file-controlled. Infinite
+axis bounds are r485's unbounded-scale class - r548 named chart axis min/max as its worst-consequence
+member - and a non-finite line weight is r555's ink-thickness shape. Reproduced through a real
+save, patch-one-attribute, reload round-trip; all six hostile cases.
+
+**Deliberately NOT fixed, and this is the more useful half.**
+`XlsxConditionalFormatClosedXmlMapper` parses a threshold with `NumberStyles.Float` to decide whether
+it needs quoting, and its own comment states the check must match ClosedXML's `XLCFCellIsConverter`
+EXACTLY - warning that a looser or different test would let a value be classified as numeric when
+ClosedXML's stricter one would not, reopening the quoting bug that comment was written to close.
+Adding `IsFinite` there would diverge from the library being mirrored.
+
+By pattern-matching alone that site is indistinguishable from the CF threshold parsers r564 and r566
+DID fix: same class of file, same NumberStyles, same "threshold" word. The difference is what the
+parse is FOR. r564 and r566 parse a threshold to decide a value's MEANING, where a non-finite answer
+is wrong. This one classifies TEXT for interop, where the only correct answer is whatever the other
+library would say. A guard is not always an improvement, and the way to tell is to ask what the
+result is used for rather than what the call looks like.
+
+The non-vacuity test did double duty again: it proves the fixture actually loads the sparkline, which
+is exactly the failure r566 hit when a missing range left the whole probe inert.

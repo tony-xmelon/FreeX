@@ -105,6 +105,7 @@ defects outside that shape.
 | Non-finite in a chart SERIES cache | r554, r565 | FIXED in XlsxChartSeriesRangeReader: the plotted-value cache stored Infinity while r554 had guarded only the error-bar cache in another file. Found by a repo-wide census (276 sites, 157 guarded), not by sibling-following |
 | Non-finite ICON-SET threshold | r564, r566 | FIXED in SortCommand.TryResolveIconSetBucket: a bare TryParse bypassed the helper r564 guarded, so a NaN threshold gave every cell the lowest icon and -Infinity the highest. All three threshold kinds (Number/Percent/Percentile) guarded |
 | Math.Clamp passes NaN -- fourth instance | r547, r548, r555, r567 | FIXED in WordArtWarpPlanner: a warp adjust guide of "val NaN" reached geometry because Math.Clamp bounds Infinity but not NaN. Only the NaN spelling fails -- the other three are genuinely clamped, so sampling one could call the site safe |
+| Non-finite sparkline axis bound / line weight | r568 | FIXED in XlsxSparklineMapper. Also recorded: XlsxConditionalFormatClosedXmlMapper must NOT be guarded -- it mirrors ClosedXML's own numeric check by contract, so a finite test there would diverge from the library and reopen a quoting bug |
 
 ## Known unswept - named so they are a decision, not an oversight
 
