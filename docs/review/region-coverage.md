@@ -13060,3 +13060,33 @@ authored connection-site coordinates from CUSTOM GEOMETRY with no finite guard, 
 through `(long)Math.Round(x)` - r546's saturating-cast class landing in a coordinate. It needs FreeP's
 own fixture and its own eight-lane sweep, so it is the next round's work with the evidence already
 gathered rather than a loose end.
+
+## r560 - the connection site r559 named, and a cast that was the right width
+
+r559 confirmed this site with evidence and deferred the fix because it needed FreeP's own fixture and
+an eight-lane sweep. This round did it rather than letting a known defect sit as a recorded lead.
+
+A shape's custom geometry carries its own connection sites (`a:custGeom/a:cxnLst`), and each site's X
+and Y are GUIDE TOKENS taken verbatim from the file. `TryResolveGeometryCoordinate` parsed them with no
+finite check, so "1e400" resolved to Infinity; the caller multiplies that into an EMU coordinate and
+casts with `(long)Math.Round(...)`, which SATURATES to long.MaxValue. Any connector attached to that
+site is drawn to an absurd position. Reproduced across all five hostile spellings before fixing.
+
+**The cast is the right width, and that is the point.** r546 fixed casts whose width EXCEEDED the
+schema's - `(long)` into an xsd:int. Here the target really is EMU, an xsd:long, so `(long)` is
+correct and r545's rule (the remedy follows the declared type) says do not touch it. What is wrong is
+the value arriving at the cast, so the guard belongs at the parse. Same saturation, opposite remedy,
+decided by which end of the pipe is mismatched.
+
+The fall-through is what makes the fix a one-liner rather than a new policy: rejecting the numeric
+parse drops the token into the guide-token switch below, whose unmatched case already answers NaN and
+returns false - the fallback the caller expects, which draws the site on the shape's bounding box.
+
+Worth recording that the author was ALREADY NaN-aware on that very method's last line
+(`return !double.IsNaN(value)`). The switch path was guarded; the numeric path beside it was not. That
+is the same shape as r555's ink coordinates-guarded/width-unguarded and r554's two parse sites twenty
+lines apart, and it is why "does this file contain a guard?" is the wrong question to ask of a file.
+
+The non-vacuity test pins that an ordinary authored site at 500/1000 of the path still maps to the
+shape's centre, so a guard that rejected every token would fail here rather than silently ignoring
+every authored connection site and always falling back to the bbox.
