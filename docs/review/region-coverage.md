@@ -14412,3 +14412,45 @@ Neutering the save-side guard fails the r587 tripwire while r586's command tests
 what defence in depth is supposed to look like: the layers are independent, and each was shown to
 carry weight on its own rather than inferred to. The commands give the user a clear message at the
 moment of the gesture; the writer guarantees the file.
+
+## r588 — was it the format, or the library? (and two lenses that came back clean)
+
+### Two clean negatives first
+
+Both were worth asking and neither produced a defect:
+
+- **Second round trip.** Save -> load -> save -> load over a rich workbook (formula, merge, comment,
+  hyperlink, table, data validation, conditional format, chart, autofilter on a second sheet). The
+  model after two trips is identical to after one, and the two saves are even the same byte length.
+  No drift, no loss.
+- **Pairwise overlap beyond r587.** Already recorded there: 30 pairs, one offender.
+
+### The question r583/r584 could not answer
+
+Those rounds found nineteen and then ninety-eight aborted LOADS in FreeX, every throw from inside
+DocumentFormat.OpenXml reached through ClosedXML. That evidence is consistent with two very different
+explanations: xlsx is a stricter format, or delegating to a strict third-party parser is what makes a
+reader brittle. FreeX alone cannot distinguish them — but this repository has two more apps whose
+readers it writes itself.
+
+Same probe, same mutation set (oversized, negative, word, empty, float-in-int), against readers that
+hand-roll their XML:
+
+| app | reader | mutants | aborted loads |
+| --- | --- | --- | --- |
+| FreeX | ClosedXML -> DocumentFormat.OpenXml | 384 / 455 / 605 | 19, then 98, then 0 after two fixes |
+| FreeW | `DocxReader` (hand-rolled) | 250 | **0** |
+| FreeP | `PptxPackageReader` (hand-rolled) | 515 | **0** |
+
+The answer is unambiguous: **the class is library-induced, not format-induced.** The hand-rolled
+readers tolerate every mutation the library-backed one aborted on, and they do it without a single
+normalizer. That is the justification for FreeX carrying two — they compensate for a dependency's
+strictness — and equally the reason not to add anything similar to FreeW or FreeP, where it would be
+machinery guarding nothing.
+
+### Why keep a passing experiment
+
+Both probes are committed as tripwires rather than deleted. A test that passes today still earns its
+place when it fences a property that a plausible future change would break: the day either reader
+adopts a strict parser, or hand-rolls a strict parse of its own, these fire. That is the same
+argument as r486's original tripwire, applied to a negative result instead of a positive one.
