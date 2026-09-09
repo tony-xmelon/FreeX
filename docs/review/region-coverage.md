@@ -12819,3 +12819,48 @@ The fix makes the line honour the intent it documents.
 So the polarity finding from r551 has a companion. The accept form rejects NaN but NOT Infinity;
 whether Infinity then matters depends on what the value is cast to next, and `(int)` saturation - the
 same mechanism r546 identified on the write side - is what makes these two harmless.
+
+## r553 - the signature that finally predicts, and a subtitle file nobody had swept
+
+r551 scoped by APP LAYER (which dialog files lack a guard) and r552 then found the defect in a path
+that was not a dialog at all. So this round scoped by INPUT SOURCE instead: of the ~90 app and
+presentation parse sites, which read a FILE rather than a text box? That question partitions FreeP's
+54 sites into three that read external input and the rest that read dialog text, and both defects
+landed in the first group.
+
+`PresentationMediaTranscriptPlanner` parses WebVTT and TTML subtitle files embedded in the .pptx.
+Fifteen numeric parses, all file-controlled, and no earlier round covered them: r548 swept
+`FreeP.Core.IO`, and this file lives in the presentation layer. It is the surface a user acquires by
+opening someone else's deck.
+
+Reproduced end to end before fixing, through the real `BuildTranscriptPlan` entry point rather than a
+private helper:
+
+    00:00.000 --> 00:01.500 position:NaN% line:NaN%     ->  PositionPercent = NaN, LinePercent = NaN
+
+Two defects, and each is a form this program has already documented:
+
+  - `ParseWebVttPercent` guards with `percent is < 0 or > 100`, r551's REJECT form. Infinity fails
+    `> 100` and is caught; NaN fails BOTH comparisons and passes. `NumberStyles.Float` parses the
+    literal "NaN", so the file only has to say so.
+  - `ParseWebVttFontSizePx` restricts its input with a regex that FORBIDS AN EXPONENT, then guards
+    with `size <= 0`. The regex's `[0-9]+` allows unlimited digits, so a long run still overflows to
+    Infinity -- the identical route r550 found in `ZoomPercentPolicy`, where `NumberStyles.Number`
+    forbade the exponent and a long paste overflowed anyway. Twice now, a restriction that removes
+    the OBVIOUS spelling has been mistaken for one that removes the value.
+
+Nine `IsFinite` guards already exist in this file, and the frame-rate multiplier is guarded properly
+with both `IsFinite` and `> 0` before dividing. That is r526's ratio argument: the practice is
+established here, so these two are omissions against it rather than a missing convention.
+
+Recorded clean, with the mechanism named so a later round does not re-open them: `ParseTtmlOpacity`
+uses the ACCEPT form (`>= 0 and <= 100`) and rejects both spellings; `TryParseDip` in
+`ExternalXamlClipboardPlanner` already carries an explicit `IsFinite`; and `TryFromOaDate` survives
+NaN only by its `try/catch`, since `value is < 1 or > 2958465` lets NaN through and
+`DateTime.FromOADate` then throws. That last one works, but it is a comparison guard backstopped by an
+exception rather than a guard that holds.
+
+Instrument note. My first draft declared `namespace FreeP.App.Presentation.Tests`, which made
+`Presentation` resolve as a NAMESPACE and broke compilation of files I never touched. The existing
+tests use `FreeP.App.Compositor.Tests` for exactly that reason. A new test file can break a whole
+project without touching a line of it.
