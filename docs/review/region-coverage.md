@@ -14544,3 +14544,44 @@ So the capability was re-verified rather than assumed: reverting r586's restore 
 report `CreateStructuredTableCommand [filtered range] + wb.Sheets[0].AutoFilter = <null>`. **A
 coverage increase has to be shown not to have removed coverage**, which is not the same check as
 "the suite is still green" and does not come for free with it.
+
+## r591 — the redo half, and three commands that minted a new identity on every apply
+
+r589 audited undo over 87 commands. Redo is its sibling and was audited only by the older reflection
+drivers, over a couple of dozen commands. Adding it to the fingerprint harness is four lines: apply,
+undo, re-apply, and require the fingerprint to match what the FIRST apply produced.
+
+It found **12 violations across four commands**, and they are one defect shape — an identity minted
+fresh on every `Apply`, so a redo yields a DIFFERENT workbook that still looks right. This codebase
+already knows the shape: `AddSheetCommand` caches its sheet id (R16) and code name (R83),
+`AddChartSheetCommand` caches its SHEET id (R17), `DuplicateSheetCommand` caches its copy id (R17).
+The pattern was established and simply not carried.
+
+- `CreateStructuredTableCommand` — minted table id 2, then 3 on redo. A slicer or pivot cache pinned
+  to the old id is left dangling, which is precisely what the watermark comment two dozen lines away
+  exists to prevent. The NAME was cached alongside the id, since a structured reference like
+  `Table2[Col]` stops resolving if the name moves too.
+- `CreateStyledStructuredTableCommand` — the user-facing "Format as Table". **This corrects r589**,
+  where I wrote that it "delegates to the command r586 fixed, so the fix already covered it". That is
+  true of UNDO — `Revert` calls `RevertAppliedCommands`, which reverts the RETAINED inner instance —
+  and false of REDO, because `Apply` built a brand-new inner command every call and threw away the id
+  it had cached. Half a delegation. The fix is `??=`.
+- `AddChartSheetCommand` — R17 had stabilised the chart SHEET's id and left the CHART's own
+  `Guid.NewGuid()` untouched: half the fix, and the missing half is the one later commands capture
+  when they refer to "that chart".
+
+### The fourth is pinned, not fixed
+
+`DuplicateSheetCommand` re-clones the whole sheet on every apply, so the copy's conditional format,
+data validation, picture and structured table all take fresh identities on redo. Stabilising them
+means threading the minted ids through `CopyDrawingCollections`, `UniquifyClonedTables`,
+`CloneOwnedPivotCaches` and the slicer/timeline cloner — a different size of change from the three
+one-line caches above, in a method that five earlier rounds (R17, R99, R103, R127, R151) have already
+worked over.
+
+So it is pinned rather than half-fixed: the audit allows those FOUR EXACT paths and nothing else, so
+the drift cannot silently widen, and the day it is fixed the allowance goes stale and says so. A
+known gap that cannot grow is worth more than a vague TODO, and much more than a fix rushed through a
+method with that much history in it.
+
+Verified by neutering the table-id reuse: the redo contract fails and names the exact command.
