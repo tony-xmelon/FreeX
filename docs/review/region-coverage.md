@@ -12899,3 +12899,33 @@ Neuter note. My first attempt deleted `&& double.IsFinite(value))` and took the 
 so the build failed - r512's rule, a compile error proves nothing about a test. Replacing the
 condition with `&& true)` keeps the parens balanced, compiles, and fails exactly the five hostile
 spellings while both non-vacuity tests stay green.
+
+## r555 - ink annotations, and a neuter that proved I had tested only half my own fix
+
+r551 fixed FreeW's dialog planners because FreeW measured worst, leaving FreeX's and FreeP's unread.
+This round read FreeP's ten unguarded presentation files, ranking them by r553's input-source question
+rather than by whether they contain a guard. Nine parse DIALOG text. One does not.
+
+`SlideShowInkRenderPlanner` reads an INKML PART stored in the .pptx -- `Build` does
+`XDocument.Parse(Encoding.UTF8.GetString(inkBytes))` -- so every number in an ink annotation is
+file-controlled. Reproduced before fixing: a brush width of `1e400` produced `ThicknessDip = Infinity`,
+and `NaN` produced NaN, both reaching the compositor as real stroke geometry.
+
+The shape of the omission is by now familiar and still worth stating, because it is the strongest
+evidence that these are omissions rather than an absent practice: the trace COORDINATES ten lines below
+are guarded EXPLICITLY, with `.Where(value => !double.IsNaN(value) && !double.IsInfinity(value))`. The
+author knew the class and defended the geometry; the brush width went unguarded in the same method.
+
+`Math.Max(0.1, thickness)` is not a guard, and that is a fifth disguise for the list: it returns
+Infinity for Infinity, and NaN for NaN because Math.Max PROPAGATES NaN. It reads exactly like a lower
+bound that would keep a stroke sane. Worth noting alongside it that `-1e400` was ALREADY safe here, for
+a real reason rather than luck -- `Math.Max(0.1, -Infinity)` is 0.1 - so the theory case for it passes
+unchanged and the test records that.
+
+**The neuter caught me shipping an untested guard.** I fixed both parse helpers in one edit, ran the
+tests green, and neutered `ParseOptionalDouble` -- and the suite STAYED GREEN. My tests drove the InkML
+`brushProperty` path, which goes through `ParseDouble`; `ParseOptionalDouble` reads FreeP's own
+`fp:thicknessDip` attribute, written by its persistence planner, and nothing exercised it. One green
+run over a two-part fix says nothing about the part your fixture does not reach. A second test now
+drives that attribute, and the two guards are independently neuter-verified: removing the first fails
+three cases, removing the second fails two.
