@@ -111,6 +111,7 @@ defects outside that shape.
 | One-sided accept form admits Infinity | r551 (corrected), r571 | FIXED in the shared DialogNumericTextPolicy behind 55 dialog call sites. CORRECTS r551: an accept form excludes a non-finite value only when bounded on the side Infinity would exceed -- "value > 0" alone does not |
 | One guarded path, unguarded neighbour IN THE SAME METHOD | r554, r555, r560, r570, r572 | FIXED in FontDialogPlanner: r551 guarded kerning and left character spacing and position bare twenty lines above. Reading a FILE to see whether it guards is not a check -- reading each PATH is |
 | One-sided accept form on a DURATION | r571 (rule), r573 | FIXED in AnimationPanePlanner and PresentationTransitionCommandPlanner: "seconds >= 0" admits Infinity, and (int)Math.Round(seconds*1000) then saturates to int.MaxValue ms -- about 24.8 days |
+| Tripwire watching one SPELLING of its own class | r486 (built), r574 (widened) | The r486 scan matched "out var name" only, missing "out value" / "out double x" -- so r571-r573 found by hand what it existed to catch. Widened + upper-bound rule encoded; found 4 more one-sided guards |
 
 ## Known unswept - named so they are a decision, not an oversight
 

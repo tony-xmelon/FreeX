@@ -13495,3 +13495,41 @@ wrong rule does not merely mislabel one site - it becomes a SEARCH that skips a 
 three defects here sat in code that the old rule would have cleared on sight.
 
 FreeP build clean, 8 lanes 10012/0.
+
+## r574 - the tripwire for this class already existed, and it was watching one spelling
+
+Reading the census turned up `XlsxChartScalarReader.ReadOptionalDouble` - one unguarded helper behind
+68 chart-reader call sites - and then, in the same test project, something more important:
+`R486_ParsedDoubleGuardsRejectInfinityTests`.
+
+**r486 had already built a tripwire for this exact class, and had already stated the rule correctly:**
+"a guard with an upper bound excludes infinity on its own... Where a natural bound exists, prefer it
+to an IsFinite call." That is precisely what r571 spent a round deriving as a CORRECTION to r551. The
+right rule was in the repository the whole time, written by an earlier round of this same program.
+r551 restated it loosely as "the accept form rejects both", and I trusted the restatement instead of
+the test.
+
+**Why the tripwire missed r571, r572 and r573.** Its regex matched `out\s+var\s+(\w+)` - the
+`out var name` form only. Every defect those three rounds found declared its target differently:
+`out value` (a pre-declared out parameter), `out double seconds`, `out int ms`. The tripwire was
+watching one SPELLING of the thing it was built to watch, which is the same failure mode as r522's
+name-based sweep and r527's leading-underscore blind spot, now in the instrument rather than the
+search.
+
+Widening it to all out-parameter forms, then encoding r486's own upper-bound rule in place of its
+one-file allow-list (the wider net surfaced correctly-guarded two-sided sites such as
+`width > 0 && width <= 12`, which are RIGHT and must not be reported), turned it into a working
+search. Iterating until green found four more genuine one-sided guards:
+
+  - `HtmlCssParser.TryParseSize` - a CSS font size from PASTED HTML, the cross-app sibling of the
+    defect r547 fixed in FreeW's HtmlCssFormatting
+  - `FreeWRibbonFormattingSession.TryParseNonNegativePoints`
+  - `HeaderFooterDialogPlanner.TryParseDistance`
+  - `ObjectFormatCommandPlanner.TryParseSizePoints`
+
+The lesson is not "write tripwires" - r486 did. It is that a tripwire has the same blind spots as any
+other search, and nothing re-examines it, because a green test looks identical whether it is watching
+everything or almost nothing. Three consecutive rounds did by hand what this test was supposed to do
+automatically, and only reading the test itself explained why.
+
+FreeX build clean, DefaultTests 46456/0 on a full total of 46610. FreeW 7 lanes 11884/0.
