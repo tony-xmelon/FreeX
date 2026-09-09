@@ -14026,3 +14026,47 @@ program has been one of: a non-finite value STORED in the model, PERSISTED to a 
 arithmetic that MANUFACTURES a NaN, or a NaN reaching a comparison (where it makes the answer
 constant and meaningless). A finite-vs-Infinity comparison is none of those. Recording this keeps
 the class from expanding into places where a guard would be noise.
+
+## r581 — the save-side round trip, found by consequence rather than by parse
+
+r580 ended by naming what makes a non-finite value a DEFECT rather than a curiosity: it is stored in
+the model, persisted to a file, fed to arithmetic that manufactures a NaN, or reaches a comparison
+as NaN. That is a better search key than "unguarded parse", so this round searched by consequence.
+
+Two scans, and the first result is a convergence signal rather than a defect:
+
+- **parsed double -> `new NumberValue(...)`**: NO unguarded sites remain anywhere in the three apps.
+  That door — the model invariant defended piecemeal since r562 — is now closed everywhere the scan
+  can see.
+- **parsed double -> written back to a file**: one real site.
+
+### XlsxAdvancedConditionalFormatWriter.NormalizeNumericCfvoValueForSave
+
+Its own doc comment names it the single write choke point for a conditional-format threshold and
+forbids formatting one inline anywhere else. It exists to fix a comma-decimal defect (r145) by
+parsing the stored value and re-emitting it with `ToString(InvariantCulture)`.
+
+That round trip through a `double` is precisely the shape r577 found in
+`DataValidationNumericBoundText`: a threshold of "1E+400" parses to Infinity and is written back as
+the literal text `Infinity` — which the cfvo schema cannot express — from a file that was readable
+before FreeX saved it. Two features, one shape, and nothing in either file points at the other. The
+only reason this one was found is that the search key changed from the parse to the consequence.
+
+The method already had the right answer in its own words: "not a plain number we recognize
+(unexpected/malformed input) -- write through untouched rather than risk corrupting a value we don't
+understand". A non-finite value is exactly that, so the fix routes it to the branch that already
+existed.
+
+Both of its parses needed the guard, and each neuter proved it independently: with only the
+current-culture parse guarded, the value falls THROUGH to the invariant parse and is rewritten
+there anyway. That is r555's two-parses-one-method lesson holding up — a single guard would have
+looked like a fix and shipped the defect.
+
+### Also confirmed clean
+
+The three siblings of r580's TIMEVALUE fix — every other `x - Math.Floor(x)` in the codebase —
+are all guarded or bounded by construction: `TryNonNegativeSerialToTimeParts` tests `IsFinite` and
+an upper bound before the subtraction; `TimeScalar` (the TIME function) rejects non-finite h/m/s and
+bounds each to 32767; `TryParseExcelFakeLeapDayValueText` builds its serial as `60 + TotalDays`,
+which is bounded in [60, 61) by construction. r580's site was the only unguarded one of the four,
+and it slipped through because its guard had to be on the MANUFACTURE, not on any parse.
