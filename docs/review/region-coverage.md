@@ -14134,3 +14134,83 @@ The obvious positional fallback (`index + 1`) is WRONG here, and the test says s
 `[id=2, id=0]` it hands the second column id 2, which the first already owns. I implemented that
 variant deliberately to check the test catches it — it does, reporting `"2" is not unique`. (The
 first attempt at that variant did not compile, and by r512's rule proved nothing until redone.)
+
+## r583 — a behavioural probe finds 19 unopenable-workbook defects a scan could not
+
+The r582 lens (integer parses) was mostly correct-by-design when read statically, so I switched
+methods rather than keep reading: the malformed-input probe, which this program's own history says
+is the highest-yield technique available here.
+
+### The probe
+
+Save a valid workbook; then for each distinct (part, element, attribute) triple whose value is a
+plain integer, set that one attribute to `4294967296` — one past `uint.MaxValue` — and reload.
+Sixty-four mutants, one attribute kind each.
+
+**Nineteen of the sixty-four aborted the ENTIRE load with an unhandled exception.** Every one was
+thrown inside DocumentFormat.OpenXml — `UInt32.Parse`, `Int32.Parse`,
+`DocumentFormat.OpenXml.BooleanValue.Parse` — reached through ClosedXML, which is the
+throwing-library pattern this program has hit before. The list: `numFmt/@numFmtId`,
+`alignment/@textRotation`, `@indent`, `@readingOrder`, `@relativeIndent`, `@wrapText`,
+`@justifyLastLine`, `@shrinkToFit`, `border/@diagonalUp`, `@diagonalDown`, `font family/@val`,
+`cellStyle/@xfId`, `@builtinId`, `srgbClr/@val`, `sheet/@sheetId`, and the four `dataValidation`
+booleans.
+
+No scan in this session would have found these. The defect is not visible at any parse site in
+FreeX's own source — FreeX never parses these attributes at all; it hands the part to a library that
+does. Only running the file through the loader shows it.
+
+### Why one rule rather than nineteen
+
+`XlsxOutOfRangeIntegerAttributeNormalizer` drops any attribute whose value is a decimal-digit string
+that does not fit in `uint`. That is one rule on the VALUE, with no per-attribute type table to get
+wrong or to let rot, and it is sound because no attribute in the xlsx schemas can legitimately hold a
+decimal integer above `uint.MaxValue`: the integer attribute types are all int/uint-shaped, and the
+xsd:double ones (column width, row height, page margins) are bounded far below that by Excel itself.
+The digit-only test is what keeps it away from a GUID, a date, a cell reference or "8.43".
+
+Dropping rather than clamping follows r365/r366: Excel repairs such a file and opens it with the
+affected item at its default, which is exactly what removing the attribute achieves.
+
+It is wired into the existing `XlsxClosedXmlLoadPackageSanitizer` and is self-gating like its
+siblings — one streaming `XmlReader` pass per part, materializing an `XDocument` only when an
+offending value is actually present.
+
+### Result, and the two that remain
+
+19 failures -> 2. The two survivors are `cellStyle/@xfId` and `sheet/@sheetId`, and they are a
+different case rather than the same defect unfixed: both are REQUIRED identity attributes, so
+removing one cannot leave a usable default the way removing a formatting attribute does. What the fix
+changes for them is the failure MODE — an unhandled `OverflowException` leaking out of a third-party
+library becomes FreeX's own typed `WorkbookInvalidException`. Repairing them by renumbering, which is
+what Excel does, is separate work; recorded, not guessed.
+
+### Kept as a tripwire, not as a list of nineteen
+
+The committed test is the whole mutation surface, not the nineteen names. A new attribute read added
+anywhere in the loader is covered the day it is written — which is precisely how these nineteen came
+to exist unnoticed. It also asserts SURVIVING CONTENT, not merely "did not throw": a loader that
+dropped every sheet would pass a does-not-throw test, and r365's own doc comment makes the same
+point. Neutering the normalizer fails both tests, reporting the original `OverflowException`.
+
+### The codebase's own fences caught the fix
+
+The full lane came back with two failures, both contract tests, both about the NEW normalizer rather
+than about anything it changed:
+
+- `R276_PackageXmlReadersAreCharacterCappedContractTests` — my detector hand-rolled
+  `new XmlReaderSettings { DtdProcessing = DtdProcessing.Prohibit }`. r276 requires the character cap
+  too, because `WorkbookOpenSizeGuard` validates only the zip's DECLARED entry lengths, so a part
+  with a tiny compressed size and an enormous real one is unbounded at the point of parse — and
+  streaming does not save you when the colossal thing is one attribute value. Which is precisely
+  what my detector reads. Fixed by routing through `SecureXmlReaderSettings.Create()`.
+- `DirectPackageEntryXmlSanitizationInvariantTests` — every direct package-entry XML write must
+  sanitize or be explicitly exempt. This normalizer fits the existing exemption's rationale exactly:
+  it re-serializes a document it just PARSED OUT OF the archive, its mutation is purely subtractive
+  and structural, and it introduces no model text, so there is nothing for a sanitize to act on. The
+  allowlist is keyed by (file, saved identifier) so that adding model text later changes the line and
+  forces a fresh look — added with that reasoning written down rather than as a bare entry.
+
+Worth recording as a result in its own right: a new IO writer/reader in this codebase is now caught
+by two independent fences the day it is written. Both fences came out of earlier rounds of this same
+review program, and this is the first time they have fired on code the program itself introduced.
