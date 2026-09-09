@@ -13985,3 +13985,44 @@ vacuous one look identical.
   `XlsxWorksheetXmlValueParser` (`floating > 0 && floating <= uint.MaxValue`) and
   `BordersAndShadingDialogPlanner` (`width > 0 && width <= 12`) are both genuine ACCEPT forms, so
   the exemption is correct in both and there is no reject-form hole hiding behind it.
+
+## r580 — a NaN nobody parsed, and a non-finding worth as much
+
+### TIMEVALUE could return a cell value that is not a number
+
+`TryParseElapsedHmsText` reads Excel's unbounded elapsed-hours form ("36:00:00" -> 0.5) behind the
+regex `^\s*(\d+)\s*:\s*([0-5]?\d)...`. Nothing non-finite can be SPELLED past that pattern: digits
+only, so neither "NaN" nor "1e400" reaches the parse. The overflow happens anyway, because a regex
+constrains which characters may appear and never how many. A long enough digit run makes `hours`
+Infinity, so `totalDays` is Infinity, and the very next line is
+
+    fraction = totalDays - Math.Floor(totalDays);   // Infinity - Infinity = NaN
+
+which the caller returns directly as `new NumberValue(fraction)`.
+
+Two things worth separating here. First, the arithmetic MANUFACTURES the NaN — no non-finite value
+was ever read, so every guard-at-the-parse in this program would have missed it; r549 found the same
+manufacture in `Infinity % 360`. Second, this is the third time a regex has been mistaken for a
+bound (r550, r553, r559 said the same of NumberStyles): a pattern constrains SPELLING, not
+MAGNITUDE. The two facts compound — the pattern looks like it makes the parse safe, and the unsafe
+step is not the parse at all.
+
+Excel cannot represent such a time and answers #VALUE!, which is exactly what the caller already
+produces for text no parser here can read, so the fix reports the parser's existing false.
+
+### The non-finding: NumberFormatter.TryParseCondition
+
+A custom format's `[>1e400]` condition threshold looked like the same class. It is not, and the
+distinction is worth stating because it bounds this whole program:
+
+- Its regex DOES admit an exponent (`[eE][+-]?\d+`), so `1e400` is spellable and parses to Infinity.
+  But it does NOT admit "NaN" — strictly digits — so NaN is unreachable.
+- An Infinity threshold in a COMPARISON is well-defined and correct: `value > Infinity` is false for
+  every finite value, and no finite number IS greater than 10^400. The section not applying is the
+  right answer, not a bug.
+
+**Infinity in a comparison is meaningful; NaN in a comparison is not.** Every genuine defect in this
+program has been one of: a non-finite value STORED in the model, PERSISTED to a file, fed to
+arithmetic that MANUFACTURES a NaN, or a NaN reaching a comparison (where it makes the answer
+constant and meaningless). A finite-vs-Infinity comparison is none of those. Recording this keeps
+the class from expanding into places where a guard would be noise.
