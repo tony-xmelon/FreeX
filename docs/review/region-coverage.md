@@ -15602,3 +15602,42 @@ real behaviour at the wrong granularity. Updated to assert the broadcasting help
 **Process note.** I started a full-lane background run and then built the same projects in the
 foreground; the second run died on a locked `testhost` assembly. That is the contention this repo's
 notes already warn about, and it cost a full verification cycle. Serialize the lanes.
+
+## r608 — four lenses, all dry: cancellation, resource lifetime, cross-process state
+
+Recorded in full because a dry lens is only useful to the next round if the EVIDENCE is written down,
+not just the verdict.
+
+**Cancellation.** Sound in both hosts, with a prior round's fix visible in the code.
+`WorkbookSaveService` checks the token at every phase boundary and, critically, immediately before
+`ReplaceTargetFile` -- so a cancel landing during a save discards the temp file and leaves the
+original untouched. The adapter's own `Save(workbook, stream)` takes no token, so the write itself is
+uninterruptible; that is a UX limit, not a correctness one, and the temp is cleaned in `finally`.
+
+Model-side is where a defect would hide, and it was already found: `ApplyOpenedWorkbookAsync`
+checkpoints BEFORE any state mutation, with a comment recording that the check used to sit later
+(R156-host-open-cancel-after-swap) so a cancel between the workbook swap and that point left the new
+workbook live with the read-only gate skipped. The comment claims the Avalonia host has the
+equivalent ordering -- VERIFIED rather than trusted: `ThrowIfCancellationRequested()` at
+MainWindow.cs:27426 precedes `ReplaceSession(...)` at 27428.
+
+**Resource lifetime.** No stream creation in any IO layer escapes a `using`. Disposable FIELDS
+(`CancellationTokenSource`, `Timer`, `FileSystemWatcher`) are 8 in production, and every one is
+disposed -- `AvaloniaSpeechEngine._completionCancellation` is taken under lock, nulled, and disposed
+at both exit points; FreeW's print CTS is a `using var` with the field holding only a reference
+cleared in `finally`. My first scan reported them as undisposed because it matched on the FIELD name
+while the disposal goes through a local -- the r607 lesson repeating, and the reason the verdict here
+is "traced" rather than "scanned".
+
+**Cross-process state.** Two instances share `%APPDATA%`, and the stores are differentiated
+deliberately: `RecentFilesStore` and `AutosaveSnapshotStore`, where concurrent APPENDS interleave,
+take a real lock file (`FileShare.None`); `JsonSettingsStore` (behind `AppOptionsStore`) writes whole
+documents through `AtomicFileWriter`, so a concurrent write cannot tear -- last writer wins, which is
+the normal contract for a settings file and not a defect.
+
+**Per-instance guard over shared state** (the r607 generalisation) does not extend to the sister
+apps, and by design rather than by luck: FreeW's and FreeP's View > New Window SERIALIZE the document
+and read back a fresh copy (`FreeWDocumentWindowPlanner.CreateNext` round-trips through
+DocxWriter/DocxReader; FreeP's planner says outright that "the package round trip deliberately avoids
+sharing"). No shared object, no race, no guard needed -- which is why neither app has an `_isSaving`
+field at all.
