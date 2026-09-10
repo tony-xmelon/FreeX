@@ -15454,3 +15454,55 @@ silently as part of a defect round -- the method above reproduces it in one comm
   planner" guards. r604's was the only pinned defect.
 - **r604's own class**: no invariant-only typed-input parse remains in any FreeW or FreeP dialog
   planner, and FreeP's animation pane was already bicultural in every field.
+
+## r606 — the async-void boundary: a fence in one app, blind to its own hazard's plainest spelling
+
+**Premise.** The two lenses that keep paying are "which app is missing the sibling's harness" and
+"what OTHER construct reaches the same hazard". Both apply to `AsyncUiBoundarySourceTests`, FreeP's
+guard against fire-and-forget async.
+
+An async lambda or method returning void has no caller to observe its Task; when it throws, the
+exception reaches the dispatcher with nothing to catch it and both toolkits terminate the process.
+This repo has been bitten before -- `Dispatch(async () => {})` binds to `Action`, and 154 tests
+silently passed while doing nothing.
+
+**Three gaps in the existing guard:**
+
+1. It scans `freep/` ONLY. FreeX and FreeW have the same boundaries and no contract at all.
+2. It matches `+= async` and `_ = ...Async(`, and is blind to **`async void` METHOD DECLARATIONS** --
+   the most direct spelling of the hazard it is named for. FreeP itself has eight; the guard checks
+   none of them. Its companion test pins two by hand, which is a list, not a scan.
+3. It is blind to the **Action-bound lambda** -- `Dispatcher.BeginInvoke(async ...)` and
+   `Dispatcher.UIThread.Post(async ...)` -- which is the exact shape of the historical bug.
+
+**No live defect.** Every one of the 32 boundaries across the three apps was traced by hand and every
+one is already contained, several with comments naming the hazard explicitly. Two that looked wrong
+were cleared with evidence:
+
+- FreeW's `ResolvePerRecordMergePrompt` posts to the UI thread and then BLOCKS on
+  `completion.Task.GetAwaiter().GetResult()` -- a guaranteed deadlock if the caller were on the UI
+  thread. It is not: the merge runs under `Task.Run`, and the calling code says so in a comment that
+  states running it inline "would deadlock".
+- FreeX's WPF host fires the crash-recovery restore and forgets it, while its Avalonia host awaits
+  the same operation. The WPF path is safe because the operation is
+  `StartupRecoveryWorkflow.RestoreAndRetireCandidateAsync`, which catches its whole body and retires
+  (deletes) the snapshot ONLY when `restored` is true -- so a failed restore can neither escape nor
+  destroy the user's only surviving copy of unsaved work. Fire-and-forget is deliberate there: the
+  caller is blocking the UI thread, and the restore must run on that thread afterwards.
+
+So this round converts verified discipline into an enforced contract rather than fixing bugs, and it
+is recorded as a coverage gap, not a defect.
+
+New `R606_AsyncVoidBoundariesContainTheirFailuresTests` covers all three apps and all three
+spellings: 23 `async void` methods, 5 async event handlers, 4 Action-bound lambdas. Non-vacuity
+asserts that each of the three patterns matched something, so a drifted pattern cannot pass as clean.
+Neutered by turning one real `catch` into `finally`: it reports
+`ZoomObjectPropertiesDialog.cs:156` by name.
+
+**Correction to my own instrument.** The first draft reported five uncontained sites -- and I had
+already hand-traced four of them as contained. They are one-line handlers
+(`Click += async (_, _) => await StopProtectionAsync();`) whose `catch` lives in the CALLEE, not
+lexically nearby. A window scan cannot see that, so the rule now follows one level of delegation
+within the same file. The fifth is contained in another file entirely and carries an allowlist entry
+with the reason, plus an assertion that every allowlist entry is still used, so a stale exemption
+cannot linger.
