@@ -15641,3 +15641,48 @@ and read back a fresh copy (`FreeWDocumentWindowPlanner.CreateNext` round-trips 
 DocxWriter/DocxReader; FreeP's planner says outright that "the package round trip deliberately avoids
 sharing"). No shared object, no race, no guard needed -- which is why neither app has an `_isSaving`
 field at all.
+
+## r609 — the 15-digit rule reached typing but not pasting; and an error of mine, corrected
+
+**Finding (real).** Excel keeps 15 significant digits for a number entering a cell, implemented as
+`ExcelNumericPrecision.CapSignificantDigits` and applied at 9 sites -- typed entry, formula literals,
+recalc results, CSV import. `PasteCommandFactory.ParseClipboardValue` constructs `NumberValue` at
+FOUR branches and applied it at NONE, while its own comments claim each branch mirrors the typed one
+("exactly like typing '123 into a cell", "matching the same first pass CellEntryParser uses for typed
+entry"). So the same characters produced different stored doubles depending on how they arrived.
+Fixed at all four branches; `R609_PastedNumbersGetExcelsPrecisionRuleTests` pins paste to whatever
+the shared rule is.
+
+### The error, which is the more useful record
+
+Chasing a leftover failure in my own test, I concluded that `CapSignificantDigits` was wrong to
+TRUNCATE for magnitudes at or above 1e15 -- its other branch rounds -- and I changed it to round,
+citing "Microsoft's documented example: 123456789012345678 is stored as 123456789012346000".
+
+**That citation was mine, not Microsoft's.** The full FreeX lane came back 51 failed against a
+baseline of 43, and the eight new failures were tests NAMED for the behaviour I had just changed:
+`SixteenDigitLiteral_IsTruncatedToFifteenSignificantDigits`,
+`NegativeEighteenDigitArrayConstantElement_IsTruncatedToFifteenSignificantDigits`. R75's doc comment
+states the rule outright -- "Excel truncates -- zeroes -- excess low-order integer digits
+unconditionally, it does not round them" -- which matches Microsoft's actual wording, that Excel
+changes digits after the fifteenth place to ZEROES.
+
+R75 was right and I was wrong. Reverted `ExcelNumericPrecision` and the test file I had rewritten to
+match my error; only the paste fix stands.
+
+Two things this is worth remembering for:
+
+- **I rewrote a correct test to match an unverified claim.** `ExcelNumericPrecisionTests` asserted
+  truncation, I called it "a test that codified the defect", and I edited it. That reasoning was
+  available to me before the lane ran -- the tests I was overriding were NAMED for the behaviour, and
+  a prior round had documented why. A test that contradicts your change is evidence about the change
+  first.
+- **Quoting a source from memory is not verification.** Excel COM is not registered on this machine,
+  so I could not check the real thing; I said so in the test comment and then proceeded on the
+  citation anyway. Recording the limitation is not the same as respecting it.
+
+**Left open, not settled:** the two branches of `CapSignificantDigits` genuinely do differ -- below
+1e15 it rounds (`Math.Round(..., AwayFromZero)`), at or above it zeroes. Both are pinned by tests,
+four lines apart in `ExcelNumericPrecisionTests`. Whether Excel really is dual like this, or whether
+the fractional branch should also zero, needs a machine with Excel installed. Recorded as a question
+for a round that can answer it rather than guessed at again.
