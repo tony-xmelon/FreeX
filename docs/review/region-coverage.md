@@ -15032,3 +15032,42 @@ comparison, no false positives, and it reuses r454's existing callback.
 That asymmetry is worth stating plainly, because "same shape, same app family" invites the same
 remedy: the availability of a CLEAN CONTRADICTION is what decides whether a silent-loss case can be
 fixed cheaply or has to wait. FreeP had one; FreeX does not.
+
+## r602 — the census FreeX never had
+
+Two clean negatives first, both worth the minutes they cost:
+
+- **Zip-slip.** No `ExtractToFile`/`ExtractToDirectory` anywhere in production code, and no package
+  entry name reaches `Path.Combine` in any of the three IO layers. The readers keep everything in
+  memory, so a `../../evil` entry name has nothing to escape into. Asked directly rather than assumed
+  safe, because it is the one malformed-package question with a security consequence.
+- **The four-shape matrix is complete.** FreeX R583/R584, R592, R596, R600; FreeW R588, R594, R598,
+  R601; FreeP R588, R595, R599, R601. Twelve cells, all fenced.
+
+### The asymmetry
+
+Listing those fences surfaced something else: FreeW's r527 and FreeP's r528 each census EVERY command
+against an index that cannot be valid — build it, run HasEffect/Apply/Revert, require that none
+throws. **FreeX had no equivalent**, and the failure-outcome audit deliberately skips the throw path
+("a different contract"), so nothing in this repository asked the question of FreeX's commands at
+all. The largest app was the uncovered one.
+
+As in r528 the stakes are a quality bar rather than a crash guard — `CommandBus.Execute` TryReverts
+on a throw — but a command handed a stale address should DECLINE, not raise.
+
+### Making it hostile enough to mean something
+
+The address is inside the grid's bounds but far past anything the fixture holds (row 900,000, column
+15,000). That is deliberate: an out-of-BOUNDS address is turned away by a bounds guard before a
+command reaches its own lookup, and the census would pass having exercised nothing.
+
+The instrumentation proves it landed, and is kept in the test output rather than deleted:
+
+    exercised=229 succeeded=118 declined=111 raised=0
+
+**111 declines are the evidence the census is not vacuous** — the hostile address reaches the
+commands and is rejected by nearly half of them. 229 commands is also well beyond the 87 the r589
+undo audit reaches, since that one counts only commands that succeed and are not no-ops.
+
+**FreeX passes: none of its 229 commands raises.** A clean result on a question that had never been
+asked, which is worth more than the same result on a question already answered twice.
