@@ -15506,3 +15506,99 @@ lexically nearby. A window scan cannot see that, so the rule now follows one lev
 within the same file. The fifth is contained in another file entirely and carries an allowlist entry
 with the reason, plus an assertion that every allowlist entry is still used, so a stale exemption
 cannot linger.
+
+## r607 — reentrancy: a discipline applied 211 times by hand, missed four times
+
+**Premise.** r606 ended on `_isOpeningFile`, an ad-hoc reentrancy flag inside FreeX's WPF
+`OpenFileAsync`. Ad-hoc per-call-site handling is the shape a census rewards.
+
+**Why the guard is load-bearing.** The Avalonia shell stays INTERACTIVE during an open or a save --
+the save reports through the status bar, not a modal, and `WorkbookSaveService` awaits its inner
+work with `ConfigureAwait(false)` while handing the LIVE workbook to `adapter.Save(workbook, file)`.
+A ribbon click landing between the save's await points therefore mutates the very object graph the
+serializer is walking on another thread. That is the "collection was modified" hazard FreeW's mail
+merge documents in its own comment, where it snapshots the template before backgrounding precisely
+to avoid it.
+
+**The census.** `_isOpening` / `_isSaving` are ASSIGNED in 4 places and CHECKED in 211 -- a
+convention held by hand at every entry point. Cross-referencing the shell's command-ports wiring
+(`SomePort = SomeHandler,`) against the guard found four handlers that had missed it, every one of
+which reaches `_session.ExecuteReviewCommand(...)`:
+
+- `ApplyPageLayoutScale` -- reached by the Width, Height and Percent boxes
+- `InsertShapeAtActiveCell`
+- `InsertTextBoxAtActiveCell`
+- `InsertFormControlAtActiveCell`
+
+The page-layout one is the sharpest: TWO other handlers in that same file already carried the guard,
+so this was an inconsistency inside one file rather than a convention nobody had established.
+`TryInsertObjectAsync` sits in the same file as the three Insert commands and carries it too.
+
+Fixed by adding the sibling guard. New `R607_WiredCommandHandlersGuardAgainstReentrancyTests` holds
+the convention: it reads the wiring table, resolves each handler across the shell partials, and
+follows one level of delegation. Neutered by removing one added guard, it names
+`InsertShapeAtActiveCell`.
+
+Deliberately NOT included: `ShowBackstageOverlay` is wired and unguarded, but it only shows a pane --
+no mutation, so it is not this hazard and claiming it would overstate the finding.
+
+### A pattern in my own instruments, worth naming
+
+Three rounds running, the first draft of a scan mis-modelled containment or scope, and each time the
+tell was a result that CONTRADICTED SOMETHING ALREADY VERIFIED BY HAND:
+
+- r603: the uncapped-XML contract matched `XElement.Parse(string)` and reported 87 sites where a
+  parse-time cap bounds nothing.
+- r606: the async contract reported five uncontained boundaries, four of which I had already traced
+  as contained -- their `catch` sits in the callee, not lexically nearby.
+- r607: this contract reported `ApplyRibbonNumberFormat`, which reaches its guarded
+  `ApplySelectedRangeNumberFormat` on the FOURTH call in its body, past a cap of three.
+
+The rule that falls out: when a scan disagrees with a hand-traced fact, the scan is wrong until
+proven otherwise -- and an implausible count is the cheapest tell of all.
+
+### r607 continued — the finding the per-handler census pointed at
+
+Chasing the same question into the WPF host turned up the real defect, in Avalonia.
+
+**A correction I had to make mid-round.** I first read `ShowSaveProgress` (footer only) against
+`ShowOpenProgress` (footer plus a mouse-blocking overlay) and concluded that WPF blocks input for
+the operation that does NOT need it and leaves the dangerous one open. That was wrong. Save gets a
+STRONGER gate, just not from `ShowSaveProgress`: `AdjustSaveGate(acquire: true)` disables the app
+surface, and its comment says exactly why -- "save serializes the LIVE model on a background thread,
+so a concurrent edit -- including a keyboard edit, which a mouse-only overlay would not stop --
+could tear the snapshot." Reading the whole save block instead of the progress helper is what
+redirected the round.
+
+**The defect.** WPF also broadcasts that gate: `_windowRegistry.BroadcastSaveInProgress(this, true)`,
+because "a 'New Window' sibling shares this EXACT Workbook/CommandBus instance ... a keystroke
+landing there could tear them structurally mid-enumeration" (R115-app-host-save-race).
+
+FreeX's Avalonia host has all the same ingredients and none of the broadcast:
+
+- `NewWindow()` builds its sibling from `_session.CreateSiblingView(...)` -- the same shared workbook.
+- `_isSaving` is a PER-WINDOW field, and it is the shell's only reentrancy guard (4 assignments,
+  211 hand-written checks).
+- `AvaloniaWorkbookWindowRegistry` already notifies `SameDocumentExceptOrigin` for other things.
+
+So while window A saved, window B's `_isSaving` stayed false, all 211 of its guards passed, and a
+keystroke there mutated the workbook A's background thread was serializing. Typing IS otherwise
+guarded in Avalonia -- `CommitEditAcrossSelection` declines with "Finish saving before editing" --
+which is what makes the sibling window the whole exposure rather than one path among many.
+
+Fixed by mirroring WPF: `NotifySaveInProgress` on the registry, `ApplySaveInProgress` on the sibling,
+and a `SetSavingAndTellSiblings` helper that every save boundary now routes through -- including
+print spooling, which renders the live workbook to PDF and had the same race.
+
+`R607_SiblingWindowsAreToldWhenTheSharedWorkbookIsSerializedTests` holds it two ways: no raw
+`_isSaving =` outside the two owning methods, and both hosts must broadcast to the same audience --
+the asymmetry itself was the defect.
+
+**A second contract that pinned a statement rather than a requirement.** `AvaloniaShellSourceTests`
+asserted the literal `"_isSaving = true;"` inside `TryBeginFileOperation`, so the fix broke it and my
+new contract directly contradicted it. Same species as r604's pinned divergence, milder: it pinned a
+real behaviour at the wrong granularity. Updated to assert the broadcasting helper instead.
+
+**Process note.** I started a full-lane background run and then built the same projects in the
+foreground; the second run died on a locked `testhost` assembly. That is the contention this repo's
+notes already warn about, and it cost a full verification cycle. Serialize the lanes.
