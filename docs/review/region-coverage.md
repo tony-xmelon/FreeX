@@ -15387,3 +15387,70 @@ for `Any`, wrong once the styles became `Float`), and the updated source contrac
 the host files must not mention `CultureInfo` at all -- too broad, since both hosts legitimately pass
 CurrentCulture to `string.Format` for user-facing text. The culture rule now lives in a test that
 looks at TryParse CALLS.
+
+## r605 — the locale experiment: 15,000 tests run on a machine that is not English
+
+**Method, because the result depends on it.** Every suite in this repo has only ever run under
+en-US. A `[ModuleInitializer]` reading `FREEX_PROBE_CULTURE` and setting
+`CultureInfo.DefaultThreadCurrentCulture` turns any suite into a locale probe, with the unset case
+as its own control. Both halves were run for every suite; the probe files were deleted afterwards.
+
+| suite | en-US | de-DE |
+| --- | --- | --- |
+| FreeX.App.Presentation.Tests | 0 failed / 5,652 | **3** |
+| FreeX.Core.IO.Tests | 0 failed / 6,659 | **45** |
+| FreeX.Core.Formula.Tests | 0 failed / 5,279 | **89** |
+| FreeX.App.Services.Tests | 0 failed / 3,659 | **14** |
+
+**151 failures, and after triage NOT ONE is a product defect.** That is the finding, and it is worth
+more than the number suggested at first sight. They fall into two kinds:
+
+1. **Behaviour that is locale-dependent BY DESIGN, asserted at its en-US answer.** `VALUE("1,2")` is
+   `#VALUE!` in en-US and 1.2 in de-DE -- Excel does the same. `="-3.5"+0` coerces in en-US and does
+   not on a comma-decimal machine. CSV writes `;` and locale decimals on de-DE, which r603 confirmed
+   is Excel-aligned and deliberate. FreeX is FOLLOWING Excel here; the tests pin one locale's answer.
+2. **Test fixtures that format their own input with the current culture.** `R80_BorderThemeColorTests`
+   builds its XLSX with `Tint.ToString("R")` -- no culture -- so on de-DE the fixture writes
+   `tint="0,4"` and the (correctly invariant) reader returns 0. The financial cases build formula
+   TEXT by interpolation, producing `CUMPRINC(0,008333333333333333,12,...)`, where the decimal comma
+   collides with the argument separator and the formula is simply malformed. The engine is not
+   involved.
+
+Every candidate that looked like a product defect was traced and cleared:
+
+- `NormalizeNumericFormulaForSave(Decimal, "1,234")` returns "1.234" on de-DE and "1234" on en-US.
+  Not corruption: the shared parse tries INVARIANT FIRST, so a file-sourced bound (always dot-decimal
+  and ungrouped on disk) is read identically everywhere. Only text that fails the invariant parse
+  reaches the culture attempt, which is the dialog-typed case, where following the locale is right.
+- Border tint and gradient stops/inset: `XlsxColorReader.ReadTint` and the gradient reader are
+  invariant. The failures are the fixtures, above.
+- Trendline annotations render "R² = 1,0000" on de-DE. `AnnotationLines` is consumed only by the
+  renderers and never persisted, so locale formatting there is what Excel shows.
+
+**What this establishes.** r603 and r604 closed the culture class by scanning and by targeted probes.
+This closes it by experiment, across four assemblies and 21,249 test cases, which is far stronger
+evidence than an empty grep. The product handles locale correctly; what is en-US-locked is the TEST
+SUITE.
+
+**Recorded, not fixed:** a contributor on a non-English machine sees ~151 spurious failures. That is
+real, and it is a test-quality defect rather than a product one; fixing it means correcting ~151
+fixtures across four assemblies (culture-invariant fixture formatting, and locale-parameterised
+expectations for the by-design cases). Left as a characterised, reproducible item rather than done
+silently as part of a defect round -- the method above reproduces it in one command.
+
+### Lenses that came up dry this round, so the next round need not re-ask
+
+- **Atomic save**: correct in all three apps. FreeW's and FreeP's `Write(document, path)` overloads
+  look like in-place truncation but are only ever called with the temp path inside
+  `AtomicFileWriter`'s lease; FreeW's `DocumentPersistenceWorkflow` and FreeP's
+  `PresentationFilePersistenceWorkflow` both go through `AtomicFileWriter`.
+- **Time and DST**: `GetLastWriteTimeUtc` / `UtcDateTime` used consistently for every staleness and
+  conflict comparison; FreeX converts comment timestamps with `ToUniversalTime()`; FreeP stamps with
+  `UtcNow` so its `"O"` format always carries `Z`. The single `DateTimeOffset.Now` is a zip entry
+  LastWriteTime fallback, which the zip format specifies as local.
+- **Contracts that pin a defect** (the r604 shape): searched the population. The other WPF/Avalonia
+  assertion pairs are genuine platform differences (`DataGrid` vs `Grid`, `ShowDialog` signatures),
+  and the `CultureInfo`/`NumberStyles` assertions are structural "this dialog must delegate to its
+  planner" guards. r604's was the only pinned defect.
+- **r604's own class**: no invariant-only typed-input parse remains in any FreeW or FreeP dialog
+  planner, and FreeP's animation pane was already bicultural in every field.
