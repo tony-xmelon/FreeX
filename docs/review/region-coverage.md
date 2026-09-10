@@ -15318,3 +15318,72 @@ cases the tell was an implausible count, not a subtle wrong answer.
 Also recorded: FreeW and FreeP have NO production reflection handles at all -- their only
 `GetMethod`/`GetField`/`GetType(string)` hits are in `tools/`, plus one `JsonElement.TryGetProperty`
 that is not reflection. The absence is checked, not assumed, which is why the census is FreeX-only.
+
+## r604 — typed numbers must follow the user's locale (the mirror of r603)
+
+**Premise.** r603 established that a number read out of a FILE must be culture-invariant. The
+mirror question had not been asked: is a number the USER TYPES read in the user's locale? Excel,
+Word and PowerPoint all accept the locale separator in their ribbon boxes.
+
+### Finding 1 — the box could not read back what the box itself printed
+
+Both FreeW hosts render the font-size and line-spacing values through `FormatInvariant`, so the box
+always DISPLAYS `10.5`. The WPF host then re-read that text with `CultureInfo.CurrentCulture` and
+`AllowThousands` -- and `.` is de-DE's THOUSANDS separator, so `10.5` parses as **105**. Opening the
+font-size box on a German machine and pressing Enter without editing anything multiplied the font
+size by ten. Measured, not inferred: `double.TryParse("10.5", Float|AllowThousands, de-DE)` returns
+105, `"1.5"` returns 15, `"12.75"` returns 1275.
+
+The identical defect is in FreeX: `WorksheetSizeInputParser` parsed with CurrentCulture and
+AllowThousands, and it is the parser behind the WPF ribbon font-size box and the row-height/column-
+width dialogs.
+
+### Finding 2 — and the other host rejected the other half of the world
+
+FreeW's Avalonia ribbon parsed the same box with `InvariantCulture` only, so a user typing `10,5`
+was silently ignored -- the command returned false and did nothing. FreeX's Avalonia
+`ApplyRibbonFontSize` had exactly the same invariant-only parse. One box, two platforms, opposite
+halves of one defect, in both apps.
+
+### Finding 3 — a source contract was PINNING the divergence
+
+`RibbonDialogAutomationOwnershipSourceTests.Ribbon_hosts_consume_shared_typed_numeric_parsers`
+asserted, in as many words:
+
+    wpf.Should().Contain("CultureInfo.CurrentCulture");
+    avalonia.Should().Contain("CultureInfo.InvariantCulture");
+
+That is not a decision about locales -- `git log -S` shows it arrived in a refactor whose subject was
+"share ribbon parsing and dialog ids". It recorded what the code did, and thereby froze it: any
+future round that fixed either host would have been told it had broken a contract.
+
+### The remedy was already in the repo, three times over
+
+`FreeX.App.Presentation.NumericInputParser` has a bicultural overload (current culture, then
+invariant) and `ChartDialogValueParser` and `FormatCellsInputParser` both use it. FreeP's animation
+duration field uses the same shape, and its comment describes this very defect being fixed there:
+the field "displayed 0,5 and then refused to parse it". FreeP also recorded the reason to use
+`NumberStyles.Float` rather than `Any` -- excluding AllowThousands is what stops `1.5` becoming 15.
+
+So this round did not invent a policy. It routed the paths that had missed it through the shape the
+repo had already settled:
+
+- FreeX `WorksheetSizeInputParser` -> `NumericInputParser`'s bicultural overload, AllowThousands gone.
+- FreeX Avalonia `ApplyRibbonFontSize` -> `WorksheetSizeInputParser`, so both hosts share one path.
+- FreeW `TryParseNonNegativePoints`, `HeaderFooterDialogPlanner.TryParseDistance`,
+  `ObjectFormatCommandPlanner`, `FreeWRibbonNumericValueCommand` (its default was invariant, and its
+  two call sites -- the line-spacing box, one per host -- also disagreed about NumberStyles) and a
+  new `TryParseTypedFontSize` used by both hosts.
+- New `Free.Shared.AppServices.LocalizedNumberEntry` is the shared home for FreeW and FreeP, which
+  cannot reference FreeX's copy.
+
+Verification: `TheValueTheBoxPrintsIsTheValueTheBoxReadsBack` round-trips FormatInvariant output
+back through the parser under de-DE, fr-FR, fa-IR and en-US. Neutered to the old WPF configuration,
+all three foreign cultures fail and en-US passes -- which is exactly why a single-locale test suite
+never saw it. The FreeX equivalent fails the same three under its old configuration.
+
+Corrections made to my own work this round: the de-DE `"1.5"` case was written expecting 15 (right
+for `Any`, wrong once the styles became `Float`), and the updated source contract first asserted that
+the host files must not mention `CultureInfo` at all -- too broad, since both hosts legitimately pass
+CurrentCulture to `string.Format` for user-facing text. The culture rule now lives in a test that
+looks at TryParse CALLS.
