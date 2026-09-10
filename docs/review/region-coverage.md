@@ -14740,3 +14740,71 @@ FreeP's own typed error or reports what it lost. Verified by deleting r454's
 Across the three apps the lens now reads: FreeX **fixed** (r593, it had a channel to thread), FreeW
 **fenced** (r594, it has no channel and building one is a product decision), FreeP **already correct**
 (r595, verified rather than assumed).
+
+## r596 — truncation is a different damage shape from deletion
+
+r592 deleted whole parts. Truncating one is not the same experiment: the zip stays valid and the
+entry holds MALFORMED XML, which is what an interrupted download or a zip-repair tool actually
+produces. r583/r584 mutated attribute VALUES inside well-formed XML, and r592 removed parts entirely
+— neither reaches this.
+
+Truncating each XML part to 50% and 90% of its bytes leaked a raw **`XmlException`** from nine parts:
+`[Content_Types].xml`, both `docProps`, `comments1.xml`, `sharedStrings.xml`, `styles.xml`,
+`tables/table1.xml` and more. The shell shows `exception.Message` verbatim, so the user read
+"Unexpected end of file has occurred. The following elements are not closed: ..." for a file this
+adapter already owns an accurate sentence about — the same r382 gap r592 found in two other shapes.
+
+The fix extends the same predicate, and it is renamed with it: `IsMissingPackagePartFailure` had
+stopped describing what it does, since it now covers damage that is not a missing part at all. It is
+`IsDamagedPackageFailure`.
+
+One difference from r592 worth stating. That round required a stack-frame test alongside the type,
+because `ArgumentOutOfRangeException` and `KeyNotFoundException` are ambiguous — plenty of code
+throws them for reasons that are not package damage. `XmlException` on the LOAD path needs no such
+test: nothing there parses FreeX's own output, so the type alone IS the evidence. Same predicate,
+deliberately different strength of test, for a reason rather than by habit.
+
+### What was already right
+
+The chart and drawing parts truncate to a load that keeps everything else and WARNS — r593's work,
+holding under a damage shape it was not written for. And `xl/theme/theme1.xml` throws
+`XlsxThemePartCorruptException`, FreeX's own typed error naming the part: correct, and left alone.
+
+The fence accepts both legitimate outcomes — refuse typed, or load with less content AND a warning —
+and rejects only a raw framework exception or a silent loss. Verified by neutering the XmlException
+arm: it fires on `[Content_Types].xml at 50%`.
+
+### The lane is not green, and it is not this change
+
+The r596 lane came back **42 failures**, and they need reporting rather than rounding away:
+
+| assembly | failures |
+| --- | --- |
+| `FreeX.App.Host` | 31 |
+| `FreeP.App.Host` | 11 |
+| everything else (IO, Model, Commands, Formula, Calc) | **0** |
+
+All 42 are WPF pixel-render assertions — "the blue fill glyphs must be visible" against a null match,
+`CountPixelDifferences(flat, withBevel)` returning 0. That is the blank-bitmap signature.
+
+What was established rather than assumed, because "it looks unrelated" is not evidence:
+
+1. **`FreeP.App.Host.Tests` has no project reference to `FreeX.Core.IO`.** This round's only product
+   change is in `XlsxFileAdapter.cs`, so it cannot reach those binaries at all.
+2. **The failures reproduce with r595's test file removed** and that project rebuilt — so the test I
+   added to `FreeP.App.Host.Tests` last round is not perturbing the render suite either, which was
+   the most plausible remaining hypothesis given xunit's in-assembly parallelism.
+3. **They survive a process reap** and are stable at 8/34 across four runs of `SlideCanvasTests`
+   alone, so this is not the "count grows between runs" flakiness recorded earlier.
+4. They appeared on the first lane after `freex-reap.ps1 -Disk` wiped `bin/obj`; r593's lane, which
+   covers these same assemblies, was 46627/0 on incremental binaries.
+
+So: not caused by this round or the last, and better characterised than the existing note — it is
+reproducible and tied to a CLEAN REBUILD rather than to mid-session drift. The cause is not
+established and this round does not claim it is. Recorded as an open finding with the evidence,
+because a stable 42-test failure on a clean rebuild is worth someone's attention on its own, and
+because rounding it off as "known flaky" would have been the convenient reading rather than the true
+one.
+
+r596's own change is verified by its own fence, by r592's, and by every non-render assembly staying
+green.
