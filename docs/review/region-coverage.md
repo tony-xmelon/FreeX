@@ -15071,3 +15071,250 @@ undo audit reaches, since that one counts only commands that succeed and are not
 
 **FreeX passes: none of its 229 commands raises.** A clean result on a question that had never been
 asked, which is worth more than the same result on a question already answered twice.
+
+## r603 — culture-dependent integer parsing in file-format readers; FreeW negative-indent gate
+
+**Premise.** r602 was productive because it looked for an ASYMMETRY BETWEEN APPS. Same lens here:
+FreeX has `R392_EveryAdapterRoundTripsNumbersUnderForeignLocale`, FreeW has
+`R396_DocumentFormatsAreCultureInvariant` — did FreeP have a census?
+
+**First answer was wrong.** A grep of `freep/FreeP.Core.IO.Tests/` found nothing, and I nearly filed
+"FreeP has no culture census". FreeP has no such project: its census is
+`R391_PptxNumbersAreCultureInvariantTests`, in `FreeP.App.Presentation.Tests`. Grepping the directory
+I EXPECTED rather than the directory that exists is the same blindness as scanning for one spelling
+of a pattern.
+
+**Real asymmetry.** r391 covers what FreeP WRITES only. r392 and r396 round-trip. So the read side
+of FreeP was unpinned — and the probe of that gap found something none of the three censuses could
+see, because all three vary the DECIMAL SEPARATOR (de-DE / fr-FR / tr-TR) and the defect is in the
+SIGN.
+
+### Finding 1 — 57 locales silently lose every negative integer read from a file
+
+Two-argument `int.TryParse(s, out v)` resolves to CurrentCulture with `NumberStyles.Integer`, so the
+accepted negative sign is that culture's `NegativeSign`. Measured on this machine over all 890
+cultures: 41 do not use ASCII `-`, and **57 cannot parse `"-150"` at all**. .NET forgives the plain
+U+2212 spelling (sv-SE, fi-FI, nb-NO, lt-LT all parse fine), but not a sign carrying a direction
+mark:
+
+| culture | NegativeSign | `int.TryParse("-150", Integer, ci)` |
+| --- | --- | --- |
+| fa-IR | U+200E U+2212 | **False**, 0 |
+| ar-SA | U+061C U+002D | **False**, 0 |
+| sv-SE | U+2212 | True, -150 |
+| de-DE | U+002D | True, -150 |
+
+The 57 are every Arabic locale plus he, fa, ur, ps, ckb, ks-Arab, sd-Arab, lrc, mzn, pa-Arab,
+uz-Arab. OOXML/ODF/HTML always write ASCII `-`, so on those machines every negative integer
+attribute reverted to its default — run tracking, baseline offset, shadow direction, tab position,
+z-order, contrast.
+
+**Proven behaviourally in FreeP**, not inferred: a run with `CharacterSpacingHundredthsPt = -150`
+and `BaselineOffset = -25000`, written once under the invariant culture, then read back under six
+cultures and re-serialised under the invariant one. Before the fix: de-DE, fr-FR, tr-TR, sv-SE
+passed; **fa-IR and ar-SA failed** on `ppt/slides/slide1.xml`. That split is the finding — it is
+exactly why three green censuses did not see this.
+
+Fixed: 67 sites in `freep/FreeP.Core.IO` (63 + 2 + 2), 114 in `src/FreeX.Core.IO`, 107 in
+`freew/FreeW.Core.IO`, all to `NumberStyles.Integer, CultureInfo.InvariantCulture`. The FreeX and
+FreeW rewrites are the same class hardened, not separately reproduced — see the honesty note below.
+
+Deliberately NOT touched: the two `double.TryParse` sites in `DelimitedTextWorkbookReader` take an
+explicit `formatProvider`/`currencyCulture`. Parsing a number a USER typed is the opposite question,
+and Excel imports CSV under the chosen locale. Scope is the IO assemblies only.
+
+New: `tests/FreeX.Core.IO.Tests/R603_FileFormatIntegerParsesAreCultureInvariantTests.cs` — a
+cross-app source contract, because a behavioural case only covers the attributes its fixture carries
+and no separator culture can ever see a sign defect. Non-vacuity asserts both the file count and the
+site count; reverting one site reports `PptxPackageReader.cs:6813` by name (390 sites, 491 files).
+
+### Finding 2 — FreeW never wrote a negative indent, in any locale
+
+Found while building the FreeW half of the culture probe: the round trip failed under EVERY culture
+including the invariant one. That is what distinguished a write-side gate from the locale hypothesis
+under test — a probe that fails everywhere is not measuring what you think it is.
+
+`DocxWriter` gated w:ind on `IndentLeftPt > 0 || IndentRightPt > 0 || FirstLineIndentPt != 0`, at
+both writer sites. `w:left`/`w:right` are ST_SignedTwipsMeasure and Word writes negatives routinely
+for an outdent into the margin, so a negative indent produced no w:ind element at all and was lost
+on save. The sibling `FirstLineIndentPt` term already used the correct `!= 0` form — the r579
+accept-vs-reject shape again, two terms of one condition disagreeing.
+
+Fixed to `!= 0`. New `R603_NegativeIndentSurvivesADocxRoundTripTests` covers left-only, right-only,
+both, and a positive control so an inverted gate cannot trade one silent loss for another. Neutered
+the fix: 3 of 4 cases fail, the positive control still passes.
+
+### Honesty note on scope
+
+The FreeW test proves the INDENT gate, not the sign bug: `w:ind` reads through shared
+`DrawingMlCoordinateUnits.ParseInt`, which was already invariant, so a culture theory there would
+have passed vacuously. I renamed the file to say what it pins rather than leave a name claiming
+coverage it does not have. FreeP is the app where the sign defect is behaviourally reproduced; the
+FreeX and FreeW site rewrites rest on that proof plus the source contract, and are recorded as
+hardening rather than as separately reproduced defects.
+
+### r603 continued — what widening the FreeX census then found
+
+Adding the three sign cultures to r392 (and making its probe value NEGATIVE, -3.14) turned a green
+18-adapter census red, and the two failures were not the defect I went looking for.
+
+**Finding 3 — CSV export destroys every number on Arabic and Persian machines.**
+`CsvFileAdapter` deliberately writes numbers in the current culture, matching Excel (a de-DE machine
+must get "3,14" or Excel imports the column as text). But plain CSV is written in that culture's
+ANSI code page, and CP1256 — the ANSI page for fa-IR and ar-SA — contains none of the characters
+those cultures' own number formatter produces: U+200E, U+2212, U+066B. Measured:
+`enc.GetString(enc.GetBytes("‎−3٫14")) == "‎?3?14"`. Every numeric cell was written as `?3?14` and
+read back as text. R392 reported it as "CsvFileAdapter: expected -3.14, got no numeric cell".
+
+Excel does not hit this because Windows NLS gives those locales ASCII '-' and '.', while .NET on ICU
+gives the typographic forms — so aligning with Excel means writing numbers the encoding can carry,
+not reproducing ICU's typography. `ResolveNumberProvider` already had a guard of exactly this shape
+for the delimiter collision; the fix adds the encoding collision beside it, probing a formatted value
+rather than enumerating `NumberFormatInfo` fields so a future ICU change is covered without an edit.
+
+**Finding 4 — a crash, not a wrong value: opening a CSV threw on an ar-SA machine.**
+With finding 3 fixed, ar-SA still failed — with `ArgumentOutOfRangeException: Valid values are
+between 1318 and 1500, inclusive. Actual value was 2029` from `UmAlQuraCalendar.set_TwoDigitYearMax`.
+
+Excel's two-digit-year window (30-99 -> 19xx, 00-29 -> 20xx) was applied as a bare
+`Calendar.TwoDigitYearMax = 2029` at **five** sites. 2029 is a GREGORIAN year and that setter
+validates against the calendar's own era, so on any culture whose calendar is not Gregorian-ranged
+it throws. Nothing caught it on the CSV read path, on typed date entry (`ExcelDateEntryParser`), or
+inside DATEVALUE (`BuiltInFunctions.DateTime`) — so an ar-SA user could not open a CSV containing a
+date-shaped field, nor type one into a cell.
+
+All five now route through `FreeX.Core.Formula.ExcelTwoDigitYearWindow`, which applies the window
+only when the calendar can express it, derived from the calendar's own supported range rather than
+a list of calendar types. Where the rule cannot apply the calendar keeps its own window: Excel's
+rule is a statement about Gregorian years and has no meaning in another era.
+
+`R603_NonGregorianCalendarDoesNotBreakDateParsingTests` covers the CSV and typed-entry entry points
+SEPARATELY (a guard at one would have left the other crashing), asserts the probe cultures really do
+use a non-Gregorian calendar so the cases cannot pass vacuously, and asserts a Gregorian culture
+still gets 2029 so the fix cannot degenerate into "stop applying the window". Neutered: ar-SA fails
+both entry points; th-TH passes throughout, because ThaiBuddhist's range does admit 2029 — a
+built-in control that a single-culture test would not have had.
+
+### What the write-side censuses could not see, and now can
+
+r391 (FreeP), r392 (FreeX) and r396 (FreeW) all scanned for a COMMA DECIMAL. A negative number
+formatted for a human carries a culture-specific SIGN and DIGITS instead — U+2212, a
+U+200E/U+200F/U+061C direction mark, Arabic-Indic digits — none of which matches a comma scan and
+none of which is legal in an xsd numeric type. All three now also flag those characters, all three
+carry a negative value in their fixture, and all three run the sign cultures alongside the separator
+ones.
+
+Their self-checks changed too: `Assert.Equal("3,14", 3.14.ToString())` is FALSE under fa-IR and
+ar-SA, which render the digits themselves in Arabic-Indic — a self-check written for one culture's
+rendering fails the moment the culture list widens. They now assert that the culture took effect and
+that it formats differently from invariant.
+
+Neutered in FreeP by making one writer site emit `.Value.ToString()`: fa-IR, ar-SA and sv-SE fail;
+de-DE, fr-FR and tr-TR pass. That split is the whole point — the original three cultures could never
+have caught it. FreeP and FreeW writers are otherwise clean (`XAttribute(name, int)` goes through
+XmlConvert), which is now a pinned negative rather than an assumed one.
+
+### r603 verification
+
+FreeX: `dotnet build FreeX.slnx` succeeded; `FreeX.DefaultTests.slnx` 46,545 passed / **43 failed**,
+which is r602's exact baseline. Every one of the 43 is in the render class -- 32 are
+`DrawPrintedGridCells`/printed-ink assertions in `FreeX.App.Host.Logic.Tests` and 11 the equivalent
+in `FreeP.App.Host.Tests` -- and `R597_WpfRenderStackCanaryTests.RenderTargetBitmap_ActuallyProducesInk`
+is among them, which is what that canary exists to say. `FreeX.Core.IO.Tests`, the assembly holding
+almost all of this round's changes, is 6,593 passed / 0 failed.
+
+Checked and found clean in the same lens, recorded so the next round does not re-ask:
+
+- `double.TryParse` in all three IO layers: every site already passes InvariantCulture. The only two
+  that do not (`DelimitedTextWorkbookReader`) take an explicit `formatProvider`/`currencyCulture` and
+  are correct -- parsing a number a USER typed is the opposite question, and Excel imports CSV under
+  the chosen locale.
+- `DateTime`/`TimeSpan` parses in IO: two FreeP sites pass a null provider (= CurrentCulture), but
+  the values are ISO-8601 and .NET's round-trip fast path recognises them under every calendar
+  tested (invariant, ar-SA/UmAlQura, th-TH/Buddhist, fa-IR/Persian all returned 2024-01-15).
+- Culture-sensitive `StartsWith`/`IndexOf`/`Equals` in IO: 2 hits, both ordinal overloads.
+- Date FORMATTING: `NumberFormatter.FormatSpecialDateTimeLocaleValue` uses CurrentCulture on purpose
+  -- that is the `[$-x-sysdate]` token, which in Excel follows the system locale, so a Hijri long
+  date on an ar-SA machine is the CORRECT output, not a defect.
+- Other ANSI-encoded adapters (TXT/TSV/TAB/PRN): they write invariant numbers, so the encoding
+  collision that hit CSV cannot arise. Only `CsvFileAdapter` passes a culture number provider.
+
+### r603 — finding 5: uncapped XML loads, including in my own r583/r584 code
+
+Asking the "which app is missing the other's harness" question of the XML-hardening contract turned
+it inward instead: `R276_PackageXmlReadersAreCharacterCappedContractTests` fences the character cap
+by inspecting every hand-rolled `new XmlReaderSettings` initializer. That is structurally blind to
+code which never constructs settings at all. `XDocument.Load(stream)` builds its own defaults --
+DTDs prohibited, but **no character cap** -- so the part is unbounded at the point of parse, which is
+precisely the hazard r276 names. `WorkbookOpenSizeGuard` cannot cover it: it validates the zip
+central directory's DECLARED lengths, which an attacker controls outright.
+
+Four production sites, in all three apps:
+
+| site | input |
+| --- | --- |
+| `XlsxOutOfRangeIntegerAttributeNormalizer.cs:71` | package part |
+| `XlsxMalformedTypedAttributeNormalizer.cs:143` | package part |
+| `DocxWriter.cs:9429` | `part.Bytes`, a preserved part from the LOADED document |
+| `SmartArtEditingPlanner.cs:2601` | a SmartArt part from the loaded .pptx |
+
+The first two are **my own r583/r584 code**, and they were already corrected for this exact contract
+in r583 — the correction landed on the SCAN (`EntryHasOutOfRangeAttribute`, line 129, which does use
+`SecureXmlReaderSettings`) and not on the document load beside it. One file, two XML entry points,
+one of them fixed. The r585 lesson with a different subject.
+
+All four now create an `XmlReader` with `SecureXmlReaderSettings.Create()`.
+
+New `R603_NoUncappedXmlLoadOfFileInputTests` fences the second spelling across all three apps.
+Neutered one site: it reports `XlsxMalformedTypedAttributeNormalizer.cs:146` by name (1 offender of
+18 load sites in 853 files). Loads from `GetManifestResourceStream` are exempt by name and COUNT, so
+a new uncapped load in an exempted file is still reported.
+
+**Correction to my own instrument.** The first draft of this contract also matched
+`XDocument/XElement.Parse` and reported **87** sites — nearly all `XElement.Parse` over preserved
+native XML the model already holds as a string. The memory was spent when that string was built; a
+cap at parse time bounds nothing there. The hazard is decompression AT the point of parse, which
+only a stream reaches. Narrowed to `Load`, and the reasoning is recorded in the file so the next
+round does not re-widen it.
+
+Checked and clean in the same pass: `DocxWriter.cs:6507` and `:7252` load embedded assembly
+resources (not input); FreeW's Flat OPC adapter rehydrates a zip from XML before any zip guard, but
+its input goes through `SecureXmlReaderSettings`, so the rehydrated package is bounded by that.
+
+### r603 — finding 6 area: reflection-handle resolution had a fence but no census
+
+`LegacyXlsReflectionHandleResolutionTests` asserts that every static `MemberInfo` handle on
+`LegacyXlsFileAdapter` actually resolved, and it enumerates that type's fields rather than listing
+names — a good fence, pointed at ONE type. The same shape exists unfenced elsewhere:
+
+- `XlsxClosedXmlCellMapper.XlCellValueNumberField` — `typeof(XLCellValue).GetField("_value", NonPublic)`,
+  consumed via `if (... is null) return false`. If ClosedXML renames it, an out-of-range date serial
+  becomes `ErrorValue.Num` instead of the real number, and a time/duration cell silently loses its
+  exact serial to a `TotalDays` approximation. No exception, no failing test.
+- `XlsxFileAdapter.XlCellStyleValueAccessor` and `.XlCellSetStyleValueAction` — static readonly
+  NULLABLE DELEGATE fields eagerly built by reflection factories over `ClosedXML.Excel.XLCell` and
+  `XLStyleValue`. Same hazard, different field type, so a MemberInfo-typed census would miss them.
+
+The standing rule for this repo is that production reflection with a nullable handle needs a
+resolution guard. The gap is that the guard exists per-type instead of as a census — the exact
+asymmetry r602 and r603 were both productive on. A census must cover BOTH field shapes
+(`MemberInfo`-derived and nullable delegate built from a reflection factory), which is what makes it
+more than a copy of the existing test.
+
+Censused rather than deferred. `R603_EveryReflectionHandleInTheIoLayerResolvesTests` enumerates the
+whole `FreeX.Core.IO` assembly for static fields that are `MemberInfo`-derived OR delegates, keeps
+the nullable ones, and asserts each resolved: **23 authored handles, all resolved**. So this is a
+CLEAN NEGATIVE — the three unfenced sites work against the referenced ClosedXML today — but it is
+now held, and a handle added in any type is covered the day it appears. Neutered by renaming the
+reflected member: it reports `XlsxClosedXmlCellMapper.XlCellValueNumberField` by name.
+
+**Correction to my own instrument, again.** The first draft counted **1,613** handles and reported
+hundreds unresolved -- they were the C# compiler's own static delegate caches (`<>c.<>9__11_0` per
+cached lambda, `<>O.<0>__IsLetterOrDigit` per method-group conversion), which are null until first
+use BY DESIGN. Excluding compiler-generated declaring types and generated field names leaves the 23
+hand-written ones. Two instruments in one round whose first draft measured mostly noise; in both
+cases the tell was an implausible count, not a subtle wrong answer.
+
+Also recorded: FreeW and FreeP have NO production reflection handles at all -- their only
+`GetMethod`/`GetField`/`GetType(string)` hits are in `tools/`, plus one `JsonElement.TryGetProperty`
+that is not reflection. The absence is checked, not assumed, which is why the census is FreeX-only.
