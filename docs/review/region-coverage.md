@@ -15808,3 +15808,30 @@ Every one was a FALSE POSITIVE from a windowed or name-matched scan, and every o
 tracing the code. The rule already in the class map -- a scan that disagrees with a hand trace is
 wrong until proven otherwise -- is now backed by seven cases, and the cheapest tell remains an
 implausible count or a result that contradicts something already verified.
+
+## r613 — filenames built from user content (clean negative, hypothesis disproven by probe)
+
+**Question.** r611 was illegal characters in XML CONTENT. The untested sibling is illegal content in
+a FILENAME: FreeP derives export filenames from a user-supplied base name through
+`OutputFileNameStemPolicy.Normalize`, and the stem reaches
+`Path.Combine(outputDirectory, fileName)` and then `AtomicFileWriter.WriteAllBytes`.
+
+The policy replaces `Path.GetInvalidFileNameChars()` and trims, and has NO handling for Windows
+reserved device names -- `CON`, `NUL`, `PRN`, `AUX`, `COM1`-`COM9`, `LPT1`-`LPT9` -- which are valid
+character-wise. The classic Windows behaviour is that these are devices REGARDLESS OF EXTENSION, so
+`CON.png` would be the console and `NUL.png` would discard, making an export silently produce no file.
+
+**Probed before filing anything, and the hypothesis was wrong.** On this machine (Windows 11,
+.NET 10), writing `CON.png`, `NUL.png` and `COM1.png` into a real directory all succeed, and all
+three files exist afterwards with those exact names. Device-name redirection no longer applies to a
+rooted path that contains a directory. There is no defect here.
+
+The rest of the policy holds up too: `PathTooLongException` is caught and falls back, trailing dots
+are removed by `GetFileNameWithoutExtension`, trailing spaces by the `Trim()`, and an
+empty-after-sanitising stem falls back to the caller's default.
+
+**Worth contrasting with r609.** There I formed a belief about Excel's rounding, ACTED on it -- changing
+a shared rule and rewriting a correct test -- and the full lane disproved it. Here the belief was
+equally plausible and equally wrong, but it cost nothing, because the probe came first. The
+difference was not the quality of the hypothesis; it was the order of operations. On a platform
+question a probe takes one command, and this machine can answer it.
