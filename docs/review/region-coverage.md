@@ -15771,3 +15771,40 @@ here is behavioural, matching r465's own division of labour, rather than a scan 
 - I declared `namespace FreeP.App.Presentation.Tests` where all 394 sibling files use
   `FreeP.App.Compositor.Tests`. That made `Presentation` resolve to a namespace rather than the model
   type and broke compilation across the whole assembly. Match the neighbours.
+
+## r612 — dirty-marking is central, not per-command (clean negative)
+
+**Question.** A command that mutates the document without marking it dirty means the user closes
+without a save prompt and loses the work silently. The reflection census machinery from r602/r589
+could drive this over every command -- but only if the invariant is held per command. It is not.
+
+`WorkbookSession` marks dirty at 15 sites, and every successful command result funnels through
+`ApplySuccessfulHistoryResult`, whose three tail paths all reach `MarkDirty()`:
+
+- `ApplySuccessfulWorkbookMetadataResult` -- directly.
+- `ApplySuccessfulWorkbookStructureResult` -- directly.
+- `ApplySuccessfulNewWorksheetResult` -- transitively, by delegating to the structure result.
+
+So the invariant is enforced at the result-application layer, and a per-command census would be
+testing something the architecture already guarantees. The comment at the undo caller
+("ApplySuccessfulHistoryResult always ends by calling MarkDirty()") is accurate, though it takes four
+hops to confirm.
+
+**Sixth instance of the same instrument failure, worth naming as a pattern.** My scan reported
+`ApplySuccessfulNewWorksheetResult` as NOT reaching MarkDirty, because it delegates and the delegation
+fell outside the search window. The running list this session:
+
+| round | what the scan claimed | what was true |
+| --- | --- | --- |
+| r603 | 87 uncapped XML sites | `XElement.Parse(string)`, where a parse-time cap bounds nothing |
+| r603 | 1,613 unresolved reflection handles | compiler-generated lambda caches, null by design |
+| r606 | 5 uncontained async boundaries | 4 had their `catch` in the callee |
+| r607 | `ApplyRibbonNumberFormat` unguarded | guarded on the 4th call, past a cap of 3 |
+| r608 | 4 undisposed `CancellationTokenSource` fields | disposed through a local taken under lock |
+| r610 | ~20 dialogs with unnamed inputs | named via `Content` and WPF label-target |
+| r612 | new-worksheet path never marks dirty | marks it by delegation |
+
+Every one was a FALSE POSITIVE from a windowed or name-matched scan, and every one was caught by
+tracing the code. The rule already in the class map -- a scan that disagrees with a hand trace is
+wrong until proven otherwise -- is now backed by seven cases, and the cheapest tell remains an
+implausible count or a result that contradicts something already verified.
