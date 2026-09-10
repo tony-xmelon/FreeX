@@ -15686,3 +15686,43 @@ Two things this is worth remembering for:
 four lines apart in `ExcelNumericPrecisionTests`. Whether Excel really is dual like this, or whether
 the fractional branch should also zero, needs a machine with Excel installed. Recorded as a question
 for a round that can answer it rather than guessed at again.
+
+## r610 — the "shared rule, partial adoption" lens, and an accessibility census I chose not to fake
+
+**Premise.** r609's real finding was a shared rule applied on one entry path and not its sibling. That
+shape is worth asking of the other shared rules.
+
+**Cell text limit: fully adopted, clean.** `SurrogateSafeTruncation.SpreadsheetCellTextLimit` (32767)
+is applied at every path that puts TEXT into a cell -- typed entry, paste, CSV import, autofill,
+flash fill -- and the formula layer instead returns `#VALUE!` when a text function would exceed it,
+which is what Excel does. The three raw `new TextValue(...)` returns that skip the guarded
+`TextResult` helper were each traced: two return the empty string, and REPT checks
+`outputCharacterCount > 32767` BEFORE building its result. Nothing to fix.
+
+**Accessibility: a real gap, and a census I am not equipped to write here.**
+
+Per-dialog contracts pin automation names in several places (`AvaloniaChartFormatDialogSourceTests`,
+`AutoFilterDialogTests.DialogControls`, the VoiceOver pinned-string tests), but there is no CENSUS
+requiring every dialog's text inputs to carry an accessible name -- the same "fence per instance, no
+census" shape r606 and r607 were productive on.
+
+I did not write it, and the reason matters more than the gap:
+
+- A source scan for `AutomationProperties` is the WRONG INSTRUMENT and I proved it on myself twice in
+  one round. It first reported ~20 FreeW dialogs as unnamed; but WPF and Avalonia derive a control's
+  automation name from its `Content`, so a `Button { Content = "OK" }` announces correctly with no
+  explicit call. Narrowing to text inputs (which have no content to derive from) then reported
+  FreeX's `ConditionalFormatDialog` as the worst case in the repo at 36 -- and that dialog names its
+  inputs through `CreateAccessLabel`, a WPF `Label` with `Target` set, which is precisely how the
+  framework supplies the name. 32 of its 36 inputs are labelled that way and several of the rest are
+  placeholders the file itself marks "never shown".
+- A trustworthy census has to model THREE naming mechanisms across two toolkits
+  (`AutomationProperties.SetName`, WPF label-target, Avalonia's equivalent). Getting that wrong
+  produces exactly the false positives I have already had to walk back four times this session.
+- The runtime alternative -- construct each dialog and read its `AutomationPeer` names -- is not
+  reliable on this machine: the WPF render/automation stack is in the degraded state r597's canary
+  reports, which is why 32 render tests fail at baseline.
+
+So this is recorded as a scoped, reproducible item for a round with a working WPF automation stack,
+not converted into a contract I could not trust. Fabricating a green census over a mechanism I had
+mis-modelled twice in the same hour would be worse than leaving the gap visible.
