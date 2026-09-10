@@ -14916,3 +14916,51 @@ genuinely exonerated, and all 15 FreeW failures pre-exist at HEAD.
 **A control has to be verified to have controlled.** That is the same lesson as the neuters, arriving
 from the other direction: there, a neuter that did not disable the guard; here, a revert that did not
 revert. Both produce a number that looks like evidence.
+
+## r599 — the truncation lens on FreeP, and a guard that could not see its own case
+
+Completing the lens across all three apps. Two findings, and the first is the worst outcome a reader
+can produce.
+
+### A damaged deck opening as empty, silently
+
+Truncating `ppt/presentation.xml` opened the presentation as `slides=0 shapes=0` with **no warning**.
+The user sees an empty deck, saves, and every slide the package still holds is gone.
+
+FreeP has a guard written for exactly this. r448's contradiction check — "slides on disk, none
+reachable" — calls the end state intolerable in its own comment and describes it precisely: *"a
+presentation.xml the reader does not recognise (a partially written save, or simply an unexpected
+namespace) yields ZERO slides and no error at all. The user opens their deck, sees an empty document,
+and the moment they save, the original is overwritten with nothing."*
+
+**The guard could not see the case it was written for.** It sits after `sldIdLst` is read, and a
+`presentation.xml` that will not PARSE returns at `if (presXml?.Root is null) return presentation;`
+long before reaching it. r448 fixed the unrecognised-content path and left the unparseable one, which
+reaches the identical end state by a shorter route.
+
+The check now runs on that path too, with r448's narrowness preserved exactly: a genuinely slide-less
+package has no slide parts either, so it still opens quietly — which is what keeps the deliberate
+blocked-DTD "quarantine the rejected payload, do not crash" contract intact. Only the contradiction
+is rejected.
+
+That is worth noting as a shape in its own right: **a guard placed after an early return protects
+only the paths that reach it**, and the comment explaining why the guard exists is not evidence that
+it fires. r593 hit the same thing from the other side — four silent exits where the probe had named
+two.
+
+### And the familiar one
+
+A truncated `docProps/core.xml` threw a raw `XmlException`, the same shape as r596 (xlsx) and r598
+(docx), fixed the same way and for the same reason: nothing in this reader parses FreeP's own output,
+so the type alone is sufficient evidence.
+
+### The lens, complete
+
+| app | truncation outcome before | after |
+| --- | --- | --- |
+| FreeX (r596) | 9 parts leaked `XmlException` | typed, or loads with a warning |
+| FreeW (r598) | 5 parts leaked `XmlException` | typed |
+| FreeP (r599) | 1 part leaked; 1 opened SILENTLY EMPTY | typed, or loads with a warning |
+
+Both fixes neutered independently: the r448 extension fails naming `ppt/presentation.xml at 50% ->
+slides=0 shapes=0`, and the mapping fails naming `docProps/core.xml at 50% -> XmlException`.
