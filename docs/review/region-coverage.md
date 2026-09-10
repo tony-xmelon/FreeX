@@ -14631,3 +14631,39 @@ threaded in a later round.
 
 Verified by neutering the predicate extension: the tripwire fails and names
 `xl/_rels/workbook.xml.rels -> ArgumentOutOfRangeException`.
+
+## r593 — unpinning r592, and a neuter that proved nothing
+
+r592 pinned the silent chart loss on the grounds that no warnings channel reached
+`ReadChartParts` and threading one looked deep. Checking rather than assuming showed the thread is
+**three signatures**: `LoadSheetXmlLayout` already holds a warnings list, and it is only
+`ReadHiddenSheetLayout` -> `ReadParts` -> `ReadChartParts` between there and the silence. That is
+small enough to do properly, so the pin is gone rather than inherited.
+
+A pin is a promise to come back, and the estimate that justified it was wrong by enough to matter.
+Worth noting as its own lesson: **"this looks deep" is a guess until the chain is actually counted.**
+
+### Four silent exits, not two
+
+The probe named two parts, but the code had four bare `continue`/`return` paths for a chart the
+drawing DECLARES and the package cannot resolve — a blank relationship id, an unresolvable
+relationship target, a missing chart part, and a missing rels part entirely. Fixing the two the probe
+named would have left the other two to be rediscovered.
+
+The fourth needed care rather than a fifth warning. A drawing with **no rels part at all is
+ordinary** — one holding only shapes or text boxes has nothing to relate to — so warning there
+unconditionally puts a line in front of the user on healthy files, which is exactly how a warnings
+channel stops being read. It warns only when the drawing actually declares charts, and a second test
+pins that: an undamaged workbook must load with **no warnings at all**.
+
+### The neuter that proved nothing
+
+The first neuter of the missing-chart-part warning replaced its TEXT with `""` and the test still
+passed — correctly, because an empty warning is still a warning and the assertion counts warnings.
+The guard was never disabled, so the run said nothing about it. Redone by deleting the `Add` outright,
+it fails and names `xl/charts/chart1.xml`.
+
+That is r512's rule biting on a subtler form than usual: the earlier failures in this session were
+neuters that did not COMPILE, which announce themselves. This one compiled, ran, and passed — a
+neuter can be silently ineffective, and the only defence is checking that it changes the thing the
+assertion actually measures.
