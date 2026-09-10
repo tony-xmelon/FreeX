@@ -14585,3 +14585,49 @@ known gap that cannot grow is worth more than a vague TODO, and much more than a
 method with that much history in it.
 
 Verified by neutering the table-id reuse: the redo contract fails and names the exact command.
+
+## r592 — deleting each package part in turn
+
+A new lens, chosen because the last three rounds showed the pattern plainly: opening a NEW lens finds
+things, extending a dry one does not. This one deletes each part of a saved workbook in turn and
+reloads — the r448-r450 "damaged file becomes a plausible one" class, asked systematically per part
+rather than once.
+
+Eighteen parts. Fourteen refuse with FreeX's own `WorkbookInvalidException`, two are correctly
+optional (`docProps/app.xml`, `docProps/core.xml` — the workbook loads identically), and four are
+findings of two kinds.
+
+### Raw framework exceptions reaching the user
+
+- `xl/_rels/workbook.xml.rels` -> `ArgumentOutOfRangeException`, from
+  `DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer.GetPartById`.
+- `xl/worksheets/_rels/sheet1.xml.rels` -> `KeyNotFoundException`, from a bare `Dictionary` indexer.
+
+r382 already built the mapping these should have used — `IsMissingPackagePartFailure` — but it
+recognises only an `InvalidOperationException` carrying "does not exist in the package" and a
+`NullReferenceException` from the packaging layer. These two are neither shape, so they escaped it.
+**The shell shows `exception.Message` verbatim**, so a user opening a damaged file read "Index was
+out of range" instead of the sentence this adapter already owns for exactly that situation.
+
+Extending r382's predicate is the whole fix: same damage, same sentence. The type test stays narrow
+and the stack-frame test keeps it to failures that really came from the packaging layer.
+
+### Silent content loss, pinned — and described accurately
+
+Removing `xl/charts/chart1.xml`, or the `drawing1.xml.rels` that resolves it, LOADS — with the chart
+silently gone. `XlsxWorksheetDrawingPartReader.ReadChartParts` has three bare `continue`s for a chart
+the drawing explicitly declares but the package cannot resolve, and no warnings channel reaches that
+deep: `ReadHiddenSheetLayout` would have to grow one and thread it down.
+
+It is worth being exact about severity rather than reaching for the strongest available word. **The
+chart is already gone from the file.** FreeX is not destroying data; it is failing to REPORT that the
+file arrived damaged. That is a reporting gap, not corruption — Excel's equivalent is the "we
+repaired this" notice. Calling it data loss would have been the more dramatic claim and the less true
+one.
+
+So the two paths are pinned exactly, the way r591 pinned `DuplicateSheetCommand`: any OTHER part that
+starts dropping content fails the test, so the silence cannot spread while the warnings channel is
+threaded in a later round.
+
+Verified by neutering the predicate extension: the tripwire fails and names
+`xl/_rels/workbook.xml.rels -> ArgumentOutOfRangeException`.
