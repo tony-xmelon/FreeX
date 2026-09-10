@@ -14854,3 +14854,65 @@ the 31 tests that passed at r593, so it is sound on a healthy stack.
 The existing note on this class said the count "GROWS between runs on unchanged code" and to check
 the environment first. Both halves needed sharpening: here the count was STABLE across four runs, and
 "check the environment" is only actionable if there is something to check WITH. Now there is.
+
+## r598 — the truncation lens on FreeW
+
+r596 fixed raw `XmlException` leaking from truncated xlsx parts. r594 had already shown that carrying
+a CONCLUSION between apps is unsafe while carrying the LENS is productive, so this round carries the
+lens rather than assuming either outcome.
+
+Truncating each of FreeW's XML parts to 50% and 90% throws a raw `XmlException` from five of them —
+`[Content_Types].xml`, `docProps/core.xml`, `word/charts/chart1.xml`, `word/document.xml`,
+`word/styles.xml`.
+
+What makes it a defect rather than a gap is that **FreeW already owns the right sentence**.
+`OpenZipArchive` says "The file is not a valid OOXML package -- it may be corrupted or truncated"
+when the ZIP itself will not parse. A truncated PART leaves a perfectly valid ZIP, so it sails past
+that check and the XML parser throws instead: the same damage produced two different errors depending
+on which layer happened to notice, and the one the user actually hits is framework text.
+
+The fix wraps `Read` and maps `XmlException` onto the sentence FreeW already had. As in r596, the
+type alone is sufficient evidence — nothing in this reader parses FreeW's own output — so no
+stack-frame test is needed to go with it.
+
+This is the opposite outcome from r594 on the same app, and worth putting side by side: that round
+could not fix FreeW's silent chart loss because reporting it needed a warnings channel and a shell
+surface that do not exist. This one needed only a mapping the app already performs elsewhere. **Same
+app, same lens family, one fixable and one not — the difference is whether the remedy already exists
+in the codebase or has to be invented.**
+
+### A third neuter that proved nothing
+
+The first neuter used `catch (XmlException ex) when (false)`, and the run produced no result line at
+all. Following this session's own rule — a missing result is not a passing result — I looked instead
+of moving on: a compile-time-constant filter makes the clause unreachable and the run never
+completed. Redone as `when (ex.LineNumber < 0)`, false at runtime but opaque to the compiler, it
+fails and names the fence.
+
+That is the third variant of the same mistake this session: a neuter that does not compile (r554), a
+neuter that changes the wrong thing (r593), and now a neuter the compiler optimises away. All three
+look like evidence and are not.
+
+### FreeW's lane, and a control that did not control
+
+The FreeW lane came back with 15 failures. Ten are `FidelityRenderCompositeTests.*ProducesNonBlankPage`
+— `HasNonWhitePixelsInRegion(...) to be True ... but found False`, the same dead render stack r597
+diagnosed, now confirmed in all three apps (FreeX 31, FreeP 11, FreeW 10).
+
+The other five are NOT pixel assertions: `PagedEditNoteRegionTests` and `PrintNotesAtFootEmptyNoteTests`
+fail on `panel.PageBoxes` COUNTS. That difference mattered, because FreeW was 11892/0 at r594 and the
+only FreeW change since is this round's `DocxReader` wrap — so "obviously unrelated" was exactly the
+assumption that needed testing rather than asserting.
+
+The first control was invalid and nearly passed as evidence. `git checkout-index --prefix` wrote the
+HEAD copy somewhere other than where the follow-up `cp` looked; the `cp` failed, and the test ran
+**with my change still in place**. The result — 5 failed — looked like a clean exoneration and proved
+nothing at all.
+
+Redone with `git show HEAD:...` and a marker count to CONFIRM the revert actually landed (`ReadCore`
+occurrences 3 -> 1), rebuilt, and re-run: still 5 failed / 15 passed, identical. The change is
+genuinely exonerated, and all 15 FreeW failures pre-exist at HEAD.
+
+**A control has to be verified to have controlled.** That is the same lesson as the neuters, arriving
+from the other direction: there, a neuter that did not disable the guard; here, a revert that did not
+revert. Both produce a number that looks like evidence.
