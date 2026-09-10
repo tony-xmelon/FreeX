@@ -14964,3 +14964,43 @@ so the type alone is sufficient evidence.
 
 Both fixes neutered independently: the r448 extension fails naming `ppt/presentation.xml at 50% ->
 slides=0 shapes=0`, and the mapping fails naming `docProps/core.xml at 50% -> XmlException`.
+
+## r600 — a fourth damage shape, and a fence built on a bad premise
+
+The three shapes so far all leave the schema alone or break well-formedness. A part holding ANOTHER
+part's content is neither: valid zip, well-formed XML, wrong schema — what a buggy third-party writer
+or a bad merge produces.
+
+It found `DocumentFormat.OpenXml`'s `OpenXmlPart.LoadDomTree` throwing `InvalidDataException`
+("Cannot load the root element from the part. The part contains invalid data.") straight at the user
+for a wrong-schema `docProps/app.xml`. Same class as r592, r596 and r598 — in a shape none of them
+can produce.
+
+The fix uses a **stronger** test than r592's deliberately. That round matched ambiguous exception
+types by stack frame; here `FreeX.Core.IO` throws `InvalidDataException` in EIGHTEEN places, each
+with its own actionable sentence, and several run inside a ClosedXML call chain — so a
+`StackTrace.Contains` test would swallow FreeX's own errors and replace good messages with the
+generic one. `TargetSite` names where the exception was THROWN rather than what is merely on the
+stack, which is the distinction needed.
+
+### The fence disagreed with me twice, and was right the second time
+
+First it caught `xl/drawings/drawing1.xml` as a silent loss I had not pinned — a genuine second path
+of the chart-content shape, since a wrong-schema drawing parses cleanly and simply DECLARES NOTHING,
+so r593's guards correctly do not fire. Pinned alongside the chart part.
+
+Then it caught `xl/worksheets/sheet1.xml <- xl/worksheets/sheet2.xml`, and that one was **my premise
+being wrong, not the loader**. A same-schema swap gives sheet1 sheet2's content: the workbook differs
+from the baseline and is read entirely CORRECTLY, because the bytes on disk really do hold that
+content under that name and no reader can know what sheet1 "should" have contained.
+
+So the silent-loss half of the fence was removed rather than patched around. **"Differs from baseline"
+cannot distinguish corruption from a legitimately different file**, and an assertion that cannot make
+that distinction should not be making the claim. What remains — no raw library exception may reach
+the user — needs no notion of what the file ought to have said, and is judgeable on its own terms.
+
+The wrong-schema silent-loss question is real and stays recorded: detecting it needs a contradiction
+check of the kind FreeP's r448 makes ("slides on disk, none reachable" — here, the drawing rels still
+name a chart part the drawing no longer references). It is narrow enough to wait, because unlike
+r593's missing part, which a partial download produces, this needs a writer that files one part's XML
+under another part's name.
