@@ -15860,3 +15860,21 @@ localized while its Avalonia twin was not, which would have made a tidy platform
 It was wrong: the WPF label is `Content = "_Legal Notices…"`, and the mnemonic underscore broke the
 `[A-Za-z]` anchor in my pattern. Both platforms hardcode it identically. The tell, once again, was
 that the "finding" was suspiciously neat.
+
+## r615 — autosave over a shared workbook (clean negative)
+
+r607's shape applied to autosave: New Window siblings share ONE `WorkbookSession` but each gets its
+own `AvaloniaAutosaveCoordinator` and its own snapshot file, so two timers can serialize the same
+live workbook -- and unlike the save path, nothing raises `_isSaving`.
+
+No race, and by construction rather than by luck: `AutosaveService` serializes through
+`NativeJsonAdapter` SYNCHRONOUSLY ON THE DISPATCHER THREAD. Verified rather than taken from the
+comment -- the file contains no `Task.Run`, no `async`, no `ConfigureAwait`. The UI thread is the
+only thread touching the workbook, so a user edit cannot interleave, and two siblings' timers post to
+that same thread and are serialized by it.
+
+The trade-off is documented in the file as a deliberate decision ("for very large workbooks it may
+stall the UI for a fraction of a second... a proper clone-then-background-serialize would require a
+deep-copy API that does not currently exist on Workbook"), and the duplicate-candidate consequence is
+handled too: `AutosaveRecoveryCandidateProcessor` collapses several snapshots of one document to the
+newest per document.
