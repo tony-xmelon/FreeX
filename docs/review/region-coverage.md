@@ -15004,3 +15004,31 @@ check of the kind FreeP's r448 makes ("slides on disk, none reachable" — here,
 name a chart part the drawing no longer references). It is narrow enough to wait, because unlike
 r593's missing part, which a partial download produces, this needs a writer that files one part's XML
 under another part's name.
+
+## r601 — the fourth shape on the other two readers
+
+r600's swapped-content shape, carried to FreeW and FreeP rather than either of r600's conclusions
+carried forward. The two apps answered differently, which is the point.
+
+**FreeW: clean.** Every part given another part's XML either loads or refuses with FreeW's own
+`InvalidDataException`. Nothing leaks. Recorded as a fence rather than deleted, on the same argument
+as r588: a passing test still earns its place when it fences a property a plausible change would
+break.
+
+**FreeP: a silent blank slide.** A slide part holding another part's XML parses cleanly, so
+`TryLoadXmlPart` succeeds, r595's missing-part reporting never fires, and every `p:sld`-relative
+lookup finds nothing. The slide reads blank and says nothing — the exact harm r454 named when it
+built the reporting: *"a slide blank because it was damaged is indistinguishable from one the author
+left blank, which is precisely what made the loss invisible."* r454's callback fires only when the
+part will not PARSE, so this shape walked straight past it.
+
+### Why this one is fixed where FreeX's twin is pinned
+
+r600 left FreeX's equivalent pinned because "declares nothing" is legitimate for a drawing part —
+there is no contradiction to test without cross-checking rels. FreeP has a decisive one available:
+**a slide part whose root element is not `p:sld` is wrong whatever else it contains.** One
+comparison, no false positives, and it reuses r454's existing callback.
+
+That asymmetry is worth stating plainly, because "same shape, same app family" invites the same
+remedy: the availability of a CLEAN CONTRADICTION is what decides whether a silent-loss case can be
+fixed cheaply or has to wait. FreeP had one; FreeX does not.
