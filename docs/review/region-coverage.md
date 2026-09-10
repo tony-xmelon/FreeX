@@ -15726,3 +15726,48 @@ I did not write it, and the reason matters more than the gap:
 So this is recorded as a scoped, reproducible item for a round with a working WPF automation stack,
 not converted into a contract I could not trust. Fabricating a green census over a mechanism I had
 mis-modelled twice in the same hour would be worse than leaving the gap visible.
+
+## r611 — the sanitizer's third boundary, and the writer that slipped through it
+
+**Premise.** r609's productive lens was "a shared rule applied on one path and not its sibling".
+Applied to `XmlTextSanitizer`, whose adoption is uneven by app (FreeX 15 uses, FreeP 10, FreeW 3) --
+though unevenness alone means nothing, because the rule is enforced at BOUNDARIES, not per call.
+
+The three boundaries are OPC packages (`OpcXml.WriteXmlEntry`/`ReplaceXmlEntry`, which sanitizes),
+the ODF package writer, and any writer that creates its OWN zip entry. FreeW's low count is
+explained, not suspicious: `DocxWriter` routes all XML through `OpcXml.WriteXmlEntry` and writes only
+image bytes directly, so its 3 direct uses are `Wordml2003Writer`, a flat format outside OPC.
+
+**The defect.** `FreeP.App.Presentation.ExternalXamlClipboardWriter` is the third kind of boundary and
+was not covered. It creates `Xaml/Document.xaml` itself and writes model text through a bare
+`XmlWriter`, whose `CheckCharacters` defaults to ON -- so a control character or lone surrogate in a
+shape's text throws `ArgumentException` out of COPY. Nothing on the path catches it;
+`ExternalXamlClipboardPlanner.SerializeXamlPackage` just forwards.
+
+The tell was an asymmetry inside one format: `TryParseXaml`, the READ side, is wrapped in try/catch,
+while the WRITE side -- which is where such a character ORIGINATES -- was not. The side that merely
+encounters bad input defensively was guarded; the side that produces it was not.
+
+Reproduced first: U+0001, U+000B, U+001F and a lone high surrogate all threw, ordinary text passed.
+Fixed at the three sites where user text reaches the wire (run text, hyperlink URL, tooltip).
+
+**Siblings verified, not assumed.** Every other production `XmlWriter.Create` was checked: none calls
+`WriteString` at all -- they re-serialize already-parsed `XDocument`s, whose characters are valid by
+construction -- and the two that do build from model text, `Wordml2003Writer` and
+`SmartArtAuthoringPlanner`, already sanitize. This was the only gap.
+
+**Why no source contract.** r465 records that a source-scan tripwire guards the sanitizer across all
+three apps, complemented behaviourally because "a source scan proves the sanitizer is CALLED, not
+that a hostile document still round-trips". The spelling this defect used --
+`writer.WriteString(modelText)` -- cannot be told from `writer.WriteString("Section")` textually; the
+discriminator is whether the argument is model-derived, which is a semantic question. So the fence
+here is behavioural, matching r465's own division of labour, rather than a scan I could not trust.
+
+### Two process notes
+
+- My first two attempts to write the test were REFUSED for containing literal control characters in
+  the command. The guard was right, and it is the same hazard the code under test mishandles. Building
+  the characters from code points is better anyway: the test file carries no invisible bytes.
+- I declared `namespace FreeP.App.Presentation.Tests` where all 394 sibling files use
+  `FreeP.App.Compositor.Tests`. That made `Presentation` resolve to a namespace rather than the model
+  type and broke compilation across the whole assembly. Match the neighbours.
