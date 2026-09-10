@@ -14667,3 +14667,37 @@ That is r512's rule biting on a subtler form than usual: the earlier failures in
 neuters that did not COMPILE, which announce themselves. This one compiled, ran, and passed — a
 neuter can be silently ineffective, and the only defence is checking that it changes the thing the
 assertion actually measures.
+
+## r594 — the same lens on FreeW, and a class that DOES generalise
+
+r588 established that the aborted-load class was library-induced: FreeX's ClosedXML-backed reader
+aborted 19 then 98 times where FreeW's and FreeP's hand-rolled readers aborted on nothing. It would
+have been easy to carry that conclusion forward as "FreeW is the tolerant one" — so r594 carried the
+LENS instead of the conclusion, and the r592 part-deletion probe found two silent losses in FreeW:
+
+- removing `word/_rels/document.xml.rels` drops the chart RUN entirely (3 runs -> 2);
+- removing `word/charts/chart1.xml` keeps the run and loses its chart.
+
+That is the same "declared chart the package cannot resolve" gap r593 just fixed in FreeX, reached by
+completely different code. **Different classes have different reach**, and r588's result licensed no
+conclusion about this one. Worth stating because the tempting inference — "FreeW was immune there, so
+it is fine here" — was available and wrong.
+
+Also notable in the profile, though not a defect: FreeW loads happily without `[Content_Types].xml`
+or `_rels/.rels`, both of which FreeX refuses. FreeW reads `word/document.xml` directly rather than
+walking the OPC package, so it accepts files Word itself would reject. Leniency on read is a defensible
+position and costs the user nothing, so it is recorded rather than "fixed".
+
+### Fenced, not fixed, and the reason is scope rather than effort
+
+FreeX had a warnings channel for r593 to thread. FreeW's reader has none: `DocxReader.Read` returns a
+bare `TextDocument`, so reporting this needs a new public `ReadWithWarnings` API AND a shell surface
+to show it in — FreeW has a save-time compatibility pane and nothing for load. That is a product
+decision about a new user-facing surface, not a review fix, and the severity does not force it: as in
+r592, the chart is already gone from the FILE, so this is a failure to report damage rather than
+corruption.
+
+The fence is the part that is unambiguously mine to add. The two chart paths are pinned exactly, so
+any OTHER part whose removal changes what loads fails the test — the silence cannot spread while the
+reporting question stays open. Verified by narrowing the pin: the fence fires and names
+`word/charts/chart1.xml`.
