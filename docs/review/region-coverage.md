@@ -15878,3 +15878,22 @@ stall the UI for a fraction of a second... a proper clone-then-background-serial
 deep-copy API that does not currently exist on Workbook"), and the duplicate-candidate consequence is
 handled too: `AutosaveRecoveryCandidateProcessor` collapses several snapshots of one document to the
 newest per document.
+
+## r616 — FreeX's HTML clipboard (clean negative, and a saturation signal)
+
+r611's lens applied to the third app: FreeX writes CF_HTML to the clipboard, and `EscapeHtml` handles
+`&`, `<`, `>` and newlines but not control characters or lone surrogates. Unlike FreeP's XAML writer
+there is no `XmlWriter` to throw -- HTML tolerates them -- so the r611 hazard cannot arise here.
+
+The real CF_HTML hazard is the byte offsets in its header, which must match the encoded payload
+exactly or the consumer reads the wrong fragment. Checked, and a prior round already owns it: R135's
+comment records that the WPF host's `DataObject.SaveHtmlToHandle` always encodes CF_HTML as UTF-8,
+that all four offsets derive from `Utf8Length()` over the same strings, and that adding the charset
+meta tag therefore keeps them correct with no hand arithmetic.
+
+**Saturation signal.** This is the fifth consecutive round producing no defect, and more tellingly the
+fourth in which my question arrived at code where an earlier round of this same programme had left a
+comment answering it: R135 here, R156 in r608's cancellation ordering, R115 in r607's cross-window
+race, R75 in r609's precision rule. The lenses still generate candidates; the candidates keep landing
+on ground this programme has already covered, which is a different condition from having run out of
+ideas and a more reliable indicator that the accessible surface is worked out.
