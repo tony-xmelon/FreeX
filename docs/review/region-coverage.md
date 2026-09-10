@@ -15835,3 +15835,28 @@ a shared rule and rewriting a correct test -- and the full lane disproved it. He
 equally plausible and equally wrong, but it cost nothing, because the probe came first. The
 difference was not the quality of the hypothesis; it was the order of operations. On a platform
 question a probe takes one command, and this machine can answer it.
+
+## r614 — derived save names and localization coverage (clean negatives)
+
+**Save-dialog names.** FreeX's `ExportFilePickerPlanner.BuildSuggestedExportBaseName` does NOT route
+through `OutputFileNameStemPolicy`, unlike FreeP's image export -- but the asymmetry is principled,
+not a gap. FreeX's value is a SUGGESTION shown in a Save dialog, which the OS validates and the user
+can edit; FreeP's stem goes straight to `Path.Combine` and a write with no dialog in between.
+Sanitising is required where a name reaches disk unmediated and merely cosmetic where a dialog stands
+in the way.
+
+**Localization.** Across all six shells there are only FIVE hardcoded user-facing literals of the
+`Content = "..."` / `Title = "..."` shape, and two of those are the product name, which is correctly
+not localized. The other three are in FreeP -- the theme gallery's "More..." on both platforms and
+the Options dialog's "Legal Notices...".
+
+Not filed as a defect: FreeP's Options dialog contains no `Loc.Get`/`UiText.Get` calls AT ALL, and
+FreeP ships `Strings.resx` plus `fr-FR` where FreeX ships a full language set. This is the newest
+app's localization coverage being behind, consistently, rather than an inconsistency or a
+regression -- a feature-completeness gap for the localization programme, not a review finding.
+
+**Eighth scan mis-model, same session.** My heuristic first reported FreeP's WPF Options dialog as
+localized while its Avalonia twin was not, which would have made a tidy platform-asymmetry finding.
+It was wrong: the WPF label is `Content = "_Legal Notices…"`, and the mnemonic underscore broke the
+`[A-Za-z]` anchor in my pattern. Both platforms hardcode it identically. The tell, once again, was
+that the "finding" was suspiciously neat.
