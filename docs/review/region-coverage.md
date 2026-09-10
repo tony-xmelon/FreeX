@@ -14701,3 +14701,42 @@ The fence is the part that is unambiguously mine to add. The two chart paths are
 any OTHER part whose removal changes what loads fails the test — the silence cannot spread while the
 reporting question stays open. Verified by narrowing the pin: the fence fires and names
 `word/charts/chart1.xml`.
+
+## r595 — FreeP is clean here, and the probe nearly said otherwise
+
+Completing the part-deletion lens across all three apps. FreeP refuses `_rels/.rels`,
+`ppt/_rels/presentation.xml.rels` and `ppt/presentation.xml` with its OWN `InvalidDataException` and
+the actionable sentence `PptxPackageReader` owns; every other part loads. Removing a slide part keeps
+the slide entry and yields a BLANK slide.
+
+The first run reported that as a silent loss, and it was nearly written up as a defect in a third
+app. It is not one. **My probe called `Read()`, which discards warnings, and its describe function
+counted slides and shapes without ever asking whether the loss was reported.** Asking properly shows
+`warnings=1`, and the sentence is already exactly right:
+
+> "Slide 1 is damaged and was opened blank. Saving over the original would discard whatever it still
+> contains."
+
+r454 built that mechanism for precisely this case — its own comment says "a slide blank because it
+was damaged is indistinguishable from one the author left blank, which is precisely what made the
+loss invisible". The gap was in my instrument, not the code.
+
+That is the third time this session the same discipline has paid: r586's fixture would not load,
+r584's first table was mistyped, and here the probe could not see the thing it was judging. **A probe
+reports what it measures, and "silent" is a claim about REPORTING that a content-only measurement
+cannot make.**
+
+It also forced a re-check of r594, which recorded the same shape in FreeW as a real finding. That one
+stands, and for a reason that has to be stated rather than assumed: FreeW's reader has no warnings
+channel at all — no `ReadWithWarnings`, no warnings anywhere — so there was nothing my probe could
+have failed to look at. The FreeW loss is genuinely unreported because there is nowhere to report it.
+
+### What was added
+
+A fence asserting the contract FreeP already satisfies: every part removal either refuses with
+FreeP's own typed error or reports what it lost. Verified by deleting r454's
+`reportUnreadablePart?.Invoke(slidePath)` — the fence fires and names `ppt/slides/slide1.xml`.
+
+Across the three apps the lens now reads: FreeX **fixed** (r593, it had a channel to thread), FreeW
+**fenced** (r594, it has no channel and building one is a product decision), FreeP **already correct**
+(r595, verified rather than assumed).
