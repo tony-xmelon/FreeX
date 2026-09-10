@@ -14808,3 +14808,49 @@ one.
 
 r596's own change is verified by its own fence, by r592's, and by every non-render assembly staying
 green.
+
+## r597 — resolving r596's open finding, and a probe that lied
+
+r596 left 42 failures with the cause "not established". It is established now: **WPF's
+`RenderTargetBitmap` is producing an entirely transparent surface on this machine**, so nothing any
+renderer draws survives to the bitmap. Every one of the 42 is a symptom of that single fact, and none
+of them says it.
+
+Getting there took a detour through hypotheses, each killed by evidence rather than by argument:
+
+| hypothesis | how it died |
+| --- | --- |
+| parallel session landed a rendering change | `git log` — only my three commits, all IO/docs/tests |
+| stale binary from an interleaved build | forced a real rebuild of `FreeX.App.Host`; still failed |
+| r595's test perturbing the assembly | removed it, rebuilt; still failed |
+| the assembly did not run in the green lane | r593 log: same 1516 total, 1511 passed |
+| Calibri missing | installed, and `FormattedText` measures it — MEASUREMENT does not need the render pipeline |
+| text brush resolving invisible | resolves to `Brushes.Black` with a null style |
+
+### The probe that lied
+
+The first version of the render check counted "non-white" pixels **without testing alpha**, reported
+a healthy 20,000, and I wrote that "the bare WPF render stack works fine — this overturns the
+environmental hypothesis". That was wrong, and the number said so if I had read it: 20,000 is exactly
+200x100, the WHOLE bitmap. A fully transparent Pbgra32 surface reads as (0,0,0,0), so every pixel
+counted as ink.
+
+**Without an alpha test, "everything drew" and "nothing drew" are the same number.** The corrected
+check reports 0 opaque pixels of 20,000, and the environmental hypothesis I had just discarded was
+right after all.
+
+That is the fourth probe-integrity failure this session (r586's fixture would not load, r584's first
+table was mistyped, r595's probe could not see warnings) and the most expensive, because it did not
+merely fail to find something — it produced a confident WRONG conclusion that I then reported. The
+others were silent; this one spoke.
+
+### What was added
+
+A canary: one test that draws a solid black rectangle and asserts ink. On a dead render stack it
+fails with a sentence naming the cause and the blast radius, instead of leaving 42 pixel assertions
+to be re-diagnosed from scratch. It uses the same `DrawingVisual` + `RenderTargetBitmap` pattern as
+the 31 tests that passed at r593, so it is sound on a healthy stack.
+
+The existing note on this class said the count "GROWS between runs on unchanged code" and to check
+the environment first. Both halves needed sharpening: here the count was STABLE across four runs, and
+"check the environment" is only actionable if there is something to check WITH. Now there is.
