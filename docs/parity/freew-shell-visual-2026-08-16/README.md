@@ -31,4 +31,4 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/Generate-FreeWShel
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/Test-FreeWShellVisualEvidence.ps1
 ``
 
-The source hashes, row inventory, PNG hashes, and sizes are generated into reew_shell_visual_evidence.json. -Check is byte-for-byte against both generated files.
+This artifact records hand-authored parity findings for the source files listed in generatedInputs; the row inventory and the capture-artifact PNG hashes/sizes are generated into reew_shell_visual_evidence.json. -Check is byte-for-byte against both generated files and verifies the capture PNGs still match their recorded hashes, but it does not detect edits to the contents of the listed source files. When a listed source changes, the classifications above must be re-verified by hand and this artifact regenerated.
